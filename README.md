@@ -88,7 +88,9 @@ See [docs/EVALUATION.md](docs/EVALUATION.md) for the proposed evaluation protoco
 
 ## Project status
 
-The project is currently in the problem-definition and system-design stage. The immediate next milestone is a small synthetic-terrain baseline that can label and rank landing regions using explicit geometric thresholds.
+The repository currently contains a complete project definition and execution handbook. Implementation has **not started yet**: there is no terrain generator, detector, simulator integration, or measured result in the repository today.
+
+The immediate next milestone is an executable Python baseline that generates deterministic synthetic terrain, calculates geometric safety layers, selects landing candidates, and exports visual and numerical results. See [docs/CURRENT_STATUS.md](docs/CURRENT_STATUS.md) for the verified status and [docs/EXECUTION_PLAN.md](docs/EXECUTION_PLAN.md) for the build sequence.
 
 ## Relationship to VERGE-CUAS
 
@@ -97,5 +99,11 @@ This university design project is **separate from VERGE-CUAS**. Any overlap in g
 ## Documentation
 
 - [Project context and boundaries](docs/PROJECT_CONTEXT.md)
+- [Current status and definition of done](docs/CURRENT_STATUS.md)
+- [System architecture and module contracts](docs/ARCHITECTURE.md)
+- [End-to-end execution plan](docs/EXECUTION_PLAN.md)
 - [Phased roadmap](docs/ROADMAP.md)
 - [Evaluation plan](docs/EVALUATION.md)
+- [Development setup and operating commands](docs/SETUP.md)
+- [Task backlog and milestones](docs/TASKS.md)
+- [Decision log](docs/DECISIONS.md)
