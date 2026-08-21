@@ -2,7 +2,7 @@
 
 **Status date:** 21 August 2026
 
-**Project stage:** Definition complete; implementation not started
+**Project stage:** Hardware-constrained simulation baseline implemented; physical validation not started
 
 This page is the source of truth for what exists today. It should be updated whenever a milestone is completed or the scope changes.
 
@@ -15,16 +15,37 @@ This page is the source of truth for what exists today. It should be updated whe
 - Core features and evaluation metrics are identified.
 - The staged roadmap, proposed architecture, execution workflow, and initial backlog are documented.
 - The public GitHub repository has been created.
+- An installable NumPy-only package and command-line runner have been added.
+- Five deterministic terrain families and independent ground-truth safety masks are implemented.
+- A conservative 8×8 multizone ToF observation model includes quantization, noise, dropout, outliers, pose error and random-walk drift, altitude error, attitude/yaw error, and a ten-second survey path.
+- Slope, roughness, step, confidence, footprint erosion, connected candidates, scoring, and explicit no-target behavior are implemented.
+- Four automated baseline tests pass.
+- Tuning seeds 0–49 and untouched held-out seeds 2000–2019 are saved under `results/reference/`.
+
+## Baseline evidence
+
+The held-out v0.1 suite contains 100 synthetic runs: five scenario families times 20 unseen seeds.
+
+| Measure | Held-out result |
+| --- | ---: |
+| Aggregate predicted-safe-cell precision | 100% |
+| Aggregate false-safe-cell rate | 0% |
+| Mean recall on scenes containing safe terrain | 6.677% |
+| Target availability on safe scenes | 56.25% |
+| Target validity when produced | 100% |
+| Correct rejection of no-safe scenes | 100% |
+| Desktop detector p95 | 2.86 ms |
+| Peak traced detector allocation | 341 KiB |
+
+The low recall and 56.25% target availability are intentional conservative trade-offs after pose-drift testing exposed unsafe selections at looser thresholds. The next algorithmic goal is an adaptive second survey that improves availability without relaxing the safety gate. Desktop timing excludes sensor-acquisition time and does not prove Pi performance. Synthetic truth does not model material strength, water, grass, dust, rain, direct sunlight, vibration, or propeller airflow.
 
 ## Not yet implemented
 
-- Python package and command-line interface.
-- Synthetic terrain generator.
-- Height-map, depth-image, or point-cloud data pipeline.
-- Slope, roughness, clearance, and support-area calculations.
-- Landing candidate segmentation, ranking, and visualization.
-- Automated tests and continuous integration.
-- Benchmark datasets, experiment results, plots, or report tables.
+- Continuous integration, formatter, linter, and type-check configuration.
+- A second LD19 scanning-LiDAR sensor adapter/profile.
+- Real sensor logs and calibration.
+- Raspberry Pi Zero 2 W timing, RSS, temperature, and throttling measurements.
+- Outdoor-light, reflectivity, vibration, motion-distortion, and pose-drift stress suites.
 - Navigation, odometry, or SLAM.
 - ROS 2, Gazebo, or PX4 integration.
 - Hardware flight testing.
@@ -38,8 +59,8 @@ No performance claim should be made until an experiment produces saved, reproduc
 | Problem definition | Complete | Approved project statement |
 | Architecture | Drafted | First implementation validates interfaces |
 | Development environment | Specified | Clean setup succeeds on the target laptop |
-| Synthetic terrain | Not started | Generated scenes and deterministic tests |
-| Landing detector | Not started | Metric output and diagnostic overlays |
+| Synthetic terrain | Baseline complete | More varied and physically measured terrain models |
+| Landing detector | Baseline complete | Improve availability while preserving target validity |
 | Navigation | Deferred | Core detector meets its acceptance gates |
 | SLAM | Deferred | Navigation baseline and schedule capacity |
 | ROS 2/PX4/Gazebo | Optional | Clear benefit after standalone baseline |
@@ -47,12 +68,12 @@ No performance claim should be made until an experiment produces saved, reproduc
 
 ## Immediate next actions
 
-1. Record the target laptop's OS, CPU, RAM, GPU, and available disk space.
-2. Create the Python package, pinned environment, test runner, formatter, and continuous-integration check.
-3. Implement deterministic height-map generation and ground-truth masks.
-4. Implement the geometry layers independently, with unit tests.
-5. Combine the layers into candidate regions and a ranked target.
-6. Run the first clean/noisy benchmark and publish the results.
+1. Confirm indoor/outdoor use, drone size, hardware budget, deadline, and rubric.
+2. Add an adaptive second-survey strategy, then ambient-light, reflectivity, vibration, and motion-distortion stress profiles.
+3. Run the same benchmark on a Pi Zero 2 W and enforce the 200 ms p95 / 256 MB gates.
+4. Buy or borrow the selected multizone ToF breakout and bench-test ramps, blocks, gravel, grass, dark fabric, reflective material, and sunlight.
+5. Implement a recorded-log adapter using the same observation contract.
+6. Add PX4 SITL only after the perception and stale-data gates pass.
 
 ## Definition of done
 

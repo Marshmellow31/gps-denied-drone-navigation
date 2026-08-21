@@ -1,109 +1,244 @@
 # GPS-Denied Drone Navigation and Safe Landing
 
-A simulation-first design project exploring LiDAR/depth-based autonomous navigation and safe landing-zone detection for a drone operating without reliable GPS.
+This project explores a practical question:
 
-> **Academic scope:** This is a three-person, third-year, three-credit university design project. The goal is a credible, measurable prototype—not a competition-grade autonomous aircraft.
+> Can a drone use inexpensive onboard distance sensing to find a safe place to land when GPS is unavailable?
 
-## Project idea
+The repository contains a working, simulation-first baseline. It creates synthetic terrain, simulates the limitations of a low-cost multizone ToF/LiDAR sensor, checks the terrain for hazards, and either returns a footprint-safe landing target or explicitly reports that there is not enough evidence to land safely.
 
-The system will use synthetic terrain and simulated depth or LiDAR observations to:
+This is a three-person, third-year university design project. The goal is a measurable and reproducible prototype that can later move onto affordable drone hardware—not an immediate claim of flight-ready autonomy.
 
-1. analyze local terrain geometry;
-2. identify and rank safe landing regions;
-3. support navigation in a GPS-denied environment; and
-4. progressively add localization and mapping capability where time permits.
+## What works today
 
-The first implementation is intentionally geometry-first. It will estimate properties such as slope, roughness, clearance, and usable area directly from terrain or point-cloud data before introducing learned models or a full flight stack.
+The current Python implementation can:
 
-## Proposed pipeline
+- generate five repeatable terrain families;
+- create independent noise-free ground truth;
+- simulate an 8×8 downward-facing ToF/LiDAR sensor;
+- model range noise, quantization, missing readings, outliers, pose error, and accumulated pose drift;
+- estimate terrain slope, roughness, height discontinuities, and observation confidence;
+- reject hazards and check the drone's complete landing footprint;
+- rank safe candidate locations or return no target;
+- save diagnostic arrays, plots, per-run metrics, and benchmark summaries; and
+- run without a GPU, ROS 2, Gazebo, PX4, or an internet connection.
+
+It does **not** yet control a real drone. Physical sensor validation, Raspberry Pi benchmarking, GPS-denied position-hold testing, PX4 integration, and controlled flight tests are later gates.
+
+## How it works
 
 ```text
-Synthetic terrain / depth data
-            |
-            v
-   Pre-processing and filtering
-            |
-            v
- Geometry-based terrain analysis
- (slope, roughness, clearance, area)
-            |
-            v
- Candidate landing-zone scoring
-            |
-            v
- Ranked safe landing locations
-            |
-            v
- Navigation/localization integration
-        (progressive extension)
+Synthetic terrain
+      |
+      +----> noise-free ground truth
+      |
+      v
+Low-cost sensor and pose simulation
+      |
+      v
+Bounded local elevation grid
+      |
+      +----> slope
+      +----> roughness
+      +----> step/obstacle height
+      +----> confidence
+      |
+      v
+Hazard rejection + localization margin
+      |
+      v
+Full drone-footprint validation
+      |
+      v
+Ranked safe target or NO_SAFE_TARGET
 ```
 
-## Scope
+The method is intentionally geometry-first. Its decisions can be inspected and explained, and its computational cost is low enough to target inexpensive onboard computers. A learned model may be added later only if experiments show a limitation that geometry alone cannot solve.
 
-### Core deliverable
+## Example result
 
-- Generate or load synthetic terrain/depth data.
-- Analyze terrain using explainable geometric criteria.
-- Detect, score, and visualize candidate landing zones.
-- Evaluate results with repeatable quantitative metrics.
-- Demonstrate the pipeline in simulation.
+The figure below shows the pristine terrain, simulated noisy observation, estimated slope, ground-truth safe centers, and the smaller set of conservatively predicted safe centers. The red star is the selected target.
 
-### Progressive extensions
+![Hardware-constrained landing-zone result](results/reference/v0_1_example/diagnostic.png)
 
-- Local obstacle-aware path planning.
-- LiDAR/depth odometry or a lightweight SLAM pipeline.
-- Closed-loop navigation to a selected landing zone.
-- Integration with ROS 2, PX4, and Gazebo if schedule and compute resources allow.
+## Verified baseline result
 
-ROS 2, PX4, and Gazebo are optional later-stage tools, not prerequisites for proving the core terrain-analysis concept.
+The accepted v0.1 held-out suite used seeds `2000–2019`, which were not used for threshold selection. It contains 100 runs: five scenario families with 20 seeds each.
 
-## Success criteria
+| Measure | Held-out result | Plain-language meaning |
+| --- | ---: | --- |
+| Predicted-safe-cell precision | 100% | Every cell labelled safe in this suite was safe in synthetic ground truth |
+| False-safe-cell rate | 0% | No unsafe cell was accepted |
+| Validity of selected targets | 100% | Every target that was produced had a truth-safe full footprint |
+| No-safe-scene rejection | 100% | Every deliberately impossible scene returned no target |
+| Target availability | 56.25% | The conservative system found a target in 45 of 80 scenes containing safe terrain |
+| Mean safe-scene recall | 6.68% | It deliberately rejects most usable cells to protect against false-safe decisions |
+| Desktop detector p95 | 2.86 ms | Local desktop timing only; this is not a Raspberry Pi measurement |
+| Peak traced detector allocation | 341 KiB | Detector allocations only; this is not total process memory |
 
-The prototype should be evaluated using measurable outcomes rather than only visual demonstrations. Candidate metrics include:
+The important limitation is target availability. The detector is safe but overly cautious. The next algorithmic milestone is an adaptive second survey that gathers better evidence when the first pass returns no target, without relaxing the safety thresholds.
 
-- safe/unsafe landing classification precision, recall, and F1 score;
-- landing-zone localization error;
-- false-safe rate, treated as a safety-critical metric;
-- minimum obstacle clearance and accepted slope/roughness limits;
-- processing time per terrain frame or point cloud;
-- navigation success rate and collision rate, if navigation is implemented; and
-- trajectory or map error, if SLAM is implemented.
+Machine-readable evidence is saved in [`results/reference/v0_1_held_out`](results/reference/v0_1_held_out). These results are synthetic and do not prove that physical flight is safe.
 
-See [docs/EVALUATION.md](docs/EVALUATION.md) for the proposed evaluation protocol.
+## Intended affordable hardware
 
-## Planned repository structure
+The code is designed around a replaceable sensor adapter, so the landing algorithm does not depend on one manufacturer.
+
+### First hardware profile
+
+- **Terrain sensor:** VL53L5CX-class 8×8 multizone direct-ToF module.
+- **Companion computer:** Raspberry Pi Zero 2 W-class Linux computer.
+- **Flight controller:** a PX4- or ArduPilot-capable controller remains responsible for stabilization and failsafes.
+- **GPS-denied motion estimate:** flight-controller IMU/barometer plus a PMW3901-class downward optical-flow sensor and valid downward range.
+
+The 8×8 sensor was chosen over a single-point rangefinder because one downward ray can measure height but cannot independently prove slope, roughness, obstacle clearance, and full-footprint support.
+
+### Upgrade profile
+
+An LDROBOT LD19-class 2D scanning LiDAR can later produce denser downward or oblique scan slices. Pose-corrected slices will feed the same local elevation-grid interface, so the core detector does not need to be rewritten.
+
+The final sensor purchase remains provisional until the team confirms indoor/outdoor use, drone size and payload, local availability, and budget. See the [hardware architecture decision](docs/ADR-001-HARDWARE-CONSTRAINED-PIPELINE.md) for specifications, sources, alternatives, and integration gates.
+
+## Quick start
+
+### Requirements
+
+- Git
+- Python 3.10 or newer
+- No GPU required
+
+### Windows PowerShell
+
+```powershell
+git clone https://github.com/Marshmellow31/gps-denied-drone-navigation.git
+Set-Location gps-denied-drone-navigation
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -e ".[dev,plot]"
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+### Linux, macOS, or Google Colab terminal
+
+```bash
+git clone https://github.com/Marshmellow31/gps-denied-drone-navigation.git
+cd gps-denied-drone-navigation
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev,plot]"
+python -m pytest -q
+```
+
+For an interactive walkthrough, open [`notebooks/01_hardware_constrained_baseline.ipynb`](notebooks/01_hardware_constrained_baseline.ipynb). The notebook contains a Colab bootstrap cell.
+
+## Run one simulation
+
+```bash
+python -m gps_denied_landing.cli run \
+  --scenario flat_obstacles \
+  --seed 2000 \
+  --output results/generated/example \
+  --plot
+```
+
+PowerShell accepts the same command on one line:
+
+```powershell
+python -m gps_denied_landing.cli run --scenario flat_obstacles --seed 2000 --output results/generated/example --plot
+```
+
+The output folder contains:
+
+- `manifest.json` — configuration, selected target, and metrics;
+- `layers.npz` — terrain and diagnostic arrays; and
+- `diagnostic.png` — a human-readable visual summary.
+
+## Reproduce the held-out benchmark
+
+```bash
+python -m gps_denied_landing.cli benchmark \
+  --seeds 20 \
+  --seed-start 2000 \
+  --output results/generated/held-out
+```
+
+Do not tune thresholds using seeds `2000–2019`; they are the frozen v0.1 evaluation partition. The command writes `runs.csv` and `summary.json`.
+
+## Available terrain scenarios
+
+| Scenario | What it tests |
+| --- | --- |
+| `flat_obstacles` | Mostly level ground with raised hazards |
+| `mixed_slope` | A safe region beside terrain that is too steep |
+| `rough_patch` | Smooth and rough surfaces in the same scene |
+| `step_and_pit` | Steps, depressions, and raised obstacles |
+| `no_safe_zone` | Safe failure when no valid landing footprint exists |
+
+## Safety philosophy
+
+An unsafe acceptance is more serious than rejecting a usable site. The baseline therefore follows these rules:
+
+1. Ground truth is generated before sensor corruption and never given to the detector.
+2. Unknown or low-confidence terrain is not silently treated as safe.
+3. The complete drone footprint, clearance margin, and localization uncertainty are checked.
+4. A scene may return `NO_SAFE_TARGET`; a target is never fabricated for demonstration purposes.
+5. The flight controller—not this Python package—will own stabilization, arming, manual override, link-loss response, and final failsafes.
+6. Physical flight requires separate hazard analysis, restrained tests, a geofenced site, a human pilot override, and applicable regulatory approval.
+
+LiDAR geometry also cannot determine whether water, weak roofing, deep grass, snow, or another visually flat material can support the aircraft. Material/semantic safety will require an additional sensing layer.
+
+## Development plan
+
+### Now: strengthen the simulation
+
+- Add an adaptive second-survey strategy.
+- Add direct sunlight, low-reflectivity, vibration, motion-distortion, and stronger pose-drift conditions.
+- Improve tests for every geometry layer and failure mode.
+- Add formatting, linting, type checks, and continuous integration.
+
+### Next: prove the cheap hardware path
+
+- Run the benchmark on a Raspberry Pi Zero 2 W and record p50/p95 latency, total RSS, temperature, and throttling.
+- Bench-test the chosen ToF/LiDAR against ramps, blocks, gravel, grass, dark cloth, reflective surfaces, and sunlight.
+- Record real sensor logs and replay them through the same detector.
+- Validate optical-flow plus range positioning with GPS disabled.
+
+### Later: integrate without weakening safety
+
+- Connect the stable core to PX4 Software-in-the-Loop.
+- Add stale-data, pose-quality, and companion-computer-loss failsafes.
+- Test target handoff and approach planning in simulation.
+- Progress through propellers-off, restrained/tethered, and controlled low-altitude tests only after each prior gate passes.
+
+Navigation and SLAM remain extensions. A complete, defensible safe-landing detector is more valuable for this course than several incomplete robotics integrations.
+
+## Repository map
 
 ```text
 .
-├── README.md
-├── docs/
-│   ├── PROJECT_CONTEXT.md
-│   ├── ROADMAP.md
-│   └── EVALUATION.md
-├── data/              # generated or sample terrain data (later)
-├── src/               # implementation (later)
-├── tests/             # automated checks (later)
-└── results/           # plots, tables, and experiment summaries (later)
+├── src/gps_denied_landing/   # terrain, sensor, geometry, evaluation, and CLI code
+├── tests/                    # deterministic baseline tests
+├── notebooks/                # Colab/local interactive walkthrough
+├── results/reference/        # reviewed tuning, held-out, and example evidence
+├── results/generated/        # ignored local experiment output
+├── docs/                     # architecture, evaluation, roadmap, status, and decisions
+├── pyproject.toml            # package and dependency definition
+└── README.md
 ```
 
-## Project status
+## Detailed documentation
 
-The repository currently contains a complete project definition and execution handbook. Implementation has **not started yet**: there is no terrain generator, detector, simulator integration, or measured result in the repository today.
-
-The immediate next milestone is an executable Python baseline that generates deterministic synthetic terrain, calculates geometric safety layers, selects landing candidates, and exports visual and numerical results. See [docs/CURRENT_STATUS.md](docs/CURRENT_STATUS.md) for the verified status and [docs/EXECUTION_PLAN.md](docs/EXECUTION_PLAN.md) for the build sequence.
-
-## Relationship to VERGE-CUAS
-
-This university design project is **separate from VERGE-CUAS**. Any overlap in general UAV concepts does not imply shared scope, deliverables, ownership, or competition objectives.
-
-## Documentation
-
-- [Project context and boundaries](docs/PROJECT_CONTEXT.md)
-- [Current status and definition of done](docs/CURRENT_STATUS.md)
+- [Current verified status](docs/CURRENT_STATUS.md)
+- [Hardware-constrained architecture decision](docs/ADR-001-HARDWARE-CONSTRAINED-PIPELINE.md)
 - [System architecture and module contracts](docs/ARCHITECTURE.md)
+- [Evaluation protocol](docs/EVALUATION.md)
 - [End-to-end execution plan](docs/EXECUTION_PLAN.md)
 - [Phased roadmap](docs/ROADMAP.md)
-- [Evaluation plan](docs/EVALUATION.md)
-- [Development setup and operating commands](docs/SETUP.md)
-- [Task backlog and milestones](docs/TASKS.md)
+- [Development setup](docs/SETUP.md)
+- [Task backlog](docs/TASKS.md)
 - [Decision log](docs/DECISIONS.md)
+- [Project boundaries](docs/PROJECT_CONTEXT.md)
+
+## Project identity
+
+This university design project is separate from VERGE-CUAS. General overlap in UAV concepts does not imply shared scope, deliverables, ownership, or competition objectives.

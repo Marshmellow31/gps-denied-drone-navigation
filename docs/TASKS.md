@@ -6,15 +6,16 @@ This is the initial execution backlog. Checkboxes represent repository evidence,
 
 - [ ] Record academic deadline, rubric, demonstrations, and mandatory tools.
 - [ ] Record target laptop specifications.
-- [ ] Confirm coordinate convention and SI-unit policy.
-- [ ] Define provisional drone footprint and safety thresholds.
-- [ ] Define tuning/evaluation split and minimum terrain families.
+- [ ] Confirm flight-controller, optical-flow, and range hardware.
+- [x] Confirm coordinate convention and SI-unit policy.
+- [x] Define provisional drone footprint and safety thresholds.
+- [x] Define tuning/evaluation split and minimum terrain families.
 - [ ] Assign three-person workstream ownership.
 
 ## Milestone 1 — Repository bootstrap
 
-- [ ] Create installable Python package.
-- [ ] Add dependency and Python-version constraints.
+- [x] Create installable Python package.
+- [x] Add dependency and Python-version constraints.
 - [ ] Add command-line entry point and environment doctor command.
 - [ ] Add formatter, linter, type checker, and test runner.
 - [ ] Add GitHub Actions checks.
@@ -22,54 +23,54 @@ This is the initial execution backlog. Checkboxes represent repository evidence,
 
 ## Milestone 2 — Terrain and truth
 
-- [ ] Implement height-map container with resolution and origin.
-- [ ] Implement plane and slope primitives.
-- [ ] Implement obstacle, step, pit, and rough-surface primitives.
+- [x] Implement height-map container with resolution and origin.
+- [x] Implement plane and slope primitives.
+- [x] Implement obstacle, step, pit, and rough-surface primitives.
 - [ ] Add deterministic composition from configuration.
-- [ ] Implement footprint-aware noise-free ground truth.
+- [x] Implement footprint-aware noise-free ground truth.
 - [ ] Add at least five versioned sample scenario configurations.
-- [ ] Add repeatability and known-location tests.
+- [x] Add repeatability and known-outcome tests.
 
 ## Milestone 3 — Sensor model
 
-- [ ] Add configurable measurement noise.
-- [ ] Add dropout/missing-data masks.
-- [ ] Add configurable sample density or grid resolution.
+- [x] Add configurable measurement noise and quantization.
+- [x] Add dropout/missing-data masks and outliers.
+- [x] Add configurable sample density and grid resolution.
 - [ ] Add optional height-map-to-point-cloud conversion.
-- [ ] Prove that truth is isolated from observations.
+- [x] Keep truth isolated from observations.
 
 ## Milestone 4 — Geometry detector
 
-- [ ] Implement local slope estimation.
-- [ ] Implement local roughness estimation.
-- [ ] Implement obstacle mask and clearance expansion.
-- [ ] Implement confidence/valid-observation mask.
-- [ ] Implement footprint erosion and minimum-area filtering.
+- [x] Implement local slope estimation.
+- [x] Implement local roughness estimation.
+- [x] Implement obstacle mask and clearance expansion.
+- [x] Implement confidence/valid-observation mask.
+- [x] Implement footprint erosion and minimum-area filtering.
 - [ ] Add synthetic unit fixtures for each operation.
 
 ## Milestone 5 — Candidates and output
 
-- [ ] Label connected safe regions.
-- [ ] Extract candidate statistics and representative centers.
-- [ ] Define and implement ranking policy.
-- [ ] Add deterministic tie breaking.
-- [ ] Add explicit no-safe-zone behavior.
-- [ ] Save diagnostic layers and a composite overlay.
+- [x] Label connected safe regions.
+- [x] Extract candidate statistics and representative centers.
+- [x] Define and implement ranking policy.
+- [x] Add deterministic tie breaking.
+- [x] Add explicit no-safe-zone behavior.
+- [x] Save diagnostic layers and a composite overlay.
 
 ## Milestone 6 — Evaluation
 
 - [ ] Implement all core landing-zone metrics.
-- [ ] Freeze tuning and held-out evaluation suites.
-- [ ] Add multi-seed clean/noisy benchmark runner.
-- [ ] Save per-run manifests and aggregate machine-readable results.
-- [ ] Generate tables, plots, and failure-case gallery.
-- [ ] Document thresholds, results, and limitations.
+- [x] Freeze tuning seeds 0–49 and held-out seeds 2000–2019.
+- [x] Add multi-seed noisy benchmark runner.
+- [x] Save per-run and aggregate machine-readable results.
+- [x] Generate result tables and a diagnostic plot.
+- [x] Document thresholds, results, and limitations.
 
 ## Milestone 7 — Core release
 
-- [ ] Provide one-command demonstration.
+- [x] Provide one-command demonstration.
 - [ ] Verify from a clean checkout.
-- [ ] Complete README and setup instructions.
+- [x] Complete baseline README and setup instructions.
 - [ ] Prepare report-ready architecture and result figures.
 - [ ] Tag the stable core release.
 
