@@ -1,5 +1,7 @@
 # Manuscript
 
+Current scope: LiDAR recovery-indicator reliability. The earlier visual-degradation abstract has been superseded following the user's LiDAR preference. Novelty is provisional; see the scope decision before developing the manuscript.
+
 `main.tex` is a venue-neutral LaTeX article template. It contains the authors in the requested order and only a provisional abstract as manuscript content. Affiliations have not been supplied. Future sections are commented scaffolding, so no empty sections appear in the PDF. The proposal abstract must be rewritten around actual findings before submission.
 
 From the repository root, compile using a LaTeX installation with the geometry, lmodern, microtype, and hyperref packages:

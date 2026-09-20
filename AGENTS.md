@@ -2,6 +2,8 @@
 
 ## Current repository scope (20 September 2026)
 
+The active goal is now the LiDAR recovery-reliability study in `research_paper/RESEARCH_GOAL.md`. `research_paper/SCOPE_DECISION.md` supersedes the camera proposal and earlier broad recovery-policy recommendation. Prioritize the research contribution; use public LiDAR/IMU recordings and simulation, without requiring physical hardware. Cameras, navigation controllers and new full estimators are outside the current scope. The older guide below remains applicable to the archived prototype.
+
 The active project is now the simulation-first navigation research plan in `README.md` and `research_paper/RESEARCH_GOAL.md`; review recommendations are in `research_paper/PLAN_REVIEW.md`. The original prototype was archived under `old_data/`. The guide below describes that archive: interpret its `src/`, `tests/`, `docs/`, `results/`, and package setup paths relative to `old_data/`, and run its commands from that directory. Its historical milestones and metrics do not establish results for the new research. Preserve its safety invariants and held-out seed restrictions when reusing it. The new manuscript currently contains only a proposal abstract, with no new experimental evidence.
 
 This file is the working guide for coding agents in this repository. Read it before making changes. The repository is a university research prototype for GPS-denied drone safe-landing perception; it is not flight-ready software.

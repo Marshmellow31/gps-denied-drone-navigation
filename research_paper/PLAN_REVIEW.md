@@ -1,5 +1,7 @@
 # Research plan review
 
+**Historical:** The recovery-policy recommendation below was superseded by [the reduced scope decision](SCOPE_DECISION.md) after closer prior work was found. Use [the current goal](RESEARCH_GOAL.md) for active planning.
+
 Reviewed: 20 September 2026. This is a targeted feasibility and novelty-risk review, not a systematic literature review.
 
 ## Verdict

@@ -1,131 +1,85 @@
-# Research Goal: Resilient GPS-Denied Drone Navigation
+# Research Goal: Reliability after LiDAR Degeneracy
 
-**Status:** Initial direction, to be refined after a structured literature review
-
-**Created:** 20 September 2026
+Updated: 20 September 2026. Status: LiDAR-focused candidate scope; exact novelty pending. Supersedes the camera-outage proposal and broad adaptive-navigation proposal.
 
 ## Goal
 
-Develop and rigorously evaluate a simulation-first, uncertainty-aware navigation approach that allows an unmanned aerial vehicle (UAV) to respond safely when GNSS/GPS becomes unavailable and its remaining localization sensors begin to degrade.
+Produce a focused research paper on whether LiDAR localization-health indicators correctly identify the return of reliable local motion estimation after geometric degeneracy in GNSS-denied navigation.
 
-The work will investigate whether detecting localization degradation and adapting the vehicle's behaviour can improve mission success and safety compared with navigation systems that continue using a fixed estimator or fixed sensor-fusion strategy.
+The research question and contribution determine the study. Hardware ownership, sensor purchase and embedded deployment are not deliverables. Use public LiDAR/IMU recordings and controlled simulation as evidence. Cameras are excluded from estimator inputs.
 
-This is a new research direction. The existing repository is sample material and a possible source of reusable ideas; it is not assumed to define the final problem, method, simulator, evidence, or paper claims.
+## Aim and question
+
+> After an interval of weak geometric constraints, how reliably do existing LiDAR health indicators distinguish recovered local odometry from continuing estimation error?
+
+A corridor can poorly constrain motion along its length. On leaving it, new geometry may improve current scan matching without correcting previously accumulated position drift. That distinction is expected from estimation theory; merely demonstrating it is not sufficient novelty.
+
+The candidate empirical contribution is a transition-focused comparison of health indicators against local-motion recovery, including false reassurances, detection delays, and transfer to unseen scenes. Original-frame drift is a separate outcome, not an automatic failure of local recovery.
 
 ## 4W + 1H
 
-### What
+| Question | Answer |
+| --- | --- |
+| What? | Reliability of health indicators during recovery from geometric degeneracy in LiDAR-inertial odometry. |
+| Why? | A useful recovery indicator must agree with actual local estimation quality, not merely resumed output or improved scene geometry. |
+| Who? | Researchers studying dependable localization for GNSS-denied UAV navigation. |
+| Where? | Controlled LiDAR geometry simulations and public recorded sequences containing entry to and exit from weakly constrained regions. |
+| How? | Compare established indicators on existing LIO backends against independent reference trajectories; report errors, delays and unavailable outcomes. |
 
-Resilient autonomous navigation following GNSS loss, with an emphasis on:
+## Minimum study
 
-- detecting when localization is becoming unreliable;
-- estimating and calibrating uncertainty;
-- selecting a safe recovery behaviour; and
-- explicitly refusing unsafe continued navigation when evidence is insufficient.
+- Sensors available to estimation: LiDAR and IMU only. Other channels in a public dataset may provide evaluation reference but never online estimator input.
+- One phenomenon: geometric degeneracy and recovery. Do not combine camera degradation, weather, sensor blackout, timing faults and navigation control.
+- Candidate primary backend: FAST-LIO2. Candidate replication backend: Point-LIO. Confirm suitable timestamped datasets and configurations before final selection.
+- Indicators: a conventional Hessian/eigenvalue baseline and a relevant published localizability/risk measure selected after full-text review of X-ICP and SuperLoc. They are not interchangeable full LIO backends. Portability and implementation equivalence must be checked and documented.
+- Start with one controlled corridor-to-feature-rich geometry family and one real recorded dataset. Vary degeneracy duration/severity and balance motion, with matched nondegenerate controls.
+- Simulated scans must follow ray visibility and occlusion, preserve per-point timing, and include a defined IMU model if used for end-to-end LIO. Ideal point-cloud pairs can validate registration indicators only, not full odometry.
+- A lightweight simulation or public replay is enough to test the question; do not construct a full flight simulator unless the protocol requires it.
+- No physical data collection, hardware benchmark, camera input, new sensor-fusion stack, flight controller or safe-landing system.
 
-### Why
+## Data direction
 
-GPS-denied navigation methods can degrade under conditions such as poor visual texture, motion blur, darkness, sensor dropout, accumulated inertial drift, and incorrect sensor measurements. A system may continue navigating even when its pose estimate is no longer trustworthy. The research will address this gap by connecting localization confidence to safety-aware navigation decisions.
+The NTNU aerial LiDAR-degeneracy recordings are a candidate because they were collected on a manually flown aerial robot. Reference accuracy/coverage and suitable recovery transitions still require verification. Ignore radar in estimator inputs.
 
-### Who
+GEODE is a candidate supplementary degeneracy dataset, but some sequences have only position reference or lack suitable pose ground truth. Verify per-sequence metadata, frames and independence before use. Ground-platform results must not be called drone validation. If no suitable aerial reference exists, narrow the paper's claims rather than invent evidence.
 
-The intended audience and beneficiaries are:
+## Evaluation requirements
 
-- researchers working on autonomous micro aerial vehicles;
-- developers of safety-conscious GPS-denied navigation systems; and
-- researchers who need reproducible simulation scenarios and evaluation procedures.
+1. Keep three quantities separate: geometric localizability, short-window relative motion error, and accumulated original-frame pose error.
+2. Define recovery by sustained relative-error validity over a frozen window, using independent truth; choose thresholds/windows on development data. A hindsight label may use a subsequent window, but the online indicator may use only data available at its timestamp.
+3. Define transition boundaries independently of the indicator under test. In simulation use known scene design; for real data use a prespecified annotation protocol, not detector outputs or selected error peaks.
+4. Compare false-reassurance rate with recovery-detection delay and decision availability. An always-unreliable indicator cannot win by silence. Fix operating points or false-alarm budgets using development data.
+5. Preserve resets, missing output, crashes and failure to recover. Use censored recovery times or explicit non-recovery outcomes.
+6. Report local motion in comparable frames and fixed windows. Use a fixed pre-event alignment for accumulated drift; do not realign after resets to hide discontinuity. Do not label localizability indicators defective merely because they do not estimate accumulated global drift.
+7. Standardize point selection, residual definitions, rotational/translational scaling and evaluation timestamps for indicator comparisons. Do not pretend a naive eigenvalue threshold is equivalent to published X-ICP or SuperLoc.
+8. Use separate development/test trajectories and unseen scene geometry. Quantify uncertainty by independent trajectory/event clusters, not individual points or adjacent frames.
+9. Include matched nondegenerate motion controls, threshold sensitivity and repeated backend execution; publish code revisions, configuration, masks/scenes, timing, references and all failed runs.
+10. Derive final repetitions from pilot variability and required precision. No final-test tuning. No numerical novelty or performance claim before experiments.
 
-### Where
+## Candidate paper outputs
 
-Evaluation should cover controlled simulated environments representative of:
+A literature distinction table; a transition-based protocol; two-indicator comparison with one backend and replication on a second; interpretable failure cases and reproducible artifacts. No new algorithm is required for an empirical contribution. If a method is later proposed, its novelty and fair baselines require their own decision.
 
-- indoor buildings and corridors;
-- urban canyons;
-- tunnels or other confined spaces; and
-- degraded-visibility or perceptually difficult environments.
+Figures: corridor-to-rich-scene schematic; localizability/relative-error/drift timeline; false-reassurance versus delay tradeoff; held-out-scene paired results with uncertainty.
 
-The exact environment set will be chosen after reviewing available simulators, datasets, comparable papers, and feasible research scope.
+## Weekly professor-review milestones
 
-### How
+User deadline: first week of November 2026; weekly professor meetings. Laptop: 16 GB RAM and RTX 4060. These are supporting resources, not the basis for the topic. Weekly hours and exact deadline day remain unspecified.
 
-The proposed direction is a combined methodological and evaluation contribution:
+| Week | Reviewable deliverable |
+| --- | --- |
+| Sep 21-27 | Full closest-work comparison; confirm useful gap, eligible reference data and one transition pilot |
+| Sep 28-Oct 4 | Freeze question, indicators, datasets/simulator assumptions, metrics and split policy |
+| Oct 5-11 | Reproduce indicators and development experiments; freeze implementation |
+| Oct 12-18 | Execute prespecified evaluation and replication; complete failure ledger |
+| Oct 19-25 | Analyze uncertainty, alternative explanations and failure cases; finalize supported contribution |
+| Oct 26-Nov 1 | Complete manuscript and reproducibility audit; professor review |
+| Nov 2-7 | Revision buffer, subject to the actual agreed deadline |
 
-1. Create controlled GNSS-loss and sensor-degradation scenarios.
-2. Implement or integrate suitable localization and navigation baselines.
-3. Develop a confidence-calibrated degradation detector.
-4. Develop a risk-aware policy that can continue, slow down, relocalize, hover, return, or initiate a simulated safe landing.
-5. Evaluate the approach through repeated simulation experiments and, where appropriate, public real-world datasets.
-6. Compare it with fixed-estimator, fixed-fusion, and non-adaptive baselines.
+Week-one go/no-go: the exact transition-focused comparison must remain distinct from existing evidence and measurable with valid reference data. Otherwise refine the question before expanding implementation.
 
-## Central Research Question
+## Publication and boundaries
 
-> Can an uncertainty-aware adaptive navigation system improve mission success and safety after GNSS loss by detecting localization degradation and dynamically selecting an appropriate recovery action?
+Aim for a focused empirical paper. A simple expected drift demonstration is insufficient. Strong venue suitability requires a useful new finding, rigorous comparison and generalization evidence; acceptance is not guaranteed. See [scope decision](SCOPE_DECISION.md).
 
-## Proposed Core Contribution
-
-A **confidence-calibrated localization-degradation detector and risk-aware recovery policy for GPS-denied UAV navigation**, supported by a reproducible evaluation framework containing controlled sensor failures and environmental degradations.
-
-The intended novelty is not merely another generic sensor-fusion pipeline. It is the connection between:
-
-- localization uncertainty;
-- actual localization error;
-- degradation and failure detection;
-- adaptive recovery decisions; and
-- end-to-end navigation safety.
-
-## Preliminary Evaluation Principles
-
-The study should measure more than localization accuracy. Candidate evaluation dimensions include:
-
-- trajectory and pose error;
-- mission completion rate;
-- collision and unsafe-state rate;
-- degradation-detection precision, recall, and detection delay;
-- uncertainty calibration and false-confidence rate;
-- recovery success and time to recovery;
-- unnecessary-abort rate;
-- runtime, memory, and computational cost; and
-- performance across repeated random seeds and degradation severity levels.
-
-Metrics, thresholds, baselines, simulators, datasets, and statistical tests are not yet frozen. They will be selected from the literature before experiments begin.
-
-## Research Boundaries
-
-- The project is simulation-first because physical UAV hardware is unavailable.
-- Public real-world datasets may be used to strengthen estimator-level evidence, but dataset replay must not be misrepresented as closed-loop flight validation.
-- Synthetic results will not be presented as proof of real-world flight safety or deployment readiness.
-- The paper will use the broader term **GNSS-denied** where technically appropriate; GPS is one GNSS.
-- The scope should remain narrow enough to support rigorous baselines, ablations, repeated trials, and reproducibility.
-- Safe landing may be one recovery action, but it does not automatically remain the paper's central problem.
-- The work remains separate from VERGE-CUAS.
-
-## Working Paper Positioning
-
-The paper should be positioned around **failure-aware and uncertainty-aware resilience**, rather than claiming to solve all GPS-denied drone navigation. A suitable working formulation is:
-
-> Failure-Aware Adaptive Navigation for UAVs Under GNSS and Perception Degradation: A Reproducible Simulation Study
-
-This is a working direction, not a final title.
-
-## Initial Literature Anchors
-
-These sources motivated the direction and are starting points, not a complete literature review:
-
-- [State-of-the-Art and Future Directions in Autonomous Navigation for UAVs in GNSS-Denied Environments](https://www.sciencedirect.com/science/article/abs/pii/S1566253526005907)
-- [MUN-FRL: A Visual-Inertial-LiDAR Dataset for Aerial Autonomous Navigation and Mapping](https://journals.sagepub.com/doi/10.1177/02783649241238358)
-- [GNSS-Denied Semi-Direct Visual Navigation for Autonomous UAVs Aided by PI-Inspired Inertial Priors](https://www.mdpi.com/2226-4310/10/3/220)
-
-## Next Decision Gate
-
-The [20 September plan review](PLAN_REVIEW.md) recommends a smaller first study and documents unresolved novelty, calibration, action-feasibility, and evaluation issues. Its recommendations are provisional until the literature and platform pilot support them. The [LaTeX manuscript](paper/main.tex) contains a proposal abstract only.
-
-Before committing to implementation, conduct a structured literature and feasibility review to decide:
-
-1. the exact research gap and novelty claim;
-2. the sensor configuration and failure model;
-3. the simulator, public datasets, and baseline algorithms;
-4. the recovery actions that are feasible to evaluate;
-5. the experimental matrix and statistical methodology; and
-6. the diagrams, paper outline, reproduction instructions, and evidence package.
-
-No implementation or experimental result should be treated as paper evidence until these choices are documented and the evaluation protocol is frozen.
+No deployment or flight-safety claims from simulation/replay. The archived safe-landing results and held-out seeds remain separate. This project remains independent of VERGE-CUAS.
