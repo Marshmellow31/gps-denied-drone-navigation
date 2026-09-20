@@ -2,9 +2,21 @@
 
 A research project about **reliable localization after geometric degeneracy**, using public LiDAR/IMU recordings and controlled simulation. No physical hardware is required. The research contribution determines the scope.
 
+**Authors:** Harshil Patel, Daksha Lingampeta, Nisarg Vyas
+
+**Last reviewed:** 20 September 2026
+
 > **Candidate question:** After weak geometric constraints end, how reliably do LiDAR health indicators identify the return of accurate local motion estimation?
 
 [Research goal and weekly milestones](research_paper/RESEARCH_GOAL.md) · [Existing work and scope decision](research_paper/SCOPE_DECISION.md)
+
+## Why we chose this
+
+Reliable localization matters even when an estimator continues producing poses: those poses may no longer describe motion accurately. Studying how reliability returns after difficult geometry gives us a specific, testable question within GPS-denied navigation.
+
+This scope supports a focused paper within the November timeline using existing algorithms, public recordings and controlled simulation. Our intended contribution is evidence about recovery indicators, rather than building an entire drone navigation system. The topic was selected for its research relevance; owning or purchasing a particular LiDAR is not required.
+
+The exact research gap still needs verification against the closest papers. We will refine the question if their experiments already answer it.
 
 ## Current status
 
@@ -67,6 +79,8 @@ The [goal](research_paper/RESEARCH_GOAL.md) gives dates from September 21 to Nov
 
 ## What we will measure
 
+A **health indicator** is a signal intended to describe estimation quality or how strongly the observed geometry constrains motion. **Recovery** means sustained return to a prespecified level of local-motion accuracy, checked against an independent reference. The exact thresholds and durations remain open until the development pilot.
+
 - False reassurance versus recovery-detection delay and indicator availability.
 - Sustained local relative-error recovery, independently labeled.
 - Accumulated original-frame drift, reported separately.
@@ -76,6 +90,21 @@ The [goal](research_paper/RESEARCH_GOAL.md) gives dates from September 21 to Nov
 Do not call a local geometric indicator wrong merely because it does not correct historical global drift. Do not hide resets through post-event realignment. Thresholds, windows, scene splits and repetition counts are frozen after development pilots.
 
 Planned figures: geometry-transition schematic, indicator/error/drift timeline, false-reassurance versus delay plot, and held-out comparisons with uncertainty.
+
+## Immediate next step and open decisions
+
+The first professor-review package should contain:
+
+1. A comparison of the exact question with X-ICP, SuperLoc, AdaLIO and GEODE, including their experiments and limitations.
+2. A shortlist of recorded sequences with trustworthy reference trajectories and a clear transition out of weak geometry.
+3. One small transition pilot showing indicator values, local-motion error and accumulated drift on the same timeline.
+4. A go/no-go decision: is the question both distinct from prior evidence and measurable with the available data?
+
+Final dataset sequences, simulation model, indicator implementations, recovery thresholds, sample counts and venue are **not selected yet**. There are no research experiment commands or results to reproduce yet; current build instructions cover the LaTeX abstract only.
+
+## What the paper will deliver
+
+A verified problem statement, a reproducible evaluation protocol, comparisons of established indicators, results with uncertainty, and explained failure cases. We will write the methods and evidence incrementally, then revise the abstract and conclusions around the actual findings. A useful empirical contribution does not require inventing a new SLAM algorithm, and positive results are not assumed.
 
 ## Novelty and publication gate
 
