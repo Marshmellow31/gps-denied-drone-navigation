@@ -19,3 +19,10 @@ results/generated/
 .idea/
 .vscode/
 *.egg-info/
+
+# LaTeX auxiliaries and PDF visual-review intermediates
+/output/pdf/*.aux
+/output/pdf/*.log
+/output/pdf/*.out
+/output/pdf/*.synctex.gz
+/tmp/pdfs/

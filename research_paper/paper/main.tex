@@ -1,0 +1,32 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=28mm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Failure-Aware Navigation for UAVs under GNSS and Visual Degradation},pdfauthor={Harshil Patel, Daksha Lingampeta, Nisarg Vyas}}
+
+\title{Failure-Aware Navigation for UAVs under\protect\\ GNSS and Visual Degradation}
+\author{Harshil Patel \and Daksha Lingampeta \and Nisarg Vyas}
+\date{Research proposal draft --- September 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Unmanned aerial vehicles operating without reliable global navigation satellite system (GNSS) measurements depend on onboard localization whose accuracy can deteriorate under visual degradation. Estimator confidence that fails to reflect this deterioration can lead to unsuitable navigation decisions. This proposed study will investigate whether calibrated predictions of localization failure can improve the tradeoff between mission completion and collision frequency in simulated UAV navigation. The planned approach will couple a fixed visual-inertial estimator with a temporal degradation monitor and a recovery policy that selects among continued motion, reduced-speed reobservation, and mission termination, subject to explicitly defined controller and sensing requirements. Controlled experiments will introduce visual degradation while keeping the estimator, controller, and mission conditions comparable across methods. Evaluation will compare the proposed approach with tuned estimator-confidence thresholds, non-adaptive policies, and a relevant published perception-aware baseline. Separate development, calibration, and held-out scene partitions will support assessment of localization error, failure-prediction calibration, detection delay, mission completion, collisions, and computational cost. Ablations will isolate the effects of calibration and temporal information. The intended outcome is a reproducible assessment of when failure prediction supports useful navigation decisions and when it remains unreliable. This abstract describes planned research; no experimental results or demonstrated performance improvements are claimed.
+\end{abstract}
+
+% Venue-neutral template. Add verified affiliations when available.
+% Write these sections incrementally; leave them commented until drafted.
+% \section{Introduction}
+% \section{Related Work}
+% \section{Problem Formulation}
+% \section{Proposed Method}
+% \section{Experimental Protocol}
+% \section{Results}
+% \section{Ablations and Failure Analysis}
+% \section{Discussion and Limitations}
+% \section{Conclusion}
+% \section*{Reproducibility Statement}
+% Add a bibliography once cited sources appear in the manuscript body.
+\end{document}

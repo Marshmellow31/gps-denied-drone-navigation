@@ -1,244 +1,400 @@
-# GPS-Denied Drone Navigation and Safe Landing
+# Resilient GNSS-Denied Drone Navigation
 
-This project explores a practical question:
+This repository is being rebuilt as a **step-by-step research-paper project** about failure-aware navigation for drones operating without reliable GNSS.
 
-> Can a drone use inexpensive onboard distance sensing to find a safe place to land when GPS is unavailable?
+The immediate objective is not to write a paper quickly or to force the previous prototype into a new publication. It is to construct a defensible research question, verify the gap in existing literature, freeze an evaluation protocol, gather reproducible evidence, and then write only the claims supported by that evidence.
 
-The repository contains a working, simulation-first baseline. It creates synthetic terrain, simulates the limitations of a low-cost multizone ToF/LiDAR sensor, checks the terrain for hazards, and either returns a footprint-safe landing target or explicitly reports that there is not enough evidence to land safely.
+> **Working research question**
+> Can an uncertainty-aware adaptive navigation system improve mission success and safety after GNSS loss by detecting localization degradation and dynamically selecting an appropriate recovery action?
 
-This is a three-person, third-year university design project. The goal is a measurable and reproducible prototype that can later move onto affordable drone hardware—not an immediate claim of flight-ready autonomy.
+The full initial direction is recorded in [research_paper/RESEARCH_GOAL.md](research_paper/RESEARCH_GOAL.md).
 
-## What works today
+## Current status
 
-The current Python implementation can:
+| Item | Status |
+| --- | --- |
+| Broad topic selected | Complete |
+| Initial 4W + 1H defined | Complete |
+| Working research question written | Complete |
+| Previous prototype separated from new research | Complete |
+| Structured literature review | Not started |
+| Verified research gap | Not started |
+| Simulator and datasets selected | Not started |
+| Baselines selected and reproduced | Not started |
+| Proposed method implemented | Not started |
+| Experiments and statistical analysis | Not started |
+| Paper draft | LaTeX template and provisional abstract compiled; experiments pending |
+| Target venue | Not selected |
 
-- generate five repeatable terrain families;
-- create independent noise-free ground truth;
-- simulate an 8×8 downward-facing ToF/LiDAR sensor;
-- model range noise, quantization, missing readings, outliers, pose error, and accumulated pose drift;
-- estimate terrain slope, roughness, height discontinuities, and observation confidence;
-- reject hazards and check the drone's complete landing footprint;
-- rank safe candidate locations or return no target;
-- save diagnostic arrays, plots, per-run metrics, and benchmark summaries; and
-- run without a GPU, ROS 2, Gazebo, PX4, or an internet connection.
+**Active phase:** Phase 1 — structured literature and feasibility review.
 
-It does **not** yet control a real drone. Physical sensor validation, Raspberry Pi benchmarking, GPS-denied position-hold testing, PX4 integration, and controlled flight tests are later gates.
+**Plan review (20 September 2026):** The roadmap is sound but too broad to execute as a first paper. [The review](research_paper/PLAN_REVIEW.md) records novelty overlap, action-feasibility concerns, calibration/data-split requirements, stronger baselines, and a recommended minimum study. The narrower scope remains provisional until literature and a platform pilot confirm it.
 
-## How it works
+**Manuscript:** [LaTeX source and build instructions](research_paper/paper/README.md) · [Compiled abstract PDF](output/pdf/main.pdf). The abstract describes proposed work and contains no experimental findings.
+
+## Research direction: 4W + 1H
+
+| Question | Current answer |
+| --- | --- |
+| **What?** | Resilient autonomous navigation after GNSS loss, including localization-degradation detection and safe recovery. |
+| **Why?** | A navigation system can become unreliable under visual, inertial, environmental, or sensor degradation while remaining dangerously confident. |
+| **Who?** | Researchers and developers working on autonomous micro aerial vehicles and reproducible GNSS-denied navigation. |
+| **Where?** | Controlled simulated indoor, urban-canyon, tunnel, and degraded-perception environments; public real-world datasets where appropriate. |
+| **How?** | A confidence-calibrated degradation detector, a risk-aware recovery policy, and a reproducible evaluation against non-adaptive baselines. |
+
+## North-star contribution
+
+The proposed contribution is a:
+
+> **Confidence-calibrated localization-degradation detector and risk-aware recovery policy for GNSS-denied UAV navigation, evaluated under controlled sensor and environmental failures.**
+
+This is provisional. It becomes the paper's final contribution only if the literature review confirms that it fills a real gap and the planned experiments are feasible.
+
+The intended innovation is the connection between:
+
+1. estimated localization uncertainty;
+2. actual localization error;
+3. early detection of degradation;
+4. adaptive recovery decisions; and
+5. end-to-end mission safety and success.
+
+## Visual research roadmap
+
+```mermaid
+flowchart TD
+    A[1. Search and classify literature] --> B{Is there a defensible gap?}
+    B -- No --> C[Refine the question or change direction]
+    C --> A
+    B -- Yes --> D[2. Freeze research question and hypotheses]
+    D --> F[3. Pilot simulator, datasets, and baselines]
+    F --> E[4. Freeze evaluation protocol after feasibility]
+    E --> G[5. Reproduce baseline results]
+    G --> H{Are baselines valid and reproducible?}
+    H -- No --> F
+    H -- Yes --> I[6. Implement proposed adaptive method]
+    I --> J[7. Run pilot experiments on development scenarios]
+    J --> K{Protocol or implementation problem?}
+    K -- Yes --> E
+    K -- No --> L[8. Freeze code and final evaluation set]
+    L --> M[9. Run repeated final experiments]
+    M --> N[10. Statistical analysis, ablations, and failure analysis]
+    N --> O{Do results support the claims?}
+    O -- Partly --> P[Narrow claims and document limitations]
+    O -- No --> Q[Report negative result or revise method honestly]
+    O -- Yes --> R[Write the paper from the evidence]
+    P --> R
+    Q --> R
+    R --> S[Internal review, reproducibility audit, and submission]
+```
+
+## Evidence pipeline
+
+The project will keep assumptions, implementation, results, and claims traceable.
+
+```mermaid
+flowchart LR
+    L[Literature evidence] --> G[Verified research gap]
+    G --> H[Hypotheses]
+    H --> P[Frozen protocol]
+    P --> X[Experiments]
+    X --> R[Raw results]
+    R --> A[Statistical and failure analysis]
+    A --> C[Supported claims]
+    C --> W[Paper]
+
+    S[Source code + configuration] --> X
+    D[Seeds + datasets + versions] --> X
+    X --> F[Figures + tables]
+    F --> W
+```
+
+Every important paper claim should point backward to a figure, table, analysis file, raw result, configuration, and reproducible command.
+
+## Step-by-step plan
+
+Each phase ends with a decision gate. We will update this README whenever a gate is passed or the research direction changes.
+
+### Phase 1 — Structured literature and feasibility review
+
+**Purpose:** Learn what has already been solved and prevent an unsupported novelty claim.
+
+**Work:**
+
+- define search questions, databases, keywords, inclusion dates, and exclusion rules;
+- collect recent surveys plus primary papers on VIO, visual–inertial–LiDAR fusion, uncertainty estimation, failure detection, recovery policies, and GNSS-denied benchmarks;
+- record each paper's sensors, environment, simulator or dataset, baseline, metrics, limitations, released code, and claimed contribution;
+- distinguish localization, navigation, planning, and safe recovery instead of treating them as the same task;
+- identify gaps that are important, testable without hardware, and narrow enough for rigorous evaluation; and
+- investigate suitable publication venues only after the likely contribution is clear.
+
+**Artifacts:** literature-search protocol, paper matrix, annotated bibliography, gap map, and feasibility comparison.
+
+**Exit gate:** At least one important gap is supported by the reviewed literature and can be tested using available simulation or public data.
+
+### Phase 2 — Freeze the research question and hypotheses
+
+**Purpose:** Convert a broad idea into falsifiable claims.
+
+**Candidate hypotheses:**
+
+- **H1:** The proposed detector identifies localization degradation earlier or more accurately than fixed-threshold and estimator-native confidence baselines.
+- **H2:** Adaptive recovery reduces collisions or unsafe continuation compared with always-continue navigation.
+- **H3:** The method improves mission success compared with an always-abort policy while maintaining a predefined safety constraint.
+- **H4:** Benefits persist across unseen environments, random seeds, and degradation types rather than only the development scenarios.
+
+These are placeholders. Literature evidence and feasibility results will determine their final wording.
+
+**Artifacts:** final problem statement, hypotheses, contribution statement, scope, assumptions, and terminology.
+
+**Exit gate:** Every hypothesis has independent variables, dependent variables, baselines, success criteria, and a feasible test.
+
+### Phase 3 — Design and freeze the evaluation protocol
+
+**Purpose:** Decide how evidence will be collected before looking at final results.
+
+**Decisions to freeze:**
+
+- vehicle model and mission tasks;
+- sensor suite and estimator interfaces;
+- simulator and version;
+- public datasets and permitted uses;
+- environments and withheld evaluation scenes;
+- degradation models and severity levels;
+- development seeds versus untouched final-evaluation seeds;
+- baselines, ablations, metrics, number of runs, and statistical tests;
+- compute budget and reproducibility requirements; and
+- rules for failed, timed-out, or invalid runs.
+
+**Artifacts:** experiment protocol, scenario catalogue, metric definitions, seed policy, analysis plan, and threat-to-validity checklist.
+
+**Exit gate:** Another researcher could understand exactly how the proposed claims will be tested without seeing the final results.
+
+### Phase 4 — Build the reproducible experiment platform
+
+**Purpose:** Produce reliable infrastructure before implementing the proposed method.
+
+**Work:**
+
+- install and pin the chosen simulator and dependencies;
+- create deterministic scenario configurations;
+- separate ground truth from observations available to the method;
+- add structured logging for pose, uncertainty, events, decisions, collisions, recovery actions, runtime, and resource usage;
+- save code revision, configuration, random seed, environment, dependency versions, and warnings for every run; and
+- create automated smoke tests and a small end-to-end pilot.
+
+**Artifacts:** setup guide, environment lock, scenario definitions, run manifest, logging schema, and reproducibility command.
+
+**Exit gate:** A clean setup can reproduce the same pilot result within defined tolerances.
+
+### Phase 5 — Reproduce strong baselines
+
+**Purpose:** Establish credible comparisons before claiming improvement.
+
+Possible baseline families include:
+
+- dead reckoning or inertial-only continuation;
+- visual-inertial odometry or SLAM;
+- a fixed sensor-fusion estimator;
+- estimator-native confidence with a fixed threshold;
+- always continue, always hover, and always abort recovery policies; and
+- an oracle using simulator ground truth, used only as an upper bound—not as an operational method.
+
+Final baselines will be selected from the literature and must fit the exact task.
+
+**Artifacts:** baseline implementations or integrations, reproduction report, parameter records, and baseline result tables.
+
+**Exit gate:** Baselines behave as expected and any mismatch with published results is understood and disclosed.
+
+### Phase 6 — Implement the proposed method
+
+The tentative system structure is:
+
+```mermaid
+flowchart LR
+    GNSS[GNSS status] --> EST[State estimator]
+    CAM[Camera] --> EST
+    IMU[IMU] --> EST
+    AUX[Optional range or LiDAR] --> EST
+
+    EST --> STATE[Pose + velocity + estimator signals]
+    STATE --> DET[Degradation detector]
+    DET --> CONF[Calibrated risk or confidence]
+
+    STATE --> POLICY[Risk-aware recovery policy]
+    CONF --> POLICY
+    MISSION[Mission state + local hazards] --> POLICY
+
+    POLICY --> C1[Continue]
+    POLICY --> C2[Slow or reobserve]
+    POLICY --> C3[Relocalize]
+    POLICY --> C4[Hover or return]
+    POLICY --> C5[Simulated safe landing / abort]
+```
+
+Ground truth will be available to evaluation code but never to the degradation detector or recovery policy.
+
+**Artifacts:** method specification, implementation, unit tests, model or rule configuration, and computational-cost report.
+
+**Exit gate:** The method passes unit, interface, leakage, determinism, and pilot-scenario checks.
+
+### Phase 7 — Pilot experiments and ablations
+
+**Purpose:** Find implementation and protocol problems using development scenarios only.
+
+Candidate ablations may remove uncertainty calibration, individual detector features, temporal history, adaptive actions, or individual sensing modalities. Changes motivated by pilot results must be logged. Final-evaluation scenarios remain untouched.
+
+**Exit gate:** Code, metrics, analysis scripts, method configuration, and final hypotheses are frozen.
+
+### Phase 8 — Final evaluation
+
+The final experiment should vary multiple factors rather than report one demonstration flight.
+
+| Experimental factor | Candidate levels; not yet frozen |
+| --- | --- |
+| Environment | indoor, urban canyon, tunnel, degraded visibility |
+| GNSS event | sudden loss, intermittent loss, gradual degradation, possible spoof-like inconsistency if justified |
+| Perception degradation | texture loss, blur, illumination change, dropout, outliers |
+| Motion stress | speed, rotation, aggressive manoeuvre, vibration or timing effects |
+| Severity | mild, moderate, severe |
+| Policy | proposed adaptive, fixed threshold, always continue, always abort |
+| Randomization | multiple untouched seeds and unseen scenes |
+
+All conditions need not be included. The final matrix must be large enough to test generality but small enough to run, inspect, and reproduce properly.
+
+**Exit gate:** All planned runs are accounted for, including failures, with no post-hoc removal of inconvenient results.
+
+### Phase 9 — Analysis and visualization
+
+Evaluation will cover four layers:
+
+| Layer | Candidate measurements |
+| --- | --- |
+| Localization | absolute/relative trajectory error, drift, orientation error |
+| Detection and confidence | precision, recall, false alarms, detection delay, calibration error, false-confidence rate |
+| Navigation and safety | mission success, collision rate, unsafe continuation, minimum clearance, recovery success, unnecessary aborts |
+| Practicality | latency distribution, memory, compute load, failure rate |
+
+Results should include confidence intervals, effect sizes, distribution plots, per-environment breakdowns, ablations, representative trajectories, and failure cases—not only averages.
+
+**Exit gate:** Conclusions can be traced to analyses, and alternative explanations and limitations are documented.
+
+### Phase 10 — Write and review the paper
+
+The paper will be written from the validated evidence using this provisional structure:
 
 ```text
-Synthetic terrain
-      |
-      +----> noise-free ground truth
-      |
-      v
-Low-cost sensor and pose simulation
-      |
-      v
-Bounded local elevation grid
-      |
-      +----> slope
-      +----> roughness
-      +----> step/obstacle height
-      +----> confidence
-      |
-      v
-Hazard rejection + localization margin
-      |
-      v
-Full drone-footprint validation
-      |
-      v
-Ranked safe target or NO_SAFE_TARGET
+1. Abstract
+2. Introduction and contributions
+3. Related work
+4. Problem formulation and assumptions
+5. Proposed method
+6. Experimental protocol
+7. Results
+8. Ablations and failure analysis
+9. Discussion, limitations, and threats to validity
+10. Conclusion
+11. Reproducibility statement and supplementary material
 ```
 
-The method is intentionally geometry-first. Its decisions can be inspected and explained, and its computational cost is low enough to target inexpensive onboard computers. A learned model may be added later only if experiments show a limitation that geometry alone cannot solve.
+An initial proposal abstract and working title are available now. The final abstract, title, and contribution list will be rewritten after the results are known.
 
-## Example result
+**Exit gate:** Internal technical review, citation audit, claim-to-evidence audit, figure audit, language review, and clean-environment reproduction are complete.
 
-The figure below shows the pristine terrain, simulated noisy observation, estimated slope, ground-truth safe centers, and the smaller set of conservatively predicted safe centers. The red star is the selected target.
+## What success means
 
-![Hardware-constrained landing-zone result](results/reference/v0_1_example/diagnostic.png)
+A successful outcome is not necessarily a positive result. Success means producing a rigorous and reproducible answer to the research question. The project should:
 
-## Verified baseline result
+- establish a literature-supported gap;
+- compare against appropriate baselines;
+- avoid ground-truth leakage;
+- evaluate unseen conditions and repeated trials;
+- measure safety, usefulness, calibration, and computational cost;
+- report failures and negative results;
+- release enough configuration and code for reproduction; and
+- make claims no stronger than the evidence.
 
-The accepted v0.1 held-out suite used seeds `2000–2019`, which were not used for threshold selection. It contains 100 runs: five scenario families with 20 seeds each.
+Publication at a strong venue cannot be guaranteed. The controllable objective is work that can survive serious peer review.
 
-| Measure | Held-out result | Plain-language meaning |
-| --- | ---: | --- |
-| Predicted-safe-cell precision | 100% | Every cell labelled safe in this suite was safe in synthetic ground truth |
-| False-safe-cell rate | 0% | No unsafe cell was accepted |
-| Validity of selected targets | 100% | Every target that was produced had a truth-safe full footprint |
-| No-safe-scene rejection | 100% | Every deliberately impossible scene returned no target |
-| Target availability | 56.25% | The conservative system found a target in 45 of 80 scenes containing safe terrain |
-| Mean safe-scene recall | 6.68% | It deliberately rejects most usable cells to protect against false-safe decisions |
-| Desktop detector p95 | 2.86 ms | Local desktop timing only; this is not a Raspberry Pi measurement |
-| Peak traced detector allocation | 341 KiB | Detector allocations only; this is not total process memory |
+## Research boundaries
 
-The important limitation is target availability. The detector is safe but overly cautious. The next algorithmic milestone is an adaptive second survey that gathers better evidence when the first pass returns no target, without relaxing the safety thresholds.
+- This is a simulation-first research project because physical UAV hardware is unavailable.
+- Dataset replay can validate parts of localization or detection, but it is not closed-loop flight validation.
+- Simulated success is not proof of real-world safety or deployment readiness.
+- The work will use **GNSS-denied** when referring to the general problem; GPS is one GNSS.
+- The project will not claim to solve all localization, mapping, planning, control, and landing problems at once.
+- Safe landing may be evaluated as a recovery action without remaining the central research problem.
+- No physical aircraft will be commanded by this research prototype.
+- The project remains separate from VERGE-CUAS.
 
-Machine-readable evidence is saved in [`results/reference/v0_1_held_out`](results/reference/v0_1_held_out). These results are synthetic and do not prove that physical flight is safe.
-
-## Intended affordable hardware
-
-The code is designed around a replaceable sensor adapter, so the landing algorithm does not depend on one manufacturer.
-
-### First hardware profile
-
-- **Terrain sensor:** VL53L5CX-class 8×8 multizone direct-ToF module.
-- **Companion computer:** Raspberry Pi Zero 2 W-class Linux computer.
-- **Flight controller:** a PX4- or ArduPilot-capable controller remains responsible for stabilization and failsafes.
-- **GPS-denied motion estimate:** flight-controller IMU/barometer plus a PMW3901-class downward optical-flow sensor and valid downward range.
-
-The 8×8 sensor was chosen over a single-point rangefinder because one downward ray can measure height but cannot independently prove slope, roughness, obstacle clearance, and full-footprint support.
-
-### Upgrade profile
-
-An LDROBOT LD19-class 2D scanning LiDAR can later produce denser downward or oblique scan slices. Pose-corrected slices will feed the same local elevation-grid interface, so the core detector does not need to be rewritten.
-
-The final sensor purchase remains provisional until the team confirms indoor/outdoor use, drone size and payload, local availability, and budget. See the [hardware architecture decision](docs/ADR-001-HARDWARE-CONSTRAINED-PIPELINE.md) for specifications, sources, alternatives, and integration gates.
-
-## Quick start
-
-### Requirements
-
-- Git
-- Python 3.10 or newer
-- No GPU required
-
-### Windows PowerShell
-
-```powershell
-git clone https://github.com/Marshmellow31/gps-denied-drone-navigation.git
-Set-Location gps-denied-drone-navigation
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -e ".[dev,plot]"
-.\.venv\Scripts\python.exe -m pytest -q
-```
-
-### Linux, macOS, or Google Colab terminal
-
-```bash
-git clone https://github.com/Marshmellow31/gps-denied-drone-navigation.git
-cd gps-denied-drone-navigation
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e ".[dev,plot]"
-python -m pytest -q
-```
-
-For an interactive walkthrough, open [`notebooks/01_hardware_constrained_baseline.ipynb`](notebooks/01_hardware_constrained_baseline.ipynb). The notebook contains a Colab bootstrap cell.
-
-## Run one simulation
-
-```bash
-python -m gps_denied_landing.cli run \
-  --scenario flat_obstacles \
-  --seed 2000 \
-  --output results/generated/example \
-  --plot
-```
-
-PowerShell accepts the same command on one line:
-
-```powershell
-python -m gps_denied_landing.cli run --scenario flat_obstacles --seed 2000 --output results/generated/example --plot
-```
-
-The output folder contains:
-
-- `manifest.json` — configuration, selected target, and metrics;
-- `layers.npz` — terrain and diagnostic arrays; and
-- `diagnostic.png` — a human-readable visual summary.
-
-## Reproduce the held-out benchmark
-
-```bash
-python -m gps_denied_landing.cli benchmark \
-  --seeds 20 \
-  --seed-start 2000 \
-  --output results/generated/held-out
-```
-
-Do not tune thresholds using seeds `2000–2019`; they are the frozen v0.1 evaluation partition. The command writes `runs.csv` and `summary.json`.
-
-## Available terrain scenarios
-
-| Scenario | What it tests |
-| --- | --- |
-| `flat_obstacles` | Mostly level ground with raised hazards |
-| `mixed_slope` | A safe region beside terrain that is too steep |
-| `rough_patch` | Smooth and rough surfaces in the same scene |
-| `step_and_pit` | Steps, depressions, and raised obstacles |
-| `no_safe_zone` | Safe failure when no valid landing footprint exists |
-
-## Safety philosophy
-
-An unsafe acceptance is more serious than rejecting a usable site. The baseline therefore follows these rules:
-
-1. Ground truth is generated before sensor corruption and never given to the detector.
-2. Unknown or low-confidence terrain is not silently treated as safe.
-3. The complete drone footprint, clearance margin, and localization uncertainty are checked.
-4. A scene may return `NO_SAFE_TARGET`; a target is never fabricated for demonstration purposes.
-5. The flight controller—not this Python package—will own stabilization, arming, manual override, link-loss response, and final failsafes.
-6. Physical flight requires separate hazard analysis, restrained tests, a geofenced site, a human pilot override, and applicable regulatory approval.
-
-LiDAR geometry also cannot determine whether water, weak roofing, deep grass, snow, or another visually flat material can support the aircraft. Material/semantic safety will require an additional sensing layer.
-
-## Development plan
-
-### Now: strengthen the simulation
-
-- Add an adaptive second-survey strategy.
-- Add direct sunlight, low-reflectivity, vibration, motion-distortion, and stronger pose-drift conditions.
-- Improve tests for every geometry layer and failure mode.
-- Add formatting, linting, type checks, and continuous integration.
-
-### Next: prove the cheap hardware path
-
-- Run the benchmark on a Raspberry Pi Zero 2 W and record p50/p95 latency, total RSS, temperature, and throttling.
-- Bench-test the chosen ToF/LiDAR against ramps, blocks, gravel, grass, dark cloth, reflective surfaces, and sunlight.
-- Record real sensor logs and replay them through the same detector.
-- Validate optical-flow plus range positioning with GPS disabled.
-
-### Later: integrate without weakening safety
-
-- Connect the stable core to PX4 Software-in-the-Loop.
-- Add stale-data, pose-quality, and companion-computer-loss failsafes.
-- Test target handoff and approach planning in simulation.
-- Progress through propellers-off, restrained/tethered, and controlled low-altitude tests only after each prior gate passes.
-
-Navigation and SLAM remain extensions. A complete, defensible safe-landing detector is more valuable for this course than several incomplete robotics integrations.
-
-## Repository map
+## Living repository layout
 
 ```text
 .
-├── src/gps_denied_landing/   # terrain, sensor, geometry, evaluation, and CLI code
-├── tests/                    # deterministic baseline tests
-├── notebooks/                # Colab/local interactive walkthrough
-├── results/reference/        # reviewed tuning, held-out, and example evidence
-├── results/generated/        # ignored local experiment output
-├── docs/                     # architecture, evaluation, roadmap, status, and decisions
-├── pyproject.toml            # package and dependency definition
-└── README.md
+├── README.md                         # this living roadmap and status page
+├── research_paper/
+│   ├── RESEARCH_GOAL.md              # initial agreed research direction
+│   ├── PLAN_REVIEW.md                # issues and recommended narrower study
+│   └── paper/                       # LaTeX source and build instructions
+├── output/pdf/main.pdf              # compiled proposal abstract
+├── old_data/                         # archived pre-paper safe-landing prototype
+│   ├── README.md
+│   ├── docs/
+│   ├── notebooks/
+│   ├── results/
+│   ├── src/
+│   ├── tests/
+│   └── pyproject.toml
+├── AGENTS.md                         # repository working instructions
+└── .gitignore
 ```
 
-## Detailed documentation
+As the research develops, new material should be organized approximately as follows:
 
-- [Current verified status](docs/CURRENT_STATUS.md)
-- [Hardware-constrained architecture decision](docs/ADR-001-HARDWARE-CONSTRAINED-PIPELINE.md)
-- [System architecture and module contracts](docs/ARCHITECTURE.md)
-- [Evaluation protocol](docs/EVALUATION.md)
-- [End-to-end execution plan](docs/EXECUTION_PLAN.md)
-- [Phased roadmap](docs/ROADMAP.md)
-- [Development setup](docs/SETUP.md)
-- [Task backlog](docs/TASKS.md)
-- [Decision log](docs/DECISIONS.md)
-- [Project boundaries](docs/PROJECT_CONTEXT.md)
+```text
+research_paper/
+├── RESEARCH_GOAL.md
+├── literature/                       # search protocol, paper matrix, notes
+├── protocol/                         # frozen hypotheses and experiment plan
+├── method/                           # equations, pseudocode, design decisions
+├── experiments/                      # run configurations and manifests
+├── analysis/                         # analysis code and derived tables
+├── figures/                          # publication figures with provenance
+├── paper/                            # manuscript and bibliography
+└── decisions/                        # dated research decisions and changes
+```
 
-## Project identity
+Directories will be created when their phase begins; an empty paper structure is not evidence of progress.
 
-This university design project is separate from VERGE-CUAS. General overlap in UAV concepts does not imply shared scope, deliverables, ownership, or competition objectives.
+## Archived prototype
+
+The previous hardware-constrained safe-landing prototype has been moved intact to [`old_data/`](old_data/). It is retained for provenance and possible reuse, but its assumptions, code, synthetic results, and documentation are **not automatically evidence for the new paper**.
+
+Its original overview is available at [old_data/README.md](old_data/README.md).
+
+## How this README will evolve
+
+Whenever new evidence or a major decision is added:
+
+1. update the current-status table and active phase;
+2. link the new artifact rather than duplicating it;
+3. record decisions, rejected alternatives, and reasons;
+4. separate confirmed facts from hypotheses and planned work;
+5. update diagrams if the method or workflow changes;
+6. preserve failed experiments and limitations; and
+7. date major protocol changes that could affect interpretation.
+
+This README is the project map. Detailed evidence belongs in versioned files under `research_paper/` and should be linked here as it becomes available.
+
+## Immediate next step
+
+The next step is **not implementation**. It is to create and execute the structured literature-review protocol, producing:
+
+1. research and search questions;
+2. keyword groups and database queries;
+3. inclusion and exclusion criteria;
+4. a paper-extraction matrix;
+5. a taxonomy of existing approaches;
+6. a research-gap map; and
+7. a shortlist of feasible simulator, dataset, baseline, and method combinations.
+
+Only after that evidence is reviewed will the research question, hypotheses, simulator, sensors, recovery actions, and evaluation metrics be frozen.
