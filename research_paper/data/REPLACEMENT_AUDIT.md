@@ -1,6 +1,6 @@
 # Replacement recording audit (original metadata review)
 
-**Update, 23 September 2026:** The Exp18 bag was subsequently downloaded to the Acer partition and inspected. Actual-file findings, including the usable reference span and tentative scene change, are in [HILTI_EXP18_INSPECTION.md](HILTI_EXP18_INSPECTION.md). The dated text below preserves what was known *before* that download; its storage warning is historical, not the current state.
+**Update, 23 September 2026:** The Exp18 bag was subsequently downloaded to the Acer partition, inspected, and used in one [55-second FAST-LIO smoke replay](HILTI_EXP18_REPLAY.md). Actual-file findings, including the usable reference span and tentative scene change, are in [HILTI_EXP18_INSPECTION.md](HILTI_EXP18_INSPECTION.md). The dated text below preserves what was known *before* that download; its storage and “not yet replayed” warnings are historical, not the current state. For the live next steps, see the [current handoff](../execution/CURRENT_HANDOFF.md).
 
 **Checked 23 September 2026. No new sensor bag was downloaded, no backend run was made, and no replacement has been accepted as study evidence.** The purpose of this note is to avoid repeating the GEODE body-frame/reference mistake before a multi-gigabyte download.
 

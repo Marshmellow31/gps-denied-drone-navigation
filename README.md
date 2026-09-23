@@ -60,6 +60,7 @@ No cameras were used by the navigation program. This new recording was collected
 
 - [Research goal](research_paper/RESEARCH_GOAL.md) — the precise scientific question.
 - [Current status](research_paper/execution/STATUS.md) — what is done and what remains.
+- [Start here for future work](research_paper/execution/CURRENT_HANDOFF.md) — the exact next checks and where the data live.
 - [New recording inspection](research_paper/data/HILTI_EXP18_INSPECTION.md) and [first trial](research_paper/data/HILTI_EXP18_REPLAY.md) — evidence behind this page.
 - [Execution plan](research_paper/AGENT_EXECUTION_PLAN.md) — the next research steps and review gates.
 - [Proposal manuscript](research_paper/paper/README.md) — not a results paper yet.

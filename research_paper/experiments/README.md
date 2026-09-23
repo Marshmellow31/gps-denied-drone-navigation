@@ -4,6 +4,8 @@ Status: FAST-LIO2 build and two development replays completed on 23 September 20
 
 **New replacement-data trial:** [Hilti-Oxford Exp18](../data/HILTI_EXP18_REPLAY.md) has since been inspected and replayed for 55 seconds using the [Hesai adapter](src/hesai_time_adapter.py) and [exploratory configuration](../configs/fastlio_hilti_exp18_exploratory.yaml). It produced plausible gross displacement but no formal error or recovery result. The GEODE record below is preserved as the earlier attempt, not replaced by the new trial.
 
+**For future work, start with the [current handoff](../execution/CURRENT_HANDOFF.md).** The GEODE setup and commands below are historical reproduction instructions, not the next experiment to run.
+
 ## Pinned inputs and source
 
 - GEODE LiDAR/IMU-only ROS 1 bag: `generated/raw/geode/Urban_Tunnel01/bag/Urban_Tunnel01_lidar_imu.bag`; SHA-256 `4d479cefb4e5dd1a5b14de95b0dc50377b2ab431135b9c5a766112869597cc17`; 2,857 Velodyne clouds and 28,570 IMU messages. Complete stream, including initialization before the second tunnel exit.

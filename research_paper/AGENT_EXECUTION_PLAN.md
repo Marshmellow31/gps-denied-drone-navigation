@@ -1,6 +1,6 @@
 # Agent execution plan: LiDAR recovery-reliability study
 
-Created: 22 September 2026. Planning document; no experiments or task completions are implied.
+Created: 22 September 2026. This is the original task specification, not a live completion record. Work and blockers through 23 September are in the [current handoff](execution/CURRENT_HANDOFF.md) and [status ledger](execution/STATUS.md). Resume from those files; do not restart T01 or treat the historical GEODE choice as the current dataset plan.
 
 ## 1. Objective and scope
 
@@ -18,7 +18,7 @@ The active scientific scope comes from [RESEARCH_GOAL.md](RESEARCH_GOAL.md) and 
 
 Question: after weak geometric constraints end, how reliably do existing LiDAR health indicators identify recovery of accurate local motion? Keep localizability, local-motion error and accumulated drift distinct. Use LiDAR/IMU recordings and controlled simulation. Do not build a navigation controller, purchase hardware, add camera inputs, or invent a new full estimator.
 
-This file specifies future work. Paths introduced below are proposed artifacts, not files already implemented. Backend commands, dataset identifiers, numerical thresholds and published-method equations must be verified during their assigned tasks; do not invent them from this plan.
+This file specifies the original sequence and acceptance checks. Some proposed artifacts below now exist; inspect the live ledger and files before deciding what remains. Backend commands, dataset identifiers, numerical thresholds and published-method equations must be verified during their assigned tasks; do not invent them from this plan.
 
 ## 2. How the user dispatches work
 

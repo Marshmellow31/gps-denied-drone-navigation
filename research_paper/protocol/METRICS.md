@@ -2,6 +2,8 @@
 
 Version: development `0.1`, 22 September 2026. These definitions make T06–T09 implementable; numerical outcome thresholds and final aggregation are not frozen until T11/R2. Any development result must say **provisional**.
 
+**Dataset update (23 September 2026):** The GEODE event and anchor example below is not a Hilti protocol. Hilti's 32–36 s scene change is tentative, its reference has gaps, and no recovery labels exist. Before applying 1 s/3 s windows or fixed alignment to Exp18, verify frames/reference and freeze a scene-based annotation independent of indicator and error curves. Keep invalid windows unavailable. See the [current handoff](../execution/CURRENT_HANDOFF.md).
+
 ## Quantities kept separate
 
 The study reports three different objects and does not substitute one for another:

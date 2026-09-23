@@ -2,6 +2,8 @@
 
 Version: provisional `0.1`, 22 September 2026. This contract governs T06–T09 development work. Numerical outcome rules remain provisional until T11/R2, but the units, transform direction, time representation, missing-data behavior, and truth isolation below are normative now.
 
+**Dataset update (23 September 2026):** The GEODE-specific examples below describe the original development sequence. A [Hilti Exp18 replacement trial](../data/HILTI_EXP18_REPLAY.md) exists, but its reference quaternion order, pose direction and comparison-body equivalence are not yet verified. Create sequence-specific reference metadata before formal errors; do not carry over GEODE timestamps, frame assumptions or event anchors. Hilti reference gaps and map-registration dependence must remain explicit. See the [current handoff](../execution/CURRENT_HANDOFF.md).
+
 ## Conventions
 
 ### Transforms and frames

@@ -1,5 +1,7 @@
 # Development sequence inspection: GEODE Urban_Tunnel01
 
+**Historical T04 selection:** GEODE was selected and inspected for the original development attempt. Its later FAST-LIO runs were not usable for recovery analysis, and its reference body remains unverified. The current provisional replacement development candidate is [Hilti-Oxford Exp18](HILTI_EXP18_REPLAY.md). Start future work from the [current handoff](../execution/CURRENT_HANDOFF.md); retain this page as GEODE provenance.
+
 Inspection completed: 22 September 2026. `Urban_Tunnel01` is accepted as the **development-only** real-recording candidate for a second tunnel exit. It supplies complete LiDAR/IMU initialization history and reference poses before and after the selected transition, but the reference is unavailable through most of the tunnel. This is ground-vehicle evidence, not aerial validation.
 
 ## Provenance and retained paths

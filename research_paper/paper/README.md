@@ -2,6 +2,8 @@
 
 Current scope: LiDAR recovery-indicator reliability. The earlier visual-degradation abstract has been superseded following the user's LiDAR preference. Novelty is provisional; see the scope decision before developing the manuscript.
 
+As of 23 September 2026, the Hilti Exp18 replay is only a development smoke test; there is no measured recovery or final-test result to write up. Use the [current handoff](../execution/CURRENT_HANDOFF.md) and [status ledger](../execution/STATUS.md) for the evidence gate before adding results.
+
 `main.tex` is a venue-neutral LaTeX article template. It contains the authors in the requested order and only a provisional abstract as manuscript content. Affiliations have not been supplied. Future sections are commented scaffolding, so no empty sections appear in the PDF. The proposal abstract must be rewritten around actual findings before submission.
 
 From the repository root, compile using a LaTeX installation with the geometry, lmodern, microtype, and hyperref packages:

@@ -2,6 +2,8 @@
 
 Captured: 22 September 2026 (Asia/Kolkata). This is a factual inventory, not proof that any dataset or LIO backend can run.
 
+**Historical T01 snapshot:** Subsequent work downloaded the Hilti Exp18 recording and built/replayed FAST-LIO in an isolated environment on the Acer partition. The disk and tool state below are the 22 September observations, not today's capacity or setup. Check live mount/free space before new work; use the [current handoff](CURRENT_HANDOFF.md) and [Hilti replay report](../data/HILTI_EXP18_REPLAY.md) for current evidence.
+
 ## Repository state
 
 - Working directory: `/home/harshil/Desktop/GPS Denied Drone navigation`

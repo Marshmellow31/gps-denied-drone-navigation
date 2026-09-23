@@ -1,6 +1,6 @@
 # Research Goal: Reliability after LiDAR Degeneracy
 
-Updated: 20 September 2026. Status: LiDAR-focused candidate scope; exact novelty pending. Supersedes the camera-outage proposal and broad adaptive-navigation proposal.
+Updated: 23 September 2026. Status: LiDAR-focused candidate scope; exact novelty and eligible recovery evidence pending. Supersedes the camera-outage proposal and broad adaptive-navigation proposal. For the live task state and next actions, start with the [current handoff](execution/CURRENT_HANDOFF.md) and [status ledger](execution/STATUS.md).
 
 ## Goal
 
@@ -42,6 +42,10 @@ The candidate empirical contribution is a transition-focused comparison of healt
 The NTNU aerial LiDAR-degeneracy recordings are a candidate because they were collected on a manually flown aerial robot. Reference accuracy/coverage and suitable recovery transitions still require verification. Ignore radar in estimator inputs.
 
 GEODE is a candidate supplementary degeneracy dataset, but some sequences have only position reference or lack suitable pose ground truth. Verify per-sequence metadata, frames and independence before use. Ground-platform results must not be called drone validation. If no suitable aerial reference exists, narrow the paper's claims rather than invent evidence.
+
+### Evidence checkpoint (23 September 2026)
+
+The GEODE development replays completed technically but their motion estimates were unusable; its reference body is unverified, so no formal errors or recovery labels can be claimed. A verified Hilti-Oxford Exp18 handheld recording is now a **provisional replacement development candidate**. A 55-second LiDAR/IMU-only FAST-LIO smoke replay produced poses and plausible gross movement, but reference quaternion/frame semantics, reference gaps, scene-transition validity and reference independence remain open. No health-indicator comparison, final-test result or paper finding exists yet. Hilti's map-registration-derived dense reference may support qualified development only; R1 must judge whether independent final evidence is needed. Details and exact next checks are in the [current handoff](execution/CURRENT_HANDOFF.md).
 
 ## Evaluation requirements
 

@@ -2,6 +2,8 @@
 
 Updated: 23 September 2026. Status values are `TODO`, `RUNNING`, `BLOCKED`, and `DONE`. A task is `DONE` only when its acceptance checks and handoff are complete. Review gates must audit the underlying artifacts rather than this ledger.
 
+**Resume work from the [current handoff](CURRENT_HANDOFF.md).** The table tracks the original task IDs; a successful Hilti smoke replay does not by itself complete T07, T08, T09 or R1.
+
 | ID | Status | Dependencies | Evidence / handoff |
 | --- | --- | --- | --- |
 | T01 | DONE | None | [Environment inventory](ENVIRONMENT.md); [handoff](handoffs/T01.md) |
@@ -27,3 +29,7 @@ Updated: 23 September 2026. Status values are `TODO`, `RUNNING`, `BLOCKED`, and 
 ## Current gate
 
 T01-T06 are complete as execution tasks on GEODE. T06's two FAST-LIO2 replays completed but grossly under-tracked motion, so neither supports a recovery claim. T07's offline math is implemented and tested, but its GEODE real-data acceptance is blocked by an unverified reference body; the generated streams explicitly contain zero valid local-error rows. The replacement Hilti-Oxford Exp18 bag was downloaded to the Acer partition, hash-verified, and [inspected as actual sensor/reference files](../data/HILTI_EXP18_INSPECTION.md). The new Hesai point-time adapter passed all 1,094 recorded clouds offline and 4 new unit tests. A [55-second FAST-LIO smoke replay](../data/HILTI_EXP18_REPLAY.md) completed with 546 valid poses and plausible gross movement, but no formal 6-DoF errors or recovery labels. A scene change around 32–36 s is tentative. Reference gaps, map-registration dependence and exact frame conventions remain scientific limits. Exp18 is **not yet** an accepted recovery dataset. T08/T09 and R1 are not satisfied. `Urban_Tunnel01`'s second exit remains development-only. No final-test evaluation has been performed. Numerical recovery thresholds remain unset until T11.
+
+## Next eligible work
+
+Verify the Hilti reference's quaternion order, pose direction, clock and comparison-body frame against publisher material before producing formal errors. Repair T07's GEODE-specific event selection, reference partition-before-sort behavior and reset-marker handling, with tests. Then assess the tentative Hilti transition from scene geometry alone and generate provisional development errors with explicit unavailable counts. Only after those gates, proceed to T08/T09 and the R1 review. The [current handoff](CURRENT_HANDOFF.md) gives the evidence paths and sequence; no final-test data should be used in this repair.

@@ -2,6 +2,8 @@
 
 Append-only record for the LiDAR recovery-reliability study. Amendments must add a new dated entry instead of rewriting prior decisions.
 
+For live status and next actions, use the [current handoff](CURRENT_HANDOFF.md) and [status ledger](STATUS.md). Earlier entries below are dated decisions, not necessarily the current work instruction.
+
 ## 2026-09-22 — D001: initialize from the active LiDAR scope
 
 - **Decision:** Use `RESEARCH_GOAL.md`, `SCOPE_DECISION.md`, `AGENT_EXECUTION_PLAN.md`, and the root `AGENTS.md` as the controlling scope and execution order.

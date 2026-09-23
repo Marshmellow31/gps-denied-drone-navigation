@@ -2,6 +2,8 @@
 
 20 September 2026. User correction: prioritize the research contribution; use LiDAR rather than cameras when a sensor modality is needed. No physical hardware is available or required. The camera-outage study is superseded.
 
+**Current-status note (23 September 2026):** This is the dated scope decision, not the live progress report. FAST-LIO2 has since been reproduced on GEODE and smoke-replayed on Hilti Exp18; neither replay establishes recovery. See the [current handoff](execution/CURRENT_HANDOFF.md) and [status ledger](execution/STATUS.md); Point-LIO has not been reproduced.
+
 ## Recommendation
 
 Investigate the reliability of existing LiDAR localization-health indicators during the transition out of geometric degeneracy. Separate recovery of accurate local motion from accumulated drift. This is a candidate empirical gap; it is not a verified novel algorithm.
@@ -44,7 +46,7 @@ No venue or acceptance probability is selected. First-week-of-November delivery 
 
 - [NTNU LiDAR degeneracy recordings](https://github.com/ntnu-arl/lidar_degeneracy_datasets) are recorded on a manually flown aerial robot and include LiDAR/IMU/radar. Confirm suitable independent reference and entry/exit intervals before choosing sequences. Ignore radar input.
 - [GEODE documentation](https://github.com/PengYu-Team/GEODE_dataset) describes sensor-frame transformations, position-only reference in some tunnels and missing pose truth for a staircase device. Do not assume every recording supports full pose-recovery metrics or is airborne.
-- [FAST-LIO2 code](https://github.com/hku-mars/FAST_LIO) is a candidate primary LIO backend; [Point-LIO](https://github.com/hku-mars/Point-LIO) is a replication candidate. Confirm point timestamps, IMU units, calibration and sensor-format compatibility. These are literature/tool candidates, not locally reproduced systems.
+- [FAST-LIO2 code](https://github.com/hku-mars/FAST_LIO) is the candidate primary LIO backend and has now been locally reproduced for development; [Point-LIO](https://github.com/hku-mars/Point-LIO) remains an unreproduced replication candidate. Point timestamps, IMU units, calibration and sensor-format compatibility still need sequence-specific verification before scientific conclusions.
 - Controlled synthetic geometry can isolate transition duration and geometry under matched motion. Simulated point clouds need an explicit sensing model; full LIO needs timed scans and inertial data. Ideal registration pairs support narrower registration claims only.
 
 ## Search record and next decision
