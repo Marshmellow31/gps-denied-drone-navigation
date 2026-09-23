@@ -12,6 +12,7 @@ venv/
 # Generated datasets and experiment outputs
 data/generated/
 results/generated/
+research_paper/experiments/generated/
 
 # Local environment and editor files
 .env
