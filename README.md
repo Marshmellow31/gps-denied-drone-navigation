@@ -1,48 +1,65 @@
-# Can a drone tell when its location estimate is trustworthy again?
+# Can a robot tell when it knows where it is again?
 
-**A research project about navigation when GPS is unavailable.** We study whether a navigation program can tell when it has recovered after passing through a place that is difficult to map, such as a long, plain tunnel.
+This is a research project about navigation when GPS is not available. We want to learn whether a robot can tell when its movement estimate has become reliable again after passing through a confusing place. The idea could help future GPS-denied drones, but **we have not tested a flying drone**.
 
 **Authors:** Harshil Patel, Daksha Lingampeta, Nisarg Vyas
 
-**Status (23 September 2026):** Research in progress. We have not proved that a drone can navigate safely with this work.
+**Status (23 September 2026):** Early experiments. No proven recovery result or flight-safety claim yet.
 
-## The idea in everyday language
+## The problem, in simple words
 
-Imagine walking through a tunnel whose walls look almost the same everywhere. If you can only look at the walls, it is hard to tell exactly how far you have walked. When you leave the tunnel, trees, buildings and corners give you better clues again.
+Imagine walking through a long passage where every wall looks alike. It is hard to tell how far you have walked. When you reach a larger room with corners and objects, there are more clues. But seeing more clues does not magically erase a wrong guess you made in the passage.
 
-A robot can have the same problem. It uses **LiDAR** (a sensor that measures distances with laser light) and an **IMU** (a sensor that measures movement and turning) to estimate where it is. Its estimate can become unreliable in a repetitive place. Even after it leaves, the program may keep giving an answer that looks confident but is wrong.
+A robot has a similar problem. It can use **LiDAR** (a laser distance sensor) and an **IMU** (a movement-and-turning sensor) to guess how it moved. We want to test the program's **health signal**: does it say “my movement estimate is good again” at the right time, or does it become confident too early?
 
-Our question is: **When useful surroundings return, can existing “health signals” correctly tell us whether the robot's movement estimate is accurate again?** We also want to know how often a signal says “all good” too early, and how long it takes to recognize real recovery.
+We will keep two questions separate:
 
-This is a study of *how trustworthy a warning or recovery signal is*. We are not building a new drone, flight controller, or complete navigation system.
+1. Is the robot measuring its **new movement** correctly now?
+2. Is its **total position** still wrong because of earlier mistakes?
 
-## How we plan to test it
+That difference is the heart of this research. We are testing existing warning signals, not building a new drone or a new complete navigation system.
 
-1. Use public recordings of LiDAR and IMU data, plus carefully controlled computer simulations. No drone purchase or physical flight is needed.
-2. Run an existing navigation program on the data. It estimates movement without using GPS or a camera.
-3. Record its health signals and movement estimates. Compare them with an **independent reference**—a separate measurement of what actually happened—only after the run. The navigation program must not see that reference while it is working.
-4. Look at the moment the robot leaves the difficult area. Count early “safe again” signals, late signals, missing answers and failures, not just successful cases.
+## Pictures from the new recording
 
-There are two different questions: “Is the robot measuring its *new movement* correctly?” and “Does it know its *total position* correctly?” Good new measurements do not automatically erase mistakes made inside the tunnel. We will report those separately.
+These are real LiDAR measurements from the **Hilti-Oxford Exp18** recording. The blue dot is the sensor. Dark marks show where the laser measured surfaces. Both pictures use the **same scale**, so the wider pattern on the right is not just a zoom effect.
 
-## What has happened so far
+![Two top-down LiDAR scans from the Hilti-Oxford Exp18 recording: most returns are close to the sensor at 25 seconds, while much more distant structure is visible at 40 seconds.](research_paper/figures/exp18_lidar_before_after.png)
 
-- We reviewed related research and inspected candidate public recordings. The exact new contribution still needs to pass a careful comparison with earlier papers.
-- We ran an existing LiDAR navigation program, FAST-LIO2, twice on one development recording. Both runs finished, but their estimated movement was far from the movement shown by the recording's reference. **A finished run is not a successful result.**
-- We built an offline comparison tool and its eight small tests pass. But the recording does not clearly identify the exact physical point whose position its reference tracks. Comparing positions as though that detail were known could give a misleading score. Therefore the real-data error scores are marked **unavailable**, not zero.
-- We have **not** completed the recovery experiment, a final test, or a research paper with findings. We cannot yet say which health signal works best—or that any works reliably for a drone.
+This suggests that the surroundings change, but it does **not** prove that the position estimate has recovered. The possible change around 32–36 seconds still needs a careful scene check.
 
-The next decision is whether to get a clear explanation of that recording's reference measurements or use a different recording with better documentation. We will keep the unsuccessful runs visible either way. See the [current task status](research_paper/execution/STATUS.md) for the detailed record.
+The next picture shows how much data we have. The laser and IMU recording lasts about 109 seconds. The published “answer key” path stops after about 87 seconds and has gaps. Our first trial used only the first 55 seconds. The gold band marks the possible scene change, **not** a measured recovery time.
 
-## What this project does not claim
+![Timeline of the Hilti-Oxford Exp18 data: sensor measurements last about 109 seconds, the reference path has gaps and stops at about 87 seconds, and our first trial covers 55 seconds.](research_paper/figures/exp18_data_timeline.png)
 
-The public recording used so far was collected on a ground vehicle, **not a flying drone**. Computer simulation and a ground-vehicle recording cannot prove flight safety. This project does not command a real aircraft and does not include a camera, landing controller, or complete GPS-free navigation system. The older safe-landing prototype is separate and is kept in [`old_data/`](old_data/README.md).
+The pictures are made from the downloaded recording; their [source, method and limits](research_paper/figures/README.md) are documented. Data credit: [Hilti-Oxford Dataset](https://hilti-challenge.com/dataset-2022), used under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
-## Where to read more
+## What we have actually done
 
-- [Research goal](research_paper/RESEARCH_GOAL.md) — the full question, boundaries and proposed measurements.
-- [Execution plan](research_paper/AGENT_EXECUTION_PLAN.md) — the step-by-step research plan and review gates.
-- [Current status](research_paper/execution/STATUS.md) — what is finished, paused or still planned.
-- [Development experiment](research_paper/experiments/README.md) — technical setup, exact inputs and run records.
-- [T07 handoff](research_paper/execution/handoffs/T07.md) — why trustworthy error scores are currently unavailable.
-- [Paper folder](research_paper/paper/README.md) — the proposal abstract and build instructions; it is not a results paper yet.
+We ran an existing LiDAR-and-IMU navigation program, **FAST-LIO**, on the first 55 seconds of the new recording. It read 551 laser scans and produced 546 estimated positions without crashing. We then did one basic check: how far did it say the sensor moved over each time span?
+
+| Time span in the recording | Program's movement | Published reference's movement |
+| --- | ---: | ---: |
+| 10–30 seconds | 7.82 m | 7.85 m |
+| 30–50 seconds | 12.02 m | 11.94 m |
+| 35–54 seconds | 9.47 m | 9.46 m |
+
+The distances are close. That is **encouraging, but not a score for accuracy**. Two paths can have almost the same length while taking different turns or ending in different places. We have not yet checked the full path, turning error, or whether any health signal correctly detects recovery. See the [trial report](research_paper/data/HILTI_EXP18_REPLAY.md) for the exact numbers and limits.
+
+Before this, we tried another public recording called GEODE. Its runs finished, but the movement estimates were clearly poor, and the reference path did not clearly identify the sensor frame needed for a fair comparison. We have kept those failures visible. Our offline comparison code now passes **12 small tests**, but passing code tests is not the same as proving the research idea.
+
+## What still needs to happen
+
+- Check that the new recording's reference path and the program's path describe the **same physical point and directions**. Only then can we calculate fair position-and-turning errors.
+- Treat missing reference sections as **unknown**, never as “zero error.” The available reference was made partly using LiDAR data, so it is not a completely independent answer key.
+- Mark the scene change carefully without looking at the program's mistakes or health signal, then test whether the signal announces recovery too early, too late, or not at all.
+- Repeat the study on separate scenes and in controlled simulation before making a general conclusion.
+
+No cameras were used by the navigation program. This new recording was collected with a **handheld sensor**, not a drone. Neither these data nor simulation can prove flight safety. The older, separate safe-landing prototype is kept in [`old_data/`](old_data/README.md).
+
+## Read more
+
+- [Research goal](research_paper/RESEARCH_GOAL.md) — the precise scientific question.
+- [Current status](research_paper/execution/STATUS.md) — what is done and what remains.
+- [New recording inspection](research_paper/data/HILTI_EXP18_INSPECTION.md) and [first trial](research_paper/data/HILTI_EXP18_REPLAY.md) — evidence behind this page.
+- [Execution plan](research_paper/AGENT_EXECUTION_PLAN.md) — the next research steps and review gates.
+- [Proposal manuscript](research_paper/paper/README.md) — not a results paper yet.

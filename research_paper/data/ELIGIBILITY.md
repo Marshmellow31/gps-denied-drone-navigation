@@ -2,6 +2,8 @@
 
 Audit date: 22 September 2026. This is a metadata audit for T03. No recording was downloaded and no test outcome was inspected. Properties are labelled **verified metadata**, **unknown until file inspection**, or **unsuitable**. Instrument specifications are not treated as demonstrated trajectory accuracy.
 
+This is the original pre-replay ranking. After `Urban_Tunnel01` proved unusable for formal pose-error claims, a separate [replacement metadata audit](REPLACEMENT_AUDIT.md) and [actual Hilti Exp18 inspection](HILTI_EXP18_INSPECTION.md) were made on 23 September 2026. They do not retroactively change this T03 record.
+
 ## Decision summary
 
 1. **Provisional development candidate: GEODE `Urban_Tunnel01` (`alpha`, vehicle).** It is the smallest listed urban-tunnel bag (3.2 GB), uses VLP-16 plus Xsens MTi-30, has claimed 6-DoF RTK/INS reference, and the official scenario description explicitly concerns tunnel entry/exit. T04 must verify actual topics, per-point time, calibration direction, reference columns/coverage, and a sufficiently long pre-event initialization segment before it is accepted.

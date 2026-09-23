@@ -20,6 +20,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True)
     parser.add_argument("--topic", default="/Odometry")
+    parser.add_argument("--clock-id", default="geode_ros_header_unix")
     args = parser.parse_args(rospy.myargv()[1:])
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -36,7 +37,7 @@ def main() -> None:
             if state["last_ns"] is not None and (ns < state["last_ns"] or frames != state["frames"]):
                 state["segment"] += 1
                 state["resets"] += 1
-                writer.writerow((ns, "geode_ros_header_unix", *frames, *("" for _ in range(7)),
+                writer.writerow((ns, args.clock_id, *frames, *("" for _ in range(7)),
                                  "false", "POSE_RESET_BOUNDARY", state["segment"], "RESET"))
             position = msg.pose.pose.position
             rotation = msg.pose.pose.orientation
@@ -44,7 +45,7 @@ def main() -> None:
             valid = all(math.isfinite(value) for value in values)
             qnorm = math.sqrt(sum(value * value for value in values[3:])) if valid else math.nan
             valid = valid and abs(qnorm - 1.0) <= 1e-5
-            writer.writerow((ns, "geode_ros_header_unix", *frames,
+            writer.writerow((ns, args.clock_id, *frames,
                              *(format(value, ".17g") if valid else "" for value in values),
                              str(valid).lower(), "" if valid else "POSE_INVALID", state["segment"], "POSE"))
             state["last_ns"] = ns

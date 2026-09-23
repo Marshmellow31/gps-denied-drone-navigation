@@ -1,0 +1,42 @@
+# Development-only Exp18 replay, pinned FAST-LIO 7cc4175d.
+# Hesai payload is converted to Velodyne-shaped fields by hesai_time_adapter.py.
+# Hilti calibration places PandarXT-32 under imu; FAST-LIO requests the
+# LiDAR pose in IMU frame. The imu/imu_sensor_frame alias needs replay review.
+common:
+  lid_topic: /velodyne_points
+  imu_topic: /alphasense/imu
+  time_sync_en: false
+  time_offset_lidar_to_imu: 0.0
+preprocess:
+  lidar_type: 2
+  scan_line: 32
+  scan_rate: 10
+  timestamp_unit: 0
+  blind: 0.2
+mapping:
+  acc_cov: 0.1
+  gyr_cov: 0.1
+  b_acc_cov: 0.0001
+  b_gyr_cov: 0.0001
+  fov_degree: 180.0
+  det_range: 100.0
+  extrinsic_est_en: false
+  extrinsic_T: [-0.001, -0.00855, 0.055]
+  extrinsic_R: [0.0, -1.0, 0.0,
+                -1.0, 0.0, 0.0,
+                0.0, 0.0, -1.0]
+publish:
+  path_en: false
+  scan_publish_en: false
+  dense_publish_en: false
+  scan_bodyframe_pub_en: false
+pcd_save:
+  pcd_save_en: false
+  interval: -1
+feature_extract_enable: false
+point_filter_num: 4
+max_iteration: 3
+filter_size_surf: 0.5
+filter_size_map: 0.5
+cube_side_length: 1000.0
+runtime_pos_log_enable: false

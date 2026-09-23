@@ -64,3 +64,24 @@ Append-only record for the LiDAR recovery-reliability study. Amendments must add
 - **Rationale:** The user could not adjudicate the matrix convention, and its notation is consistent with FAST-LIO's requested direction, so an explicitly exploratory replay was reasonable. The full run emitted poses but diverged catastrophically. A fresh run beginning 130 seconds into the recording retained 38 seconds of pre-entry initialization and avoided numeric explosion, yet grossly under-tracked translation across the covered post-exit interval. Both process replays completed; neither establishes useful local motion quality.
 - **Consequences:** T06's technical reproduction acceptance is met, while scientific suitability remains unresolved. T07 must enforce the documented common-body requirement and may emit unavailable formal errors if GEODE's reference body cannot be established. R1 must review whether to move the already planned Point-LIO candidate forward on this sequence or select a reference-verified alternative recording; no backend or dataset is silently replaced.
 - **Evidence:** `experiments/README.md`, ignored `experiments/generated/runs/T06_full/manifest.json` and `T06_event_local/manifest.json`, `execution/handoffs/T06.md`.
+
+## 2026-09-23 — D010: inspect Hilti Exp18 as a replacement development candidate
+
+- **Decision:** Keep GEODE failures unchanged and inspect Hilti-Oxford Exp18 as a new **development-only candidate**, without accepting it as a verified recovery event or final-test sequence. The user's Acer partition holds the publisher-hash-matching bag; no raw data enter Git.
+- **Rationale:** Hilti documents the reference IMU frame and publishes LiDAR calibration, removing one GEODE comparison-body uncertainty. Actual LiDAR/IMU streams and point timestamps are readable. LiDAR-only snapshots suggest a 32–36 s scene transition within the reference span. The dense reference has gaps, ends before the bag, and is derived from the mobile LiDAR against a surveyed map; the transition's geometric meaning and backend performance remain unverified.
+- **Consequences:** Build a Hesai-specific time-preserving adapter and perform one retained development replay before computing formal errors or making recovery claims. R1 must judge reference independence and event suitability. Do not treat the successful download or bag parsing as a completed scientific pilot.
+- **Evidence:** `data/HILTI_EXP18_INSPECTION.md`, `experiments/src/inspect_hilti_exp18.py`, and ignored LiDAR-only inspection images.
+
+## 2026-09-23 — D011: verify Hesai time conversion before backend replay
+
+- **Decision:** Convert Hilti's absolute float64 per-point timestamps to float32 scan-start offsets in a Velodyne-shaped cloud for the pinned FAST-LIO input path, without changing LiDAR coordinates or using reference poses. Keep this as a development adapter, not an estimator modification.
+- **Rationale:** The pinned backend lacks a Hesai handler, but its Velodyne path accepts `x,y,z,intensity,ring,time` and seconds input. All 1,094 actual Exp18 clouds passed ordered-point-time, schema, duration and header-agreement checks; maximum relative-time roundoff was 0.238 microseconds. Four focused adapter fixtures and the eight prior evaluator fixtures passed.
+- **Consequences:** Only the offline payload conversion is verified. The ROS wrapper, calibration interpretation and motion estimate still require a fresh, retained development replay. No numerical recovery claim follows from this adapter check.
+- **Evidence:** `experiments/src/hesai_time_adapter.py`, `experiments/src/verify_hesai_adapter.py`, `experiments/tests/test_hesai_time_adapter.py`, and `data/HILTI_EXP18_INSPECTION.md`.
+
+## 2026-09-23 — D012: retain a successful but noncanonical Hilti FAST-LIO smoke replay
+
+- **Decision:** Preserve one 55-second Hilti Exp18 LiDAR/IMU-only FAST-LIO development replay and its poses/logs/manifests on the Acer partition. Do not promote gross distance agreement to formal 6-DoF accuracy, recovery or indicator evidence.
+- **Rationale:** The built pinned backend produced 546 valid continuous poses; the ROS Hesai adapter published 551 clouds with zero rejections. Three exploratory displacement lengths were close to the dense reference, unlike GEODE's gross under-tracking. Yet frame equivalence and quaternion convention still require verification, the reference is map-registration-derived, and the smoke run did not capture complete resource/provenance fields.
+- **Consequences:** The technical feasibility signal is positive. Keep the run development-only and manifest status `partial`; perform explicit frame/reference review before T07 formal error calculation. The previous GEODE failures and R1 gate remain unchanged.
+- **Evidence:** `data/HILTI_EXP18_REPLAY.md`, `configs/fastlio_hilti_exp18_exploratory.yaml`, `experiments/run_hilti_exp18_smoke.sh`, and the Acer-side `runs/exp18_first55_exploratory/manifest.json`.
