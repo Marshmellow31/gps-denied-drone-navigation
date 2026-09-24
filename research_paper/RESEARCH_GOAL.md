@@ -1,6 +1,6 @@
 # Research Goal: Reliability after LiDAR Degeneracy
 
-Updated: 23 September 2026. Status: LiDAR-focused candidate scope; exact novelty and eligible recovery evidence pending. Supersedes the camera-outage proposal and broad adaptive-navigation proposal. For the live task state and next actions, start with the [current handoff](execution/CURRENT_HANDOFF.md) and [status ledger](execution/STATUS.md).
+Updated: 24 September 2026. Status: LiDAR-focused candidate scope; exact novelty and eligible recovery evidence pending. Supersedes the camera-outage proposal and broad adaptive-navigation proposal. For the live task state and next actions, start with the [current handoff](execution/CURRENT_HANDOFF.md) and [status ledger](execution/STATUS.md).
 
 ## Goal
 
@@ -43,9 +43,9 @@ The NTNU aerial LiDAR-degeneracy recordings are a candidate because they were co
 
 GEODE is a candidate supplementary degeneracy dataset, but some sequences have only position reference or lack suitable pose ground truth. Verify per-sequence metadata, frames and independence before use. Ground-platform results must not be called drone validation. If no suitable aerial reference exists, narrow the paper's claims rather than invent evidence.
 
-### Evidence checkpoint (23 September 2026)
+### Evidence checkpoint (24 September 2026)
 
-The GEODE development replays completed technically but their motion estimates were unusable; its reference body is unverified, so no formal errors or recovery labels can be claimed. A verified Hilti-Oxford Exp18 handheld recording is now a **provisional replacement development candidate**. A 55-second LiDAR/IMU-only FAST-LIO smoke replay produced poses and plausible gross movement, but reference quaternion/frame semantics, reference gaps, scene-transition validity and reference independence remain open. No health-indicator comparison, final-test result or paper finding exists yet. Hilti's map-registration-derived dense reference may support qualified development only; R1 must judge whether independent final evidence is needed. Details and exact next checks are in the [current handoff](execution/CURRENT_HANDOFF.md).
+The GEODE development replays completed technically but their motion estimates were unusable; its reference body is unverified, so no formal GEODE errors or recovery labels can be claimed. The Hilti-Oxford Exp18 handheld recording and 55-second LiDAR/IMU-only FAST-LIO smoke replay support a qualified **development pilot**. An [estimator-independent frame audit](data/HILTI_EXP18_FRAME_AUDIT.md) supports the comparison-body convention, and a [LiDAR-only audit](data/HILTI_EXP18_EVENT.md) fixed a scene-defined exit before errors were summarized. T07 now produces [audited development errors](evidence/HILTI_EXP18_T07_PILOT.md), but only 13/56 matched post-exit 1 s windows and 0/56 3 s windows have valid reference. The dense reference partly depends on LiDAR map registration. Thus T07 software acceptance is complete, while sustained recovery, indicator comparison, independent final truth and a paper finding remain **unproven**. Screen [alternative references](data/ALTERNATIVE_REFERENCE_AUDIT.md) before another large download; R1 cannot pass from Hilti alone. Details and exact next checks are in the [current handoff](execution/CURRENT_HANDOFF.md).
 
 ## Evaluation requirements
 

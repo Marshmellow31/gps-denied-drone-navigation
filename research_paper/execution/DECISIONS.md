@@ -87,3 +87,59 @@ For live status and next actions, use the [current handoff](CURRENT_HANDOFF.md) 
 - **Rationale:** The built pinned backend produced 546 valid continuous poses; the ROS Hesai adapter published 551 clouds with zero rejections. Three exploratory displacement lengths were close to the dense reference, unlike GEODE's gross under-tracking. Yet frame equivalence and quaternion convention still require verification, the reference is map-registration-derived, and the smoke run did not capture complete resource/provenance fields.
 - **Consequences:** The technical feasibility signal is positive. Keep the run development-only and manifest status `partial`; perform explicit frame/reference review before T07 formal error calculation. The previous GEODE failures and R1 gate remain unchanged.
 - **Evidence:** `data/HILTI_EXP18_REPLAY.md`, `configs/fastlio_hilti_exp18_exploratory.yaml`, `experiments/run_hilti_exp18_smoke.sh`, and the Acer-side `runs/exp18_first55_exploratory/manifest.json`.
+
+## 2026-09-24 — D013: withhold formal Exp18 errors pending exact body-axis provenance
+
+- **Decision:** Treat the Exp18 `_imu.txt` file as likely TUM `timestamp xyz xyzw` and FAST-LIO's `body` output as its IMU state, but do not set the comparison-body transform `verified: true` or calculate formal 6-DoF errors until the bag's `imu_sensor_frame`, released calibration's `imu`, and `_imu.txt` axes are reconciled with the publisher's rotated robot `base` frame.
+- **Rationale:** The publisher's 2022 evaluator and frame FAQ support an IMU-body reference, and the pinned backend source supports an IMU-state output. However, inspected publisher files do not explicitly prove the coordinate-axis identity of the differently named IMU frames or explain the Exp18 `_imu.txt` conversion from the robot model's `base` convention. A guessed identity or 180-degree rotation could give misleading rotation and translation errors.
+- **Consequences:** T07 remains BLOCKED for real-data acceptance. Sequence/event selection, gap partitioning and reset-marker repairs can proceed independently. The first replay remains a smoke test, not recovery evidence; publisher clarification or more direct source provenance is needed before metric release.
+- **Evidence:** `data/HILTI_EXP18_FRAME_AUDIT.md` and its primary-source links; read-only SHA checks of the released reference and calibration.
+
+## 2026-09-24 — D014: resolve Exp18 frame axes from raw gyroscope, not estimator error
+
+- **Decision:** For a future **development-only** Exp18 comparison, interpret the released `_imu.txt` quaternions as `xyzw` world-from-IMU in the same axes as the bag's IMU measurements. Do not apply the robot-model `base` rotation. D013's no-error gate remains in effect until T07 repairs and sequence-specific metadata are completed; its need for a publisher reply on axis identity is superseded by this estimator-independent diagnostic.
+- **Rationale:** Across 503 sufficiently sampled turning intervals, the reference-implied body angular rate and bag gyroscope differ by 0.0104 rad/s vector RMSE with near-unit per-axis correlations. Preselected 180-degree-base, inverse-pose and `wxyz` alternatives differ by 1.8640, 0.4906 and 1.3645 rad/s respectively. The test uses neither FAST-LIO poses nor error curves and is consistent with the publisher's reference/evaluator conventions.
+- **Consequences:** A publisher reply is not required to continue the development pilot. The dense reference shares LiDAR/IMU inputs with its generation process, so this check establishes frame convention, **not** independent truth or accuracy. R1 must still judge reference suitability. No formal errors, recovery labels or indicators have been generated yet.
+- **Evidence:** `data/HILTI_EXP18_FRAME_AUDIT.md`, `experiments/src/audit_hilti_gyro_reference.py`, and `experiments/tests/test_hilti_frame_audit.py`.
+
+## 2026-09-24 — D015: repair T07 boundaries and record qualified Hilti metadata
+
+- **Decision:** Record the Exp18 identity comparison-body choice in sequence-specific metadata for **development only**, with source hash, clock, provenance and reference gaps. Require an explicit event ID/entry timestamp, source-order reference partitioning, and preserved reset/invalid rows in T07. Do not compute event-anchored errors until the tentative scene transition is frozen from LiDAR geometry alone.
+- **Rationale:** The raw-gyroscope frame audit resolves the practical body-axis choice without fitting FAST-LIO to reference, while the old evaluator could silently apply the GEODE anchor, sort across source-order coverage boundaries, or drop reset rows. The actual Hilti reference contains 789 rows, 20 coverage segments and 19 excluded gaps under the provisional 0.20 s rule.
+- **Consequences:** The evaluator can be run with development-only Hilti metadata after a valid scene event is chosen, but its `verified` flag applies to the comparison-body convention, not reference independence or trajectory accuracy. T07 remains BLOCKED on real-data acceptance; no recovery label, error stream or final-test result was produced in this step.
+- **Evidence:** `data/hilti_exp18_reference_metadata.json`, `experiments/src/trajectory_eval.py`, 21 passing experiment tests, and `execution/handoffs/T07.md`.
+
+## 2026-09-24 — D016: keep Exp18 transition tentative after scene-only range audit
+
+- **Decision:** Treat about 31.6–33.1 s as a confirmed near/confined-to-farther-structure scene change, but do not freeze it as a weak-to-rich localization-recovery event yet.
+- **Rationale:** LiDAR-only range fractions and snapshots change sharply without examining estimator, indicator or error curves. Range does not measure whether 6-DoF scan registration is underconstrained before the transition or sufficiently constrained after it.
+- **Consequences:** Perform a predeclared LiDAR-only structural-diversity check, then freeze or reject the event before running event-anchored T07 errors. T07 remains BLOCKED and no recovery claim is authorized.
+- **Evidence:** `data/HILTI_EXP18_SCENE_GATE.md` and `experiments/src/audit_hilti_scene_ranges.py`.
+
+## 2026-09-24 — D017: freeze an Exp18 scene exit, not a recovery label
+
+- **Decision:** Use the LiDAR-only, prespecified structural audit to freeze an **exit-only candidate** interval 31.6–33.6 s relative to the first LiDAR header, nominal 32.6 s. Do not call it a degeneracy entry or a recovered-odometry time.
+- **Rationale:** A fixed 10-scan before/after comparison increased the minimum direction-information eigenvalue after the transition for all six predeclared 6-DoF cap/rotation-scale combinations. This supports an environmental weak-to-richer-constraint interpretation without choosing the event from estimator error or indicator peaks. The scan-local proxy lacks FAST-LIO's map correspondences, weighting and IMU prior, and the recording starts inside the apparently confined section.
+- **Consequences:** T07 may calculate event-anchored **development** errors. Its alignment target is explicitly pre-exit, not the originally planned pre-entry drift anchor. The event itself does not prove estimator recovery, and R1 still needs suitable independent reference coverage.
+- **Evidence:** `protocol/HILTI_SCENE_STRUCTURE.md`, `data/hilti_exp18_scene_structure.csv`, `data/HILTI_EXP18_EVENT.md`, and tested `experiments/src/audit_hilti_scene_structure.py`.
+
+## 2026-09-24 — D018: close T07 software acceptance but reject Hilti-only recovery inference
+
+- **Decision:** Mark T07 DONE under its stated acceptance of tested offline metrics plus audited valid/invalid real-development streams. Do **not** mark T09 or R1 complete or infer sustained recovery from Exp18. Screen small reference/metadata files before another large dataset download.
+- **Rationale:** The 55-s Hilti replay yields 1,092 provisional local-error rows, with 422/546 valid 1-s starts and 344/546 valid 3-s starts over the full replay. In the matched post-exit interval, only 13/56 1-s and 0/56 3-s windows are reference-valid. The publisher reference also partly uses LiDAR map registration, so it is not an independent final truth. Twenty-four experiment tests pass. Preliminary alternative screening finds multiple attractive scenes with position-only or discontinuous truth.
+- **Consequences:** Hilti remains a qualified development pilot and possible failure/availability figure. A publishable transition-reliability claim needs an independently referenced, sufficiently covered real event or an explicitly narrowed simulation-primary question reviewed at R1. No final test or threshold selection occurred.
+- **Evidence:** `evidence/HILTI_EXP18_T07_PILOT.md`, `data/ALTERNATIVE_REFERENCE_AUDIT.md`, `execution/handoffs/T07.md` and current status ledger.
+
+## 2026-09-24 — D019: derive the conventional indicator from pinned FAST-LIO correspondences
+
+- **Decision:** T08 will begin with the first six point-to-plane measurement-Jacobian columns in pinned FAST-LIO's `h_share_model`, after its own accepted-correspondence selection. A normalized measurement-only information matrix with declared rotational lever scales 1, 3 and 5 m is the conventional baseline. Keep the independent Hilti raw-scan structural proxy separate. T08 remains RUNNING until actual backend export, pose-parity and development replay evidence exist.
+- **Rationale:** The pinned backend provides the exact accepted map planes, points and translation/rotation Jacobian at the relevant online stage. Their unweighted outer-product matrix is auditable; a raw-scan proxy lacks correspondences and would mislabel an unrelated quantity as the estimator's health. Scale sensitivity and accepted-point count prevent an arbitrary single eigenvalue from appearing self-explanatory. Four independent analytic/geometry fixtures pass; they do not prove replay integration.
+- **Consequences:** No threshold, recovery decision, X-ICP reproduction or paper result is claimed. The export must be optional and checked against an unchanged pose stream. The full experiment test suite now passes 28/28.
+- **Evidence:** `protocol/FASTLIO_INFORMATION_DIAGNOSTIC.md`, `experiments/src/fastlio_information.py`, and `experiments/tests/test_fastlio_information.py`.
+
+## 2026-09-24 — D020: retain preliminary T08 export, stop before claiming acceptance
+
+- **Decision:** Version the optional diagnostic patch and replay script, preserve the short export-on/off pose-parity result, and leave T08 RUNNING. The final patch's full 55-second replay was interrupted at the user's request and its partial output is not evidence. Stop the running process before the GitHub push.
+- **Rationale:** The preliminary patch compiled; 12-second on/off pose CSVs were byte-identical, and a prior 55-second export produced valid rows but omitted startup-unavailable rows. The final patch adds explicit startup reasons and compiles, but has not completed the full replay/provenance audit. Treating the earlier output as final would hide a known coverage defect.
+- **Consequences:** No indicator threshold, recovery comparison or T08 completion claim. The [T08 in-progress handoff](handoffs/T08.md) specifies the clean next run and checks. No large raw or partial generated data enter Git.
+- **Evidence:** `experiments/patches/fast_lio_health_diagnostic.patch`, `experiments/run_hilti_health_smoke.sh`, and `protocol/FASTLIO_INFORMATION_DIAGNOSTIC.md`.

@@ -2,7 +2,7 @@
 
 Version: development `0.1`, 22 September 2026. These definitions make T06–T09 implementable; numerical outcome thresholds and final aggregation are not frozen until T11/R2. Any development result must say **provisional**.
 
-**Dataset update (23 September 2026):** The GEODE event and anchor example below is not a Hilti protocol. Hilti's 32–36 s scene change is tentative, its reference has gaps, and no recovery labels exist. Before applying 1 s/3 s windows or fixed alignment to Exp18, verify frames/reference and freeze a scene-based annotation independent of indicator and error curves. Keep invalid windows unavailable. See the [current handoff](../execution/CURRENT_HANDOFF.md).
+**Dataset update (24 September 2026):** The GEODE event and **pre-entry** anchor example below is not a Hilti protocol. Hilti's [exit-only scene interval](../data/HILTI_EXP18_EVENT.md) was fixed independently of estimator errors and indicators. The [T07 development pilot](../evidence/HILTI_EXP18_T07_PILOT.md) uses a separately named **pre-exit** anchor at 25 s; its accumulated error is not canonical pre-entry drift. Only 13/56 matched post-exit 1 s windows and 0/56 3 s windows have valid reference, so no sustained-recovery label exists. Keep invalid windows unavailable and do not infer a result from the surviving rows. See the [current handoff](../execution/CURRENT_HANDOFF.md).
 
 ## Quantities kept separate
 

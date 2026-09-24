@@ -2,7 +2,7 @@
 
 Version: provisional `0.1`, 22 September 2026. This contract governs T06–T09 development work. Numerical outcome rules remain provisional until T11/R2, but the units, transform direction, time representation, missing-data behavior, and truth isolation below are normative now.
 
-**Dataset update (23 September 2026):** The GEODE-specific examples below describe the original development sequence. A [Hilti Exp18 replacement trial](../data/HILTI_EXP18_REPLAY.md) exists, but its reference quaternion order, pose direction and comparison-body equivalence are not yet verified. Create sequence-specific reference metadata before formal errors; do not carry over GEODE timestamps, frame assumptions or event anchors. Hilti reference gaps and map-registration dependence must remain explicit. See the [current handoff](../execution/CURRENT_HANDOFF.md).
+**Dataset update (24 September 2026):** The GEODE-specific examples below describe the original development sequence. A [Hilti Exp18 replacement trial](../data/HILTI_EXP18_REPLAY.md), [frame audit](../data/HILTI_EXP18_FRAME_AUDIT.md), and [sequence metadata](../data/hilti_exp18_reference_metadata.json) now exist. Publisher conventions and an estimator-independent gyroscope check strongly support its `xyzw` world-from-IMU reference in the bag IMU axes for development. T07's evaluator boundaries were repaired; freeze or reject the Hilti scene event before formal errors. Do not carry over GEODE timestamps, frame assumptions or event anchors. Hilti reference gaps and map-registration dependence must remain explicit. See the [current handoff](../execution/CURRENT_HANDOFF.md).
 
 ## Conventions
 

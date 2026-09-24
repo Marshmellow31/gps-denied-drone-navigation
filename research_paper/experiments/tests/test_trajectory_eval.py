@@ -1,4 +1,7 @@
 import sys
+import hashlib
+import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -8,7 +11,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from trajectory_eval import (  # noqa: E402
     NSEC, Pose, ReferenceIndex, accumulated_error, alignment, evaluate,
-    local_error, slerp, timestamp_ns,
+    load_body_transform, load_estimates, load_reference, local_error, slerp, timestamp_ns,
 )
 
 
@@ -92,6 +95,86 @@ class TrajectoryEvaluationTests(unittest.TestCase):
     def test_decimal_timestamp_rounds_once(self):
         self.assertEqual(timestamp_ns("1.0000000005"), 1_000_000_000)
         self.assertEqual(timestamp_ns("1.0000000015"), 1_000_000_002)
+
+    def test_reference_source_order_boundary_prevents_sort_bridging(self):
+        # Global sorting would invent continuity at 0.1--0.2 seconds.
+        reference = ReferenceIndex([pose(0), pose(0.1, x=1), pose(0.31, x=3),
+                                    pose(0.2, x=2), pose(0.4, x=4)])
+        self.assertEqual(reference.source_order_decreases, 1)
+        self.assertEqual(reference.associate(round(0.15*NSEC))[1], "REFERENCE_GAP")
+        self.assertIsNone(reference.associate(round(0.05*NSEC))[1])
+
+    def test_reference_file_preserves_original_line_numbers(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "ref.txt"
+            path.write_text("0 0 0 0 0 0 0 1\n0.1 1 0 0 0 0 0 1\n")
+            reference = load_reference(path)
+            self.assertEqual([item.source_row for item in reference.poses], [1, 2])
+
+    def test_reset_marker_is_retained_and_blocks_window_and_drift(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "poses.csv"
+            path.write_text("timestamp_ns,x_m,y_m,z_m,qx,qy,qz,qw,valid,unavailable_reason,segment_id,event\n"
+                            "0,0,0,0,0,0,0,1,true,,0,POSE\n"
+                            "1000000000,,,,,,,,false,POSE_RESET_BOUNDARY,1,RESET\n"
+                            "1000000000,1,0,0,0,0,0,1,true,,1,POSE\n"
+                            "2000000000,2,0,0,0,0,0,1,true,,1,POSE\n")
+            estimates = load_estimates(path)
+            reference = ReferenceIndex([pose(t, x=t) for t in (0, 1, 2)], max_bracket_ns=2*NSEC)
+            rows = evaluate(estimates, reference, IDENTITY_T, 5*NSEC, "e", "r", windows_s=(1.0,))
+            self.assertEqual(len(rows), 4)
+            self.assertEqual(rows[0]["unavailable_reason"], "WINDOW_CROSSES_RESET")
+            self.assertEqual(rows[1]["unavailable_reason"], "POSE_RESET_BOUNDARY")
+            self.assertFalse(rows[1]["pose_valid"])
+            self.assertTrue(rows[2]["local_valid"])
+            self.assertFalse(rows[2]["alignment_valid"])
+
+    def test_development_metadata_requires_explicit_scope_and_matching_reference(self):
+        with tempfile.TemporaryDirectory() as directory:
+            reference = Path(directory) / "ref.txt"
+            reference.write_text("0 0 0 0 0 0 0 1\n")
+            metadata_path = Path(directory) / "metadata.json"
+            metadata_path.write_text(json.dumps({
+                "verified": True, "evaluation_scope": "development_only", "clock_id": "test_clock",
+                "source": {"artifact_name": "ref.txt", "sha256": hashlib.sha256(reference.read_bytes()).hexdigest()},
+                "comparison_body": {"T_est_body_to_ref_body": IDENTITY_T.tolist()},
+            }))
+            with self.assertRaisesRegex(ValueError, "development-only"):
+                load_body_transform(metadata_path, reference, False)
+            np.testing.assert_array_equal(load_body_transform(metadata_path, reference, True), IDENTITY_T)
+            reference.write_text("changed\n")
+            with self.assertRaisesRegex(ValueError, "hash"):
+                load_body_transform(metadata_path, reference, True)
+
+    def test_window_uses_first_same_segment_endpoint(self):
+        estimates = [pose(0), pose(0.96, x=0.96, segment=0),
+                     pose(1.0, x=1, segment=1), pose(1.03, x=1.03, segment=0)]
+        reference = ReferenceIndex([pose(t, x=t) for t in (0, 0.96, 1.0, 1.03)],
+                                   max_bracket_ns=2*NSEC)
+        rows = evaluate(estimates, reference, IDENTITY_T, 5*NSEC, "e", "r", windows_s=(1.0,))
+        self.assertEqual(rows[0]["window_end_ns"], round(0.96*NSEC))
+        self.assertTrue(rows[0]["local_valid"])
+
+    def test_pose_clock_mismatch_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "poses.csv"
+            path.write_text("timestamp_ns,clock_id,x_m,y_m,z_m,qx,qy,qz,qw,valid,unavailable_reason,segment_id,event\n"
+                            "0,wrong,0,0,0,0,0,0,1,true,,0,POSE\n")
+            with self.assertRaisesRegex(ValueError, "POSE_CLOCK_UNMAPPED"):
+                load_estimates(path, "expected")
+
+    def test_explicit_pre_exit_anchor_is_not_confused_with_pre_entry(self):
+        estimates = [pose(t, x=t) for t in (0, 1, 2)]
+        reference = ReferenceIndex(estimates, max_bracket_ns=2*NSEC)
+        rows = evaluate(estimates, reference, IDENTITY_T, None, "exit_only", "run",
+                        windows_s=(1.0,), alignment_target_ns=0)
+        self.assertTrue(all(row["alignment_valid"] for row in rows))
+        without_anchor = evaluate(estimates, reference, IDENTITY_T, None, "exit_only", "run",
+                                  windows_s=(1.0,))
+        self.assertTrue(all(not row["alignment_valid"] for row in without_anchor))
+        with self.assertRaisesRegex(ValueError, "either pre-entry"):
+            evaluate(estimates, reference, IDENTITY_T, 5*NSEC, "e", "r",
+                     alignment_target_ns=0)
 
 
 if __name__ == "__main__":

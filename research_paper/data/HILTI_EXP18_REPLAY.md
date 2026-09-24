@@ -2,6 +2,8 @@
 
 23 September 2026. **Exploratory software smoke test, not a recovery result.** The 55-second replay contains the tentative 32–36 s scene change but was not tuned on a final-test sequence.
 
+**24 September successor:** The [frame audit](HILTI_EXP18_FRAME_AUDIT.md) strongly supports the reference's `xyzw` world-from-IMU convention in the bag IMU axes using a raw-gyroscope check independent of FAST-LIO output. The evaluator still needs repair and no formal 6-DoF error has been calculated; the smoke observations below are unchanged.
+
 ## What ran
 
 - Source: publisher-hash-verified [Hilti-Oxford Exp18 recording](HILTI_EXP18_INSPECTION.md), LiDAR and IMU topics only. Cameras and dense reference were not passed to FAST-LIO.

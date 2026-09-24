@@ -2,6 +2,10 @@
 
 Inspected 23 September 2026. **Development candidate only.** A subsequent [55-second FAST-LIO smoke replay](HILTI_EXP18_REPLAY.md) produced poses; no formal pose-error calculation, health-indicator export, or recovery finding has been made on this recording.
 
+**24 September successor:** The [frame audit](HILTI_EXP18_FRAME_AUDIT.md) uses the bag gyroscope, publisher evaluator and backend source to support a development-only common IMU-body convention. It does not establish independent accuracy or a recovery result. The inspection account below remains the raw-file record.
+
+The later [LiDAR-only scene gate](HILTI_EXP18_SCENE_GATE.md) narrows the visible near-to-far change to about 31.6–33.1 s, but does not accept it as a weak-to-rich recovery event. The original broader visual estimate below is retained as inspection history.
+
 ## Provenance and storage
 
 - Recording: official [Hilti-Oxford 2022 Exp18 Corridor Lower Gallery 2](https://hilti-challenge.com/dataset-2022), downloaded from the publisher's [dataset repository](https://huggingface.co/datasets/Hilti-Research/hilti-slam-challenge-2022).
