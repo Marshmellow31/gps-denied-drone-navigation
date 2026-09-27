@@ -1,8 +1,8 @@
 # Provisional evaluation metrics
 
-Version: development `0.1`, 22 September 2026. These definitions make T06–T09 implementable; numerical outcome thresholds and final aggregation are not frozen until T11/R2. Any development result must say **provisional**.
+Version: T11 protocol `0.4`, frozen 26 September 2026 after R2 PASS and a 51/51 file-hash read-back; see [`FREEZE.md`](FREEZE.md). The user approved the full-triple-within-20-seconds recovery deadline and formal x=-6 m route. This freezes the analysis plan, not implementation, publication novelty or a recovery result. No batch before T13/T14 implementation gates; held-out work remains gated on R3.
 
-**Dataset update (24 September 2026):** The GEODE event and **pre-entry** anchor example below is not a Hilti protocol. Hilti's [exit-only scene interval](../data/HILTI_EXP18_EVENT.md) was fixed independently of estimator errors and indicators. The [T07 development pilot](../evidence/HILTI_EXP18_T07_PILOT.md) uses a separately named **pre-exit** anchor at 25 s; its accumulated error is not canonical pre-entry drift. Only 13/56 matched post-exit 1 s windows and 0/56 3 s windows have valid reference, so no sustained-recovery label exists. Keep invalid windows unavailable and do not infer a result from the surviving rows. See the [current handoff](../execution/CURRENT_HANDOFF.md).
+**Data update (26 September 2026):** Hilti remains a supporting illustration; only 13/56 matched post-exit 1 s windows and 0/56 3 s windows have usable reference. The primary pilot is the truth-isolated v3 simulation in [SIMULATION_MOTION_V3.md](../evidence/SIMULATION_MOTION_V3.md), with the four-seed fixed-layout follow-up in [SIMULATION_SEED_SENSITIVITY.md](../evidence/SIMULATION_SEED_SENSITIVITY.md). All v1/v2/v3 runs remain development data, and seeds 10–13 share one geometry cluster. No threshold or recovery label has been selected from final-test data. See the [current handoff](../execution/CURRENT_HANDOFF.md).
 
 ## Quantities kept separate
 
@@ -42,19 +42,44 @@ local_rotation_error_rad  = acos(clamp((trace(R_rel) - 1) / 2, -1, 1))
 
 Rates divide these errors by the actual `t1 - t0`, not by nominal `tau`. Endpoint reference poses use the interpolation policy in the data contract. There is no new global alignment at either endpoint.
 
-### Provisional windows
+### Frozen T11 local windows
 
-- Primary development window: `tau = 1.0 s`.
-- Secondary sensitivity window: `tau = 3.0 s`.
-- End-pose selection tolerance: `±0.05 s` in the same pose segment.
+- Primary: non-overlapping `tau = 1.0 s` windows on an integer-second
+  simulation-clock grid. Associate each nominal integer boundary once to the
+  nearest valid estimator pose within `±0.05 s`, ties to the earlier pose;
+  reuse that same associated pose as the previous window's end and the next
+  window's start. If no pose matches, the boundary is unavailable. This T11
+  label rule is more specific than the generic evaluator row policy in
+  [DATA_CONTRACT.md](DATA_CONTRACT.md). Use actual associated timestamps for
+  window durations and the event deadline.
+- Secondary: `tau = 3.0 s`, reported as translation/rotation error rates per
+  actual window duration. It is a sensitivity outcome, not a second label.
+- Causal indicator sample: latest diagnostic record (valid or invalid) at or
+  before a planned decision tick, maximum age `0.2 s` and same estimator
+  segment. If that latest record is invalid, do not skip it to reuse an older
+  healthy value. No future values/interpolation.
 
-At the roughly 10 Hz LiDAR/output cadence, one second spans about ten scans and tests useful short-horizon motion without reducing the 38.4 s post-nominal-exit reference horizon to only a few observations. Three seconds tests whether apparent recovery persists over a longer local interval. These are development settings, not evidence-derived final choices. T11 must assess motion magnitude, reference uncertainty, autocorrelation, and pilot variability before freezing them.
+One second spans about ten scans at the current 10 Hz stream. The 3 s outcome
+checks whether local error persists over a longer interval. All current pilots
+are development data. R2 froze the numerical tolerances and study budget below.
 
-The denominator for each window is the number of candidate start timestamps for which a same-segment end timestamp should exist in the declared evaluation horizon. Report valid-window count and coverage fraction separately. Invalid windows never enter mean/median error as zeros.
+The denominator for each window is the number of planned integer-grid windows
+for which both nominal boundaries should exist in the evaluation horizon.
+Report valid-window count and coverage separately. Each nominal boundary may
+map to only one unique pose; actual boundary times must increase strictly and
+both endpoints must lie in the same segment. A window with actual duration
+outside `[0.9,1.1] s`, a reset barrier, or a missing endpoint is invalid. Invalid
+windows never enter mean/median error as zeros.
 
 ## Fixed-alignment accumulated pose error
 
-For development, choose an alignment anchor at the valid associated estimator pose nearest `entry_start - 5.0 s`, requiring an absolute time difference no larger than `0.05 s`. This places the anchor before the annotated geometry boundary and within independently covered reference for `UT01_TUNNEL2`. Define exactly once:
+For each planned scene, set one alignment anchor at the valid associated
+estimator pose nearest `entry_start - 5.0 s`, with an absolute tolerance of
+`0.05 s`. For v3, the predeclared simulation anchor is `t=5 s` (epoch
+1005 s); the body first crosses x=0 at 9.25 s. Future route templates must
+record their entry time and anchor before replay. Real Hilti's old pre-exit
+anchor is historical supporting evidence and is not mixed into the simulation
+summary. Define the transform exactly once:
 
 ```text
 T_G_W = T_G_B^r(t_anchor) * inverse(T_W_B^e(t_anchor))
@@ -64,52 +89,306 @@ E_acc(t) = inverse(T_G_B^r(t)) * T_G_B^aligned(t)
 
 Translation and rotation error use the same norm and `SO(3)` angle definitions as above. This is an `SE(3)` alignment with scale fixed to 1.0. It is not recomputed at entry, exit, after a reset, or for each window. A reset/discontinuity remains visible under the original alignment or becomes explicitly unavailable if frame semantics are lost.
 
-The single-anchor rule is transparent and avoids an underdetermined trajectory fit, but it is sensitive to one reference/estimate sample. T11 must compare a preregistered multi-pose rigid alternative on development data if needed; it may not choose the alternative from final-test outcomes.
+The primary protocol uses this single alignment anchor only. It is transparent
+and avoids an underdetermined trajectory fit, but is sensitive to one
+reference/estimate sample. No multi-pose alternative is authorized in the
+current protocol; if a test fixture shows the anchor rule is not computable,
+return to R2 with the failure evidence before batches rather than selecting a
+new alignment from favorable results.
 
-## Provisional event horizons
+## Frozen event anchor and horizon
 
-For each transition, retain its annotated interval and nominal boundary. T09's development timeline should display at least:
+Each simulation event records its CAD doorway plane, body-path crossing time,
+and a separate scene-only ray/normal audit. The crossing is a layout anchor,
+not a claim that the estimator becomes observable at that instant. It is
+independent of online indicators and estimation error. In v3, body exit at
+x=12 m is 24.25 s; v3 only covers 15.75 s afterward, sufficient for the
+feasibility pilot but shorter than the final planned horizon.
 
-- pre-exit context from 10 s before `exit_start` where sensor/pose data exist;
-- the full exit interval `[exit_start, exit_end]`;
-- post-exit evaluation through 30 s after `exit_nominal`, or to the last available stream/reference sample if earlier.
+The final study will run each prescribed route for 60 s, with at least 20 s
+after the last weak-geometry exit. T14's formal randomized profile must start
+at `x=-6 m` (rather than the feasibility-smoke profile's `x=-5 m`) while
+keeping the same rest, speed ramp and smooth 3D motion shape. This gives
+10.5 s before the body crosses the entry plane at `x=0`; its exit time is
+`t_exit = 3 + (6 + L)/0.8 s`, at most 33 s for `L=18 m`, leaving 27 s after
+exit in a 60 s run. The T12 seed-14 smoke used the legacy start and remains
+feasibility-only; T14 must regenerate the full development split using the
+formal profile and record a new run ID. Show at least 10 s of pre-entry
+context, the complete annotated weak interval, and the full post-exit horizon.
+If a scene's planned trajectory fails to provide that coverage, the event is
+invalid for the primary recovery analysis and remains in the failure ledger.
+No event boundary may be moved after viewing an indicator/error curve.
 
-For `UT01_TUNNEL2`, quantitative truth-based output begins only when valid reference resumes at relative `243.870 s`; the earlier portion of the exit interval is visibly `REFERENCE_UNCOVERED`. No error is inferred through the 70.816 s tunnel gap.
+Hilti's 31.6–33.6 s interval remains an exit-only supporting illustration.
+Its matched post-exit reference gaps and partly LiDAR-map-derived truth make
+it ineligible for the primary quantitative recovery outcomes.
 
 ## Recovery labels
 
-A hindsight local-recovery label will mean that both local translation and rotation errors satisfy frozen tolerances for every valid evaluation window over a frozen sustained duration. It may look forward over that duration. The online indicator decision at time `t` may use only information available at or before `t`.
+A **1 s local-motion window passes** when both its relative translation
+error is at most `0.20 m` and its relative rotation error is at most
+`5 degrees`. These cutoffs are borrowed as operational reference points from
+DCReg's published registration-pair success definition (RRE <5 degrees,
+RTE <0.2 m; see the audited supplement). Applying them to a 1 s LIO motion
+window is an explicit adaptation, not the same registration metric. Sensitivity
+labels use half and double tolerances: `0.10 m/2.5 degrees` and
+`0.40 m/10 degrees`.
 
-T05 intentionally does **not** assign translation/rotation tolerances, sustained duration, or minimum valid-window fraction. Those choices require T09 development error distributions, stated reference uncertainty, and T10 indicator semantics, and are assigned to T11. Until then:
+For every randomized layout, candidate 1 s windows use nominal integer
+simulation-clock boundaries. Associate each boundary once to the nearest
+valid estimator pose within `±0.05 s`, ties to the earlier pose, and reuse the
+same pose for adjacent windows. The first candidate nominal boundary is
+`ceil(t_exit)`; if its actual associated pose is at/before `t_exit`, skip that
+boundary and continue to the next integer. Window `k` runs from the associated
+pose at boundary `k` to the associated pose at `k+1`. `recovery_onset` is the
+actual associated start time of the earliest triple of consecutive valid
+windows that each passes both limits. All three actual window endpoints must
+be no later than `t_exit+20 s`. `recovery_confirmation` is the actual
+associated endpoint of the third window; it can never occur outside that 20 s
+horizon. A missing/invalid boundary/window breaks the triple; do not slide or
+re-anchor the grid. This resolves the boundary case where a triple could
+otherwise begin before, but finish after, the deadline.
+A 3 s relative-motion window is reported separately as translation and
+rotation error rates; the corresponding rate limits are `0.20 m/s` and
+`5 degrees/s`, and it is a sensitivity outcome, not the label.
 
-- `recovery_label` is `null`;
-- no false-reassurance rate or recovery-delay number is reported;
-- plots may show raw indicator and raw errors but cannot label recovered/not-recovered regions.
+For a truth-label-eligible event, reference poses must cover every required
+1 s window endpoint from the first post-exit candidate through `t_exit+20 s`;
+no gaps are bridged or replaced with zero. Missing reference coverage makes
+the event's primary recovery label unavailable and it remains in the
+availability/failure ledger. A missing or invalid **estimated** pose window
+does not make truth unavailable and cannot pass the recovery rule. If the run
+completed and no passing triple is confirmed by the deadline, report
+`NO_RECOVERY_WITHIN_HORIZON`; a crashed, timed-out or incomplete run remains
+`RUN_FAILED`/`RUN_INCOMPLETE` per the data contract and is not recoded as
+non-recovery. Recovery labels may use future reference windows. Indicators
+and their decisions at time `t` may use only data timestamped at or before `t`.
 
-Failure to produce enough truth-valid windows yields unavailable recovery, not recovered or unrecovered by assumption.
+The first qualifying triple defines the primary recovery episode. For
+event-level primary sensitivity, a confirmation before `recovery_onset` is a
+premature false-healthy declaration, never a successful recovery alarm. A
+qualifying recovery alarm must be confirmed at or after the onset and before
+the first subsequent 1 s window that either fails a cutoff or has an invalid
+estimated pose/segment in a completed run. The associated actual start boundary
+of that window is `relapse_time`; set `recovery_end=min(relapse_time,t_exit+20 s)`, or the event
+deadline if no relapse occurs. A whole-run crash/timeout is `RUN_FAILED`/
+`RUN_INCOMPLETE`, not a relapse or a non-recovery. Such an attempt is excluded
+from completed-event primary denominators, retained in the failure ledger, and
+reported in the scheduled-run completion rate. One technical retry is allowed
+only for a documented execution/environment failure with identical input,
+configuration and code; the first successful attempt is primary, and all
+failed attempts remain visible. Never retry because a metric/error is
+unfavorable or replace a failed seed with another layout. The primary onset
+remains the first recovery episode; later recoveries are descriptive only.
+Report false-healthy time/declarations during any relapse interval separately
+rather than silently changing the first onset. Negative detection delays are
+not possible by definition.
 
-## Indicator decisions and association
+These are development-proposed tolerances, not flight-safety tolerances or
+evidence of a real drone requirement. R2 freezes the label cutoffs and their
+half/double sensitivity values before batches.
 
-Raw indicator values retain their native timestamp and semantics. A causal decision at evaluation time uses the most recent valid indicator sample at or before that time, subject to a method-specific maximum age declared before evaluation. No future sample may be used. T08/T10 must document whether a value describes a scan start, scan end, registration linearization, or state update.
+## Indicator decisions and reliability metrics
 
-Thresholds are development-only until frozen. A method that emits no decision is unavailable, not automatically unhealthy. Decision availability must accompany all reliability metrics so an always-silent indicator cannot appear safe.
+Each score is timestamped at the scan-to-map update. Evaluate the state
+machine at every 0.1 s tick from simulation time zero. For primary event
+metrics, use the ticks from the first grid tick at or after `t_exit` through
+ticks strictly before `t_exit+20 s`. At each tick, associate the latest
+**record** (valid or invalid) at or before that time, no more than `0.2 s` old
+and from the same estimator segment. If no such record exists, the latest
+record is invalid, or a reset/segment boundary intervenes, the decision is
+`UNAVAILABLE`; never skip a newer invalid row to reuse an older healthy value.
+No future sample, geometry label or reference value enters the score or
+decision.
 
-## Metrics to freeze in T11
+- `FASTLIO_MIN_EIG_G3` emits healthy when its development-selected threshold
+  is met. Fit that threshold using development layouts only: choose the
+  threshold with the greatest post-onset recovery sensitivity while keeping
+  the conditional event false-healthy rate at or below `10%`. Ties choose the
+  more conservative (higher) threshold. If no threshold satisfies the limit,
+  report `NO_FEASIBLE_OPERATING_POINT`; do not relax the limit on held-out data.
+- `DCREG_SCHUR_MASK` emits healthy only when no rotational or translational
+  direction is flagged using the paper's fixed `kappa_th=10`. Do not tune this
+  comparator threshold on the study data.
+- For either method, debounce is a two-state machine (`INACTIVE`,
+  `CONFIRMED_HEALTHY`). In `INACTIVE`, three distinct healthy diagnostic
+  records on three consecutive planned ticks cause one transition to
+  `CONFIRMED_HEALTHY`, timestamped at the third **decision tick**; retain the
+  three diagnostic source timestamps separately. While active, further
+  healthy ticks do not emit new alarm events. Any unhealthy, unavailable or
+  cross-segment tick resets the count and returns to `INACTIVE`; reusing the
+  same source-record timestamp on adjacent ticks also resets an inactive
+  candidate count and cannot count as a new sample. After a reset, a new run
+  of three distinct records can create a new alarm. The state machine runs
+  before the event as well, so a persistent pre-onset alarm remains visible at
+  exit but cannot be counted as a new post-onset recovery alarm.
 
-Subject to exact T11 definitions, the final protocol must include:
+For FAST-LIO threshold selection, use only the 32 randomized development
+geometry seeds `14–45`; fixed-layout seeds `10–13` remain feasibility and
+implementation evidence, not operating-point training events. No score model
+is fitted, so this is development threshold calibration, not cross-validation.
+Only corridor runs enter the threshold objective; controls remain paired by
+geometry seed for separate healthy-scene analysis. Candidate thresholds are
+every unique finite valid `G_3m` score in those development runs plus an
+explicit `NO_ALARMS` candidate. Healthy means `score >= threshold`. Among
+thresholds with a conditional event false-healthy rate at most `10%`, maximize
+recovery sensitivity across all truth-recovered corridor events. A no-score
+event or no qualifying post-onset alarm is a sensitivity miss. Ties choose
+the higher numeric threshold; `NO_ALARMS` is the final, zero-sensitivity
+candidate. If the false-healthy denominator is zero or every feasible
+threshold has zero sensitivity, report `NO_FEASIBLE_OPERATING_POINT`. Apply
+one selected global threshold to every layout; never tune per-scene values.
+R2 freezes this selection procedure and all recovery thresholds. The realized
+FAST-LIO numeric threshold is computed only from development outputs and
+locked at R3 before held-out outputs are opened.
 
-| Metric | Required interpretation / denominator |
+Matched feature-rich controls do not receive a post-degeneracy recovery onset
+or enter primary recovery-delay/sensitivity denominators, because they have no
+prespecified weak-geometry interval. Report them separately as healthy-scene
+controls: local-motion accuracy, indicator availability and the fraction of
+available decisions marked healthy/degenerate, paired by geometry seed.
+
+Report these event-level outcomes with eligible denominators:
+
+| Outcome | Numerator / denominator |
 | --- | --- |
-| Local translation/rotation error | Raw per-window values plus event-cluster summaries; never pooled adjacent frames as independent replicates. |
-| Accumulated translation/rotation error | Raw fixed-alignment values; descriptive outcome separate from local recovery. |
-| Decision availability | Eligible online decision timestamps with a valid causal indicator decision divided by all eligible timestamps. |
-| Truth-label availability | Timestamps/events with sufficient independent reference windows divided by all planned timestamps/events. |
-| False reassurance | Healthy/recovered indicator decisions when the frozen truth label says local motion is not recovered; denominator and unavailable handling must be reported explicitly. |
-| Recovery-detection delay | First sustained causal healthy decision relative to the independently annotated exit anchor or truth-recovery time, with the chosen definition stated. Non-detections are right-censored, not discarded. |
-| Failure to recover | Explicit event outcome when truth never meets sustained recovery within the horizon. |
-| Crash/reset/missing-output rate | Planned runs/events affected, reported separately and included in availability accounting. |
+| False-healthy event rate (primary, conditional) | Truth-label-eligible corridor clusters whose debounced `CONFIRMED_HEALTHY` state is active during the initial unrecovered interval `[t_exit,recovery_onset)` (or through the deadline for a non-recovery) / truth-label-eligible corridor clusters with at least one available decision in that interval. A zero denominator is undefined, not 0%. |
+| False-healthy event incidence (unconditional) | Same false-healthy numerator / all truth-label-eligible corridor clusters with a non-empty initial unrecovered interval, including events with no available decisions. |
+| False-healthy time fraction (conditional) | Decision ticks at which `CONFIRMED_HEALTHY` is active during initial unrecovered time / all available decision ticks during that time. |
+| False-healthy time fraction (unconditional) | Same numerator / all planned decision ticks during initial unrecovered time. |
+| Recovery sensitivity | Recovered corridor clusters with an `INACTIVE -> CONFIRMED_HEALTHY` transition at or after `recovery_onset` and before `recovery_end` / all truth-recovered, truth-label-eligible corridor clusters. A premature alarm, no available decision or no qualifying post-onset transition is a miss. |
+| Detection delay | `confirmation_time - recovery_onset` for qualifying post-onset alarms; otherwise right-censor at `recovery_end = min(first relapse time, t_exit+20 s)`. Delay is never negative. Report detection fraction with median delay among detections. |
+| Decision availability | Decision times with valid score / all eligible planned decision times, by method and event. |
+| Run completion | Fully completed scene replays / all scheduled corridor and control scene replays; list every failed attempt and final run state separately. |
+| Truth-label availability | Corridor events with reference coverage at every required primary window endpoint through `t_exit+20 s` / all planned corridor events. Report reasons for each unavailable event. |
+| Non-recovery | Completed, truth-label-eligible corridor events with no qualifying triple confirmed by `t_exit+20 s`; report separately, never discard. Crashes/timeouts are `RUN_FAILED`/`RUN_INCOMPLETE`, not non-recovery. |
+| Relapse | Truth-recovered corridor events with a later planned 1 s window that either has valid estimates but fails a cutoff, or has an invalid estimated pose/segment in a completed run, before the deadline / truth-recovered corridor events with complete post-onset truth coverage. Report first relapse time; do not move the primary first-onset label. |
+| Post-relapse false-healthy event rate (secondary, conditional) | Relapsed corridor events with `CONFIRMED_HEALTHY` active at any decision tick from `relapse_time` through the deadline / relapsed events with at least one available decision in that interval. Report the unconditional numerator / all truth-eligible relapsed events alongside it. |
+| Post-relapse false-healthy time fraction (secondary) | Active `CONFIRMED_HEALTHY` ticks after relapse / available ticks after relapse (conditional) and / all planned ticks after relapse (unconditional). |
 
-Operating points must be chosen on development data or by a preregistered false-alarm budget. Final-test thresholds cannot be tuned. Uncertainty is clustered by independent trajectory/event (and simulation seed/scene where applicable), never by treating nearby frames as independent samples.
+Except for run-completion and truth-label-availability rows, primary outcome
+denominators require both complete reference coverage and a successfully
+completed corridor replay. Incomplete attempts remain visible in the run
+completion/failure ledger and are not silently replaced by a different seed.
+
+For threshold-free curves, each available 0.1 s decision tick is labeled
+`UNRECOVERED` before onset and after the first relapse, and `RECOVERED` from
+onset until relapse or the deadline. Use FAST-LIO `G_3m` as its higher-is-
+healthier score and `1/max(kappa)` over DCReg's six direction ratios as the
+DCReg higher-is-healthier score (`0` when any ratio is infinite). Exclude
+unavailable ticks from curves and report their count/availability separately.
+Give each geometry cluster total weight one by assigning each of its valid
+ticks weight `1 / number_of_valid_ticks_in_that_cluster`. Compute weighted
+ROC-AUC by trapezoidal interpolation after grouping tied scores; compute
+precision-recall average precision as the step sum
+`sum((recall_i-recall_(i-1))*precision_i)` after grouping tied scores. A curve
+is unavailable if the pooled labels lack either class. Paired corridor/control
+differences use the geometry seed as the pairing unit. Nearby frames are never
+independent replicates.
+
+## Allowed development tuning before R3
+
+R2 freezes the simulation geometry/noise/bias profile, event/label thresholds,
+screen limits, detector formulas, DCReg `kappa_th=10`, score definitions,
+denominators, statistical intervals and run schedule. No LIO configuration,
+simulator factor, outcome cutoff, DCReg threshold or per-scene setting may be
+selected from development or held-out results. The sole scientific operating
+value selected after R2 is one global FAST-LIO `G_3m` threshold, using the
+development-only deterministic rule above; it is recorded and locked at R3
+before any held-out outputs are opened. The half/double label tolerances are
+fixed sensitivity analyses, not candidates for choosing a preferred headline.
+T13 may make source-parity/correctness fixes only; any change affecting score
+values requires a dated amendment and regeneration of all affected development
+evidence before R3. T14 may implement the already frozen route/layout generator
+and its tests but may not adjust factors after seeing LIO outcomes. Technical
+retries follow the single-retry rule above and never create new independent
+events.
+
+## Uncertainty and planned splits
+
+The proposed [split manifest](../data/SPLITS.csv) places v1/v2/v3 seed-10
+attempts and v3 seeds 11–13 in one fixed-layout development cluster. It
+reserves 32 randomized straight-corridor development layouts in a central
+range (length 9–13 m, half-width 1.6–2.4 m). It reserves at least 12 held-out
+layouts in each of four non-overlapping length/width strata (short/long ×
+narrow/wide), with up to 20 per stratum if the development-only precision
+rule requires expansion. Every event has a paired feature-rich control. No
+held-out layout or output has been generated or inspected. Geometry
+randomization and split enforcement remain T12/T14 implementation work.
+
+The four-seed fixed-layout pilot gives an initial paired corridor-minus-control
+1 s translation-median standard deviation of `0.162 m`; its seeds share one
+geometry and do not determine the final count. For the 32 formal randomized
+development seeds, define the interior as body positions with
+`x in [L/4,3L/4)`, corresponding on the formal route to
+`t in [3+(6+L/4)/0.8, 3+(6+3L/4)/0.8)`. Use integer-second candidate starts
+inside that time interval and the primary non-overlapping 1 s windows. Each
+of the 32 seed pairs must have at least five planned interior windows and all
+of those windows valid in both corridor and control; if any pair fails this
+coverage rule, do not substitute another seed or compute a favorable partial
+variance—return to R2 with the failure evidence. For each scene, calculate the
+median local translation error over those exact windows; for each geometry
+seed calculate corridor median minus its paired control median. Compute
+`s_dev` as the sample standard deviation with denominator `n-1` across the 32
+independent geometry-seed differences. For target 95% confidence half-width
+`h=0.10 m`, calculate `n_cont=ceil((1.96*s_dev/h)^2)`, round `n_cont` up to a
+multiple of four, and set `n_test=max(48,n_cont)`.
+
+Start with 12 eligible held-out geometry seeds per stratum; if `n_test` is
+larger, add one seed per stratum per round in **ascending reserved seed order**
+until the target count is reached. Apply the geometry-only screen before any
+LIO replay; if a candidate fails, record it and try the next reserved seed in
+that same stratum. If any stratum cannot supply its target by seed 119/139/159/
+179, stop and return to R2; do not substitute from another stratum.
+If `n_test > 80`, stop and return to R2 with a revised budget; do not inspect
+held-out outputs to decide whether to expand.
+For event-rate outcomes, 48 held-out events give a worst-case binomial 95%
+half-width of about 14 percentage points. If the continuous-metric calculation
+requires more than 48 held-out events, expand only before opening any held-out
+outputs, up to the reserved maximum of 80. If it exceeds 80, return to R2 with
+an amended budget rather than inspect outcomes.
+
+For event proportions, report 95% Wilson score intervals on geometry-event
+counts, pooled and separately by stratum. For continuous paired outcomes,
+first compute each geometry seed's paired difference of the corridor and
+control per-seed medians over the predeclared interior windows. The overall
+point estimate is the unweighted mean of the four stratum-specific means;
+report each stratum mean too. Other continuous per-seed summaries use the same
+two-stage aggregation: median over that seed's planned valid windows, then
+mean across seeds within each stratum, then equal-weight mean of the four
+stratum means. Use 10,000 stratified geometry-seed bootstrap
+replicates with `numpy.random.Generator(numpy.random.PCG64(20260926))`, under
+Python 3.12.14 and NumPy 2.5.3. In fixed order
+`short_narrow`, `short_wide`, `long_narrow`, `long_wide`, draw exactly `n_h`
+geometry seeds with replacement from each stratum's ascending selected-seed
+list (`n_h` is the selected geometry count for that stratum, equal across
+strata), preserving each seed's corridor/control pair. Recompute the same
+equal-stratum mean and event-weighted ROC/AP statistics in every replicate.
+Report 2.5th/97.5th percentiles using NumPy `method="linear"`. This estimates
+uncertainty conditional on these four
+fixed design strata, not a population of arbitrary corridor types.
+
+The final confirmatory analysis requires all planned `n_test` geometry pairs
+to have complete corridor/control runs and usable primary interior windows.
+After the single technical retry, any failed pair remains in the ledger and is
+not replaced; report completion and successful-run summaries as descriptive
+only, with no confirmatory interval/claim under the planned sample size. If a
+ROC/AP bootstrap replicate contains only one truth class, its curve statistic
+is undefined; if any of the 10,000 replicates is undefined, mark that curve's
+confidence interval `UNAVAILABLE` and report the undefined-replicate count
+rather than silently dropping it. The four strata remain within
+straight-corridor topology; no transfer claim to different topologies, stairs,
+natural scenes or real buildings is permitted. Repeated noise/bias runs on the
+fixed v3 layout do not count as new geometry events.
+
+R2 freezes the recovery-label thresholds, DCReg `kappa_th=10`, healthy-state
+debounce rule, timestamp/age rules, threshold-candidate set, selection
+objective and test analysis before held-out IDs are generated. The
+FAST-LIO threshold value itself is learned from randomized development outputs
+by that frozen rule and locked at R3 before the held-out outputs are opened.
+If development variance or the resource audit shows the planned sample cannot
+estimate the stated outcomes, return to R2 with an amendment rather than
+examining test scores to tune the protocol.
 
 ## Numerical safeguards
 

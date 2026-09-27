@@ -4,6 +4,11 @@ Created: 22 September 2026. This is the original task specification, not a live 
 
 ## 1. Objective and scope
 
+**26 September amendment:** the user approved
+[simulation-primary evidence](SCOPE_AMENDMENT_SIMULATION.md). Its amended
+T09/R1 acceptance and pre-R1 T12 feasibility bootstrap supersede the original
+real-reference requirement below. R2/R3 and final-test separation are unchanged.
+
 Complete the first three milestones shown in the project schedule:
 
 | Deadline | Required outcome |
@@ -211,7 +216,7 @@ If real data are unsuitable, a controlled registration pilot can support a narro
 
 **Depends on:** R1 PASS, T02, T08.
 
-Write `protocol/INDICATORS.md` selecting the relevant X-ICP/SuperLoc formulation after evidence review. Specify equations/code revision, required inputs, operating meaning, computational stage, scaling, priors and any adaptation to the primary backend. Define comparison conditions and expected validation fixtures. If equal point selection/residuals cannot preserve the published method, document the mismatch and design a separate controlled comparison or ablation; do not force false equivalence.
+Write `protocol/INDICATORS.md` selecting the relevant published detector formulation after evidence review. X-ICP/SuperLoc remain candidates; R1's 26 September 2026 literature refresh also adds DCReg as a direct detector comparator. Specify exact equation/code revision, required inputs, operating meaning, computational stage, scaling, priors and any adaptation to the primary backend. Define comparison conditions and expected validation fixtures. If equal point selection/residuals cannot preserve the published method, document the mismatch and design a separate controlled comparison or ablation; do not force false equivalence.
 
 **Acceptance:** implementation instructions contain no missing mathematical steps; naming distinguishes original method from adaptation; reviewer can assess fairness before coding.
 

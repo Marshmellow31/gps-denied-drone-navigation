@@ -1,0 +1,175 @@
+{
+  "date": "2026-09-26",
+  "status": "development_only_feasibility_pilot",
+  "task": "T12 bootstrap revision and amended T09 timeline",
+  "repository_relative_paths_root": "research_paper/",
+  "scientific_claim": null,
+  "base_git_revision": "f09f62fa805082b8138a44a2f43833f68e0c39d3",
+  "backend": {
+    "name": "FAST-LIO",
+    "upstream_revision": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+    "health_diagnostic_patch_sha256": "ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2",
+    "cxx17_build_patch_sha256": "6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275",
+    "configuration_sha256": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "clock_id": "simulation_epoch",
+    "epoch_s": 1000.0
+  },
+  "model": {
+    "duration_s": 40,
+    "development_seed": 10,
+    "room_x_m": [[-12, 0], [12, 30]],
+    "corridor_x_m": [0, 12],
+    "room_half_width_m": 6,
+    "corridor_half_width_m": 2,
+    "ceiling_floor_z_m": [-1, 2],
+    "portal_shoulders": "At x=0 and x=12, opaque wall rectangles cover y=[-6,-2] and [2,6], z=[-1,2]; y=[-2,2] remains open.",
+    "corridor_control_baffles_x_m": [2, 5, 8, 11],
+    "trajectory": "2 s rest; 2 s quintic speed ramp to 0.8 m/s; smooth curved x/y/z path and analytic ZYX roll, pitch and yaw; body crosses x=0 at 9.25 s and x=12 at 24.25 s.",
+    "lidar": {
+      "rate_hz": 10,
+      "azimuth_columns": 360,
+      "elevations": 16,
+      "elevation_span_deg": [-15, 15],
+      "range_noise_sd_m": 0.01,
+      "acquisition_time_per_scan_s": 0.1
+    },
+    "imu": {
+      "rate_hz": 200,
+      "white_noise_sd": {"gyro_rad_s": 0.002, "accel_m_s2": 0.02},
+      "initial_bias_sd": {"gyro_rad_s": 0.003, "accel_m_s2": 0.03},
+      "random_walk_sd_per_sqrt_s": {"gyro_rad_s": 0.0001, "accel_m_s2": 0.001},
+      "realized_initial_gyro_bias_rad_s": [0.000367320676794171, -0.0020875383039291612, 0.0000741317391199299],
+      "realized_final_gyro_bias_rad_s": [0.0010865595557044663, -0.002232490095832362, 0.00030155301787580487],
+      "realized_initial_accel_bias_m_s2": [0.030564619575079232, 0.007287959924112833, 0.0005805301364738248],
+      "realized_final_accel_bias_m_s2": [0.02822623998097081, 0.008313336986781269, -0.008175994407335633],
+      "paired_bias_and_noise_streams_identical": true
+    },
+    "limitations": [
+      "Bias/noise values are development stress settings, not sensor calibration evidence.",
+      "LiDAR and IMU use ideal clocks and identity extrinsics.",
+      "Surfaces are axis-aligned opaque rectangles; no materials or intensity model.",
+      "One scene pair and one seed; no generalization or recovery threshold.",
+      "Synthetic truth is independent of estimator computation but is not physical ground truth."
+    ]
+  },
+  "sensor_bags": {
+    "topics": {"/sim/points": 400, "/sim/imu": 8021},
+    "truth_topic_present": false,
+    "serialized_imu_count": 8021,
+    "serialized_imu_sha256_both_runs": "b6fca2614385fca2aaebf1a68d3b9afe3a3ed09f73439fe9ef019a2273fbe160",
+    "corridor": {
+      "path": "experiments/generated/simulation_bootstrap/sim-recovery-dev10-v3/sensors.bag",
+      "size_bytes": 53835662,
+      "sha256": "b4179905ebfbc72de68d6ce9dbddff15cc3c4da6493738879d5135022ebadfc4"
+    },
+    "control": {
+      "path": "experiments/generated/simulation_bootstrap/sim-recovery-control10-v3/sensors.bag",
+      "size_bytes": 53835662,
+      "sha256": "ab84ece1b22030d421b10c7dc0582662a7ab6d9d487b9be98e2e52930b70a508"
+    },
+    "reference": {
+      "sha256_both_runs": "00ca58fccb4b9d9bf12cf3ef2b5cf1f5c3b2f6d5d5d4075546470f6943f9f2ce",
+      "metadata": "data/simulation_motion_v3_reference_metadata.json"
+    }
+  },
+  "runs": {
+    "corridor": {
+      "directory": "experiments/generated/runs/SIM40_v3_corridor",
+      "pose_rows": 397,
+      "health_timestamp_groups": 400,
+      "health_valid_groups": 397,
+      "health_startup_unavailable_rows": {"BACKEND_FIRST_SCAN": 3, "UNDISTORTED_CLOUD_EMPTY": 3, "MAP_INITIALIZATION": 3},
+      "evaluation_rows": 794,
+      "evaluation_local_valid": 754,
+      "evaluation_unavailable": {"WINDOW_INCOMPLETE": 40},
+      "reference_gaps": 0,
+      "pose_sha256": "e5a7406fb6543ced98858432fa80b09dbb9cf1b1bcabe2bec3065b930ce9673d",
+      "health_sha256": "e6203d64e9f91b9a986e5e910ac1c903f8677cfafdefec3125cd9e6b7a3fbea5",
+      "evaluation_sha256": "e216117ef04c10fdb15ea61761e3e0bc1878475ff4dd1f5a783b84125132a3f4"
+    },
+    "control": {
+      "directory": "experiments/generated/runs/SIM40_v3_control",
+      "pose_rows": 397,
+      "health_timestamp_groups": 400,
+      "health_valid_groups": 397,
+      "health_startup_unavailable_rows": {"BACKEND_FIRST_SCAN": 3, "UNDISTORTED_CLOUD_EMPTY": 3, "MAP_INITIALIZATION": 3},
+      "evaluation_rows": 794,
+      "evaluation_local_valid": 754,
+      "evaluation_unavailable": {"WINDOW_INCOMPLETE": 40},
+      "reference_gaps": 0,
+      "pose_sha256": "939db1ab2b10417a01017e1b1097e2d0663bddf176ddc2f58f7fa234e02b1397",
+      "health_sha256": "67c84d43350a9d0b21f1d4daf5239c9a509a578004cce050dfcd7a016d6ccc0f",
+      "evaluation_sha256": "572f5cea7fe6df6c96598f38fb5c288b86763724f2f1f98a43a24b64503e2ee2"
+    }
+  },
+  "scene_audit_at_17_s": {
+    "rays": 5760,
+    "corridor_x_normal_rays": 342,
+    "corridor_x_normal_fraction": 0.059375,
+    "control_x_normal_rays": 1043,
+    "control_x_normal_fraction": 0.18107638888888888,
+    "interpretation": "Scene-only directional coverage check; this is not a backend observability proof or recovery label."
+  },
+  "predefined_descriptive_bins_s": {
+    "pre_corridor": [5, 8],
+    "corridor_interior": [14, 20],
+    "extended_post_corridor": [28, 36]
+  },
+  "descriptive_one_second_translation_medians": {
+    "corridor": {"pre": 0.09304097796134113, "inside": 1.2175427840532587, "post": 0.020659607563220307},
+    "control": {"pre": 0.05534176757866875, "inside": 0.9159244591825131, "post": 0.018084753831931855},
+    "warning": "One paired development scene and seed; no threshold was chosen and these summaries do not establish sustained recovery."
+  },
+  "figure": {
+    "path": "figures/simulation_motion_v3_timeline.png",
+    "sha256": "33f1af16499f3c97402517467d60b8e8db6a3ce46a1c4550b0ac6f0c4816e47c"
+  },
+  "source_hashes": {
+    "simulate_lidar.py": "6043c8258a47bff0156b5315b8e6f2bf25f5b504414de5537ffb16bea0dcec02",
+    "write_simulation_bag.py": "edcaa53d915374fbc4cae89ea8e874c25314ecaf7ebd61895e7e343ebed44965",
+    "audit_health_export.py": "fff0e55b88e129e94f3808b88955d5f6213c8bfac98b25acc12f09e5f3a29ba8",
+    "audit_paired_simulation_bags.py": "14944d470c0d90bc0c5e0837bdf187c06c6f5ab6bef02fbebb0aeedca518c593",
+    "audit_simulation_scene.py": "d870309cce03a8cf224fcd2cc15ea2e1f4d74956c3a55a6eaab6327fe4699382",
+    "trajectory_eval.py": "d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba",
+    "test_simulate_lidar.py": "607f33fe4bcae5f18873e1f3a28e28a3b5ea41908f679ac14ba45516241b75c4",
+    "summarize_simulation_bootstrap.py": "19e803ab4a52e0855aac2a24d48ffa0c9f3cab29f1445454e35fc6c9103d3139",
+    "plot_simulation_bootstrap.py": "2fad1057b700372c077c48ce5442c40b32b2f047076d9a5d15913d6e45362ed7",
+    "run_simulation_smoke.sh": "a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639"
+  },
+  "verification": {
+    "simulator_unit_tests": "10 passed",
+    "full_experiment_suite": "40 passed, 1 skipped (41 executed)",
+    "health_export_audits": "400 timestamp groups per run passed; 397 valid; three startup reasons accounted",
+    "paired_imu_parity": "8021 serialized IMU messages byte-identical; checked by audit_paired_simulation_bags.py",
+    "trajectory_evaluation": "794 rows per run; 754 local-valid; zero reference gaps",
+    "figure_visual_review": "passed",
+    "python_compile": "passed",
+    "shell_syntax": "passed",
+    "git_diff_check": "passed"
+  },
+  "commands": [
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python research_paper/experiments/src/write_simulation_bag.py --output research_paper/experiments/generated/simulation_bootstrap/sim-recovery-dev10-v3 --duration 40 --seed 10",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python research_paper/experiments/src/write_simulation_bag.py --output research_paper/experiments/generated/simulation_bootstrap/sim-recovery-control10-v3 --duration 40 --seed 10 --control",
+    "bash research_paper/experiments/run_simulation_smoke.sh /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env /tmp/fastlio-health-6qmzET research_paper/experiments/generated/simulation_bootstrap/sim-recovery-dev10-v3/sensors.bag research_paper/experiments/generated/runs/SIM40_v3_corridor",
+    "bash research_paper/experiments/run_simulation_smoke.sh /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env /tmp/fastlio-health-6qmzET research_paper/experiments/generated/simulation_bootstrap/sim-recovery-control10-v3/sensors.bag research_paper/experiments/generated/runs/SIM40_v3_control",
+    "python3 research_paper/experiments/src/trajectory_eval.py --poses research_paper/experiments/generated/runs/SIM40_v3_corridor/poses.csv --reference research_paper/experiments/generated/simulation_bootstrap/sim-recovery-dev10-v3/reference.txt --output research_paper/experiments/generated/runs/SIM40_v3_corridor/evaluation.csv --run-id SIM40_V3_CORRIDOR --event-id SIMULATION_LAYOUT --body-transform-json research_paper/data/simulation_motion_v3_reference_metadata.json --development-only --alignment-target-ns 1005000000000",
+    "python3 research_paper/experiments/src/trajectory_eval.py --poses research_paper/experiments/generated/runs/SIM40_v3_control/poses.csv --reference research_paper/experiments/generated/simulation_bootstrap/sim-recovery-control10-v3/reference.txt --output research_paper/experiments/generated/runs/SIM40_v3_control/evaluation.csv --run-id SIM40_V3_CONTROL --event-id SIMULATION_LAYOUT --body-transform-json research_paper/data/simulation_motion_v3_reference_metadata.json --development-only --alignment-target-ns 1005000000000",
+    "python3 research_paper/experiments/src/audit_health_export.py research_paper/experiments/generated/runs/SIM40_v3_corridor/health.csv",
+    "python3 research_paper/experiments/src/audit_health_export.py research_paper/experiments/generated/runs/SIM40_v3_control/health.csv",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python research_paper/experiments/src/audit_paired_simulation_bags.py --corridor research_paper/experiments/generated/simulation_bootstrap/sim-recovery-dev10-v3/sensors.bag --control research_paper/experiments/generated/simulation_bootstrap/sim-recovery-control10-v3/sensors.bag --expected-scans 400 --expected-imu 8021",
+    "python3 research_paper/experiments/src/audit_simulation_scene.py",
+    "python3 research_paper/experiments/src/summarize_simulation_bootstrap.py research_paper/experiments/generated/runs/SIM40_v3_corridor",
+    "python3 research_paper/experiments/src/summarize_simulation_bootstrap.py research_paper/experiments/generated/runs/SIM40_v3_control",
+    "python3 research_paper/experiments/src/plot_simulation_bootstrap.py --corridor research_paper/experiments/generated/runs/SIM40_v3_corridor --control research_paper/experiments/generated/runs/SIM40_v3_control --output research_paper/figures/simulation_motion_v3_timeline.png",
+    "python3 -m unittest discover -s research_paper/experiments/tests -v",
+    "python3 -m py_compile research_paper/experiments/src/simulate_lidar.py research_paper/experiments/src/write_simulation_bag.py research_paper/experiments/src/audit_paired_simulation_bags.py research_paper/experiments/src/audit_health_export.py research_paper/experiments/src/audit_simulation_scene.py research_paper/experiments/src/summarize_simulation_bootstrap.py research_paper/experiments/src/plot_simulation_bootstrap.py research_paper/experiments/src/trajectory_eval.py",
+    "bash -n research_paper/experiments/run_simulation_smoke.sh",
+    "git diff --check"
+  ],
+  "final_test_exposed": false,
+  "recovery_threshold": null
+}

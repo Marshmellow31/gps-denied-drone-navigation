@@ -4,7 +4,17 @@
 
 **Current-status note (23 September 2026):** This is the dated scope decision, not the live progress report. FAST-LIO2 has since been reproduced on GEODE and smoke-replayed on Hilti Exp18; neither replay establishes recovery. See the [current handoff](execution/CURRENT_HANDOFF.md) and [status ledger](execution/STATUS.md); Point-LIO has not been reproduced.
 
+**R1 update (26 September 2026):** A fresh-model review passes the amended
+feasibility gate **for protocol design only**. The full R1 findings are in
+[R1_FEASIBILITY.md](reviews/R1_FEASIBILITY.md). This does not establish
+publication novelty, generalization or a final result; T10–T12/R2 still govern
+comparator choice, outcome definitions and scene-level evaluation.
+
 ## Recommendation
+
+**26 September approved amendment:** see
+[simulation-primary scope](SCOPE_AMENDMENT_SIMULATION.md). No change to the
+recovery question; evidence hierarchy and feasibility gate are amended.
 
 Investigate the reliability of existing LiDAR localization-health indicators during the transition out of geometric degeneracy. Separate recovery of accurate local motion from accumulated drift. This is a candidate empirical gap; it is not a verified novel algorithm.
 
@@ -15,6 +25,7 @@ Investigate the reliability of existing LiDAR localization-health indicators dur
 | [X-ICP](https://arxiv.org/html/2211.16335v3) | Fine-grained localizability detection and constrained ICP registration. | Generic eigenvalue-based degeneracy detection is not novel. Compare the actual published formulation. |
 | [AdaLIO](https://arxiv.org/abs/2304.12577) | Adaptive LIO for degenerate indoor environments. | Merely adapting parameters in corridors is already covered. |
 | [SuperLoc](https://arxiv.org/html/2412.02901v1), [author explanation](https://superodometry.com/superloc.html) | Predictive alignment risk, localizability and prior integration in degraded geometry. Explains limits of Hessian thresholds across environments/sensors. | Generic LiDAR failure prediction, confidence and sensor-switching proposals have close overlap. |
+| [DCReg](https://arxiv.org/html/2509.06285v3), [official implementation](https://github.com/JokerJohn/DCReg) | Schur-complement direction detection, time-varying degeneracy masks, detection ratios, registration recall and ATE/RTE evaluation. | Generic directional detection and over/under-detection are occupied; our candidate must test sustained reference-based local accuracy and post-exit decision timing. |
 | [GEODE](https://arxiv.org/abs/2409.04961), [official data documentation](https://github.com/PengYu-Team/GEODE_dataset) | Broad dataset and benchmark for geometric degeneracy. | Another general corridor/tunnel benchmark is insufficient differentiation. Data contain reference-quality caveats. |
 | [Degradation Resilient LiDAR-Radar-Inertial Odometry](https://arxiv.org/abs/2403.05332) | Uses radar to mitigate LiDAR degeneracy. | Adding another sensor is established and expands scope; we will evaluate LiDAR/IMU inputs only. |
 | [Unveiling Non-Reproducibility in LIO](https://ieeexplore.ieee.org/document/11266943/) | Empirical work on LIO repeatability. | Reproducibility alone is not novel; include backend repeatability as a control. |

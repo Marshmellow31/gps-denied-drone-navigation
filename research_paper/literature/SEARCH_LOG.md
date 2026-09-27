@@ -51,3 +51,30 @@ Within each of the four full texts, `recovery`, `transition`, and `ground truth`
 - X-ICP's official page exposed no official source repository in the inspected material. A third-party minimal implementation appeared in search, but was not treated as official evidence.
 - The current SuperOdom repository post-dates SuperLoc arXiv v1 and includes later changes. Its code was inspected as an available official implementation, not assumed to be the exact artifact used for the 2024 preprint or 2025 conference results.
 - Search results include 2026 methods after the four planned anchors. R1 should decide whether their full texts materially narrow the candidate gap before a novelty statement is attempted.
+
+## 26 September 2026 — R1 overlap refresh
+
+Queries were targeted to the exact title, experimental sections, recovery,
+trajectory metrics and supplementary material:
+
+- `"Informed, Constrained, Aligned" full experiments supplement`
+- `site:arxiv.org/html/2408.11809 recovery ground truth RTE ATE`
+- `site:github.com/leggedrobotics/perfectlyconstrained supplement experiments`
+- `site:arxiv.org/html/2509.06285v3 "Detection Reliability Analysis"`
+- `site:arxiv.org/html/2604.02706v1 "slow recovery"`
+
+The full ICA arXiv v3 article, authors' project page and official repository
+README were inspected. The project page links supplementary videos, but its
+public Drive viewer exposed no video files or text. The official repository
+lists the preprint and implementation/configuration tree; no separate text
+supplement was listed. This is an access limitation, not evidence that videos
+contain no additional material.
+
+DCReg arXiv v3 (10 September 2026), Sections 7.1 and 7.4, plus its official
+four-page `paper/supp.pdf` at commit
+`8ce8451b15491a4bbe17cf85ab02a8bed6696861`, were read. Supplement hash:
+`b1b9a862ebaee36f3f3390ddd91e2bda53f9ff54d2267f35723e2d9f7394dc16`.
+ALIVE-LIO arXiv v1 limitations/conclusion were checked; it explicitly reports
+slow recovery and missed corrective updates. Detailed conclusions and exact
+section/table anchors are in [RECOVERY_OVERLAP_UPDATE.md](RECOVERY_OVERLAP_UPDATE.md)
+and [INFORMED_CONSTRAINED_ALIGNED.md](INFORMED_CONSTRAINED_ALIGNED.md).

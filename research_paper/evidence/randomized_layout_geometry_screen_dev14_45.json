@@ -1,0 +1,1794 @@
+[
+  {
+    "layout_seed": 14,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 14,
+      "corridor_length_m": 12.761661024730866,
+      "corridor_half_width_m": 2.3354911193801113,
+      "room_half_width_m": 5.213349295926058,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 12.761661024730866,
+      "entry_time_s": 9.25,
+      "exit_time_s": 25.20207628091358,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 17.22603814045679,
+    "degraded_midpoint": {
+      "time_s": 17.22603814045679,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        344,
+        4328,
+        1088
+      ],
+      "axial_normal_fraction": 0.059722222222222225
+    },
+    "control_midpoint": {
+      "time_s": 17.22603814045679,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1150,
+        3559,
+        1051
+      ],
+      "axial_normal_fraction": 0.1996527777777778
+    },
+    "post_exit_plus5_s": {
+      "time_s": 30.20207628091358,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1252,
+        2647,
+        1861
+      ],
+      "axial_normal_fraction": 0.21736111111111112
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 15,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 15,
+      "corridor_length_m": 10.76563576862957,
+      "corridor_half_width_m": 2.0789565738751627,
+      "room_half_width_m": 5.951900503256133,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 10.76563576862957,
+      "entry_time_s": 9.25,
+      "exit_time_s": 22.707044710786963,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.978522355393482,
+    "degraded_midpoint": {
+      "time_s": 15.978522355393482,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        340,
+        4344,
+        1076
+      ],
+      "axial_normal_fraction": 0.059027777777777776
+    },
+    "control_midpoint": {
+      "time_s": 15.978522355393482,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1168,
+        3548,
+        1044
+      ],
+      "axial_normal_fraction": 0.20277777777777778
+    },
+    "post_exit_plus5_s": {
+      "time_s": 27.707044710786963,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1390,
+        2383,
+        1987
+      ],
+      "axial_normal_fraction": 0.24131944444444445
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 16,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 16,
+      "corridor_length_m": 10.602243206570343,
+      "corridor_half_width_m": 1.6246549372162675,
+      "room_half_width_m": 5.082954883850025,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 10.602243206570343,
+      "entry_time_s": 9.25,
+      "exit_time_s": 22.502804008212927,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.876402004106463,
+    "degraded_midpoint": {
+      "time_s": 15.876402004106463,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        263,
+        4633,
+        864
+      ],
+      "axial_normal_fraction": 0.04565972222222222
+    },
+    "control_midpoint": {
+      "time_s": 15.876402004106463,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1089,
+        3853,
+        818
+      ],
+      "axial_normal_fraction": 0.1890625
+    },
+    "post_exit_plus5_s": {
+      "time_s": 27.502804008212927,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1452,
+        2604,
+        1704
+      ],
+      "axial_normal_fraction": 0.2520833333333333
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 17,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 17,
+      "corridor_length_m": 11.650410959135806,
+      "corridor_half_width_m": 2.1950502583860625,
+      "room_half_width_m": 5.598634538543767,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.650410959135806,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.813013698919754,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.531506849459877,
+    "degraded_midpoint": {
+      "time_s": 16.531506849459877,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        350,
+        4339,
+        1071
+      ],
+      "axial_normal_fraction": 0.06076388888888889
+    },
+    "control_midpoint": {
+      "time_s": 16.531506849459877,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1169,
+        3556,
+        1035
+      ],
+      "axial_normal_fraction": 0.2029513888888889
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.813013698919754,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1300,
+        2526,
+        1934
+      ],
+      "axial_normal_fraction": 0.22569444444444445
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 18,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 18,
+      "corridor_length_m": 9.142448431534664,
+      "corridor_half_width_m": 1.72341989584633,
+      "room_half_width_m": 6.332389364163721,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 9.142448431534664,
+      "entry_time_s": 9.25,
+      "exit_time_s": 20.67806053941833,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 14.964030269709165,
+    "degraded_midpoint": {
+      "time_s": 14.964030269709165,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        318,
+        4424,
+        1018
+      ],
+      "axial_normal_fraction": 0.05520833333333333
+    },
+    "control_midpoint": {
+      "time_s": 14.964030269709165,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1175,
+        3601,
+        984
+      ],
+      "axial_normal_fraction": 0.20399305555555555
+    },
+    "post_exit_plus5_s": {
+      "time_s": 25.67806053941833,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1560,
+        2206,
+        1994
+      ],
+      "axial_normal_fraction": 0.2708333333333333
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 19,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 19,
+      "corridor_length_m": 9.473450402043998,
+      "corridor_half_width_m": 1.8056419753112583,
+      "room_half_width_m": 4.847513458063262,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 9.473450402043998,
+      "entry_time_s": 9.25,
+      "exit_time_s": 21.091813002554996,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.170906501277498,
+    "degraded_midpoint": {
+      "time_s": 15.170906501277498,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        348,
+        4434,
+        978
+      ],
+      "axial_normal_fraction": 0.06041666666666667
+    },
+    "control_midpoint": {
+      "time_s": 15.170906501277498,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1189,
+        3625,
+        946
+      ],
+      "axial_normal_fraction": 0.2064236111111111
+    },
+    "post_exit_plus5_s": {
+      "time_s": 26.091813002554996,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1376,
+        2713,
+        1671
+      ],
+      "axial_normal_fraction": 0.2388888888888889
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 20,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 20,
+      "corridor_length_m": 12.90686507317583,
+      "corridor_half_width_m": 2.0797338480362306,
+      "room_half_width_m": 5.934354044614704,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 12.90686507317583,
+      "entry_time_s": 9.25,
+      "exit_time_s": 25.383581341469785,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 17.316790670734893,
+    "degraded_midpoint": {
+      "time_s": 17.316790670734893,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        298,
+        4466,
+        996
+      ],
+      "axial_normal_fraction": 0.05173611111111111
+    },
+    "control_midpoint": {
+      "time_s": 17.316790670734893,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1098,
+        3703,
+        959
+      ],
+      "axial_normal_fraction": 0.190625
+    },
+    "post_exit_plus5_s": {
+      "time_s": 30.383581341469785,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1395,
+        2388,
+        1977
+      ],
+      "axial_normal_fraction": 0.2421875
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 21,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 21,
+      "corridor_length_m": 11.439923918635998,
+      "corridor_half_width_m": 1.9759361605224042,
+      "room_half_width_m": 7.096184345249352,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.439923918635998,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.549904898294997,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.3999524491475,
+    "degraded_midpoint": {
+      "time_s": 16.3999524491475,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        295,
+        4438,
+        1027
+      ],
+      "axial_normal_fraction": 0.051215277777777776
+    },
+    "control_midpoint": {
+      "time_s": 16.3999524491475,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1114,
+        3658,
+        988
+      ],
+      "axial_normal_fraction": 0.19340277777777778
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.549904898294997,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1475,
+        2047,
+        2238
+      ],
+      "axial_normal_fraction": 0.2560763888888889
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 22,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 22,
+      "corridor_length_m": 11.042962266744231,
+      "corridor_half_width_m": 2.320082366124267,
+      "room_half_width_m": 4.895996282981646,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.042962266744231,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.05370283343029,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.151851416715147,
+    "degraded_midpoint": {
+      "time_s": 16.151851416715147,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        395,
+        4240,
+        1125
+      ],
+      "axial_normal_fraction": 0.0685763888888889
+    },
+    "control_midpoint": {
+      "time_s": 16.151851416715147,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1215,
+        3455,
+        1090
+      ],
+      "axial_normal_fraction": 0.2109375
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.05370283343029,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1213,
+        2783,
+        1764
+      ],
+      "axial_normal_fraction": 0.21059027777777778
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 23,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 23,
+      "corridor_length_m": 10.72244392022849,
+      "corridor_half_width_m": 1.7700832784924805,
+      "room_half_width_m": 7.135263475995603,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 10.72244392022849,
+      "entry_time_s": 9.25,
+      "exit_time_s": 22.65305490028561,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.951527450142805,
+    "degraded_midpoint": {
+      "time_s": 15.951527450142805,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        259,
+        4534,
+        967
+      ],
+      "axial_normal_fraction": 0.04496527777777778
+    },
+    "control_midpoint": {
+      "time_s": 15.951527450142805,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1084,
+        3745,
+        931
+      ],
+      "axial_normal_fraction": 0.18819444444444444
+    },
+    "post_exit_plus5_s": {
+      "time_s": 27.65305490028561,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1565,
+        1980,
+        2215
+      ],
+      "axial_normal_fraction": 0.2717013888888889
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 24,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 24,
+      "corridor_length_m": 10.261059980236535,
+      "corridor_half_width_m": 2.232022829136449,
+      "room_half_width_m": 6.910111347215892,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 10.261059980236535,
+      "entry_time_s": 9.25,
+      "exit_time_s": 22.076324975295666,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.663162487647833,
+    "degraded_midpoint": {
+      "time_s": 15.663162487647833,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        370,
+        4186,
+        1204
+      ],
+      "axial_normal_fraction": 0.0642361111111111
+    },
+    "control_midpoint": {
+      "time_s": 15.663162487647833,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1204,
+        3390,
+        1166
+      ],
+      "axial_normal_fraction": 0.20902777777777778
+    },
+    "post_exit_plus5_s": {
+      "time_s": 27.076324975295666,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1424,
+        2089,
+        2247
+      ],
+      "axial_normal_fraction": 0.24722222222222223
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 25,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 25,
+      "corridor_length_m": 9.775110091571278,
+      "corridor_half_width_m": 1.9715157444619296,
+      "room_half_width_m": 7.384389676375939,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 9.775110091571278,
+      "entry_time_s": 9.25,
+      "exit_time_s": 21.468887614464098,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.359443807232049,
+    "degraded_midpoint": {
+      "time_s": 15.359443807232049,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        324,
+        4310,
+        1126
+      ],
+      "axial_normal_fraction": 0.05625
+    },
+    "control_midpoint": {
+      "time_s": 15.359443807232049,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1173,
+        3499,
+        1088
+      ],
+      "axial_normal_fraction": 0.20364583333333333
+    },
+    "post_exit_plus5_s": {
+      "time_s": 26.468887614464098,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1507,
+        1953,
+        2300
+      ],
+      "axial_normal_fraction": 0.26163194444444443
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 26,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 26,
+      "corridor_length_m": 12.560721596556883,
+      "corridor_half_width_m": 2.3956705991274756,
+      "room_half_width_m": 5.209846154356439,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 12.560721596556883,
+      "entry_time_s": 9.25,
+      "exit_time_s": 24.9509019956961,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 17.10045099784805,
+    "degraded_midpoint": {
+      "time_s": 17.10045099784805,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        358,
+        4283,
+        1119
+      ],
+      "axial_normal_fraction": 0.06215277777777778
+    },
+    "control_midpoint": {
+      "time_s": 17.10045099784805,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1153,
+        3522,
+        1085
+      ],
+      "axial_normal_fraction": 0.20017361111111112
+    },
+    "post_exit_plus5_s": {
+      "time_s": 29.9509019956961,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1215,
+        2669,
+        1876
+      ],
+      "axial_normal_fraction": 0.2109375
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 27,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 27,
+      "corridor_length_m": 10.716825020148839,
+      "corridor_half_width_m": 2.3196606850697523,
+      "room_half_width_m": 5.272719914707178,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 10.716825020148839,
+      "entry_time_s": 9.25,
+      "exit_time_s": 22.646031275186047,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.948015637593024,
+    "degraded_midpoint": {
+      "time_s": 15.948015637593024,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        389,
+        4219,
+        1152
+      ],
+      "axial_normal_fraction": 0.06753472222222222
+    },
+    "control_midpoint": {
+      "time_s": 15.948015637593024,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1211,
+        3423,
+        1126
+      ],
+      "axial_normal_fraction": 0.21024305555555556
+    },
+    "post_exit_plus5_s": {
+      "time_s": 27.646031275186047,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1271,
+        2624,
+        1865
+      ],
+      "axial_normal_fraction": 0.22065972222222222
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 28,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 28,
+      "corridor_length_m": 9.884465861872707,
+      "corridor_half_width_m": 2.0334842931744554,
+      "room_half_width_m": 5.322442534676304,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 9.884465861872707,
+      "entry_time_s": 9.25,
+      "exit_time_s": 21.605582327340883,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.427791163670442,
+    "degraded_midpoint": {
+      "time_s": 15.427791163670442,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        378,
+        4303,
+        1079
+      ],
+      "axial_normal_fraction": 0.065625
+    },
+    "control_midpoint": {
+      "time_s": 15.427791163670442,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1216,
+        3501,
+        1043
+      ],
+      "axial_normal_fraction": 0.2111111111111111
+    },
+    "post_exit_plus5_s": {
+      "time_s": 26.605582327340883,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1352,
+        2577,
+        1831
+      ],
+      "axial_normal_fraction": 0.23472222222222222
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 29,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 29,
+      "corridor_length_m": 10.322730712667356,
+      "corridor_half_width_m": 1.990263522390654,
+      "room_half_width_m": 5.818320663739684,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 10.322730712667356,
+      "entry_time_s": 9.25,
+      "exit_time_s": 22.153413390834196,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.701706695417098,
+    "degraded_midpoint": {
+      "time_s": 15.701706695417098,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        345,
+        4358,
+        1057
+      ],
+      "axial_normal_fraction": 0.059895833333333336
+    },
+    "control_midpoint": {
+      "time_s": 15.701706695417098,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1182,
+        3556,
+        1022
+      ],
+      "axial_normal_fraction": 0.20520833333333333
+    },
+    "post_exit_plus5_s": {
+      "time_s": 27.153413390834196,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1419,
+        2391,
+        1950
+      ],
+      "axial_normal_fraction": 0.24635416666666668
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 30,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 30,
+      "corridor_length_m": 10.878759903528294,
+      "corridor_half_width_m": 1.875915500446447,
+      "room_half_width_m": 6.258148274694729,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 10.878759903528294,
+      "entry_time_s": 9.25,
+      "exit_time_s": 22.848449879410367,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.049224939705184,
+    "degraded_midpoint": {
+      "time_s": 16.049224939705184,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        299,
+        4467,
+        994
+      ],
+      "axial_normal_fraction": 0.051909722222222225
+    },
+    "control_midpoint": {
+      "time_s": 16.049224939705184,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1131,
+        3670,
+        959
+      ],
+      "axial_normal_fraction": 0.19635416666666666
+    },
+    "post_exit_plus5_s": {
+      "time_s": 27.848449879410367,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1479,
+        2262,
+        2019
+      ],
+      "axial_normal_fraction": 0.25677083333333334
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 31,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 31,
+      "corridor_length_m": 11.359348593924398,
+      "corridor_half_width_m": 2.125291313742289,
+      "room_half_width_m": 5.443798702818613,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.359348593924398,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.449185742405497,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.34959287120275,
+    "degraded_midpoint": {
+      "time_s": 16.34959287120275,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        344,
+        4365,
+        1051
+      ],
+      "axial_normal_fraction": 0.059722222222222225
+    },
+    "control_midpoint": {
+      "time_s": 16.34959287120275,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1163,
+        3578,
+        1019
+      ],
+      "axial_normal_fraction": 0.20190972222222223
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.449185742405497,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1313,
+        2554,
+        1893
+      ],
+      "axial_normal_fraction": 0.22795138888888888
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 32,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 32,
+      "corridor_length_m": 12.023010573288289,
+      "corridor_half_width_m": 2.0296803846832887,
+      "room_half_width_m": 4.76819601505539,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 12.023010573288289,
+      "entry_time_s": 9.25,
+      "exit_time_s": 24.27876321661036,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.76438160830518,
+    "degraded_midpoint": {
+      "time_s": 16.76438160830518,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        325,
+        4473,
+        962
+      ],
+      "axial_normal_fraction": 0.05642361111111111
+    },
+    "control_midpoint": {
+      "time_s": 16.76438160830518,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1131,
+        3702,
+        927
+      ],
+      "axial_normal_fraction": 0.19635416666666666
+    },
+    "post_exit_plus5_s": {
+      "time_s": 29.27876321661036,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1275,
+        2793,
+        1692
+      ],
+      "axial_normal_fraction": 0.22135416666666666
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 33,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 33,
+      "corridor_length_m": 11.918993291271024,
+      "corridor_half_width_m": 1.8546441618926468,
+      "room_half_width_m": 6.594126115953653,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.918993291271024,
+      "entry_time_s": 9.25,
+      "exit_time_s": 24.148741614088777,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.69937080704439,
+    "degraded_midpoint": {
+      "time_s": 16.69937080704439,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        268,
+        4550,
+        942
+      ],
+      "axial_normal_fraction": 0.04652777777777778
+    },
+    "control_midpoint": {
+      "time_s": 16.69937080704439,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1068,
+        3792,
+        900
+      ],
+      "axial_normal_fraction": 0.18541666666666667
+    },
+    "post_exit_plus5_s": {
+      "time_s": 29.148741614088777,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1500,
+        2137,
+        2123
+      ],
+      "axial_normal_fraction": 0.2604166666666667
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 34,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 34,
+      "corridor_length_m": 11.753533600354888,
+      "corridor_half_width_m": 1.7946363748572745,
+      "room_half_width_m": 5.201430122207273,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.753533600354888,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.94191700044361,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.595958500221805,
+    "degraded_midpoint": {
+      "time_s": 16.595958500221805,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        274,
+        4592,
+        894
+      ],
+      "axial_normal_fraction": 0.04756944444444444
+    },
+    "control_midpoint": {
+      "time_s": 16.595958500221805,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1083,
+        3825,
+        852
+      ],
+      "axial_normal_fraction": 0.18802083333333333
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.94191700044361,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1413,
+        2555,
+        1792
+      ],
+      "axial_normal_fraction": 0.2453125
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 35,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 35,
+      "corridor_length_m": 9.595872945380735,
+      "corridor_half_width_m": 1.992462578242339,
+      "room_half_width_m": 5.333444030022206,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 9.595872945380735,
+      "entry_time_s": 9.25,
+      "exit_time_s": 21.244841181725917,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.247420590862959,
+    "degraded_midpoint": {
+      "time_s": 15.247420590862959,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        379,
+        4307,
+        1074
+      ],
+      "axial_normal_fraction": 0.06579861111111111
+    },
+    "control_midpoint": {
+      "time_s": 15.247420590862959,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1232,
+        3484,
+        1044
+      ],
+      "axial_normal_fraction": 0.21388888888888888
+    },
+    "post_exit_plus5_s": {
+      "time_s": 26.244841181725917,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1370,
+        2565,
+        1825
+      ],
+      "axial_normal_fraction": 0.2378472222222222
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 36,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 36,
+      "corridor_length_m": 12.136326950210897,
+      "corridor_half_width_m": 1.9087673461803951,
+      "room_half_width_m": 5.6054324548472385,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 12.136326950210897,
+      "entry_time_s": 9.25,
+      "exit_time_s": 24.42040868776362,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.83520434388181,
+    "degraded_midpoint": {
+      "time_s": 16.83520434388181,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        287,
+        4535,
+        938
+      ],
+      "axial_normal_fraction": 0.04982638888888889
+    },
+    "control_midpoint": {
+      "time_s": 16.83520434388181,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1079,
+        3775,
+        906
+      ],
+      "axial_normal_fraction": 0.1873263888888889
+    },
+    "post_exit_plus5_s": {
+      "time_s": 29.42040868776362,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1398,
+        2475,
+        1887
+      ],
+      "axial_normal_fraction": 0.24270833333333333
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 37,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 37,
+      "corridor_length_m": 11.639380477403485,
+      "corridor_half_width_m": 1.7978799872041435,
+      "room_half_width_m": 5.558538163811614,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.639380477403485,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.799225596754354,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.524612798377177,
+    "degraded_midpoint": {
+      "time_s": 16.524612798377177,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        280,
+        4572,
+        908
+      ],
+      "axial_normal_fraction": 0.04861111111111111
+    },
+    "control_midpoint": {
+      "time_s": 16.524612798377177,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1100,
+        3792,
+        868
+      ],
+      "axial_normal_fraction": 0.1909722222222222
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.799225596754354,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1443,
+        2455,
+        1862
+      ],
+      "axial_normal_fraction": 0.25052083333333336
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 38,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 38,
+      "corridor_length_m": 10.13936259481139,
+      "corridor_half_width_m": 2.0922156683785653,
+      "room_half_width_m": 5.484777181465208,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 10.13936259481139,
+      "entry_time_s": 9.25,
+      "exit_time_s": 21.924203243514235,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 15.587101621757117,
+    "degraded_midpoint": {
+      "time_s": 15.587101621757117,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        382,
+        4282,
+        1096
+      ],
+      "axial_normal_fraction": 0.06631944444444444
+    },
+    "control_midpoint": {
+      "time_s": 15.587101621757117,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1210,
+        3488,
+        1062
+      ],
+      "axial_normal_fraction": 0.21006944444444445
+    },
+    "post_exit_plus5_s": {
+      "time_s": 26.924203243514235,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1365,
+        2505,
+        1890
+      ],
+      "axial_normal_fraction": 0.23697916666666666
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 39,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 39,
+      "corridor_length_m": 11.949900292684303,
+      "corridor_half_width_m": 1.803835638954032,
+      "room_half_width_m": 6.853068174455368,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.949900292684303,
+      "entry_time_s": 9.25,
+      "exit_time_s": 24.18737536585538,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.71868768292769,
+    "degraded_midpoint": {
+      "time_s": 16.71868768292769,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        245,
+        4594,
+        921
+      ],
+      "axial_normal_fraction": 0.042534722222222224
+    },
+    "control_midpoint": {
+      "time_s": 16.71868768292769,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1058,
+        3823,
+        879
+      ],
+      "axial_normal_fraction": 0.18368055555555557
+    },
+    "post_exit_plus5_s": {
+      "time_s": 29.18737536585538,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1521,
+        2069,
+        2170
+      ],
+      "axial_normal_fraction": 0.2640625
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 40,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 40,
+      "corridor_length_m": 11.562339388874934,
+      "corridor_half_width_m": 2.192551631367313,
+      "room_half_width_m": 6.033780529426357,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.562339388874934,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.702924236093665,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.476462118046832,
+    "degraded_midpoint": {
+      "time_s": 16.476462118046832,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        342,
+        4332,
+        1086
+      ],
+      "axial_normal_fraction": 0.059375
+    },
+    "control_midpoint": {
+      "time_s": 16.476462118046832,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1166,
+        3545,
+        1049
+      ],
+      "axial_normal_fraction": 0.20243055555555556
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.702924236093665,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1351,
+        2373,
+        2036
+      ],
+      "axial_normal_fraction": 0.2345486111111111
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 41,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 41,
+      "corridor_length_m": 11.206010132513658,
+      "corridor_half_width_m": 2.005075533916435,
+      "room_half_width_m": 7.304375532339282,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.206010132513658,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.25751266564207,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.253756332821034,
+    "degraded_midpoint": {
+      "time_s": 16.253756332821034,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        292,
+        4416,
+        1052
+      ],
+      "axial_normal_fraction": 0.050694444444444445
+    },
+    "control_midpoint": {
+      "time_s": 16.253756332821034,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1120,
+        3621,
+        1019
+      ],
+      "axial_normal_fraction": 0.19444444444444445
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.25751266564207,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1479,
+        2001,
+        2280
+      ],
+      "axial_normal_fraction": 0.25677083333333334
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 42,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 42,
+      "corridor_length_m": 12.688764187952131,
+      "corridor_half_width_m": 2.0761821016279516,
+      "room_half_width_m": 6.361242392168311,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 12.688764187952131,
+      "entry_time_s": 9.25,
+      "exit_time_s": 25.110955234940164,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 17.180477617470082,
+    "degraded_midpoint": {
+      "time_s": 17.180477617470082,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        287,
+        4462,
+        1011
+      ],
+      "axial_normal_fraction": 0.04982638888888889
+    },
+    "control_midpoint": {
+      "time_s": 17.180477617470082,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1085,
+        3703,
+        972
+      ],
+      "axial_normal_fraction": 0.18836805555555555
+    },
+    "post_exit_plus5_s": {
+      "time_s": 30.110955234940164,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1417,
+        2239,
+        2104
+      ],
+      "axial_normal_fraction": 0.24600694444444443
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 43,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 43,
+      "corridor_length_m": 11.662771251600233,
+      "corridor_half_width_m": 1.7271728740991374,
+      "room_half_width_m": 6.372190250352098,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.662771251600233,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.82846406450029,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.539232032250148,
+    "degraded_midpoint": {
+      "time_s": 16.539232032250148,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        250,
+        4620,
+        890
+      ],
+      "axial_normal_fraction": 0.043402777777777776
+    },
+    "control_midpoint": {
+      "time_s": 16.539232032250148,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1049,
+        3861,
+        850
+      ],
+      "axial_normal_fraction": 0.18211805555555555
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.82846406450029,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1537,
+        2178,
+        2045
+      ],
+      "axial_normal_fraction": 0.2668402777777778
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 44,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 44,
+      "corridor_length_m": 9.047207742466991,
+      "corridor_half_width_m": 2.0438945125770815,
+      "room_half_width_m": 5.600854656806167,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 9.047207742466991,
+      "entry_time_s": 9.25,
+      "exit_time_s": 20.559009678083736,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 14.904504839041868,
+    "degraded_midpoint": {
+      "time_s": 14.904504839041868,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        413,
+        4215,
+        1132
+      ],
+      "axial_normal_fraction": 0.07170138888888888
+    },
+    "control_midpoint": {
+      "time_s": 14.904504839041868,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1272,
+        3382,
+        1106
+      ],
+      "axial_normal_fraction": 0.22083333333333333
+    },
+    "post_exit_plus5_s": {
+      "time_s": 25.559009678083736,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1375,
+        2480,
+        1905
+      ],
+      "axial_normal_fraction": 0.2387152777777778
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  },
+  {
+    "layout_seed": 45,
+    "geometry": {
+      "layout_family": "straight_randomized_development",
+      "layout_seed": 45,
+      "corridor_length_m": 11.799261033401606,
+      "corridor_half_width_m": 1.7320075436824742,
+      "room_half_width_m": 6.900733909425762,
+      "entry_plane_x_m": 0.0,
+      "exit_plane_x_m": 11.799261033401606,
+      "entry_time_s": 9.25,
+      "exit_time_s": 23.999076291752008,
+      "control_baffles": false,
+      "corridor_baffle_x_m": []
+    },
+    "midpoint_time_s": 16.624538145876002,
+    "degraded_midpoint": {
+      "time_s": 16.624538145876002,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        243,
+        4622,
+        895
+      ],
+      "axial_normal_fraction": 0.0421875
+    },
+    "control_midpoint": {
+      "time_s": 16.624538145876002,
+      "control": true,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1051,
+        3856,
+        853
+      ],
+      "axial_normal_fraction": 0.18246527777777777
+    },
+    "post_exit_plus5_s": {
+      "time_s": 28.999076291752008,
+      "control": false,
+      "visible_rays": 5760,
+      "normal_axis_counts_xyz": [
+        1543,
+        2049,
+        2168
+      ],
+      "axial_normal_fraction": 0.26788194444444446
+    },
+    "eligible_by_scene_only_rule": true,
+    "rule": {
+      "degraded_x_normal_max": 0.1,
+      "control_x_normal_min": 0.15,
+      "post_exit_x_normal_min": 0.2
+    }
+  }
+]

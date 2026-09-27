@@ -1,0 +1,153 @@
+{
+  "date": "2026-09-26",
+  "task": "T12 randomized geometry feasibility smoke",
+  "status": "development_only",
+  "scientific_claim": null,
+  "base_git_revision": "f09f62fa805082b8138a44a2f43833f68e0c39d3",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "backend": "FAST-LIO",
+    "backend_revision": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+    "health_patch_sha256": "ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2",
+    "cxx17_patch_sha256": "6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275",
+    "fastlio_config_sha256": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67"
+  },
+  "layout": {
+    "family": "straight_randomized_development",
+    "layout_seed": 14,
+    "control_seed": 14,
+    "corridor_length_m": 12.761661024730866,
+    "corridor_half_width_m": 2.3354911193801113,
+    "room_half_width_m": 5.213349295926058,
+    "entry_time_s": 9.25,
+    "exit_plane_x_m": 12.761661024730866,
+    "exit_time_s": 25.20207628091358,
+    "post_exit_horizon_s": 34.79792371908642,
+    "duration_s": 60,
+    "baffle_x_m_control": [2.552332204946173, 5.104664409892346, 7.656996614838519, 10.209328819784693],
+    "scene_only_screen": {
+      "corridor_midpoint_time_s": 17.22603814045679,
+      "post_exit_sample_time_s": 30.20207628091358,
+      "rays_per_sample": 5760,
+      "degraded_corridor_x_normal_fraction": 0.059722222222222225,
+      "feature_control_x_normal_fraction": 0.1996527777777778,
+      "post_exit_room_x_normal_fraction": 0.21736111111111112,
+      "eligibility_limits": {"corridor_max": 0.10, "control_min": 0.15, "post_exit_min": 0.20},
+      "eligible": true
+    }
+  },
+  "trajectory_and_measurement_model": {
+    "motion": "Same analytic 3D v3 trajectory for corridor and control; only scene geometry changes.",
+    "truth_in_sensor_bag": false,
+    "sensor_topics": {"/sim/points": 600, "/sim/imu": 12021},
+    "points_per_bag": 3456000,
+    "serialized_imu_sha256_both_runs": "4824a356db7dd5a8edc12e678fae44f490041f7ca1c033de2a8f418962691f9b",
+    "reference_sha256_both_runs": "6ec0b13007d04d5a9251b03beef535984020df02fcf8f149cc5eacf6641f2e5c",
+    "reference_metadata": "data/simulation_random_layout_reference_metadata.json",
+    "reference_metadata_sha256": "f632a5b1f87060e5807ada2a34851bbcc3429a5b54d25366e35846fc0957abda",
+    "limitations": ["synthetic truth", "one layout seed and geometry pair", "ideal clocks and identity extrinsics", "bias/noise are uncalibrated development settings"]
+  },
+  "inputs": {
+    "corridor": {
+      "path": "experiments/generated/simulation_bootstrap/sim-layout-dev14-v1/sensors.bag",
+      "size_bytes": 80742421,
+      "sha256": "fd035425e6dde9470b9016de963fcc68ff3272b542cfeec7fab4836b8c00299a",
+      "generation_runtime_s": 3.930326223373413
+    },
+    "control": {
+      "path": "experiments/generated/simulation_bootstrap/sim-layout-control14-v1/sensors.bag",
+      "size_bytes": 80742421,
+      "sha256": "658850e8951f1cd41ae3f2c9b1868af31593e0ee3f8b2b6672e08deb117d1427",
+      "generation_runtime_s": 4.078569650650024
+    },
+    "reference_size_bytes": 1861715,
+    "paired_imu_message_count": 12021
+  },
+  "runs": {
+    "corridor": {
+      "directory": "experiments/generated/runs/SIM60_random14_corridor",
+      "pose_count": 597,
+      "health_groups": 600,
+      "valid_health_groups": 597,
+      "startup_unavailable_groups": 3,
+      "evaluation_rows": 1194,
+      "valid_local_rows": 1154,
+      "window_incomplete_rows": 40,
+      "reference_gaps": 0,
+      "poses_sha256": "d5f7e29a2f55d5c8e315007a073ae9b97cc02880b23629ec168c96ed53b3adfc",
+      "health_sha256": "3923380da60b2357829a0bb1f84962234572bedae4e76d21dc638e64d905b021",
+      "evaluation_sha256": "2d8386dc4e5a7e55b708e8629778c8ef4b858ffb21cf08672528569a47871d41"
+    },
+    "control": {
+      "directory": "experiments/generated/runs/SIM60_random14_control",
+      "pose_count": 597,
+      "health_groups": 600,
+      "valid_health_groups": 597,
+      "startup_unavailable_groups": 3,
+      "evaluation_rows": 1194,
+      "valid_local_rows": 1154,
+      "window_incomplete_rows": 40,
+      "reference_gaps": 0,
+      "poses_sha256": "27168e5f22ce1953d442049abba9313a8b2e667f4b7fc3c0c6b15bea7f5240f4",
+      "health_sha256": "6e05146fa1111a4b34a2cbc0853ed55ad8e5f6ec024d36c51a84d1d25ca91388",
+      "evaluation_sha256": "ffc549973b505bba66a866ac0e2ff0fd75b2fe3c492974031046c84baa9d2c45"
+    }
+  },
+  "draft_metric_screen_only": {
+    "translation_limit_m": 0.20,
+    "rotation_limit_deg": 5.0,
+    "corridor_post_exit_1s_windows_passing": "197/200",
+    "control_post_exit_1s_windows_passing": "199/200",
+    "corridor_post_exit_3s_windows_passing_rate_check": "200/200",
+    "control_post_exit_3s_windows_passing_rate_check": "200/200",
+    "first_three_consecutive_nonoverlap_1s_passing_windows_start_s": {"corridor": 26, "control": 26},
+    "recovery_label_assigned": false,
+    "warning": "This is one development layout/seed, and T11/R2 have not frozen these draft thresholds. No health-indicator reliability or recovery result is claimed."
+  },
+  "source_hashes": {
+    "simulate_lidar.py": "897028bf99eb2b97e44088328991c745189f0df12a295e316440c2b49c747370",
+    "write_simulation_bag.py": "30013904c8956ce569538176c565491b49f1504781f29adc3d119fff79f62ba2",
+    "audit_simulation_scene.py": "1c51029c5c3e17e2dfe8eabaf6bcc729781bdf9b0ec3b21b6b2ce3ac00585b3b",
+    "randomized_layout_geometry_screen_dev14_45.json": "1a7533d421e16d299ce9f1ea77860dcdea96abae5ab0ac43f6182a0b7b120b35",
+    "run_simulation_smoke.sh": "a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639",
+    "trajectory_eval.py": "d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba",
+    "audit_health_export.py": "fff0e55b88e129e94f3808b88955d5f6213c8bfac98b25acc12f09e5f3a29ba8",
+    "audit_paired_simulation_bags.py": "14944d470c0d90bc0c5e0837bdf187c06c6f5ab6bef02fbebb0aeedca518c593"
+  },
+  "current_reproduction_check": {
+    "date": "2026-09-26",
+    "layout_family": "randomized_straight_dev",
+    "layout_seed": 14,
+    "command_profile": "regenerated 60 s corridor and paired-control sensor bags/reference files using the recorded seed and current generator; temporary outputs under /tmp",
+    "corridor_sensor_bag_sha256": "fd035425e6dde9470b9016de963fcc68ff3272b542cfeec7fab4836b8c00299a",
+    "control_sensor_bag_sha256": "658850e8951f1cd41ae3f2c9b1868af31593e0ee3f8b2b6672e08deb117d1427",
+    "reference_sha256_both_runs": "6ec0b13007d04d5a9251b03beef535984020df02fcf8f149cc5eacf6641f2e5c",
+    "all_regenerated_hashes_match_recorded_inputs": true,
+    "peak_paired_sensor_bag_size_bytes": 161484842,
+    "scope_limit": "This verifies deterministic input/reference regeneration for seed 14 only; it does not rerun FAST-LIO or verify the future formal x=-6 m route."
+  },
+  "verification": {
+    "randomized_geometry_tests": "12 simulator unit tests passed",
+    "full_experiment_suite": "42 passed, 1 SciPy-dependent test skipped (43 executed)",
+    "scene_only_eligibility_audit": "passed for seed 14",
+    "development_geometry_screen": "32/32 seeds 14-45 met the geometry-only limits before estimator runs",
+    "paired_sensor_bag_audit": "600 scans and 12021 byte-identical serialized IMU messages per bag",
+    "health_export_audits": "passed; 600 groups accounted per run",
+    "trajectory_evaluations": "1194 rows per run; 1154 local-valid; no reference gaps",
+    "final_test_or_heldout_exposure": false
+  },
+  "commands": [
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python research_paper/experiments/src/write_simulation_bag.py --output research_paper/experiments/generated/simulation_bootstrap/sim-layout-dev14-v1 --duration 60 --seed 14 --layout-family randomized_straight_dev --layout-seed 14",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python research_paper/experiments/src/write_simulation_bag.py --output research_paper/experiments/generated/simulation_bootstrap/sim-layout-control14-v1 --duration 60 --seed 14 --layout-family randomized_straight_dev --layout-seed 14 --control",
+    "python3 research_paper/experiments/src/audit_simulation_scene.py --layout-family randomized_straight_dev --layout-seed 14 --require-eligible",
+    "python3 research_paper/experiments/src/audit_simulation_scene.py --layout-family randomized_straight_dev --layout-seeds 14-45 --require-eligible --output-json research_paper/evidence/randomized_layout_geometry_screen_dev14_45.json",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python research_paper/experiments/src/audit_paired_simulation_bags.py --corridor research_paper/experiments/generated/simulation_bootstrap/sim-layout-dev14-v1/sensors.bag --control research_paper/experiments/generated/simulation_bootstrap/sim-layout-control14-v1/sensors.bag --expected-scans 600 --expected-imu 12021",
+    "bash research_paper/experiments/run_simulation_smoke.sh /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env /tmp/fastlio-health-6qmzET research_paper/experiments/generated/simulation_bootstrap/sim-layout-dev14-v1/sensors.bag research_paper/experiments/generated/runs/SIM60_random14_corridor",
+    "bash research_paper/experiments/run_simulation_smoke.sh /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env /tmp/fastlio-health-6qmzET research_paper/experiments/generated/simulation_bootstrap/sim-layout-control14-v1/sensors.bag research_paper/experiments/generated/runs/SIM60_random14_control",
+    "python3 research_paper/experiments/src/trajectory_eval.py --poses research_paper/experiments/generated/runs/SIM60_random14_corridor/poses.csv --reference research_paper/experiments/generated/simulation_bootstrap/sim-layout-dev14-v1/reference.txt --output research_paper/experiments/generated/runs/SIM60_random14_corridor/evaluation.csv --run-id SIM60_LAYOUT14_CORRIDOR --event-id SIM_LAYOUT14 --body-transform-json research_paper/data/simulation_random_layout_reference_metadata.json --development-only --alignment-target-ns 1005000000000",
+    "python3 research_paper/experiments/src/trajectory_eval.py --poses research_paper/experiments/generated/runs/SIM60_random14_control/poses.csv --reference research_paper/experiments/generated/simulation_bootstrap/sim-layout-control14-v1/reference.txt --output research_paper/experiments/generated/runs/SIM60_random14_control/evaluation.csv --run-id SIM60_LAYOUT14_CONTROL --event-id SIM_LAYOUT14 --body-transform-json research_paper/data/simulation_random_layout_reference_metadata.json --development-only --alignment-target-ns 1005000000000",
+    "python3 research_paper/experiments/src/audit_health_export.py research_paper/experiments/generated/runs/SIM60_random14_corridor/health.csv",
+    "python3 research_paper/experiments/src/audit_health_export.py research_paper/experiments/generated/runs/SIM60_random14_control/health.csv"
+  ]
+}

@@ -65,6 +65,25 @@ sleep 3
 rosbag play -q --clock -r 1 -u "$health_duration" --wait-for-subscribers \
   "$hilti_bag" --topics /hesai/pandar /alphasense/imu \
   >"$health_run/rosbag.log" 2>&1
+# ROS Rate uses simulated time. A stopped /clock can leave final sensor
+# callbacks queued even during the wall-clock sleep below. Advance only the
+# clock, never sensor data, so the backend can drain callbacks at the cutoff.
+python3 - "$hilti_bag" "$health_duration" <<'PY'
+import sys
+import time
+import rosbag
+import rospy
+from rosgraph_msgs.msg import Clock
+
+with rosbag.Bag(sys.argv[1]) as bag:
+    cutoff = bag.get_start_time() + float(sys.argv[2])
+rospy.init_node('health_replay_clock_drain', anonymous=True)
+publisher = rospy.Publisher('/clock', Clock, queue_size=1)
+time.sleep(0.5)
+for increment in (0.25, 0.5, 0.75, 1.0):
+    publisher.publish(Clock(clock=rospy.Time.from_sec(cutoff + increment)))
+    time.sleep(0.25)
+PY
 sleep 3
 cleanup
 trap - EXIT

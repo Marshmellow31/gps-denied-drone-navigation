@@ -142,6 +142,18 @@ The provisional `0.20 s` maximum admits the measured 0.1703 s worst post-exit sp
 
 Estimator output is evaluated at its own valid timestamps. A local window ends at the first valid pose in the same segment within `±0.05 s` of `t + tau` (provisional); ties choose the earlier pose. Both endpoint timestamps are independently associated to reference. The actual elapsed duration, not nominal `tau`, is stored and used for rate metrics.
 
+**T11 simulation-label amendment (26 September 2026):** for each nominal
+integer-second simulation-clock boundary, associate one valid estimator pose
+within `±0.05 s` by minimum absolute time difference; ties choose the earlier
+pose. Reuse that same pose as the end of the preceding 1 s window and the
+start of the following one. A boundary without a match is unavailable; do not
+interpolate or shift it. The associated timestamps must be unique, strictly
+increasing and in one segment for every evaluated window. The first post-exit
+window is eligible only if its associated start pose is strictly after the
+scene-exit time. Reference poses at the two actual estimator timestamps still
+use the interpolation/gap rules above. The actual third endpoint controls
+whether a recovery triple finishes by the event deadline.
+
 ## Reset, gap, and failure handling
 
 - A relative-motion window cannot cross a pose `segment_id`, reset marker, reference segment, or invalid endpoint.

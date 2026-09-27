@@ -1,0 +1,59 @@
+diff --git a/src/laserMapping.cpp b/src/laserMapping.cpp
+index c0d9b10..583812f 100644
+--- a/src/laserMapping.cpp
++++ b/src/laserMapping.cpp
+@@ -77,6 +77,7 @@ bool   health_export_en = false, health_valid = false;
+ int    health_accepted_count = 0;
+ Eigen::Matrix<double, 6, 6> health_gram = Eigen::Matrix<double, 6, 6>::Zero();
+ std::ofstream health_stream;
++std::ofstream hessian_stream;
+ /**************************/
+ 
+ float res_last[100000] = {0.0};
+@@ -795,6 +796,27 @@ void write_health_diagnostic(const char *unavailable_reason)
+         for (int i = 0; i < 6; ++i) health_stream << ',' << std::max(0.0, solver.eigenvalues()(i));
+         health_stream << ",true,,last_scan_to_map_linearization\n";
+     }
++    if (hessian_stream.is_open())
++    {
++        const bool hessian_valid = health_valid && health_accepted_count >= 6;
++        hessian_stream << stamp_ns << ',' << health_accepted_count << ','
++                       << (hessian_valid ? "true" : "false");
++        if (hessian_valid)
++        {
++            for (int row = 0; row < 6; ++row)
++                for (int col = 0; col < 6; ++col)
++                    hessian_stream << ',' << health_gram(row, col);
++            hessian_stream << ",,last_scan_to_map_linearization\n";
++        }
++        else
++        {
++            for (int index = 0; index < 36; ++index) hessian_stream << ',';
++            hessian_stream << ','
++                           << (health_valid ? "INSUFFICIENT_CORRESPONDENCES" : unavailable_reason)
++                           << ",last_scan_to_map_linearization\n";
++        }
++        hessian_stream.flush();
++    }
+     health_stream.flush();
+ }
+ 
+@@ -843,6 +865,18 @@ int main(int argc, char** argv)
+         }
+         health_stream << "timestamp_ns,lever_scale_m,accepted_count,eigenvalue_0,eigenvalue_1,eigenvalue_2,eigenvalue_3,eigenvalue_4,eigenvalue_5,valid,unavailable_reason,source_stage\n";
+         health_stream << std::setprecision(17);
++        hessian_stream.open(health_csv_path + ".hessian.csv", ios::out);
++        if (!hessian_stream.is_open())
++        {
++            ROS_ERROR_STREAM("Cannot open raw Hessian sidecar: " << health_csv_path << ".hessian.csv");
++            return 3;
++        }
++        hessian_stream << "timestamp_ns,accepted_count,valid";
++        for (int row = 0; row < 6; ++row)
++            for (int col = 0; col < 6; ++col)
++                hessian_stream << ",h" << row << col;
++        hessian_stream << ",unavailable_reason,source_stage\n";
++        hessian_stream << std::setprecision(17);
+         health_export_en = true;
+     }
+     nh.param<bool>("mapping/extrinsic_est_en", extrinsic_est_en, true);

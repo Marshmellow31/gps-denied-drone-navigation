@@ -1,0 +1,46 @@
+{
+  "verified": true,
+  "evaluation_scope": "development_only",
+  "clock_id": "simulation_epoch",
+  "source": {
+    "artifact_name": "reference.txt",
+    "sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a"
+  },
+  "comparison_body": {
+    "T_est_body_to_ref_body": [
+      [1, 0, 0, 0],
+      [0, 1, 0, 0],
+      [0, 0, 1, 0],
+      [0, 0, 0, 1]
+    ],
+    "provenance": "Point-LIO revision 4b86a469eb5572e70ed575af25b5f15dd06e8e3c publishes camera_init/body; the smoke configuration uses identity LiDAR/IMU extrinsics, matching the collocated simulated sensor/body frames. No body transform is fitted."
+  },
+  "reference_pose": {
+    "direction": "world_from_sim_body",
+    "quaternion_order": "xyzw"
+  },
+  "reference_method": "analytic prescribed 3D trajectory sampled at 200 Hz",
+  "estimator_input_independence": true,
+  "limitations": [
+    "independent of estimator computation, but synthetic rather than physical ground truth",
+    "one development-only Point-LIO smoke run on randomized layout seed 14",
+    "prescribed smooth trajectory, ideal clocks and identity simulated sensor extrinsics",
+    "frame compatibility is established from configured frames/source inspection, not a physical calibration",
+    "not a recovery result or final-test evaluation"
+  ],
+  "route_profile": {
+    "profile_id": "T14_FORMAL_X_MINUS_6_V1",
+    "vehicle_start_x_m": -6.0,
+    "corridor_entry_x_m": 0.0,
+    "entry_time_s": 10.5,
+    "exit_time_formula": "3 + (6 + corridor_length_m) / 0.8",
+    "exit_time_s": 26.45207628091358,
+    "duration_s": 60.0,
+    "world_x_translation_from_frozen_profile_m": -1.0
+  },
+  "event_annotation": {
+    "entry_time_s": 10.5,
+    "exit_time_s": 26.45207628091358,
+    "method": "analytic scene-plane crossing under the frozen formal route"
+  }
+}

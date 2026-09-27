@@ -1,0 +1,173 @@
+{
+  "batch_status_counts": {
+    "CACHED": 62,
+    "COMPLETED": 4,
+    "CRASHED": 2
+  },
+  "batch_summary_sha256": "36f09fa0ecf50d4652ab20236cc365b6673bfdd6e2d8dd4bbefe5463a5d7e37d",
+  "completed_primary_runs": 64,
+  "development_layout_clusters": 32,
+  "failure_ledger_rows": 74,
+  "failure_ledger_status_counts": {
+    "COMPLETED": 66,
+    "CRASHED": 4,
+    "INVALID_INPUT": 4
+  },
+  "heldout_data_opened": false,
+  "maximum_measured_run_rss_kib": 192852,
+  "mean_primary_dcreg_valid_rows": 597,
+  "mean_primary_local_valid_rows": 1154,
+  "mean_primary_replay_elapsed_s": 71.62500763937487,
+  "median_primary_replay_elapsed_s": 71.63882376999936,
+  "paired_imu_audits_passed": 32,
+  "profile_id": "T14_FORMAL_X_MINUS_6_V1",
+  "role": "development_only",
+  "scene_only_eligible_layouts": 32,
+  "scheduled_runs": 68,
+  "schema": "t14-audit-summary-v1",
+  "scientific_conclusion": "NOT_EVALUATED; T16 analysis and R3 remain",
+  "screen_sha256": "99163a614ad58b3ce5a58c1fea02e139e03f9f596f1dcf9fcc9d1229145b02bf",
+  "seed14_smoke_repeat_reconciliation": {
+    "control": {
+      "measurement_stream_hashes_equal": {
+        "stream/dcreg.csv": false,
+        "stream/evaluation.csv": false,
+        "stream/health.csv": false,
+        "stream/health.csv.hessian.csv": false,
+        "stream/poses.csv": false
+      },
+      "output_hash_comparison": {
+        "changed_artifacts": [
+          "stream/dcreg.csv",
+          "stream/evaluation.csv",
+          "stream/fastlio.log",
+          "stream/health.csv",
+          "stream/health.csv.hessian.csv",
+          "stream/pose_logger.log",
+          "stream/poses.csv",
+          "stream/rosbag.log",
+          "stream/roscore.log"
+        ],
+        "common_artifacts": 9,
+        "identical_artifacts": 0,
+        "missing_from_first": [
+          "resources.time.txt",
+          "runner.stderr.log",
+          "runner.stdout.log"
+        ],
+        "missing_from_second": []
+      },
+      "primary_run_id": "T14_DEV14_CONTROL_XM6_P1",
+      "runner_source_hash_equal": false,
+      "same_analysis_and_replay_sources_except_runner": true,
+      "same_backend_fingerprint": true,
+      "same_full_input_fingerprint": true,
+      "same_reference_sha256": true,
+      "same_sensor_bag_sha256": true,
+      "smoke_run_id": "T14_DEV14_CONTROL_XM6_P1"
+    },
+    "corridor": {
+      "measurement_stream_hashes_equal": {
+        "stream/dcreg.csv": true,
+        "stream/evaluation.csv": true,
+        "stream/health.csv": true,
+        "stream/health.csv.hessian.csv": true,
+        "stream/poses.csv": true
+      },
+      "output_hash_comparison": {
+        "changed_artifacts": [
+          "stream/fastlio.log",
+          "stream/pose_logger.log",
+          "stream/rosbag.log",
+          "stream/roscore.log"
+        ],
+        "common_artifacts": 9,
+        "identical_artifacts": 5,
+        "missing_from_first": [
+          "resources.time.txt",
+          "runner.stderr.log",
+          "runner.stdout.log"
+        ],
+        "missing_from_second": []
+      },
+      "primary_run_id": "T14_DEV14_CORRIDOR_XM6_P1",
+      "runner_source_hash_equal": false,
+      "same_analysis_and_replay_sources_except_runner": true,
+      "same_backend_fingerprint": true,
+      "same_full_input_fingerprint": true,
+      "same_reference_sha256": true,
+      "same_sensor_bag_sha256": true,
+      "smoke_run_id": "T14_DEV14_CORRIDOR_XM6_P1"
+    }
+  },
+  "seed45_repeat_runs_completed": 2,
+  "seed45_repeatability_comparison": {
+    "control": {
+      "measurement_stream_hashes_equal": {
+        "stream/dcreg.csv": false,
+        "stream/evaluation.csv": false,
+        "stream/health.csv": false,
+        "stream/health.csv.hessian.csv": false,
+        "stream/poses.csv": false
+      },
+      "output_hash_comparison": {
+        "changed_artifacts": [
+          "resources.time.txt",
+          "runner.stdout.log",
+          "stream/dcreg.csv",
+          "stream/evaluation.csv",
+          "stream/fastlio.log",
+          "stream/health.csv",
+          "stream/health.csv.hessian.csv",
+          "stream/pose_logger.log",
+          "stream/poses.csv",
+          "stream/rosbag.log",
+          "stream/roscore.log"
+        ],
+        "common_artifacts": 12,
+        "identical_artifacts": 1,
+        "missing_from_first": [],
+        "missing_from_second": []
+      },
+      "runner_source_hash_equal": true,
+      "same_analysis_and_replay_sources_except_runner": true,
+      "same_backend_fingerprint": true,
+      "same_full_input_fingerprint": true
+    },
+    "corridor": {
+      "measurement_stream_hashes_equal": {
+        "stream/dcreg.csv": false,
+        "stream/evaluation.csv": false,
+        "stream/health.csv": false,
+        "stream/health.csv.hessian.csv": false,
+        "stream/poses.csv": false
+      },
+      "output_hash_comparison": {
+        "changed_artifacts": [
+          "resources.time.txt",
+          "runner.stdout.log",
+          "stream/dcreg.csv",
+          "stream/evaluation.csv",
+          "stream/fastlio.log",
+          "stream/health.csv",
+          "stream/health.csv.hessian.csv",
+          "stream/pose_logger.log",
+          "stream/poses.csv",
+          "stream/rosbag.log",
+          "stream/roscore.log"
+        ],
+        "common_artifacts": 12,
+        "identical_artifacts": 1,
+        "missing_from_first": [],
+        "missing_from_second": []
+      },
+      "runner_source_hash_equal": true,
+      "same_analysis_and_replay_sources_except_runner": true,
+      "same_backend_fingerprint": true,
+      "same_full_input_fingerprint": true
+    }
+  },
+  "verified_prebatch_repeat_output_files": 18,
+  "verified_primary_output_files": 768,
+  "verified_seed45_repeat_output_files": 24
+}

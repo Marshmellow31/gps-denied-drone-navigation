@@ -1,8 +1,13 @@
 # Research Goal: Reliability after LiDAR Degeneracy
 
-Updated: 24 September 2026. Status: LiDAR-focused candidate scope; exact novelty and eligible recovery evidence pending. Supersedes the camera-outage proposal and broad adaptive-navigation proposal. For the live task state and next actions, start with the [current handoff](execution/CURRENT_HANDOFF.md) and [status ledger](execution/STATUS.md).
+Updated: 26 September 2026. Status: the LiDAR simulation feasibility gate passed R1; novelty, comparator fidelity, final outcome rules and multi-scene evidence remain open. This is not a publication result. Supersedes the camera-outage proposal and broad adaptive-navigation proposal. For the live task state and next actions, start with the [current handoff](execution/CURRENT_HANDOFF.md) and [status ledger](execution/STATUS.md).
 
 ## Goal
+
+**Approved 26 September amendment:** [simulation is the primary quantitative
+evidence](SCOPE_AMENDMENT_SIMULATION.md); real recordings are qualified
+supporting illustrations. The LiDAR recovery question and exclusions below
+remain unchanged. Original real-reference gate failure is not erased.
 
 Produce a focused research paper on whether LiDAR localization-health indicators correctly identify the return of reliable local motion estimation after geometric degeneracy in GNSS-denied navigation.
 
@@ -31,7 +36,7 @@ The candidate empirical contribution is a transition-focused comparison of healt
 - Sensors available to estimation: LiDAR and IMU only. Other channels in a public dataset may provide evaluation reference but never online estimator input.
 - One phenomenon: geometric degeneracy and recovery. Do not combine camera degradation, weather, sensor blackout, timing faults and navigation control.
 - Candidate primary backend: FAST-LIO2. Candidate replication backend: Point-LIO. Confirm suitable timestamped datasets and configurations before final selection.
-- Indicators: a conventional Hessian/eigenvalue baseline and a relevant published localizability/risk measure selected after full-text review of X-ICP and SuperLoc. They are not interchangeable full LIO backends. Portability and implementation equivalence must be checked and documented.
+- Indicators: a conventional FAST-LIO Hessian/eigenvalue baseline and a published directional detector, currently specified as DCReg's Schur-condition detector on shared FAST-LIO correspondences. X-ICP and SuperLoc remain close prior work; they are not automatically interchangeable full LIO backends. The adaptation and parity limits must be reviewed before implementation.
 - Start with one controlled corridor-to-feature-rich geometry family and one real recorded dataset. Vary degeneracy duration/severity and balance motion, with matched nondegenerate controls.
 - Simulated scans must follow ray visibility and occlusion, preserve per-point timing, and include a defined IMU model if used for end-to-end LIO. Ideal point-cloud pairs can validate registration indicators only, not full odometry.
 - A lightweight simulation or public replay is enough to test the question; do not construct a full flight simulator unless the protocol requires it.

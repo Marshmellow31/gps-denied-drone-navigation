@@ -1,0 +1,75 @@
+{
+  "profile_id": "T14_FORMAL_X_MINUS_6_V1",
+  "role": "development_only",
+  "vehicle_start_x_m": -6.0,
+  "duration_s": 60.0,
+  "seed_range": [
+    14,
+    14
+  ],
+  "eligible_count": 1,
+  "ineligible_seeds": [],
+  "screen_source_sha256": "1c51029c5c3e17e2dfe8eabaf6bcc729781bdf9b0ec3b21b6b2ce3ac00585b3b",
+  "route_adapter_sha256": "93ab5bacf988b83564c6405a2cf3dd9433b247d3122fb32c42817094c72353bc",
+  "frozen_simulator_sha256": "897028bf99eb2b97e44088328991c745189f0df12a295e316440c2b49c747370",
+  "results": [
+    {
+      "layout_seed": 14,
+      "geometry": {
+        "layout_family": "straight_randomized_development",
+        "layout_seed": 14,
+        "corridor_length_m": 12.761661024730866,
+        "corridor_half_width_m": 2.3354911193801113,
+        "room_half_width_m": 5.213349295926058,
+        "entry_plane_x_m": 0.0,
+        "exit_plane_x_m": 12.761661024730866,
+        "entry_time_s": 10.5,
+        "exit_time_s": 26.45207628091358,
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "vehicle_start_x_m": -6.0,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1"
+      },
+      "midpoint_time_s": 18.47603814045679,
+      "degraded_midpoint": {
+        "time_s": 18.47603814045679,
+        "control": false,
+        "visible_rays": 5760,
+        "normal_axis_counts_xyz": [
+          345,
+          4327,
+          1088
+        ],
+        "axial_normal_fraction": 0.059895833333333336
+      },
+      "control_midpoint": {
+        "time_s": 18.47603814045679,
+        "control": true,
+        "visible_rays": 5760,
+        "normal_axis_counts_xyz": [
+          1151,
+          3562,
+          1047
+        ],
+        "axial_normal_fraction": 0.1998263888888889
+      },
+      "post_exit_plus5_s": {
+        "time_s": 31.45207628091358,
+        "control": false,
+        "visible_rays": 5760,
+        "normal_axis_counts_xyz": [
+          1249,
+          2654,
+          1857
+        ],
+        "axial_normal_fraction": 0.21684027777777778
+      },
+      "eligible_by_scene_only_rule": true,
+      "rule": {
+        "degraded_x_normal_max": 0.1,
+        "control_x_normal_min": 0.15,
+        "post_exit_x_normal_min": 0.2
+      }
+    }
+  ]
+}
