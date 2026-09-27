@@ -1,10 +1,10 @@
 {
   "analysis_environment": {
-    "analysis_source_sha256": "4b6f91e66ed8c11c4df90bc67ed1ca3e0ba0d3c46f0f00bbef176e62665c83a5",
+    "analysis_source_sha256": "5a74d395cb606f6ba46b3789a4612fba1f5a2b7d10504920625ee989c6ed02eb",
     "command": "ROS_ENV/bin/python research_paper/experiments/src/t16_development_analysis.py --output-dir research_paper/experiments/generated/t16_analysis_v1",
     "numpy": "2.5.3",
     "python": "3.12.14",
-    "test_source_sha256": "49e780220de3b3143697fa7e4c330554257a37389c7d8e35dfe63aa1b53367cb"
+    "test_source_sha256": "c41f87a3468cf4cbc4d2018221bd2c0017836c8757beac0c5d5123830daeb0ce"
   },
   "fastlio_threshold_candidates_count": 19073,
   "fastlio_threshold_selection": {
@@ -1525,6 +1525,7 @@
       "recovery_sensitivity": 0.90625,
       "relapse_events": 1,
       "relapse_fraction_of_truth_recovered": 0.03125,
+      "right_censored_delay_median_s_including_misses": 4.150277779000001,
       "threshold": null,
       "truth_label_eligible_corridor_events": 32,
       "truth_recovered_events": 32,
@@ -1850,6 +1851,7 @@
       "recovery_sensitivity": 0.40625,
       "relapse_events": 1,
       "relapse_fraction_of_truth_recovered": 0.03125,
+      "right_censored_delay_median_s_including_misses": 16.972721794748725,
       "threshold": 166.16366016039856,
       "truth_label_eligible_corridor_events": 32,
       "truth_recovered_events": 32,
@@ -1869,7 +1871,7 @@
     "t16_truth_labels.csv": "1e7dc34e58014183ec5dd8979b219d7614db1228d4babe055afc5924abee4b69"
   },
   "protocol": {
-    "freeze_sha256": "1e32dd4a18c5cabfe74aaa398a912fe8aab56e32a9903305398f8a9c35d1a4fa",
+    "freeze_sha256": "34e9522beb259fb280ff662f3f4dfab9e3a152cf88ef57f04bd9eb257185af6d",
     "metrics_sha256": "06f5bf3950a3784fdd95c1eb6767dfec83ace8237e7d99a275f3ed13074d03cc",
     "recovery_rule": "three consecutive non-overlapping 1 s windows pass 0.20 m and 5 degrees, all endpoints <= exit+20 s",
     "threshold_rule": "R2 frozen unique finite corridor G3 scores plus NO_ALARMS; maximize recovered-event sensitivity subject to conditional false-healthy rate <= 0.10; ties choose higher threshold"
@@ -2574,8 +2576,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV14_CONTROL_XM6_P1",
           "seed": 14,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2584,8 +2584,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV15_CONTROL_XM6_P1",
           "seed": 15,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2594,8 +2592,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV16_CONTROL_XM6_P1",
           "seed": 16,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2604,8 +2600,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV17_CONTROL_XM6_P1",
           "seed": 17,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2614,8 +2608,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV18_CONTROL_XM6_P1",
           "seed": 18,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2624,8 +2616,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV19_CONTROL_XM6_P1",
           "seed": 19,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2634,8 +2624,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV20_CONTROL_XM6_P1",
           "seed": 20,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2644,8 +2632,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV21_CONTROL_XM6_P1",
           "seed": 21,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2654,8 +2640,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV22_CONTROL_XM6_P1",
           "seed": 22,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2664,8 +2648,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV23_CONTROL_XM6_P1",
           "seed": 23,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2674,8 +2656,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV24_CONTROL_XM6_P1",
           "seed": 24,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2684,8 +2664,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV25_CONTROL_XM6_P1",
           "seed": 25,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2694,8 +2672,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV26_CONTROL_XM6_P1",
           "seed": 26,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2704,8 +2680,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV27_CONTROL_XM6_P1",
           "seed": 27,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2714,8 +2688,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV28_CONTROL_XM6_P1",
           "seed": 28,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2724,8 +2696,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV29_CONTROL_XM6_P1",
           "seed": 29,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2734,8 +2704,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV30_CONTROL_XM6_P1",
           "seed": 30,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2744,8 +2712,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV31_CONTROL_XM6_P1",
           "seed": 31,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2754,8 +2720,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV32_CONTROL_XM6_P1",
           "seed": 32,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2764,8 +2728,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV33_CONTROL_XM6_P1",
           "seed": 33,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2774,8 +2736,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV34_CONTROL_XM6_P1",
           "seed": 34,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2784,8 +2744,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV35_CONTROL_XM6_P1",
           "seed": 35,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2794,8 +2752,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV36_CONTROL_XM6_P1",
           "seed": 36,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2804,8 +2760,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV37_CONTROL_XM6_P1",
           "seed": 37,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2814,8 +2768,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV38_CONTROL_XM6_P1",
           "seed": 38,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2824,8 +2776,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV39_CONTROL_XM6_P1",
           "seed": 39,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2834,8 +2784,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV40_CONTROL_XM6_P1",
           "seed": 40,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2844,8 +2792,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV41_CONTROL_XM6_P1",
           "seed": 41,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2854,8 +2800,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV42_CONTROL_XM6_P1",
           "seed": 42,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2864,8 +2808,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV43_CONTROL_XM6_P1",
           "seed": 43,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2874,8 +2816,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV44_CONTROL_XM6_P1",
           "seed": 44,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2884,8 +2824,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV45_CONTROL_XM6_P1",
           "seed": 45,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         }
       ],
@@ -2902,8 +2840,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV14_CORRIDOR_XM6_P1",
           "seed": 14,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2912,8 +2848,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV15_CORRIDOR_XM6_P1",
           "seed": 15,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2922,8 +2856,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV16_CORRIDOR_XM6_P1",
           "seed": 16,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2932,8 +2864,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV17_CORRIDOR_XM6_P1",
           "seed": 17,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2942,8 +2872,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV18_CORRIDOR_XM6_P1",
           "seed": 18,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2952,8 +2880,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV19_CORRIDOR_XM6_P1",
           "seed": 19,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2962,8 +2888,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV20_CORRIDOR_XM6_P1",
           "seed": 20,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2972,8 +2896,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV21_CORRIDOR_XM6_P1",
           "seed": 21,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2982,8 +2904,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV22_CORRIDOR_XM6_P1",
           "seed": 22,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -2992,8 +2912,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV23_CORRIDOR_XM6_P1",
           "seed": 23,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3002,8 +2920,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV24_CORRIDOR_XM6_P1",
           "seed": 24,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3012,8 +2928,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV25_CORRIDOR_XM6_P1",
           "seed": 25,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3022,8 +2936,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV26_CORRIDOR_XM6_P1",
           "seed": 26,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3032,8 +2944,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV27_CORRIDOR_XM6_P1",
           "seed": 27,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3042,8 +2952,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV28_CORRIDOR_XM6_P1",
           "seed": 28,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3052,8 +2960,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV29_CORRIDOR_XM6_P1",
           "seed": 29,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3062,8 +2968,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV30_CORRIDOR_XM6_P1",
           "seed": 30,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3072,8 +2976,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV31_CORRIDOR_XM6_P1",
           "seed": 31,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3082,8 +2984,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV32_CORRIDOR_XM6_P1",
           "seed": 32,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3092,8 +2992,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV33_CORRIDOR_XM6_P1",
           "seed": 33,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3102,8 +3000,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV34_CORRIDOR_XM6_P1",
           "seed": 34,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3112,8 +3008,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV35_CORRIDOR_XM6_P1",
           "seed": 35,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3122,8 +3016,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV36_CORRIDOR_XM6_P1",
           "seed": 36,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3132,8 +3024,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV37_CORRIDOR_XM6_P1",
           "seed": 37,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3142,8 +3032,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV38_CORRIDOR_XM6_P1",
           "seed": 38,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3152,8 +3040,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV39_CORRIDOR_XM6_P1",
           "seed": 39,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3162,8 +3048,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV40_CORRIDOR_XM6_P1",
           "seed": 40,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3172,8 +3056,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV41_CORRIDOR_XM6_P1",
           "seed": 41,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3182,8 +3064,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV42_CORRIDOR_XM6_P1",
           "seed": 42,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3192,8 +3072,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV43_CORRIDOR_XM6_P1",
           "seed": 43,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3202,8 +3080,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV44_CORRIDOR_XM6_P1",
           "seed": 44,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         },
         {
@@ -3212,8 +3088,6 @@
           "planned_post_exit_3s_windows": 170,
           "run_id": "T14_DEV45_CORRIDOR_XM6_P1",
           "seed": 45,
-          "unavailable_post_exit_3s_windows": 0,
-          "unavailable_reasons": {},
           "valid_post_exit_3s_windows": 170
         }
       ],

@@ -2,9 +2,11 @@
 
 This project studies one question: **after a robot leaves a place with few useful shapes, can its existing warning signals tell us when its new movement estimate is accurate again?**
 
+**Authors:** Harshil Patel, Daksha Lingampeta, Nisarg Vyas
+
 The answer is not known yet. We have completed a controlled computer-simulation study on 32 practice layouts, but the independent implementation review has not passed and the untouched final layouts have not been tested. **No drone was flown, and these results do not prove flight safety.**
 
-**Current checkpoint — 27 September 2026:** the research rules passed the protocol review (R2), but the first implementation review (R3) returned **REVISE**. Repairs are still needed. The latest test run had 91 tests: 88 passed, 2 errored because required repeat-audit files are not yet present, and 1 optional SciPy test was skipped. So the software checks are **not all green yet**.
+**Current checkpoint — 27 September 2026:** the research rules passed the protocol review (R2). The first implementation review (R3) requested repairs; those repairs and a numerical repeat-run audit are now prepared for independent re-review. The latest suite ran 119 tests: 118 passed and one optional SciPy check was skipped. A fresh build reproduced the original FAST-LIO executable exactly, and a new practice replay passed the repaired completion checks. R3 has not yet passed, and the final layouts remain untouched. See the [repair evidence](research_paper/evidence/R3_REPAIR_VERIFICATION.md).
 
 ## The idea in everyday words
 
@@ -111,6 +113,23 @@ Other checks found 5,440 of 5,440 valid three-second windows in each scene type.
 
 The 64 main FAST-LIO practice runs (32 corridors plus 32 controls) completed. Their manifests named 768 output files, which the T16 report says were rechecked by hash. Four repeat slots did not all complete as planned: the two seed-45 repeats completed, while scheduled seed-14 launches/retries hit a disk-quota error. An earlier same-input seed-14 pair is disclosed as a substitute; its control output differed. **The independent R3 review has not yet accepted that repeat evidence.** See the [T14 repeat history](research_paper/evidence/T14_DEVELOPMENT_BATCH.md) and [R3 review](research_paper/reviews/R3_IMPLEMENTATION.md).
 
+### What happens when we run the same data again?
+
+We have now measured the four retained repeats, rather than only checking
+whether their files matched. Some movement errors and warning decisions
+changed. The two repeated corridor runs kept the same recovery labels, but
+one DCReg warning delay changed from about 3.5 seconds to 1.3 seconds. That
+matters when interpreting timing results. Repeats do not count as new scene
+examples, and they were not used to adjust the warning cutoff.
+
+![Practice repeat comparison: whole-run movement errors and largest aligned changes](research_paper/figures/t14_repeat_motion_errors.png)
+
+![Practice repeat comparison: warning-state disagreements on the same available decision ticks](research_paper/figures/t14_repeat_warning_disagreement.png)
+
+The [repeatability report](research_paper/evidence/T14_REPEATABILITY_AUDIT.md)
+explains the counts and limitations. Both pictures are saved as PNG, PDF and
+SVG, with their source data and export hashes in the figure guide.
+
 ## Pictures from the data and simulations
 
 ### Real recording: what the sensor saw
@@ -148,10 +167,10 @@ Figure sources, generation steps, credits and limits are listed in [the figure g
 | T14 layout screen and primary runs | 32/32 practice layouts passed the scene-only screen; 64/64 corridor/control runs completed — [audit](research_paper/evidence/t14_development_batch_manifest.json) | Practice layouts only; repeat deviation still needs R3 adjudication. |
 | T15 second-backend smoke | 597 valid Point-LIO poses; two successful pose outputs were byte-identical; 1,154 local-motion rows passed — [manifest](research_paper/evidence/t15_point_lio_smoke_manifest.json) | Point-LIO health-signal parity with FAST-LIO is not established. |
 | T16 practice analysis | 32/32 recovery labels, event metrics and 48-pair sample-size plan — [report](research_paper/evidence/DEVELOPMENT_REPORT.md) | FAST-LIO cutoff uses these same practice runs; final estimates remain unknown. |
-| Full experiment tests, latest run | 91 discovered: 88 passed, 2 errored, 1 optional SciPy test skipped | **Not passing yet.** Both errors point to the missing T14 repeat-audit report/files required by the current R3 gate. |
+| Full experiment tests, latest run | 119 discovered: 118 passed, 1 optional SciPy test skipped | Both the frozen and system Python environments passed; [saved checks and real replay](research_paper/evidence/R3_REPAIR_VERIFICATION.md) cover the repaired lifecycle. Independent R3 re-review is still required. |
 | Held-out/final test | Not run; no held-out geometry or result has been generated or screened | This is required to support the final claim and remains blocked until R3 passes. |
 
-The exact code checks, hash lists, failed runs and reproduction instructions are preserved in the linked reports and manifests. The current next task is to complete the R3 repairs, rerun development-only checks, and request another independent review. Do not run the held-out `screen` or `run` commands before R3 returns PASS.
+The exact code checks, hash lists, failed runs and reproduction instructions are preserved in the linked reports and manifests. The current next task is independent R3 re-review. The complete paper also needs comparable Point-LIO indicators and a separate development freeze for replication before final-layout exposure. See the [paper completion plan](research_paper/execution/PAPER_COMPLETION_PLAN.md). Do not run the held-out `screen` or `run` commands before the required reviews pass.
 
 ## Remaining road to a paper
 
@@ -161,8 +180,8 @@ The dates below are the project plan, not a promise that the work will pass each
 | --- | --- |
 | 27 Sep — question and feasibility | Done as a feasibility stage; the real-data limit and simulation-primary amendment are documented. |
 | 4 Oct — freeze the method | R2 passed for protocol content; the method and test split are recorded in the freeze files. |
-| 11 Oct — verify the implementation | **In progress.** Repair the R3 findings, quantify repeat-run changes, update the practice analysis and get a focused independent review. |
-| 18 Oct — untouched evaluation | Only after R3 PASS, screen reserved layouts using geometry alone and run the pre-planned 48 corridor/control pairs. Do not change the cutoff after seeing results. |
+| 11 Oct — verify the implementation | **In progress.** Complete independent R3 re-review and the comparable Point-LIO indicator development/freeze needed for replication. |
+| 18 Oct — untouched evaluation | After the required implementation reviews, screen reserved layouts using geometry alone and run the pre-planned 48 corridor/control pairs and approved replication. Do not change the cutoff after seeing results. |
 | 25 Oct — analyze | Report uncertainty, failures, false warnings, delays, availability, and alternative explanations. Keep all missing or failed runs visible. |
 | 1 Nov — manuscript | Write a paper using only conclusions supported by the final evidence; complete a reproduction audit and professor review. |
 | 2–7 Nov — revision buffer | Revise against feedback if the agreed deadline permits. Dates can move; scientific gates cannot be skipped. |
@@ -173,7 +192,7 @@ We can say that a controlled LiDAR/IMU simulation, two warning-signal implementa
 
 ## Explain it to a professor in 30 seconds
 
-> We are testing whether two existing LiDAR navigation health signals recognize when local movement estimates become accurate after a robot leaves a feature-poor corridor. We defined the recovery rule before analyzing the practice results and compared the signals on 32 simulated corridor/control pairs. All 32 simulated corridor trajectories met the movement rule, but the warning signals behaved differently. Those are development results: one warning cutoff was chosen on the same runs, the repeat-run audit and implementation review are not complete, and the 48 untouched test pairs have not been run. We therefore make no final performance, novelty or flight-safety claim yet.
+> We are testing whether two existing LiDAR navigation health signals recognize when local movement estimates become accurate after a robot leaves a feature-poor corridor. We defined the recovery rule before analyzing the practice results and compared the signals on 32 simulated corridor/control pairs. All 32 simulated corridor trajectories met the movement rule, but the warning signals behaved differently. Those are development results: one warning cutoff was chosen on the same runs, independent implementation re-review is still pending, and the 48 untouched test pairs have not been run. Repeat runs also changed some warning timing. We therefore make no final performance, novelty or flight-safety claim yet.
 
 ## Key files
 
@@ -187,6 +206,8 @@ We can say that a controlled LiDAR/IMU simulation, two warning-signal implementa
 - [T15 Point-LIO smoke report](research_paper/evidence/T15_POINTLIO_SMOKE.md)
 - [T16 development-results report](research_paper/evidence/DEVELOPMENT_REPORT.md)
 - [R3 review and required repairs](research_paper/reviews/R3_IMPLEMENTATION.md)
+- [R3 repair checks and saved replay evidence](research_paper/evidence/R3_REPAIR_VERIFICATION.md)
+- [Remaining steps to complete the paper](research_paper/execution/PAPER_COMPLETION_PLAN.md)
 - [Gated final-test instructions](research_paper/execution/FINAL_EVALUATION_HANDOFF.md)
 - [Proposal manuscript status](research_paper/paper/README.md)
 

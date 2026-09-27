@@ -2,9 +2,9 @@
 
 Updated: 27 September 2026. Status values are `TODO`, `RUNNING`, `BLOCKED`, and `DONE`. A task is `DONE` only when its acceptance checks and handoff are complete. Review gates must audit the underlying artifacts rather than this ledger.
 
-**Latest checks (27 September):** T13 implementation/reproduction checks pass. T14's formal x=-6 m screen passed **32/32**, with all 64 primary runs hash-audited; its seed-14 repeat reconciliation remains for R3. T15's pinned Point-LIO smoke produced 597 valid poses and 1,154 valid local-motion rows; two successful pose files were byte-identical, but Point-LIO health-indicator parity is not established. T16's checked-in analysis reports 32/32 development recovery labels and a 48-pair final sample-size target; rerun the development analysis after the current R3 implementation repairs. **Latest full-suite recheck: 91 tests discovered, 88 passed, 2 errored because the required T14 repeat-audit files are not yet present, and 1 optional SciPy test was skipped. The suite is not green.** R2's checksum table matches 51/51 after the D035 documentation amendment. The first R3 review returned **REVISE** with repairs T16-R3-01 through -06 and T14-R3-01/T16-R3-07. No held-out geometry was generated or screened.
+**Latest checks (27 September):** The repaired T16 analyzer reproduced the development threshold, 32/32 recovery count, one relapse and 48-pair final target. The [four-repeat audit](../evidence/T14_REPEATABILITY_AUDIT.md) now quantifies error, score, warning-state, label, delay and interior-statistic variation. A fresh isolated build reproduced T14's exact source diff and executable; the current-source development replay passed all completion checks. **119 tests ran in both Python environments: 118 passed, one optional SciPy check was skipped.** See the [saved repair verification](../evidence/R3_REPAIR_VERIFICATION.md). The initial independent R3 verdict remains **REVISE** pending focused re-review. No actual held-out geometry was generated or screened. Point-LIO still provides pose-format smoke evidence only; comparable indicators and replication remain part of the [full paper completion plan](PAPER_COMPLETION_PLAN.md).
 
-**Current research gate:** R1 remains **PASS for protocol design only**; this does not establish novelty or publication readiness. R2 **PASSES for protocol content only** after two REVISE rounds and a fresh GPT-6 review. D035 refreshes only README/decision-log hashes; the [freeze bundle](../protocol/FREEZE.md) reads back **51/51 listed hashes**. R3's first independent review returned **REVISE**; repairs are underway and no implementation freeze exists. Held-out work remains gated, and the FAST-LIO threshold is not locked.
+**Current research gate:** R1 remains **PASS for protocol design only**; this does not establish novelty or publication readiness. R2 **PASSES for protocol content only** after two REVISE rounds and a fresh GPT-6 review. D036 refreshes only README/decision-log hashes; the [freeze bundle](../protocol/FREEZE.md) reads back **51/51 listed hashes**. R3's first independent review returned **REVISE**; the repair package is prepared for re-review and no implementation freeze exists. Held-out work remains gated, and the FAST-LIO threshold is not locked.
 
 **Historical real-recording evidence:** the [LiDAR-only event audit](../data/HILTI_EXP18_EVENT.md) fixed a 31.6–33.6 s exit-only interval before event-anchored errors were summarized. The [T07 development pilot](../evidence/HILTI_EXP18_T07_PILOT.md) contains 1,092 rows with explicit availability reasons. Only 13/56 matched post-exit 1 s windows and **0/56** 3 s windows have usable reference. The reference is partly LiDAR map-registration-derived, so this remains a supporting illustration rather than independent recovery evidence. See the [alternative reference screen](../data/ALTERNATIVE_REFERENCE_AUDIT.md).
 
@@ -29,8 +29,8 @@ Updated: 27 September 2026. Status values are `TODO`, `RUNNING`, `BLOCKED`, and 
 | T13 | DONE | R2 PASS, T10 | [DCReg detector implementation and reproduction evidence](../evidence/INDICATOR_REPRODUCTION.md); [handoff](handoffs/T13.md). Detector adaptation only; no recovery result or threshold claim. |
 | T14 | DONE | R2 PASS, T12, T13 | [Formal development batch report](../evidence/T14_DEVELOPMENT_BATCH.md), [32/32 scene screen](../evidence/randomized_layout_geometry_screen_t14_xminus6_dev14_45_v2.json), [hash audit](../evidence/t14_development_batch_manifest.json) and [handoff](handoffs/T14.md). Seed-14 repeat reconciliation is explicitly pending R3 acceptance; no recovery result or threshold claim. |
 | T15 | DONE | R2 PASS, T13 | [Pinned Point-LIO smoke report](../evidence/T15_POINTLIO_SMOKE.md), [machine manifest](../evidence/t15_point_lio_smoke_manifest.json), common pose contract passed; FAST-LIO indicator parity not established; [handoff](handoffs/T15.md) |
-| T16 | RUNNING | T14, T15 | Development analysis is complete; the R3 review found final-runner and repeatability repairs. See [R3 review](../reviews/R3_IMPLEMENTATION.md) and [T16 handoff](handoffs/T16.md). |
-| R3 | RUNNING | T13-T16 | First independent review **REVISE**; repair T16-R3-01 through -06 and T14-R3-01/T16-R3-07, then request focused re-review. No implementation freeze or held-out authorization. |
+| T16 | RUNNING | T14, T15 | Repaired development analysis, numerical repeats and fresh lifecycle verification are prepared; independent R3 acceptance remains. See [repair verification](../evidence/R3_REPAIR_VERIFICATION.md) and [T16 handoff](handoffs/T16.md). |
+| R3 | RUNNING | T13-T16 | First independent review **REVISE**; current repair package is ready for focused re-review. No implementation freeze or held-out authorization. |
 
 ## Current gate
 
@@ -38,8 +38,9 @@ T01-T15 are complete as scoped tasks. T16's development analysis is complete, bu
 
 ## Next eligible work
 
-**Next eligible work:** repair the R3 findings—T16-R3-01 through T16-R3-06,
-plus T14-R3-01/T16-R3-07—without changing frozen scientific choices. Rerun
-development-only checks, then request a focused R3 re-review. Only after R3
-PASS may the 48-pair geometry screen and final batch begin. See the [current
-handoff](CURRENT_HANDOFF.md).
+**Next eligible work:** focused independent R3 re-review of the completed
+repair package. Complete comparable Point-LIO indicator development and its
+reviewed freeze before final-layout exposure for the complete paper. R3 PASS
+is required for the primary 48-pair screen/batch; it does not complete the
+paper or replication. See the [current handoff](CURRENT_HANDOFF.md) and
+[paper completion plan](PAPER_COMPLETION_PLAN.md).

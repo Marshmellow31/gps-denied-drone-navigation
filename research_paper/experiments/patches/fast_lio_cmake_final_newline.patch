@@ -1,0 +1,7 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -88,1 +88,1 @@
+-target_include_directories(fastlio_mapping PRIVATE ${PYTHON_INCLUDE_DIRS})
+\ No newline at end of file
++target_include_directories(fastlio_mapping PRIVATE ${PYTHON_INCLUDE_DIRS})

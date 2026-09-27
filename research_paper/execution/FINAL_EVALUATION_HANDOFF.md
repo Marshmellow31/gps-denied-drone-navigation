@@ -9,7 +9,7 @@ report PASS.
 T16 calculated `n_test = 48` independent geometry pairs. This is 12 eligible
 corridor/control pairs in each of the four fixed strata. The no-data plan is
 [FINAL_HELDOUT_PLAN.json](../evidence/FINAL_HELDOUT_PLAN.json), SHA-256
-`e6da5646243f95f8bae1befb39524ac58d660cd51491260f0f84d27c70ec501c`. It only
+`14e769fcda4901d8dfb0ef366c8229cc19f1ce96e6d46f117e069dbf12a2fcf1`. It only
 lists the already reserved seed ranges and explicitly records that no held-out
 geometry or input was generated.
 
@@ -57,6 +57,7 @@ for diagnosis.
 /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python \
   research_paper/experiments/src/final_evaluation_runner.py run \
   --screen research_paper/experiments/generated/final_heldout_scene_screen.json \
+  --plan research_paper/evidence/FINAL_HELDOUT_PLAN.json \
   --analysis research_paper/evidence/t16_development_analysis_manifest.json \
   --r3-review research_paper/reviews/R3_IMPLEMENTATION.md \
   --implementation-freeze research_paper/protocol/IMPLEMENTATION_FREEZE.md \
@@ -70,8 +71,13 @@ for diagnosis.
 
 The R3 implementation-freeze document must copy the exact development-selected
 FAST-LIO threshold `166.16366016039856` for `FASTLIO_MIN_EIG_G3`. The final
-runner rejects a missing R3 PASS, a different threshold, a changed R2 split or
-an incompatible backend/configuration. DCReg stays at its frozen
+runner requires a JSON block with schema `r3-implementation-freeze-v1`, an
+`artifacts` map exactly equal to the current `_r3_required_hashes()` inventory,
+and numeric `FASTLIO_MIN_EIG_G3_threshold`. This binds artifact names to their
+hashes; a list of matching hash strings is insufficient. It rejects missing
+R3 PASS, a different threshold, changed source/data lineage, duplicated or
+altered selection, an unfrozen runtime or incompatible backend/configuration.
+DCReg stays at its frozen
 `kappa_th=10`; neither value may be tuned on held-out outcomes.
 
 ## Immutable implementation and protocol hashes
@@ -82,23 +88,32 @@ passing the gate.
 
 | Artifact | SHA-256 / revision |
 | --- | --- |
-| Current R2 protocol freeze (after editorial D035) | See current freeze SHA-256 in [`CURRENT_HANDOFF.md`](CURRENT_HANDOFF.md); verify it again before any future gate. |
+| Current R2 protocol freeze (after editorial D036) | See current freeze SHA-256 in [`CURRENT_HANDOFF.md`](CURRENT_HANDOFF.md); verify it again before any future gate. |
 | Frozen metrics | `06f5bf3950a3784fdd95c1eb6767dfec83ace8237e7d99a275f3ed13074d03cc` |
 | Reserved development/held-out split table | `d9d5496a55a2bb55cbf4a294be87df41ebb3b57ff24bdfd0e6fc0fcc8d682172` |
 | FAST-LIO simulation configuration | `b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67` |
 | FAST-LIO source revision | `7cc4175de6f8ba2edf34bab02a42195b141027e9` |
 | FAST-LIO binary used by T14 | `4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792` |
 | PCL17 / T08 / T13 backend patches | `6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275` / `ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2` / `4e85cce23aae900e3cbee37f9871d40454fb3c1203a794a8db419475033a1ace` |
-| T16 analysis implementation | `5a74d395cb606f6ba46b3789a4612fba1f5a2b7d10504920625ee989c6ed02eb` |
+| T16 analysis implementation | `4b6f91e66ed8c11c4df90bc67ed1ca3e0ba0d3c46f0f00bbef176e62665c83a5` |
 | Held-out geometry/input generator | `81804905abebf0ae4eaed7e16e52ae8cb0f6f72c9b4cfaf3b40dc7e565d6f811` |
-| Final screen/replay runner | `3de7593bc74675c9b144b2646271a91806ae7222fb2e81296afadac4c6a4fd29` |
+| Final screen/replay runner | `d1899726942d4fc78f4b2fdb45f82fe4dcc946f498a924cc0a5069106947fa6a` |
 | DCReg / evaluator / replay script | `516e1da40c9cb8bc58e5a0e4c9c7964392a0877a77ba20e7139eae997783595e` / `d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba` / `a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639` |
-| T16 analysis manifest / no-data plan | `1a716973445616ad0a09b207d50acd49dcfd8e3a87fac09c6d567726acc5b011` / `e6da5646243f95f8bae1befb39524ac58d660cd51491260f0f84d27c70ec501c` |
+| T16 analysis manifest / no-data plan | `3cf0c51aa04367cdffdd208ffe3914233c5478e7a12cd6a0854ac3359b6f0d17` / `14e769fcda4901d8dfb0ef366c8229cc19f1ce96e6d46f117e069dbf12a2fcf1` |
 
 The current FAST-LIO workspace is session-local under `/tmp`. If it disappears,
 rebuild from the pinned source and reviewed patches; do not proceed unless its
 binary hash and the complete implementation-freeze record match. The runner
 stops on a mismatch.
+
+The [restore script](../experiments/restore_fastlio_workspace.sh) now includes
+the archived final-CMake-newline step and explicit message generation required
+for a clean build. Fresh reconstruction reproduced the exact T14 binary.
+See [R3 development validation](../evidence/R3_REPAIR_VERIFICATION.md) for the
+build history and actual replay through the repaired lifecycle. For the user's
+complete paper, finalize Point-LIO comparable-indicator development and its
+replication freeze before exposing final layouts; see
+[PAPER_COMPLETION_PLAN.md](PAPER_COMPLETION_PLAN.md).
 
 ## Resource estimate and stop conditions
 

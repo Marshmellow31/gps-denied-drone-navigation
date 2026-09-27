@@ -2,7 +2,7 @@
 
 Updated: 27 September 2026. **Start here when resuming the LiDAR recovery-reliability study.** This is a snapshot, not a completed result. The authoritative task states are in [STATUS.md](STATUS.md); the original task requirements remain in [the execution plan](../AGENT_EXECUTION_PLAN.md).
 
-**26 September verification:** T08 is DONE: after fixing shutdown clock draining, full 55 s on/off runs yield 547 byte-identical poses and 550 audited groups (547 valid, three startup-unavailable). The remaining delivered scan lacks IMU through its end at the replay cutoff. See the [audit](../evidence/T08_FINAL_PATCH_AUDIT.md). The original real-reference T09 criterion remains blocked; the later simulation-primary T09 feasibility task is complete. The current experiment suite has **42 passed, 1 skipped** (43 executed); earlier 30/1 and 28/28 counts below are historical. Outputs: ignored `experiments/generated/runs/T08_20260926/`.
+**Historical 26 September verification:** T08 is DONE: after fixing shutdown clock draining, full 55 s on/off runs yield 547 byte-identical poses and 550 audited groups (547 valid, three startup-unavailable). The remaining delivered scan lacks IMU through its end at the replay cutoff. See the [audit](../evidence/T08_FINAL_PATCH_AUDIT.md). The original real-reference T09 criterion remains blocked; the later simulation-primary T09 feasibility task is complete. At that checkpoint the suite had **42 passed, 1 skipped** (43 executed); the latest count is in the R3 repair update below. Outputs: ignored `experiments/generated/runs/T08_20260926/`.
 
 **Current scope:** the user approved simulation-primary evidence on 26 September.
 The [amendment](../SCOPE_AMENDMENT_SIMULATION.md) preserves the LiDAR recovery
@@ -35,10 +35,10 @@ REVISE; the latest fresh review returned **PASS for protocol content**. The user
 approved the full-triple-within-20-seconds rule and formal x=-6 m route. T11 is
 frozen at proposal v0.4, with shared nearest-pose time boundaries and explicit
 debounce, relapse and confidence-interval rules. [`FREEZE.md`](../protocol/FREEZE.md)
-was re-read after editorial decision D035 with **51/51 hashes matching**.
+was re-read after editorial decision D036 with **51/51 hashes matching**.
 The current freeze-file SHA-256 is
-`1e32dd4a18c5cabfe74aaa398a912fe8aab56e32a9903305398f8a9c35d1a4fa`.
-D034/D035 update only the README and append-only decision-log checksums; the
+`7073114152fd3b7b248e43cbb0b016d0a330d1b0e81ede5b4cf7d907c4f90f02`.
+D034–D036 refresh only the README and append-only decision-log checksum entries; the
 protocol methods and splits are unchanged. The original freeze-file hash is
 preserved there. R2 is PASS for protocol content only; R3 and publication
 novelty are not passed.
@@ -103,15 +103,25 @@ counterexamples are in [R3_IMPLEMENTATION.md](../reviews/R3_IMPLEMENTATION.md).
 It did not create `IMPLEMENTATION_FREEZE.md`, and no held-out data were
 generated or screened.
 
-**Current next step:** resolve T16-R3-01 through T16-R3-06 plus
-T14-R3-01/T16-R3-07 without changing frozen scientific choices; rerun
-development-only verification and request a focused R3 re-review. Do not run
-the held-out screen or final batch until the re-review passes. The final
-evaluation handoff gives commands, resource estimates and stop conditions.
-Latest full-suite recheck: 91 tests discovered, 88 passed, two errored because
-the required T14 repeat-audit files are not yet present, and one optional
-SciPy check was skipped. This is not a green suite. The R2 checksum table
-matches 51/51 after D035; no held-out geometry has been generated or screened.
+**R3 repair update (27 September):** the full repair package is now prepared
+for independent re-review. The [verification report](../evidence/R3_REPAIR_VERIFICATION.md)
+maps every repair ID to its source, fixtures and real development checks.
+The analyzer rerun reproduces the threshold and sample size; the
+[repeat audit](../evidence/T14_REPEATABILITY_AUDIT.md) quantifies all four
+retained repeats. The source and executable were rebuilt identically to T14;
+a current-source development replay passed the real completion validator.
+Both environments now run **119 tests: 118 passed, one optional SciPy skip**.
+Saved plots include PNG/PDF/SVG and a figure hash manifest. The initial R3
+review remains REVISE until independently audited again.
+
+**Current next step:** obtain focused R3 re-review. For the user's full paper
+objective, develop and freeze comparable Point-LIO indicators before any
+final-layout exposure; a pose-only smoke does not satisfy replication.
+The [paper completion plan](PAPER_COMPLETION_PLAN.md) preserves the broader
+objective through final evaluation, replication, novelty audit, analysis and
+manuscript verification. No actual held-out geometry has been generated or
+screened. The final-evaluation handoff supplies the primary commands and
+resource estimates; they remain gated.
 
 **Historical real-data checkpoint:** T07 closed software acceptance, but Hilti
 has only 13/56 valid matched post-exit 1 s windows and 0/56 3 s windows.
@@ -137,7 +147,7 @@ After a LiDAR system passes through a scene with weak geometric clues, can its e
 | Indicator comparison, transition pilot, protocol and comparator implementation | T08–T13 completed as engineering/evidence tasks; R1 PASS for design, R2 PASS for protocol content. R3/final evaluation remain. | [T13 reproduction](../evidence/INDICATOR_REPRODUCTION.md), [R1](../reviews/R1_FEASIBILITY.md), [R2](../reviews/R2_PROTOCOL.md), [freeze](../protocol/FREEZE.md) |
 | Formal simulation implementation | T14 DONE as development execution; 64 primaries, seed-45 repeats and transparent seed-14 smoke-repeat reconciliation. R3 must adjudicate the deviation. | [T14 batch report](../evidence/T14_DEVELOPMENT_BATCH.md), [audit manifest](../evidence/t14_development_batch_manifest.json), [handoff](handoffs/T14.md) |
 | Point-LIO backend smoke | T15 DONE for a pinned, repeated pose-output smoke; no FAST-LIO indicator parity or replication result. | [T15 report](../evidence/T15_POINTLIO_SMOKE.md), [machine manifest](../evidence/t15_point_lio_smoke_manifest.json), [handoff](handoffs/T15.md) |
-| Frozen development-label/threshold analysis | T16 DONE; 32/32 truth-recovered events; development threshold candidate only; `n_test=48`; held-out plan exists with no geometry/results. | [Development report](../evidence/DEVELOPMENT_REPORT.md), [manifest](../evidence/t16_development_analysis_manifest.json), [handoff](handoffs/T16.md) |
+| Frozen development-label/threshold analysis | Analysis and repairs prepared; T16 remains RUNNING pending independent R3 acceptance. Candidate threshold and `n_test=48` reproduce; no held-out geometry/results. | [Development report](../evidence/DEVELOPMENT_REPORT.md), [repair checks](../evidence/R3_REPAIR_VERIFICATION.md), [handoff](handoffs/T16.md) |
 
 The Hilti replay is a software/development illustration, not an independent
 recovery benchmark. The backend's actual online diagnostic has been measured
@@ -160,8 +170,9 @@ It is 8,657,654,860 bytes; SHA-256 `98373b52f207b9ace3914792b5604a6642f89441190c
    `experiments/generated/` and are not committed.
 2. R2 content/file-hash freeze, T14 execution, T15 Point-LIO smoke and T16
    development analysis are complete. T14's repeat reconciliation, Point-LIO
-   indicator limit and T16-R3 repairs are explicit. Resolve the first R3
-   REVISE items and obtain a focused re-review. Do not generate or inspect
+   indicator limit and verified T16-R3 repairs are explicit. Obtain a focused
+   independent re-review, then complete the replication development freeze
+   required by the full-paper plan. Do not generate or inspect
    held-out inputs/results before R3 PASS. The literature basis is in
    [RECOVERY_OVERLAP_UPDATE.md](../literature/RECOVERY_OVERLAP_UPDATE.md).
 

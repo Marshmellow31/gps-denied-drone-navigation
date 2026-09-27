@@ -12,7 +12,7 @@ exit. This freezes the experiment protocol, not implementation correctness,
 novelty, publication readiness, real-world accuracy or flight safety.
 
 **Hash read-back:** 51/51 listed files matched on 26 September and again after
-the D035 amendment on 27 September 2026. The
+the D036 amendment on 27 September 2026. The
 freeze-file SHA-256 is recorded in the execution handoff; it is not part of its
 own checksum table.
 
@@ -39,6 +39,17 @@ previous README and decision-log hashes are recorded in D035. Their two table
 entries are refreshed below; the other 49 listed artifact hashes are unchanged.
 R2 remains PASS for protocol content only. R3 remains REVISE and no held-out
 screening or run is authorized.
+
+**Editorial read-back amendment D036 (27 September 2026):** The README now
+reports the repaired development verification, numerical repeat audit,
+119-test suite (118 passes, one optional skip), saved figure exports and the
+remaining full-paper/replication work. The append-only decision log records
+the implementation repairs and the broader completion objective. Only their
+two checksum entries are refreshed; the other 49 listed hashes and all frozen
+scientific choices remain unchanged. D036 preserves their preceding hashes
+and the pre-amendment freeze identity. The new implementation and regenerated
+development evidence require independent R3 re-review; this editorial update
+does not pass R3 or authorize final-layout exposure.
 
 R1 passed only to permit protocol design. R2 had two REVISE rounds; the final
 review accepted the revised content. The user approved the 20 s full-triple
@@ -220,12 +231,12 @@ governing file invalidates this freeze until an amendment/re-review.
 | File | SHA-256 |
 | --- | --- |
 | `AGENTS.md` | `eaa9e4584d866150cf30ff50f3820ea81aeef1d677df469372c075d341cc02dd` |
-| `README.md` | `f05f5aecdf06f27ead7fedf75d73d77e9a67f673bf022f1ab8d92086effed3cc` |
+| `README.md` | `3721b60c2adb4d79909746c0da53f41799e1d8d9876012f3ff2af7b95d78fd57` |
 | `research_paper/AGENT_EXECUTION_PLAN.md` | `18ade8e8130abcb492616ad03de19c0fee60a60017c6f43a67102b4079f6a392` |
 | `research_paper/RESEARCH_GOAL.md` | `4feca0c33246405bce20e0f4ed2be0cfe78b1fb5c2df1629a08564d4c2c6ce33` |
 | `research_paper/SCOPE_DECISION.md` | `feb85397efcc8e222785881b9b28a3b4d7b899a893de0269ad9208a5ff337d32` |
 | `research_paper/SCOPE_AMENDMENT_SIMULATION.md` | `edfda5a59a376f10d4184d3e0d9451d1435267e67fd7a9854d70b30ba17dcfbc` |
-| `research_paper/execution/DECISIONS.md` | `8a22fe99421e8aa5439d0e7554979183136a33fd06e2fd9048d4d7349dea5fe4` |
+| `research_paper/execution/DECISIONS.md` | `d55bd088369df682bede43eac875026f9ff82369f5220398f1b66bc15ddbec5f` |
 | `research_paper/literature/COMPARISON.md` | `411e52abb3469b205a7cdb891a388749a9ab8ac5fe56295beff54e88f57b0a7f` |
 | `research_paper/literature/GAP_DECISION.md` | `e5188eaf327386c3a5470e3cd758410bbe83cf626e890739a344634ed0650b9c` |
 | `research_paper/literature/RECOVERY_OVERLAP_UPDATE.md` | `117e4c40ed3b98906739d0dace28493b7f297a709f20aa72834cc8583d581255` |

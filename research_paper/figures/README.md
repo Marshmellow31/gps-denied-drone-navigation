@@ -33,3 +33,22 @@ and offline evaluator outputs. See `evidence/PILOT_REPORT.md` and
 `evidence/exp18_pilot_manifest.json` for attribution, units, reproduction,
 hashes and limitations. It is not a recovery result. Grey means unavailable,
 gold marks the LiDAR-only scene exit; no error-derived transition is used.
+
+# 27 September retained-repeat figures
+
+`t14_repeat_motion_errors` and `t14_repeat_warning_disagreement` are saved as
+PNG, PDF and SVG. They visualize only the four retained repeat comparisons
+from two development layouts. Motion medians use 587 jointly valid 1-second
+rows per comparison; warning disagreement fractions use 596 jointly available
+decision ticks per comparison. Those correlated rows/ticks are not additional
+independent events. Thresholds are fixed to the development candidate and the
+published DCReg detector adaptation rule.
+
+The source is [`t14_repeatability_audit.json`](../evidence/t14_repeatability_audit.json),
+with definitions, reproduction and interpretation in the
+[audit report](../evidence/T14_REPEATABILITY_AUDIT.md). The plotting script is
+[`plot_repeatability.py`](../experiments/src/plot_repeatability.py).
+[`t14_repeat_figure_manifest.json`](t14_repeat_figure_manifest.json) records
+the input, script and all export hashes plus plotting-library versions.
+Initial layout drafts are preserved under ignored
+`experiments/generated/figure_drafts/t14_repeat_v1/`.

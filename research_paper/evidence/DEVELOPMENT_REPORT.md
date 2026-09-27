@@ -147,7 +147,25 @@ generated geometry or sensor input.
 - This study does not establish flight safety, transfer to different scene
   topologies, or publication novelty.
 
-## Next gate
+## R3 repair evidence update — 27 September
+
+The repaired analyzer was rerun in a new output folder,
+`experiments/generated/t16_analysis_r3_v2/`, using Python 3.12.14 / NumPy 2.5.3.
+It reverified the 64 primary outputs. The selected candidate threshold,
+32/32 recovery count, one relapse, signal event counts and 48-pair sample-size
+target reproduce. The prior manifest and no-data plan are preserved under
+`evidence/archive/`; the canonical manifest and plan now identify the rerun.
+The removed censoring-duration median is not presented as a survival median.
+
+The new [repeatability audit](T14_REPEATABILITY_AUDIT.md) quantifies all four
+retained repeats. Corridor recovery labels and event-detection booleans agree
+for these two repeated layouts, but scores, full-run warning states and some
+detection delays vary. Substitution sensitivity leaves the 48-pair target
+unchanged. Repeats remain outside threshold training and the independent
+event count. The saved figures include PNG, PDF and SVG exports. R3 has not
+yet re-reviewed this update, and no held-out geometry has been opened.
+
+## Next gate after these repairs
 
 R3 must inspect this report, the T16 machine manifest, the T14 repeat
 reconciliation, the Point-LIO limitation and all implementation/source hashes.
