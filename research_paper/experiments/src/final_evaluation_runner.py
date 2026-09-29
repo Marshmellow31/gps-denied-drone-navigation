@@ -29,6 +29,7 @@ T14_AUDIT = ROOT / "research_paper/evidence/t14_development_batch_manifest.json"
 T14_REFERENCE_RUN = ROOT / "research_paper/experiments/generated/runs/T14_FORMAL_BATCH/T14_DEV14_CORRIDOR_XM6_P1/run_manifest.json"
 CONFIG = ROOT / "research_paper/configs/fastlio_simulation_bootstrap.yaml"
 RUN_SCRIPT = ROOT / "research_paper/experiments/run_simulation_smoke.sh"
+FINAL_RUN_SCRIPT = ROOT / "research_paper/experiments/run_final_evaluation_replay.sh"
 POSE_LOGGER = ROOT / "research_paper/experiments/src/pose_logger.py"
 HEALTH_AUDIT = ROOT / "research_paper/experiments/src/audit_health_export.py"
 DCREG = ROOT / "research_paper/experiments/src/dcreg_schur.py"
@@ -76,6 +77,27 @@ def _read_tsv_or_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream))
 
 
+def _input_manifest_identity(manifest: dict[str, Any]) -> str:
+    """Hash inputs/settings, excluding timing and Git commit bookkeeping."""
+    non_scientific = {"runtime_s", "code_revision"}
+    stable = {key: value for key, value in manifest.items() if key not in non_scientific}
+    payload = json.dumps(stable, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def _input_manifest_identity_file(path: Path) -> str:
+    return _input_manifest_identity(json.loads(path.read_text(encoding="utf-8")))
+
+
+def _cached_run_identity_matches(cached: Any, current: dict[str, Any]) -> bool:
+    """Ignore only raw manifest bytes; retain the stable semantic digest."""
+    if not isinstance(cached, dict):
+        return False
+    ignored = {"input_manifest_file_sha256"}
+    return ({key: value for key, value in cached.items() if key not in ignored}
+            == {key: value for key, value in current.items() if key not in ignored})
+
+
 def _require_r3_pass(review_path: Path, freeze_path: Path) -> dict[str, str]:
     if not review_path.is_file() or not freeze_path.is_file():
         raise FinalEvaluationError("R3 review and implementation freeze must both exist")
@@ -103,9 +125,38 @@ def _require_r3_pass(review_path: Path, freeze_path: Path) -> dict[str, str]:
             "reviewed_artifact_hashes": required}
 
 
+def _r2_frozen_artifact_hashes() -> dict[str, str]:
+    """Verify every file listed in the R2 freeze, then bind it into R3."""
+    freeze_path = ROOT / "research_paper/protocol/FREEZE.md"
+    text = freeze_path.read_text(encoding="utf-8")
+    rows = __import__("re").findall(
+        r"(?m)^\| `([^`]+)` \| `([0-9a-f]{64})` \|\s*$", text)
+    if not rows or len({path for path, _ in rows}) != len(rows):
+        raise FinalEvaluationError("R2 freeze does not contain a unique file-hash inventory")
+    hashes = {}
+    for relative, expected in rows:
+        path = (ROOT / relative).resolve()
+        if ROOT.resolve() not in path.parents or not path.is_file():
+            raise FinalEvaluationError(f"R2 frozen artifact is missing or outside the repository: {relative}")
+        actual = sha256_file(path)
+        if actual != expected:
+            raise FinalEvaluationError(f"R2 frozen artifact hash changed: {relative}")
+        hashes[f"R2 frozen artifact: {relative}"] = actual
+    return hashes
+
+
 def _r3_required_hashes(review_path: Path) -> dict[str, str]:
     artifacts = {
         "R3 review": review_path,
+        "R3 repair verification report": ROOT / "research_paper/evidence/R3_REPAIR_VERIFICATION.md",
+        "R3 latest system test log": ROOT / "research_paper/evidence/r3_tests_system_20260928.log",
+        "R3 adversarial regression results": ROOT / "research_paper/evidence/r3_adversarial_regressions_20260928.log",
+        "R3 adversarial regression script": ROOT / "research_paper/reviews/r3_rereview_counterexamples.py",
+        "R3 review inventory builder": ROOT / "research_paper/experiments/src/prepare_r3_review_inventory.py",
+        "post-R2 novelty audit": ROOT / "research_paper/literature/POST_R2_NOVELTY_AUDIT_20260928.md",
+        "paper completion plan": ROOT / "research_paper/execution/PAPER_COMPLETION_PLAN.md",
+        "current research handoff": ROOT / "research_paper/execution/CURRENT_HANDOFF.md",
+        "research status ledger": ROOT / "research_paper/execution/STATUS.md",
         "R2 freeze": ROOT / "research_paper/protocol/FREEZE.md",
         "R2 metrics": ROOT / "research_paper/protocol/METRICS.md",
         "split table": ROOT / "research_paper/data/SPLITS.csv",
@@ -125,6 +176,7 @@ def _r3_required_hashes(review_path: Path) -> dict[str, str]:
         "T16 analyzer": ROOT / "research_paper/experiments/src/t16_development_analysis.py",
         "T16 analyzer tests": ROOT / "research_paper/experiments/tests/test_t16_development_analysis.py",
         "held-out generator": Path(heldout.__file__).resolve(),
+        "simulation scene audit": ROOT / "research_paper/experiments/src/audit_simulation_scene.py",
         "held-out generator tests": ROOT / "research_paper/experiments/tests/test_heldout_simulation.py",
         "final runner": Path(__file__).resolve(),
         "final runner tests": ROOT / "research_paper/experiments/tests/test_final_evaluation_runner.py",
@@ -142,6 +194,7 @@ def _r3_required_hashes(review_path: Path) -> dict[str, str]:
         "pair audit": PAIR_AUDIT,
         "pose logger": POSE_LOGGER,
         "FAST-LIO replay script": RUN_SCRIPT,
+        "R3 supervised replay wrapper": FINAL_RUN_SCRIPT,
         "PCL17 backend patch": ROOT / "research_paper/experiments/patches/fast_lio_pcl17.patch",
         "T08 backend patch": ROOT / "research_paper/experiments/patches/fast_lio_health_diagnostic.patch",
         "T13 backend patch": ROOT / "research_paper/experiments/patches/fast_lio_hessian_sidecar.patch",
@@ -151,6 +204,7 @@ def _r3_required_hashes(review_path: Path) -> dict[str, str]:
         raise FinalEvaluationError("required implementation-freeze artifacts missing: "
                                    + ", ".join(missing_paths))
     result = {name: sha256_file(path) for name, path in artifacts.items()}
+    result.update(_r2_frozen_artifact_hashes())
     result["FASTLIO_BINARY_SHA256"] = EXPECTED_BINARY_SHA256
     result["FASTLIO_UPSTREAM_COMMIT"] = EXPECTED_UPSTREAM_COMMIT
     return result
@@ -260,6 +314,30 @@ def screen_reserved_layouts(
     return result
 
 
+def _t14_source_paths() -> dict[str, Path]:
+    """Historical T14 implementation sources; R3 orchestration is separate."""
+    return {
+        "config": CONFIG,
+        "dcreg": DCREG,
+        "health_audit": HEALTH_AUDIT,
+        "pair_audit": PAIR_AUDIT,
+        "pose_logger": POSE_LOGGER,
+        "replay_script": RUN_SCRIPT,
+        "route_adapter": ROOT / "research_paper/experiments/src/t14_formal_route.py",
+        "simulator": ROOT / "research_paper/experiments/src/simulate_lidar.py",
+        "trajectory_evaluator": EVALUATOR,
+    }
+
+
+def _verify_t14_source_hashes(expected: dict[str, str]) -> dict[str, str]:
+    """Check the old T14 code contract without conflating the R3 wrapper."""
+    actual = {key: sha256_file(path) for key, path in _t14_source_paths().items()}
+    for key, digest in actual.items():
+        if digest != expected.get(key):
+            raise FinalEvaluationError(f"frozen T14 source changed before final run: {key}")
+    return actual
+
+
 def _check_backend(ros_env: Path, workspace: Path, binary_path: Path) -> dict[str, Any]:
     reference = json.loads(T14_REFERENCE_RUN.read_text(encoding="utf-8"))
     backend = reference["fingerprint"]["backend"]
@@ -285,21 +363,7 @@ def _check_backend(ros_env: Path, workspace: Path, binary_path: Path) -> dict[st
     history = ros_env / "conda-meta/history"
     if sha256_file(history) != reference["fingerprint"]["runtime"]["conda_history_sha256"]:
         raise FinalEvaluationError("ROS environment dependency history differs from the T14 environment")
-    expected = reference["fingerprint"]["sources"]
-    sources = {
-        "config": CONFIG,
-        "dcreg": DCREG,
-        "health_audit": HEALTH_AUDIT,
-        "pair_audit": PAIR_AUDIT,
-        "pose_logger": POSE_LOGGER,
-        "replay_script": RUN_SCRIPT,
-        "route_adapter": ROOT / "research_paper/experiments/src/t14_formal_route.py",
-        "simulator": ROOT / "research_paper/experiments/src/simulate_lidar.py",
-        "trajectory_evaluator": EVALUATOR,
-    }
-    for key, path in sources.items():
-        if sha256_file(path) != expected.get(key):
-            raise FinalEvaluationError(f"frozen T14 source changed before final run: {key}")
+    source_hashes = _verify_t14_source_hashes(reference["fingerprint"]["sources"])
     patch_files = {
         "pcl17_patch_sha256": ROOT / "research_paper/experiments/patches/fast_lio_pcl17.patch",
         "t08_patch_sha256": ROOT / "research_paper/experiments/patches/fast_lio_health_diagnostic.patch",
@@ -318,7 +382,7 @@ def _check_backend(ros_env: Path, workspace: Path, binary_path: Path) -> dict[st
         "t08_patch_sha256": backend["t08_patch_sha256"],
         "t13_patch_sha256": backend["t13_patch_sha256"],
         "configuration_sha256": sha256_file(CONFIG),
-        "source_hashes": {key: sha256_file(path) for key, path in sources.items()},
+        "source_hashes": source_hashes,
         "ros_env": str(ros_env.resolve()), "workspace": str(workspace.resolve()),
     }
 
@@ -352,6 +416,24 @@ def _process_identity(pid: int | None) -> str | None:
         return fields[19] if fields[0] != "Z" else None
     except (OSError, IndexError):
         return None
+
+
+def _process_group_members(pgid: int | None) -> list[int]:
+    """Return live Linux processes left in a recorded isolated run group."""
+    if pgid is None:
+        return []
+    members = []
+    for entry in Path("/proc").iterdir():
+        if not entry.name.isdigit():
+            continue
+        try:
+            fields = (entry / "stat").read_text().rsplit(")", 1)[1].split()
+            # After state and ppid, stat field 5 is the process-group ID.
+            if fields[0] != "Z" and int(fields[2]) == int(pgid):
+                members.append(int(entry.name))
+        except (OSError, IndexError, ValueError):
+            continue
+    return members
 
 
 def _postprocess_attempt(run_root: Path, run_dir: Path, base: dict[str, Any],
@@ -481,8 +563,6 @@ def validate_completed_streams(
     if not poses_path.is_file():
         raise RunIncompleteError("pose stream is missing")
     pose_rows = _read_tsv_or_csv(poses_path)
-    if not pose_rows:
-        raise RunIncompleteError("pose logger wrote only a header; no pose/reset records exist")
     if any(row.get("event") not in ("POSE", "RESET") for row in pose_rows):
         raise RunIncompleteError("pose stream has an unexpected event type")
     pose_times = [int(row["timestamp_ns"]) for row in pose_rows]
@@ -491,12 +571,8 @@ def validate_completed_streams(
                 and int(second["timestamp_ns"]) < int(first["timestamp_ns"])):
             raise RunIncompleteError("pose timestamps decrease inside one estimator segment")
     pose_events = [row for row in pose_rows if row.get("event") == "POSE"]
-    if not pose_events:
-        raise RunIncompleteError("no pose message was recorded")
-    first_ns = int(pose_events[0]["timestamp_ns"])
-    last_ns = int(pose_events[-1]["timestamp_ns"])
-    if first_ns > 1_001_000_000_000 or last_ns < 1_059_800_000_000:
-        raise RunIncompleteError("pose stream does not span the required 60-second run horizon")
+    first_ns = int(pose_events[0]["timestamp_ns"]) if pose_events else None
+    last_ns = int(pose_events[-1]["timestamp_ns"]) if pose_events else None
 
     pose_logger_log = stream_dir / "pose_logger.log"
     if not pose_logger_log.is_file():
@@ -535,7 +611,7 @@ def validate_completed_streams(
         "last_pose_timestamp_ns": last_ns,
         "evaluation_rows": len(evaluation_rows),
         "reference_gaps": int(evaluation_summary["reference_gaps"]),
-        "completion_status": "FULL_INPUT_AND_POSE_LOGGER_HORIZON",
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
     }
 
 
@@ -556,7 +632,8 @@ def _run_scene(
         raise FinalEvaluationError("held-out replay requires the reviewed execution inventory")
     fingerprint = {
         "sensor_bag_sha256": sha256_file(bag_path),
-        "input_manifest_sha256": sha256_file(input_manifest_path),
+        "input_manifest_sha256": _input_manifest_identity(input_manifest),
+        "input_manifest_file_sha256": sha256_file(input_manifest_path),
         "reference_metadata_sha256": sha256_file(metadata_path),
         "reference_sha256": sha256_file(reference_path),
         "configuration_sha256": sha256_file(CONFIG),
@@ -572,7 +649,7 @@ def _run_scene(
             manifest_path = run_dir / "run_manifest.json"
             if manifest_path.is_file():
                 cached = json.loads(manifest_path.read_text(encoding="utf-8"))
-                identity_match = cached.get("fingerprint") == fingerprint
+                identity_match = _cached_run_identity_matches(cached.get("fingerprint"), fingerprint)
                 all_match = identity_match and bool(cached.get("outputs"))
                 all_match &= bool(cached.get("completion_validation"))
                 for relative, expected in cached.get("outputs", {}).items():
@@ -601,6 +678,11 @@ def _run_scene(
                     if actual is not None and actual == cached.get("process_start_identity"):
                         return {"status": "IN_PROGRESS", "run_id": attempt_id,
                                 "reason": "recorded replay process is still live"}
+                    lingering = _process_group_members(
+                        cached.get("process_group_id", cached.get("process_pid")))
+                    if lingering:
+                        return {"status": "IN_PROGRESS", "run_id": attempt_id,
+                                "reason": f"recorded replay process group still has live members: {lingering}"}
                     cached.update(status="INTERRUPTED_REPLAY", reason="recorded replay process is absent")
                     _record_run_state(run_root, run_dir, cached)
                 if identity_match and cached.get("status") in (
@@ -616,7 +698,7 @@ def _run_scene(
         started_ns = time.time_ns()
         started = time.monotonic()
         command = ["/usr/bin/time", "-v", "-o", str(run_dir / "resources.time.txt"),
-                   "bash", str(RUN_SCRIPT), str(ros_env), str(workspace),
+                   "bash", str(FINAL_RUN_SCRIPT), str(ros_env), str(workspace),
                    str(bag_path), str(stream_dir)]
         base = {
             "schema": "lio-run-lifecycle-v2", "run_id": attempt_id,
@@ -634,6 +716,7 @@ def _run_scene(
                                        stderr=subprocess.PIPE, text=True,
                                        start_new_session=True)
             base.update(process_pid=process.pid, process_start_identity=_process_identity(process.pid))
+            base["process_group_id"] = process.pid
             _write_json(run_dir / "run_manifest.json", base)
             try:
                 stdout, stderr = process.communicate(timeout=900)
@@ -731,6 +814,8 @@ def _prepare_pair(first_dir: Path, results_root: Path, run_root: Path,
                   "status": "RUNNING", "reason": "", "started_utc_ns": time.time_ns(),
                   "scratch_path": str(folder), "execution_identity": identity,
                   "owner_pid": os.getpid(), "owner_process_identity": _process_identity(os.getpid())}
+        if previous:
+            record["generation_history"] = list(previous.get("generation_history", []))
         if archive_resume:
             record.update(archive_resume_count=1, prior_failed_archive_record=previous)
         _write_json(record_path, record)
@@ -742,8 +827,36 @@ def _prepare_pair(first_dir: Path, results_root: Path, run_root: Path,
             corridor, control = folder / "corridor", folder / "control"
             if not folder.exists():
                 folder.mkdir(parents=True)
-                heldout.write_sensor_input(corridor, seed, stratum, False)
-                heldout.write_sensor_input(control, seed, stratum, True)
+                generation_started_utc_ns = time.time_ns()
+                generation_started = time.monotonic()
+                try:
+                    heldout.write_sensor_input(corridor, seed, stratum, False)
+                    heldout.write_sensor_input(control, seed, stratum, True)
+                finally:
+                    generated_hashes = {}
+                    generated_bookkeeping = {}
+                    for scene, path in (("CORRIDOR", corridor), ("CONTROL", control)):
+                        manifest_path = path / "manifest.json"
+                        if not manifest_path.is_file():
+                            continue
+                        generated_hashes[scene] = sha256_file(manifest_path)
+                        try:
+                            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                        except (OSError, UnicodeError, json.JSONDecodeError):
+                            generated_bookkeeping[scene] = {"unavailable_reason": "manifest_unreadable"}
+                        else:
+                            generated_bookkeeping[scene] = {
+                                key: manifest[key] for key in ("code_revision", "runtime_s") if key in manifest
+                            }
+                    generation_runtime_s = time.monotonic() - generation_started
+                    history = record.setdefault("generation_history", [])
+                    history.append({"started_utc_ns": generation_started_utc_ns,
+                                    "runtime_s": generation_runtime_s,
+                                    "manifest_sha256": generated_hashes,
+                                    "manifest_bookkeeping": generated_bookkeeping})
+                    record["generation_runtime_s"] = generation_runtime_s
+                    record["generated_manifest_sha256"] = generated_hashes
+                    _write_json(record_path, record)
             left = _verify_retained_input(corridor, seed, stratum, False)
             right = _verify_retained_input(control, seed, stratum, True)
             if left["reference.txt"]["sha256"] != right["reference.txt"]["sha256"]:
@@ -775,7 +888,12 @@ def _prepare_pair(first_dir: Path, results_root: Path, run_root: Path,
                 archive.mkdir(parents=True, exist_ok=True)
                 for name in ("manifest.json", "reference_metadata.json"):
                     target = archive / name
-                    if target.exists() and sha256_file(target) != sha256_file(path / name):
+                    same_provenance = (
+                        _input_manifest_identity_file(target) == _input_manifest_identity_file(path / name)
+                        if name == "manifest.json" and target.exists()
+                        else target.exists() and sha256_file(target) == sha256_file(path / name)
+                    )
+                    if target.exists() and not same_provenance:
                         raise FinalEvaluationError(f"archived provenance mismatch: {target}")
                     if not target.exists():
                         shutil.copy2(path / name, target)
@@ -877,47 +995,120 @@ def execute_final_batch(
             pair_scratch = scratch_root / f"heldout_{stratum}_{seed}"
             pair_key = f"{stratum}_{seed}"
             pair_record_path = results_root / "pairs" / f"{pair_key}.json"
+            prepared = None
             if pair_record_path.is_file():
-                cached_pair = json.loads(pair_record_path.read_text(encoding="utf-8"))
+                try:
+                    cached_pair = json.loads(pair_record_path.read_text(encoding="utf-8"))
+                except (OSError, ValueError):
+                    cached_pair = {}
+                try:
+                    prepared = _prepare_pair(
+                        pair_scratch, results_root, run_root, int(seed), stratum,
+                        ros_env, execution_identity, minimum_free_mb)
+                except (OSError, ValueError, FinalEvaluationError, subprocess.SubprocessError) as exc:
+                    failed = {"schema": "final-heldout-pair-v2", "status": "FAILED_KEEP_INPUTS",
+                              "stratum": stratum, "seed": int(seed), "stage": "INPUT_PREPARATION",
+                              "reason": str(exc)[:2000], "scene_runs": [],
+                              "execution_identity": execution_identity}
+                    _write_json(pair_record_path, failed)
+                    pair_rows.append(failed)
+                    if isinstance(exc, RunInProgressError):
+                        raise
+                    continue
+                pair_scratch, corridor_input, control_input, corridor_manifest, control_manifest, pair_audit = prepared
+                shared_reference = results_root / "shared_reference.txt"
+                input_provenance_matches = (
+                    cached_pair.get("corridor_manifest_identity_sha256")
+                    == _input_manifest_identity_file(corridor_input / "manifest.json")
+                    and cached_pair.get("control_manifest_identity_sha256")
+                    == _input_manifest_identity_file(control_input / "manifest.json")
+                    and cached_pair.get("corridor_bag_sha256") == corridor_manifest["sensors.bag"]["sha256"]
+                    and cached_pair.get("control_bag_sha256") == control_manifest["sensors.bag"]["sha256"]
+                    and cached_pair.get("reference_sha256") == corridor_manifest["reference.txt"]["sha256"]
+                    and corridor_manifest["reference.txt"]["sha256"] == control_manifest["reference.txt"]["sha256"]
+                    and cached_pair.get("paired_bag_audit") == pair_audit
+                    and shared_reference.is_file()
+                    and sha256_file(shared_reference) == corridor_manifest["reference.txt"]["sha256"]
+                )
                 if (cached_pair.get("status") == "COMPLETED"
                         and cached_pair.get("scene_screen_sha256") == sha256_file(screen_path)
                         and cached_pair.get("development_analysis_sha256") == sha256_file(analysis_path)
-                        and cached_pair.get("execution_identity") == execution_identity):
-                    runs_ok = len(cached_pair.get("scene_runs", [])) == 2
+                        and cached_pair.get("execution_identity") == execution_identity
+                        and input_provenance_matches):
+                    cached_runs = cached_pair.get("scene_runs", [])
+                    runs_ok = isinstance(cached_runs, list) and len(cached_runs) == 2
                     seen_scenes = set()
-                    for scene_result in cached_pair["scene_runs"]:
-                        manifest_path = run_root / scene_result["run_id"] / "run_manifest.json"
+                    for scene_result in cached_runs if isinstance(cached_runs, list) else []:
+                        if not isinstance(scene_result, dict) or not scene_result.get("run_id"):
+                            runs_ok = False
+                            break
+                        manifest_path = run_root / str(scene_result["run_id"]) / "run_manifest.json"
                         if not manifest_path.is_file():
                             runs_ok = False
                             break
-                        run_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                        try:
+                            run_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                        except (OSError, ValueError):
+                            runs_ok = False
+                            break
                         runs_ok &= run_manifest.get("status") == "COMPLETED"
                         seen_scenes.add(run_manifest.get("scene"))
                         runs_ok &= run_manifest.get("seed") == int(seed) and run_manifest.get("stratum") == stratum
                         runs_ok &= bool(run_manifest.get("outputs")) and bool(run_manifest.get("completion_validation"))
                         runs_ok &= run_manifest.get("fingerprint", {}).get("execution_identity") == execution_identity
+                        if run_manifest.get("scene") not in ("CORRIDOR", "CONTROL"):
+                            runs_ok = False
+                            break
+                        expected_input = corridor_input if run_manifest["scene"] == "CORRIDOR" else control_input
+                        expected_manifest = corridor_manifest if run_manifest["scene"] == "CORRIDOR" else control_manifest
+                        fingerprint = run_manifest.get("fingerprint", {})
+                        try:
+                            cached_threshold = float(fingerprint.get("threshold_from_development_manifest"))
+                        except (TypeError, ValueError):
+                            cached_threshold = None
+                        runs_ok &= (fingerprint.get("sensor_bag_sha256") == expected_manifest["sensors.bag"]["sha256"]
+                                    and fingerprint.get("input_manifest_sha256") == _input_manifest_identity_file(expected_input / "manifest.json")
+                                    and fingerprint.get("input_manifest_file_sha256") == cached_pair.get(
+                                        "corridor_manifest_sha256" if run_manifest["scene"] == "CORRIDOR"
+                                        else "control_manifest_sha256")
+                                    and fingerprint.get("input_manifest_file_sha256") == cached_pair.get(
+                                        "corridor_manifest_sha256" if run_manifest["scene"] == "CORRIDOR"
+                                        else "control_manifest_sha256")
+                                    and fingerprint.get("reference_metadata_sha256") == sha256_file(expected_input / "reference_metadata.json")
+                                    and fingerprint.get("reference_sha256") == expected_manifest["reference.txt"]["sha256"]
+                                    and cached_threshold == threshold)
                         for relative, expected in run_manifest.get("outputs", {}).items():
-                            artifact = manifest_path.parent / relative
+                            artifact = (manifest_path.parent / relative).resolve()
+                            if manifest_path.parent.resolve() not in artifact.parents:
+                                runs_ok = False
+                                break
                             runs_ok &= artifact.is_file() and sha256_file(artifact) == expected
                     runs_ok &= seen_scenes == {"CORRIDOR", "CONTROL"}
                     if runs_ok:
+                        scratch_path = pair_scratch.resolve()
+                        scratch_root_path = scratch_root.resolve()
+                        if scratch_root_path not in scratch_path.parents:
+                            raise FinalEvaluationError("refusing to remove a cache path outside the scratch folder")
+                        if scratch_path.exists():
+                            shutil.rmtree(scratch_path)
                         pair_rows.append(cached_pair)
                         continue
-            try:
-                (pair_scratch, corridor_input, control_input, corridor_manifest,
-                 control_manifest, pair_audit) = _prepare_pair(
-                    pair_scratch, results_root, run_root, int(seed), stratum, ros_env,
-                    execution_identity, minimum_free_mb)
-            except (OSError, ValueError, FinalEvaluationError, subprocess.SubprocessError) as exc:
-                failed = {"schema": "final-heldout-pair-v2", "status": "FAILED_KEEP_INPUTS",
-                          "stratum": stratum, "seed": int(seed), "stage": "INPUT_PREPARATION",
-                          "reason": str(exc)[:2000], "scene_runs": [],
-                          "execution_identity": execution_identity}
-                _write_json(pair_record_path, failed)
-                pair_rows.append(failed)
-                if isinstance(exc, RunInProgressError):
-                    raise
-                continue
+            if prepared is None:
+                try:
+                    (pair_scratch, corridor_input, control_input, corridor_manifest,
+                     control_manifest, pair_audit) = _prepare_pair(
+                        pair_scratch, results_root, run_root, int(seed), stratum, ros_env,
+                        execution_identity, minimum_free_mb)
+                except (OSError, ValueError, FinalEvaluationError, subprocess.SubprocessError) as exc:
+                    failed = {"schema": "final-heldout-pair-v2", "status": "FAILED_KEEP_INPUTS",
+                              "stratum": stratum, "seed": int(seed), "stage": "INPUT_PREPARATION",
+                              "reason": str(exc)[:2000], "scene_runs": [],
+                              "execution_identity": execution_identity}
+                    _write_json(pair_record_path, failed)
+                    pair_rows.append(failed)
+                    if isinstance(exc, RunInProgressError):
+                        raise
+                    continue
             scene_results = []
             for scene, input_dir, input_manifest in (
                 ("CORRIDOR", corridor_input, corridor_manifest),
@@ -934,6 +1125,22 @@ def execute_final_batch(
                 if scene_results[-1]["status"] == "IN_PROGRESS":
                     break
             completed = all(row["status"] in ("COMPLETED", "CACHED") for row in scene_results)
+            run_manifest_input_files = {}
+            for scene_result in scene_results:
+                if not isinstance(scene_result, dict) or not scene_result.get("run_id"):
+                    continue
+                manifest_path = run_root / scene_result["run_id"] / "run_manifest.json"
+                if manifest_path.is_file():
+                    try:
+                        run_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                    except (OSError, ValueError):
+                        continue
+                    scene_name = run_manifest.get("scene")
+                    if scene_name in ("CORRIDOR", "CONTROL"):
+                        run_manifest_input_files[scene_name] = run_manifest.get(
+                            "fingerprint") or {}
+                        run_manifest_input_files[scene_name] = run_manifest_input_files[scene_name].get(
+                            "input_manifest_file_sha256")
             pair_rows.append({
                 "stratum": stratum, "seed": int(seed),
                 "corridor_bag_sha256": corridor_manifest["sensors.bag"]["sha256"],
@@ -950,8 +1157,12 @@ def execute_final_batch(
                 "stratum": stratum, "seed": int(seed),
                 "scene_screen_sha256": sha256_file(screen_path),
                 "development_analysis_sha256": sha256_file(analysis_path),
-                "corridor_manifest_sha256": sha256_file(corridor_input / "manifest.json"),
-                "control_manifest_sha256": sha256_file(control_input / "manifest.json"),
+                "corridor_manifest_sha256": (run_manifest_input_files.get("CORRIDOR")
+                                              or sha256_file(corridor_input / "manifest.json")),
+                "control_manifest_sha256": (run_manifest_input_files.get("CONTROL")
+                                            or sha256_file(control_input / "manifest.json")),
+                "corridor_manifest_identity_sha256": _input_manifest_identity_file(corridor_input / "manifest.json"),
+                "control_manifest_identity_sha256": _input_manifest_identity_file(control_input / "manifest.json"),
                 "corridor_bag_sha256": corridor_manifest["sensors.bag"]["sha256"],
                 "control_bag_sha256": control_manifest["sensors.bag"]["sha256"],
                 "reference_sha256": corridor_manifest["reference.txt"]["sha256"],

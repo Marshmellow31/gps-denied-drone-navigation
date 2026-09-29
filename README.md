@@ -6,7 +6,7 @@ This project studies one question: **after a robot leaves a place with few usefu
 
 The answer is not known yet. We have completed a controlled computer-simulation study on 32 practice layouts, but the independent implementation review has not passed and the untouched final layouts have not been tested. **No drone was flown, and these results do not prove flight safety.**
 
-**Current checkpoint — 27 September 2026:** the research rules passed the protocol review (R2). The first implementation review (R3) requested repairs; those repairs and a numerical repeat-run audit are now prepared for independent re-review. The latest suite ran 119 tests: 118 passed and one optional SciPy check was skipped. A fresh build reproduced the original FAST-LIO executable exactly, and a new practice replay passed the repaired completion checks. R3 has not yet passed, and the final layouts remain untouched. See the [repair evidence](research_paper/evidence/R3_REPAIR_VERIFICATION.md).
+**Current checkpoint — 29 September 2026:** the original research rules passed R2 review, and an independent reviewer has now also approved the written Point-LIO measurement-signal plan (D050). That approval checks the plan only: the Point-LIO signal has not yet been added to the program, and no Point-LIO replay or threshold selection has happened. The independent reviewer accepted the FAST-LIO software repairs and the current seed-14 native replay, including a cached repeat that did not relaunch FAST-LIO. That replay counted 600 health groups, 597 valid poses and 1,194 movement windows, with zero reference gaps. T16 is complete as a development task. Overall R3 remains **REVISE** because Point-LIO still needs tested health-signal software and a separate development replication. No final layouts have been tested. See the [native replay report](research_paper/evidence/R3_NATIVE_SEED14_REPLAY_20260929.md), [Point-LIO plan](research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md) and [latest R3 review](research_paper/reviews/R3_IMPLEMENTATION.md).
 
 ## The idea in everyday words
 
@@ -74,15 +74,15 @@ The review gate protects the final test. We must not look at or choose the final
 | T08 | Export a conventional FAST-LIO health signal without changing its movement output. | Done — [final replay audit](research_paper/evidence/T08_FINAL_PATCH_AUDIT.md) |
 | T09 | Make a first controlled corridor-to-room simulation. | Done as feasibility work; the original real-reference requirement remains unmet — [simulation report](research_paper/evidence/SIMULATION_MOTION_V3.md) |
 | R1 | Ask an independent reviewer whether the question and evidence plan are feasible. | Pass for protocol design only; this is not a novelty verdict — [review](research_paper/reviews/R1_FEASIBILITY.md) |
-| T10 | Define the two warning signals being compared. | Done; the DCReg signal is an adaptation, not the complete DCReg system — [indicator rules](research_paper/protocol/INDICATORS.md) |
+| T10 | Define the warning signals being compared. | FAST-LIO rules and the separate Point-LIO adaptation are written; Point-LIO implementation remains — [indicator rules](research_paper/protocol/INDICATORS.md), [Point-LIO amendment](research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md) |
 | T11 | Set the score rules, timing rules and separate practice/final data before testing. | Done — [metrics](research_paper/protocol/METRICS.md) and [data split](research_paper/data/SPLITS.csv) |
 | T12 | Add randomized simulation layouts and check that the sensor inputs work. | Done as feasibility work — [simulation protocol](research_paper/protocol/SIMULATION.md) |
-| R2 | Independently check and hash-lock the research rules. | Pass for protocol content only; 51/51 listed file hashes read back correctly — [review](research_paper/reviews/R2_PROTOCOL.md) and [freeze record](research_paper/protocol/FREEZE.md) |
+| R2 | Independently check and hash-lock the research rules. | Original protocol and the dated Point-LIO addition each passed for protocol content only; all 53 current file hashes matched — [reviews](research_paper/reviews/R2_PROTOCOL.md), [Point-LIO review](research_paper/reviews/POINTLIO_INDICATOR_FEASIBILITY.md) and [freeze record](research_paper/protocol/FREEZE.md) |
 | T13 | Implement the DCReg comparison signal and check its calculations. | Done as an implementation check — [reproduction report](research_paper/evidence/INDICATOR_REPRODUCTION.md) |
-| T14 | Screen 32 practice layouts and run each as a corridor/control pair. | Done for the practice batch; repeat-run differences remain for R3 to judge — [batch report](research_paper/evidence/T14_DEVELOPMENT_BATCH.md) |
-| T15 | Check whether a second navigation program, Point-LIO, can produce the same pose-file format. | Pose-output smoke passed; matching health signals were **not** established — [report](research_paper/evidence/T15_POINTLIO_SMOKE.md) |
-| T16 | Score practice results and calculate how many final layouts are needed. | Analysis is complete, but the R3 repair handoff is still running — [development report](research_paper/evidence/DEVELOPMENT_REPORT.md) and [handoff](research_paper/execution/handoffs/T16.md) |
-| R3 | Independently check the code, data handling and repeatability before the final test. | First review: **REVISE**; no implementation freeze and no permission to screen final layouts — [review and repair list](research_paper/reviews/R3_IMPLEMENTATION.md) |
+| T14 | Screen 32 practice layouts and run each as a corridor/control pair. | Done for the practice batch; R3 accepts the disclosed seed-14 result as a repeat of the same input, not a new event — [batch report](research_paper/evidence/T14_DEVELOPMENT_BATCH.md) |
+| T15 | Check whether Point-LIO can produce the needed output. | Pose-output smoke passed. The health-signal plan is independently approved, but software and signal tests still remain — [smoke report](research_paper/evidence/T15_POINTLIO_SMOKE.md), [approved plan](research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md) |
+| T16 | Score practice results and calculate how many final layouts are needed. | Done as a development task; no final test was run — [development report](research_paper/evidence/DEVELOPMENT_REPORT.md), [native replay](research_paper/evidence/R3_NATIVE_SEED14_REPLAY_20260929.md) and [handoff](research_paper/execution/handoffs/T16.md) |
+| R3 | Independently check the code, data handling and repeatability before the final test. | FAST-LIO software and native seed-14 lifecycle accepted; overall **REVISE** remains while Point-LIO software, its 32-pair practice replication and separate freeze are unfinished — [review and repair list](research_paper/reviews/R3_IMPLEMENTATION.md) |
 
 The original milestone dates and the remaining paper-writing stages are in [Research Goal](research_paper/RESEARCH_GOAL.md). They are planning targets, not proof that those stages are complete.
 
@@ -111,7 +111,7 @@ The bars below show the fraction of the 32 practice corridor runs detected. They
 
 Other checks found 5,440 of 5,440 valid three-second windows in each scene type. The average passing fraction was 98.7% for corridor runs and 98.1% for control runs. Overlapping windows are not separate independent trials.
 
-The 64 main FAST-LIO practice runs (32 corridors plus 32 controls) completed. Their manifests named 768 output files, which the T16 report says were rechecked by hash. Four repeat slots did not all complete as planned: the two seed-45 repeats completed, while scheduled seed-14 launches/retries hit a disk-quota error. An earlier same-input seed-14 pair is disclosed as a substitute; its control output differed. **The independent R3 review has not yet accepted that repeat evidence.** See the [T14 repeat history](research_paper/evidence/T14_DEVELOPMENT_BATCH.md) and [R3 review](research_paper/reviews/R3_IMPLEMENTATION.md).
+The 64 main FAST-LIO practice runs (32 corridors plus 32 controls) completed. Their manifests named 768 output files, which the T16 report says were rechecked by hash. Four repeat slots did not all complete as planned: the two seed-45 repeats completed, while scheduled seed-14 launches/retries hit a disk-quota error. An earlier same-input seed-14 pair is disclosed as a substitute; its control output differed. **R3 accepts it only as a repeat of the same input—not as an extra event or calibration sample.** See the [T14 repeat history](research_paper/evidence/T14_DEVELOPMENT_BATCH.md) and [R3 review](research_paper/reviews/R3_IMPLEMENTATION.md).
 
 ### What happens when we run the same data again?
 
@@ -164,13 +164,17 @@ Figure sources, generation steps, credits and limits are listed in [the figure g
 | --- | --- | --- |
 | R1 independent feasibility review | Pass for protocol design — [review](research_paper/reviews/R1_FEASIBILITY.md) | Not proof of new scientific contribution or publication readiness. |
 | R2 independent protocol review | Pass for protocol content; 51/51 frozen-file hashes matched — [freeze record](research_paper/protocol/FREEZE.md) | Does not verify implementation correctness or authorize final testing. |
-| T14 layout screen and primary runs | 32/32 practice layouts passed the scene-only screen; 64/64 corridor/control runs completed — [audit](research_paper/evidence/t14_development_batch_manifest.json) | Practice layouts only; repeat deviation still needs R3 adjudication. |
+| New closest-work check (28 Sep) | Prior papers already detect corridor exits; a 2026 aerial study also compares a health signal with short-window pose error — [primary-source audit](research_paper/literature/POST_R2_NOVELTY_AUDIT_20260928.md) | We cannot claim “first to detect recovery” or “first to compare health with error.” The narrower candidate is sustained accuracy after a geometry exit across unseen scenes; its novelty is still unproven. |
+| T14 layout screen and primary runs | 32/32 practice layouts passed the scene-only screen; 64/64 corridor/control runs completed — [audit](research_paper/evidence/t14_development_batch_manifest.json) | Practice layouts only; R3 accepts the disclosed seed-14 pair as same-input repeat evidence. |
 | T15 second-backend smoke | 597 valid Point-LIO poses; two successful pose outputs were byte-identical; 1,154 local-motion rows passed — [manifest](research_paper/evidence/t15_point_lio_smoke_manifest.json) | Point-LIO health-signal parity with FAST-LIO is not established. |
 | T16 practice analysis | 32/32 recovery labels, event metrics and 48-pair sample-size plan — [report](research_paper/evidence/DEVELOPMENT_REPORT.md) | FAST-LIO cutoff uses these same practice runs; final estimates remain unknown. |
-| Full experiment tests, latest run | 119 discovered: 118 passed, 1 optional SciPy test skipped | Both the frozen and system Python environments passed; [saved checks and real replay](research_paper/evidence/R3_REPAIR_VERIFICATION.md) cover the repaired lifecycle. Independent R3 re-review is still required. |
+| Latest independent R3 review | 108/108 input entries, 51/51 protocol hashes, 9/9 T14 sources and all 18 Acer native output hashes verified — [review](research_paper/reviews/R3_IMPLEMENTATION.md) | FAST-LIO software/native evidence is accepted; overall R3 remains **REVISE** because Point-LIO health comparability and replication readiness are incomplete. |
+| Current native seed-14 replay | Completed with the exact T14 binary; same run ID returned `CACHED`; output hashes, 600 health groups, 597 poses, 1,194 windows and zero reference gaps recorded — [evidence](research_paper/evidence/R3_NATIVE_SEED14_REPLAY_20260929.md) | Development input only; not a new event or final result. No held-out data were opened. |
+| R3 review input inventory | The audited 108-artifact bundle included the native report, completed and cached summaries, and run manifest; `heldout_inputs_opened=false` — [inventory](research_paper/evidence/R3_REVIEW_INPUT_HASHES.json) | Hash inventory documents what was reviewed; it does not itself pass R3 or authorize held-out work. |
+| Full experiment tests, latest run (29 Sep) | 125 discovered: 124 passed, 1 optional SciPy test skipped, using system Python 3.14.4 | These tests cover software behavior; the native replay is separately recorded in the linked evidence report. |
 | Held-out/final test | Not run; no held-out geometry or result has been generated or screened | This is required to support the final claim and remains blocked until R3 passes. |
 
-The exact code checks, hash lists, failed runs and reproduction instructions are preserved in the linked reports and manifests. The current next task is independent R3 re-review. The complete paper also needs comparable Point-LIO indicators and a separate development freeze for replication before final-layout exposure. See the [paper completion plan](research_paper/execution/PAPER_COMPLETION_PLAN.md). Do not run the held-out `screen` or `run` commands before the required reviews pass.
+The exact code checks, hash lists, failed runs, replay outputs and reproduction instructions are preserved in the linked reports and manifests. Next, implement the approved Point-LIO plan's small calculation tests and a side program that reads its measurements without changing its movement estimate. After those checks pass, run one saved practice example with the side program both off and on; do not choose a warning cutoff from that example. Only after an independent check of that example may the 32-pair Point-LIO practice replication run and its own freeze be completed. Overall R3 must pass before anyone opens the final layouts or outputs. Do not run held-out `screen` or `run` commands before that review.
 
 ## Remaining road to a paper
 
@@ -180,7 +184,7 @@ The dates below are the project plan, not a promise that the work will pass each
 | --- | --- |
 | 27 Sep — question and feasibility | Done as a feasibility stage; the real-data limit and simulation-primary amendment are documented. |
 | 4 Oct — freeze the method | R2 passed for protocol content; the method and test split are recorded in the freeze files. |
-| 11 Oct — verify the implementation | **In progress.** Complete independent R3 re-review and the comparable Point-LIO indicator development/freeze needed for replication. |
+| 11 Oct — verify the implementation | **In progress.** Develop and independently review comparable Point-LIO indicators, run its development replication and freeze the backend before final-layout exposure. |
 | 18 Oct — untouched evaluation | After the required implementation reviews, screen reserved layouts using geometry alone and run the pre-planned 48 corridor/control pairs and approved replication. Do not change the cutoff after seeing results. |
 | 25 Oct — analyze | Report uncertainty, failures, false warnings, delays, availability, and alternative explanations. Keep all missing or failed runs visible. |
 | 1 Nov — manuscript | Write a paper using only conclusions supported by the final evidence; complete a reproduction audit and professor review. |
@@ -188,11 +192,11 @@ The dates below are the project plan, not a promise that the work will pass each
 
 ### What we can say today
 
-We can say that a controlled LiDAR/IMU simulation, two warning-signal implementations, an evaluation rule and a 32-pair practice analysis now exist. We **cannot** yet say that the warning signals work on new layouts, real drones or real buildings; that the study proves a novel finding; or that a drone would be safe to fly. The final evidence and independent implementation review are still required.
+We can say that a controlled LiDAR/IMU simulation, two FAST-LIO warning-signal implementations, an evaluation rule and a 32-pair practice analysis now exist. The Point-LIO signal is currently an independently reviewed plan, not working software. We **cannot** yet say that the warning signals work on new layouts, real drones or real buildings; that the study proves a novel finding; or that a drone would be safe to fly. The final evidence and independent implementation review are still required.
 
 ## Explain it to a professor in 30 seconds
 
-> We are testing whether two existing LiDAR navigation health signals recognize when local movement estimates become accurate after a robot leaves a feature-poor corridor. We defined the recovery rule before analyzing the practice results and compared the signals on 32 simulated corridor/control pairs. All 32 simulated corridor trajectories met the movement rule, but the warning signals behaved differently. Those are development results: one warning cutoff was chosen on the same runs, independent implementation re-review is still pending, and the 48 untouched test pairs have not been run. Repeat runs also changed some warning timing. We therefore make no final performance, novelty or flight-safety claim yet.
+> We are testing whether a LiDAR-and-IMU robot's warning scores tell us when its next movement estimates become reliable after a feature-poor corridor. We have development results from 32 simulated corridor/control pairs for FAST-LIO, but those do not prove performance on new layouts. Point-LIO is the second navigation program in the study: its measurement-signal plan passed independent review, but we still need to implement and test it, then run its practice replication. The final layouts have not been touched. We therefore make no final performance, novelty or flight-safety claim yet.
 
 ## Key files
 
@@ -202,11 +206,13 @@ We can say that a controlled LiDAR/IMU simulation, two warning-signal implementa
 - [Current task ledger](research_paper/execution/STATUS.md)
 - [Start here when continuing work](research_paper/execution/CURRENT_HANDOFF.md)
 - [Frozen protocol](research_paper/protocol/FREEZE.md)
+- [Accepted Point-LIO measurement-signal plan](research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md)
 - [T14 practice-batch report](research_paper/evidence/T14_DEVELOPMENT_BATCH.md)
 - [T15 Point-LIO smoke report](research_paper/evidence/T15_POINTLIO_SMOKE.md)
 - [T16 development-results report](research_paper/evidence/DEVELOPMENT_REPORT.md)
 - [R3 review and required repairs](research_paper/reviews/R3_IMPLEMENTATION.md)
 - [R3 repair checks and saved replay evidence](research_paper/evidence/R3_REPAIR_VERIFICATION.md)
+- [R3 review hash inventory](research_paper/evidence/R3_REVIEW_INPUT_HASHES.json)
 - [Remaining steps to complete the paper](research_paper/execution/PAPER_COMPLETION_PLAN.md)
 - [Gated final-test instructions](research_paper/execution/FINAL_EVALUATION_HANDOFF.md)
 - [Proposal manuscript status](research_paper/paper/README.md)

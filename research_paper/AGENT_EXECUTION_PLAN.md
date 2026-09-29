@@ -278,6 +278,18 @@ Build the selected Point-LIO candidate at a pinned revision with its validated s
 
 **Acceptance:** a reproducible development smoke run and compatibility report exist, or a concrete blocker is raised for R3. One smoke run is not replication evidence.
 
+**Current boundary:** T15 closed only the pinned pose-output smoke. Its initial
+health-indicator parity question was resolved by the accepted dated R2
+amendment in
+[`protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md`](protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md).
+The D050 analytic fixtures, read-only Point-LIO sidecar and native reset
+fixture pass the local research suite, and the bounded workflow rereview passed.
+The first sidecar-on seed-14 attempt failed before bag delivery, so diagnose its
+startup and process-group cleanup before retrying in a fresh output directory.
+Successful no-threshold seed-14 feasibility acceptance, 32-pair development
+replication and separate replication freeze remain post-T16 continuation work
+tracked in [`execution/PAPER_COMPLETION_PLAN.md`](execution/PAPER_COMPLETION_PLAN.md).
+
 ### T16 — Summarize development and prepare the freeze bundle
 
 **Depends on:** T14, T15.
@@ -295,6 +307,12 @@ Prepare `execution/FINAL_EVALUATION_HANDOFF.md` containing exact proposed evalua
 Audit mathematical fidelity, tests, data leakage, simulation realism, failure accounting, backend comparability and interpretation of local recovery versus global drift. Save `reviews/R3_IMPLEMENTATION.md` and `protocol/IMPLEMENTATION_FREEZE.md` with exact revisions/hashes, dependency versions, configurations and known limitations. A dirty tree requires a retained patch/hash, not merely a commit ID.
 
 **Acceptance:** code and configurations reproduce the development evidence; the held-out batch is ready without additional tuning; root status documentation agrees. If replication or simulation remains blocked, record REVISE and the effect on study claims rather than declaring the original minimum study complete.
+
+The 29 September Point-LIO amendment is a protocol PASS only. R3 cannot pass
+until the amended Point-LIO indicator is implemented and validated, its
+development replication is complete and separately frozen, and all primary
+FAST-LIO evidence remains reproducible. Follow the staged order in the paper
+completion plan; do not expose held-out layouts to make the replication easier.
 
 Work covered by this plan ends here. The October 12–18 final evaluation and full replication are the next phase, followed by analysis and manuscript completion. They are not implied by the freezes.
 

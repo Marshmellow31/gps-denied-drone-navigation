@@ -1,11 +1,13 @@
 # Online indicator comparison specification
 
-Version 0.1, 26 September 2026. **T10 specification complete; R2 PASS and
-hash read-back complete.** T13 implementation is eligible. No operating
-threshold has been fitted. The indicator
-question is whether online registration geometry predicts later reference-
-defined local motion accuracy. It is not an estimator bake-off. No indicator
-may access the reference, geometry-event labels or trajectory errors.
+Version 0.1, 26 September 2026, with the accepted Point-LIO R2 amendment D050
+(29 September 2026). The base T10 specification passed R2 and its original
+hash read-back; T13 implementation is complete. The FAST-LIO cutoff selected
+on T14 development runs remains a candidate until R3. No Point-LIO cutoff has
+been selected. The question is whether online registration geometry predicts
+later reference-defined local motion accuracy. It is not an estimator bake-off.
+No indicator may access the reference, geometry-event labels or trajectory
+errors.
 
 ## Selected methods
 
@@ -13,6 +15,8 @@ may access the reference, geometry-event labels or trajectory errors.
 | --- | --- | --- |
 | `FASTLIO_MIN_EIG_G3` | T08's measurement-only accepted-correspondence information matrix, normalized with the fixed 3 m rotation lever scale | Continuous weakest-direction eigenvalue; larger means stronger measurement geometry. Primary conventional baseline. |
 | `DCREG_SCHUR_MASK` | DCReg's published directional condition detector applied to the same accepted FAST-LIO point-to-plane correspondences | Raw rotational/translational subspace condition ratios plus six directional flags; no mitigation/preconditioner is run. Primary published comparator. |
+| `POINTLIO_MIN_EIG_G3` | Accepted Point-LIO amendment: frame-pooled measurement geometry from Point-LIO's own native measurement rows, with the fixed 3 m rotation lever scale | Separate-backend replication score; not the FAST-LIO score or Point-LIO's posterior covariance. |
+| `POINTLIO_DCREG_SCHUR_MASK` | DCReg Schur detector applied to the raw common-basis Point-LIO frame matrix | Separate Point-LIO adaptation; retain frozen `kappa > 10` and explicit unbounded-ratio flags. |
 
 The choice of DCReg over the older X-ICP/SuperLoc candidates follows the
 updated R1 audit: DCReg is the closest recent published detector with explicit
@@ -108,13 +112,39 @@ non-finite number. Store a blank CSV / `null` JSON ratio and a matching
 is `0`. A numerically invalid scan uses the contract's unavailable reason and
 blank score/ratios instead.
 
+### Point-LIO replication extension (accepted R2 amendment D050)
+
+The complete method and data contract is the accepted
+[Point-LIO amendment](POINTLIO_REPLICATION_AMENDMENT_20260929.md), independently
+reviewed PASS on 29 September 2026. Point-LIO uses its own accepted map
+correspondences and point-time updates; its rows are not shared with FAST-LIO.
+The adapter captures the first six native measurement-Jacobian columns,
+transports each group's rotation columns using its exact pre-update pose,
+and pools those rows in one common frame basis. For `L=1,3,5 m`, use the
+amendment's fixed `N_frame × 0.001` normalization; `lambda_min(G_3m)` is the
+primary Point-LIO score. This is a measurement-geometry adaptation, not
+Point-LIO's posterior information and not a reproduction of the full DCReg
+system. Point-LIO's own pose stream receives the unchanged R2 recovery labels;
+its global `G_3m` threshold is selected separately under the development rule
+in [METRICS.md](METRICS.md). The FAST-LIO threshold and primary sample-size
+plan do not change.
+
+Protocol acceptance is not implementation acceptance. Analytic contract
+fixtures and the read-only sidecar must pass before the retained seed-14
+on/off feasibility replay; that replay does not fit a threshold. The complete
+32-pair Point-LIO development batch follows only after seed-14 acceptance.
+No held-out work is allowed until overall R3 and the separate replication
+freeze pass.
+
 ### Adaptation boundary
 
-This is the **DCReg detector module adapted to FAST-LIO's accepted
-correspondences**, not the complete DCReg registration solver, not its PCG
-preconditioner, and not a reproduction of its whole SLAM experiment. The
-shared correspondences control for front-end differences; the Hessian will be
+This FAST-LIO stream is the **DCReg detector module adapted to FAST-LIO's
+accepted correspondences**, not the complete DCReg registration solver, not
+its PCG preconditioner, and not a reproduction of its whole SLAM experiment.
+The shared correspondences control for front-end differences; the Hessian is
 exported from a read-only side path and must not alter FAST-LIO pose updates.
+The separate Point-LIO adaptation is governed by D050 and does not claim
+shared correspondences between backends.
 The DCReg paper's rotation/translation subspace formulation is retained; do
 not compute condition numbers of the coupled six-dimensional matrix as a
 substitute. Record the exact row/column permutation and verify basis handling
@@ -127,9 +157,12 @@ or return to R2 with the failed parity evidence.
 
 ## Common time and truth boundary
 
-Both indicators are timestamped at the scan-to-map measurement update after
-accepted correspondences are known. They may use only LiDAR/IMU state and
-current backend correspondence data. They cannot read the reference,
+The two FAST-LIO indicators are timestamped at that backend's scan-to-map
+measurement update after accepted correspondences are known. Point-LIO uses
+one separately named frame-pooled row at its actual `lidar_end_time`, with an
+explicit nominal timestamp only for unavailable frames, as defined in D050.
+Each backend may use only its LiDAR/IMU state and current correspondence data.
+Neither may read the reference,
 scene-layout annotations, future scans, evaluation CSV, or recovery labels.
 For each method, preserve raw continuous output, categorical decision,
 validity and unavailable reason. At an evaluation decision tick, use the latest
@@ -159,5 +192,7 @@ with the event-level association and barrier rule in [METRICS.md](METRICS.md).
   zero or a healthy state; rank-deficient PSD subspaces instead produce
   explicitly unbounded ratios and a degenerate decision.
 
-No threshold has been fitted on the v3 pilot. Its outputs and every run already
-used remain development evidence.
+No threshold was selected from the v3 pilot. The FAST-LIO numeric threshold
+selected on the T14 development set is not yet frozen by R3; no Point-LIO
+threshold or health output exists. All current simulation results remain
+development evidence.

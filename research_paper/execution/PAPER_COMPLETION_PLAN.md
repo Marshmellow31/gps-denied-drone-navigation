@@ -10,11 +10,11 @@ manuscript are complete and verified together.
 
 | Requirement | Evidence needed for completion | Current state |
 | --- | --- | --- |
-| A defensible contribution relative to closest work | Updated primary-source comparison, precise supported claim, explicit overlaps and independent claim review | R1 supports feasibility only; final novelty claim remains unproven |
-| Trustworthy primary implementation | All R3 repair checks, quantitative repeats, complete-stream/failure/resume tests, reviewed source and runtime identities | Repairs underway; initial R3 review is REVISE |
+| A defensible contribution relative to closest work | Updated primary-source comparison, precise supported claim, explicit overlaps and independent claim review | A 28 Sep audit found exit/recovery detectors and a 2026 health-versus-error study; only a sustained, exit-conditioned accuracy/timing comparison across unseen scenes remains a candidate, still unproven |
+| Trustworthy primary implementation | All R3 repair checks, quantitative repeats, complete-stream/failure/resume tests, reviewed source and runtime identities | FAST-LIO software and lifecycle are independently accepted. Point-LIO implementation passes the 161-test suite (160 pass, one optional skip) and its bounded workflow review passed. Sidecar-off completed, but sidecar-on failed before bag delivery; seed-14 acceptance and 32-pair development replication remain outstanding. R3 remains REVISE and no implementation freeze exists |
 | Untouched final evaluation | R3 PASS, geometry-only selection ledger, 48 paired layouts, all attempts and compact outputs, locked threshold, no final-data tuning | No held-out geometry or result has been opened |
-| Faithful signal comparison | FAST-LIO information signal and documented DCReg detector adaptation with numerical fidelity and parity evidence | T13 development implementation exists |
-| Second-backend replication | Comparable instrumented Point-LIO signal definitions, development validation and separate freeze before replication results | Only pose-format smoke exists; indicator parity and replication remain incomplete |
+| Faithful signal comparison | FAST-LIO information signal and documented DCReg detector adaptation with numerical fidelity and parity evidence | T13 FAST-LIO implementation exists. Point-LIO adaptation is implemented, but native one-seed parity and development-replication evidence remain incomplete |
+| Second-backend replication | Comparable instrumented Point-LIO signal definitions, development validation and separate freeze before replication results | Pose-format smoke, accepted protocol and implementation fixtures exist; exact implementation review, seed-14 feasibility acceptance, 32-pair replication and separate freeze remain incomplete |
 | Honest statistical analysis | Frozen event/availability denominators, relapse and delay results, uncertainty by geometry cluster, paired control analysis and failures | Development analysis exists; final analysis absent |
 | Saved figures at every analysis stage | Exported data plots, source scripts and input hashes; PNG plus vector/PDF exports where appropriate; descriptive versus final labels | Existing figures retained; repeat figures added in PNG/PDF/SVG |
 | Complete manuscript | Introduction, related work, formulation, methods, experimental protocol, results, failure analysis, limitations, conclusion, references and reproducibility statement | Main LaTeX file still contains a proposal abstract |
@@ -22,15 +22,23 @@ manuscript are complete and verified together.
 
 ## Order of work
 
-1. Finish and test the R3 repairs, reproduce development analysis, quantify
-   the retained repeats, restore the exact primary backend, and test one
-   development replay through the final runner's lifecycle. Retain every
-   failure and source identity. Request the required independent R3 re-review.
-2. Complete Point-LIO indicator feasibility using development data and the
-   same scientific question. Document any formulation differences. Require
-   an independent protocol/implementation amendment before replication
-   testing if a comparable adapter changes the agreed measurement contract.
-   A pose-only replay does not satisfy replication.
+1. Point-LIO is the remaining readiness gate. Its source-derived adaptation
+   is independently accepted as an R2 protocol amendment (D050), and analytic/
+   contract fixtures plus a read-only sidecar are now implemented. The complete
+   experiment suite passes with the native reset fixture enabled and the
+   bounded workflow review passed. The first sidecar-on run failed before bag
+   delivery, so diagnose that startup failure and process-group cleanup before
+   retrying the retained seed-14 on/off feasibility pair in a fresh output
+   directory. Do not fit a threshold. Only after one-seed acceptance may the
+   32-pair development replication run, using Point-LIO's own poses and its
+   separately selected development threshold. A pose-only replay does not
+   satisfy replication.
+2. After Point-LIO indicator development and the separate replication freeze,
+   submit the accepted FAST-LIO native evidence and complete implementation
+   package for final R3 acceptance. The exact T14 binary hash matched, and the
+   supervised lifecycle verified playback, shutdown, output flush,
+   post-processing and cached resumption. Preserve all run files and source
+   identities. Held-out work remains gated until the implementation freeze.
 3. After primary R3 PASS and the replication development freeze, screen
    reserved layouts using the frozen geometry rules. Execute the 48 paired
    primary tests and reviewed replication. Preserve incomplete samples and

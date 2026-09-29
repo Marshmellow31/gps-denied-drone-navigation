@@ -1,6 +1,6 @@
 # Current research handoff
 
-Updated: 27 September 2026. **Start here when resuming the LiDAR recovery-reliability study.** This is a snapshot, not a completed result. The authoritative task states are in [STATUS.md](STATUS.md); the original task requirements remain in [the execution plan](../AGENT_EXECUTION_PLAN.md).
+Updated: 29 September 2026. **Start here when resuming the LiDAR recovery-reliability study.** This is a snapshot, not a completed result. The authoritative task states are in [STATUS.md](STATUS.md); the original task requirements remain in [the execution plan](../AGENT_EXECUTION_PLAN.md).
 
 **Historical 26 September verification:** T08 is DONE: after fixing shutdown clock draining, full 55 s on/off runs yield 547 byte-identical poses and 550 audited groups (547 valid, three startup-unavailable). The remaining delivered scan lacks IMU through its end at the replay cutoff. See the [audit](../evidence/T08_FINAL_PATCH_AUDIT.md). The original real-reference T09 criterion remains blocked; the later simulation-primary T09 feasibility task is complete. At that checkpoint the suite had **42 passed, 1 skipped** (43 executed); the latest count is in the R3 repair update below. Outputs: ignored `experiments/generated/runs/T08_20260926/`.
 
@@ -35,9 +35,11 @@ REVISE; the latest fresh review returned **PASS for protocol content**. The user
 approved the full-triple-within-20-seconds rule and formal x=-6 m route. T11 is
 frozen at proposal v0.4, with shared nearest-pose time boundaries and explicit
 debounce, relapse and confidence-interval rules. [`FREEZE.md`](../protocol/FREEZE.md)
-was re-read after editorial decision D036 with **51/51 hashes matching**.
+was re-read after editorial decision D036 with the original **51/51 hashes
+matching**. After D050 added the Point-LIO protocol amendment, the combined
+53-file bundle also read back **53/53 hashes matching** on 29 September 2026.
 The current freeze-file SHA-256 is
-`7073114152fd3b7b248e43cbb0b016d0a330d1b0e81ede5b4cf7d907c4f90f02`.
+`276216ebc96d047ce01981d8cdfafaf52eca494519a292614e245e5344d10145`.
 D034–D036 refresh only the README and append-only decision-log checksum entries; the
 protocol methods and splits are unchanged. The original freeze-file hash is
 preserved there. R2 is PASS for protocol content only; R3 and publication
@@ -103,20 +105,55 @@ counterexamples are in [R3_IMPLEMENTATION.md](../reviews/R3_IMPLEMENTATION.md).
 It did not create `IMPLEMENTATION_FREEZE.md`, and no held-out data were
 generated or screened.
 
-**R3 repair update (27 September):** the full repair package is now prepared
-for independent re-review. The [verification report](../evidence/R3_REPAIR_VERIFICATION.md)
-maps every repair ID to its source, fixtures and real development checks.
-The analyzer rerun reproduces the threshold and sample size; the
-[repeat audit](../evidence/T14_REPEATABILITY_AUDIT.md) quantifies all four
-retained repeats. The source and executable were rebuilt identically to T14;
-a current-source development replay passed the real completion validator.
-Both environments now run **119 tests: 118 passed, one optional SciPy skip**.
-Saved plots include PNG/PDF/SVG and a figure hash manifest. The initial R3
-review remains REVISE until independently audited again.
+**R3 fifth follow-up (29 September):** the independent reviewer accepted the
+software repairs and current native seed-14 lifecycle/cached resumption,
+verified the 108-entry review bundle, 51/51 R2 hashes and all 18 retained
+outputs, and found no new FAST-LIO defect. T16-R3-09 and T16-R3-10 are closed;
+T16 is DONE as a development task. Overall R3 remains **REVISE** under the
+original plan because Point-LIO still lacks a comparable online health signal
+and development replication freeze. No implementation freeze or held-out
+authorization exists. No held-out data were generated or screened. See the
+[latest R3 review](../reviews/R3_IMPLEMENTATION.md) and [native replay report](../evidence/R3_NATIVE_SEED14_REPLAY_20260929.md).
 
-**Current next step:** obtain focused R3 re-review. For the user's full paper
-objective, develop and freeze comparable Point-LIO indicators before any
-final-layout exposure; a pose-only smoke does not satisfy replication.
+**Point-LIO amendment (29 September):** the independent source/protocol review
+returned PASS on the exact accepted
+[amendment](../protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md), SHA-256
+`5c67330fe596e74a811b7e00202cef8d460a214bf4d6ff50e8ea10b86e9e4ed0`. It
+defines a separate Point-LIO frame-pooled measurement-geometry score and
+DCReg adaptation, its group/timestamp/reset/unavailable rules, and its own
+development-only threshold-selection rule. This is **protocol acceptance
+only**: no Point-LIO health output, replay, threshold fit or replication batch
+has been run. The combined amendment bundle read back **53/53 hashes matched**
+on 29 September 2026, including the accepted amendment and its review report.
+
+**Point-LIO implementation checkpoint (29 September):** the D050 analytic
+score, read-only native sidecar, hash-checked exporter, durable attempt
+manifests and isolated-ROS runner are implemented. The complete experiment
+suite reports **160 passed, one optional SciPy test skipped**; this run also
+enabled and passed a compiled native-sidecar reset fixture. `bash -n` and
+`git diff --check` pass. The fixture forces a post-start reset, confirms the
+diagnostic/pose segment boundary, and checks that a substituted rotation does
+not reconstruct the captured common-basis Jacobian rows. Exact source hashes,
+test command and scope limits are in the
+[implementation verification note](../evidence/POINTLIO_IMPLEMENTATION_VERIFICATION_20260929.md).
+This is local verification only: independent rereview passed the bounded
+workflow, but the first sidecar-on/off attempt failed before any sensor messages
+were delivered. Sidecar-off completed; sidecar-on Point-LIO exited before
+subscribing, and its run manifest records `RUN_FAILED` with process statuses
+unknown after manual cleanup. No paired pose parity or health export is
+accepted. Exact source hashes and both attempt manifests are recorded in the
+[implementation verification note](../evidence/POINTLIO_IMPLEMENTATION_VERIFICATION_20260929.md).
+
+**Current next steps:** diagnose the sidecar-on startup failure and correct the
+runner's process-group shutdown behavior; preserve this failed attempt and use
+a fresh output directory for any retry. Once the retained seed-14 sidecar-on/off
+feasibility pair succeeds, verify full raw-frame coverage, byte-identical poses,
+process shutdown and manifest output hashes. No threshold may be fitted on this
+run. Only after independent one-seed acceptance may the 32-pair Point-LIO
+development replication and separate freeze run. Point-LIO uses its own poses
+and separately selected global threshold; the primary sample size stays fixed.
+Overall R3 remains REVISE and held-out work remains sealed until the separate
+replication freeze and R3 PASS. A pose-only smoke does not satisfy replication.
 The [paper completion plan](PAPER_COMPLETION_PLAN.md) preserves the broader
 objective through final evaluation, replication, novelty audit, analysis and
 manuscript verification. No actual held-out geometry has been generated or
@@ -145,9 +182,9 @@ After a LiDAR system passes through a scene with weak geometric clues, can its e
 | Hilti-Oxford Exp18 replacement candidate | Publisher-hash-verified recording inspected; all 1,094 Hesai clouds pass adapter checks; first 55-second replay produced 546 valid poses | [Inspection](../data/HILTI_EXP18_INSPECTION.md), [replay](../data/HILTI_EXP18_REPLAY.md) |
 | Hilti Exp18 frame convention | Development common-body interpretation strongly supported by 503 raw-gyroscope/reference turning intervals; no FAST-LIO error used | [Frame audit](../data/HILTI_EXP18_FRAME_AUDIT.md) |
 | Indicator comparison, transition pilot, protocol and comparator implementation | T08–T13 completed as engineering/evidence tasks; R1 PASS for design, R2 PASS for protocol content. R3/final evaluation remain. | [T13 reproduction](../evidence/INDICATOR_REPRODUCTION.md), [R1](../reviews/R1_FEASIBILITY.md), [R2](../reviews/R2_PROTOCOL.md), [freeze](../protocol/FREEZE.md) |
-| Formal simulation implementation | T14 DONE as development execution; 64 primaries, seed-45 repeats and transparent seed-14 smoke-repeat reconciliation. R3 must adjudicate the deviation. | [T14 batch report](../evidence/T14_DEVELOPMENT_BATCH.md), [audit manifest](../evidence/t14_development_batch_manifest.json), [handoff](handoffs/T14.md) |
+| Formal simulation implementation | T14 DONE as development execution; R3 accepts the disclosed seed-14 output as a same-input repeat, not a new event. | [T14 batch report](../evidence/T14_DEVELOPMENT_BATCH.md), [audit manifest](../evidence/t14_development_batch_manifest.json), [handoff](handoffs/T14.md) |
 | Point-LIO backend smoke | T15 DONE for a pinned, repeated pose-output smoke; no FAST-LIO indicator parity or replication result. | [T15 report](../evidence/T15_POINTLIO_SMOKE.md), [machine manifest](../evidence/t15_point_lio_smoke_manifest.json), [handoff](handoffs/T15.md) |
-| Frozen development-label/threshold analysis | Analysis and repairs prepared; T16 remains RUNNING pending independent R3 acceptance. Candidate threshold and `n_test=48` reproduce; no held-out geometry/results. | [Development report](../evidence/DEVELOPMENT_REPORT.md), [repair checks](../evidence/R3_REPAIR_VERIFICATION.md), [handoff](handoffs/T16.md) |
+| Frozen development analysis and native lifecycle | T16 DONE as a development task: candidate threshold and `n_test=48` reproduce; native seed-14 completion and cached resumption are independently verified. No held-out geometry/results. | [Development report](../evidence/DEVELOPMENT_REPORT.md), [native replay](../evidence/R3_NATIVE_SEED14_REPLAY_20260929.md), [handoff](handoffs/T16.md) |
 
 The Hilti replay is a software/development illustration, not an independent
 recovery benchmark. The backend's actual online diagnostic has been measured

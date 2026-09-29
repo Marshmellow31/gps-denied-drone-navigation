@@ -1,5 +1,6 @@
 import json
 import io
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -78,6 +79,49 @@ class FinalEvaluationRunnerTests(unittest.TestCase):
             freeze.write_text(self.freeze_text(inventory))
             with self.assertRaises(final_run.FinalEvaluationError):
                 final_run._require_r3_pass(review, freeze)
+
+    def test_r3_inventory_directly_hashes_scene_screen_dependency(self):
+        with tempfile.TemporaryDirectory() as folder:
+            review = Path(folder) / "review.md"
+            review.write_text("**Gate:** PASS\n")
+            inventory = final_run._r3_required_hashes(review)
+            self.assertIn("simulation scene audit", inventory)
+            self.assertEqual(inventory["simulation scene audit"], final_run.sha256_file(
+                final_run.ROOT / "research_paper/experiments/src/audit_simulation_scene.py"))
+            self.assertIn("R3 adversarial regression script", inventory)
+            r2_entries = {name for name in inventory
+                          if name.startswith("R2 frozen artifact: ")}
+            self.assertEqual(len(r2_entries), len(final_run._r2_frozen_artifact_hashes()))
+            self.assertIn(
+                "R2 frozen artifact: research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md",
+                r2_entries)
+            self.assertIn(
+                "R2 frozen artifact: research_paper/reviews/POINTLIO_INDICATOR_FEASIBILITY.md",
+                r2_entries)
+
+    def test_backend_t14_source_check_keeps_new_supervisor_separate(self):
+        reference = json.loads(final_run.T14_REFERENCE_RUN.read_text())
+        expected = reference["fingerprint"]["sources"]
+        verified = final_run._verify_t14_source_hashes(expected)
+        self.assertEqual(verified["replay_script"], expected["replay_script"])
+        self.assertEqual(verified["replay_script"], final_run.sha256_file(final_run.RUN_SCRIPT))
+        self.assertNotEqual(verified["replay_script"], final_run.sha256_file(final_run.FINAL_RUN_SCRIPT))
+
+    def test_orphaned_member_in_recorded_replay_group_is_found(self):
+        import os
+        import signal
+        import time
+        process = subprocess.Popen(["bash", "-c", "sleep 30 & wait"], start_new_session=True)
+        try:
+            time.sleep(0.1)
+            process.kill()
+            process.wait(timeout=2)
+            self.assertTrue(final_run._process_group_members(process.pid))
+        finally:
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
 
     def make_screen_fixture(self, root):
         analysis = root / "analysis.json"

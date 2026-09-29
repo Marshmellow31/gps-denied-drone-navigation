@@ -27,6 +27,7 @@ def main():
     identity = {"role": "development_r3_smoke", "backend": backend,
                 "runtime": runner._check_analysis_runtime(),
                 "runner_sha256": runner.sha256_file(Path(runner.__file__)),
+                "final_replay_wrapper_sha256": runner.sha256_file(runner.FINAL_RUN_SCRIPT),
                 "validation_script_sha256": runner.sha256_file(Path(__file__))}
     print("Verified the restored T14 binary and development input", flush=True)
     result = runner._run_scene(args.run_id, 14, "DEVELOPMENT", "CORRIDOR",

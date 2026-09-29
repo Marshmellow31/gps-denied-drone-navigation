@@ -11,10 +11,12 @@ health indicators predict reference-defined local motion after a weak-geometry
 exit. This freezes the experiment protocol, not implementation correctness,
 novelty, publication readiness, real-world accuracy or flight safety.
 
-**Hash read-back:** 51/51 listed files matched on 26 September and again after
-the D036 amendment on 27 September 2026. The
-freeze-file SHA-256 is recorded in the execution handoff; it is not part of its
-own checksum table.
+**Hash read-back:** The original R2 base bundle contained 51 files and passed
+read-back on 26 September and after its documented amendments through D040 on
+29 September. D050 adds the accepted Point-LIO amendment and its independent
+review, making the current table 53 files; all 53 current hashes were read back
+after D050 on 29 September 2026. The freeze-file SHA-256 is recorded in the
+execution handoff; it is not part of its own checksum table.
 
 **Editorial read-back amendment (27 September 2026):** The public root
 [`README.md`](../../README.md) now describes the completed T16 development
@@ -51,18 +53,81 @@ and the pre-amendment freeze identity. The new implementation and regenerated
 development evidence require independent R3 re-review; this editorial update
 does not pass R3 or authorize final-layout exposure.
 
+**Implementation-integrity and novelty-boundary amendment D037 (28 September
+2026):** The public README and decision log now report the R3 counterexample
+fixes and the closest-work refresh. The historical T14 replay wrapper remains
+unchanged; the supervised R3 wrapper is a separate file and is bound directly
+in the R3 inventory. A new focused literature audit records earlier
+corridor-exit/recovery detectors, so no broad “first recovery detector” claim
+is allowed. These changes do not alter the R2 scientific protocol, methods,
+thresholds, geometry splits or any result. The updated README, decision-log
+hashes are listed below; 49 other checksum entries retain their D036 values.
+The R3 runner verifies all 51 entries before screening and includes
+their current hashes in the R3 implementation inventory. R2 remains PASS for
+protocol content only; D037 does not pass R3 or permit held-out work.
+
+**Implementation correction D038 (28 September 2026):** The 27 September
+T14 run fingerprint refers to the original `run_simulation_smoke.sh`. The R3
+repair now preserves that file and adds a separate supervised wrapper for
+final/development replays; only the latter is hashed in the R3 inventory. The
+R2 checksum row for the historical T14 wrapper is restored to its original
+value. Generation timing is stored in input-attempt records, while the sensor
+manifest remains stable for exact replay caching. The README and append-only
+decision log are refreshed below; the other 49 R2 checksum entries remain at
+their D036 values. No protocol setting, split or result changed. R2 remains
+PASS for protocol content only; D038 does not pass R3 or permit held-out work.
+
+**Novelty-boundary amendment D039 (28 September 2026):** The append-only
+decision log and post-R2 primary-source audit now include prior failure
+prediction, learned per-scan localizability, and the 2026 spectral health/RPE
+study. The candidate is restricted to sustained local-motion recovery after
+an independently annotated geometry exit; no “first health indicator” or
+generic health-versus-error claim is permitted. This updates the claim boundary
+only and adds no comparator, threshold, split, event, or outcome to the frozen
+protocol. Only the decision-log hash is refreshed; the other 50 R2 checksum
+entries remain at D038 values. R2 still passes for protocol content only; R3
+remains REVISE and held-out work stays gated.
+
+**Cache-identity amendment D040 (29 September 2026):** The append-only decision
+log now documents the canonical input identity, preservation of raw manifest
+hashes and generation history, and verified scratch cleanup after successful
+cache reuse. The canonical digest ignores only non-scientific `runtime_s` and
+Git `code_revision` fields; all sensor, reference, settings and source hashes
+remain part of the identity. The 48-pair fixture now regenerates the manifest
+metadata and scratch twice without restarting the estimator. Only the
+decision-log checksum row is refreshed; the other 50 R2 file hashes retain
+their D039 values. No protocol definition, split, threshold or result changed.
+R3 remains REVISE and no held-out work is authorized.
+
+**Point-LIO protocol amendment D050 (29 September 2026):** The independent
+review returned PASS for the dated Point-LIO measurement-adaptation contract.
+It defines a separate score from Point-LIO's own online measurement rows,
+common-basis frame pooling, timestamp/availability/reset rules and an
+independent development-only `G_3m` cutoff rule. It does not change the primary
+FAST-LIO method, recovery labels, FAST-LIO cutoff rule or 48-pair primary
+sample-size plan. The accepted amendment and its review report are added as
+two rows to the original 51-file bundle; affected documentation hashes are
+refreshed below. The 53-file read-back passes, but this is still a protocol
+gate only: the health exporter, analytic fixtures, seed-14 feasibility
+acceptance and 32-pair Point-LIO development replication remain undone. D050
+does not pass overall R3 or permit held-out access.
+
 R1 passed only to permit protocol design. R2 had two REVISE rounds; the final
 review accepted the revised content. The user approved the 20 s full-triple
-deadline and the formal x=-6 m route. T13–T16 and R3 remain outstanding.
+deadline and formal x=-6 m route. T13–T16 are complete as development tasks;
+D050 separately passes the Point-LIO protocol amendment. Point-LIO
+implementation/replication and overall R3 remain outstanding.
 
 ## Frozen research question and limits
 
 For the fixed FAST-LIO implementation, do its online geometric health signals
 identify when short-window translation and rotation accuracy has returned
-after an independently annotated geometry exit? The outcomes are false
-healthy declarations, recovery sensitivity/delay, availability, non-recovery
-and relapse. Accumulated pose drift stays separate. This is an evaluation of
-existing signals, not a new estimator or detector.
+after an independently annotated geometry exit? A separate Point-LIO
+adaptation tests whether the same measurement-geometry idea can be reproduced
+on a second existing backend. The outcomes are false-healthy declarations,
+recovery sensitivity/delay, availability, non-recovery and relapse.
+Accumulated pose drift stays separate. This is an evaluation of existing
+signals, not a new estimator or detector.
 
 The primary evidence is synthetic and has exact analytic truth independent of
 FAST-LIO computation; it is not an independent physical measurement. Sensor
@@ -90,6 +155,12 @@ flight safety, new topology transfer or “first” novelty is frozen.
    health score for curves is `1/max(all six kappa_i)`, zero when any ratio is
    infinite. Serialize infinite ratios as null/blank plus an explicit
    unbounded flag, never as a non-finite numeric value.
+3. `POINTLIO_MIN_EIG_G3` and `POINTLIO_DCREG_SCHUR_MASK`: the separate
+   frame-pooled measurement-geometry adaptation defined in the accepted
+   [D050 amendment](POINTLIO_REPLICATION_AMENDMENT_20260929.md). Point-LIO's
+   own accepted rows and pose stream are used; no FAST-LIO rows, poses or
+   threshold are reused. This secondary backend's implementation and
+   development replication are not yet complete.
 
 The DCReg equations/threshold are grounded in the main paper Sections 4.2–4.4,
 Equations 18–21; the Moore-Penrose generalization is cited there. Official
@@ -202,8 +273,10 @@ FAST-LIO revision: `7cc4175de6f8ba2edf34bab02a42195b141027e9`.
   repeatability only; they are not independent events or threshold-training
   records. No held-out input or screen before R3 PASS.
 - R2 freezes simulator/noise/bias factors, geometry screen, comparator rules,
-  recovery cutoffs, denominators and analysis. The only scientific operating
-  value selected after R2 is one global FAST-LIO threshold via the frozen rule;
+  recovery cutoffs, denominators and analysis. The original rule selects one
+  global FAST-LIO threshold; D050 separately permits one global Point-LIO
+  threshold by the same deterministic objective on its own development scores
+  and poses. Both are locked with their backend evidence before held-out work;
   all other LIO settings stay fixed. Correctness fixes that affect scores need
   a dated amendment and regenerated development evidence. No per-scene tuning.
 - If retained, raw bags would require about 13–18 GB. Use one pair at a time in
@@ -219,6 +292,11 @@ FAST-LIO revision: `7cc4175de6f8ba2edf34bab02a42195b141027e9`.
   smoke. T16 reports all development results and prepares the final handoff.
   R3 must freeze implementation before any held-out generation, screen or
   evaluation. None of those implementation/results gates are passed by R2.
+  D050 adds only the next bounded Point-LIO work: after the 53-file read-back,
+  implement analytic/contract fixtures and a read-only sidecar; after those
+  pass, run seed-14 feasibility with no threshold fitting; after independent
+  one-seed acceptance, run the 32-pair development replication. Overall R3
+  and the separate replication freeze remain required before held-out access.
 
 ## Reviewed content hashes
 
@@ -230,13 +308,13 @@ governing file invalidates this freeze until an amendment/re-review.
 
 | File | SHA-256 |
 | --- | --- |
-| `AGENTS.md` | `eaa9e4584d866150cf30ff50f3820ea81aeef1d677df469372c075d341cc02dd` |
-| `README.md` | `3721b60c2adb4d79909746c0da53f41799e1d8d9876012f3ff2af7b95d78fd57` |
-| `research_paper/AGENT_EXECUTION_PLAN.md` | `18ade8e8130abcb492616ad03de19c0fee60a60017c6f43a67102b4079f6a392` |
+| `AGENTS.md` | `9377fad8a81538cc147023e7f01fa000ad811fead6f35cee6ed45d9ccd734257` |
+| `README.md` | `fcac3d8e874f52cd1bf8a51c5718c9137df101f4535afd8e8fe9ff0bc582e571` |
+| `research_paper/AGENT_EXECUTION_PLAN.md` | `f38f4d4f31d1a38ca5eff142200bf6390497af75dadb1440d170e65579ee3bbb` |
 | `research_paper/RESEARCH_GOAL.md` | `4feca0c33246405bce20e0f4ed2be0cfe78b1fb5c2df1629a08564d4c2c6ce33` |
 | `research_paper/SCOPE_DECISION.md` | `feb85397efcc8e222785881b9b28a3b4d7b899a893de0269ad9208a5ff337d32` |
 | `research_paper/SCOPE_AMENDMENT_SIMULATION.md` | `edfda5a59a376f10d4184d3e0d9451d1435267e67fd7a9854d70b30ba17dcfbc` |
-| `research_paper/execution/DECISIONS.md` | `d55bd088369df682bede43eac875026f9ff82369f5220398f1b66bc15ddbec5f` |
+| `research_paper/execution/DECISIONS.md` | `406bb0724ffaf29b0132be3cc672b6e5136332a25f8cfe3be7d2519409395719` |
 | `research_paper/literature/COMPARISON.md` | `411e52abb3469b205a7cdb891a388749a9ab8ac5fe56295beff54e88f57b0a7f` |
 | `research_paper/literature/GAP_DECISION.md` | `e5188eaf327386c3a5470e3cd758410bbe83cf626e890739a344634ed0650b9c` |
 | `research_paper/literature/RECOVERY_OVERLAP_UPDATE.md` | `117e4c40ed3b98906739d0dace28493b7f297a709f20aa72834cc8583d581255` |
@@ -244,10 +322,12 @@ governing file invalidates this freeze until an amendment/re-review.
 | `research_paper/literature/SEARCH_LOG.md` | `d73e0893f9dc70c522e72fa03787de2d341a4198ce782223a9b77e08d5bf1da7` |
 | `research_paper/reviews/R1_FEASIBILITY.md` | `358186ea18202c558ed52bb8d0013b7a14a387ce577191a2375b6d1086dec5cf` |
 | `research_paper/reviews/R2_PROTOCOL.md` | `2895379745daaee5f009bc2aa67d5812a5e47693207a2a4e45b96b9bcc9cc961` |
+| `research_paper/reviews/POINTLIO_INDICATOR_FEASIBILITY.md` | `22eb4e53d852c6febc8af205e38d21010f792ac2c43be2ead2d53c2c77b40158` |
 | `research_paper/protocol/DATA_CONTRACT.md` | `c06d112996cf66460c1eb87aba54da78c1fb9d31dfff2e4f59a3aa4b453ae95a` |
 | `research_paper/protocol/FASTLIO_INFORMATION_DIAGNOSTIC.md` | `6723a9b4838756b76d9be3835d587c4487eb4ee40b9ccde4e49c04c3009b36a8` |
-| `research_paper/protocol/INDICATORS.md` | `510056955e3c9d7b943897da6c2533ab8cd8b870afdecd070de89db8fd2250e2` |
-| `research_paper/protocol/METRICS.md` | `06f5bf3950a3784fdd95c1eb6767dfec83ace8237e7d99a275f3ed13074d03cc` |
+| `research_paper/protocol/INDICATORS.md` | `f9c72f12fae2c294b4e8372684df1dae3fa571c7d3905eb23b05d8b747409a4d` |
+| `research_paper/protocol/METRICS.md` | `1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b` |
+| `research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md` | `5c67330fe596e74a811b7e00202cef8d460a214bf4d6ff50e8ea10b86e9e4ed0` |
 | `research_paper/protocol/SIMULATION.md` | `27ae3e937de17b12d81f66149a443ba752febb61a4547d1a32c3a2d0b2221811` |
 | `research_paper/data/SPLITS.csv` | `d9d5496a55a2bb55cbf4a294be87df41ebb3b57ff24bdfd0e6fc0fcc8d682172` |
 | `research_paper/data/ALTERNATIVE_REFERENCE_AUDIT.md` | `0751ef48773b3b6b7e04d11615c5e16d8cdd89bb2fba0e5b5702ab3e98eeac34` |

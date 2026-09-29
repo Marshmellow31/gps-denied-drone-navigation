@@ -10,7 +10,6 @@ import hashlib
 import json
 import subprocess
 import sys
-import time
 from pathlib import Path
 from typing import Any
 
@@ -175,8 +174,6 @@ def write_sensor_input(
     if duration_s < exit_time + 20.0:
         raise HeldoutContractError("trajectory does not cover the frozen 20 s post-exit horizon")
     output_dir.mkdir(parents=True, exist_ok=False)
-    started = time.time()
-
     # ROS imports are delayed so geometry fixtures remain independently testable.
     import rosbag
     import rospy
@@ -287,7 +284,7 @@ def write_sensor_input(
         "truth_in_sensor_bag": False, "generator_sha256": sha256_file(Path(__file__).resolve()),
         "simulator_sha256": sha256_file(Path(simulator.__file__).resolve()),
         "formal_route_sha256": sha256_file(Path(formal_route.__file__).resolve()),
-        "code_revision": revision, "runtime_s": time.time() - started,
+        "code_revision": revision,
         "limitations": ["synthetic analytic truth", "single prescribed motion",
                         "ideal clocks/extrinsics", "uncalibrated sensor stress values"],
     }

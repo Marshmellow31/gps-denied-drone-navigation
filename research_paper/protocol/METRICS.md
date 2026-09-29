@@ -1,6 +1,6 @@
 # Provisional evaluation metrics
 
-Version: T11 protocol `0.4`, frozen 26 September 2026 after R2 PASS and a 51/51 file-hash read-back; see [`FREEZE.md`](FREEZE.md). The user approved the full-triple-within-20-seconds recovery deadline and formal x=-6 m route. This freezes the analysis plan, not implementation, publication novelty or a recovery result. No batch before T13/T14 implementation gates; held-out work remains gated on R3.
+Version: T11 protocol `0.4`, frozen 26 September 2026 after R2 PASS and a 51/51 base-file hash read-back, with accepted Point-LIO amendment D050 (29 September 2026); see [`FREEZE.md`](FREEZE.md) and the [Point-LIO amendment](POINTLIO_REPLICATION_AMENDMENT_20260929.md). The user approved the full-triple-within-20-seconds recovery deadline and formal x=-6 m route. This freezes the analysis plan, not implementation, publication novelty or a recovery result. No held-out work is permitted before R3.
 
 **Data update (26 September 2026):** Hilti remains a supporting illustration; only 13/56 matched post-exit 1 s windows and 0/56 3 s windows have usable reference. The primary pilot is the truth-isolated v3 simulation in [SIMULATION_MOTION_V3.md](../evidence/SIMULATION_MOTION_V3.md), with the four-seed fixed-layout follow-up in [SIMULATION_SEED_SENSITIVITY.md](../evidence/SIMULATION_SEED_SENSITIVITY.md). All v1/v2/v3 runs remain development data, and seeds 10–13 share one geometry cluster. No threshold or recovery label has been selected from final-test data. See the [current handoff](../execution/CURRENT_HANDOFF.md).
 
@@ -190,7 +190,11 @@ half/double sensitivity values before batches.
 
 ## Indicator decisions and reliability metrics
 
-Each score is timestamped at the scan-to-map update. Evaluate the state
+FAST-LIO scores are timestamped at that backend's scan-to-map update. The
+Point-LIO adaptation emits one frame-pooled score at its actual `lidar_end_time`;
+only unavailable rows without usable point offsets use the amendment's marked
+nominal timestamp. Both streams are evaluated under the same frozen time
+association and decision rules. Evaluate the state
 machine at every 0.1 s tick from simulation time zero. For primary event
 metrics, use the ticks from the first grid tick at or after `t_exit` through
 ticks strictly before `t_exit+20 s`. At each tick, associate the latest
@@ -210,6 +214,10 @@ decision.
 - `DCREG_SCHUR_MASK` emits healthy only when no rotational or translational
   direction is flagged using the paper's fixed `kappa_th=10`. Do not tune this
   comparator threshold on the study data.
+- `POINTLIO_MIN_EIG_G3` uses Point-LIO's own poses and its separate global
+  `G_3m` threshold. Apply the same deterministic development-only objective
+  below, independently from the FAST-LIO threshold. The fixed-rule
+  `POINTLIO_DCREG_SCHUR_MASK` comparator retains `kappa_th=10`; do not tune it.
 - For either method, debounce is a two-state machine (`INACTIVE`,
   `CONFIRMED_HEALTHY`). In `INACTIVE`, three distinct healthy diagnostic
   records on three consecutive planned ticks cause one transition to
@@ -241,6 +249,21 @@ one selected global threshold to every layout; never tune per-scene values.
 R2 freezes this selection procedure and all recovery thresholds. The realized
 FAST-LIO numeric threshold is computed only from development outputs and
 locked at R3 before held-out outputs are opened.
+
+For Point-LIO, use the same candidate rule and objective independently on its
+own `lambda_min(G_3m)` values and its own pose-derived recovery labels. Use only
+the 32 corridor development seeds `14–45`; controls and the separate seed-14
+feasibility attempt are excluded from threshold fitting. Candidate cutoffs are
+the unique finite valid Point-LIO scores plus `NO_ALARMS`; healthy means
+`score >= threshold`. Keep the conditional false-healthy event rate at or
+below `10%`, maximize sensitivity among feasible thresholds, choose the higher
+numeric threshold on ties, and report `NO_FEASIBLE_OPERATING_POINT` if the
+false-healthy denominator is zero or no feasible threshold has positive
+sensitivity. A missing score or no qualifying post-onset alarm is a miss.
+This creates a separate Point-LIO cutoff only; it does not change the FAST-LIO
+cutoff, recovery labels, primary sample-size plan or held-out budget. The
+exact measurement-row, timestamp, reset and unavailable rules are in the
+accepted amendment.
 
 Matched feature-rich controls do not receive a post-degeneracy recovery onset
 or enter primary recovery-delay/sensitivity denominators, because they have no
@@ -292,11 +315,15 @@ R2 freezes the simulation geometry/noise/bias profile, event/label thresholds,
 screen limits, detector formulas, DCReg `kappa_th=10`, score definitions,
 denominators, statistical intervals and run schedule. No LIO configuration,
 simulator factor, outcome cutoff, DCReg threshold or per-scene setting may be
-selected from development or held-out results. The sole scientific operating
-value selected after R2 is one global FAST-LIO `G_3m` threshold, using the
-development-only deterministic rule above; it is recorded and locked at R3
-before any held-out outputs are opened. The half/double label tolerances are
-fixed sensitivity analyses, not candidates for choosing a preferred headline.
+selected from development or held-out results. The two permitted post-R2
+operating cutoffs are the separate global FAST-LIO and Point-LIO `G_3m`
+thresholds, each selected only from its backend's development poses/scores
+with the deterministic rule above. Lock the FAST-LIO cutoff at primary R3;
+lock the separate Point-LIO cutoff with its replication development freeze.
+Both locks must precede any held-out output exposure. The Point-LIO addition
+is governed by D050 and does not revise the primary FAST-LIO sample size. The
+half/double label tolerances are fixed sensitivity analyses, not candidates
+for choosing a preferred headline.
 T13 may make source-parity/correctness fixes only; any change affecting score
 values requires a dated amendment and regeneration of all affected development
 evidence before R3. T14 may implement the already frozen route/layout generator

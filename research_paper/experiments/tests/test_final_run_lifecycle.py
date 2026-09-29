@@ -59,21 +59,34 @@ class CompletionValidationTests(unittest.TestCase):
         self.assertEqual(result["invalid_pose_records"], 200)
         self.assertEqual(result["evaluation_rows"], 1194)
 
-    def test_header_only_pose_stream_is_incomplete(self):
+    def test_header_only_pose_stream_is_completed_unavailable_evidence(self):
         write_csv(self.path / "poses.csv", ["timestamp_ns", "event"], [])
-        with self.assertRaises(runner.RunIncompleteError):
-            self.validate()
+        write_csv(self.path / "evaluation.csv", ["timestamp_ns", "window_s"], [])
+        self.summaries[2].update(rows=0)
+        (self.path / "pose_logger.log").write_text(
+            "pose logger counts: {'valid': 0, 'invalid': 0, 'resets': 0}\n")
+        result = self.validate()
+        self.assertEqual(result["pose_records"], 0)
+        self.assertIsNone(result["last_pose_timestamp_ns"])
+        self.assertEqual(result["completion_status"], "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG")
 
     def test_partial_groups_are_incomplete_even_with_successful_wrapper(self):
         self.summaries[0]["timestamp_groups"] = 200
         with self.assertRaises(runner.RunIncompleteError):
             self.validate()
 
-    def test_early_backend_exit_prefix_is_incomplete(self):
+    def test_missing_trailing_estimates_remain_completed_unavailable_windows(self):
         rows = runner._read_tsv_or_csv(self.path / "poses.csv")[:100]
         write_csv(self.path / "poses.csv", list(rows[0]), rows)
-        with self.assertRaises(runner.RunIncompleteError):
-            self.validate()
+        write_csv(self.path / "evaluation.csv", ["timestamp_ns", "window_s"],
+                  [{"timestamp_ns": row["timestamp_ns"], "window_s": window}
+                   for row in rows for window in (1, 3)])
+        self.summaries[2]["rows"] = len(rows) * 2
+        (self.path / "pose_logger.log").write_text(
+            "pose logger counts: " + repr({"valid": len(rows), "invalid": 0, "resets": 0}) + "\n")
+        result = self.validate()
+        self.assertEqual(result["pose_records"], 100)
+        self.assertLess(result["last_pose_timestamp_ns"], 1_059_800_000_000)
 
     def test_missing_playback_completion_is_incomplete(self):
         (self.path / "rosbag.log").write_text("playback terminated\n")
@@ -149,6 +162,12 @@ class ReplayLifecycleTests(unittest.TestCase):
             self.assertEqual(self.execute()["status"], "CACHED")
             self.assertEqual(self.launches, 1)
             self.assertEqual(self.ledger()[-1]["status"], "COMPLETED")
+            manifest_path = self.inputs / "manifest.json"
+            input_manifest = json.loads(manifest_path.read_text())
+            input_manifest.update(runtime_s=73.2, code_revision="commit-only-change")
+            manifest_path.write_text(json.dumps(input_manifest))
+            self.assertEqual(self.execute()["status"], "CACHED")
+            self.assertEqual(self.launches, 1)
             with self.assertRaises(runner.FinalEvaluationError):
                 self.execute({"development_fixture": "changed"})
 
