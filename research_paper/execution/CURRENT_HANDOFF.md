@@ -137,23 +137,28 @@ not reconstruct the captured common-basis Jacobian rows. Exact source hashes,
 test command and scope limits are in the
 [implementation verification note](../evidence/POINTLIO_IMPLEMENTATION_VERIFICATION_20260929.md).
 This is local verification only: independent rereview passed the bounded
-workflow, but the first sidecar-on/off attempt failed before any sensor messages
-were delivered. Sidecar-off completed; sidecar-on Point-LIO exited before
-subscribing, and its run manifest records `RUN_FAILED` with process statuses
-unknown after manual cleanup. No paired pose parity or health export is
-accepted. Exact source hashes and both attempt manifests are recorded in the
-[implementation verification note](../evidence/POINTLIO_IMPLEMENTATION_VERIFICATION_20260929.md).
+workflow. The first attempt experienced a startup failure on the sidecar-on run,
+which was diagnosed as a kernel `ntfs3` iomap fault on buffered log file writes
+in the prior boot session. Runner process-group shutdown was repaired and tested.
+Both initial runs are preserved on Acer under `.../POINTLIO_INDICATOR_FEASIBILITY_20260929/`.
+The fresh R2 feasibility pair was executed under `.../POINTLIO_INDICATOR_FEASIBILITY_20260929_R2/`
+and verified with `verify_pointlio_feasibility_pair.py` (`feasibility_pair=PASS`).
+Poses are byte-identical between sidecar-on and sidecar-off
+(`851e8b3709e26e2c1bc607d8d6507e1c303746129e8d2bd19c761f8efce727ee`),
+all 600 input frames and sidecar frames are accounted for with monotonic IDs,
+181,903 groups and 222,498 Jacobian rows were recorded, exactly 3 startup-unavailable
+frames match FAST-LIO, and all processes exited cleanly with code 0.
+Exact source hashes, manifests and verification JSON are recorded in the
+[implementation verification note](../evidence/POINTLIO_IMPLEMENTATION_VERIFICATION_20260929.md)
+and [verification manifest](../evidence/pointlio_feasibility_pair_verification_20260929.json).
 
-**Current next steps:** diagnose the sidecar-on startup failure and correct the
-runner's process-group shutdown behavior; preserve this failed attempt and use
-a fresh output directory for any retry. Once the retained seed-14 sidecar-on/off
-feasibility pair succeeds, verify full raw-frame coverage, byte-identical poses,
-process shutdown and manifest output hashes. No threshold may be fitted on this
-run. Only after independent one-seed acceptance may the 32-pair Point-LIO
-development replication and separate freeze run. Point-LIO uses its own poses
-and separately selected global threshold; the primary sample size stays fixed.
-Overall R3 remains REVISE and held-out work remains sealed until the separate
-replication freeze and R3 PASS. A pose-only smoke does not satisfy replication.
+**Current next steps:** obtain independent one-seed acceptance of this completed
+and verified feasibility pair. Only after independent one-seed acceptance may the
+32-pair Point-LIO development replication and separate freeze run. No threshold may
+be fitted on seed 14. Point-LIO uses its own poses and separately selected global
+threshold; the primary sample size stays fixed. Overall R3 remains REVISE and
+held-out work remains sealed until the separate replication freeze and R3 PASS.
+A pose-only smoke does not satisfy replication.
 The [paper completion plan](PAPER_COMPLETION_PLAN.md) preserves the broader
 objective through final evaluation, replication, novelty audit, analysis and
 manuscript verification. No actual held-out geometry has been generated or

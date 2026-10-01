@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "recorded_at_utc": "2026-09-29T18:33:44.441528+00:00",
+  "development_only": true,
+  "seed": 14,
+  "threshold_fit_performed": false,
+  "heldout_inputs_opened": false,
+  "rosbag_sha256": "89f4ac21b24a2b9dfc86b74cd3d082e48365ac1ed63207b08969e7aca25d4627",
+  "configuration_sha256": "d23bd8799c3834ac0acc1d23476a0a0c0cd72b09f7b7c542b5bfbe9813a4c98b",
+  "binary_sha256": "80516da9cafba98262d56c17cc26ec4da76e214049d3af7776248b4c3a342b17",
+  "native_source_commit": "4b86a469eb5572e70ed575af25b5f15dd06e8e3c",
+  "input_frame_count": 600,
+  "frame_ledger_count": 600,
+  "indicator_row_count": 600,
+  "pose_row_count": 597,
+  "poses_sha256": "851e8b3709e26e2c1bc607d8d6507e1c303746129e8d2bd19c761f8efce727ee",
+  "sidecar_on_manifest_sha256": "a327c5dff5ef43f6241cf4b32a2aadb92e6ddce6b19b7a3006f47117ee2f5880",
+  "sidecar_off_manifest_sha256": "f0ead0d62c5fde1483c204c1700315ad721d57efd9161cc8ad59db4a37fc53e4",
+  "reset_event_count": 0,
+  "notes": [
+    "This is a one-seed feasibility check, not a new independent event.",
+    "It does not select or fit a Point-LIO operating threshold.",
+    "The native sidecar outputs are separate from held-out evaluation data."
+  ]
+}

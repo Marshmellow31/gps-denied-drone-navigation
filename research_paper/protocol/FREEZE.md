@@ -308,13 +308,13 @@ governing file invalidates this freeze until an amendment/re-review.
 
 | File | SHA-256 |
 | --- | --- |
-| `AGENTS.md` | `9377fad8a81538cc147023e7f01fa000ad811fead6f35cee6ed45d9ccd734257` |
+| `AGENTS.md` | `0db654eee95493cb5a1d83bd2a8b41553053467d2281c05bdb358bd417b64efb` |
 | `README.md` | `fcac3d8e874f52cd1bf8a51c5718c9137df101f4535afd8e8fe9ff0bc582e571` |
-| `research_paper/AGENT_EXECUTION_PLAN.md` | `f38f4d4f31d1a38ca5eff142200bf6390497af75dadb1440d170e65579ee3bbb` |
+| `research_paper/AGENT_EXECUTION_PLAN.md` | `52c12cdc0d894864594ef97d90979b34aa88cd11afe5db343c238e15329f4180` |
 | `research_paper/RESEARCH_GOAL.md` | `4feca0c33246405bce20e0f4ed2be0cfe78b1fb5c2df1629a08564d4c2c6ce33` |
 | `research_paper/SCOPE_DECISION.md` | `feb85397efcc8e222785881b9b28a3b4d7b899a893de0269ad9208a5ff337d32` |
 | `research_paper/SCOPE_AMENDMENT_SIMULATION.md` | `edfda5a59a376f10d4184d3e0d9451d1435267e67fd7a9854d70b30ba17dcfbc` |
-| `research_paper/execution/DECISIONS.md` | `406bb0724ffaf29b0132be3cc672b6e5136332a25f8cfe3be7d2519409395719` |
+| `research_paper/execution/DECISIONS.md` | `4b49f6cbf253bdf7e191f2ec0925de801e651cbb61d80826035a75e54ac743bf` |
 | `research_paper/literature/COMPARISON.md` | `411e52abb3469b205a7cdb891a388749a9ab8ac5fe56295beff54e88f57b0a7f` |
 | `research_paper/literature/GAP_DECISION.md` | `e5188eaf327386c3a5470e3cd758410bbe83cf626e890739a344634ed0650b9c` |
 | `research_paper/literature/RECOVERY_OVERLAP_UPDATE.md` | `117e4c40ed3b98906739d0dace28493b7f297a709f20aa72834cc8583d581255` |

@@ -55,53 +55,19 @@ point_manifest_written=false
 point_roscore_pid=
 point_lio_pid=
 point_pose_logger_pid=
+point_bag_pid=
 point_python="$point_ros_env/bin/python3"
 point_recorder="$point_repo_root/research_paper/experiments/src/record_pointlio_attempt.py"
-point_stop_process() {
-  local point_pid=$1
-  local point_name=$2
-  local point_grace=$3
-  local point_signal=${4:-INT}
-  local point_deadline
-  local point_status
-  local point_process_state
-  [[ -n "$point_pid" ]] || return 0
-  point_process_alive() {
-    point_process_state=$(ps -o stat= -p "$point_pid" 2>/dev/null) || return 1
-    point_process_state=${point_process_state//[[:space:]]/}
-    [[ -n "$point_process_state" && "$point_process_state" != Z* ]]
-  }
-  if point_process_alive; then
-    kill -"$point_signal" "$point_pid" 2>/dev/null || true
-  fi
-  point_deadline=$((SECONDS + point_grace))
-  while point_process_alive && (( SECONDS < point_deadline )); do
-    sleep 0.1
-  done
-  if point_process_alive; then
-    echo "$point_name did not stop after SIG$point_signal; escalating to SIGTERM" >&2
-    kill -TERM "$point_pid" 2>/dev/null || true
-    point_deadline=$((SECONDS + 5))
-    while point_process_alive && (( SECONDS < point_deadline )); do
-      sleep 0.1
-    done
-  fi
-  if point_process_alive; then
-    echo "$point_name did not stop after SIGTERM; escalating to SIGKILL" >&2
-    kill -KILL "$point_pid" 2>/dev/null || true
-    if point_process_alive; then
-      echo "$point_name remains present after SIGKILL; not waiting indefinitely" >&2
-      return 137
-    fi
-  fi
-  if wait "$point_pid"; then point_status=0; else point_status=$?; fi
-  return "$point_status"
-}
+
 cleanup() {
   local point_original_status=$?
   local point_manifest_status
   trap - EXIT INT TERM
   set +e
+  if [[ -n "$point_bag_pid" && $point_bag_status -lt 0 ]]; then
+    point_stop_process "$point_bag_pid" "rosbag" 5 INT
+    point_bag_status=$?
+  fi
   if [[ -n "$point_lio_pid" && $point_node_status -lt 0 ]]; then
     point_stop_process "$point_lio_pid" "Point-LIO" 20 INT
     point_node_status=$?
@@ -130,7 +96,7 @@ cleanup() {
   fi
   exit "$point_original_status"
 }
-trap cleanup EXIT
+trap cleanup EXIT INT TERM
 point_write_manifest
 point_manifest_written=false
 if [[ "$point_mode" == "on" ]]; then mkdir -p "$point_sidecar"; fi
@@ -175,12 +141,48 @@ point_lio_pid=$!
 "$point_python" "$point_repo_root/research_paper/experiments/src/pointlio_pose_logger.py" --clock-id simulation_epoch --topic /aft_mapped_to_init --output "$point_run/poses.csv" >"$point_run/pose_logger.log" 2>&1 &
 point_pose_logger_pid=$!
 sleep 3
-kill -0 "$point_lio_pid" 2>/dev/null || { echo 'Point-LIO exited before playback' >&2; exit 1; }
-kill -0 "$point_pose_logger_pid" 2>/dev/null || { echo 'pose logger exited before playback' >&2; exit 1; }
+point_process_alive "$point_lio_pid" || { echo 'Point-LIO exited before playback' >&2; exit 1; }
+point_process_alive "$point_pose_logger_pid" || { echo 'pose logger exited before playback' >&2; exit 1; }
 
 set +e
-timeout 120 rosbag play -q --clock -r 1 --wait-for-subscribers "$point_sensor_bag" --topics /sim/points /sim/imu >"$point_run/rosbag.log" 2>&1
-point_bag_status=$?
+rosbag play -q --clock -r 1 --wait-for-subscribers "$point_sensor_bag" --topics /sim/points /sim/imu >"$point_run/rosbag.log" 2>&1 &
+point_bag_pid=$!
+
+point_bag_deadline=$((SECONDS + 120))
+while point_process_alive "$point_bag_pid"; do
+  if ! point_process_alive "$point_lio_pid"; then
+    echo "Point-LIO exited unexpectedly during playback" >&2
+    point_stop_process "$point_bag_pid" "rosbag" 5 INT
+    point_bag_status=1
+    break
+  fi
+  if ! point_process_alive "$point_pose_logger_pid"; then
+    echo "pose logger exited unexpectedly during playback" >&2
+    point_stop_process "$point_bag_pid" "rosbag" 5 INT
+    point_bag_status=1
+    break
+  fi
+  if ! point_process_alive "$point_roscore_pid"; then
+    echo "roscore exited unexpectedly during playback" >&2
+    point_stop_process "$point_bag_pid" "rosbag" 5 INT
+    point_bag_status=1
+    break
+  fi
+  if (( SECONDS >= point_bag_deadline )); then
+    echo "rosbag playback timed out after 120s" >&2
+    point_stop_process "$point_bag_pid" "rosbag" 5 INT
+    point_bag_status=124
+    break
+  fi
+  sleep 0.2
+done
+if [[ $point_bag_status -lt 0 ]]; then
+  if wait "$point_bag_pid" 2>/dev/null; then
+    point_bag_status=0
+  else
+    point_bag_status=$?
+  fi
+fi
 set -e
 if [[ $point_bag_status == 0 ]]; then
   "$point_python" "$point_repo_root/research_paper/experiments/src/drain_sim_clock.py" --bag "$point_sensor_bag" >"$point_run/clock_drain.log" 2>&1
@@ -211,5 +213,5 @@ if [[ $point_bag_status != 0 || $point_node_status != 0 || $point_pose_logger_st
 fi
 point_run_state=COMPLETED
 point_write_manifest
-trap - EXIT
+trap - EXIT INT TERM
 echo "Point-LIO $point_mode feasibility replay completed; output: $point_run"
