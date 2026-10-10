@@ -1,0 +1,27 @@
+{
+  "schema": "primary-recovery-bounded-trial-v1",
+  "status": "PASS",
+  "development_only": true,
+  "heldout_inputs_opened": false,
+  "run_count": 2,
+  "results": [
+    {
+      "scene": "CORRIDOR",
+      "poses": 597,
+      "health": 600,
+      "windows": 19,
+      "reference_eligible": true,
+      "control_has_no_recovery_label": null,
+      "adapter_sha256": "5eb4c455f6d3b5bbd13a71b93c976744e698c29d314e483538282ddeed9b293c"
+    },
+    {
+      "scene": "CONTROL",
+      "poses": 597,
+      "health": 600,
+      "windows": 19,
+      "reference_eligible": null,
+      "control_has_no_recovery_label": true,
+      "adapter_sha256": "61319962aa5c3e600a0bb1e0bd3bae083a4c2d7c663986bedc49ee3c4618aec6"
+    }
+  ]
+}

@@ -2,8 +2,8 @@
 # Retained seed-14 development replay with the Point-LIO sidecar on or off.
 set -euo pipefail
 
-if [[ $# != 7 ]]; then
-  echo 'usage: run_point_lio_indicator_feasibility.sh ROS_ENV CATKIN_WORKSPACE GLOG_PREFIX SENSOR_BAG CONFIG NEW_RUN_DIR on|off' >&2
+if [[ $# != 7 && $# != 8 ]]; then
+  echo 'usage: run_point_lio_indicator_feasibility.sh ROS_ENV CATKIN_WORKSPACE GLOG_PREFIX SENSOR_BAG CONFIG NEW_RUN_DIR on|off [development_replication]' >&2
   exit 2
 fi
 
@@ -14,6 +14,8 @@ point_sensor_bag=$4
 point_config=$5
 point_run=$6
 point_mode=$7
+point_study_split=${8:-development_seed14_feasibility_only}
+[[ "$point_study_split" == development_seed14_feasibility_only || "$point_study_split" == development_replication ]] || { echo 'unsupported study split' >&2; exit 2; }
 point_repo_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)
 point_runner_helper="$point_repo_root/research_paper/experiments/src/pointlio_runner_helpers.sh"
 source "$point_runner_helper"
@@ -32,14 +34,21 @@ point_expected_source_commit=4b86a469eb5572e70ed575af25b5f15dd06e8e3c
 [[ -x "$point_ros_env/bin/python3" ]] || { echo 'ROS environment Python is missing' >&2; exit 2; }
 point_ros_master_port=$("$point_ros_env/bin/python3" -c 'import socket; s=socket.socket(); s.bind(("127.0.0.1", 0)); print(s.getsockname()[1]); s.close()')
 point_ros_master_uri="http://127.0.0.1:$point_ros_master_port"
-[[ -f "$point_expected_bag" ]] || { echo 'retained seed-14 feasibility bag is missing' >&2; exit 2; }
-point_actual_bag_path=$(realpath "$point_sensor_bag")
-point_expected_bag_path=$(realpath "$point_expected_bag")
-[[ "$point_actual_bag_path" == "$point_expected_bag_path" ]] || { echo 'this runner accepts only the retained seed-14 corridor bag' >&2; exit 2; }
+if [[ "$point_study_split" == development_seed14_feasibility_only ]]; then
+  [[ -f "$point_expected_bag" ]] || { echo 'retained seed-14 feasibility bag is missing' >&2; exit 2; }
+  point_actual_bag_path=$(realpath "$point_sensor_bag")
+  point_expected_bag_path=$(realpath "$point_expected_bag")
+  [[ "$point_actual_bag_path" == "$point_expected_bag_path" ]] || { echo 'this runner accepts only the retained seed-14 corridor bag' >&2; exit 2; }
+else
+  [[ "$point_mode" == on ]] || { echo 'development replication requires sidecar-on' >&2; exit 2; }
+  "$point_ros_env/bin/python3" "$point_repo_root/research_paper/experiments/src/validate_pointlio_development_input.py" --bag "$point_sensor_bag" --binary "$point_binary" --source-root "$point_source" --config "$point_config"
+fi
 point_actual_bag_sha256=$(sha256sum "$point_sensor_bag" | cut -d' ' -f1)
 point_actual_config_sha256=$(sha256sum "$point_config" | cut -d' ' -f1)
 point_actual_source_commit=$(git -C "$point_source" rev-parse HEAD)
-[[ "$point_actual_bag_sha256" == "$point_expected_bag_sha256" ]] || { echo 'input is not the retained seed-14 corridor bag' >&2; exit 2; }
+if [[ "$point_study_split" == development_seed14_feasibility_only ]]; then
+  [[ "$point_actual_bag_sha256" == "$point_expected_bag_sha256" ]] || { echo 'input is not the retained seed-14 corridor bag' >&2; exit 2; }
+fi
 [[ "$point_actual_config_sha256" == "$point_expected_config_sha256" ]] || { echo 'Point-LIO config does not match the frozen development profile' >&2; exit 2; }
 [[ "$point_actual_source_commit" == "$point_expected_source_commit" ]] || { echo 'Point-LIO source revision does not match the pinned T15 revision' >&2; exit 2; }
 [[ -f "$point_source/src/IndicatorSidecar.cpp" && -f "$point_source/src/IndicatorSidecar.h" ]] || { echo 'native indicator sidecar patch is not applied' >&2; exit 2; }

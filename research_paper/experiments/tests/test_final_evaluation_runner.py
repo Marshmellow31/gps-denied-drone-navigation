@@ -100,12 +100,32 @@ class FinalEvaluationRunnerTests(unittest.TestCase):
                 r2_entries)
 
     def test_backend_t14_source_check_keeps_new_supervisor_separate(self):
-        reference = json.loads(final_run.T14_REFERENCE_RUN.read_text())
+        reference = final_run._read_t14_backend_reference()
         expected = reference["fingerprint"]["sources"]
         verified = final_run._verify_t14_source_hashes(expected)
         self.assertEqual(verified["replay_script"], expected["replay_script"])
         self.assertEqual(verified["replay_script"], final_run.sha256_file(final_run.RUN_SCRIPT))
         self.assertNotEqual(verified["replay_script"], final_run.sha256_file(final_run.FINAL_RUN_SCRIPT))
+
+    def test_restored_backend_identity_is_checked_without_claiming_a_run_result(self):
+        with tempfile.TemporaryDirectory() as folder:
+            missing_run = Path(folder) / "missing_run.json"
+            with patch.object(final_run, "T14_REFERENCE_RUN", missing_run):
+                reference = final_run._read_t14_backend_reference()
+                self.assertEqual(reference["fingerprint"]["backend"]["binary_sha256"],
+                                 final_run.EXPECTED_BINARY_SHA256)
+                self.assertNotIn("status", reference)
+                self.assertNotIn("outputs", reference)
+
+    def test_changed_restoration_identity_is_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            changed = root / "identity.json"
+            changed.write_text(final_run.T14_BACKEND_IDENTITY.read_text() + " ")
+            with patch.object(final_run, "T14_REFERENCE_RUN", root / "missing.json"), \
+                    patch.object(final_run, "T14_BACKEND_IDENTITY", changed):
+                with self.assertRaises(final_run.FinalEvaluationError):
+                    final_run._read_t14_backend_reference()
 
     def test_orphaned_member_in_recorded_replay_group_is_found(self):
         import os

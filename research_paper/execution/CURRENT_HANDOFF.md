@@ -1,6 +1,59 @@
 # Current research handoff
 
-Updated: 29 September 2026. **Start here when resuming the LiDAR recovery-reliability study.** This is a snapshot, not a completed result. The authoritative task states are in [STATUS.md](STATUS.md); the original task requirements remain in [the execution plan](../AGENT_EXECUTION_PLAN.md).
+Updated: 10 October 2026. **Start here when resuming the LiDAR recovery-reliability study.** This is a snapshot, not a completed result. The authoritative task states are in [STATUS.md](STATUS.md); the original task requirements remain in [the execution plan](../AGENT_EXECUTION_PLAN.md).
+
+**Active continuation:** The complete-paper goal remains active. Fresh primary
+FAST-LIO recovery is complete for 64 slots plus four declared repeats (69
+attempts including one retained interruption and technical retry). Point-LIO
+completed all 64 development slots; its independent review passed. Both
+backend-specific development thresholds have been re-analyzed under the full
+raw-score candidate rule. FAST-LIO remains at `166.16366016039856` (13/32
+detections; 1/31 initial false-healthy events). Point-LIO is
+`123.80876977779258` (21/27 detections; 3/32 initial false-healthy events).
+The 48-pair primary target is unchanged. The separate Point-LIO freeze passed
+independent review; overall R3 remains REVISE. The latest
+suite passed 210 tests, with one optional skip. See the
+[10 October continuation checkpoint](handoffs/DEVELOPMENT_CONTINUATION_20261010.md)
+for artifacts, hashes and the next eligible work. No held-out geometry has
+been generated or opened. The methods draft remains incomplete and contains no
+final-test result.
+
+Notes below retain dated restoration/history and are superseded by the 10
+October checkpoint where they differ.
+
+**Latest operational checkpoint (9 October):** The tracked checkout was missing
+and has been restored from the saved GitHub revision without replacing retained
+ignored files. The preserved Point-LIO R2 one-seed pair now has independent
+[acceptance PASS](../reviews/POINTLIO_ONE_SEED_ACCEPTANCE_20261009.md), including
+an exact raw-sidecar re-export in the isolated runtime and a native reset fixture.
+The original protocol bundle still matches all 53 frozen hashes. All 64
+development recording/reference/metadata triples were regenerated on Acer with
+192 matching historical hashes, and all 32 paired sensor/IMU audits pass.
+Original runtime manifests were not fabricated; newly generated manifests
+remain explicitly new provenance.
+
+**Primary evidence restoration is incomplete:** 253 of 320 checked T14 primary
+manifest/key-stream artifacts are missing. Moved Acer binaries initially gave
+stable but different results. Rebuilding at the exact historical path recovered
+the original executable hash, and its new replay reproduces preserved native R3
+poses/health/Hessian/DCReg byte-for-byte. Evaluation agrees except for new run
+and event IDs. All attempts remain preserved; the precise cause of moved-build
+differences is not established. See [build recovery](../evidence/fastlio_historical_build_restoration_20261009.json)
+and [exact replay](../evidence/fastlio_historical_binary_replay_20261009.json).
+The full suite now executes 167 tests: 166 pass, one optional scene skip, no
+failure. Backend preflight uses a hash-bound compact identity from a verified
+surviving seed-31 manifest, included in the R3 inventory, without fabricating
+the missing seed-14 run or its outcomes.
+See [artifact loss](../evidence/restoration_artifact_audit_20261009.json),
+[restored inputs](../evidence/development_input_restoration_20261009.json),
+[native smoke](../evidence/fastlio_restoration_smoke_20261009.json), and
+[independent recovery review](../reviews/RESTORATION_RECOVERY_REVIEW_20261009.md).
+The bounded native restoration gate now passes independent review. Recover the
+missing full primary cohort before proposing an implementation freeze.
+Point-LIO development preparation
+is eligible but its batch/threshold/freeze are still absent. R3 remains REVISE;
+held-out work remains sealed. Notes below retain the historical 29 September
+checkpoint and must be read with these current limitations.
 
 **Historical 26 September verification:** T08 is DONE: after fixing shutdown clock draining, full 55 s on/off runs yield 547 byte-identical poses and 550 audited groups (547 valid, three startup-unavailable). The remaining delivered scan lacks IMU through its end at the replay cutoff. See the [audit](../evidence/T08_FINAL_PATCH_AUDIT.md). The original real-reference T09 criterion remains blocked; the later simulation-primary T09 feasibility task is complete. At that checkpoint the suite had **42 passed, 1 skipped** (43 executed); the latest count is in the R3 repair update below. Outputs: ignored `experiments/generated/runs/T08_20260926/`.
 
@@ -152,7 +205,7 @@ Exact source hashes, manifests and verification JSON are recorded in the
 [implementation verification note](../evidence/POINTLIO_IMPLEMENTATION_VERIFICATION_20260929.md)
 and [verification manifest](../evidence/pointlio_feasibility_pair_verification_20260929.json).
 
-**Current next steps:** obtain independent one-seed acceptance of this completed
+**Historical next steps as of 29 September (superseded by the 10 October checkpoint):** obtain independent one-seed acceptance of this completed
 and verified feasibility pair. Only after independent one-seed acceptance may the
 32-pair Point-LIO development replication and separate freeze run. No threshold may
 be fitted on seed 14. Point-LIO uses its own poses and separately selected global
@@ -188,7 +241,7 @@ After a LiDAR system passes through a scene with weak geometric clues, can its e
 | Hilti Exp18 frame convention | Development common-body interpretation strongly supported by 503 raw-gyroscope/reference turning intervals; no FAST-LIO error used | [Frame audit](../data/HILTI_EXP18_FRAME_AUDIT.md) |
 | Indicator comparison, transition pilot, protocol and comparator implementation | T08–T13 completed as engineering/evidence tasks; R1 PASS for design, R2 PASS for protocol content. R3/final evaluation remain. | [T13 reproduction](../evidence/INDICATOR_REPRODUCTION.md), [R1](../reviews/R1_FEASIBILITY.md), [R2](../reviews/R2_PROTOCOL.md), [freeze](../protocol/FREEZE.md) |
 | Formal simulation implementation | T14 DONE as development execution; R3 accepts the disclosed seed-14 output as a same-input repeat, not a new event. | [T14 batch report](../evidence/T14_DEVELOPMENT_BATCH.md), [audit manifest](../evidence/t14_development_batch_manifest.json), [handoff](handoffs/T14.md) |
-| Point-LIO backend smoke | T15 DONE for a pinned, repeated pose-output smoke; no FAST-LIO indicator parity or replication result. | [T15 report](../evidence/T15_POINTLIO_SMOKE.md), [machine manifest](../evidence/t15_point_lio_smoke_manifest.json), [handoff](handoffs/T15.md) |
+| Point-LIO backend smoke and replication | T15 pose-output smoke remains historical; the later 32-pair D050 development replication and separate freeze are independently accepted. Overall R3 is still open. | [T15 report](../evidence/T15_POINTLIO_SMOKE.md), [development acceptance](../reviews/POINTLIO_DEVELOPMENT_ACCEPTANCE_20261010.md), [freeze review](../reviews/POINTLIO_REPLICATION_FREEZE_REVIEW_20261010.md) |
 | Frozen development analysis and native lifecycle | T16 DONE as a development task: candidate threshold and `n_test=48` reproduce; native seed-14 completion and cached resumption are independently verified. No held-out geometry/results. | [Development report](../evidence/DEVELOPMENT_REPORT.md), [native replay](../evidence/R3_NATIVE_SEED14_REPLAY_20260929.md), [handoff](handoffs/T16.md) |
 
 The Hilti replay is a software/development illustration, not an independent
@@ -205,7 +258,10 @@ The Exp18 bag lives outside Git on the Acer Windows partition:
 
 It is 8,657,654,860 bytes; SHA-256 `98373b52f207b9ace3914792b5604a6642f89441190cabca6acbaf1d17249280`. The published reference and calibration are in the same directory. The exploratory run is under `runs/exp18_first55_exploratory/` there. Check that the partition is mounted before using these paths. Do not put the bag, raw outputs, or build environment into Git. The dataset is a **handheld** recording. Its dense reference has gaps, ends before the recording ends, and was produced partly by registering the mobile LiDAR to a surveyed map; it is not an independent physical tracking measurement. Cameras in the bag were not estimator inputs.
 
-## Next bounded work, in order
+## Historical next bounded work from the September checkpoint
+
+The list below is retained as dated history. Use the 10 October continuation
+above for the current next actions.
 
 1. T09 amended v3 and the simulator fixes are complete as feasibility work.
    v1/v2 attempts remain preserved; v3 raw inputs/results are under ignored

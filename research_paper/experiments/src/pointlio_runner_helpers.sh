@@ -97,6 +97,7 @@ point_write_manifest() {
     --pose-logger-status "$point_pose_logger_status"
     --roscore-status "$point_roscore_status"
     --exporter-status "$point_export_status"
+    --study-split "${point_study_split:-development_seed14_feasibility_only}"
   )
   point_run_recorder "$point_python" "$point_recorder" "${point_manifest_args[@]}"
 }

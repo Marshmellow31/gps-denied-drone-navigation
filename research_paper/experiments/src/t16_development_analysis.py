@@ -352,6 +352,7 @@ def associate_decision_ticks(
 def debounce(
     decisions: list[DecisionTick], method: str,
     threshold: float | None = None,
+    scalar_method: str = "FASTLIO_MIN_EIG_G3",
 ) -> tuple[np.ndarray, np.ndarray, list[dict[str, Any]]]:
     """Causal three-distinct-record state machine; return state/alarms/audit."""
     active = False
@@ -362,7 +363,7 @@ def debounce(
     transitions = np.zeros(len(decisions), dtype=bool)
     alarm_rows = []
     for index, decision in enumerate(decisions):
-        if method == "FASTLIO_MIN_EIG_G3":
+        if method == scalar_method:
             healthy = (decision.available and threshold is not None
                        and decision.score is not None and decision.score >= threshold)
         else:
@@ -545,15 +546,33 @@ def _threshold_arrays(corridors: list[DevelopmentRun], method: str):
             np.asarray(initial, dtype=bool), np.asarray(recovery, dtype=bool))
 
 
-def select_fastlio_threshold(corridors: list[DevelopmentRun], batch_size: int = 128):
-    """Exhaust the frozen unique-score candidates with vectorized debounce."""
+def select_fastlio_threshold(corridors: list[DevelopmentRun], batch_size: int = 128,
+                            method: str = "FASTLIO_MIN_EIG_G3"):
+    """Exhaust all frozen raw-score candidates with decision-grid debounce.
+
+    Candidate values come from every finite valid diagnostic record in each
+    corridor run. Alarm outcomes still use the frozen 10 Hz decision ticks.
+    Keeping these populations separate matters when a valid source record is
+    not the record selected at any decision tick: the protocol still includes
+    its score as a candidate, and the conservative tie rule may select it.
+    """
     scores, available, sources, segments, initial, recovery = _threshold_arrays(
-        corridors, "FASTLIO_MIN_EIG_G3")
+        corridors, method)
     truth_recovered = np.asarray([
         bool(run.label and run.label.truth_eligible and run.label.onset_s is not None)
         for run in corridors
     ], dtype=bool)
-    candidates = np.unique(scores[np.isfinite(scores)])
+    raw_scores: list[float] = []
+    for run in corridors:
+        if method not in run.diagnostics:
+            raise ValueError(f"{run.run_id}: raw {method} diagnostic records are missing")
+        for record in run.diagnostics[method]:
+            if record.valid and record.score is not None:
+                value = float(record.score)
+                if not math.isfinite(value):
+                    raise ValueError(f"{run.run_id}: valid {method} score is non-finite")
+                raw_scores.append(value)
+    candidates = np.unique(np.asarray(raw_scores, dtype=np.float64))
     if len(candidates) == 0:
         return {"status": "NO_FEASIBLE_OPERATING_POINT", "reason": "NO_VALID_G3_SCORES",
                 "candidates": [], "threshold": None}, []
@@ -754,6 +773,7 @@ def wilson_interval(successes: int, trials: int, z: float = 1.96) -> list[float]
 
 def summarize_method(
     runs: list[DevelopmentRun], method: str, threshold: float | None,
+    scalar_method: str = "FASTLIO_MIN_EIG_G3", backend_label: str = "FAST-LIO",
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     corridors = [run for run in runs if run.scene == "CORRIDOR"]
     controls = [run for run in runs if run.scene == "CONTROL"]
@@ -774,7 +794,7 @@ def summarize_method(
 
     for run in corridors:
         assert run.label is not None
-        states, transitions, alarms = debounce(run.decisions[method], method, threshold)
+        states, transitions, alarms = debounce(run.decisions[method], method, threshold, scalar_method)
         label = run.label
         start, stop = _tick_bounds(run.exit_time_s, label.deadline_s)
         planned = np.zeros(600, dtype=bool)
@@ -836,11 +856,11 @@ def summarize_method(
 
     controls_summary = []
     for run in controls:
-        states, _, _ = debounce(run.decisions[method], method, threshold)
+        states, _, _ = debounce(run.decisions[method], method, threshold, scalar_method)
         available = np.asarray([d.available for d in run.decisions[method]], dtype=bool)
         raw_healthy = np.asarray([
             (d.available and d.score is not None and threshold is not None
-             and d.score >= threshold) if method == "FASTLIO_MIN_EIG_G3"
+             and d.score >= threshold) if method == scalar_method
             else (d.available and d.fixed_healthy is True)
             for d in run.decisions[method]
         ], dtype=bool)
@@ -861,7 +881,7 @@ def summarize_method(
     eligible = counters["truth_eligible_events"]
     metrics = {
         "method": method,
-        "threshold": "NO_ALARMS" if method == "FASTLIO_MIN_EIG_G3" and threshold is None else threshold,
+        "threshold": "NO_ALARMS" if method == scalar_method and threshold is None else threshold,
         "truth_label_eligible_corridor_events": eligible,
         "truth_recovered_events": recovered,
         "non_recovery_events": eligible - recovered,
@@ -900,7 +920,7 @@ def summarize_method(
         "available_decision_ticks": counters["available_decision_ticks"],
         "planned_decision_ticks": counters["planned_decision_ticks"],
         "healthy_scene_controls": controls_summary,
-        "interpretation": "development-only; FAST-LIO threshold metrics are evaluated on the data used to select that threshold",
+        "interpretation": f"development-only; {backend_label} threshold metrics are evaluated on the data used to select that threshold",
     }
     return metrics, event_rows
 

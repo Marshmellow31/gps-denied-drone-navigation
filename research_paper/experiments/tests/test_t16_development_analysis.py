@@ -157,9 +157,17 @@ class T16DevelopmentAnalysisTests(unittest.TestCase):
                 tick, source, True, score, None, source, 0, ""))
         label = t16.RecoveryLabel("RECOVERED", True, "", 0.2, 20.2,
                                   0.5, 1.0, None, 20.2, (1, 2, 3), 19)
+        raw_diagnostics = [
+            t16.DiagnosticRecord(t16.EPOCH_NS, True, 0.0, None, 0, ""),
+            # This valid source score is not selected at a 10 Hz decision tick.
+            t16.DiagnosticRecord(t16.EPOCH_NS + 50_000_000, True, 8.5, None, 0, ""),
+            t16.DiagnosticRecord(t16.EPOCH_NS + 100_000_000, True, 10.0, None, 0, ""),
+            t16.DiagnosticRecord(t16.EPOCH_NS + 150_000_000, False, 99.0, None, 0, "RESET"),
+        ]
         run = t16.DevelopmentRun(
             "T14_DEV14_CORRIDOR_XM6_P1", 14, "CORRIDOR", False, 0.2, 10.0,
-            Path("."), {}, {}, [], None, np.eye(4), [], label, {},
+            Path("."), {}, {}, [], None, np.eye(4), [], label,
+            {"FASTLIO_MIN_EIG_G3": raw_diagnostics},
             {"FASTLIO_MIN_EIG_G3": decisions}, [],
         )
         selected, candidates = t16.select_fastlio_threshold([run], batch_size=2)
@@ -167,7 +175,8 @@ class T16DevelopmentAnalysisTests(unittest.TestCase):
         self.assertEqual(selected["threshold"], 10.0)
         self.assertEqual(selected["conditional_false_healthy_rate"], 0.0)
         self.assertEqual(selected["recovery_sensitivity"], 1.0)
-        self.assertEqual(len(candidates), 3)  # two scores plus NO_ALARMS
+        self.assertEqual([row["threshold"] for row in candidates],
+                         [0.0, 8.5, 10.0, "NO_ALARMS"])
 
     def test_threshold_sweep_and_scalar_state_machine_agree_across_reset(self):
         decisions = []
@@ -179,9 +188,14 @@ class T16DevelopmentAnalysisTests(unittest.TestCase):
                 tick, source, True, score, None, source, segment, ""))
         label = t16.RecoveryLabel("RECOVERED", True, "", 0.2, 20.2,
                                   0.5, 1.0, None, 1.2, (1, 2, 3), 19)
+        raw_diagnostics = [
+            t16.DiagnosticRecord(t16.EPOCH_NS + i * t16.TICK_NS, True,
+                0.0 if i < 5 else 10.0, None, 0, "") for i in range(600)
+        ]
         run = t16.DevelopmentRun(
             "T14_DEV14_CORRIDOR_XM6_P1", 14, "CORRIDOR", False, 0.2, 10.0,
-            Path("."), {}, {}, [], None, np.eye(4), [], label, {},
+            Path("."), {}, {}, [], None, np.eye(4), [], label,
+            {"FASTLIO_MIN_EIG_G3": raw_diagnostics},
             {"FASTLIO_MIN_EIG_G3": decisions}, [],
         )
         selected, _ = t16.select_fastlio_threshold([run], batch_size=2)

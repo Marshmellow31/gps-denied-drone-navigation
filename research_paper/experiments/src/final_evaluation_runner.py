@@ -27,6 +27,8 @@ import heldout_simulation as heldout
 ROOT = Path(__file__).resolve().parents[3]
 T14_AUDIT = ROOT / "research_paper/evidence/t14_development_batch_manifest.json"
 T14_REFERENCE_RUN = ROOT / "research_paper/experiments/generated/runs/T14_FORMAL_BATCH/T14_DEV14_CORRIDOR_XM6_P1/run_manifest.json"
+T14_BACKEND_IDENTITY = ROOT / "research_paper/evidence/t14_backend_identity_restored_20261009.json"
+T14_BACKEND_IDENTITY_SHA256 = "0fdb0ccc18285fdce7e41d0072beeb354391a6b1887619b9f13c9002fd6a8213"
 CONFIG = ROOT / "research_paper/configs/fastlio_simulation_bootstrap.yaml"
 RUN_SCRIPT = ROOT / "research_paper/experiments/run_simulation_smoke.sh"
 FINAL_RUN_SCRIPT = ROOT / "research_paper/experiments/run_final_evaluation_replay.sh"
@@ -194,6 +196,7 @@ def _r3_required_hashes(review_path: Path) -> dict[str, str]:
         "pair audit": PAIR_AUDIT,
         "pose logger": POSE_LOGGER,
         "FAST-LIO replay script": RUN_SCRIPT,
+        "restored historical backend identity": T14_BACKEND_IDENTITY,
         "R3 supervised replay wrapper": FINAL_RUN_SCRIPT,
         "PCL17 backend patch": ROOT / "research_paper/experiments/patches/fast_lio_pcl17.patch",
         "T08 backend patch": ROOT / "research_paper/experiments/patches/fast_lio_health_diagnostic.patch",
@@ -338,8 +341,28 @@ def _verify_t14_source_hashes(expected: dict[str, str]) -> dict[str, str]:
     return actual
 
 
+def _read_t14_backend_reference() -> dict[str, Any]:
+    """Read build identity without manufacturing a missing primary run result.
+
+    The compact fallback was extracted from the hash-verified surviving seed-31
+    manifest. Its immutable identity is also included in the R3 freeze inventory.
+    It supplies no scientific outputs and cannot pass the R3/data gates.
+    """
+    if T14_REFERENCE_RUN.is_file():
+        return json.loads(T14_REFERENCE_RUN.read_text(encoding="utf-8"))
+    if not T14_BACKEND_IDENTITY.is_file() or sha256_file(T14_BACKEND_IDENTITY) != T14_BACKEND_IDENTITY_SHA256:
+        raise FinalEvaluationError("historical T14 backend identity is missing or changed")
+    identity = json.loads(T14_BACKEND_IDENTITY.read_text(encoding="utf-8"))
+    if (identity.get("schema") != "t14-historical-backend-identity-v1"
+            or identity.get("source_run_id") != "T14_DEV31_CORRIDOR_XM6_P1"
+            or identity.get("source_run_manifest_sha256") !=
+            "a02a97a75075289447a8c5073be87ec6437073c75d755ebb04313002380ea416"):
+        raise FinalEvaluationError("restored backend identity lacks its verified historical anchor")
+    return {"fingerprint": identity}
+
+
 def _check_backend(ros_env: Path, workspace: Path, binary_path: Path) -> dict[str, Any]:
-    reference = json.loads(T14_REFERENCE_RUN.read_text(encoding="utf-8"))
+    reference = _read_t14_backend_reference()
     backend = reference["fingerprint"]["backend"]
     if backend.get("upstream_commit") != EXPECTED_UPSTREAM_COMMIT:
         raise FinalEvaluationError("T14 reference manifest has an unexpected FAST-LIO revision")

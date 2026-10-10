@@ -1,0 +1,77 @@
+{
+  "schema": "pointlio-development-bounded-independent-review-v1",
+  "status": "PASS",
+  "development_only": true,
+  "heldout_inputs_opened": false,
+  "threshold_fit_performed": false,
+  "scope": "Two formal development slots, independent raw reconstruction/identity/loader/cache readback; not full replication or final results.",
+  "native_replay_performed_by_reviewer": false,
+  "raw_export_reconstructed_and_byte_identical": true,
+  "cache_status": "BOUNDED_CHECKPOINT",
+  "cache_counts": {
+    "CACHED": 2,
+    "PENDING": 62
+  },
+  "full_suite": {
+    "executed": 191,
+    "passed": 190,
+    "skipped": 1,
+    "log_sha256": "e092c91a477e8d8f85de2e9c0877c6ac9058657688d1ab8b6df53e49db9d6c00"
+  },
+  "runs": [
+    {
+      "run_id": "POINTLIO_DEV14_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "verification": {
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "indicator_frames": 600,
+        "input_frames": 600,
+        "native_manifest_sha256": "7be8d3b180baa2b4e99baf8b0fd30ef6efe805a8f360c3d2b79b4e7f5aaf8d41",
+        "pose_rows": 597,
+        "reset_events": 0,
+        "scene": "CORRIDOR",
+        "seed": 14,
+        "status": "PASS",
+        "unavailable_indicator_frames": 3,
+        "valid_indicator_frames": 597
+      },
+      "launch_receipt_sha256": "4c7d9da89b4cdcc4dae85393d89bc7adeec1b64efc21ae404af859281c177a30",
+      "evaluation_manifest_sha256": "2654f8f002a915131df25e9be517331b458b25a4a919685388aa9f57e3f7c185",
+      "pose_sha256": "851e8b3709e26e2c1bc607d8d6507e1c303746129e8d2bd19c761f8efce727ee",
+      "indicators_sha256": "814d484981cec55e58661cdb034324ca082c1943f986436227928b00aa7f7074",
+      "poses_segmented_sha256": "851e8b3709e26e2c1bc607d8d6507e1c303746129e8d2bd19c761f8efce727ee",
+      "own_pose_loader_pass": true,
+      "primary_window_count": 19,
+      "corridor_reference_eligible": true,
+      "control_label_absent": null
+    },
+    {
+      "run_id": "POINTLIO_DEV14_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "verification": {
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "indicator_frames": 600,
+        "input_frames": 600,
+        "native_manifest_sha256": "3e503a9f9fba2e702273af83ae255e39f51dba1ca34f1905b3705a3b4bdb08d8",
+        "pose_rows": 597,
+        "reset_events": 0,
+        "scene": "CONTROL",
+        "seed": 14,
+        "status": "PASS",
+        "unavailable_indicator_frames": 3,
+        "valid_indicator_frames": 597
+      },
+      "launch_receipt_sha256": "72ed7b3c03e4bb825643bc77b2a3d953c3b4e3b486c8d0cfc7a59ead15106369",
+      "evaluation_manifest_sha256": "c11358bf293d461c9233de07f7609f08b9b8854296845d5efd3d078f65882800",
+      "pose_sha256": "6017d8807e0d6dc17aeddb0aa448848867ec8c805321430dd49cf37a76a26ccc",
+      "indicators_sha256": "b8e453853181af41bc71606d68bb25d9ef34b7f9259bfe15e12f37104aef1d6b",
+      "poses_segmented_sha256": "6017d8807e0d6dc17aeddb0aa448848867ec8c805321430dd49cf37a76a26ccc",
+      "own_pose_loader_pass": true,
+      "primary_window_count": 19,
+      "corridor_reference_eligible": null,
+      "control_label_absent": true
+    }
+  ]
+}

@@ -7,8 +7,10 @@ import csv
 import hashlib
 import json
 import os
+import platform
 import subprocess
 import tempfile
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -33,6 +35,15 @@ REPO_SOURCE_FILES = (
     "research_paper/experiments/src/pointlio_runner_helpers.sh",
     "research_paper/experiments/src/record_pointlio_attempt.py",
     "research_paper/experiments/src/verify_pointlio_feasibility_pair.py",
+    "research_paper/experiments/src/validate_pointlio_development_input.py",
+    "research_paper/experiments/src/verify_pointlio_development_attempt.py",
+    "research_paper/experiments/src/run_pointlio_development.py",
+    "research_paper/experiments/src/dcreg_schur.py",
+    "research_paper/experiments/src/final_evaluation_runner.py",
+    "research_paper/evidence/pointlio_native_identity_20261009.json",
+    "research_paper/experiments/src/t14_development_runner.py",
+    "research_paper/evidence/t16_development_analysis_manifest.json",
+    "research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md",
     "research_paper/experiments/run_point_lio_indicator_feasibility.sh",
     "research_paper/experiments/patches/point_lio_build_compat.patch",
     "research_paper/experiments/patches/point_lio_deque_header.patch",
@@ -84,6 +95,9 @@ def write_manifest_atomically(run_dir: Path, manifest: dict[str, object]) -> Pat
         "run_id", "mode", "study_split", "input_bag", "configuration",
         "native_binary", "native_source", "build_overlay", "repository_sources",
         "ros_master_uri",
+        "seed", "scene", "control", "input_manifest", "reference_sha256",
+        "reference_metadata_sha256",
+        "runtime",
     )
     if path.exists():
         previous = json.loads(path.read_text(encoding="utf-8"))
@@ -122,6 +136,8 @@ def main() -> int:
     parser.add_argument("--glog-prefix", type=Path, required=True)
     parser.add_argument("--ros-master-uri", required=True)
     parser.add_argument("--repo-root", type=Path, required=True)
+    parser.add_argument("--study-split", choices=("development_seed14_feasibility_only", "development_replication"),
+                        default="development_seed14_feasibility_only")
     parser.add_argument("--rosbag-status", type=int, default=-1)
     parser.add_argument("--node-status", type=int, default=-1)
     parser.add_argument("--pose-logger-status", type=int, default=-1)
@@ -150,7 +166,7 @@ def main() -> int:
         "recorded_at_utc": datetime.now(timezone.utc).isoformat(),
         "status": args.state,
         "mode": args.mode,
-        "study_split": "development_seed14_feasibility_only",
+        "study_split": args.study_split,
         "threshold_fit_performed": False,
         "heldout_inputs_opened": False,
         "input_bag": {
@@ -167,6 +183,7 @@ def main() -> int:
             "sha256": sha256(args.binary),
         },
         "native_source": {
+            "root": str(args.source_root.resolve()),
             "commit": git_value(args.source_root, "rev-parse", "HEAD"),
             "dirty_patch_sha256": hashlib.sha256(
                 subprocess.run(
@@ -201,12 +218,29 @@ def main() -> int:
         },
         "output_sha256": outputs,
     }
+    import numpy as np
+    history = Path(sys.prefix) / 'conda-meta/history'
+    run_manifest['runtime'] = {
+        'python': platform.python_version(), 'numpy': np.__version__,
+        'python_executable': str(Path(sys.executable).resolve()),
+        'python_binary_sha256': sha256(Path(sys.executable).resolve()),
+        'conda_history_sha256': sha256(history) if history.is_file() else None,
+    }
     meta_path = args.glog_prefix / "conda-meta"
     glog_records = sorted(meta_path.glob("glog-*.json"))
     run_manifest["build_overlay"]["glog_metadata"] = (
         {"path": str(glog_records[0]), "sha256": sha256(glog_records[0])}
         if glog_records else None
     )
+
+    if args.study_split == 'development_replication':
+        from validate_pointlio_development_input import validate_input, validate_native, glog_identity
+        slot = validate_input(args.input_bag)
+        validate_native(args.binary, args.source_root, args.config)
+        if args.mode != 'on':
+            raise ValueError('development replication requires the measurement sidecar')
+        run_manifest.update(slot)
+        run_manifest['build_overlay'] = glog_identity(args.glog_prefix)
 
     path = write_manifest_atomically(run_dir, run_manifest)
     print(f"manifest_status={args.state} manifest={path} sha256={sha256(path)}")

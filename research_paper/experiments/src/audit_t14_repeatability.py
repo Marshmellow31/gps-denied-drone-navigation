@@ -44,15 +44,16 @@ def numerical_comparison(first: dict, second: dict) -> dict:
     }
 
 
-def load_repeat(primary: analysis.DevelopmentRun, repeat_dir: Path) -> analysis.DevelopmentRun:
+def load_repeat(primary: analysis.DevelopmentRun, repeat_dir: Path,
+                declared_repeats: bool = False) -> analysis.DevelopmentRun:
     manifest = json.loads((repeat_dir / "run_manifest.json").read_text())
-    expected = (primary.run_id if primary.seed == 14 else
+    expected = (primary.run_id if primary.seed == 14 and not declared_repeats else
                 primary.run_id.removesuffix("P1") + "REPEAT1")
     if (primary.seed not in (14, 45) or manifest.get("run_id") != expected
             or manifest.get("seed") != primary.seed or manifest.get("scene") != primary.scene
             or manifest.get("status") != "COMPLETED"
             or manifest.get("route_profile") != analysis.PROFILE_ID
-            or manifest.get("repeat") is not (primary.seed == 45)):
+            or manifest.get("repeat") is not (primary.seed == 45 or declared_repeats)):
         raise ValueError("repeat does not match the declared development slot")
     parity = batch_audit._compare_replays(primary.run_manifest, manifest)
     for key in ("same_full_input_fingerprint", "same_backend_fingerprint",
@@ -116,7 +117,9 @@ def decision_comparison(primary, repeat, method, threshold):
 
 
 def audit(batch_root: Path, prebatch_root: Path, provenance: Path, manifest_path: Path,
-          reference_path: Path) -> dict:
+          reference_path: Path, repeat_policy: str = "historical_smoke") -> dict:
+    if repeat_policy not in ("historical_smoke", "declared_repeats"):
+        raise ValueError("unknown retained-repeat policy")
     manifest = json.loads(manifest_path.read_text())
     if manifest.get("role") != "development_only" or manifest.get("heldout_inputs_opened") is not False:
         raise ValueError("repeat audit requires a development-only analysis")
@@ -138,9 +141,9 @@ def audit(batch_root: Path, prebatch_root: Path, provenance: Path, manifest_path
     for primary in runs:
         if primary.seed not in (14, 45):
             continue
-        repeat_dir = (prebatch_root / primary.run_id if primary.seed == 14 else
+        repeat_dir = (prebatch_root / primary.run_id if primary.seed == 14 and repeat_policy == "historical_smoke" else
                       batch_root / (primary.run_id.removesuffix("P1") + "REPEAT1"))
-        repeat = load_repeat(primary, repeat_dir)
+        repeat = load_repeat(primary, repeat_dir, declared_repeats=repeat_policy == "declared_repeats")
         repeats[(primary.seed, primary.scene)] = repeat
         comparisons.append({
             "seed": primary.seed, "scene": primary.scene,
@@ -169,6 +172,7 @@ def audit(batch_root: Path, prebatch_root: Path, provenance: Path, manifest_path
         "schema": "t14-repeatability-audit-v1", "role": "development_only",
         "heldout_inputs_opened": False, "threshold_recalibrated": False,
         "primary_outputs_replaced": False, "independent_additional_events": 0,
+        "repeat_policy": repeat_policy,
         "fastlio_fixed_candidate_threshold": threshold,
         "source_analysis_manifest_sha256": analysis.sha256_file(manifest_path),
         "source_hashes": {path.name: analysis.sha256_file(path) for path in
@@ -177,7 +181,10 @@ def audit(batch_root: Path, prebatch_root: Path, provenance: Path, manifest_path
         "verified_primary_runs": len(runs), "verified_repeat_runs": len(comparisons),
         "comparisons": comparisons, "primary_interior_sample_size": baseline,
         "descriptive_interior_substitution_sensitivity": sensitivity,
-        "interpretation": "Four same-input repeat comparisons only; substitution is sensitivity analysis, never threshold training or replacement of primary evidence. R3 must adjudicate seed-14 smoke substitution and variability.",
+        "interpretation": ("Four same-input repeat comparisons only; substitution is sensitivity analysis, never threshold training or replacement of primary evidence. "
+                           + ("Uses all four explicitly declared fresh repeats; no historical smoke substitution."
+                              if repeat_policy == "declared_repeats" else
+                              "R3 must adjudicate seed-14 smoke substitution and variability.")),
     }
 
 
@@ -188,9 +195,10 @@ def main():
     parser.add_argument("--provenance-root", type=Path, default=GENERATED / "t14_formal_input_provenance_v1")
     parser.add_argument("--analysis-manifest", type=Path, default=ROOT / "research_paper/evidence/t16_development_analysis_manifest.json")
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--repeat-policy", choices=("historical_smoke", "declared_repeats"), default="historical_smoke")
     args = parser.parse_args()
     result = audit(args.batch_root, args.prebatch_root, args.provenance_root, args.analysis_manifest,
-                   args.output.parent / "reference.txt")
+                   args.output.parent / "reference.txt", repeat_policy=args.repeat_policy)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + "\n")
     print(json.dumps({"verified_primary_runs": result["verified_primary_runs"],

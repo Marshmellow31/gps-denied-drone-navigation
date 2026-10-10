@@ -1,10 +1,58 @@
 # LiDAR recovery-reliability execution status
 
-Updated: 29 September 2026. Status values are `TODO`, `RUNNING`, `BLOCKED`, and `DONE`. A task is `DONE` only when its acceptance checks and handoff are complete. Review gates must audit the underlying artifacts rather than this ledger.
+Updated: 10 October 2026. Status values are `TODO`, `RUNNING`, `BLOCKED`, and `DONE`. A task is `DONE` only when its acceptance checks and handoff are complete. Review gates must audit the underlying artifacts rather than this ledger.
+
+**Active complete-paper continuation:** Fresh primary recovery is complete for
+64 FAST-LIO primary slots and four declared repeats; all 69 native attempts
+remain recorded, including one interruption and its technical retry. The
+Point-LIO development cohort has all 64 formal slots complete and its corrected
+analysis passed independent review. A frozen-rule audit corrected candidate
+enumeration for both backends; thresholds and event metrics are unchanged.
+FAST-LIO is `166.16366016039856` (13/32 detections, 1/31 false-healthy events);
+Point-LIO is `123.80876977779258` (21/27 detections, 3/32 false-healthy
+events). FAST-LIO DCReg detects 30/32 and Point-LIO DCReg 20/27 on their own
+pose-derived labels. The primary final target remains 48 geometry pairs.
+The separate Point-LIO freeze passed independent review. The full suite ran
+210 tests: 209 passed, one optional scene audit skipped. See
+[10 October continuation](handoffs/DEVELOPMENT_CONTINUATION_20261010.md) and
+[corrected analysis evidence](../evidence/DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md).
+The complete-paper goal remains open; R3 is REVISE and held-out work is sealed.
+
+**Historical 9 October restoration checkpoint:** The missing tracked checkout was restored
+at `5583b9edbb57a6deefd1f1b00f2927aea4e924b9`, preserving existing ignored files.
+The original R2 protocol bundle reads back **53/53 hashes matched**. Independent
+[Point-LIO one-seed acceptance](../reviews/POINTLIO_ONE_SEED_ACCEPTANCE_20261009.md)
+now **PASSES** for the preserved R2 feasibility pair. All 64 development inputs
+were regenerated in a new Acer folder: **192/192 recording/reference/metadata
+hashes match** their saved scientific identities; all 32 paired-IMU/coverage
+audits pass. New generator manifests are new provenance, not restored historical
+runtime manifests. See [input restoration](../evidence/development_input_restoration_20261009.json).
+
+**At that checkpoint, primary reproducibility was still blocked:** Of the 320 historical T14 primary
+run-manifest/key-stream artifacts checked, 67 match and 253 are missing;
+no primary run has its complete checked artifact set. The moved Acer binaries
+gave stable but materially different trajectories in two new repeats. Rebuilding
+at the exact historical path recovered the original executable **byte-for-byte**.
+A fourth attempt reproduces preserved native R3 poses/health/Hessian/DCReg
+**byte-for-byte**; evaluated fields agree except for new run/event IDs. All
+attempts are preserved. The precise cause of moved-build differences is not
+established. See [build recovery](../evidence/fastlio_historical_build_restoration_20261009.json)
+and [native reproduction](../evidence/fastlio_historical_binary_replay_20261009.json).
+This closes the bounded native restoration problem; missing full primary
+outputs still require fresh recovery with explicit new provenance. Backend
+preflight now uses a hash-bound compact build/source identity extracted from a
+verified surviving seed-31 manifest when the old seed-14 manifest is absent.
+It supplies no scientific results and is included in the R3 freeze inventory.
+The full isolated suite executes **167 tests: 166 pass, one optional scene test
+skips, no failures**.
+The separate focused Point-LIO suite passes all 40 tests including its native
+reset fixture. Overall R3 remains **REVISE**; no implementation freeze or
+held-out access is authorized. Historical DONE rows below describe past scoped
+acceptance, not current completeness of the missing local evidence.
 
 **Latest checks (29 September):** The T16 development threshold, 32/32 recovery count, one relapse and 48-pair planning target still reproduce. The [four-repeat audit](../evidence/T14_REPEATABILITY_AUDIT.md) quantifies score, error, warning and label variation. FAST-LIO R3 software/provenance repairs and its native lifecycle were independently accepted. Point-LIO's bounded implementation workflow also received PASS, and the full suite ran 165 tests: 163 passed, two optional SciPy checks skipped, including a compiled native reset fixture and runner helper tests. The startup failure from the first sidecar-on attempt was diagnosed (prior-boot kernel ntfs3 iomap BUG); runner process cleanup was upgraded and tested. Both initial runs are preserved as development evidence. The fresh R2 sidecar-on/off feasibility replay completed cleanly on Acer: poses are byte-identical (`851e8b3709e26e2c1bc607d8d6507e1c303746129e8d2bd19c761f8efce727ee`), full raw frame coverage is verified (600/600 frames, 181,903 groups, 222,498 Jacobian rows), 3 startup frames are unavailable (matching FAST-LIO), and `verify_pointlio_feasibility_pair.py` returned PASS. No threshold was fitted on seed 14 and no held-out data were accessed. Overall R3 remains **REVISE**; no implementation freeze or held-out authorization exists. No final layout was generated or screened. See [Point-LIO verification evidence](../evidence/POINTLIO_IMPLEMENTATION_VERIFICATION_20260929.md), [FAST-LIO native evidence](../evidence/R3_NATIVE_SEED14_REPLAY_20260929.md), and the [latest R3 review](../reviews/R3_IMPLEMENTATION.md).
 
-**Current research gate:** R1 remains **PASS for protocol design only**; this does not establish novelty or publication readiness. The original R2 protocol passed after two REVISE rounds; the Point-LIO measurement-adaptation amendment D050 has also received an independent **PASS for protocol content only**. The amended 53-file bundle now reads back **53/53 hashes matched**. The accepted amendment adds no FAST-LIO method change or sample-size change. Point-LIO's analytic fixtures, sidecar implementation, and fresh seed-14 feasibility pair are locally verified with `feasibility_pair=PASS`. Independent one-seed acceptance must be obtained before beginning the 32-pair development replication batch. Overall R3 remains **REVISE**; no implementation freeze exists, held-out work remains gated and the FAST-LIO threshold is not locked.
+**Current research gate:** R1 remains **PASS for protocol design only**; this does not establish novelty or publication readiness. The original R2 protocol passed after two REVISE rounds; the Point-LIO measurement-adaptation amendment D050 has also received an independent **PASS for protocol content only**. The amended 53-file bundle now reads back **53/53 hashes matched**. The accepted amendment adds no FAST-LIO method change or sample-size change. Point-LIO's analytic fixtures, sidecar implementation, and fresh seed-14 feasibility pair are locally verified with `feasibility_pair=PASS`. Independent one-seed acceptance passed on 9 October; its review is linked in the current restoration checkpoint. The 32-pair development replication batch remains unfinished. Overall R3 remains **REVISE**; no implementation freeze exists, held-out work remains gated and the FAST-LIO threshold is not locked.
 
 **Historical real-recording evidence:** the [LiDAR-only event audit](../data/HILTI_EXP18_EVENT.md) fixed a 31.6–33.6 s exit-only interval before event-anchored errors were summarized. The [T07 development pilot](../evidence/HILTI_EXP18_T07_PILOT.md) contains 1,092 rows with explicit availability reasons. Only 13/56 matched post-exit 1 s windows and **0/56** 3 s windows have usable reference. The reference is partly LiDAR map-registration-derived, so this remains a supporting illustration rather than independent recovery evidence. See the [alternative reference screen](../data/ALTERNATIVE_REFERENCE_AUDIT.md).
 
@@ -27,21 +75,28 @@ Updated: 29 September 2026. Status values are `TODO`, `RUNNING`, `BLOCKED`, and 
 | T12 | DONE | R1 PASS, T05, T11 | [Simulation protocol](../protocol/SIMULATION.md), 60 s randomized feasibility smoke [report](../evidence/SIMULATION_RANDOM_LAYOUT_SMOKE.md) and [manifest](../evidence/simulation_random_layout_manifest.json). The formal x=-6 m implementation and batch are recorded under T14. |
 | R2 | DONE | T10-T12; D050 amendment | Original protocol and Point-LIO amendment PASS for protocol content only; current amended bundle read-back **53/53 hashes matched**; [R2 review](../reviews/R2_PROTOCOL.md), [Point-LIO review](../reviews/POINTLIO_INDICATOR_FEASIBILITY.md), [freeze](../protocol/FREEZE.md) |
 | T13 | DONE | R2 PASS, T10 | [DCReg detector implementation and reproduction evidence](../evidence/INDICATOR_REPRODUCTION.md); [handoff](handoffs/T13.md). Detector adaptation only; no recovery result or threshold claim. |
-| T14 | DONE | R2 PASS, T12, T13 | [Formal development batch report](../evidence/T14_DEVELOPMENT_BATCH.md), [32/32 scene screen](../evidence/randomized_layout_geometry_screen_t14_xminus6_dev14_45_v2.json), [hash audit](../evidence/t14_development_batch_manifest.json) and [handoff](handoffs/T14.md). R3 accepts seed-14 as a disclosed same-input repeat, not a new event; no recovery result or threshold claim. |
+| T14 | DONE | R2 PASS, T12, T13 | Historical T14 is recorded in the [T14 report](../evidence/T14_DEVELOPMENT_BATCH.md). Fresh primary recovery and repeat evidence is in [recovery evidence](../evidence/PRIMARY_DEVELOPMENT_RECOVERY_20261009.md); it remains development-only. |
 | T15 | DONE | R2 PASS, T13 | [Pinned Point-LIO smoke report](../evidence/T15_POINTLIO_SMOKE.md), [machine manifest](../evidence/t15_point_lio_smoke_manifest.json), common pose contract passed; FAST-LIO indicator parity not established; [handoff](handoffs/T15.md) |
-| T16 | DONE | T14, T15 | Frozen development analysis, repeat audit, final handoff, and native seed-14 replay/cached-resume evidence are complete; [native evidence](../evidence/R3_NATIVE_SEED14_REPLAY_20260929.md) and [handoff](handoffs/T16.md). This is not a final performance result. |
-| R3 | RUNNING | T13-T16 | FAST-LIO software fixes and native lifecycle accepted; overall **REVISE** remains because Point-LIO comparability and development replication readiness are not established. No implementation freeze or held-out authorization. |
+| T16 | DONE | T14, T15 | Original scoped T16 and seed-14 lifecycle are complete. Corrected FAST-LIO and Point-LIO development analysis is independently accepted; see [10 October analysis evidence](../evidence/DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md) and [Point-LIO review](../reviews/POINTLIO_DEVELOPMENT_ACCEPTANCE_20261010.md). No final performance result follows. |
+| R3 | RUNNING | T13-T16 | Point-LIO replication, corrected threshold selection and its separate freeze are independently accepted as development evidence. Overall **REVISE** remains until the final runner/analysis interfaces and exact implementation inventory are accepted together. No held-out authorization. |
 
 ## Current gate
 
-T01-T16 are complete as scoped tasks. The T16 development analysis and native seed-14 lifecycle are accepted as development evidence, not a final performance result. T14's repeat reconciliation is accepted as a same-input repeat, not an additional event. T15 verifies one pinned Point-LIO pose-output smoke only; indicator parity is not established. The FAST-LIO threshold remains a candidate until the implementation freeze. No final-test result or publication conclusion exists. Held-out inputs/results remain untouched until R3 PASS.
+The FAST-LIO primary recovery and Point-LIO 32-pair development replication
+are complete and independently reviewed. The corrected threshold sweep uses
+every finite valid raw corridor score for both backends; both operating
+thresholds and event outcomes match the earlier decision-grid sweep. The
+Point-LIO development freeze is independently accepted. Overall R3 remains
+**REVISE** until the corrected development evidence, final execution/analysis
+interfaces and exact implementation inventory are accepted together. No
+held-out geometry, screen or result has been generated or opened.
 
 ## Next eligible work
 
-**Next eligible work:** obtain independent one-seed acceptance of the
-completed and verified seed-14 feasibility pair (`feasibility_pair=PASS`).
-After that acceptance, execute the approved 32-pair Point-LIO development
-replication batch and separate freeze. No threshold may be fitted on seed 14.
-Overall R3 remains REVISE until the full readiness gate passes. Held-out work
-stays blocked.
-See the [current handoff](CURRENT_HANDOFF.md) and [paper completion plan](PAPER_COMPLETION_PLAN.md).
+**Next eligible work:** finish the corrected final-evaluation and analysis interfaces and submit the
+full package for R3 review. Preserve the historical native-producer snapshot
+when updating code. Only after R3 PASS may the frozen 48-pair final screen and
+paired estimator runs begin. See the
+[10 October continuation](handoffs/DEVELOPMENT_CONTINUATION_20261010.md),
+[current handoff](CURRENT_HANDOFF.md), and
+[paper completion plan](PAPER_COMPLETION_PLAN.md).

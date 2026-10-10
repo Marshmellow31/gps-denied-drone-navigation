@@ -1,0 +1,2539 @@
+{
+  "audit_source_sha256": "2a0ee1b1fd30e3099be25bbc9a08264ed3a1d2de89eebf4a06c80de3f6bcab9b",
+  "batch_status_counts": {
+    "CACHED": 46,
+    "COMPLETED": 22
+  },
+  "completed_primary_runs": 64,
+  "completed_repeat_runs": 4,
+  "development_layout_clusters": 32,
+  "failure_ledger_transition_status_counts": {
+    "COMPLETED": 68,
+    "INTERRUPTED_REPLAY": 1,
+    "REPLAYED": 68,
+    "RUNNING": 137
+  },
+  "heldout_data_opened": false,
+  "historical_four_key_output_hash_comparison_counts": {
+    "DIFFERENT": 178,
+    "MATCH": 78
+  },
+  "interpretation": "Fresh recovery provenance; not recreated historical manifests. Hash differences include changed run/event identifiers and require outcome reanalysis.",
+  "native_attempt_status_counts": {
+    "COMPLETED": 68,
+    "INTERRUPTED_REPLAY": 1
+  },
+  "native_attempts": [
+    {
+      "attempt": 1,
+      "manifest_sha256": "eaab67e124c31476471eef4c6f5dbde115cb374f387067d2e3ec1e91dbca4aeb",
+      "run_id": "T14_DEV14_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV14_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "0af5c244f9d6b9f872b5feba5cdfe82a2f6a81a2b820dcf309b9696eff5f9dae",
+      "run_id": "T14_DEV14_CONTROL_XM6_REPEAT1",
+      "scheduled_run_id": "T14_DEV14_CONTROL_XM6_REPEAT1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "8f51dbca96f44b39cbf3b1f52bf66b331f2cb4f5b8e8705ac28213ded3a12e16",
+      "run_id": "T14_DEV14_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV14_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "b8b8ab858517579eaf7d9e528a0ad02add0c0003166a0297db6cd9be1b8e365f",
+      "run_id": "T14_DEV14_CORRIDOR_XM6_REPEAT1",
+      "scheduled_run_id": "T14_DEV14_CORRIDOR_XM6_REPEAT1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "e2a1aa03663cfa2646a54685aa3905e3befbe4f0badc3853c5d438f2dfd257e5",
+      "run_id": "T14_DEV15_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV15_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "125806a36750c6fe915ee61592b53104435ebb4a1b1b729c78e0fe454059ff4f",
+      "run_id": "T14_DEV15_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV15_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "db6baf922709777fffb167d20eacffbe3de9822b9f0a427ecf4c55004d35d470",
+      "run_id": "T14_DEV16_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV16_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "d6759037b75151d7efa08eb5915ab2db36ffaac12204691d4fcbcb4035d206ff",
+      "run_id": "T14_DEV16_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV16_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "c6108183c5faae4d60d34b8cd693a712c928e180d39afdba7fa7ab7570c703f7",
+      "run_id": "T14_DEV17_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV17_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "ea9a6ad880f0e98da4364c98d8f591b88bb60f9ab89d5467be6bf86394bcb3fc",
+      "run_id": "T14_DEV17_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV17_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "04a17f53147f7c7019b474dc2cc41c6c0b01ff930bb1a7acdd362533cb0c4a1e",
+      "run_id": "T14_DEV18_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV18_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "0735696be9181fbe4360e902cbbe4966cc8561777c7b8bd571114fe41e13e9f9",
+      "run_id": "T14_DEV18_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV18_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "c817b8ad8677d9ef747b99dfa07d0784b4dbddee4159b926e4e749b0ad83d9a3",
+      "run_id": "T14_DEV19_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV19_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "c64f1663c3f72f69f9d623f5dcaf7573f777eea2397ce7cd908545b0008cf554",
+      "run_id": "T14_DEV19_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV19_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "a92c39230cd8d7a4929334604830ed0c4fe4c627b11cfc3c3a3214a53f02d6ba",
+      "run_id": "T14_DEV20_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV20_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "2d86ad880027eee61cd17fdfddf8b993859f44fdf95643be4d08be0b34bdbda3",
+      "run_id": "T14_DEV20_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV20_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "d5835fad6cc3807b8bb64be556b142c9d39cd1357c244296b1aeb193d7937696",
+      "run_id": "T14_DEV21_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV21_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "a055cbe0eb2ca4cde28af368ae2a0dc8080037fe426891620ef2ed4d9228d537",
+      "run_id": "T14_DEV21_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV21_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "e2c2a471d11bb254db5d49dc62d0174e8e7ce11a0e0a92ec4a510924b0895cd6",
+      "run_id": "T14_DEV22_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV22_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "7c5d4d663fa795388b47d3ddce3dc21d8441c1ee4203dc16cbe9eafa29be5a53",
+      "run_id": "T14_DEV22_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV22_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "09b6c3ae63297bd60adb23f144c268d024f97e70c088cefc50fd7745acdd5704",
+      "run_id": "T14_DEV23_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV23_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "52a8c0002230819f70d496671d63c6305d78e1d0922063c0f9a91795e1086f61",
+      "run_id": "T14_DEV23_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV23_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "ed022e624adb3cedc4e2bb83780b88255ca0a0b317472fd4a5a7d6dab7568c41",
+      "run_id": "T14_DEV24_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV24_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "a62525cae0861bacb07564263b436adf7b5048e67d7d5b07cf843d2110bb9ed9",
+      "run_id": "T14_DEV24_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV24_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "433f256cb15d4847aaa36d5dc7c54803d151b5c12b50609b3d8b73d4208527a0",
+      "run_id": "T14_DEV25_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV25_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "7a1d8217fb61f1c1490945b9fbfbd03678ce24db4b2027e696edda2444b54e9d",
+      "run_id": "T14_DEV25_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV25_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "afe066e703394a70e52777f394102da65e89bc1cc9003657296bc02ef8e78709",
+      "run_id": "T14_DEV26_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV26_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "24b6c54a76ba0cd56c106be9020b9a3e231553c6dc447157c6397263cf6f13b2",
+      "run_id": "T14_DEV26_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV26_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "9665ded90ec75be23c6a7b64c9f230b4e69e365336af6ed1ad7bbe9b0ec916c3",
+      "run_id": "T14_DEV27_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV27_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "b0cf55ee6aecb8d3e1b17981605b8cc57288a5f88daf481490a6a6dab5f4aace",
+      "run_id": "T14_DEV27_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV27_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "4ffbdf75db4ddf3207b93a31b0189d178304da6ff610f03b5190af4cdcacab44",
+      "run_id": "T14_DEV28_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV28_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "ed974d1b1ee1ce90e8a00cb2d5114ea894267be6e603724965f6ca56cef752b2",
+      "run_id": "T14_DEV28_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV28_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "da0601d8f5f48155d2ff76d038ff3b606c9ec1b73db16bf6317b367f83a1b4cc",
+      "run_id": "T14_DEV29_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV29_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "b51c2c635c66f665ea3f910968bb7b5c791b8ae278a5bc86810f7d527d32464f",
+      "run_id": "T14_DEV29_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV29_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "861eea2cbf139a6211fdc2375d0164f95b64ba4ee198f2a08b6e7f42d76fd478",
+      "run_id": "T14_DEV30_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV30_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "4580350dc6cfb432ed781fb15f629091169b616ebb55a6b1450492f57cbb740f",
+      "run_id": "T14_DEV30_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV30_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "60021a86dfaa344d4ae2c309d65b5f37c0e493ef911a78c639dfa6b521e61701",
+      "run_id": "T14_DEV31_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV31_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "a13bb7899650acff5482aeaddf290bf39d7ad890963fbad8a947e21149c78dd6",
+      "run_id": "T14_DEV31_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV31_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "492a8054d63c9fa3191711cf070fbbefd03bf747c89f50ba12b8c16880b322f6",
+      "run_id": "T14_DEV32_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV32_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "b58a82ae21d09cbb16430a1573f8d6fea742c134f3d14de3f4d73ad39e32ee93",
+      "run_id": "T14_DEV32_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV32_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "f3bec08c6adbf7175b9823e2c9c043a057884dc2a933ae030c0be1688f3fda24",
+      "run_id": "T14_DEV33_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV33_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "bae81299623b49b7622d7b3bd2e3b4b1043389c00c1f79fcd39f4a66f684c102",
+      "run_id": "T14_DEV33_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV33_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "a6a20c1e2e6ab13d0030a96c2273eaa5532c16c6099faedc00cb38fb5ae03b9d",
+      "run_id": "T14_DEV34_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV34_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "1a6288bcd4c9856ac0136efc46aa7a2d1978e7c97065ac3d8fa053e306dc2b57",
+      "run_id": "T14_DEV34_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV34_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "12ebb5d056ace56da326a35896860c9d4d83a953f044023597296f38b718809d",
+      "run_id": "T14_DEV35_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV35_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "8f90d4bd915204a23bfa1cfbe8fa2ebdae524b0f956b12e033602b24ff523951",
+      "run_id": "T14_DEV35_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV35_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "fd63c8f3df039365ae585e6c19bc0c2ac81d94330579809152b0babc2e16475b",
+      "run_id": "T14_DEV36_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV36_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "1d7dfe8f064ea369f48fdeb8602e684ad79b62e105e5d3e28aa10db09bab39fa",
+      "run_id": "T14_DEV36_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV36_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "72fd9df60e23350509cc847aace50b4432411999d090d65fb4b8c51b77ed3512",
+      "run_id": "T14_DEV37_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV37_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "0d38629d19bfa2bee93f123965602de80bce252d78c1810b637dd2683459a9aa",
+      "run_id": "T14_DEV37_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV37_CORRIDOR_XM6_P1",
+      "status": "INTERRUPTED_REPLAY"
+    },
+    {
+      "attempt": 2,
+      "manifest_sha256": "ab137f8a5bcfb536d0a6342bdf458e28ab1c57d767378e665847de4a9b5c649e",
+      "run_id": "T14_DEV37_CORRIDOR_XM6_P1_TECHNICAL_RETRY1",
+      "scheduled_run_id": "T14_DEV37_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "b23057b55f08ed691d17bbc340a083f6426ab19c63cacf309546265a927f6a9f",
+      "run_id": "T14_DEV38_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV38_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "ccecaec4b19ec160665fc3d059f32597462daa0031a96aa262cf525ff4faadeb",
+      "run_id": "T14_DEV38_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV38_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "b648ab714683ddc97e64d19e7123e848c52440c3b971e52aa28e41e1a9f8e0fa",
+      "run_id": "T14_DEV39_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV39_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "405ef4f81feaf5e2c0ca6744b16f6d70c8e2ab013e836f38b423ff0616dd0b4e",
+      "run_id": "T14_DEV39_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV39_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "ae44b7054effa5e10b45561fd6a424cb203827ffdf6b3b23ed0dfcffd1c94fb5",
+      "run_id": "T14_DEV40_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV40_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "6785a4f4872857e112c274f330e941b7bcbe625bf6d20ca226df3a4566b24afa",
+      "run_id": "T14_DEV40_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV40_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "ac79e62d5da6050e2de482de29a2e45c532c537de64e5b16408cdc1b671168b5",
+      "run_id": "T14_DEV41_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV41_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "9d5d03992eefc3d856c347fbdf5cd361e1748ed20faa97c40944793971793b8b",
+      "run_id": "T14_DEV41_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV41_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "690c03e6e985ddbcc9a4b986fdb08f309d4fbeb8a5ae645ecddef03d4e5a3337",
+      "run_id": "T14_DEV42_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV42_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "e08c690ea499a7fd5b4d1de6d5f5ff24c24e2e985ba9318eefbec9b816966858",
+      "run_id": "T14_DEV42_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV42_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "2ecbdd02e342774c1ed8414b40b88d50ca8630921766403c6c6122511adb5104",
+      "run_id": "T14_DEV43_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV43_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "faf7bb4a3821105bdb12e5e66863d03bac9afe837f12c8a6d34611648a2c57c9",
+      "run_id": "T14_DEV43_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV43_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "b3a8069aed5f953c9a4bab2635e399a4badd779d70ec18b05222892083e59fbf",
+      "run_id": "T14_DEV44_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV44_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "79e57848d9274a73af6afe9416c90728b4179e0f0886e1618c87748089a7a979",
+      "run_id": "T14_DEV44_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV44_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "90e15ed06f515d40480e6fc7ad0b42190c01079cde1f9e8d5e0349a613075610",
+      "run_id": "T14_DEV45_CONTROL_XM6_P1",
+      "scheduled_run_id": "T14_DEV45_CONTROL_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "e18c66cbbedcfe08a21c97f6eb17e2f350b6d65bce65760e14e49644927e959b",
+      "run_id": "T14_DEV45_CONTROL_XM6_REPEAT1",
+      "scheduled_run_id": "T14_DEV45_CONTROL_XM6_REPEAT1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "afee7c4080aa25b1a69297c4d9d4123c91f2806bd47cda44e770b9e855eacbfb",
+      "run_id": "T14_DEV45_CORRIDOR_XM6_P1",
+      "scheduled_run_id": "T14_DEV45_CORRIDOR_XM6_P1",
+      "status": "COMPLETED"
+    },
+    {
+      "attempt": 1,
+      "manifest_sha256": "827c5d5c20047c7fd474c1661f661a8eb4b9d95ced5a40fc47a0e511556f5965",
+      "run_id": "T14_DEV45_CORRIDOR_XM6_REPEAT1",
+      "scheduled_run_id": "T14_DEV45_CORRIDOR_XM6_REPEAT1",
+      "status": "COMPLETED"
+    }
+  ],
+  "recovery_schedule_sha256": "d8365870d8ecf0e2fd6ae84442b7c8bb9570bfbc55c0ba4fea8e0f9f81534664",
+  "role": "development_only",
+  "scheduled_runs": 68,
+  "schema": "primary-recovery-complete-audit-v1",
+  "scientific_slots": [
+    {
+      "actual_native_run_id": "T14_DEV14_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "5eb4c455f6d3b5bbd13a71b93c976744e698c29d314e483538282ddeed9b293c",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "8f51dbca96f44b39cbf3b1f52bf66b331f2cb4f5b8e8705ac28213ded3a12e16",
+      "repeat": false,
+      "run_id": "T14_DEV14_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 14
+    },
+    {
+      "actual_native_run_id": "T14_DEV14_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "61319962aa5c3e600a0bb1e0bd3bae083a4c2d7c663986bedc49ee3c4618aec6",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "eaab67e124c31476471eef4c6f5dbde115cb374f387067d2e3ec1e91dbca4aeb",
+      "repeat": false,
+      "run_id": "T14_DEV14_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 14
+    },
+    {
+      "actual_native_run_id": "T14_DEV15_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "b4586ac207763184a5e67eea3c3072a4132f96309c2fa386bf3372442ff4c1ad",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "125806a36750c6fe915ee61592b53104435ebb4a1b1b729c78e0fe454059ff4f",
+      "repeat": false,
+      "run_id": "T14_DEV15_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 15
+    },
+    {
+      "actual_native_run_id": "T14_DEV15_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "7ded0ffb2598440a79b11c7f23397d5d641ebdedd87b26070038fdeb19877a34",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "e2a1aa03663cfa2646a54685aa3905e3befbe4f0badc3853c5d438f2dfd257e5",
+      "repeat": false,
+      "run_id": "T14_DEV15_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 15
+    },
+    {
+      "actual_native_run_id": "T14_DEV16_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "ae37ae7586cf89e9e221fee06f826cfca2e1214a9194240b003c87bcffc9e82d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "d6759037b75151d7efa08eb5915ab2db36ffaac12204691d4fcbcb4035d206ff",
+      "repeat": false,
+      "run_id": "T14_DEV16_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 16
+    },
+    {
+      "actual_native_run_id": "T14_DEV16_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "1bbd721848ef54eead7cc42469d9364653c23c1799416d4e71f4f9e3cb4ca6e3",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "db6baf922709777fffb167d20eacffbe3de9822b9f0a427ecf4c55004d35d470",
+      "repeat": false,
+      "run_id": "T14_DEV16_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 16
+    },
+    {
+      "actual_native_run_id": "T14_DEV17_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "fe63fad2427310b6fb61a7e77a5e85183cf530713880fcdbc7c13cb0dd691d6a",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "ea9a6ad880f0e98da4364c98d8f591b88bb60f9ab89d5467be6bf86394bcb3fc",
+      "repeat": false,
+      "run_id": "T14_DEV17_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 17
+    },
+    {
+      "actual_native_run_id": "T14_DEV17_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "be911463a245da5a6d3a700573ec06ea53b863b5969f1eee6e3e2a612abe4ac8",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "c6108183c5faae4d60d34b8cd693a712c928e180d39afdba7fa7ab7570c703f7",
+      "repeat": false,
+      "run_id": "T14_DEV17_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 17
+    },
+    {
+      "actual_native_run_id": "T14_DEV18_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "d5808f6208054cfcd7d767cef19ca25f306b563ffff53418d60d8671b85b7c23",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "0735696be9181fbe4360e902cbbe4966cc8561777c7b8bd571114fe41e13e9f9",
+      "repeat": false,
+      "run_id": "T14_DEV18_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 18
+    },
+    {
+      "actual_native_run_id": "T14_DEV18_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "2cbc991a43b7f4596f8f532946302d226ff669d1e16118010aba813b242260ee",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "04a17f53147f7c7019b474dc2cc41c6c0b01ff930bb1a7acdd362533cb0c4a1e",
+      "repeat": false,
+      "run_id": "T14_DEV18_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 18
+    },
+    {
+      "actual_native_run_id": "T14_DEV19_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "803b051805f6d9b41c524909791d66ae701b85fd397217b7a468854a1c32c2c4",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "c64f1663c3f72f69f9d623f5dcaf7573f777eea2397ce7cd908545b0008cf554",
+      "repeat": false,
+      "run_id": "T14_DEV19_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 19
+    },
+    {
+      "actual_native_run_id": "T14_DEV19_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "08debec10cc018beeb1890796788ad5cad31c18dcc61dcaccdc893de01874fd8",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "c817b8ad8677d9ef747b99dfa07d0784b4dbddee4159b926e4e749b0ad83d9a3",
+      "repeat": false,
+      "run_id": "T14_DEV19_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 19
+    },
+    {
+      "actual_native_run_id": "T14_DEV20_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "5482380230b7b388954bb3e759c616dba232257f7598ac83762f45c87460b01e",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "2d86ad880027eee61cd17fdfddf8b993859f44fdf95643be4d08be0b34bdbda3",
+      "repeat": false,
+      "run_id": "T14_DEV20_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 20
+    },
+    {
+      "actual_native_run_id": "T14_DEV20_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "c28e8f955611ac01bc6b5b2cc348953c0649d51f0383d63163b4a1558a2d20b1",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "a92c39230cd8d7a4929334604830ed0c4fe4c627b11cfc3c3a3214a53f02d6ba",
+      "repeat": false,
+      "run_id": "T14_DEV20_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 20
+    },
+    {
+      "actual_native_run_id": "T14_DEV21_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "122d47041cce4ed89ad7325febeae551cdb1dec8b5c461750cd88c5cd35c3574",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "a055cbe0eb2ca4cde28af368ae2a0dc8080037fe426891620ef2ed4d9228d537",
+      "repeat": false,
+      "run_id": "T14_DEV21_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 21
+    },
+    {
+      "actual_native_run_id": "T14_DEV21_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "0fa834d4aa3037bf5edc5d7a9643b20a7a0248ef13a49affab4c8b9630e6ebd4",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "d5835fad6cc3807b8bb64be556b142c9d39cd1357c244296b1aeb193d7937696",
+      "repeat": false,
+      "run_id": "T14_DEV21_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 21
+    },
+    {
+      "actual_native_run_id": "T14_DEV22_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "9e645e48ea4c60ce5139398359eddcf7e55bc783d04c7857d2debde7bbee98fb",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "7c5d4d663fa795388b47d3ddce3dc21d8441c1ee4203dc16cbe9eafa29be5a53",
+      "repeat": false,
+      "run_id": "T14_DEV22_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 22
+    },
+    {
+      "actual_native_run_id": "T14_DEV22_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "b1406e2c5fc6a15fa3004d727290840d9e47438fa8dbfc47ae9d54391969de6a",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "e2c2a471d11bb254db5d49dc62d0174e8e7ce11a0e0a92ec4a510924b0895cd6",
+      "repeat": false,
+      "run_id": "T14_DEV22_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 22
+    },
+    {
+      "actual_native_run_id": "T14_DEV23_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "4047521d109a3f9a1cc3ad9d12381b4908d459990b3e46b7f9767a072d049b18",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "52a8c0002230819f70d496671d63c6305d78e1d0922063c0f9a91795e1086f61",
+      "repeat": false,
+      "run_id": "T14_DEV23_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 23
+    },
+    {
+      "actual_native_run_id": "T14_DEV23_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "48fc931ff7454ab9b5d2a99944a02570c44527b9c076af01331e8392c7f7205f",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "09b6c3ae63297bd60adb23f144c268d024f97e70c088cefc50fd7745acdd5704",
+      "repeat": false,
+      "run_id": "T14_DEV23_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 23
+    },
+    {
+      "actual_native_run_id": "T14_DEV24_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "bc915e3d0ff1eeef3526858a6e3f9022dc6e3c18f7c844e9f62316606231a986",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "a62525cae0861bacb07564263b436adf7b5048e67d7d5b07cf843d2110bb9ed9",
+      "repeat": false,
+      "run_id": "T14_DEV24_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 24
+    },
+    {
+      "actual_native_run_id": "T14_DEV24_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "932875f87714dcc9027016d6f86f47e6c9a392210b3b062c0a6c1cb182e0a9df",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "ed022e624adb3cedc4e2bb83780b88255ca0a0b317472fd4a5a7d6dab7568c41",
+      "repeat": false,
+      "run_id": "T14_DEV24_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 24
+    },
+    {
+      "actual_native_run_id": "T14_DEV25_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "bc53373f9bbea773cd9608f5e0303780244ae0e1be8daa44a605c5c5e3e2f51d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "7a1d8217fb61f1c1490945b9fbfbd03678ce24db4b2027e696edda2444b54e9d",
+      "repeat": false,
+      "run_id": "T14_DEV25_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 25
+    },
+    {
+      "actual_native_run_id": "T14_DEV25_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "d3744b26a319ba189f39819db9b63aaa1d2e03e7ec73643d0059d00175bd59d9",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "433f256cb15d4847aaa36d5dc7c54803d151b5c12b50609b3d8b73d4208527a0",
+      "repeat": false,
+      "run_id": "T14_DEV25_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 25
+    },
+    {
+      "actual_native_run_id": "T14_DEV26_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "41ee0a94e467466b8507b8ea369fb6a143213611f23fb428014e8f3b1640ec42",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "24b6c54a76ba0cd56c106be9020b9a3e231553c6dc447157c6397263cf6f13b2",
+      "repeat": false,
+      "run_id": "T14_DEV26_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 26
+    },
+    {
+      "actual_native_run_id": "T14_DEV26_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "22284557b82acd93c72dadc36a5ce309a6f27a87897466713825f232647ae000",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "afe066e703394a70e52777f394102da65e89bc1cc9003657296bc02ef8e78709",
+      "repeat": false,
+      "run_id": "T14_DEV26_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 26
+    },
+    {
+      "actual_native_run_id": "T14_DEV27_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "509894523547fd79bd68bc119af3cabd889e41b851d6f7947af67c1ba7f1885b",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "b0cf55ee6aecb8d3e1b17981605b8cc57288a5f88daf481490a6a6dab5f4aace",
+      "repeat": false,
+      "run_id": "T14_DEV27_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 27
+    },
+    {
+      "actual_native_run_id": "T14_DEV27_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "636e63117dca8f79221e1835fec597069432580f75a5becf83ea18de9f1587f3",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "9665ded90ec75be23c6a7b64c9f230b4e69e365336af6ed1ad7bbe9b0ec916c3",
+      "repeat": false,
+      "run_id": "T14_DEV27_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 27
+    },
+    {
+      "actual_native_run_id": "T14_DEV28_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "bad202912e1ba3b8c435ae1eb9daa4ba4e74574756c874e6e43fe912a6e6f602",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "ed974d1b1ee1ce90e8a00cb2d5114ea894267be6e603724965f6ca56cef752b2",
+      "repeat": false,
+      "run_id": "T14_DEV28_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 28
+    },
+    {
+      "actual_native_run_id": "T14_DEV28_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "7adcd40fa22a02d37c46d4aa0fb4edb537f798be9bfaf2e97d6ca9c5ee71d481",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "4ffbdf75db4ddf3207b93a31b0189d178304da6ff610f03b5190af4cdcacab44",
+      "repeat": false,
+      "run_id": "T14_DEV28_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 28
+    },
+    {
+      "actual_native_run_id": "T14_DEV29_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "ad79b790bb6ea3b62dcba612406c7152903a35617246719254fc0359e4be3c5d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "b51c2c635c66f665ea3f910968bb7b5c791b8ae278a5bc86810f7d527d32464f",
+      "repeat": false,
+      "run_id": "T14_DEV29_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 29
+    },
+    {
+      "actual_native_run_id": "T14_DEV29_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "028c557039a76515e4861d7b2e46af4c8a4af8c2870eac2ae4ca0f94dd2cfcc4",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "da0601d8f5f48155d2ff76d038ff3b606c9ec1b73db16bf6317b367f83a1b4cc",
+      "repeat": false,
+      "run_id": "T14_DEV29_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 29
+    },
+    {
+      "actual_native_run_id": "T14_DEV30_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "e985b6d7333a8f72ac47fa39cdf4993b83aae6d5ee00d5b548a1cade2eb0d962",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "4580350dc6cfb432ed781fb15f629091169b616ebb55a6b1450492f57cbb740f",
+      "repeat": false,
+      "run_id": "T14_DEV30_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 30
+    },
+    {
+      "actual_native_run_id": "T14_DEV30_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "36079f5efb4a488bd694702fde5f7cb2645836442dc96d71f5da5ff86dd33e9d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "861eea2cbf139a6211fdc2375d0164f95b64ba4ee198f2a08b6e7f42d76fd478",
+      "repeat": false,
+      "run_id": "T14_DEV30_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 30
+    },
+    {
+      "actual_native_run_id": "T14_DEV31_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "fc179dc41b247a4d7a3792eaa078ae35044c07491e5c80f7be6fd2f44fb33274",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "a13bb7899650acff5482aeaddf290bf39d7ad890963fbad8a947e21149c78dd6",
+      "repeat": false,
+      "run_id": "T14_DEV31_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 31
+    },
+    {
+      "actual_native_run_id": "T14_DEV31_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "0c2fc2a759db91806f6e2633daf836fceaed677bb206fee9718baa3e13c5012c",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "60021a86dfaa344d4ae2c309d65b5f37c0e493ef911a78c639dfa6b521e61701",
+      "repeat": false,
+      "run_id": "T14_DEV31_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 31
+    },
+    {
+      "actual_native_run_id": "T14_DEV32_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "b0473547e3492ce501652da436aed04e457b80b2f66b4565327ae1815f95beaa",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "b58a82ae21d09cbb16430a1573f8d6fea742c134f3d14de3f4d73ad39e32ee93",
+      "repeat": false,
+      "run_id": "T14_DEV32_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 32
+    },
+    {
+      "actual_native_run_id": "T14_DEV32_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "3015634a803b8fc8684c80af5dc23108ae33624d974f1e1379ef7b61223c0e13",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "492a8054d63c9fa3191711cf070fbbefd03bf747c89f50ba12b8c16880b322f6",
+      "repeat": false,
+      "run_id": "T14_DEV32_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 32
+    },
+    {
+      "actual_native_run_id": "T14_DEV33_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "642bdb931926b865722515660e4c07351901e4f04ebc548d80b32b3dd4076e13",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "bae81299623b49b7622d7b3bd2e3b4b1043389c00c1f79fcd39f4a66f684c102",
+      "repeat": false,
+      "run_id": "T14_DEV33_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 33
+    },
+    {
+      "actual_native_run_id": "T14_DEV33_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "881b2e84e035dd6c6baf7cf1feb5177339b504f2a63fbb6f2aaf90388048120d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "f3bec08c6adbf7175b9823e2c9c043a057884dc2a933ae030c0be1688f3fda24",
+      "repeat": false,
+      "run_id": "T14_DEV33_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 33
+    },
+    {
+      "actual_native_run_id": "T14_DEV34_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "dec1d743e929ec74786a039a15f3ec852eb517bba7ab63a57804d4f5fd916f06",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "1a6288bcd4c9856ac0136efc46aa7a2d1978e7c97065ac3d8fa053e306dc2b57",
+      "repeat": false,
+      "run_id": "T14_DEV34_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 34
+    },
+    {
+      "actual_native_run_id": "T14_DEV34_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "e5ecdb88a14bca225ac50bb8012a4ebde9336bad8cf461a957c95b21db82f9a3",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "a6a20c1e2e6ab13d0030a96c2273eaa5532c16c6099faedc00cb38fb5ae03b9d",
+      "repeat": false,
+      "run_id": "T14_DEV34_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 34
+    },
+    {
+      "actual_native_run_id": "T14_DEV35_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "eea3e1ac8ded22a5941d789a67e374d1b7fae3d77b020bcaa19049ab1e5cb311",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "8f90d4bd915204a23bfa1cfbe8fa2ebdae524b0f956b12e033602b24ff523951",
+      "repeat": false,
+      "run_id": "T14_DEV35_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 35
+    },
+    {
+      "actual_native_run_id": "T14_DEV35_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "27f59db5cf00e50c1f94fc96a052314e47d2a79adcd5afc1bf77d722c05e779d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "12ebb5d056ace56da326a35896860c9d4d83a953f044023597296f38b718809d",
+      "repeat": false,
+      "run_id": "T14_DEV35_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 35
+    },
+    {
+      "actual_native_run_id": "T14_DEV36_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "fe2242a8c0ff9e68c0bafdac10c2516291c4dba043c5933bb7f6dec9bf5e69c0",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "1d7dfe8f064ea369f48fdeb8602e684ad79b62e105e5d3e28aa10db09bab39fa",
+      "repeat": false,
+      "run_id": "T14_DEV36_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 36
+    },
+    {
+      "actual_native_run_id": "T14_DEV36_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "12eea953886d43b8ba51aa7e7001d0e953868c9de3a4aa86def66389adb653ba",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "fd63c8f3df039365ae585e6c19bc0c2ac81d94330579809152b0babc2e16475b",
+      "repeat": false,
+      "run_id": "T14_DEV36_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 36
+    },
+    {
+      "actual_native_run_id": "T14_DEV37_CORRIDOR_XM6_P1_TECHNICAL_RETRY1",
+      "analysis_adapter_sha256": "523bb23cd65e95e3bbf3b2ff1b71a6e652c96d1b3770a6ee99e55bd6883b7a02",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "ab137f8a5bcfb536d0a6342bdf458e28ab1c57d767378e665847de4a9b5c649e",
+      "repeat": false,
+      "run_id": "T14_DEV37_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 37
+    },
+    {
+      "actual_native_run_id": "T14_DEV37_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "301d9fc3438a41d0e59971157e10323541c36d53dcb149ae50a1abd45423d097",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "72fd9df60e23350509cc847aace50b4432411999d090d65fb4b8c51b77ed3512",
+      "repeat": false,
+      "run_id": "T14_DEV37_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 37
+    },
+    {
+      "actual_native_run_id": "T14_DEV38_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "9153f0efd613e03aff09e89d03edc6cdaf263e6078b0dc710e8af47e8b5a8f43",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "ccecaec4b19ec160665fc3d059f32597462daa0031a96aa262cf525ff4faadeb",
+      "repeat": false,
+      "run_id": "T14_DEV38_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 38
+    },
+    {
+      "actual_native_run_id": "T14_DEV38_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "dcd514fa731309bf20e1cd1a21165e4bfc34491747413d197b14ad446d2cfdbc",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "b23057b55f08ed691d17bbc340a083f6426ab19c63cacf309546265a927f6a9f",
+      "repeat": false,
+      "run_id": "T14_DEV38_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 38
+    },
+    {
+      "actual_native_run_id": "T14_DEV39_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "590aa3e4a02d38b1ebd1cd6f18f41eefac9a162ec52375c4cbd8fb62e3c29a20",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "405ef4f81feaf5e2c0ca6744b16f6d70c8e2ab013e836f38b423ff0616dd0b4e",
+      "repeat": false,
+      "run_id": "T14_DEV39_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 39
+    },
+    {
+      "actual_native_run_id": "T14_DEV39_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "c0152fe16cef374ebe57186f9b27244da4eeb8b4698256d7e51afaaee6bcff26",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "b648ab714683ddc97e64d19e7123e848c52440c3b971e52aa28e41e1a9f8e0fa",
+      "repeat": false,
+      "run_id": "T14_DEV39_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 39
+    },
+    {
+      "actual_native_run_id": "T14_DEV40_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "a9e367844336f0d63a80db4650f6b8322f9afab4dffb43acc758857a9f115d36",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "6785a4f4872857e112c274f330e941b7bcbe625bf6d20ca226df3a4566b24afa",
+      "repeat": false,
+      "run_id": "T14_DEV40_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 40
+    },
+    {
+      "actual_native_run_id": "T14_DEV40_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "1e19419c741c063dace38e6d759e584e4c25d6fb0e08d9cb69ac368dfe83099c",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "ae44b7054effa5e10b45561fd6a424cb203827ffdf6b3b23ed0dfcffd1c94fb5",
+      "repeat": false,
+      "run_id": "T14_DEV40_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 40
+    },
+    {
+      "actual_native_run_id": "T14_DEV41_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "5d2a80dbdd30083615c35bcca1321636fdefcee9d867873d549486d59ac19b6d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "9d5d03992eefc3d856c347fbdf5cd361e1748ed20faa97c40944793971793b8b",
+      "repeat": false,
+      "run_id": "T14_DEV41_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 41
+    },
+    {
+      "actual_native_run_id": "T14_DEV41_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "9ad11755cab698c7813aa82914a9cc55af79a9020ab308767296032b4a5fd141",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "ac79e62d5da6050e2de482de29a2e45c532c537de64e5b16408cdc1b671168b5",
+      "repeat": false,
+      "run_id": "T14_DEV41_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 41
+    },
+    {
+      "actual_native_run_id": "T14_DEV42_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "cf893680bc406d79b3f079ce21f20bb549f455f13b893e4e27de35f0a2ff3a89",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "e08c690ea499a7fd5b4d1de6d5f5ff24c24e2e985ba9318eefbec9b816966858",
+      "repeat": false,
+      "run_id": "T14_DEV42_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 42
+    },
+    {
+      "actual_native_run_id": "T14_DEV42_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "fed197ad3853cf056a79b4ae78f5fc7aab9a4d43680ef35f65776a4804d8ca7a",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "690c03e6e985ddbcc9a4b986fdb08f309d4fbeb8a5ae645ecddef03d4e5a3337",
+      "repeat": false,
+      "run_id": "T14_DEV42_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 42
+    },
+    {
+      "actual_native_run_id": "T14_DEV43_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "0c9599d1aca1a55f7fd6da404ec7624d59feab79a3bf0eea3a62ce6e93032878",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "faf7bb4a3821105bdb12e5e66863d03bac9afe837f12c8a6d34611648a2c57c9",
+      "repeat": false,
+      "run_id": "T14_DEV43_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 43
+    },
+    {
+      "actual_native_run_id": "T14_DEV43_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "6d10020cf9b56e70c97d2caa759edd911133fdf4fc5404466568637e8c656438",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "2ecbdd02e342774c1ed8414b40b88d50ca8630921766403c6c6122511adb5104",
+      "repeat": false,
+      "run_id": "T14_DEV43_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 43
+    },
+    {
+      "actual_native_run_id": "T14_DEV44_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "83b980d2ed53d744336f6dec0373b56291f99fe4e4c05d7e24b06776d7c6883d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "79e57848d9274a73af6afe9416c90728b4179e0f0886e1618c87748089a7a979",
+      "repeat": false,
+      "run_id": "T14_DEV44_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 44
+    },
+    {
+      "actual_native_run_id": "T14_DEV44_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "e65503e242a49d71018c5e7922d35c3a06d622961ec54eab8bc0f843e9cb915e",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "b3a8069aed5f953c9a4bab2635e399a4badd779d70ec18b05222892083e59fbf",
+      "repeat": false,
+      "run_id": "T14_DEV44_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 44
+    },
+    {
+      "actual_native_run_id": "T14_DEV45_CORRIDOR_XM6_P1",
+      "analysis_adapter_sha256": "5bcf8831ee2169bc7f52ffa33dd7002bf8f26e759f4ff1759bb5daac7ab5e99e",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {
+        "dcreg.csv": false,
+        "evaluation.csv": false,
+        "health.csv": false,
+        "poses.csv": false
+      },
+      "native_manifest_sha256": "afee7c4080aa25b1a69297c4d9d4123c91f2806bd47cda44e770b9e855eacbfb",
+      "repeat": false,
+      "run_id": "T14_DEV45_CORRIDOR_XM6_P1",
+      "scene": "CORRIDOR",
+      "seed": 45
+    },
+    {
+      "actual_native_run_id": "T14_DEV45_CONTROL_XM6_P1",
+      "analysis_adapter_sha256": "b5d318c690f0b8d8769f197653ad76fd117926f0ebd86c3ce94d545c28899d04",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {
+        "dcreg.csv": true,
+        "evaluation.csv": false,
+        "health.csv": true,
+        "poses.csv": true
+      },
+      "native_manifest_sha256": "90e15ed06f515d40480e6fc7ad0b42190c01079cde1f9e8d5e0349a613075610",
+      "repeat": false,
+      "run_id": "T14_DEV45_CONTROL_XM6_P1",
+      "scene": "CONTROL",
+      "seed": 45
+    },
+    {
+      "actual_native_run_id": "T14_DEV14_CORRIDOR_XM6_REPEAT1",
+      "analysis_adapter_sha256": "d6e8525bdbc5d80e762726be23a105b911518af89a4af7ed06e2dbdc57273f53",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {},
+      "native_manifest_sha256": "b8b8ab858517579eaf7d9e528a0ad02add0c0003166a0297db6cd9be1b8e365f",
+      "repeat": true,
+      "run_id": "T14_DEV14_CORRIDOR_XM6_REPEAT1",
+      "scene": "CORRIDOR",
+      "seed": 14
+    },
+    {
+      "actual_native_run_id": "T14_DEV14_CONTROL_XM6_REPEAT1",
+      "analysis_adapter_sha256": "af4896c21dbb1fbed5d02b4f2429ec1838e89fd08eef3f19adcb10ee9dc6da32",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {},
+      "native_manifest_sha256": "0af5c244f9d6b9f872b5feba5cdfe82a2f6a81a2b820dcf309b9696eff5f9dae",
+      "repeat": true,
+      "run_id": "T14_DEV14_CONTROL_XM6_REPEAT1",
+      "scene": "CONTROL",
+      "seed": 14
+    },
+    {
+      "actual_native_run_id": "T14_DEV45_CORRIDOR_XM6_REPEAT1",
+      "analysis_adapter_sha256": "3b76bba63c14a5e714ccf699fd0975a1121af66a33819a5886c98017b6c9a6b1",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": false,
+      "historical_output_hash_matches": {},
+      "native_manifest_sha256": "827c5d5c20047c7fd474c1661f661a8eb4b9d95ced5a40fc47a0e511556f5965",
+      "repeat": true,
+      "run_id": "T14_DEV45_CORRIDOR_XM6_REPEAT1",
+      "scene": "CORRIDOR",
+      "seed": 45
+    },
+    {
+      "actual_native_run_id": "T14_DEV45_CONTROL_XM6_REPEAT1",
+      "analysis_adapter_sha256": "784fe3cc0ce15296913f30f6bd8d34d960e2ce670cb6ac6ff7fe064f99bd855d",
+      "completion_validation": {
+        "completion_status": "FULL_SENSOR_INPUT_AND_FLUSHED_POSE_LOG",
+        "dcreg_rows": 600,
+        "evaluation_rows": 1194,
+        "expected_lidar_scans": 600,
+        "first_pose_timestamp_ns": 1000399722220,
+        "health_groups": 600,
+        "invalid_pose_records": 0,
+        "last_pose_timestamp_ns": 1059999722221,
+        "pose_records": 597,
+        "reference_gaps": 0,
+        "reset_records": 0,
+        "valid_pose_records": 597
+      },
+      "control": true,
+      "historical_output_hash_matches": {},
+      "native_manifest_sha256": "e18c66cbbedcfe08a21c97f6eb17e2f350b6d65bce65760e14e49644927e959b",
+      "repeat": true,
+      "run_id": "T14_DEV45_CONTROL_XM6_REPEAT1",
+      "scene": "CONTROL",
+      "seed": 45
+    }
+  ],
+  "status": "PASS_NATIVE_LINEAGE",
+  "unique_native_attempt_count": 69
+}
