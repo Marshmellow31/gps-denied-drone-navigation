@@ -1,0 +1,4325 @@
+{
+  "analysis_runtime": {
+    "numpy": "2.5.3",
+    "python": "3.12.14",
+    "python_executable": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python"
+  },
+  "development_analysis_sha256": "1678e1c8b62b3ceeabf4e9f4e63593832cf8c94f7793e7b933647e8569c082f7",
+  "heldout_generator_sha256": "9f39bd09ccfe250b9beb9064deeafddacb01aee7eb0509620e9c4bb761b27248",
+  "implementation_freeze_sha256": "9c5b7bc8cc9f26c5198d700b79f01e6b86ced07fca50984a577a19af0bb83271",
+  "lio_runs_executed": false,
+  "plan_sha256": "7f283af10da68b6b4b27e01f2a53a0e8fb57105c9755db879eb3c9c79c299c93",
+  "r3_review_sha256": "699a20dd873f03318cea3b7d6538dd1e657584961329521a9c0a6cb70bf0d326",
+  "reviewed_artifact_hashes": {
+    "DCReg adapter": "516e1da40c9cb8bc58e5a0e4c9c7964392a0877a77ba20e7139eae997783595e",
+    "FAST-LIO config": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+    "FAST-LIO corrected DCReg event metrics": "7a543e6a031125178fba71a656f7ecb2447d99add17ba362d940f714d40ff588",
+    "FAST-LIO corrected analysis acceptance": "2cb492c69e6f489055d546feff33fd5ac732cef117a8fe1183a2f034b1a38c0e",
+    "FAST-LIO corrected scalar event metrics": "dd5badbfff2005c74d1d447d8ac7ab195f51f6ba60dea3a6288bb10f7ec11a40",
+    "FAST-LIO corrected truth labels": "1101ecefd285648d98778e2c37d1abffa6988ca39d5a8446cc0636cad3b494ad",
+    "FAST-LIO replay script": "a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639",
+    "FASTLIO_BINARY_SHA256": "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792",
+    "FASTLIO_UPSTREAM_COMMIT": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+    "OCE novelty feasibility review": "97abbf54119e64bf0967a9b72c180af8cb9b7b57e9037688c5cbacaf0bd102df",
+    "OCE overlap addendum": "fd819f0ca50d3f965636864331c701ad27df0049be44997178ac117ff1d71866",
+    "PCL17 backend patch": "6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275",
+    "POINTLIO_BINARY_SHA256": "80516da9cafba98262d56c17cc26ec4da76e214049d3af7776248b4c3a342b17",
+    "POINTLIO_UPSTREAM_COMMIT": "4b86a469eb5572e70ed575af25b5f15dd06e8e3c",
+    "Point-LIO accepted native identity anchor": "13c9aa68e4c55cd3336839548fc48b9be140863908ab1debdc4e5c5236321583",
+    "Point-LIO attempt recorder tests": "a951dee5c970ff2563852e62b48ac4dd33a90054d735893cf210ded6a3e310f2",
+    "Point-LIO base attempt recorder": "2ae0a813bcf49dbe24bdc8750cac1fc691be4f7bc5b65dd0c84fc5b51a2afe90",
+    "Point-LIO build compatibility patch": "2006e7af098c3fe9b342dd2a52d10d3b69891f4d985332fd64ab48767feb6ddb",
+    "Point-LIO corrected DCReg event metrics": "0682d16a9240a3b3bb983843491149431301e1f22489e2b28e85ff1fa4084bb6",
+    "Point-LIO corrected scalar event metrics": "77589843e1759403ea7fd0680af10daefa3bb231c9e0b075d0186b2270fc4900",
+    "Point-LIO corrected truth labels": "9f28b758234cd4771b6ae4fcad6439ee44cb4b0c81b6472eadebc17e0431fb3e",
+    "Point-LIO deque header patch": "39594d3c07861467151ec7218471513016e286d87a8abfae248a1d37fcf6f4bf",
+    "Point-LIO development acceptance": "216cb96493612e96bc57ad18424d0fee51df083bbe9803d9fe43690a1d6c278c",
+    "Point-LIO development analysis": "ff8968a8bf7658ebfe6b35dd9a7ebf268f2c28c817c6d1d261f2890acec21c7b",
+    "Point-LIO development attempt verifier": "9c971282939c70cbef5427ed3e78f895d5875f85899c92490e8d5c6135c1fe91",
+    "Point-LIO development input validator": "9387dccca0bde4a604e99023c2d887e06d6fafc6c26f049751bddf7f74f976c8",
+    "Point-LIO development runner": "51dd92d3fea17e13b48d460e2c18c7bdba50173194fd34235633c2d904edc448",
+    "Point-LIO development workflow full suite log": "841980a19a12a91ad9ba4c33f73bbd53248af2510526a26fbfc6471a816b31f3",
+    "Point-LIO development workflow tests": "b405619e415a2a676bff08dc4b90f2a4b50075f8d6f893081478c313bb078e33",
+    "Point-LIO feasibility output verifier": "00e5e6a1c34ff05cacc0beceb3ddb5bf6edb2619467ebe3b2b3e0cb8c43b79af",
+    "Point-LIO feasibility pair tests": "c4a3031867fbed150fdc2d2969278c82e52e04c03310ffddca9dd4c34dba9b2e",
+    "Point-LIO final analysis": "23d9ff62e67b0911f4fd81b99dd380bf6bd8abc53d4ebe251323bdbc9cc0ff5d",
+    "Point-LIO final input validator": "7afac20064f016d7c9073bb78ecb4ed54507329b4df5fd670a7424f8caec3791",
+    "Point-LIO final native wrapper": "ecb525b089b87610df5977e497575b8afd5ccc59746889235e8f6c00592644a9",
+    "Point-LIO final recorder": "bd7b88e97a5b1b87bacd41f30aa3356789788de2613ec7abca14e4b2418fe5f5",
+    "Point-LIO final replication runner": "d0c064d42fec3359161d9cc85a1abf7f4370da65e2f15951375e908f69f49e45",
+    "Point-LIO final verifier": "80cf35e6867526d03c728961d486e35edef089aaed6a42121bbf3e3a9a4d3ada",
+    "Point-LIO final workflow tests": "3c0558f74ec4a209e7a446a973f6e33f7c4cfd3cadcaf90e736a6bdb1b218988",
+    "Point-LIO indicator export tests": "c1aa7c71f01dde26911780b7c33df263357645b8be13a2ceb5bbde01679080c5",
+    "Point-LIO indicator exporter": "06d2c71c9aa55d33f4009e89b6605c481a7af7b3969bd6a919ae9df766d2f8b0",
+    "Point-LIO indicator feasibility script": "76dcf4e520f6b2e61d66991a8b381123037a11bdc6e605773e287bf0d908f4ea",
+    "Point-LIO indicator parity audit": "1a13f2f268196ff0553020481af701e3dccccf3abbbe9ddc0ee1ea8c87987668",
+    "Point-LIO indicator sidecar patch": "9df4d1eb3203bf097df94d25e5d59f566c0eff4a2f11f26b5ebcc6fb8cb71d24",
+    "Point-LIO information adapter": "c141d5dfc86df130310beaba3224726e60a7b8224d6958d846d0ae98575d5f19",
+    "Point-LIO information adapter tests": "0f3a5bcdd027cb23f1564e328c01a7360189115f57a0f5656f7f54b9918c20a5",
+    "Point-LIO input frame audit": "9eca065edcb71846747247493c2f430cefcbdd0252f08f21c030649f6072ceca",
+    "Point-LIO launch helper": "00f88caff3f91efa8cb556ec2f05b46996837b504df0255e44e30a917ce451af",
+    "Point-LIO native sidecar tests": "80be26ed2f044b51fa75106fcd6e2a1fb226233e959b2ced1554c74b3b45c768",
+    "Point-LIO one-seed acceptance": "c1de9901832e19463629a8854bf156c25852c7a698bad7e595de96c98362924c",
+    "Point-LIO pose logger": "041aebef03bd8a972282e42f7ba1521e8943385c352e0edd3c11ec2eb87bdd3d",
+    "Point-LIO pose logger tests": "922ca4e35ee5a2536898bb86f1547d2b08da22738e12d69c7e679bf7e189f2b4",
+    "Point-LIO replication freeze": "87f31c5febff860fe774eb4533a1be584f68b663f0125ea40dc18e85cc587621",
+    "Point-LIO replication freeze review": "423ccdbd60f50aaeeaa080e6f19632f1b541afd234032ca8ec12f8dad8c5b5b0",
+    "Point-LIO runner helpers tests": "7fda751a0f2164f24bf174fa21390e6c6e329b627ca07d1a07ec5bd42b881de7",
+    "Point-LIO simulation clock drain helper": "2e6e1be8a0550107516c1291fdb90d5a91c2508405115e0548d216753b75fe6c",
+    "Point-LIO simulation development config": "d23bd8799c3834ac0acc1d23476a0a0c0cd72b09f7b7c542b5bfbe9813a4c98b",
+    "Point-LIO smoke script": "f7abde52efb6e2c2d18ece428cd181d62f4a3930027686d1e40d5f11de4fa0e2",
+    "R2 freeze": "9b4aff72af866e4d93dafed53f600815097bfebbfcf325f064bf70713736de39",
+    "R2 frozen artifact: AGENTS.md": "0db654eee95493cb5a1d83bd2a8b41553053467d2281c05bdb358bd417b64efb",
+    "R2 frozen artifact: README.md": "fcac3d8e874f52cd1bf8a51c5718c9137df101f4535afd8e8fe9ff0bc582e571",
+    "R2 frozen artifact: research_paper/AGENT_EXECUTION_PLAN.md": "52c12cdc0d894864594ef97d90979b34aa88cd11afe5db343c238e15329f4180",
+    "R2 frozen artifact: research_paper/RESEARCH_GOAL.md": "4feca0c33246405bce20e0f4ed2be0cfe78b1fb5c2df1629a08564d4c2c6ce33",
+    "R2 frozen artifact: research_paper/SCOPE_AMENDMENT_SIMULATION.md": "edfda5a59a376f10d4184d3e0d9451d1435267e67fd7a9854d70b30ba17dcfbc",
+    "R2 frozen artifact: research_paper/SCOPE_DECISION.md": "feb85397efcc8e222785881b9b28a3b4d7b899a893de0269ad9208a5ff337d32",
+    "R2 frozen artifact: research_paper/configs/fastlio_simulation_bootstrap.yaml": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+    "R2 frozen artifact: research_paper/data/ALTERNATIVE_REFERENCE_AUDIT.md": "0751ef48773b3b6b7e04d11615c5e16d8cdd89bb2fba0e5b5702ab3e98eeac34",
+    "R2 frozen artifact: research_paper/data/HILTI_EXP18_EVENT.md": "5df0f283b2ff09429f95815423439d69d7c5d06a769a26c27763c7a5060e4c04",
+    "R2 frozen artifact: research_paper/data/SPLITS.csv": "d9d5496a55a2bb55cbf4a294be87df41ebb3b57ff24bdfd0e6fc0fcc8d682172",
+    "R2 frozen artifact: research_paper/data/hilti_exp18_reference_metadata.json": "070105fcbf14b97f0407dde3fd905a4b956f5e3efefebd4676812c1bfedea418",
+    "R2 frozen artifact: research_paper/data/simulation_motion_v3_reference_metadata.json": "459f841c21c4c638fbc1fb4df2b21d9f4b2668ac0ea2793ee7f59146afa23f40",
+    "R2 frozen artifact: research_paper/data/simulation_random_layout_reference_metadata.json": "f632a5b1f87060e5807ada2a34851bbcc3429a5b54d25366e35846fc0957abda",
+    "R2 frozen artifact: research_paper/evidence/HILTI_EXP18_T07_PILOT.md": "27290102170124aa9b45c81d155e2476027c6a007cd08f38e5ca0a1b43982a01",
+    "R2 frozen artifact: research_paper/evidence/SIMULATION_MOTION_V3.md": "db072def2335336463864a5c74998315b03d275728c6619c90af0375d8aac2cb",
+    "R2 frozen artifact: research_paper/evidence/SIMULATION_RANDOM_LAYOUT_SMOKE.md": "659d6e7a63de8382a6c7d4ab8604535450f734bd6d8353394e426fc84a89ff1c",
+    "R2 frozen artifact: research_paper/evidence/SIMULATION_SEED_SENSITIVITY.md": "68bd7d59e28e7c61bd080af1687275affa1f49f2df21c5f38f7fb911f6a9221c",
+    "R2 frozen artifact: research_paper/evidence/T08_FINAL_PATCH_AUDIT.md": "01f3ed07ed07ad110ff8341d902ce6d13bd39a92032824fe3db511a68e16acab",
+    "R2 frozen artifact: research_paper/evidence/randomized_layout_geometry_screen_dev14_45.json": "1a7533d421e16d299ce9f1ea77860dcdea96abae5ab0ac43f6182a0b7b120b35",
+    "R2 frozen artifact: research_paper/evidence/simulation_motion_v3_manifest.json": "b66c36e72c5a7b31544652e87373b438f43bbd0e6d89db99b7ded77df82e9691",
+    "R2 frozen artifact: research_paper/evidence/simulation_random_layout_manifest.json": "71bc00b4bde8b82adb08ead394ddbc8919a0b9f17250d3720af18a54c9e336a3",
+    "R2 frozen artifact: research_paper/evidence/simulation_seed_sensitivity_manifest.json": "5f071e4c1e95b068087d6a1c8287ca1680a5e8e2deafe2c98fe20f8e38293be4",
+    "R2 frozen artifact: research_paper/execution/DECISIONS.md": "4b49f6cbf253bdf7e191f2ec0925de801e651cbb61d80826035a75e54ac743bf",
+    "R2 frozen artifact: research_paper/experiments/patches/fast_lio_health_diagnostic.patch": "ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2",
+    "R2 frozen artifact: research_paper/experiments/patches/fast_lio_pcl17.patch": "6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275",
+    "R2 frozen artifact: research_paper/experiments/run_simulation_smoke.sh": "a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639",
+    "R2 frozen artifact: research_paper/experiments/src/audit_health_export.py": "fff0e55b88e129e94f3808b88955d5f6213c8bfac98b25acc12f09e5f3a29ba8",
+    "R2 frozen artifact: research_paper/experiments/src/audit_paired_simulation_bags.py": "14944d470c0d90bc0c5e0837bdf187c06c6f5ab6bef02fbebb0aeedca518c593",
+    "R2 frozen artifact: research_paper/experiments/src/audit_simulation_scene.py": "1c51029c5c3e17e2dfe8eabaf6bcc729781bdf9b0ec3b21b6b2ce3ac00585b3b",
+    "R2 frozen artifact: research_paper/experiments/src/fastlio_information.py": "f83d8d52f8fc5d1e39a4d2190de78f17fc7672c49c7f511fc203900e3f91ea1e",
+    "R2 frozen artifact: research_paper/experiments/src/simulate_lidar.py": "897028bf99eb2b97e44088328991c745189f0df12a295e316440c2b49c747370",
+    "R2 frozen artifact: research_paper/experiments/src/summarize_simulation_bootstrap.py": "19e803ab4a52e0855aac2a24d48ffa0c9f3cab29f1445454e35fc6c9103d3139",
+    "R2 frozen artifact: research_paper/experiments/src/summarize_simulation_seed_sensitivity.py": "bf72f0eacd09eba6e90770c6424c0cde0eb1b7cf96656e313e720ae4330d89b4",
+    "R2 frozen artifact: research_paper/experiments/src/trajectory_eval.py": "d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba",
+    "R2 frozen artifact: research_paper/experiments/src/write_simulation_bag.py": "30013904c8956ce569538176c565491b49f1504781f29adc3d119fff79f62ba2",
+    "R2 frozen artifact: research_paper/experiments/tests/test_fastlio_information.py": "1e5d7ef7f6f25d06037af53ee78d1c74d3fa3b19e4d8baef66212b9266da2b91",
+    "R2 frozen artifact: research_paper/experiments/tests/test_health_export_audit.py": "7f0a05c5ee7734c0b4564768ecf927bbd89e35278da529d97a2fdd7e3da69f12",
+    "R2 frozen artifact: research_paper/experiments/tests/test_simulate_lidar.py": "816ce1a792d604369fe8c30af361b775055ec744a90cd29c260ef704be25503e",
+    "R2 frozen artifact: research_paper/experiments/tests/test_trajectory_eval.py": "da05c6866a58fc8880cab179586ab0b15f9c0f6dbbc2fb8d5c65d18efe83627c",
+    "R2 frozen artifact: research_paper/literature/COMPARISON.md": "411e52abb3469b205a7cdb891a388749a9ab8ac5fe56295beff54e88f57b0a7f",
+    "R2 frozen artifact: research_paper/literature/GAP_DECISION.md": "e5188eaf327386c3a5470e3cd758410bbe83cf626e890739a344634ed0650b9c",
+    "R2 frozen artifact: research_paper/literature/INFORMED_CONSTRAINED_ALIGNED.md": "4c6367805186a8121c09ee81bd75295d2d81c3798abd973f9d1a378bad72de8d",
+    "R2 frozen artifact: research_paper/literature/RECOVERY_OVERLAP_UPDATE.md": "117e4c40ed3b98906739d0dace28493b7f297a709f20aa72834cc8583d581255",
+    "R2 frozen artifact: research_paper/literature/SEARCH_LOG.md": "d73e0893f9dc70c522e72fa03787de2d341a4198ce782223a9b77e08d5bf1da7",
+    "R2 frozen artifact: research_paper/protocol/DATA_CONTRACT.md": "c06d112996cf66460c1eb87aba54da78c1fb9d31dfff2e4f59a3aa4b453ae95a",
+    "R2 frozen artifact: research_paper/protocol/FASTLIO_INFORMATION_DIAGNOSTIC.md": "6723a9b4838756b76d9be3835d587c4487eb4ee40b9ccde4e49c04c3009b36a8",
+    "R2 frozen artifact: research_paper/protocol/INDICATORS.md": "f9c72f12fae2c294b4e8372684df1dae3fa571c7d3905eb23b05d8b747409a4d",
+    "R2 frozen artifact: research_paper/protocol/METRICS.md": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+    "R2 frozen artifact: research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md": "5c67330fe596e74a811b7e00202cef8d460a214bf4d6ff50e8ea10b86e9e4ed0",
+    "R2 frozen artifact: research_paper/protocol/SIMULATION.md": "27ae3e937de17b12d81f66149a443ba752febb61a4547d1a32c3a2d0b2221811",
+    "R2 frozen artifact: research_paper/reviews/POINTLIO_INDICATOR_FEASIBILITY.md": "22eb4e53d852c6febc8af205e38d21010f792ac2c43be2ead2d53c2c77b40158",
+    "R2 frozen artifact: research_paper/reviews/R1_FEASIBILITY.md": "358186ea18202c558ed52bb8d0013b7a14a387ce577191a2375b6d1086dec5cf",
+    "R2 frozen artifact: research_paper/reviews/R2_PROTOCOL.md": "2895379745daaee5f009bc2aa67d5812a5e47693207a2a4e45b96b9bcc9cc961",
+    "R2 metrics": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+    "R3 adversarial regression results": "be3b179ad6a3d542c62fd5a63e8e8ee3f23588c96f4d94d10bf823acb9d05634",
+    "R3 adversarial regression script": "bdc56eb369d2fb6f19b28f5f1ba69acacf1efdbcb79043625afa529abf1ca5f4",
+    "R3 evaluation workflow": "06400462807dd7561794cd4db4e7b82a48d3852c4674b2686153c039173fe127",
+    "R3 evaluation workflow tests": "5a2baa22f23ec24e70c6b8875e7b07618e7e393e9e2e96e9088559e45c03c6bd",
+    "R3 latest system test log": "2f7da3af1a6b7b7ba1664b52c4d1b68ad7c2daca4c7569e24ab1ca4562958900",
+    "R3 readiness full-suite log": "37967d2bb4fbdc6aca040346eeeed5ec9adef476dd093cd41041625ff2e7e908",
+    "R3 repair verification report": "bc9d68a37653bc7029e7a1ae09b5e0bfb5b91f7c0158d5ba23685eabf7ec90bf",
+    "R3 review": "699a20dd873f03318cea3b7d6538dd1e657584961329521a9c0a6cb70bf0d326",
+    "R3 review inventory builder": "0da0cceef88389fab38b6bbd96923e2e9af7779b6a19229d17dddd116a420e4c",
+    "R3 supervised replay wrapper": "2da73b9d5fe821c72c85edec8519cb3c50d7b602518a10ec0927eb9d358142c3",
+    "T08 backend patch": "ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2",
+    "T13 backend patch": "4e85cce23aae900e3cbee37f9871d40454fb3c1203a794a8db419475033a1ace",
+    "T14 batch audit": "66be7cda05e1f97089e523272af5dfd78b70134b12ebd3a9964cf15ad8bc4b87",
+    "T14 development report": "772f884806c2e09fe8598e3c8e9ab5c00182e4941f6945342fc6ca7ef122dfcf",
+    "T14 repeat figure manifest": "dfec7eda6ddb5bfadbefde3a1eb3bfcf1d2a90d2a015eb07510a8862b76b406e",
+    "T14 repeatability audit": "aafcaf10ff487be2085573a6d6eea386e5825c160b2f92c311ee5b8d3b47808c",
+    "T14 repeatability implementation": "847c8100959211036f621cd127a28843da946eeb69573615e301d2f7c4d41200",
+    "T14 repeatability report": "0f4b5d2c5d835f44637467ae5ea59b846a93fe3cabbebeb9cc1b551f9a2577ff",
+    "T14 repeatability tests": "0201dedb2e1a0bfdb6389f117acbfbe345f27549781c0497ea9f1a02ffa5cf6f",
+    "T14 route adapter": "93ab5bacf988b83564c6405a2cf3dd9433b247d3122fb32c42817094c72353bc",
+    "T15 smoke manifest": "e744444d367b1b485020d2800fb92736f3bd07de4b4549a2f9f26fa177a79f6b",
+    "T16 analysis manifest": "1678e1c8b62b3ceeabf4e9f4e63593832cf8c94f7793e7b933647e8569c082f7",
+    "T16 analyzer": "f34fa9479e95bfa78823e3be8f70d63445631d09f3d46fe59a75331ae2975077",
+    "T16 analyzer tests": "b084cd32cc9a4d1592ea26e94584ffcce305090350ec0030cfce9f475cde42ca",
+    "T16 report": "be4c5182cee131cc2d88bbfb177c0e47f49491212201e694685614c0da130016",
+    "backend CMake newline restoration": "1e7667123dc6a04cf71d41de69c7621efbba4f35ae0012c70690e109ef4dbdce",
+    "backend rebuild script": "ac0d3003db1a532eebc028747ced125e308c22e80530e291fb6a90112e252f30",
+    "corrected FAST-LIO candidate table": "7ebbe1e5858ad49c4b175bd406dfa25921a0b3a957ef3a6d9aa8510e9d2d89c2",
+    "corrected FAST-LIO development manifest": "1678e1c8b62b3ceeabf4e9f4e63593832cf8c94f7793e7b933647e8569c082f7",
+    "corrected Point-LIO candidate table": "78338dddfa6fc777f06f0a7e87a704269dc09ceb12cd303b89456832688cac58",
+    "corrected Point-LIO development manifest": "e3a03d83f5854c5705177bc7610cb6ff18d9f0d331f50783c23dcd036b6ce254",
+    "corrected development analysis report": "d348a2926dc44d0f802c8c829d897e3808c190ee5eb79373a357d6920565a497",
+    "current research handoff": "736c0e92497721995de535c3dc62e196f86a9b2eaeca1340c497ddea490e8cee",
+    "development lifecycle validation report": "67332a3e47e2bf918277e0860f688f50faf074ef2cd6c4a4bac7a39b51a7973c",
+    "development lifecycle validation script": "f1b90be692659f098fa2f1d346eb17bd03e9e9049d4d489c4e539ab26f9f54b6",
+    "development signal comparison plotter": "7bb9ade15f8e8497cc741169bdd1ad347efe84cb2e8d465a6e256a1b2d7cda9b",
+    "development signal figure manifest": "037deb8c9b13a1de29b333948f241bab0ca8a7c509d4889c341a499f6fda237b",
+    "execution decisions": "4b49f6cbf253bdf7e191f2ec0925de801e651cbb61d80826035a75e54ac743bf",
+    "final dataset analysis caller": "39b969b3ce76c2c4064e27bf304181c695f5567ed7810b74d68187af1c3f39e8",
+    "final dataset analysis tests": "502bbb88b09cdafe3e90c692a8aba7ad237d8395d6ccf40c0b59bba0ab417c3f",
+    "final evaluation plan": "7f283af10da68b6b4b27e01f2a53a0e8fb57105c9755db879eb3c9c79c299c93",
+    "final input preparation tests": "8c8a0e62974f92f0e34ba42828c7f7585882f8228864f592fbd54380da91721c",
+    "final lifecycle tests": "cae710852eb7671c720615236f51c829a14e873463015cc0b5c7f70591daeb52",
+    "final runner": "1447b1e92a1838714920e1a0cc8580ca57314905affb748d3a8b9c3d03cad33c",
+    "final runner tests": "7470bb282162ca0a991c1a9a0601889079460e1b5c4c0d8e888d0a619b963270",
+    "fresh primary recovery acceptance": "49e5f93b2e37dcc4b4a32ff822f73a0666b203ed5aff8811bc57a646e1db0f19",
+    "fresh primary recovery audit": "6b295f9be6484286d5902a75098546da19eb3d1882b21b9b482ed89a3374db91",
+    "fresh primary recovery report": "773b816714039adb582749e372dc0085c0a86c4d784fc4f4acc7a82dc848152c",
+    "fresh primary repeatability audit": "bba10dc2f7b5dc4aa51e77c8ebc1402f908f7a28a78ba9396add8a0e916131b6",
+    "health audit": "fff0e55b88e129e94f3808b88955d5f6213c8bfac98b25acc12f09e5f3a29ba8",
+    "held-out generator": "9f39bd09ccfe250b9beb9064deeafddacb01aee7eb0509620e9c4bb761b27248",
+    "held-out generator tests": "fe5148d40bc0132449830df17db83e162033b9699e00a512e9969693f337f66f",
+    "held-out statistics": "09a6471003e692d2fafc9058fbe62662935bc46fa8f9feb7cbaa23b39a055a50",
+    "held-out statistics tests": "7e0569e97766c4e2faf89e8aede0ce0097a91eac0e69310b6e7f3ec855e43e09",
+    "pair audit": "14944d470c0d90bc0c5e0837bdf187c06c6f5ab6bef02fbebb0aeedca518c593",
+    "paper completion plan": "817139e365e3f62552d8d885fa2440642aa71278441f366b6c60e6d785aded6b",
+    "pose logger": "1a4cddb319dda44ce1838e34bcbac55d49958da1a0a06b443a7802dc49677ed2",
+    "post-R2 novelty audit": "86362326cfd9fdf539e5702b34771e743bd6c70130f113fd08b2ff8520971faf",
+    "primary recovery audit script": "2a0ee1b1fd30e3099be25bbc9a08264ed3a1d2de89eebf4a06c80de3f6bcab9b",
+    "primary recovery runner": "1c00980bf1a6e7121d10f36a2b817b21fabf17a22e1db64c858e28944ce2ea51",
+    "primary recovery tests": "288aa1ab5816b807e7e5e29e80952794a233fca69a057d785c76bf35d0bc068c",
+    "research status ledger": "af994fff81ec2265744996d52e3647d5b240b63cd0d37fee23bfb48991b2e9d9",
+    "restored historical backend identity": "0fdb0ccc18285fdce7e41d0072beeb354391a6b1887619b9f13c9002fd6a8213",
+    "simulation scene audit": "1c51029c5c3e17e2dfe8eabaf6bcc729781bdf9b0ec3b21b6b2ce3ac00585b3b",
+    "simulator": "897028bf99eb2b97e44088328991c745189f0df12a295e316440c2b49c747370",
+    "split table": "d9d5496a55a2bb55cbf4a294be87df41ebb3b57ff24bdfd0e6fc0fcc8d682172",
+    "trajectory evaluator": "d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba"
+  },
+  "role": "heldout",
+  "schema": "final-heldout-scene-screen-v1",
+  "screen_runner_sha256": "1447b1e92a1838714920e1a0cc8580ca57314905affb748d3a8b9c3d03cad33c",
+  "screened_layouts": [
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.1987847222222222,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1145,
+          3736,
+          879
+        ],
+        "time_s": 15.946068513760004,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.04895833333333333,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          282,
+          4562,
+          916
+        ],
+        "time_s": 15.946068513760004,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4752094097238106,
+        "corridor_length_m": 8.713709622016006,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.713709622016006,
+        "exit_time_s": 21.392137027520008,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 100,
+        "role": "heldout",
+        "room_half_width_m": 5.947197504436451,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.946068513760004,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2782986111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1603,
+          2267,
+          1890
+        ],
+        "time_s": 26.392137027520008,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 100,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.20399305555555555,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1175,
+          3723,
+          862
+        ],
+        "time_s": 15.857064443301445,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.051041666666666666,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          294,
+          4566,
+          900
+        ],
+        "time_s": 15.857064443301445,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4677169730117796,
+        "corridor_length_m": 8.571303109282312,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.571303109282312,
+        "exit_time_s": 21.21412888660289,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 101,
+        "role": "heldout",
+        "room_half_width_m": 5.280802292326272,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.857064443301445,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2699652777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1555,
+          2489,
+          1716
+        ],
+        "time_s": 26.21412888660289,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 101,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.19479166666666667,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1122,
+          3837,
+          801
+        ],
+        "time_s": 16.000342934410305,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.043229166666666666,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          249,
+          4667,
+          844
+        ],
+        "time_s": 16.000342934410305,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3667298925874818,
+        "corridor_length_m": 8.800548695056486,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.800548695056486,
+        "exit_time_s": 21.500685868820607,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 102,
+        "role": "heldout",
+        "room_half_width_m": 5.653032616242419,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 16.000342934410305,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28020833333333334,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1614,
+          2319,
+          1827
+        ],
+        "time_s": 26.500685868820607,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 102,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.19565972222222222,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1127,
+          3874,
+          759
+        ],
+        "time_s": 15.936228333365335,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.04635416666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          267,
+          4692,
+          801
+        ],
+        "time_s": 15.936228333365335,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.329232371525904,
+        "corridor_length_m": 8.697965333384536,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.697965333384536,
+        "exit_time_s": 21.37245666673067,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 103,
+        "role": "heldout",
+        "room_half_width_m": 4.580127051208442,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.936228333365335,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.26336805555555554,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1517,
+          2723,
+          1520
+        ],
+        "time_s": 26.37245666673067,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 103,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.20850694444444445,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1201,
+          3693,
+          866
+        ],
+        "time_s": 15.731717009088053,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05555555555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          320,
+          4533,
+          907
+        ],
+        "time_s": 15.731717009088053,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4938842175074443,
+        "corridor_length_m": 8.370747214540886,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.370747214540886,
+        "exit_time_s": 20.963434018176105,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 104,
+        "role": "heldout",
+        "room_half_width_m": 4.769369056202668,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.731717009088053,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2574652777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1483,
+          2681,
+          1596
+        ],
+        "time_s": 25.963434018176105,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 104,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.20034722222222223,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1154,
+          3781,
+          825
+        ],
+        "time_s": 16.034031892638357,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.04809027777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          277,
+          4613,
+          870
+        ],
+        "time_s": 16.034031892638357,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4443162519129955,
+        "corridor_length_m": 8.854451028221373,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.854451028221373,
+        "exit_time_s": 21.568063785276713,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 105,
+        "role": "heldout",
+        "room_half_width_m": 5.289978456410513,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 16.034031892638357,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2690972222222222,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1550,
+          2485,
+          1725
+        ],
+        "time_s": 26.568063785276713,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 105,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.19340277777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1114,
+          3828,
+          818
+        ],
+        "time_s": 16.112189895235357,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.04097222222222222,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          236,
+          4655,
+          869
+        ],
+        "time_s": 16.112189895235357,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.386112079751002,
+        "corridor_length_m": 8.979503832376572,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.979503832376572,
+        "exit_time_s": 21.724379790470714,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 106,
+        "role": "heldout",
+        "room_half_width_m": 6.750800689909965,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 16.112189895235357,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2939236111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1693,
+          1984,
+          2083
+        ],
+        "time_s": 26.724379790470714,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 106,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.19444444444444445,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1120,
+          3834,
+          806
+        ],
+        "time_s": 16.086949640688037,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.042881944444444445,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          247,
+          4663,
+          850
+        ],
+        "time_s": 16.086949640688037,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3811582563875675,
+        "corridor_length_m": 8.93911942510086,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.93911942510086,
+        "exit_time_s": 21.673899281376073,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 107,
+        "role": "heldout",
+        "room_half_width_m": 5.9344593365356655,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 16.086949640688037,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28402777777777777,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1636,
+          2248,
+          1876
+        ],
+        "time_s": 26.673899281376073,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 107,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.20069444444444445,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1156,
+          3688,
+          916
+        ],
+        "time_s": 15.694830601319559,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.0453125,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          261,
+          4546,
+          953
+        ],
+        "time_s": 15.694830601319559,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.444484916300893,
+        "corridor_length_m": 8.311728962111296,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.311728962111296,
+        "exit_time_s": 20.889661202639118,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 108,
+        "role": "heldout",
+        "room_half_width_m": 7.239013732783869,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.694830601319559,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.29409722222222223,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1694,
+          1880,
+          2186
+        ],
+        "time_s": 25.889661202639118,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 108,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.19791666666666666,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1140,
+          3735,
+          885
+        ],
+        "time_s": 15.80708681682896,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.042708333333333334,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          246,
+          4581,
+          933
+        ],
+        "time_s": 15.80708681682896,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4183460557828196,
+        "corridor_length_m": 8.491338906926336,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.491338906926336,
+        "exit_time_s": 21.11417363365792,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 109,
+        "role": "heldout",
+        "room_half_width_m": 7.3366510683227615,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.80708681682896,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.29618055555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1706,
+          1855,
+          2199
+        ],
+        "time_s": 26.11417363365792,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 109,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.19791666666666666,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1140,
+          3815,
+          805
+        ],
+        "time_s": 15.8052770678712,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.04513888888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          260,
+          4650,
+          850
+        ],
+        "time_s": 15.8052770678712,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.336950787084008,
+        "corridor_length_m": 8.488443308593922,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.488443308593922,
+        "exit_time_s": 21.1105541357424,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 110,
+        "role": "heldout",
+        "room_half_width_m": 5.566364976251013,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.8052770678712,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28020833333333334,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1614,
+          2344,
+          1802
+        ],
+        "time_s": 26.1105541357424,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 110,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.19895833333333332,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1146,
+          3784,
+          830
+        ],
+        "time_s": 15.693549367320083,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.04461805555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          257,
+          4630,
+          873
+        ],
+        "time_s": 15.693549367320083,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3437882921042752,
+        "corridor_length_m": 8.309678987712134,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.309678987712134,
+        "exit_time_s": 20.887098734640166,
+        "layout_family": "test_short_narrow",
+        "layout_seed": 111,
+        "role": "heldout",
+        "room_half_width_m": 5.773952497353987,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.693549367320083,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28350694444444446,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1633,
+          2295,
+          1832
+        ],
+        "time_s": 25.887098734640166,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 111,
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.2345486111111111,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1351,
+          2975,
+          1434
+        ],
+        "time_s": 15.976638767593064,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09340277777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          538,
+          3760,
+          1462
+        ],
+        "time_s": 15.976638767593064,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.657770020727544,
+        "corridor_length_m": 8.762622028148902,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.762622028148902,
+        "exit_time_s": 21.45327753518613,
+        "layout_family": "test_short_wide",
+        "layout_seed": 120,
+        "role": "heldout",
+        "room_half_width_m": 6.619620530093143,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.976638767593064,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.225,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1296,
+          2256,
+          2208
+        ],
+        "time_s": 26.45327753518613,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 120,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23472222222222222,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1352,
+          3095,
+          1313
+        ],
+        "time_s": 15.848742678433588,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09288194444444445,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          535,
+          3889,
+          1336
+        ],
+        "time_s": 15.848742678433588,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.7060785669455623,
+        "corridor_length_m": 8.557988285493742,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.557988285493742,
+        "exit_time_s": 21.197485356867176,
+        "layout_family": "test_short_wide",
+        "layout_seed": 121,
+        "role": "heldout",
+        "room_half_width_m": 4.595142657165563,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.848742678433588,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.19236111111111112,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1108,
+          2920,
+          1732
+        ],
+        "time_s": 26.197485356867176,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 121,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.2420138888888889,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1394,
+          2827,
+          1539
+        ],
+        "time_s": 15.786247826925612,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.10434027777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          601,
+          3597,
+          1562
+        ],
+        "time_s": 15.786247826925612,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.9339645157068723,
+        "corridor_length_m": 8.457996523080979,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.457996523080979,
+        "exit_time_s": 21.072495653851224,
+        "layout_family": "test_short_wide",
+        "layout_seed": 122,
+        "role": "heldout",
+        "room_half_width_m": 6.1269931207897965,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.786247826925612,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.20833333333333334,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1200,
+          2412,
+          2148
+        ],
+        "time_s": 26.072495653851224,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 122,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23940972222222223,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1379,
+          2941,
+          1440
+        ],
+        "time_s": 15.692077210293673,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.10225694444444444,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          589,
+          3709,
+          1462
+        ],
+        "time_s": 15.692077210293673,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.8641569533226225,
+        "corridor_length_m": 8.307323536469879,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.307323536469879,
+        "exit_time_s": 20.884154420587347,
+        "layout_family": "test_short_wide",
+        "layout_seed": 123,
+        "role": "heldout",
+        "room_half_width_m": 5.166431965299926,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.692077210293673,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.19583333333333333,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1128,
+          2739,
+          1893
+        ],
+        "time_s": 25.884154420587347,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 123,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.2361111111111111,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1360,
+          2792,
+          1608
+        ],
+        "time_s": 16.067510972784234,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09861111111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          568,
+          3555,
+          1637
+        ],
+        "time_s": 16.067510972784234,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.973495707994732,
+        "corridor_length_m": 8.908017556454777,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.908017556454777,
+        "exit_time_s": 21.635021945568468,
+        "layout_family": "test_short_wide",
+        "layout_seed": 124,
+        "role": "heldout",
+        "room_half_width_m": 7.2928483104326265,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 16.067510972784234,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.21510416666666668,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1239,
+          2091,
+          2430
+        ],
+        "time_s": 26.635021945568468,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 124,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.2420138888888889,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1394,
+          2837,
+          1529
+        ],
+        "time_s": 15.539910438116399,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.10590277777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          610,
+          3603,
+          1547
+        ],
+        "time_s": 15.539910438116399,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.9351287440981433,
+        "corridor_length_m": 8.06385670098624,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.06385670098624,
+        "exit_time_s": 20.579820876232798,
+        "layout_family": "test_short_wide",
+        "layout_seed": 125,
+        "role": "heldout",
+        "room_half_width_m": 5.689729970098752,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.539910438116399,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.20555555555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1184,
+          2514,
+          2062
+        ],
+        "time_s": 25.579820876232798,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 125,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23975694444444445,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1381,
+          2934,
+          1445
+        ],
+        "time_s": 15.77513241926255,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09791666666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          564,
+          3732,
+          1464
+        ],
+        "time_s": 15.77513241926255,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.6576543403111144,
+        "corridor_length_m": 8.440211870820079,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.440211870820079,
+        "exit_time_s": 21.0502648385251,
+        "layout_family": "test_short_wide",
+        "layout_seed": 126,
+        "role": "heldout",
+        "room_half_width_m": 6.490561944493341,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.77513241926255,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.22447916666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1293,
+          2300,
+          2167
+        ],
+        "time_s": 26.0502648385251,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 126,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.240625,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1386,
+          2827,
+          1547
+        ],
+        "time_s": 15.783452680182648,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.10173611111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          586,
+          3607,
+          1567
+        ],
+        "time_s": 15.783452680182648,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.841221051119399,
+        "corridor_length_m": 8.453524288292238,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.453524288292238,
+        "exit_time_s": 21.066905360365297,
+        "layout_family": "test_short_wide",
+        "layout_seed": 127,
+        "role": "heldout",
+        "room_half_width_m": 6.907207404810283,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.783452680182648,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.21961805555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1265,
+          2159,
+          2336
+        ],
+        "time_s": 26.066905360365297,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 127,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23576388888888888,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1358,
+          2937,
+          1465
+        ],
+        "time_s": 15.8316140183753,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.0954861111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          550,
+          3721,
+          1489
+        ],
+        "time_s": 15.8316140183753,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.679400936875416,
+        "corridor_length_m": 8.53058242940048,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.53058242940048,
+        "exit_time_s": 21.1632280367506,
+        "layout_family": "test_short_wide",
+        "layout_seed": 128,
+        "role": "heldout",
+        "room_half_width_m": 6.734114441700351,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.8316140183753,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.22430555555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1292,
+          2212,
+          2256
+        ],
+        "time_s": 26.1632280367506,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 128,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23680555555555555,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1364,
+          3023,
+          1373
+        ],
+        "time_s": 15.733589645279753,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.096875,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          558,
+          3809,
+          1393
+        ],
+        "time_s": 15.733589645279753,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.7651872047243558,
+        "corridor_length_m": 8.373743432447608,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.373743432447608,
+        "exit_time_s": 20.967179290559507,
+        "layout_family": "test_short_wide",
+        "layout_seed": 129,
+        "role": "heldout",
+        "room_half_width_m": 4.914310806190861,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.733589645279753,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.19427083333333334,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1119,
+          2815,
+          1826
+        ],
+        "time_s": 25.967179290559507,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 129,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.24166666666666667,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1392,
+          2959,
+          1409
+        ],
+        "time_s": 15.649259925958894,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.10017361111111112,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          577,
+          3750,
+          1433
+        ],
+        "time_s": 15.649259925958894,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.6312841046792603,
+        "corridor_length_m": 8.238815881534233,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.238815881534233,
+        "exit_time_s": 20.79851985191779,
+        "layout_family": "test_short_wide",
+        "layout_seed": 130,
+        "role": "heldout",
+        "room_half_width_m": 6.052182784814527,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.649259925958894,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.21996527777777777,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1267,
+          2408,
+          2085
+        ],
+        "time_s": 25.79851985191779,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 130,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.2420138888888889,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1394,
+          2822,
+          1544
+        ],
+        "time_s": 15.674938693171281,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.10295138888888888,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          593,
+          3605,
+          1562
+        ],
+        "time_s": 15.674938693171281,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.791496435497295,
+        "corridor_length_m": 8.27990190907405,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.27990190907405,
+        "exit_time_s": 20.849877386342563,
+        "layout_family": "test_short_wide",
+        "layout_seed": 131,
+        "role": "heldout",
+        "room_half_width_m": 6.973299870886594,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.674938693171281,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2248263888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1295,
+          2119,
+          2346
+        ],
+        "time_s": 25.849877386342563,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 131,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23506944444444444,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1354,
+          2974,
+          1432
+        ],
+        "time_s": 15.897528673533088,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09270833333333334,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          534,
+          3767,
+          1459
+        ],
+        "time_s": 15.897528673533088,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.6058192118254246,
+        "corridor_length_m": 8.636045877652943,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.636045877652943,
+        "exit_time_s": 21.295057347066177,
+        "layout_family": "test_short_wide",
+        "layout_seed": 132,
+        "role": "heldout",
+        "room_half_width_m": 6.835274027567175,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.897528673533088,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2309027777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1330,
+          2144,
+          2286
+        ],
+        "time_s": 26.295057347066177,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 132,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23836805555555557,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1373,
+          3055,
+          1332
+        ],
+        "time_s": 15.846683277369225,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09357638888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          539,
+          3869,
+          1352
+        ],
+        "time_s": 15.846683277369225,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.540759316492235,
+        "corridor_length_m": 8.55469324379076,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.55469324379076,
+        "exit_time_s": 21.19336655473845,
+        "layout_family": "test_short_wide",
+        "layout_seed": 133,
+        "role": "heldout",
+        "room_half_width_m": 5.556894071477872,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.846683277369225,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.21475694444444443,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1237,
+          2532,
+          1991
+        ],
+        "time_s": 26.19336655473845,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 133,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23940972222222223,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1379,
+          2893,
+          1488
+        ],
+        "time_s": 15.80800341132388,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09652777777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          556,
+          3692,
+          1512
+        ],
+        "time_s": 15.80800341132388,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.689404426377072,
+        "corridor_length_m": 8.492805458118209,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.492805458118209,
+        "exit_time_s": 21.11600682264776,
+        "layout_family": "test_short_wide",
+        "layout_seed": 134,
+        "role": "heldout",
+        "room_half_width_m": 7.059793540585737,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.80800341132388,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.22899305555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1319,
+          2080,
+          2361
+        ],
+        "time_s": 26.11600682264776,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 134,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.24184027777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1393,
+          2839,
+          1528
+        ],
+        "time_s": 15.829849430859152,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.10451388888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          602,
+          3605,
+          1553
+        ],
+        "time_s": 15.829849430859152,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.963693406493113,
+        "corridor_length_m": 8.527759089374644,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.527759089374644,
+        "exit_time_s": 21.159698861718304,
+        "layout_family": "test_short_wide",
+        "layout_seed": 135,
+        "role": "heldout",
+        "room_half_width_m": 5.928853441413408,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.829849430859152,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.20381944444444444,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1174,
+          2468,
+          2118
+        ],
+        "time_s": 26.159698861718304,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 135,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23385416666666667,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1347,
+          2966,
+          1447
+        ],
+        "time_s": 15.886426775110513,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.08836805555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          509,
+          3779,
+          1472
+        ],
+        "time_s": 15.886426775110513,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.5701176352003845,
+        "corridor_length_m": 8.618282840176821,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.618282840176821,
+        "exit_time_s": 21.272853550221026,
+        "layout_family": "test_short_wide",
+        "layout_seed": 136,
+        "role": "heldout",
+        "room_half_width_m": 7.352133069490342,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.886426775110513,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.23524305555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1355,
+          2023,
+          2382
+        ],
+        "time_s": 26.272853550221026,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 136,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.23923611111111112,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1378,
+          2960,
+          1422
+        ],
+        "time_s": 15.713060623198768,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09930555555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          572,
+          3743,
+          1445
+        ],
+        "time_s": 15.713060623198768,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.762159074326411,
+        "corridor_length_m": 8.340896997118028,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.340896997118028,
+        "exit_time_s": 20.926121246397535,
+        "layout_family": "test_short_wide",
+        "layout_seed": 137,
+        "role": "heldout",
+        "room_half_width_m": 5.42335332490736,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.713060623198768,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2048611111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1180,
+          2621,
+          1959
+        ],
+        "time_s": 25.926121246397535,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 137,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.2423611111111111,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1396,
+          2845,
+          1519
+        ],
+        "time_s": 15.502722175491655,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.10121527777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          583,
+          3639,
+          1538
+        ],
+        "time_s": 15.502722175491655,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.679438182005738,
+        "corridor_length_m": 8.004355480786648,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.004355480786648,
+        "exit_time_s": 20.50544435098331,
+        "layout_family": "test_short_wide",
+        "layout_seed": 138,
+        "role": "heldout",
+        "room_half_width_m": 7.024475284351737,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.502722175491655,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.22847222222222222,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1316,
+          2110,
+          2334
+        ],
+        "time_s": 25.50544435098331,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 138,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.2375,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1368,
+          2887,
+          1505
+        ],
+        "time_s": 15.847240525597462,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.09513888888888888,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          548,
+          3681,
+          1531
+        ],
+        "time_s": 15.847240525597462,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.7081966506929964,
+        "corridor_length_m": 8.555584840955941,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 8.555584840955941,
+        "exit_time_s": 21.194481051194924,
+        "layout_family": "test_short_wide",
+        "layout_seed": 139,
+        "role": "heldout",
+        "room_half_width_m": 7.297290781590212,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 15.847240525597462,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2296875,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1323,
+          2039,
+          2398
+        ],
+        "time_s": 26.194481051194924,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 139,
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12291666666666666,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          708,
+          4446,
+          606
+        ],
+        "time_s": 21.36705666310845,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.025173611111111112,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          145,
+          4988,
+          627
+        ],
+        "time_s": 21.36705666310845,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4371824219947478,
+        "corridor_length_m": 17.387290660973523,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.387290660973523,
+        "exit_time_s": 32.2341133262169,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 140,
+        "role": "heldout",
+        "room_half_width_m": 4.717933826349185,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.36705666310845,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.253125,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1458,
+          2737,
+          1565
+        ],
+        "time_s": 37.2341133262169,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 140,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.13541666666666666,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          780,
+          4367,
+          613
+        ],
+        "time_s": 19.992766712419126,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.02638888888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          152,
+          4963,
+          645
+        ],
+        "time_s": 19.992766712419126,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.390046033983785,
+        "corridor_length_m": 15.1884267398706,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.1884267398706,
+        "exit_time_s": 29.48553342483825,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 141,
+        "role": "heldout",
+        "room_half_width_m": 6.019573194756379,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 19.992766712419126,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2791666666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1608,
+          2272,
+          1880
+        ],
+        "time_s": 34.48553342483825,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 141,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12083333333333333,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          696,
+          4484,
+          580
+        ],
+        "time_s": 20.614012379296472,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.02361111111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          136,
+          5013,
+          611
+        ],
+        "time_s": 20.614012379296472,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3357440108538028,
+        "corridor_length_m": 16.182419806874357,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.182419806874357,
+        "exit_time_s": 30.728024758592944,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 142,
+        "role": "heldout",
+        "room_half_width_m": 6.953459962090264,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.614012379296472,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28975694444444444,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1669,
+          1964,
+          2127
+        ],
+        "time_s": 35.728024758592944,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 142,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.11684027777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          673,
+          4530,
+          557
+        ],
+        "time_s": 21.11772093036342,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.022743055555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          131,
+          5042,
+          587
+        ],
+        "time_s": 21.11772093036342,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3164767867886236,
+        "corridor_length_m": 16.988353488581474,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.988353488581474,
+        "exit_time_s": 31.73544186072684,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 143,
+        "role": "heldout",
+        "room_half_width_m": 4.912412874033009,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.11772093036342,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2652777777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1528,
+          2627,
+          1605
+        ],
+        "time_s": 36.73544186072684,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 143,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12881944444444443,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          742,
+          4390,
+          628
+        ],
+        "time_s": 20.91833096849897,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.025347222222222222,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          146,
+          4955,
+          659
+        ],
+        "time_s": 20.91833096849897,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4706150715450177,
+        "corridor_length_m": 16.669329549598352,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.669329549598352,
+        "exit_time_s": 31.33666193699794,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 144,
+        "role": "heldout",
+        "room_half_width_m": 6.505788233357924,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.91833096849897,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2803819444444444,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1615,
+          2119,
+          2026
+        ],
+        "time_s": 36.33666193699794,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 144,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.1295138888888889,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          746,
+          4390,
+          624
+        ],
+        "time_s": 20.777918129131972,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.024826388888888887,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          143,
+          4962,
+          655
+        ],
+        "time_s": 20.777918129131972,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4539650404521143,
+        "corridor_length_m": 16.444669006611157,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.444669006611157,
+        "exit_time_s": 31.055836258263945,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 145,
+        "role": "heldout",
+        "room_half_width_m": 7.328397679045196,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.777918129131972,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28663194444444445,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1651,
+          1895,
+          2214
+        ],
+        "time_s": 36.055836258263945,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 145,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.11371527777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          655,
+          4561,
+          544
+        ],
+        "time_s": 21.610222589824325,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.021354166666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          123,
+          5062,
+          575
+        ],
+        "time_s": 21.610222589824325,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3164385536756398,
+        "corridor_length_m": 17.776356143718917,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.776356143718917,
+        "exit_time_s": 32.72044517964865,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 146,
+        "role": "heldout",
+        "room_half_width_m": 4.839342810036514,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.610222589824325,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2635416666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1518,
+          2654,
+          1588
+        ],
+        "time_s": 37.72044517964865,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 146,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.1371527777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          790,
+          4309,
+          661
+        ],
+        "time_s": 20.285173146134476,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.027604166666666666,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          159,
+          4906,
+          695
+        ],
+        "time_s": 20.285173146134476,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4991840547907909,
+        "corridor_length_m": 15.656277033815165,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.656277033815165,
+        "exit_time_s": 30.070346292268955,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 147,
+        "role": "heldout",
+        "room_half_width_m": 6.790896174978579,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.285173146134476,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28350694444444446,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1633,
+          2013,
+          2114
+        ],
+        "time_s": 35.07034629226895,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 147,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12083333333333333,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          696,
+          4437,
+          627
+        ],
+        "time_s": 21.324294647878123,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.024131944444444445,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          139,
+          4968,
+          653
+        ],
+        "time_s": 21.324294647878123,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.468120471683264,
+        "corridor_length_m": 17.318871436604997,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.318871436604997,
+        "exit_time_s": 32.148589295756246,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 148,
+        "role": "heldout",
+        "room_half_width_m": 6.631613877477677,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.324294647878123,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28055555555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1616,
+          2098,
+          2046
+        ],
+        "time_s": 37.148589295756246,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 148,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12795138888888888,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          737,
+          4436,
+          587
+        ],
+        "time_s": 20.234046569958682,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.024652777777777777,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          142,
+          4995,
+          623
+        ],
+        "time_s": 20.234046569958682,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3506048198790777,
+        "corridor_length_m": 15.574474511933895,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.574474511933895,
+        "exit_time_s": 29.968093139917364,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 149,
+        "role": "heldout",
+        "room_half_width_m": 6.336201742388497,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.234046569958682,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28541666666666665,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1644,
+          2136,
+          1980
+        ],
+        "time_s": 34.968093139917364,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 149,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12430555555555556,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          716,
+          4446,
+          598
+        ],
+        "time_s": 20.725431827311628,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.024305555555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          140,
+          4993,
+          627
+        ],
+        "time_s": 20.725431827311628,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.387098244217892,
+        "corridor_length_m": 16.360690923698606,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.360690923698606,
+        "exit_time_s": 30.950863654623255,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 150,
+        "role": "heldout",
+        "room_half_width_m": 5.485882665016013,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.725431827311628,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.26979166666666665,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1554,
+          2430,
+          1776
+        ],
+        "time_s": 35.950863654623255,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 150,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12013888888888889,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          692,
+          4499,
+          569
+        ],
+        "time_s": 20.861438724873487,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.022743055555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          131,
+          5029,
+          600
+        ],
+        "time_s": 20.861438724873487,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3372568741578452,
+        "corridor_length_m": 16.57830195979758,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.57830195979758,
+        "exit_time_s": 31.222877449746974,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 151,
+        "role": "heldout",
+        "room_half_width_m": 6.499181689904674,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.861438724873487,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2876736111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1657,
+          2092,
+          2011
+        ],
+        "time_s": 36.222877449746974,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 151,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.11701388888888889,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          674,
+          4526,
+          560
+        ],
+        "time_s": 21.246323974856278,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.022743055555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          131,
+          5038,
+          591
+        ],
+        "time_s": 21.246323974856278,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.320376743544604,
+        "corridor_length_m": 17.194118359770044,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.194118359770044,
+        "exit_time_s": 31.992647949712556,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 152,
+        "role": "heldout",
+        "room_half_width_m": 5.019908489587451,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.246323974856278,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2670138888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1538,
+          2578,
+          1644
+        ],
+        "time_s": 36.992647949712556,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 152,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12309027777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          709,
+          4451,
+          600
+        ],
+        "time_s": 21.110717879391004,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.0234375,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          135,
+          4992,
+          633
+        ],
+        "time_s": 21.110717879391004,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4234603970942876,
+        "corridor_length_m": 16.977148607025605,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.977148607025605,
+        "exit_time_s": 31.721435758782004,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 153,
+        "role": "heldout",
+        "room_half_width_m": 7.252252890767521,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.110717879391004,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2887152777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1663,
+          1905,
+          2192
+        ],
+        "time_s": 36.72143575878201,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 153,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.11197916666666667,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          645,
+          4566,
+          549
+        ],
+        "time_s": 21.456651472706447,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.021354166666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          123,
+          5066,
+          571
+        ],
+        "time_s": 21.456651472706447,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3110535456062606,
+        "corridor_length_m": 17.53064235633032,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.53064235633032,
+        "exit_time_s": 32.413302945412894,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 154,
+        "role": "heldout",
+        "room_half_width_m": 5.041923175157243,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.456651472706447,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2659722222222222,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1532,
+          2589,
+          1639
+        ],
+        "time_s": 37.413302945412894,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 154,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.11927083333333334,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          687,
+          4453,
+          620
+        ],
+        "time_s": 21.378877798244048,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.024305555555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          140,
+          4977,
+          643
+        ],
+        "time_s": 21.378877798244048,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.4540195314668656,
+        "corridor_length_m": 17.406204477190478,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.406204477190478,
+        "exit_time_s": 32.257755596488096,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 155,
+        "role": "heldout",
+        "room_half_width_m": 4.977656395736,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.378877798244048,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.259375,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1494,
+          2617,
+          1649
+        ],
+        "time_s": 37.257755596488096,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 155,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12152777777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          700,
+          4474,
+          586
+        ],
+        "time_s": 20.5738023900941,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.024131944444444445,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          139,
+          5003,
+          618
+        ],
+        "time_s": 20.5738023900941,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3397820074456848,
+        "corridor_length_m": 16.118083824150567,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.118083824150567,
+        "exit_time_s": 30.647604780188207,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 156,
+        "role": "heldout",
+        "room_half_width_m": 6.6043760018581725,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.5738023900941,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.28836805555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1661,
+          2044,
+          2055
+        ],
+        "time_s": 35.6476047801882,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 156,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.13055555555555556,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          752,
+          4433,
+          575
+        ],
+        "time_s": 20.14276783839308,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.024652777777777777,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          142,
+          5002,
+          616
+        ],
+        "time_s": 20.14276783839308,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3342669799996096,
+        "corridor_length_m": 15.428428541428929,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.428428541428929,
+        "exit_time_s": 29.78553567678616,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 157,
+        "role": "heldout",
+        "room_half_width_m": 5.834920109963703,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.14276783839308,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2826388888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1628,
+          2302,
+          1830
+        ],
+        "time_s": 34.78553567678616,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 157,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.12065972222222222,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          695,
+          4476,
+          589
+        ],
+        "time_s": 21.19963459132506,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.022569444444444444,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          130,
+          5013,
+          617
+        ],
+        "time_s": 21.19963459132506,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3938034168552749,
+        "corridor_length_m": 17.1194153461201,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.1194153461201,
+        "exit_time_s": 31.899269182650123,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 158,
+        "role": "heldout",
+        "room_half_width_m": 7.042603959717068,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.19963459132506,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2887152777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1663,
+          1942,
+          2155
+        ],
+        "time_s": 36.89926918265012,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 158,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.11996527777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          691,
+          4483,
+          586
+        ],
+        "time_s": 20.976230245082956,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.024479166666666666,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          141,
+          5005,
+          614
+        ],
+        "time_s": 20.976230245082956,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 1.3695458778868919,
+        "corridor_length_m": 16.76196839213273,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.76196839213273,
+        "exit_time_s": 31.45246049016591,
+        "layout_family": "test_long_narrow",
+        "layout_seed": 159,
+        "role": "heldout",
+        "room_half_width_m": 4.940208776908211,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.976230245082956,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2595486111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1495,
+          2649,
+          1616
+        ],
+        "time_s": 36.45246049016591,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 159,
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.1840277777777778,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1060,
+          3483,
+          1217
+        ],
+        "time_s": 20.33152061514865,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05642361111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          325,
+          4187,
+          1248
+        ],
+        "time_s": 20.33152061514865,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.8286836154124586,
+        "corridor_length_m": 15.730432984237844,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.730432984237844,
+        "exit_time_s": 30.163041230297303,
+        "layout_family": "test_long_wide",
+        "layout_seed": 160,
+        "role": "heldout",
+        "room_half_width_m": 5.693489693129363,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.33152061514865,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.20225694444444445,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1165,
+          2586,
+          2009
+        ],
+        "time_s": 35.1630412302973,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 160,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.17829861111111112,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1027,
+          3597,
+          1136
+        ],
+        "time_s": 20.400376965576722,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05295138888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          305,
+          4294,
+          1161
+        ],
+        "time_s": 20.400376965576722,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.6507174806383316,
+        "corridor_length_m": 15.840603144922756,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.840603144922756,
+        "exit_time_s": 30.300753931153444,
+        "layout_family": "test_long_wide",
+        "layout_seed": 161,
+        "role": "heldout",
+        "room_half_width_m": 5.13237204239711,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.400376965576722,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.20017361111111112,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1153,
+          2754,
+          1853
+        ],
+        "time_s": 35.300753931153444,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 161,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.18802083333333333,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1083,
+          3370,
+          1307
+        ],
+        "time_s": 20.08368394297323,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.06041666666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          348,
+          4072,
+          1340
+        ],
+        "time_s": 20.08368394297323,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.9541221931978288,
+        "corridor_length_m": 15.333894308757165,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.333894308757165,
+        "exit_time_s": 29.667367885946458,
+        "layout_family": "test_long_wide",
+        "layout_seed": 162,
+        "role": "heldout",
+        "room_half_width_m": 6.859266350862339,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.08368394297323,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.21128472222222222,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1217,
+          2221,
+          2322
+        ],
+        "time_s": 34.66736788594646,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 162,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.18506944444444445,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1066,
+          3483,
+          1211
+        ],
+        "time_s": 20.012734769986984,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05590277777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          322,
+          4194,
+          1244
+        ],
+        "time_s": 20.012734769986984,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.7398085579310214,
+        "corridor_length_m": 15.220375631979175,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.220375631979175,
+        "exit_time_s": 29.525469539973965,
+        "layout_family": "test_long_wide",
+        "layout_seed": 163,
+        "role": "heldout",
+        "room_half_width_m": 6.924450684001226,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.012734769986984,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2234375,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1287,
+          2168,
+          2305
+        ],
+        "time_s": 34.52546953997397,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 163,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.18489583333333334,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1065,
+          3403,
+          1292
+        ],
+        "time_s": 20.384898937889144,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.058680555555555555,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          338,
+          4102,
+          1320
+        ],
+        "time_s": 20.384898937889144,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.9307755409646448,
+        "corridor_length_m": 15.815838300622632,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.815838300622632,
+        "exit_time_s": 30.269797875778288,
+        "layout_family": "test_long_wide",
+        "layout_seed": 164,
+        "role": "heldout",
+        "room_half_width_m": 7.074190153760847,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.384898937889144,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2111111111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1216,
+          2183,
+          2361
+        ],
+        "time_s": 35.26979787577829,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 164,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.18697916666666667,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1077,
+          3435,
+          1248
+        ],
+        "time_s": 20.258603693655843,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.058159722222222224,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          335,
+          4144,
+          1281
+        ],
+        "time_s": 20.258603693655843,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.889790966304033,
+        "corridor_length_m": 15.613765909849347,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.613765909849347,
+        "exit_time_s": 30.017207387311686,
+        "layout_family": "test_long_wide",
+        "layout_seed": 165,
+        "role": "heldout",
+        "room_half_width_m": 5.685496834381678,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.258603693655843,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.19930555555555557,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1148,
+          2602,
+          2010
+        ],
+        "time_s": 35.017207387311686,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 165,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.17222222222222222,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          992,
+          3653,
+          1115
+        ],
+        "time_s": 20.95634306033999,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          288,
+          4334,
+          1138
+        ],
+        "time_s": 20.95634306033999,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.6219669986206853,
+        "corridor_length_m": 16.730148896543987,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.730148896543987,
+        "exit_time_s": 31.412686120679982,
+        "layout_family": "test_long_wide",
+        "layout_seed": 166,
+        "role": "heldout",
+        "room_half_width_m": 5.721038663543576,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.95634306033999,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.21024305555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1211,
+          2554,
+          1995
+        ],
+        "time_s": 36.41268612067998,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 166,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.17309027777777777,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          997,
+          3503,
+          1260
+        ],
+        "time_s": 21.699081662853427,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.051909722222222225,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          299,
+          4162,
+          1299
+        ],
+        "time_s": 21.699081662853427,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.968156353672878,
+        "corridor_length_m": 17.918530660565484,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.918530660565484,
+        "exit_time_s": 32.898163325706854,
+        "layout_family": "test_long_wide",
+        "layout_seed": 167,
+        "role": "heldout",
+        "room_half_width_m": 6.955346059577154,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.699081662853427,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.20954861111111112,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1207,
+          2231,
+          2322
+        ],
+        "time_s": 37.898163325706854,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 167,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.18385416666666668,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1059,
+          3570,
+          1131
+        ],
+        "time_s": 19.935316072325463,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05364583333333333,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          309,
+          4290,
+          1161
+        ],
+        "time_s": 19.935316072325463,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.5712194849489824,
+        "corridor_length_m": 15.096505715720738,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.096505715720738,
+        "exit_time_s": 29.370632144650923,
+        "layout_family": "test_long_wide",
+        "layout_seed": 168,
+        "role": "heldout",
+        "room_half_width_m": 6.409164340628594,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 19.935316072325463,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.225,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1296,
+          2284,
+          2180
+        ],
+        "time_s": 34.370632144650926,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 168,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.1796875,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1035,
+          3514,
+          1211
+        ],
+        "time_s": 20.757904543962628,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05381944444444445,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          310,
+          4208,
+          1242
+        ],
+        "time_s": 20.757904543962628,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.8729600660118693,
+        "corridor_length_m": 16.412647270340205,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.412647270340205,
+        "exit_time_s": 31.015809087925255,
+        "layout_family": "test_long_wide",
+        "layout_seed": 169,
+        "role": "heldout",
+        "room_half_width_m": 5.017629722859498,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.757904543962628,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.1873263888888889,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1079,
+          2829,
+          1852
+        ],
+        "time_s": 36.015809087925255,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 169,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.18958333333333333,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1092,
+          3360,
+          1308
+        ],
+        "time_s": 19.893260706343884,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.06215277777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          358,
+          4060,
+          1342
+        ],
+        "time_s": 19.893260706343884,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.934746338819904,
+        "corridor_length_m": 15.029217130150217,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.029217130150217,
+        "exit_time_s": 29.28652141268777,
+        "layout_family": "test_long_wide",
+        "layout_seed": 170,
+        "role": "heldout",
+        "room_half_width_m": 7.042948656736579,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 19.893260706343884,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2126736111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1225,
+          2188,
+          2347
+        ],
+        "time_s": 34.28652141268777,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 170,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.17690972222222223,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1019,
+          3560,
+          1181
+        ],
+        "time_s": 20.915427297430206,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05260416666666667,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          303,
+          4249,
+          1208
+        ],
+        "time_s": 20.915427297430206,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.816025218398052,
+        "corridor_length_m": 16.664683675888327,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.664683675888327,
+        "exit_time_s": 31.33085459486041,
+        "layout_family": "test_long_wide",
+        "layout_seed": 171,
+        "role": "heldout",
+        "room_half_width_m": 4.851445099911416,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.915427297430206,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.1859375,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1071,
+          2901,
+          1788
+        ],
+        "time_s": 36.33085459486041,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 171,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.17326388888888888,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          998,
+          3671,
+          1091
+        ],
+        "time_s": 20.720721820167135,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.04895833333333333,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          282,
+          4358,
+          1120
+        ],
+        "time_s": 20.720721820167135,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.540235730721568,
+        "corridor_length_m": 16.353154912267414,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.353154912267414,
+        "exit_time_s": 30.941443640334267,
+        "layout_family": "test_long_wide",
+        "layout_seed": 172,
+        "role": "heldout",
+        "room_half_width_m": 6.383503470004484,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.720721820167135,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.2203125,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1269,
+          2332,
+          2159
+        ],
+        "time_s": 35.94144364033427,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 172,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.17864583333333334,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1029,
+          3444,
+          1287
+        ],
+        "time_s": 21.009524267476948,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05520833333333333,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          318,
+          4123,
+          1319
+        ],
+        "time_s": 21.009524267476948,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.974860655353889,
+        "corridor_length_m": 16.815238827963114,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 16.815238827963114,
+        "exit_time_s": 31.519048534953892,
+        "layout_family": "test_long_wide",
+        "layout_seed": 173,
+        "role": "heldout",
+        "room_half_width_m": 7.235883386541749,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.009524267476948,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.21024305555555556,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1211,
+          2148,
+          2401
+        ],
+        "time_s": 36.519048534953896,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 173,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.17083333333333334,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          984,
+          3570,
+          1206
+        ],
+        "time_s": 21.730441330399138,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.05173611111111111,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          298,
+          4219,
+          1243
+        ],
+        "time_s": 21.730441330399138,
+        "visible_rays": 5760
+      },
+      "eligible": false,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.9141725098450744,
+        "corridor_length_m": 17.968706128638622,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 17.968706128638622,
+        "exit_time_s": 32.960882660798276,
+        "layout_family": "test_long_wide",
+        "layout_seed": 174,
+        "role": "heldout",
+        "room_half_width_m": 5.370863295643423,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 21.730441330399138,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.19045138888888888,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1097,
+          2734,
+          1929
+        ],
+        "time_s": 37.960882660798276,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 174,
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_midpoint": {
+        "axial_normal_fraction": 0.18055555555555555,
+        "control": true,
+        "normal_axis_counts_xyz": [
+          1040,
+          3594,
+          1126
+        ],
+        "time_s": 20.306092417250078,
+        "visible_rays": 5760
+      },
+      "corridor_midpoint": {
+        "axial_normal_fraction": 0.052256944444444446,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          301,
+          4304,
+          1155
+        ],
+        "time_s": 20.306092417250078,
+        "visible_rays": 5760
+      },
+      "eligible": true,
+      "geometry": {
+        "control_baffles": false,
+        "corridor_baffle_x_m": [],
+        "corridor_half_width_m": 2.5990777074557787,
+        "corridor_length_m": 15.689747867600124,
+        "entry_plane_x_m": 0.0,
+        "entry_time_s": 10.5,
+        "exit_plane_x_m": 15.689747867600124,
+        "exit_time_s": 30.112184834500155,
+        "layout_family": "test_long_wide",
+        "layout_seed": 175,
+        "role": "heldout",
+        "room_half_width_m": 6.040727184382831,
+        "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+        "vehicle_start_x_m": -6.0
+      },
+      "midpoint_time_s": 20.306092417250078,
+      "post_exit_plus5_s": {
+        "axial_normal_fraction": 0.21840277777777778,
+        "control": false,
+        "normal_axis_counts_xyz": [
+          1258,
+          2444,
+          2058
+        ],
+        "time_s": 35.112184834500155,
+        "visible_rays": 5760
+      },
+      "rule": {
+        "control_x_normal_min": 0.15,
+        "corridor_x_normal_max": 0.1,
+        "post_exit_x_normal_min": 0.2
+      },
+      "seed": 175,
+      "stratum": "TEST_LONG_WIDE"
+    }
+  ],
+  "selected_seeds_by_stratum": {
+    "TEST_LONG_NARROW": [],
+    "TEST_LONG_WIDE": [
+      160,
+      161,
+      162,
+      163,
+      164,
+      166,
+      167,
+      168,
+      170,
+      172,
+      173,
+      175
+    ],
+    "TEST_SHORT_NARROW": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111
+    ],
+    "TEST_SHORT_WIDE": [
+      120,
+      124,
+      126,
+      128,
+      132,
+      133,
+      134,
+      136,
+      137,
+      139
+    ]
+  },
+  "sensor_bags_generated": false,
+  "status": "STOP_RETURN_TO_R2_INSUFFICIENT_ELIGIBLE_LAYOUTS",
+  "target_per_stratum": 12
+}

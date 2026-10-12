@@ -8,10 +8,11 @@ preserve provenance for earlier figures.
 
 | Figure | Source / provenance | Evidence boundary |
 | --- | --- | --- |
+| [Geometry repair candidate](geometry_revision_development_20261012/geometry_revision_development.png) | [Manifest](geometry_revision_development_20261012/manifest.json), [audit](../evidence/geometry_revision_development_20261012.json), [plotter](../experiments/src/plot_geometry_revision_dev.py) | Development ray geometry only; 32 fixtures per dimension group. Proposed protocol not accepted; no estimator result. PNG/SVG exports. |
 | [Development signal comparison](development_signal_comparison_20261010/development_signal_comparison.png) | [Manifest](development_signal_comparison_20261010/figure_manifest.json), [corrected analysis](../evidence/DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md), [plotter](../experiments/src/plot_development_signal_comparison.py) | 32 corridor events per backend; backend-specific recovery labels, conditional false-healthy denominators and 95% Wilson intervals. Thresholds fitted on development data. |
 | [Fresh repeat motion errors](primary_recovery_20261009/t14_repeat_motion_errors.png) and [warning disagreements](primary_recovery_20261009/t14_repeat_warning_disagreement.png) | [Manifest](primary_recovery_20261009/t14_repeat_figure_manifest.json), [fresh audit](../evidence/primary_recovery_repeatability_20261009.json), [plotter](../experiments/src/plot_repeatability.py) | Four repeats from two development layouts, not new independent events. |
 
-Both sets include PNG/PDF/SVG. The 12 October audit verified all nine export
+The comparison and repeat sets include PNG/PDF/SVG. The earlier 12 October audit verified all nine export
 hashes. Preserve these accepted exports. Reproduction into fresh directories
 and the prioritized plan for missing figures are in the
 [visual-documentation audit](../execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md).

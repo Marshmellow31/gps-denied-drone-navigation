@@ -4,6 +4,8 @@
 
 **Verified checkpoint: 12 October 2026 — implementation ready; final research results pending.**
 
+**Later screening checkpoint:** the first final geometry screen stopped with only 34 of the required 48 eligible pairs. No final estimator replay ran. A [development-tested geometry repair](execution/GEOMETRY_REPAIR_20261012.md) is prepared; it requires a new R2 amendment and R3 freeze before use. The old R3 PASS applies to the original version only.
+
 After a robot leaves a corridor with weak geometric clues, can its existing LiDAR health signals tell when its **new motion estimates** are accurate again? This study evaluates existing FAST-LIO and Point-LIO diagnostics against reference-defined recovery. It builds an evaluation workflow, rather than a new odometry estimator.
 
 The latest [R3 review](reviews/R3_IMPLEMENTATION.md) records PASS. The [implementation freeze](protocol/IMPLEMENTATION_FREEZE.md) passes the live 179-entry inventory check. Both backends have completed development runs. **The 48-pair held-out evaluation has not run, novelty is unproven, and the paper is unfinished.** No flight or deployment safety claim is supported.
@@ -134,6 +136,12 @@ This original repeat audit compares median local translation errors on the left 
 
 The bars show the percentage of 596 jointly available decision ticks where original primary and retained-repeat warning states disagree. Teal denotes raw states and purple confirmed states. The left panel uses the FAST-LIO candidate cutoff; the right uses the fixed DCReg adaptation. Differences demonstrate execution variability and its effect on decisions, not extra independent events or a false-healthy rate. This historical audit is superseded for current-cohort reporting by the fresh figures above. Export hashes and source identity: [original figure manifest](figures/t14_repeat_figure_manifest.json).
 
+### Geometry screening repair: development candidate
+
+![Original and candidate control geometry with development eligibility counts](figures/geometry_revision_development_20261012/geometry_revision_development.png)
+
+The upper panels show the original four partial baffles and a proposed eight-baffle control in a 16.5 m long corridor. Orange marks baffles, black the walls, and dashed blue the open central route. The candidate bounds feature spacing at 2 m. The lower bars compare eligibility across 32 development fixtures per dimension group: long/narrow improves from 0 to 22; short/wide remains 18 because its failures involve shared corridor/post-exit geometry. The dashed orange line marks the planned final quota of 12. These are geometry checks, not estimator recovery results. A larger fresh pool is proposed; acceptance and final execution remain pending. [Repair report](execution/GEOMETRY_REPAIR_20261012.md), [audit](evidence/geometry_revision_development_20261012.json), [manifest](figures/geometry_revision_development_20261012/manifest.json).
+
 Every research PNG currently retained under `figures/` is displayed above. PDF/SVG files are alternate exports of the same plots; their provenance is indexed in the [figure guide](figures/README.md). Archived landing-prototype figures under `../old_data/` belong to a separate study.
 
 ## What verification and tests cover
@@ -148,6 +156,8 @@ Every research PNG currently retained under `figures/` is displayed above. PDF/S
 | Final statistics fixtures | Stratified geometry bootstrap, event weighting, incomplete-cohort handling, literal RNG reference tests | Final analysis software is checked; no final dataset estimate exists. |
 
 **Fresh audit run:** 233 tests discovered; **231 passed, 2 skipped**, zero failures, in the frozen Python 3.12.14 environment. The skipped checks were the SciPy scene-structure fixture and the native C++ sidecar fixture requiring `POINTLIO_SOURCE_ROOT`. The latter has historical compiled verification; it was not executed in this audit. Details: [audit](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md).
+
+**Later geometry-repair check:** 238 tests, **236 passed, 2 skipped**, including five new geometry tests. [Test log](evidence/geometry_revision_tests_20261012.log). Original frozen inventory still matches; no changed-control native replay or revised final gate is claimed.
 
 ## Read and verify locally
 
@@ -197,11 +207,11 @@ The [visual documentation plan](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.
 
 The closest recent overlap is Zhang et al., [OCE: an optimization convergence metric for LiDAR SLAM degeneracy detection](https://link.springer.com/article/10.1007/s43684-026-00144-1), published 9 October 2026. Its Section 4.2, Eqs. 12–13 and Tables 1/3 already examine ground-truth local-motion usability, detection errors, hysteresis and recovery delay. Those concepts alone cannot establish this project's novelty.
 
-The remaining candidate contribution is **external transfer across untouched straight-corridor length/width strata, with sustained joint translation/rotation outcomes and independently instrumented FAST-LIO/Point-LIO replication**. This is a useful evaluation question; distinct sample size or two backends alone do not prove novelty. The [OCE review](reviews/OCE_NOVELTY_FEASIBILITY_20261010.md) passes feasibility only. OCE is not implemented here, so no superiority claim against OCE is justified.
+The remaining candidate contribution is **external transfer across straight-corridor length/width strata, with sustained joint translation/rotation outcomes and independently instrumented FAST-LIO/Point-LIO replication**. The failed screen exposed geometry from those strata; the proposed revised cohort uses fresh instances but must disclose design adaptation to that screen. This is a useful evaluation question; distinct sample size or two backends alone do not prove novelty. The [OCE review](reviews/OCE_NOVELTY_FEASIBILITY_20261010.md) passes feasibility only and predates the failed screen. OCE is not implemented here, so no superiority claim against OCE is justified.
 
 Remaining completion steps:
 
-1. Execute the accepted scene-only screen and frozen **48 geometry pairs, 12 per stratum**, preserving exclusion/failure accounting.
+1. Complete the [geometry amendment and fresh acceptance sequence](execution/GEOMETRY_REPAIR_20261012.md), then screen a newly frozen cohort for **48 geometry pairs, 12 per stratum**, preserving exclusion/failure accounting. The original screen failed and must not be bypassed.
 2. Run FAST-LIO and Point-LIO on the same accepted sensor inputs without retuning.
 3. Analyze frozen endpoints, uncertainty, availability, delay, relapse and non-recovery, preserving all planned denominators.
 4. Assess the resulting finding against the closest literature; report transfer success or failure honestly.
