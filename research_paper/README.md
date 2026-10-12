@@ -2,13 +2,13 @@
 
 **Authors:** Harshil Patel, Daksha Lingampeta, Nisarg Vyas
 
-**Verified checkpoint: 12 October 2026 — implementation ready; final research results pending.**
+**Verified checkpoint: 12 October 2026 — controlled two-backend evaluation complete; manuscript and publication novelty unfinished.**
 
-**Revised checkpoint:** the [R2 geometry amendment](reviews/R2_GEOMETRY_AMENDMENT_20261012.md) and [independent revised R3 review](reviews/R3_GEOMETRY_V2_IMPLEMENTATION_20261012.md) passed. The [new implementation freeze](protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md) verifies 197 entries. The fresh geometry screen passed with **48 pairs, 12 per group**, after 64 candidate checks. Final native execution is next; no final recovery conclusions exist yet. [Current execution ledger](execution/GEOMETRY_V2_EXECUTION_20261012.md).
+**Revised checkpoint:** the [R2 geometry amendment](reviews/R2_GEOMETRY_AMENDMENT_20261012.md), [revised R3 review](reviews/R3_GEOMETRY_V2_IMPLEMENTATION_20261012.md) and [197-entry freeze](protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md) passed. The geometry screen selected **48 pairs, 12 per group**, after 64 candidate checks. FAST-LIO and Point-LIO each completed **96 native runs on identical sensor inputs**. Both analyses returned `CONFIRMATORY_COMPLETE`. A metadata-only analysis adapter passed [supplemental independent review](reviews/R3_GEOMETRY_V2_ANALYSIS_COMPATIBILITY_20261012.md); original frozen scientific files remain intact. [Results and limitations](evidence/final_geometry_v2_results_20261012/RESULTS_REPORT.md), [execution ledger](execution/GEOMETRY_V2_EXECUTION_20261012.md).
 
 After a robot leaves a corridor with weak geometric clues, can its existing LiDAR health signals tell when its **new motion estimates** are accurate again? This study evaluates existing FAST-LIO and Point-LIO diagnostics against reference-defined recovery. It builds an evaluation workflow, rather than a new odometry estimator.
 
-Both backends completed the historical development cohort and the separately reviewed revised-control native checks. **Final cohort results, novelty and the manuscript remain unfinished.** Original IDs 100–179 were excluded after the failed screen; fresh instances do not erase design adaptation to that screen. No flight or deployment safety claim is supported.
+Both backends completed the historical development cohort, revised-control native checks and fresh final evaluation. **Final experimental results now exist; publication novelty and the manuscript remain unfinished.** Original IDs 100–179 were excluded after the failed screen; fresh instances do not erase design adaptation to that screen. No flight or deployment safety claim is supported.
 
 This is the current research README. The repository-root README and several execution summaries retain older checkpoints and are bound into the accepted freeze. This document supplements them without modifying those hashes. See the [documentation audit](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md) for conflicts and missing visuals.
 
@@ -47,7 +47,48 @@ flowchart TD
 | Geometry signals | [FAST-LIO information calculation](experiments/src/fastlio_information.py), [DCReg Schur calculation](experiments/src/dcreg_schur.py) | Minimum eigenvalue at documented lever scales and a directional DCReg detector adaptation. This is not the full DCReg registration system. |
 | Reference evaluation | [Trajectory evaluator](experiments/src/trajectory_eval.py) | Local translation/rotation errors and separately reported accumulated drift, without bridging reference gaps or resets. |
 | Development analysis | [Accepted analysis](evidence/DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md) | Exhaustive raw-score candidate selection, backend-specific thresholds, event metrics and sample planning. |
-| Final workflow | [R3 entry point](experiments/src/r3_evaluation_workflow.py), [Point-LIO runner](experiments/src/run_pointlio_final_replication.py), [statistics](experiments/src/heldout_statistics.py) | Gate checks, exact input identities, failure/cache handling and geometry-cluster uncertainty. Implementation is tested; final observations are still absent. |
+| Final workflow | [R3 entry point](experiments/src/r3_evaluation_workflow.py), [Point-LIO runner](experiments/src/run_pointlio_final_replication.py), [statistics](experiments/src/heldout_statistics.py) | Gate checks, exact input identities, failure/cache handling and geometry-cluster uncertainty. Both 48-pair native cohorts and analyses are complete; outcomes and limitations are reported below. |
+
+## Final revised geometry results
+
+The final dataset contains 48 corridor/control pairs in four groups. Both backends used the same sensor-bag hashes and fixed development-selected cutoffs. There were **192 completed native scene runs, zero native replay failures**. The retained Point-LIO preflight failure and original FAST analysis rejection required operational/metadata fixes; both are preserved in the [result report](evidence/final_geometry_v2_results_20261012/RESULTS_REPORT.md).
+
+| Backend and diagnostic | Detected / truth-recovered | Initial false-healthy, conditional | Initial false-healthy, unconditional | Median delay, detected only |
+| --- | ---: | ---: | ---: | ---: |
+| FAST-LIO minimum eigenvalue | 14/46 | 1/46 | 1/48 | 0.850 s |
+| FAST-LIO fixed DCReg adaptation | 38/46 | 4/46 | 4/48 | 6.800 s |
+| Point-LIO minimum eigenvalue | 27/32 | 4/47 | 4/48 | 3.400 s |
+| Point-LIO fixed DCReg adaptation | 25/32 | 16/47 | 16/48 | 3.000 s |
+
+FAST-LIO recovered in **46/48** corridor events, with two non-recoveries; Point-LIO recovered in **32/48**, with 16 non-recoveries. Each backend has one relapse. All four diagnostics have 9,600/9,600 available decision ticks in the primary post-exit horizon. Conditional false-healthy denominators require a decision tick inside the initial unrecovered interval; extremely short intervals explain why those denominators differ despite full overall horizon availability. Non-recoveries remain censored at the 20 s deadline, and missed detections receive no invented delay.
+
+### Locked operating points, delay and availability
+
+![Final fixed diagnostic event rates, detection-only delay and decision availability](figures/final_geometry_v2_results_20261012/final_operating_points.png)
+
+The upper-left panel shows **unconditional** initial false-healthy rates; the upper-right shows detection among actual recoveries. Bars are event-level 95% Wilson intervals. Blue is FAST-LIO and red is Point-LIO. The lower-left compares median delays among detections only: FAST scalar's short delay accompanies 32 missed recoveries, so it is not evidence of better overall responsiveness. The lower-right shows available/planned ticks, not correctness or flight safety. The backend recovery denominators differ because labels come from each backend's own poses.
+
+The scalar conditional false-healthy point estimates are below 10%, but their 95% upper bounds reach **11.3% for FAST-LIO and 19.9% for Point-LIO**. The final sample does not prove a population guarantee below 10%. Point-LIO fixed DCReg has 16/47 initial false-healthy events (34.0%); fixed rules do not transfer uniformly.
+
+### Results by geometry group
+
+![Final diagnostic event rates within each length and width group](figures/final_geometry_v2_results_20261012/final_stratum_events.png)
+
+Each group contains 12 planned geometries. Blue circles are the scalar diagnostic; red squares are fixed DCReg. The left column shows unconditional false-healthy events, the right detection among truth-recovered events; vertical bars are 95% Wilson intervals. Point-LIO recovered in all 24 narrow corridors but only 8/24 wide corridors. Its four scalar false-healthy events all occur in long/narrow (4/12). FAST scalar detects only 1/12 long/wide recoveries. These group-specific observations show why pooled rates are insufficient; the small group samples give wide uncertainty.
+
+### Every planned corridor event
+
+![Recovery, relapse, initial false-healthy and detection ledger for all 48 geometries in both backends](figures/final_geometry_v2_results_20261012/final_event_ledger.png)
+
+Each column is a selected seed, with 12 columns per geometry group. The rows show reference-defined recovery and relapse, then scalar/DCReg false-healthy events and recovery detections. Blue means the named event occurred: a blue recovery cell and a blue false-healthy cell have different implications. White means no event was observed; grey marks an inapplicable interval or recovery-detection endpoint. All non-recoveries remain visible. These are 48 shared geometries, not independent samples for every coloured cell. Point fixed DCReg has a post-relapse false-healthy event in the single relapsed corridor; the other methods have zero out of one. One relapse per backend is insufficient for a broad relapse-reliability claim.
+
+### Paired interior error and geometry uncertainty
+
+![Mean corridor minus control interior translation error with geometry bootstrap intervals and group means](figures/final_geometry_v2_results_20261012/final_paired_geometry_effect.png)
+
+For each pair, the analysis subtracts the control's median interior one-second translation error from the corridor's median error. The left panel shows the equal-group mean difference and its 95% interval from 10,000 paired geometry resamples within fixed groups: **FAST-LIO +0.194 m [0.086, 0.311]; Point-LIO +0.149 m [0.068, 0.230]**. Positive values mean larger corridor error. The right panel shows group means without group confidence intervals. Point short/narrow has a negative mean, so the positive aggregate does not demonstrate uniform control benefit in every group. These are local movement errors; they do not establish correction of old global drift or a between-estimator superiority test.
+
+Exact numerical values, event-weighted ROC/AP, tolerance/window sensitivity analyses and all failures are retained in the [full result report](evidence/final_geometry_v2_results_20261012/RESULTS_REPORT.md), [analysis exports](evidence/final_geometry_v2_results_20261012/export_audit.json), [event CSV](evidence/final_geometry_v2_results_20261012/corridor_event_ledger.csv) and [figure manifest](figures/final_geometry_v2_results_20261012/manifest.json). No final threshold fitting or geometry replacement occurred.
 
 ## Development evidence
 
@@ -108,7 +149,7 @@ Only 13/56 post-exit one-second windows and 0/56 three-second windows had usable
 
 ## Historical simulation illustrations
 
-These figures show how the simulation developed. Their single-seed outcomes are separate from the current 32-pair development analyses and the pending final evaluation.
+These figures show how the simulation developed. Their single-seed outcomes are separate from the current 32-pair development analyses and the separate completed final evaluation.
 
 ### Forty-second motion-v3 corridor/control pilot
 
@@ -140,7 +181,13 @@ The bars show the percentage of 596 jointly available decision ticks where origi
 
 ![Original and candidate control geometry with development eligibility counts](figures/geometry_revision_development_20261012/geometry_revision_development.png)
 
-The upper panels show the original four partial baffles and a proposed eight-baffle control in a 16.5 m long corridor. Orange marks baffles, black the walls, and dashed blue the open central route. The candidate bounds feature spacing at 2 m. The lower bars compare eligibility across 32 development fixtures per dimension group: long/narrow improves from 0 to 22; short/wide remains 18 because its failures involve shared corridor/post-exit geometry. The dashed orange line marks the planned final quota of 12. These are geometry checks, not estimator recovery results. The revision subsequently passed independent R2/R3 review and native development checks; its fresh final screen passed. Final estimator conclusions remain pending. [Repair report](execution/GEOMETRY_REPAIR_20261012.md), [audit](evidence/geometry_revision_development_20261012.json), [manifest](figures/geometry_revision_development_20261012/manifest.json).
+The upper panels show the original four partial baffles and a proposed eight-baffle control in a 16.5 m long corridor. Orange marks baffles, black the walls, and dashed blue the open central route. The candidate bounds feature spacing at 2 m. The lower bars compare eligibility across 32 development fixtures per dimension group: long/narrow improves from 0 to 22; short/wide remains 18 because its failures involve shared corridor/post-exit geometry. The dashed orange line marks the planned final quota of 12. These are geometry checks, not estimator recovery results. The revision subsequently passed independent R2/R3 review and native development checks; its fresh final screen passed. Final estimator findings are reported separately above. [Repair report](execution/GEOMETRY_REPAIR_20261012.md), [audit](evidence/geometry_revision_development_20261012.json), [manifest](figures/geometry_revision_development_20261012/manifest.json).
+
+### Accepted fresh geometry screen
+
+![Three fixed geometry eligibility checks for the newly selected final cohort](figures/final_geometry_screen_v2_20261012/final_geometry_screen.png)
+
+Each dot is one of the 64 screened candidate layouts. Blue candidates passed all three criteria and were selected; grey candidates failed at least one criterion, even when they pass another panel. The top panel requires no more than 10% axial-normal returns in the corridor, the middle at least 15% in the matched control, and the bottom at least 20% five seconds after exit. Orange dashed lines show these fixed criteria. Vertical lines separate the four groups; candidates remain in ascending seed order within each group. The screen selected 48 pairs, 12 per group, before estimator execution. This figure documents geometry eligibility, not odometry accuracy or recovery. [Screen snapshot](evidence/final_geometry_screen_v2_20261012.json), [figure manifest](figures/final_geometry_screen_v2_20261012/manifest.json).
 
 Every research PNG currently retained under `figures/` is displayed above. PDF/SVG files are alternate exports of the same plots; their provenance is indexed in the [figure guide](figures/README.md). Archived landing-prototype figures under `../old_data/` belong to a separate study.
 
@@ -153,11 +200,13 @@ Every research PNG currently retained under `figures/` is displayed above. PDF/S
 | Native development checks | Sidecar on/off pose identity, measurement coverage, compiled reset fixture in earlier bounded verification, accepted replay cohorts | Native evidence is separate from mocked runner tests. |
 | Provenance and lifecycle | Source/config/output hashes, atomic recording, preserved failures, completed replay reuse, diagnosed retry limits | Checks identity and execution accounting. |
 | Independent reviews | R1 protocol feasibility, R2 protocol/amendment acceptance, Point-LIO development/freeze acceptance, R3 implementation PASS | Scoped acceptance does not establish publication novelty. |
-| Final statistics fixtures | Stratified geometry bootstrap, event weighting, incomplete-cohort handling, literal RNG reference tests | Final analysis software is checked; no final dataset estimate exists. |
+| Final statistics fixtures | Stratified geometry bootstrap, event weighting, incomplete-cohort handling, literal RNG reference tests | Software checks are separate from the completed final estimates and their geometry uncertainty. |
 
 **Fresh audit run:** 233 tests discovered; **231 passed, 2 skipped**, zero failures, in the frozen Python 3.12.14 environment. The skipped checks were the SciPy scene-structure fixture and the native C++ sidecar fixture requiring `POINTLIO_SOURCE_ROOT`. The latter has historical compiled verification; it was not executed in this audit. Details: [audit](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md).
 
 **Later geometry-repair check:** 238 tests, **236 passed, 2 skipped**, including five new geometry tests. [Test log](evidence/geometry_revision_tests_20261012.log). These were initial candidate checks. Later integration and native checks passed **244 tests: 243 passed, one optional SciPy skip**, including the compiled reset fixture; see [revised native evidence](evidence/GEOMETRY_V2_NATIVE_VALIDATION_20261012.md).
+
+**Analysis compatibility supplement:** five focused tests verify that only validated secondary-threshold metadata is removed from the primary identity expectation, that all original checks are delegated, and that failures remain failures. Full regression: **249 tests, 248 passed, one optional SciPy skip**, with the native reset fixture enabled. [Review](reviews/R3_GEOMETRY_V2_ANALYSIS_COMPATIBILITY_20261012.md), [test log](evidence/geometry_v2_analysis_compat_regression_20261012.log). The retained Point-LIO preflight and original analysis failure are described in the [execution ledger](execution/GEOMETRY_V2_EXECUTION_20261012.md).
 
 ## Read and verify locally
 
@@ -167,6 +216,9 @@ On the current Linux host, from the repository root:
 
 ```bash
 RESEARCH_PY='/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python'
+RESEARCH_BASE='/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18'
+export POINTLIO_SOURCE_ROOT="$RESEARCH_BASE/point_lio_ws_r2_20260929/src/point_lio"
+export POINTLIO_EIGEN_INCLUDE="$RESEARCH_BASE/ros_env/include/eigen3"
 "$RESEARCH_PY" -m unittest discover -s research_paper/experiments/tests -v
 ```
 
@@ -184,7 +236,21 @@ print('PASS:', len(gate['reviewed_artifact_hashes']), 'inventory entries')
 PY
 ```
 
-Other hosts need the recorded isolated dependencies and path restoration; see [environment](execution/ENVIRONMENT.md). [Experiment README](experiments/README.md) retains GEODE setup history; its old headline counts are not the latest checkpoint. Final execution instructions are in [the final handoff](execution/FINAL_EVALUATION_HANDOFF.md); follow the frozen gate and protocol before running them.
+Other hosts need the recorded isolated dependencies and path restoration; see [environment](execution/ENVIRONMENT.md). [Experiment README](experiments/README.md) retains GEODE setup history; its old headline counts are not the latest checkpoint. The [dated execution ledger](execution/GEOMETRY_V2_EXECUTION_20261012.md) and [independent final audit](reviews/FINAL_GEOMETRY_V2_RESULT_AUDIT_20261012.md) describe the completed run. The older [final handoff](execution/FINAL_EVALUATION_HANDOFF.md) remains frozen checkpoint history. Point-LIO requires its scratch directory to exist before preflight; the initial missing-directory failure and fresh-root retry are retained.
+
+Exact executed analysis commands, flags, paths and exit codes are preserved in [analysis resume state](evidence/final_geometry_v2_results_20261012/analysis_resume_state.json). FAST uses the separately reviewed metadata adapter; Point uses the unchanged `pointlio_final_analysis.py`. Reproduction must use fresh output paths and the accepted gates. To recreate compact exports and figures from the completed external results, use new output directories:
+
+```bash
+FINAL_ROOT="$RESEARCH_BASE/final_heldout_geometry_v2_20261012"
+"$RESEARCH_PY" research_paper/experiments/src/export_final_geometry_results.py \
+  --root "$FINAL_ROOT" --output /tmp/geometry-v2-export-reproduction
+"$RESEARCH_PY" research_paper/experiments/src/plot_final_recovery_results.py \
+  --fast-analysis research_paper/evidence/final_geometry_v2_results_20261012/fastlio_analysis.json \
+  --point-analysis research_paper/evidence/final_geometry_v2_results_20261012/pointlio_analysis.json \
+  --output /tmp/geometry-v2-figure-reproduction
+```
+
+[Report generator](experiments/src/write_final_geometry_report.py) recreates the checked-in CSV/report files from the exported analyses when run from the repository root. It overwrites only those derived reports and their manifest; any numerical/report change requires refreshing the affected independent audit.
 
 ## Existing illustrations and missing figures
 
@@ -195,27 +261,19 @@ Other hosts need the recorded isolated dependencies and path restoration; see [e
 | Current development comparison | Two-backend operating-point figure with intervals exists | Link the current figure, rather than historical FAST-LIO-only counts. |
 | Fresh repeatability | Motion and warning disagreement plots exist | Keep repeat IDs and no-new-event caption. |
 | Recovery definition and online timing | Written rules; no dedicated timing diagram | Show exit, causal decision ticks, three truth windows, confirmation, delay and relapse. |
-| Current event failures/availability | Tables/manifests; no complete visual ledger | Add all-event outcome tiles including non-recovery, unavailable and failed attempts. |
-| Split and review path | Manifests/reviews; partial workflow diagrams | Add a split diagram and dated checkpoint table. |
-| Final results | Absent because final evaluation is pending | After execution, add per-stratum event estimates, delays, availability, paired effects and cluster intervals. |
+| Final event outcomes/availability | All 48 corridor events per backend are illustrated above; non-recovery and inapplicable decisions are explicit | Add representative causal timelines for the manuscript. Workflow preflight failures remain documented in logs/JSON; a failure-stage diagram could illustrate them. |
+| Split and review path | Manifests/reviews and dated execution table exist | Add a split diagram distinguishing development, original rejected screen and fresh final cohort. |
+| Final results | Four final figures above: operating points, groups, every event and paired geometry uncertainty | Add native causal timeline illustrations and threshold-free curve plots with the frozen source exports if needed for the manuscript. |
 
 The [visual documentation plan](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md) specifies sources, placement, plotting rules and reproduction requirements for each addition. [Figure guide](figures/README.md) records existing figure provenance.
 
 ## Is the research complete, and is it novel?
 
-**No final research conclusion is established yet.** The software milestone is accepted; the scientific evaluation and manuscript remain open.
+**The planned controlled evaluation is complete. The research paper and publication novelty are not yet complete.** Implementation, native execution, fixed operating-point analyses, geometry uncertainty and visual result documentation now exist. The result supports a specific finding about geometry-dependent diagnostic transfer and recovery differences under this screened simulation design. It does not establish a novel detector or universal reliability.
 
-The closest recent overlap is Zhang et al., [OCE: an optimization convergence metric for LiDAR SLAM degeneracy detection](https://link.springer.com/article/10.1007/s43684-026-00144-1), published 9 October 2026. Its Section 4.2, Eqs. 12–13 and Tables 1/3 already examine ground-truth local-motion usability, detection errors, hysteresis and recovery delay. Those concepts alone cannot establish this project's novelty.
+[OCE](https://link.springer.com/article/10.1007/s43684-026-00144-1) already evaluates ground-truth short-window motion usability and recovery hysteresis/delay. Our narrower candidate contribution is the frozen transfer assessment across randomized length/width groups with independently instrumented FAST-LIO/Point-LIO and complete event/failure accounting. This finding needs a precise literature comparison and a finished reviewed manuscript before claiming publication novelty. [Closest-work audit](reviews/OCE_NOVELTY_FEASIBILITY_20261010.md).
 
-The remaining candidate contribution is **external transfer across straight-corridor length/width strata, with sustained joint translation/rotation outcomes and independently instrumented FAST-LIO/Point-LIO replication**. The failed screen exposed geometry from those strata; the proposed revised cohort uses fresh instances but must disclose design adaptation to that screen. This is a useful evaluation question; distinct sample size or two backends alone do not prove novelty. The [OCE review](reviews/OCE_NOVELTY_FEASIBILITY_20261010.md) passes feasibility only and predates the failed screen. OCE is not implemented here, so no superiority claim against OCE is justified.
-
-Remaining completion steps:
-
-1. Geometry amendment, revised R3 freeze and fresh 48-pair screen are accepted. Execute the frozen two-backend native cohort, preserving every attempt and failure; follow the [current ledger](execution/GEOMETRY_V2_EXECUTION_20261012.md).
-2. Run FAST-LIO and Point-LIO on the same accepted sensor inputs without retuning.
-3. Analyze frozen endpoints, uncertainty, availability, delay, relapse and non-recovery, preserving all planned denominators.
-4. Assess the resulting finding against the closest literature; report transfer success or failure honestly.
-5. Complete and review the manuscript, figures, reproducibility package and limitations. [Main manuscript](paper/main.tex) remains a proposal abstract; [methods draft](paper/methods_protocol_draft.tex) is preliminary.
+The remaining steps are to write the evidence-supported results/discussion, complete the manuscript and reproducibility package, and obtain scientific review of the claimed contribution. [Main manuscript](paper/main.tex) remains a proposal abstract; [methods draft](paper/methods_protocol_draft.tex) is preliminary. Any new comparator or changed protocol needs development validation and a dated exposure-aware amendment; these final data are now exposed and cannot become fresh tuning-free evidence again.
 
 Controlled simulation supplies primary quantitative reference. Hilti Exp18 is supporting evidence: only 13/56 post-exit one-second windows and 0/56 three-second windows were scoreable in the pilot, and its reference is partly LiDAR-registration-derived. GEODE failures remain in the historical record. Neither supports a real-world recovery or flight-safety conclusion.
 

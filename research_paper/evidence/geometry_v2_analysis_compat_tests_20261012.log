@@ -1,0 +1,10 @@
+test_adapter_delegates_original_checks_and_restores_loader (test_geometry_v2_analysis_compat.AnalysisCompatibilityTests.test_adapter_delegates_original_checks_and_restores_loader) ... ok
+test_missing_or_changed_threshold_metadata_is_rejected (test_geometry_v2_analysis_compat.AnalysisCompatibilityTests.test_missing_or_changed_threshold_metadata_is_rejected) ... ok
+test_original_failure_is_propagated_and_loader_restored (test_geometry_v2_analysis_compat.AnalysisCompatibilityTests.test_original_failure_is_propagated_and_loader_restored) ... ok
+test_primary_identity_removes_only_shared_secondary_metadata (test_geometry_v2_analysis_compat.AnalysisCompatibilityTests.test_primary_identity_removes_only_shared_secondary_metadata) ... ok
+test_review_rejection_precedes_result_analysis (test_geometry_v2_analysis_compat.AnalysisCompatibilityTests.test_review_rejection_precedes_result_analysis) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK

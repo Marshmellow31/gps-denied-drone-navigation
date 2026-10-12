@@ -1,0 +1,14 @@
+{
+  "source_analysis_sha256": {
+    "fastlio_analysis.json": "0760db8485d1bb4e18aa227503c46591316dad21a88ce697543bd1e0152f182b",
+    "pointlio_analysis.json": "7e33f976236cc9b6d3545a8a65c29dbe88bfccbb3d467946a0f48bda58e5d475"
+  },
+  "derived_output_sha256": {
+    "RESULTS_REPORT.md": "b7498a2c10e62c2daa99c588d1715c204ff8678a3676cae08293329707d16fe8",
+    "method_summary.csv": "405f6ebadef9b63602a32dcab52f680dba799c57427fb6a1b2c20216495a67b5",
+    "stratum_summary.csv": "80e63158dd66a9adad94a2b723f231e552bbced64ac45cc93c3f1a584292b3b2",
+    "corridor_event_ledger.csv": "3b0ce8f26fcd3bb4524b1f7cad47bf14c14cdf42c8621d5832a71c97776161d9"
+  },
+  "report_generator_sha256": "9bf27074e0e5e034269110ea872fce174d4624ac4129a732f70cf48d10871740",
+  "scope": "Presentation of accepted final exports; no recomputation, relabeling or threshold fitting"
+}

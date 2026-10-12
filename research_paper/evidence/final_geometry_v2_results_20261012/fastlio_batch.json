@@ -1,0 +1,2211 @@
+{
+  "backend": {
+    "binary_sha256": "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792",
+    "conda_history_sha256": "90c14f8caa0cbc8a1a769f012c5bbcd9c1fbe7ba96d4626f22bbc077917b757f",
+    "configuration_sha256": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+    "launched_binary_path": "/tmp/fastlio-t13.XBDWGy/ws/devel/lib/fast_lio/fastlio_mapping",
+    "pcl17_patch_sha256": "6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275",
+    "ros_env": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env",
+    "source_hashes": {
+      "config": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+      "dcreg": "516e1da40c9cb8bc58e5a0e4c9c7964392a0877a77ba20e7139eae997783595e",
+      "health_audit": "fff0e55b88e129e94f3808b88955d5f6213c8bfac98b25acc12f09e5f3a29ba8",
+      "pair_audit": "14944d470c0d90bc0c5e0837bdf187c06c6f5ab6bef02fbebb0aeedca518c593",
+      "pose_logger": "1a4cddb319dda44ce1838e34bcbac55d49958da1a0a06b443a7802dc49677ed2",
+      "replay_script": "a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639",
+      "route_adapter": "93ab5bacf988b83564c6405a2cf3dd9433b247d3122fb32c42817094c72353bc",
+      "simulator": "897028bf99eb2b97e44088328991c745189f0df12a295e316440c2b49c747370",
+      "trajectory_evaluator": "d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba"
+    },
+    "t08_patch_sha256": "ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2",
+    "t13_patch_sha256": "4e85cce23aae900e3cbee37f9871d40454fb3c1203a794a8db419475033a1ace",
+    "upstream_commit": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+    "workspace": "/tmp/fastlio-t13.XBDWGy/ws",
+    "worktree_diff_sha256": "1397219a8765c2bc8c49adaf7e94dcc1e6006788acac06467e28e660876e51a0"
+  },
+  "completed_geometry_pairs": 48,
+  "development_analysis_sha256": "1678e1c8b62b3ceeabf4e9f4e63593832cf8c94f7793e7b933647e8569c082f7",
+  "heldout_generator_sha256": "03cce893df0ae1eb8e3fa04204dde4281502655a8c3497aacbdc7b2cc00a348a",
+  "heldout_inputs_or_results_used_for_tuning": false,
+  "implementation_freeze_sha256": "58434f9a9a41a1e310966ee7f327c3f0e9bc22240c39a2ee5c65bc5f48c487be",
+  "minimum_free_space_mib": 2048,
+  "pair_results": [
+    {
+      "control_bag_sha256": "f15f2012dfee59fc971c4486ab1fb133e93535dc34d2bfd188d1f21caf6506c3",
+      "corridor_bag_sha256": "f476f561be4a07cf658d2d5133a35594bfd3c8df00e61e854f55e59ebd440582",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10200/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "1e69ad0853a6fe16f681b02a1a88917063a99d6d2e8309e488fee2395b14e6e3",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10200/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "1e69ad0853a6fe16f681b02a1a88917063a99d6d2e8309e488fee2395b14e6e3",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10200_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10200_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10200_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10200_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10200,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "39a330e3c84bf04182482f4e1efbcd4487b5dd3f5d613cd03115038f152617d8",
+      "corridor_bag_sha256": "7ed0b4f8d788de434c2f5092b9ccf5545c878eac3715eef2d40f3848160a1988",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10202/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b4863b1f9d9160664b23349665906b8fa1786d77d4ef9a318c593e862d25a827",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10202/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b4863b1f9d9160664b23349665906b8fa1786d77d4ef9a318c593e862d25a827",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10202_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10202_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10202_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10202_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10202,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "b8a94af6f61e1b916551ea9a82d87bd3fd79b68f59fb8c4adbd9f5c9bba414bf",
+      "corridor_bag_sha256": "1f385888b60f5df1983311943b9e3bec1908ba64881182184ff80646e8272593",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10203/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "2619eee9e0976c06e7743a145e2e9a137e6eebb1ee0e9c35d958001a99343ea6",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10203/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "2619eee9e0976c06e7743a145e2e9a137e6eebb1ee0e9c35d958001a99343ea6",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10203_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10203_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10203_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10203_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10203,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "78c23ce7769a6e9d65a8f9b47b5cd03f26c1337c3ea4a6e5433955a1240008e1",
+      "corridor_bag_sha256": "5d893ee742604e6763da9255106fa14cea8b90f18c8f5574677f9c8d84411545",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10204/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "012c239d430637e3f683191ae9a86d7a552de8c1d68b4203c3a31eaba3790d62",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10204/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "012c239d430637e3f683191ae9a86d7a552de8c1d68b4203c3a31eaba3790d62",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10204_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10204_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10204_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10204_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10204,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "640e4ab8dd7af3f169c5c17b8cb4277d8d23df5fac02cbeb24147b4c055d35d7",
+      "corridor_bag_sha256": "d3ba3348881485f67ebee5895e77f6150824233799e3cde1864f33fa3eae9b93",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10205/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "d6fe83352d584beb5fd657cd23377f8f08d68d4aef14da2230d19820ca692339",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10205/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "d6fe83352d584beb5fd657cd23377f8f08d68d4aef14da2230d19820ca692339",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10205_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10205_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10205_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10205_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10205,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "e5e1fa156f81a04619591e09bb890a69d8249e366095a6433dcaf7cea6487853",
+      "corridor_bag_sha256": "214ede91afc0afd6512e7748040eac74e089ee70a9cfa4c35c8487d8b179619f",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10206/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "db4d6af8c1f5346755f9195aa70fa4f6f5282d605a167bed3f73b2dcd34fc600",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10206/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "db4d6af8c1f5346755f9195aa70fa4f6f5282d605a167bed3f73b2dcd34fc600",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10206_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10206_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10206_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10206_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10206,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "e7682bca7da5e820b936202c32b178333f0054eb6bc32bddcd0339e0ae53a894",
+      "corridor_bag_sha256": "c73fad120bd7320de63850b8d86effc6298a5832f75b193a17f4ef7f00f8df98",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10207/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "03e107558834a6453da5cf4f2c8b0562a98b9c8b2c11e705e2a451eb552e6281",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10207/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "03e107558834a6453da5cf4f2c8b0562a98b9c8b2c11e705e2a451eb552e6281",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10207_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10207_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10207_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10207_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10207,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "60186a2838977a41a70d514b5f8d3d3c64f8ab32e7907e2d311c375194324cc5",
+      "corridor_bag_sha256": "cff25ed82029e3c6d2c47e140fb569768d2b66c03cdc6bf8b8c458eccfa25bf6",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10208/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "5e8ce677150e6d96377bf0d4634cc2a91854bf650bfe871321938f850bdcb5c9",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10208/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "5e8ce677150e6d96377bf0d4634cc2a91854bf650bfe871321938f850bdcb5c9",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10208_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10208_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10208_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10208_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10208,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "857c78d6c68d23f5a55544603c3a39ed6a103878b76ddd981ba91f3d94a1bfbb",
+      "corridor_bag_sha256": "2dd33237603723d04b92fd1b0c37ebc2679d4020108574ef7789d63fe37fe6f5",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10209/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a0dde5535a277cd1e3b82e5cc436cb1ade1349b0e71ef5e363ba112d57ae1004",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10209/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a0dde5535a277cd1e3b82e5cc436cb1ade1349b0e71ef5e363ba112d57ae1004",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10209_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10209_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10209_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10209_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10209,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "2b0490f3ac5142541af2e56bd1c1a4b842fed09dee1bcb0cc7b0d72065cb52b5",
+      "corridor_bag_sha256": "0256f8ab385560625a3a2cb68acba2cb61796e6e33398cafdbf5f8b92921d7ab",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10210/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "fb587dbf0756467a4fc42fb81447f5a82f3ebbe09d2dc2c88dc2ff9f6462e12f",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10210/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "fb587dbf0756467a4fc42fb81447f5a82f3ebbe09d2dc2c88dc2ff9f6462e12f",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10210_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10210_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10210_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10210_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10210,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "ea006fd39ffa9e223ffb92f8a13ce3c83f26bfbff1d0fb00838ec194b51d53cd",
+      "corridor_bag_sha256": "1b23ca4587921d509d0a0ff563862bf04e035b07403a6f51fa9d14597b3f3e88",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10212/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "46c885b117a2b4e0db9ea76154e0bd6d40d4bc38543516a049c8b7004bef17aa",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10212/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "46c885b117a2b4e0db9ea76154e0bd6d40d4bc38543516a049c8b7004bef17aa",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10212_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10212_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10212_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10212_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10212,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "9002c873d746d5403811463d7242968b4bd2856c381bc5c3dedbd954ee38240f",
+      "corridor_bag_sha256": "a5ec267b75ba82c923bd62db8c4750004ab1a5397b3a4b852b23db429fff2041",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10213/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "96ed320f97e2676291ed59a109ec1e8e78db0cef64c34b67205dbac0950f0ab5",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_NARROW_10213/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "96ed320f97e2676291ed59a109ec1e8e78db0cef64c34b67205dbac0950f0ab5",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10213_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10213_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_NARROW_10213_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_NARROW_10213_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10213,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_NARROW"
+    },
+    {
+      "control_bag_sha256": "8d38903c07e1a2e00bf2afdc3df90e9f8ceccccbb2f26a164321e336d8a13444",
+      "corridor_bag_sha256": "3a8dc1f11eef337ff921b8ac7a1af6340d67ac6805ae3f8f7c40b13f4bc9b6bd",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10300/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "9cbdcb697d8aa49d88b466a8d273617409f35b3cb278a349c28c09292d8e0a6c",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10300/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "9cbdcb697d8aa49d88b466a8d273617409f35b3cb278a349c28c09292d8e0a6c",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10300_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10300_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10300_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10300_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10300,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "cabea4f5619c4511fd9d5f04445233b07b5a7e27a3b746d34489e11949891268",
+      "corridor_bag_sha256": "753df15caf7554adaba393d1abca1560ddd51635106211180996ea2ec99c043e",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10303/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "3b016d7e8c29069e91fdc35b57199bb8cdb9da3b165326f02df679d6cd13f122",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10303/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "3b016d7e8c29069e91fdc35b57199bb8cdb9da3b165326f02df679d6cd13f122",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10303_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10303_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10303_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10303_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10303,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "744c6de715cbfc47b7b3a246aba60fe500bdc2445fc5235e7e39a618153fea13",
+      "corridor_bag_sha256": "fdb37d17282af2ea25bf708003e2404eed68a68675b6536934f3b743e2626203",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10304/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "13657378c2a29b51129227ebeb6d2d84a260584b5da06b8c719a1102305f047c",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10304/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "13657378c2a29b51129227ebeb6d2d84a260584b5da06b8c719a1102305f047c",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10304_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10304_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10304_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10304_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10304,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "87e63e5009df11191111828cfa31464f3d6c1dddc4c0c2ad75ab4487b291c074",
+      "corridor_bag_sha256": "75c3fbc5710840b9af90c7022fff286fb11361fc36c2e9bd521ec56ee355c11c",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10305/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "e74937842e42dbddb40482e5aca92861e99c71620a58afec685841a7032eaa4a",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10305/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "e74937842e42dbddb40482e5aca92861e99c71620a58afec685841a7032eaa4a",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10305_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10305_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10305_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10305_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10305,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "7a06db9287ac26e9d861b9a4c4533ff1845f9d3889beac52d3c0e45ab76c957b",
+      "corridor_bag_sha256": "701d8f3ce4cc278a2824f1d68b9aaa2018a502d407d8fb82f193067f21ec7b51",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10306/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "19e72febe1e58409be4abc23f0faf3ef3a9f44c2a22d6216917643c1c248fa64",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10306/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "19e72febe1e58409be4abc23f0faf3ef3a9f44c2a22d6216917643c1c248fa64",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10306_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10306_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10306_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10306_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10306,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "ec10735fdef8655bdb3feeaedb440edab9d73dafed7d1c6c5099458feb43f5dc",
+      "corridor_bag_sha256": "52e2290686bbe6a8100742288456317ace55ecf906332c1218e8588fe2348556",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10307/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "fefab0a8f980493dbe5092bb31b817709ea7d8edc780f1f995d209539925d93c",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10307/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "fefab0a8f980493dbe5092bb31b817709ea7d8edc780f1f995d209539925d93c",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10307_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10307_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10307_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10307_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10307,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "407f06bdfa24602804dc0d7e38227767bd36c9538288351c6d03447774c369f2",
+      "corridor_bag_sha256": "c1854e9803c1cedef480245d79ad59601d108cb5fd2a8ada9a242403b1f52204",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10310/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "28a38b15b6b8032e9492dcd10b14eb94fba8dabe4f050f4a73bb295e2586696f",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10310/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "28a38b15b6b8032e9492dcd10b14eb94fba8dabe4f050f4a73bb295e2586696f",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10310_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10310_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10310_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10310_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10310,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "0036aeb77d2bbaa2c5d2480a5a6900b19ac2d1195591580032b2e07d4a5a842b",
+      "corridor_bag_sha256": "a5726aa2934ad878bd2273eff327037571d7723f3a68d1b75dfd77c91738b9c5",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10311/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "2d654566bdfe7ca392212b3e26d14ea28cbd2f703eaf799680e9ebc7a5560eb4",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10311/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "2d654566bdfe7ca392212b3e26d14ea28cbd2f703eaf799680e9ebc7a5560eb4",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10311_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10311_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10311_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10311_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10311,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "380326e96a82a6576f570bf15e99012ddeffcfd4255d55cdfd17c65f4e1046cb",
+      "corridor_bag_sha256": "0e102666055008f509682bb7f0dec846fa8babbedfed77e12c9d653b11ff3931",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10312/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a9855f05c922efcbf58be3a2909dc7236fea9c1748dcbfa4571ea9f58d7414e9",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10312/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a9855f05c922efcbf58be3a2909dc7236fea9c1748dcbfa4571ea9f58d7414e9",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10312_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10312_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10312_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10312_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10312,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "1feb09bd24d251d062f5aaba8247ef9e6453230511b6083f9c1d2a6d01475946",
+      "corridor_bag_sha256": "6522652d7d6f267cf5ef52cc5cd61767d5ebbeb249aa21df3cee69c73d23e073",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10315/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "28fe25bdb9ec8481ce96363557aa7b5bc7834ba40fe9b9818c831876934eb471",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10315/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "28fe25bdb9ec8481ce96363557aa7b5bc7834ba40fe9b9818c831876934eb471",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10315_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10315_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10315_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10315_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10315,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "9385da8c8319db894d49ffec171463e5c06a9b416f2f8fb32b83ded441f632de",
+      "corridor_bag_sha256": "d7ed78b3efe8b74a0911ff510bfb1ecd85e6809234c79dede7ac8f0ac0512407",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10316/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "bf7ffea32a3b84d1a81f4829abf07e6218ff614c43b056852525575b25fb471e",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10316/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "bf7ffea32a3b84d1a81f4829abf07e6218ff614c43b056852525575b25fb471e",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10316_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10316_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10316_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10316_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10316,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "6688f4c13c81c33ab95d7d661cf9b690e297b294104068ca2760c74a3b7fa5a3",
+      "corridor_bag_sha256": "e6f717e851dcdba00d1377f2734dbef4804850ddc985722b0c48ab90b5167304",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10318/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "d1f64788ab60a19c615838b416da42fbe01280f8f1169cd12b237275dbd9cd78",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_LONG_WIDE_10318/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "d1f64788ab60a19c615838b416da42fbe01280f8f1169cd12b237275dbd9cd78",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10318_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10318_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_LONG_WIDE_10318_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_LONG_WIDE_10318_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10318,
+      "status": "COMPLETED",
+      "stratum": "TEST_LONG_WIDE"
+    },
+    {
+      "control_bag_sha256": "dde0d5dc76505da22cbe6c2869910dab7e535704c528ebcda9a7728127b26269",
+      "corridor_bag_sha256": "f1706c5cdfce53e2eb21175367b2e778e96c4d6d033474fc2a5403af3c8f7b8c",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10000/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "547515afc940d08e1b562038838df587977b4a9735774cb2d891bed53a60723a",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10000/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "547515afc940d08e1b562038838df587977b4a9735774cb2d891bed53a60723a",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10000_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10000_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10000_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10000_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10000,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "3ed6938a3b278b1dafd74d5ebf587e5832bcb2186b82f3eb08b80049bcfe8194",
+      "corridor_bag_sha256": "60d9ad453acbee410701fcd902a181e27f570eaaf17191b61ababe5c3bcfa23a",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10001/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "47c7371092753b8e0563634b1152353c69a1771ef99cfd16f8e622542b1ed2d3",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10001/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "47c7371092753b8e0563634b1152353c69a1771ef99cfd16f8e622542b1ed2d3",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10001_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10001_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10001_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10001_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10001,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "542d69dde82411c068c73d6f0036af4529c7ab4e05e8b94d82ec3447f6d49a0f",
+      "corridor_bag_sha256": "1916084998010e7f4b92ddd79584c4fd7a1b3dbd64b52251b16c0e99bf99ed75",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10002/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a4546d5f9b3b1d55b78305a21219e1fce4ce0cb69d57a1cd3cc4333314bf6d4a",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10002/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a4546d5f9b3b1d55b78305a21219e1fce4ce0cb69d57a1cd3cc4333314bf6d4a",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10002_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10002_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10002_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10002_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10002,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "8c39c8e2c815bb4cb603eb052648fb4d92111bbb731049961125b0839970a718",
+      "corridor_bag_sha256": "6b44f50859321ed59e03368860eba16f51d3d5b68cc2c4fe454dab4f95353e0c",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10003/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "6b3da7056819f95c4d419a9bb4bfbde09f29e1b8ccd5e579b105a1e490ab3017",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10003/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "6b3da7056819f95c4d419a9bb4bfbde09f29e1b8ccd5e579b105a1e490ab3017",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10003_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10003_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10003_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10003_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10003,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "575151fe5de87ec273b8bc79c7637524e01aca50bef1626a08e1843c010c59a7",
+      "corridor_bag_sha256": "ba6c53f637a7517979379a668964fb18eab7c8eb8e8b4579c05ab49c3e49183a",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10004/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "052acd7bc2472cb36ec83868c2f9d2acb3ebd120700f06f2f85c3e5575cf2c50",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10004/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "052acd7bc2472cb36ec83868c2f9d2acb3ebd120700f06f2f85c3e5575cf2c50",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10004_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10004_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10004_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10004_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10004,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "8e0f0087b6bd3509775866866a71fd72bc7566ff573611a503ecc027b5f84617",
+      "corridor_bag_sha256": "32871920223475f0df492f45304f1db42aad33b7c0a0bd287b5fe9bcf52bcf05",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10005/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "aaa7e0e7bd650931b92d320e2a53e5fc4da450b19d3d917745164b244d1a20c6",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10005/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "aaa7e0e7bd650931b92d320e2a53e5fc4da450b19d3d917745164b244d1a20c6",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10005_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10005_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10005_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10005_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10005,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "510820bad2b85452331aa7cd31f858fc41673df971fb67fcee3af5653fcb4b0c",
+      "corridor_bag_sha256": "1f3fb824932681ebf1009cfdfe399bd4ec12f1297556397e6f96f715fbd230e7",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10006/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "64272d8af8f7258fafc7b71512a0c5973f7d6e8134dd21a2c97311c7e566f090",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10006/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "64272d8af8f7258fafc7b71512a0c5973f7d6e8134dd21a2c97311c7e566f090",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10006_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10006_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10006_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10006_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10006,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "6c39ac26c3bdfabec283eecb070bebade8e6e0677ba3e816e496fa2f786b9b18",
+      "corridor_bag_sha256": "55386f9ea81011bc3e9559049bb25e825ab4e2ebd231d23e7d87038af263864d",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10007/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a629d7b8b8cd7ef2b297fabd442c300829aa8ac95a0b75d17b36678701dab8a1",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10007/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a629d7b8b8cd7ef2b297fabd442c300829aa8ac95a0b75d17b36678701dab8a1",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10007_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10007_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10007_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10007_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10007,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "a27ef7b27f064c0f57b26957f2605a1ec15ab4579cfcb601e8bbf9da6042b8e8",
+      "corridor_bag_sha256": "ba974dace821bd9bdb34bec2c80c4b144e9e5775871e4d23686c6c65ad5280ac",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10008/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "3ab875e2509bb86642c2dfe8571f9e97dbd416cb86854d971a01e4a62f2489f7",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10008/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "3ab875e2509bb86642c2dfe8571f9e97dbd416cb86854d971a01e4a62f2489f7",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10008_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10008_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10008_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10008_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10008,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "ec2cb81134a6e8f9379e779ed29f17a1d46085e7a5d78685018ff3acc142c4a8",
+      "corridor_bag_sha256": "1ed9163cca61eaa73487377c58ff7ea00de2ae5eb507757fca028fe932fc62dc",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10009/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "f5f97e29ddd25201d85bb00159672e083eac746e9c74f177c540d0f3385d5c73",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10009/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "f5f97e29ddd25201d85bb00159672e083eac746e9c74f177c540d0f3385d5c73",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10009_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10009_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10009_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10009_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10009,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "f3e77311c5b0fc995c0b969aedf677e9a46f362e747e10b74f8c5f639e0b1f47",
+      "corridor_bag_sha256": "a1a6a85b108bebcca592d2d8f86026e95d59534d65abe81f00f0ca4e8a8164d9",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10010/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "12f1c2ae7dfb7a960ba7ee2d35097c9f602e52757fa13365403c4b9cce7cb343",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10010/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "12f1c2ae7dfb7a960ba7ee2d35097c9f602e52757fa13365403c4b9cce7cb343",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10010_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10010_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10010_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10010_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10010,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "573e27d73bae477be2872803b02ca22c21ae61d414ada6b268acedc1f71a9fc6",
+      "corridor_bag_sha256": "b689f79fe66ad0f65ef28c6fbf8e02b4f12c2d28b9792f9923d33b4ee359af6a",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10011/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "8a5ed5f865aa8f8460347dfa2442b915dbbbf9feb2d49bf35d62a598c4059336",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_NARROW_10011/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "8a5ed5f865aa8f8460347dfa2442b915dbbbf9feb2d49bf35d62a598c4059336",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10011_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10011_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_NARROW_10011_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_NARROW_10011_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10011,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_NARROW"
+    },
+    {
+      "control_bag_sha256": "ea43359c147c0867814c148dbbe465d33d04c315f1f8139301f186c96b875832",
+      "corridor_bag_sha256": "5e638734419b573f8082a0c869ac35cf299b6a34db65f6aa177ab4e63062ac9e",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10100/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "20bbc3b0ffd2a750232b79d6bf4fdeef35cc7467af81f102bb26763f207b52c1",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10100/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "20bbc3b0ffd2a750232b79d6bf4fdeef35cc7467af81f102bb26763f207b52c1",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10100_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10100_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10100_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10100_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10100,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "1dc53132435ef933d5a0eda903daf4b0deb7199d1306fe3e3e312b4f64fe24bc",
+      "corridor_bag_sha256": "630e09250708c7d59ac4a90200ca3dbc7c1d0114c228cabd15a18af77156550a",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10101/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "32d76bd55194765ee1654e71a2ce5e1039a030ea06ab2e0c080e302a71a06eb7",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10101/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "32d76bd55194765ee1654e71a2ce5e1039a030ea06ab2e0c080e302a71a06eb7",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10101_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10101_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10101_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10101_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10101,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "c24404b0ee0a55f0189ca6d67b3c7289e27cf62428c38cb8060b339e12a01975",
+      "corridor_bag_sha256": "36189e064a5b96c152ded508937a6b4961460b1c4c045d68353fda0bb599dd01",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10104/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "6832e5d69cd42dbd8f342cb7dfc0cfbbaede60643943611db7e03f8c7b9eb559",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10104/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "6832e5d69cd42dbd8f342cb7dfc0cfbbaede60643943611db7e03f8c7b9eb559",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10104_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10104_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10104_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10104_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10104,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "3ee342c9cb78084a05a49b26222b3e21baf2ecc21f109565719582ed7c757d98",
+      "corridor_bag_sha256": "720e2dd8642e1e27ff30782446ae637573c19a3bc1a91eaa5705e08a8d072fe0",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10105/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "3ec7f95c0bedfe54438634dfa36ce76b845bc9156cc3b2dfcaa079e624a737b0",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10105/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "3ec7f95c0bedfe54438634dfa36ce76b845bc9156cc3b2dfcaa079e624a737b0",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10105_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10105_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10105_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10105_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10105,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "d6dab3a0f491562d93b1f28e51f7a5c3a17d74f28fa3b2dc7b28b7d3cd3cf31f",
+      "corridor_bag_sha256": "037767bc891d53fc249d2c6d0df6f8f3a0de2b3d774a8d97a6f05b272b5fca4d",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10106/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "6145c07612042e4e41bdca00cacd22c6dab9be4ab0423e07f89c39c4968e1535",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10106/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "6145c07612042e4e41bdca00cacd22c6dab9be4ab0423e07f89c39c4968e1535",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10106_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10106_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10106_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10106_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10106,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "18060a57ec8fef873c61001d0174bbb67b96274de83a7a6c193892c1391f6b55",
+      "corridor_bag_sha256": "656569e9326682cc905ef1f7cf36435b0f706dfa2242241fff1b6ba6293b1f87",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10107/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "2cee5fbd4dd4a09f7d51a19bf2d7af741a42e4f898655e2e5e1d713432ed2ad1",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10107/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "2cee5fbd4dd4a09f7d51a19bf2d7af741a42e4f898655e2e5e1d713432ed2ad1",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10107_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10107_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10107_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10107_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10107,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "3b9ed8734d61c073594cda811ff75e5ef53581f5493f23de03d5457378da479a",
+      "corridor_bag_sha256": "9fe15f06ba61b137509f74d33a7ad2a10a1c4894028a191c2f249108977ae313",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10110/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "0fa8d1497c281b23c1aad2ad11fa7cadf2b3b8a8874566ac4d836455d2bfe8a8",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10110/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "0fa8d1497c281b23c1aad2ad11fa7cadf2b3b8a8874566ac4d836455d2bfe8a8",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10110_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10110_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10110_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10110_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10110,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "db95f6eebe7ef611b8a8932e69b7359bbb1f597b262d7eb5359998186e0c0da0",
+      "corridor_bag_sha256": "0e18a5d3cdaeb72805c23a82e3026d780e74902c369e4f3f5c29d7b3b461118a",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10111/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "93334ee2b51d2fa012b4e5e7e6779e715a288a34afd7ed67bc766a35f2444782",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10111/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "93334ee2b51d2fa012b4e5e7e6779e715a288a34afd7ed67bc766a35f2444782",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10111_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10111_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10111_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10111_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10111,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "5f7fe79159422e4848d02294cf7b2a796b9a1b101c4b83d546ab6131c2dbcc20",
+      "corridor_bag_sha256": "449034170dbb06a785a219d43abd6b7aa8dfd117967b3b0de61fa4e4f7fe9e9a",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10112/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "c0adc3c8e7e374e7aaede82979ca74a71ebaaf219e8a5b71d1e8e4c76c165d6a",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10112/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "c0adc3c8e7e374e7aaede82979ca74a71ebaaf219e8a5b71d1e8e4c76c165d6a",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10112_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10112_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10112_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10112_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10112,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "cf29b503ddccb3807a9dd88c5e60cc3d4888c4035fa15f8ef6e5f33064fb810e",
+      "corridor_bag_sha256": "63570f552da9596619066c95b0b8c3fee037019014260224648f95cf1e8be9e9",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10116/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "c88ab537977bb9e983a506fe6debaff4ad6f9bfed6a40e06c3e904323eac87e9",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10116/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "c88ab537977bb9e983a506fe6debaff4ad6f9bfed6a40e06c3e904323eac87e9",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10116_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10116_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10116_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10116_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10116,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "be54e4cdb9373b0174dde2a63cad50904159a8b8090b4caaa6a860ac545d2f29",
+      "corridor_bag_sha256": "7b129aa30d422b0e60012344cd6ddb1d4cc4fad8c01d7679569287008bff46ee",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10117/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "40e1d0170eb8524946b70062b192b09b8949f1ff945e9ac88e86eb66012cbf0e",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10117/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "40e1d0170eb8524946b70062b192b09b8949f1ff945e9ac88e86eb66012cbf0e",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10117_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10117_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10117_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10117_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10117,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    },
+    {
+      "control_bag_sha256": "ea7f2089c70099e3e91b6e71221c52163d590398e0d605c161cd99a25fc0c66d",
+      "corridor_bag_sha256": "63c7bed57ad9179fa937f89cd05fdf61c04a5328156aea3a4cefe3b1e91f3c42",
+      "paired_bag_audit": {
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10118/control/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "33bafa171e519096fe2361df5748d9bdf5c2c9b66bba7a9d2df0dfac6579725d",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_fastlio/heldout_TEST_SHORT_WIDE_10118/corridor/sensors.bag",
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "33bafa171e519096fe2361df5748d9bdf5c2c9b66bba7a9d2df0dfac6579725d",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          }
+        },
+        "paired_imu_identical": true
+      },
+      "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+      "scene_runs": [
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10118_CORRIDOR_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10118_CORRIDOR_P1",
+          "status": "COMPLETED"
+        },
+        {
+          "run_id": "FINAL_TEST_SHORT_WIDE_10118_CONTROL_P1",
+          "scheduled_run_id": "FINAL_TEST_SHORT_WIDE_10118_CONTROL_P1",
+          "status": "COMPLETED"
+        }
+      ],
+      "seed": 10118,
+      "status": "COMPLETED",
+      "stratum": "TEST_SHORT_WIDE"
+    }
+  ],
+  "r3_review_sha256": "1d4ffd6f67e7444e9951fe1d78b656c6defe6e92f94392a69d9b3e71112db42e",
+  "reviewed_artifact_hashes": {
+    "DCReg adapter": "516e1da40c9cb8bc58e5a0e4c9c7964392a0877a77ba20e7139eae997783595e",
+    "FAST-LIO config": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+    "FAST-LIO corrected DCReg event metrics": "7a543e6a031125178fba71a656f7ecb2447d99add17ba362d940f714d40ff588",
+    "FAST-LIO corrected analysis acceptance": "2cb492c69e6f489055d546feff33fd5ac732cef117a8fe1183a2f034b1a38c0e",
+    "FAST-LIO corrected scalar event metrics": "dd5badbfff2005c74d1d447d8ac7ab195f51f6ba60dea3a6288bb10f7ec11a40",
+    "FAST-LIO corrected truth labels": "1101ecefd285648d98778e2c37d1abffa6988ca39d5a8446cc0636cad3b494ad",
+    "FAST-LIO replay script": "a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639",
+    "FASTLIO_BINARY_SHA256": "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792",
+    "FASTLIO_UPSTREAM_COMMIT": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+    "OCE novelty feasibility review": "97abbf54119e64bf0967a9b72c180af8cb9b7b57e9037688c5cbacaf0bd102df",
+    "OCE overlap addendum": "fd819f0ca50d3f965636864331c701ad27df0049be44997178ac117ff1d71866",
+    "PCL17 backend patch": "6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275",
+    "POINTLIO_BINARY_SHA256": "80516da9cafba98262d56c17cc26ec4da76e214049d3af7776248b4c3a342b17",
+    "POINTLIO_UPSTREAM_COMMIT": "4b86a469eb5572e70ed575af25b5f15dd06e8e3c",
+    "Point-LIO accepted native identity anchor": "13c9aa68e4c55cd3336839548fc48b9be140863908ab1debdc4e5c5236321583",
+    "Point-LIO attempt recorder tests": "a951dee5c970ff2563852e62b48ac4dd33a90054d735893cf210ded6a3e310f2",
+    "Point-LIO base attempt recorder": "2ae0a813bcf49dbe24bdc8750cac1fc691be4f7bc5b65dd0c84fc5b51a2afe90",
+    "Point-LIO build compatibility patch": "2006e7af098c3fe9b342dd2a52d10d3b69891f4d985332fd64ab48767feb6ddb",
+    "Point-LIO corrected DCReg event metrics": "0682d16a9240a3b3bb983843491149431301e1f22489e2b28e85ff1fa4084bb6",
+    "Point-LIO corrected scalar event metrics": "77589843e1759403ea7fd0680af10daefa3bb231c9e0b075d0186b2270fc4900",
+    "Point-LIO corrected truth labels": "9f28b758234cd4771b6ae4fcad6439ee44cb4b0c81b6472eadebc17e0431fb3e",
+    "Point-LIO deque header patch": "39594d3c07861467151ec7218471513016e286d87a8abfae248a1d37fcf6f4bf",
+    "Point-LIO development acceptance": "216cb96493612e96bc57ad18424d0fee51df083bbe9803d9fe43690a1d6c278c",
+    "Point-LIO development analysis": "ff8968a8bf7658ebfe6b35dd9a7ebf268f2c28c817c6d1d261f2890acec21c7b",
+    "Point-LIO development attempt verifier": "9c971282939c70cbef5427ed3e78f895d5875f85899c92490e8d5c6135c1fe91",
+    "Point-LIO development input validator": "9387dccca0bde4a604e99023c2d887e06d6fafc6c26f049751bddf7f74f976c8",
+    "Point-LIO development runner": "51dd92d3fea17e13b48d460e2c18c7bdba50173194fd34235633c2d904edc448",
+    "Point-LIO development workflow full suite log": "841980a19a12a91ad9ba4c33f73bbd53248af2510526a26fbfc6471a816b31f3",
+    "Point-LIO development workflow tests": "b405619e415a2a676bff08dc4b90f2a4b50075f8d6f893081478c313bb078e33",
+    "Point-LIO feasibility output verifier": "00e5e6a1c34ff05cacc0beceb3ddb5bf6edb2619467ebe3b2b3e0cb8c43b79af",
+    "Point-LIO feasibility pair tests": "c4a3031867fbed150fdc2d2969278c82e52e04c03310ffddca9dd4c34dba9b2e",
+    "Point-LIO final analysis": "2552adf5a91eec1b49b24b308fa8a364e9f2393b65f20b8b9d9e5e64962dae7b",
+    "Point-LIO final input validator": "7afac20064f016d7c9073bb78ecb4ed54507329b4df5fd670a7424f8caec3791",
+    "Point-LIO final native wrapper": "ecb525b089b87610df5977e497575b8afd5ccc59746889235e8f6c00592644a9",
+    "Point-LIO final recorder": "bd7b88e97a5b1b87bacd41f30aa3356789788de2613ec7abca14e4b2418fe5f5",
+    "Point-LIO final replication runner": "2bf861e348b499e70d2f01e10263961b80fada8e85d512f2ea97cc97242ee437",
+    "Point-LIO final verifier": "80cf35e6867526d03c728961d486e35edef089aaed6a42121bbf3e3a9a4d3ada",
+    "Point-LIO final workflow tests": "46e89e013a5b7ea3833879be8936741cffe25ffe1206388071dd4109a654c9cb",
+    "Point-LIO indicator export tests": "c1aa7c71f01dde26911780b7c33df263357645b8be13a2ceb5bbde01679080c5",
+    "Point-LIO indicator exporter": "06d2c71c9aa55d33f4009e89b6605c481a7af7b3969bd6a919ae9df766d2f8b0",
+    "Point-LIO indicator feasibility script": "76dcf4e520f6b2e61d66991a8b381123037a11bdc6e605773e287bf0d908f4ea",
+    "Point-LIO indicator parity audit": "1a13f2f268196ff0553020481af701e3dccccf3abbbe9ddc0ee1ea8c87987668",
+    "Point-LIO indicator sidecar patch": "9df4d1eb3203bf097df94d25e5d59f566c0eff4a2f11f26b5ebcc6fb8cb71d24",
+    "Point-LIO information adapter": "c141d5dfc86df130310beaba3224726e60a7b8224d6958d846d0ae98575d5f19",
+    "Point-LIO information adapter tests": "0f3a5bcdd027cb23f1564e328c01a7360189115f57a0f5656f7f54b9918c20a5",
+    "Point-LIO input frame audit": "9eca065edcb71846747247493c2f430cefcbdd0252f08f21c030649f6072ceca",
+    "Point-LIO launch helper": "00f88caff3f91efa8cb556ec2f05b46996837b504df0255e44e30a917ce451af",
+    "Point-LIO native sidecar tests": "80be26ed2f044b51fa75106fcd6e2a1fb226233e959b2ced1554c74b3b45c768",
+    "Point-LIO one-seed acceptance": "c1de9901832e19463629a8854bf156c25852c7a698bad7e595de96c98362924c",
+    "Point-LIO pose logger": "041aebef03bd8a972282e42f7ba1521e8943385c352e0edd3c11ec2eb87bdd3d",
+    "Point-LIO pose logger tests": "922ca4e35ee5a2536898bb86f1547d2b08da22738e12d69c7e679bf7e189f2b4",
+    "Point-LIO replication freeze": "87f31c5febff860fe774eb4533a1be584f68b663f0125ea40dc18e85cc587621",
+    "Point-LIO replication freeze review": "423ccdbd60f50aaeeaa080e6f19632f1b541afd234032ca8ec12f8dad8c5b5b0",
+    "Point-LIO runner helpers tests": "7fda751a0f2164f24bf174fa21390e6c6e329b627ca07d1a07ec5bd42b881de7",
+    "Point-LIO simulation clock drain helper": "2e6e1be8a0550107516c1291fdb90d5a91c2508405115e0548d216753b75fe6c",
+    "Point-LIO simulation development config": "d23bd8799c3834ac0acc1d23476a0a0c0cd72b09f7b7c542b5bfbe9813a4c98b",
+    "Point-LIO smoke script": "f7abde52efb6e2c2d18ece428cd181d62f4a3930027686d1e40d5f11de4fa0e2",
+    "R2 freeze": "9b4aff72af866e4d93dafed53f600815097bfebbfcf325f064bf70713736de39",
+    "R2 frozen artifact: AGENTS.md": "0db654eee95493cb5a1d83bd2a8b41553053467d2281c05bdb358bd417b64efb",
+    "R2 frozen artifact: README.md": "fcac3d8e874f52cd1bf8a51c5718c9137df101f4535afd8e8fe9ff0bc582e571",
+    "R2 frozen artifact: research_paper/AGENT_EXECUTION_PLAN.md": "52c12cdc0d894864594ef97d90979b34aa88cd11afe5db343c238e15329f4180",
+    "R2 frozen artifact: research_paper/RESEARCH_GOAL.md": "4feca0c33246405bce20e0f4ed2be0cfe78b1fb5c2df1629a08564d4c2c6ce33",
+    "R2 frozen artifact: research_paper/SCOPE_AMENDMENT_SIMULATION.md": "edfda5a59a376f10d4184d3e0d9451d1435267e67fd7a9854d70b30ba17dcfbc",
+    "R2 frozen artifact: research_paper/SCOPE_DECISION.md": "feb85397efcc8e222785881b9b28a3b4d7b899a893de0269ad9208a5ff337d32",
+    "R2 frozen artifact: research_paper/configs/fastlio_simulation_bootstrap.yaml": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+    "R2 frozen artifact: research_paper/data/ALTERNATIVE_REFERENCE_AUDIT.md": "0751ef48773b3b6b7e04d11615c5e16d8cdd89bb2fba0e5b5702ab3e98eeac34",
+    "R2 frozen artifact: research_paper/data/HILTI_EXP18_EVENT.md": "5df0f283b2ff09429f95815423439d69d7c5d06a769a26c27763c7a5060e4c04",
+    "R2 frozen artifact: research_paper/data/SPLITS.csv": "d9d5496a55a2bb55cbf4a294be87df41ebb3b57ff24bdfd0e6fc0fcc8d682172",
+    "R2 frozen artifact: research_paper/data/hilti_exp18_reference_metadata.json": "070105fcbf14b97f0407dde3fd905a4b956f5e3efefebd4676812c1bfedea418",
+    "R2 frozen artifact: research_paper/data/simulation_motion_v3_reference_metadata.json": "459f841c21c4c638fbc1fb4df2b21d9f4b2668ac0ea2793ee7f59146afa23f40",
+    "R2 frozen artifact: research_paper/data/simulation_random_layout_reference_metadata.json": "f632a5b1f87060e5807ada2a34851bbcc3429a5b54d25366e35846fc0957abda",
+    "R2 frozen artifact: research_paper/evidence/HILTI_EXP18_T07_PILOT.md": "27290102170124aa9b45c81d155e2476027c6a007cd08f38e5ca0a1b43982a01",
+    "R2 frozen artifact: research_paper/evidence/SIMULATION_MOTION_V3.md": "db072def2335336463864a5c74998315b03d275728c6619c90af0375d8aac2cb",
+    "R2 frozen artifact: research_paper/evidence/SIMULATION_RANDOM_LAYOUT_SMOKE.md": "659d6e7a63de8382a6c7d4ab8604535450f734bd6d8353394e426fc84a89ff1c",
+    "R2 frozen artifact: research_paper/evidence/SIMULATION_SEED_SENSITIVITY.md": "68bd7d59e28e7c61bd080af1687275affa1f49f2df21c5f38f7fb911f6a9221c",
+    "R2 frozen artifact: research_paper/evidence/T08_FINAL_PATCH_AUDIT.md": "01f3ed07ed07ad110ff8341d902ce6d13bd39a92032824fe3db511a68e16acab",
+    "R2 frozen artifact: research_paper/evidence/randomized_layout_geometry_screen_dev14_45.json": "1a7533d421e16d299ce9f1ea77860dcdea96abae5ab0ac43f6182a0b7b120b35",
+    "R2 frozen artifact: research_paper/evidence/simulation_motion_v3_manifest.json": "b66c36e72c5a7b31544652e87373b438f43bbd0e6d89db99b7ded77df82e9691",
+    "R2 frozen artifact: research_paper/evidence/simulation_random_layout_manifest.json": "71bc00b4bde8b82adb08ead394ddbc8919a0b9f17250d3720af18a54c9e336a3",
+    "R2 frozen artifact: research_paper/evidence/simulation_seed_sensitivity_manifest.json": "5f071e4c1e95b068087d6a1c8287ca1680a5e8e2deafe2c98fe20f8e38293be4",
+    "R2 frozen artifact: research_paper/execution/DECISIONS.md": "4b49f6cbf253bdf7e191f2ec0925de801e651cbb61d80826035a75e54ac743bf",
+    "R2 frozen artifact: research_paper/experiments/patches/fast_lio_health_diagnostic.patch": "ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2",
+    "R2 frozen artifact: research_paper/experiments/patches/fast_lio_pcl17.patch": "6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275",
+    "R2 frozen artifact: research_paper/experiments/run_simulation_smoke.sh": "a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639",
+    "R2 frozen artifact: research_paper/experiments/src/audit_health_export.py": "fff0e55b88e129e94f3808b88955d5f6213c8bfac98b25acc12f09e5f3a29ba8",
+    "R2 frozen artifact: research_paper/experiments/src/audit_paired_simulation_bags.py": "14944d470c0d90bc0c5e0837bdf187c06c6f5ab6bef02fbebb0aeedca518c593",
+    "R2 frozen artifact: research_paper/experiments/src/audit_simulation_scene.py": "1c51029c5c3e17e2dfe8eabaf6bcc729781bdf9b0ec3b21b6b2ce3ac00585b3b",
+    "R2 frozen artifact: research_paper/experiments/src/fastlio_information.py": "f83d8d52f8fc5d1e39a4d2190de78f17fc7672c49c7f511fc203900e3f91ea1e",
+    "R2 frozen artifact: research_paper/experiments/src/simulate_lidar.py": "897028bf99eb2b97e44088328991c745189f0df12a295e316440c2b49c747370",
+    "R2 frozen artifact: research_paper/experiments/src/summarize_simulation_bootstrap.py": "19e803ab4a52e0855aac2a24d48ffa0c9f3cab29f1445454e35fc6c9103d3139",
+    "R2 frozen artifact: research_paper/experiments/src/summarize_simulation_seed_sensitivity.py": "bf72f0eacd09eba6e90770c6424c0cde0eb1b7cf96656e313e720ae4330d89b4",
+    "R2 frozen artifact: research_paper/experiments/src/trajectory_eval.py": "d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba",
+    "R2 frozen artifact: research_paper/experiments/src/write_simulation_bag.py": "30013904c8956ce569538176c565491b49f1504781f29adc3d119fff79f62ba2",
+    "R2 frozen artifact: research_paper/experiments/tests/test_fastlio_information.py": "1e5d7ef7f6f25d06037af53ee78d1c74d3fa3b19e4d8baef66212b9266da2b91",
+    "R2 frozen artifact: research_paper/experiments/tests/test_health_export_audit.py": "7f0a05c5ee7734c0b4564768ecf927bbd89e35278da529d97a2fdd7e3da69f12",
+    "R2 frozen artifact: research_paper/experiments/tests/test_simulate_lidar.py": "816ce1a792d604369fe8c30af361b775055ec744a90cd29c260ef704be25503e",
+    "R2 frozen artifact: research_paper/experiments/tests/test_trajectory_eval.py": "da05c6866a58fc8880cab179586ab0b15f9c0f6dbbc2fb8d5c65d18efe83627c",
+    "R2 frozen artifact: research_paper/literature/COMPARISON.md": "411e52abb3469b205a7cdb891a388749a9ab8ac5fe56295beff54e88f57b0a7f",
+    "R2 frozen artifact: research_paper/literature/GAP_DECISION.md": "e5188eaf327386c3a5470e3cd758410bbe83cf626e890739a344634ed0650b9c",
+    "R2 frozen artifact: research_paper/literature/INFORMED_CONSTRAINED_ALIGNED.md": "4c6367805186a8121c09ee81bd75295d2d81c3798abd973f9d1a378bad72de8d",
+    "R2 frozen artifact: research_paper/literature/RECOVERY_OVERLAP_UPDATE.md": "117e4c40ed3b98906739d0dace28493b7f297a709f20aa72834cc8583d581255",
+    "R2 frozen artifact: research_paper/literature/SEARCH_LOG.md": "d73e0893f9dc70c522e72fa03787de2d341a4198ce782223a9b77e08d5bf1da7",
+    "R2 frozen artifact: research_paper/protocol/DATA_CONTRACT.md": "c06d112996cf66460c1eb87aba54da78c1fb9d31dfff2e4f59a3aa4b453ae95a",
+    "R2 frozen artifact: research_paper/protocol/FASTLIO_INFORMATION_DIAGNOSTIC.md": "6723a9b4838756b76d9be3835d587c4487eb4ee40b9ccde4e49c04c3009b36a8",
+    "R2 frozen artifact: research_paper/protocol/INDICATORS.md": "f9c72f12fae2c294b4e8372684df1dae3fa571c7d3905eb23b05d8b747409a4d",
+    "R2 frozen artifact: research_paper/protocol/METRICS.md": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+    "R2 frozen artifact: research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md": "5c67330fe596e74a811b7e00202cef8d460a214bf4d6ff50e8ea10b86e9e4ed0",
+    "R2 frozen artifact: research_paper/protocol/SIMULATION.md": "27ae3e937de17b12d81f66149a443ba752febb61a4547d1a32c3a2d0b2221811",
+    "R2 frozen artifact: research_paper/reviews/POINTLIO_INDICATOR_FEASIBILITY.md": "22eb4e53d852c6febc8af205e38d21010f792ac2c43be2ead2d53c2c77b40158",
+    "R2 frozen artifact: research_paper/reviews/R1_FEASIBILITY.md": "358186ea18202c558ed52bb8d0013b7a14a387ce577191a2375b6d1086dec5cf",
+    "R2 frozen artifact: research_paper/reviews/R2_PROTOCOL.md": "2895379745daaee5f009bc2aa67d5812a5e47693207a2a4e45b96b9bcc9cc961",
+    "R2 geometry amendment": "a160dcc60698cd26afee534d1c7fa3f4a69530e6daedb631d0bbb39ff45be0ac",
+    "R2 geometry amendment review": "a160dcc60698cd26afee534d1c7fa3f4a69530e6daedb631d0bbb39ff45be0ac",
+    "R2 geometry proposal": "67be630c93732b6a7941af7ceae6f7ca4311d87ce435bd8420963e116f5eb1d1",
+    "R2 metrics": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+    "R3 adversarial regression results": "be3b179ad6a3d542c62fd5a63e8e8ee3f23588c96f4d94d10bf823acb9d05634",
+    "R3 adversarial regression script": "bdc56eb369d2fb6f19b28f5f1ba69acacf1efdbcb79043625afa529abf1ca5f4",
+    "R3 evaluation workflow": "db1092a13e5abf7aa5efbb9a64040a4fe36c4114515c2c035cde5210feef9f4d",
+    "R3 evaluation workflow tests": "c3a6dfd99826cc5ccf7dde77126a71aac990223b7a3c899203c831a0a8677e9f",
+    "R3 latest system test log": "2f7da3af1a6b7b7ba1664b52c4d1b68ad7c2daca4c7569e24ab1ca4562958900",
+    "R3 readiness full-suite log": "37967d2bb4fbdc6aca040346eeeed5ec9adef476dd093cd41041625ff2e7e908",
+    "R3 repair verification report": "bc9d68a37653bc7029e7a1ae09b5e0bfb5b91f7c0158d5ba23685eabf7ec90bf",
+    "R3 review": "1d4ffd6f67e7444e9951fe1d78b656c6defe6e92f94392a69d9b3e71112db42e",
+    "R3 review inventory builder": "0da0cceef88389fab38b6bbd96923e2e9af7779b6a19229d17dddd116a420e4c",
+    "R3 supervised replay wrapper": "2da73b9d5fe821c72c85edec8519cb3c50d7b602518a10ec0927eb9d358142c3",
+    "T08 backend patch": "ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2",
+    "T13 backend patch": "4e85cce23aae900e3cbee37f9871d40454fb3c1203a794a8db419475033a1ace",
+    "T14 batch audit": "66be7cda05e1f97089e523272af5dfd78b70134b12ebd3a9964cf15ad8bc4b87",
+    "T14 development report": "772f884806c2e09fe8598e3c8e9ab5c00182e4941f6945342fc6ca7ef122dfcf",
+    "T14 repeat figure manifest": "dfec7eda6ddb5bfadbefde3a1eb3bfcf1d2a90d2a015eb07510a8862b76b406e",
+    "T14 repeatability audit": "aafcaf10ff487be2085573a6d6eea386e5825c160b2f92c311ee5b8d3b47808c",
+    "T14 repeatability implementation": "847c8100959211036f621cd127a28843da946eeb69573615e301d2f7c4d41200",
+    "T14 repeatability report": "0f4b5d2c5d835f44637467ae5ea59b846a93fe3cabbebeb9cc1b551f9a2577ff",
+    "T14 repeatability tests": "0201dedb2e1a0bfdb6389f117acbfbe345f27549781c0497ea9f1a02ffa5cf6f",
+    "T14 route adapter": "93ab5bacf988b83564c6405a2cf3dd9433b247d3122fb32c42817094c72353bc",
+    "T15 smoke manifest": "e744444d367b1b485020d2800fb92736f3bd07de4b4549a2f9f26fa177a79f6b",
+    "T16 analysis manifest": "1678e1c8b62b3ceeabf4e9f4e63593832cf8c94f7793e7b933647e8569c082f7",
+    "T16 analyzer": "f34fa9479e95bfa78823e3be8f70d63445631d09f3d46fe59a75331ae2975077",
+    "T16 analyzer tests": "b084cd32cc9a4d1592ea26e94584ffcce305090350ec0030cfce9f475cde42ca",
+    "T16 report": "be4c5182cee131cc2d88bbfb177c0e47f49491212201e694685614c0da130016",
+    "backend CMake newline restoration": "1e7667123dc6a04cf71d41de69c7621efbba4f35ae0012c70690e109ef4dbdce",
+    "backend rebuild script": "ac0d3003db1a532eebc028747ced125e308c22e80530e291fb6a90112e252f30",
+    "corrected FAST-LIO candidate table": "7ebbe1e5858ad49c4b175bd406dfa25921a0b3a957ef3a6d9aa8510e9d2d89c2",
+    "corrected FAST-LIO development manifest": "1678e1c8b62b3ceeabf4e9f4e63593832cf8c94f7793e7b933647e8569c082f7",
+    "corrected Point-LIO candidate table": "78338dddfa6fc777f06f0a7e87a704269dc09ceb12cd303b89456832688cac58",
+    "corrected Point-LIO development manifest": "e3a03d83f5854c5705177bc7610cb6ff18d9f0d331f50783c23dcd036b6ce254",
+    "corrected development analysis report": "d348a2926dc44d0f802c8c829d897e3808c190ee5eb79373a357d6920565a497",
+    "current research handoff": "736c0e92497721995de535c3dc62e196f86a9b2eaeca1340c497ddea490e8cee",
+    "development lifecycle validation report": "67332a3e47e2bf918277e0860f688f50faf074ef2cd6c4a4bac7a39b51a7973c",
+    "development lifecycle validation script": "f1b90be692659f098fa2f1d346eb17bd03e9e9049d4d489c4e539ab26f9f54b6",
+    "development signal comparison plotter": "7bb9ade15f8e8497cc741169bdd1ad347efe84cb2e8d465a6e256a1b2d7cda9b",
+    "development signal figure manifest": "037deb8c9b13a1de29b333948f241bab0ca8a7c509d4889c341a499f6fda237b",
+    "execution decisions": "4b49f6cbf253bdf7e191f2ec0925de801e651cbb61d80826035a75e54ac743bf",
+    "final dataset analysis caller": "c2fbbd8487011f424ef3be19cfe0ddf263d0d8a44ad8be11531811044d225dbf",
+    "final dataset analysis tests": "502bbb88b09cdafe3e90c692a8aba7ad237d8395d6ccf40c0b59bba0ab417c3f",
+    "final evaluation plan": "ae48ad8e73c2716b2dafd5eed7899ac26efc531f19edfbcf2ba0aeaa928dfad4",
+    "final input preparation tests": "8c8a0e62974f92f0e34ba42828c7f7585882f8228864f592fbd54380da91721c",
+    "final lifecycle tests": "cae710852eb7671c720615236f51c829a14e873463015cc0b5c7f70591daeb52",
+    "final runner": "27f56c97be23e1fdcff6fdbf4e4c424c21d975527c0ee0e895c9fcb084e9caa0",
+    "final runner tests": "eee98feb768f14de24234a0a36eb0af60eec72efed38b467d5aadb7a041f26ae",
+    "fresh primary recovery acceptance": "49e5f93b2e37dcc4b4a32ff822f73a0666b203ed5aff8811bc57a646e1db0f19",
+    "fresh primary recovery audit": "6b295f9be6484286d5902a75098546da19eb3d1882b21b9b482ed89a3374db91",
+    "fresh primary recovery report": "773b816714039adb582749e372dc0085c0a86c4d784fc4f4acc7a82dc848152c",
+    "fresh primary repeatability audit": "bba10dc2f7b5dc4aa51e77c8ebc1402f908f7a28a78ba9396add8a0e916131b6",
+    "geometry Point-LIO native wrapper": "ab281731e294f5caa0c61ca4387b72f89e3784084972c8bdc8d86dc132e86930",
+    "geometry development recorder": "172974db6ef3216d8dc9fd3d2b7b560581c47c102766cbb9c019dfafedd5177c",
+    "geometry development validator": "f0e3fa41e70fe7d377fbe270efb647bde543665ac0dd5d8b0361d6f7f938eaf2",
+    "geometry native validation report": "e129fec7059e1f75295139426f2692aa070a12b1d52f886d071f24e757f606a6",
+    "geometry native validation runner": "b5f4a6797db79190341a3742d5456127aecac488ad1cec38d5fb34c46729b312",
+    "geometry native validation summary": "967b4cefc835ca37452ea4e803b5e08164de62d4e9ed83f62f07ca6c41beb5de",
+    "geometry revision proposal": "67be630c93732b6a7941af7ceae6f7ca4311d87ce435bd8420963e116f5eb1d1",
+    "geometry revision tests": "2d23c6ba76efba9bd68c34a1f2284971080090e0322999f5b9c534de05fc6be4",
+    "geometry spacing implementation": "78b42c9b13b7a19984e298950f90b7097e471fb7ae93940423e2e1cb5c00d5a1",
+    "geometry v2 generator": "03cce893df0ae1eb8e3fa04204dde4281502655a8c3497aacbdc7b2cc00a348a",
+    "geometry v2 inventory builder": "1ddee2503ed23598a53c2990a211ac2188ffecb225000807db0fc8226463c6fc",
+    "geometry v2 readiness test log": "cda45011a61866c21b64ababb271efbbed113e33ded96db43dc999423ee908ae",
+    "geometry v2 split": "8ffc5fe935032e317bcb3a60213814ce0dfcef0ebbb5ec1ae6b57db19c54ed04",
+    "geometry v2 workflow tests": "d0b7ff2e4e9c994f0bcd135c7554ba85be24ac77d861c2aaff1050f404ae76e4",
+    "health audit": "fff0e55b88e129e94f3808b88955d5f6213c8bfac98b25acc12f09e5f3a29ba8",
+    "held-out generator": "03cce893df0ae1eb8e3fa04204dde4281502655a8c3497aacbdc7b2cc00a348a",
+    "held-out generator tests": "fe5148d40bc0132449830df17db83e162033b9699e00a512e9969693f337f66f",
+    "held-out statistics": "09a6471003e692d2fafc9058fbe62662935bc46fa8f9feb7cbaa23b39a055a50",
+    "held-out statistics tests": "7e0569e97766c4e2faf89e8aede0ce0097a91eac0e69310b6e7f3ec855e43e09",
+    "original held-out generator": "9f39bd09ccfe250b9beb9064deeafddacb01aee7eb0509620e9c4bb761b27248",
+    "pair audit": "14944d470c0d90bc0c5e0837bdf187c06c6f5ab6bef02fbebb0aeedca518c593",
+    "paper completion plan": "817139e365e3f62552d8d885fa2440642aa71278441f366b6c60e6d785aded6b",
+    "pose logger": "1a4cddb319dda44ce1838e34bcbac55d49958da1a0a06b443a7802dc49677ed2",
+    "post-R2 novelty audit": "86362326cfd9fdf539e5702b34771e743bd6c70130f113fd08b2ff8520971faf",
+    "primary recovery audit script": "2a0ee1b1fd30e3099be25bbc9a08264ed3a1d2de89eebf4a06c80de3f6bcab9b",
+    "primary recovery runner": "1c00980bf1a6e7121d10f36a2b817b21fabf17a22e1db64c858e28944ce2ea51",
+    "primary recovery tests": "288aa1ab5816b807e7e5e29e80952794a233fca69a057d785c76bf35d0bc068c",
+    "research status ledger": "af994fff81ec2265744996d52e3647d5b240b63cd0d37fee23bfb48991b2e9d9",
+    "restored historical backend identity": "0fdb0ccc18285fdce7e41d0072beeb354391a6b1887619b9f13c9002fd6a8213",
+    "simulation scene audit": "1c51029c5c3e17e2dfe8eabaf6bcc729781bdf9b0ec3b21b6b2ce3ac00585b3b",
+    "simulator": "897028bf99eb2b97e44088328991c745189f0df12a295e316440c2b49c747370",
+    "split table": "8ffc5fe935032e317bcb3a60213814ce0dfcef0ebbb5ec1ae6b57db19c54ed04",
+    "trajectory evaluator": "d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba"
+  },
+  "role": "heldout",
+  "runner_sha256": "27f56c97be23e1fdcff6fdbf4e4c424c21d975527c0ee0e895c9fcb084e9caa0",
+  "scene_runs": 96,
+  "scene_screen_sha256": "f088c5cbe539da1624b638148662362ecab6a74a1de861094664df097a99b886",
+  "scheduled_scene_runs": 96,
+  "schema": "final-heldout-batch-v1",
+  "status": "COMPLETED",
+  "target_geometry_pairs": 48,
+  "threshold_locked_from_development": 166.16366016039856
+}

@@ -1,0 +1,62 @@
+{
+  "status": "ATTENTION_REQUIRED_FAST_ANALYSIS",
+  "commands": [
+    {
+      "stage": "POINT_LIO",
+      "command": [
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/run_pointlio_final_replication.py",
+        "--screen",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scene_screen.json",
+        "--plan",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/evidence/FINAL_HELDOUT_PLAN_GEOMETRY_V2_20261012.json",
+        "--primary-results-root",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/fastlio",
+        "--r3-review",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/reviews/R3_GEOMETRY_V2_IMPLEMENTATION_20261012.md",
+        "--implementation-freeze",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md",
+        "--ros-env",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env",
+        "--workspace",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_ws_r2_20260929",
+        "--glog-prefix",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_glog_20260929",
+        "--binary",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_ws_r2_20260929/devel/lib/point_lio/pointlio_mapping",
+        "--scratch-root",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scratch_pointlio",
+        "--output-root",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/pointlio",
+        "--minimum-free-mb",
+        "2048"
+      ],
+      "log": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/pointlio_execution.log",
+      "exit_code": 0
+    },
+    {
+      "stage": "FAST_ANALYSIS",
+      "command": [
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/final_dataset_analysis.py",
+        "--results-root",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/fastlio",
+        "--screen",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/scene_screen.json",
+        "--plan",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/evidence/FINAL_HELDOUT_PLAN_GEOMETRY_V2_20261012.json",
+        "--r3-review",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/reviews/R3_GEOMETRY_V2_IMPLEMENTATION_20261012.md",
+        "--freeze",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md",
+        "--output",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/analysis_fastlio"
+      ],
+      "log": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/fastlio_analysis.log",
+      "exit_code": 1
+    }
+  ],
+  "source_sha256": "48e9f2d8123c64f8fc56716ffddfd6aa53f1a55c431e02f6b77964a17de05e1f",
+  "fast_status": "COMPLETED",
+  "pid": 696985
+}
