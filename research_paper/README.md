@@ -90,6 +90,85 @@ For each pair, the analysis subtracts the control's median interior one-second t
 
 Exact numerical values, event-weighted ROC/AP, tolerance/window sensitivity analyses and all failures are retained in the [full result report](evidence/final_geometry_v2_results_20261012/RESULTS_REPORT.md), [analysis exports](evidence/final_geometry_v2_results_20261012/export_audit.json), [event CSV](evidence/final_geometry_v2_results_20261012/corridor_event_ledger.csv) and [figure manifest](figures/final_geometry_v2_results_20261012/manifest.json). No final threshold fitting or geometry replacement occurred.
 
+## Exploratory failure analysis
+
+[Failure-analysis report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) examines all 96 corridor events and their paired controls. All original labels and 192 diagnostic event rows were reproduced with the frozen routines; thresholds and final results are unchanged. This is exploratory author analysis, not an independent novelty or mechanism verdict.
+
+![All-event missed-recovery patterns and measurement/score summaries](figures/final_failure_analysis_20261012/failure_patterns.png)
+
+The top bars separate misses with no raw healthy tick, intermittent raw health without confirmation, and an active state without a new post-onset transition. FAST scalar has 30 threshold-side misses and two confirmation-side misses. Point fixed Schur has five active-state misses and two with no raw healthy tick: a missed **new declaration** does not always mean the diagnostic stayed unhealthy. The bottom panels include all 48 corridors per backend; red marks initial false-healthy, amber a miss without false-healthy, blue neither, and crosses non-recovery. Whole-horizon score/count medians do not determine an individual tick’s correctness.
+
+Accepted measurement count alone does not explain these results: FAST scalar’s missed/detected groups have nearly identical group median counts (397.50 / 397.25), but median scores differ (65.927 / 168.790). These descriptive outcome-group comparisons do not establish a causal explanation of width, score scaling or estimator behavior.
+
+<details>
+<summary>All 15 selected failure, success and non-recovery timelines, with explanations</summary>
+
+The lowest seed per backend/method/category selects illustrations; all events determine the summaries. Each timeline shows accepted counts and scalar scores alongside its paired control, the corridor Schur score, post-exit primary motion errors divided by their frozen limits, and causal confirmed-health states. Triangles are new alarms. Black is geometry exit; dashed green is retrospective onset, dotted green its truth confirmation, and purple relapse when present. Truth is offline and never enters the online decision. Motion errors are plotted at window end; blank pre-exit error space is not zero. [Selection receipt](evidence/final_failure_analysis_20261012/case_selection.json).
+
+![fastlio seed 10000 exploratory timeline](figures/final_failure_analysis_20261012/fastlio_10000_timeline.png)
+
+**fastlio seed 10000:** illustrates false_healthy (scalar), successful_detection (Schur). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![fastlio seed 10001 exploratory timeline](figures/final_failure_analysis_20261012/fastlio_10001_timeline.png)
+
+**fastlio seed 10001:** illustrates missed_recovery (scalar), no raw healthy tick (scalar). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![fastlio seed 10002 exploratory timeline](figures/final_failure_analysis_20261012/fastlio_10002_timeline.png)
+
+**fastlio seed 10002:** illustrates false_healthy (Schur). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![fastlio seed 10003 exploratory timeline](figures/final_failure_analysis_20261012/fastlio_10003_timeline.png)
+
+**fastlio seed 10003:** illustrates successful_detection (scalar), missed_recovery (Schur), no raw healthy tick (Schur). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![fastlio seed 10010 exploratory timeline](figures/final_failure_analysis_20261012/fastlio_10010_timeline.png)
+
+**fastlio seed 10010:** illustrates no confirmation (scalar). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![fastlio seed 10105 exploratory timeline](figures/final_failure_analysis_20261012/fastlio_10105_timeline.png)
+
+**fastlio seed 10105:** illustrates non_recovery (scalar), non_recovery (Schur). Truth status is NO_RECOVERY_WITHIN_HORIZON. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![fastlio seed 10117 exploratory timeline](figures/final_failure_analysis_20261012/fastlio_10117_timeline.png)
+
+**fastlio seed 10117:** illustrates no confirmation (Schur). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![fastlio seed 10203 exploratory timeline](figures/final_failure_analysis_20261012/fastlio_10203_timeline.png)
+
+**fastlio seed 10203:** illustrates active state without new alarm (Schur). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![pointlio seed 10000 exploratory timeline](figures/final_failure_analysis_20261012/pointlio_10000_timeline.png)
+
+**pointlio seed 10000:** illustrates successful_detection (scalar), missed_recovery (Schur), no raw healthy tick (Schur). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![pointlio seed 10001 exploratory timeline](figures/final_failure_analysis_20261012/pointlio_10001_timeline.png)
+
+**pointlio seed 10001:** illustrates successful_detection (Schur). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![pointlio seed 10002 exploratory timeline](figures/final_failure_analysis_20261012/pointlio_10002_timeline.png)
+
+**pointlio seed 10002:** illustrates false_healthy (Schur), active state without new alarm (Schur). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![pointlio seed 10009 exploratory timeline](figures/final_failure_analysis_20261012/pointlio_10009_timeline.png)
+
+**pointlio seed 10009:** illustrates missed_recovery (scalar), no raw healthy tick (scalar). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![pointlio seed 10105 exploratory timeline](figures/final_failure_analysis_20261012/pointlio_10105_timeline.png)
+
+**pointlio seed 10105:** illustrates non_recovery (scalar), non_recovery (Schur). Truth status is NO_RECOVERY_WITHIN_HORIZON. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![pointlio seed 10202 exploratory timeline](figures/final_failure_analysis_20261012/pointlio_10202_timeline.png)
+
+**pointlio seed 10202:** illustrates false_healthy (scalar). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+![pointlio seed 10207 exploratory timeline](figures/final_failure_analysis_20261012/pointlio_10207_timeline.png)
+
+**pointlio seed 10207:** illustrates active state without new alarm (scalar). Truth status is RECOVERED. The aligned panels distinguish measurement support, threshold crossing, motion accuracy and new alarm timing; the [report](evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md) records both methods’ exact event flags.
+
+</details>
+
+Sources and reproduction: [analysis manifest](evidence/final_failure_analysis_20261012/manifest.json), [figure manifest](figures/final_failure_analysis_20261012/manifest.json), [test log](evidence/final_failure_analysis_20261012/regression_tests.log). The current full suite ran 254 tests: 253 passed, one optional SciPy skip. No new native replay, threshold fit or significance test was performed.
+
 ## Development evidence
 
 Each backend completed **32 corridor/control pairs: 64 formal scene runs**. FAST-LIO additionally has four declared repeats; 69 native attempts include a retained interruption and technical retry. Point-LIO reused two reviewed seed-14 slots and completed 62 new slots.
@@ -260,10 +339,10 @@ FINAL_ROOT="$RESEARCH_BASE/final_heldout_geometry_v2_20261012"
 | Early simulation | Bootstrap and motion-v3 timelines exist | Add a dimensioned formal corridor/control schematic with sensor and body axes. |
 | Current development comparison | Two-backend operating-point figure with intervals exists | Link the current figure, rather than historical FAST-LIO-only counts. |
 | Fresh repeatability | Motion and warning disagreement plots exist | Keep repeat IDs and no-new-event caption. |
-| Recovery definition and online timing | Written rules; no dedicated timing diagram | Show exit, causal decision ticks, three truth windows, confirmation, delay and relapse. |
-| Final event outcomes/availability | All 48 corridor events per backend are illustrated above; non-recovery and inapplicable decisions are explicit | Add representative causal timelines for the manuscript. Workflow preflight failures remain documented in logs/JSON; a failure-stage diagram could illustrate them. |
+| Recovery definition and online timing | Fifteen aligned native timelines now distinguish exit, retrospective onset, truth confirmation and causal alarms | Add a simplified conceptual timing diagram if needed for teaching. |
+| Final event outcomes/availability | All 48 corridor events per backend are illustrated above; non-recovery and inapplicable decisions are explicit | Representative causal timelines are included. Workflow preflight failures remain documented in logs/JSON; a failure-stage diagram could illustrate them. |
 | Split and review path | Manifests/reviews and dated execution table exist | Add a split diagram distinguishing development, original rejected screen and fresh final cohort. |
-| Final results | Four final figures above: operating points, groups, every event and paired geometry uncertainty | Add native causal timeline illustrations and threshold-free curve plots with the frozen source exports if needed for the manuscript. |
+| Final results | Four final figures above: operating points, groups, every event and paired geometry uncertainty | Native timelines are now included; threshold-free curve plots can be added from frozen exports if needed for the manuscript. |
 
 The [visual documentation plan](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md) specifies sources, placement, plotting rules and reproduction requirements for each addition. [Figure guide](figures/README.md) records existing figure provenance.
 
@@ -275,7 +354,7 @@ The [visual documentation plan](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.
 
 Novelty preparation steps 1–3 are now documented: [candidate contribution](literature/CONTRIBUTION_ASSESSMENT_20261012.md), [nine-paper primary-source comparison](literature/CLOSEST_WORK_MATRIX_20261012.md) and [claim-to-evidence map](evidence/CLAIM_EVIDENCE_MAP_20261012.md). The fixed-policy event estimates and four-group summaries were predeclared; emphasizing Point-LIO’s narrow/wide pattern and explaining its cause are post-result interpretations. The comparison supports a plausible narrow empirical contribution, not an independent novelty verdict.
 
-The remaining steps are to write the evidence-supported results/discussion, complete the manuscript and reproducibility package, and obtain scientific review of the claimed contribution. [Main manuscript](paper/main.tex) remains a proposal abstract; [methods draft](paper/methods_protocol_draft.tex) is preliminary. Any new comparator or changed protocol needs development validation and a dated exposure-aware amendment; these final data are now exposed and cannot become fresh tuning-free evidence again.
+Exploratory failure investigation (step 4) is now complete in the report above. Decision: the existing evidence supports drafting a bounded empirical paper; a causal width explanation would require a fresh, separately frozen study. Publication novelty remains unestablished. The remaining steps are to write the evidence-supported results/discussion, complete the manuscript and reproducibility package, and obtain scientific review of the claimed contribution. [Main manuscript](paper/main.tex) remains a proposal abstract; [methods draft](paper/methods_protocol_draft.tex) is preliminary. Any new comparator or changed protocol needs development validation and a dated exposure-aware amendment; these final data are now exposed and cannot become fresh tuning-free evidence again.
 
 Controlled simulation supplies primary quantitative reference. Hilti Exp18 is supporting evidence: only 13/56 post-exit one-second windows and 0/56 three-second windows were scoreable in the pilot, and its reference is partly LiDAR-registration-derived. GEODE failures remain in the historical record. Neither supports a real-world recovery or flight-safety conclusion.
 

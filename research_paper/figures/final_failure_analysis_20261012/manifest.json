@@ -1,0 +1,26 @@
+{
+  "scope": "Exploratory post-result illustrations; retrospective truth is not online input",
+  "plotter_sha256": "ac6f17d430e5c38a0a77694049c52a9f3ec123b0c01f8f68fec419f76f4d9dbb",
+  "source_manifest_sha256": "043eb0600731eaf6a4679a501abf7799610ba3b08a90aacd59862e32f5bca094",
+  "outputs": {
+    "failure_patterns.png": "feb24a17c2f81835c0df764d92d1b71fe52cb337a8e704891488ee4e68a55b4b",
+    "pointlio_10202_timeline.png": "0147d9b2db8a1784e16bb324f3dd4e15443c4ecaf9e9edb189b59b17816f0ce6",
+    "fastlio_10001_timeline.png": "7ce09b0b051bb8ae6b99ece377e80925eff666eb01d8bcce92a8b3bfc59317ce",
+    "case_captions.json": "4e8d9f0874e34aedaef58d9e2a6cb70a6cece3d3814ebef0d29e6ea664d510f4",
+    "pointlio_10001_timeline.png": "245346232365bdf576bb5ced95b9be724e613ad8c8551c1ad26896268f12a690",
+    "fastlio_10002_timeline.png": "e790aea281e5c774aa9bd264167648d01cd928736050c38a8b29fefed715c3ec",
+    "pointlio_10009_timeline.png": "122653adbdacca6ff7bf9ea5161dec44d04f474a755b2fc7e0583956228be19f",
+    "pointlio_10105_timeline.png": "02d39716412331a44635fd6ba4059fb20a2e9b9d142b4d87cfc32591ca70af2d",
+    "fastlio_10010_timeline.png": "fedd46a3a9d71132d0d87649a4ae83e04a7a7e5943cecca5fc88e349dc2c6169",
+    "fastlio_10000_timeline.png": "06e9e350b2cd2f6c1379c46c07849fe93040e6945b437a22673b558e86d86009",
+    "fastlio_10203_timeline.png": "9df894a606e99e27ec4bb31254ed6036d1d9f3f19a38ef808a79f84357cf6227",
+    "pointlio_10000_timeline.png": "062bd5e583d9d79e09de1023b3cf80426e9f802fbf2830691092a711c912e546",
+    "pointlio_10207_timeline.png": "b2bd9d510b5e484cf5eea3de2da8ddf12ed8a3f4ee3bc3b1c71ae11457609390",
+    "pointlio_10002_timeline.png": "94f83093610abbc082cf96a2856318fb71474613856ba7a61a1ab95b15d31827",
+    "fastlio_10117_timeline.png": "f764e866472daecb3b575920a9a8ba785b9ec4b7ee75d6135c2c5d30c21e036b",
+    "fastlio_10105_timeline.png": "3b6099c1ee1e6637c58073215e6b575ad8979978c3d37351eae5676226ff5178",
+    "fastlio_10003_timeline.png": "d7885b535428030af527631734293f9801fac3881b1fbfa13cfa51023d407ad0"
+  },
+  "selection_rule": "Lowest selected seed per backend/method/category; illustrative post-result selection, never used to estimate prevalence",
+  "illustrated_unique_backend_seed_pairs": 15
+}
