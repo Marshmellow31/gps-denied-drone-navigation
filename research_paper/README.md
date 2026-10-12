@@ -62,13 +62,79 @@ Each backend completed **32 corridor/control pairs: 64 formal scene runs**. FAST
 
 ![Development diagnostic operating points with event-level 95 percent Wilson intervals](figures/development_signal_comparison_20261010/development_signal_comparison.png)
 
+**How to read this figure:** moving left means fewer initial false-healthy events; moving up means more detected recoveries among events that actually recovered. Blue denotes FAST-LIO and red denotes Point-LIO; circles are the scalar diagnostic and squares are the fixed DCReg adaptation. Horizontal and vertical bars show event-level 95% Wilson intervals. The backend-specific recovery denominators differ, so this is not a direct estimator leaderboard.
+
 The exact locked scalar thresholds are `166.16366016039856` for FAST-LIO and `123.80876977779258` for Point-LIO. The figure’s dashed 10% line is the development selection ceiling, not a demonstrated safety guarantee. Sources: [accepted analysis](evidence/DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md), [figure manifest](figures/development_signal_comparison_20261010/figure_manifest.json).
+
+### Fresh primary repeatability: movement errors
 
 ![Fresh primary development repeat comparison](figures/primary_recovery_20261009/t14_repeat_motion_errors.png)
 
+The left panel compares median one-second translation errors for primary and repeat executions of the same seed-14 and seed-45 inputs. Each comparison uses 587 jointly valid windows. The right panel shows the largest absolute error change at matching timestamps: a similar median can hide a local difference, such as the approximately 0.022 m seed-14 control change. Windows are correlated observations, not 587 independent scenes.
+
+### Fresh primary repeatability: warning decisions
+
 ![Fresh primary development warning disagreement](figures/primary_recovery_20261009/t14_repeat_warning_disagreement.png)
 
+The panels compare FAST-LIO scalar and fixed DCReg warning states between primary and repeat runs. Teal shows disagreements before confirmation; purple shows disagreements after the consecutive-tick confirmation rule. A nonzero bar means the same input produced a different warning decision at some matching, jointly available ticks. It does not measure false-healthy events against truth; confirmation can alter disagreement rather than always reduce it.
+
 Repeats measure execution variability; they do not add independent geometry events. See [fresh primary recovery](evidence/PRIMARY_DEVELOPMENT_RECOVERY_20261009.md) and its [repeat audit](evidence/primary_recovery_repeatability_20261009.json).
+
+## Real-recording illustrations: Hilti-Oxford Exp18
+
+These are supporting development illustrations from a handheld recording. They explain the sensor data and reference limitations; they do not establish real-world recovery.
+
+### What the LiDAR saw before and after the scene change
+
+![Equal-scale top-down LiDAR snapshots at 25 and 40 seconds in Hilti Exp18](figures/exp18_lidar_before_after.png)
+
+Both panels show the same 30 m-wide area centred on the sensor, marked by the blue dot. Dark marks represent LiDAR returns. At approximately 25 s, most returns are nearby; at approximately 40 s, more distant structure appears. The 90th-percentile range changes from about 1.8 m to 13.6 m. This supports a change in visible geometry, but cannot determine when the motion estimate recovered. Display filtering and source attribution are in the [figure guide](figures/README.md).
+
+### Recording, reference coverage and replay duration
+
+![Hilti sensor and reference coverage compared with the first 55-second replay](figures/exp18_data_timeline.png)
+
+The top strip shows about 109.3 s of sensor recording; the middle strip shows the shorter 86.7 s reference span; the bottom strip shows the first 55 s replay. White cuts mark large reference gaps, where movement errors may be unavailable. The gold band is the early approximate scene-change annotation, not a recovery label. The later [event audit](data/HILTI_EXP18_EVENT.md) refined the exit interval to 31.6–33.6 s; this historical image retains the earlier coarse band.
+
+### Geometry signal, local movement error and accumulated drift
+
+![Hilti development pilot with information score, local translation and rotation errors, and accumulated translation error](figures/exp18_health_error_pilot.png)
+
+Read the four panels from top to bottom: logarithmic minimum information eigenvalue, one-second translation error in metres, one-second rotation error in degrees, and accumulated translation error after one fixed alignment. Gold marks the LiDAR-defined exit interval and grey marks unavailable observations. A stronger information signal is not itself proof of accurate movement, and accurate local movement would not erase accumulated drift.
+
+Only 13/56 post-exit one-second windows and 0/56 three-second windows had usable reference in this pilot. The reference is partly LiDAR-map-derived, so sustained independent recovery remains unproven. Sources: [pilot report](evidence/HILTI_EXP18_T07_PILOT.md), [plot provenance](evidence/exp18_pilot_manifest.json).
+
+## Historical simulation illustrations
+
+These figures show how the simulation developed. Their single-seed outcomes are separate from the current 32-pair development analyses and the pending final evaluation.
+
+### Forty-second motion-v3 corridor/control pilot
+
+![Forty-second motion-v3 simulation comparing corridor and added-feature control](figures/simulation_motion_v3_timeline.png)
+
+Teal denotes the corridor run and purple the added-feature control, using matched simulated movement and IMU inputs. Gold marks the body inside the corridor. The panels show the minimum information eigenvalue, one-second translation error, one-second rotation error in radians, and accumulated translation error after a fixed alignment at 5 s.
+
+In this example, local translation errors decrease after exit while accumulated position errors remain large. This illustrates why local recovery and global drift are measured separately. It is one development pair under seeded bias stress settings, not calibrated real-sensor performance or a general recovery result. Source: [motion-v3 report](evidence/SIMULATION_MOTION_V3.md) and [manifest](evidence/simulation_motion_v3_manifest.json).
+
+### Earlier simulation bootstrap
+
+![Earlier simulation bootstrap comparing geometry information and motion errors](figures/simulation_bootstrap_timeline.png)
+
+The same four-panel layout shows an earlier roughly 32-second feasibility run: geometric information, local translation error, local rotation error in radians, and accumulated translation error. Teal and purple distinguish corridor and feature-control runs; gold marks corridor occupancy. This version used one development seed without the later bias stress, and subsequent simulator versions supersede it. It demonstrates that sensor replay and offline truth comparison worked, rather than establishing generalization. Source: [bootstrap report](evidence/SIMULATION_BOOTSTRAP.md) and [manifest](evidence/simulation_bootstrap_manifest.json).
+
+### Original retained repeats: movement errors
+
+![Historical retained-repeat motion errors from the original T14 cohort](figures/t14_repeat_motion_errors.png)
+
+This original repeat audit compares median local translation errors on the left and the largest aligned error changes on the right. Several repeat trajectories differ despite identical inputs; the seed-45 control has a largest aligned change of about 0.416 m. These values belong to the historical cohort and must not be substituted for the fresh-repeat results above. Source: [original repeatability report](evidence/T14_REPEATABILITY_AUDIT.md).
+
+### Original retained repeats: warning disagreements
+
+![Historical FAST-LIO and DCReg warning disagreements between original primary and retained-repeat runs](figures/t14_repeat_warning_disagreement.png)
+
+The bars show the percentage of 596 jointly available decision ticks where original primary and retained-repeat warning states disagree. Teal denotes raw states and purple confirmed states. The left panel uses the FAST-LIO candidate cutoff; the right uses the fixed DCReg adaptation. Differences demonstrate execution variability and its effect on decisions, not extra independent events or a false-healthy rate. This historical audit is superseded for current-cohort reporting by the fresh figures above. Export hashes and source identity: [original figure manifest](figures/t14_repeat_figure_manifest.json).
+
+Every research PNG currently retained under `figures/` is displayed above. PDF/SVG files are alternate exports of the same plots; their provenance is indexed in the [figure guide](figures/README.md). Archived landing-prototype figures under `../old_data/` belong to a separate study.
 
 ## What verification and tests cover
 
