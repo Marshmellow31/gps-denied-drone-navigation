@@ -1,7 +1,7 @@
 # Final Held-Out Geometry Screening Report — 12 October 2026
 
-**Status:** `STOP_RETURN_TO_R2_INSUFFICIENT_ELIGIBLE_LAYOUTS`  
-**Gate:** Live R3 Implementation Gate PASS; Geometry Screening FAILED  
+**Status:** `STOP_RETURN_TO_R2_INSUFFICIENT_ELIGIBLE_LAYOUTS`<br>
+**Gate:** Live R3 Implementation Gate PASS; Geometry Screening FAILED<br>
 **Output Artifact:** `/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/scene_screen.json` (SHA-256: `3b4ec4b38d77a5a81ca04df489bc83be608fa8fa038d1ee72856f6ba3a84b0f0`)
 
 ---

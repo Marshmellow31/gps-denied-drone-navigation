@@ -6,6 +6,7 @@ from pathlib import Path
 
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.rcParams['svg.hashsalt'] = 'geometry_revision_development_v1'
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -45,7 +46,10 @@ def plot(audit_path: Path, output: Path):
     ax.legend(loc='upper right', fontsize=9)
     fig.suptitle('Geometry repair candidate — development evidence only', fontsize=15)
     for ext in ('png', 'svg'):
-        fig.savefig(output / f'geometry_revision_development.{ext}', dpi=170)
+        export = output / f'geometry_revision_development.{ext}'
+        fig.savefig(export, dpi=170, metadata={'Date': None} if ext == 'svg' else None)
+        if ext == 'svg':
+            export.write_text('\n'.join(line.rstrip() for line in export.read_text().splitlines()) + '\n')
     plt.close(fig)
     manifest = {'role': 'development', 'final_result': False,
                 'audit_path': str(audit_path),
