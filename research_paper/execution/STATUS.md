@@ -2,6 +2,23 @@
 
 Updated: 10 October 2026. Status values are `TODO`, `RUNNING`, `BLOCKED`, and `DONE`. A task is `DONE` only when its acceptance checks and handoff are complete. Review gates must audit the underlying artifacts rather than this ledger.
 
+**10 October R3 interface update:** The corrected FAST-LIO primary and
+same-pair Point-LIO final replication runners/analyses are assembled. The
+no-data plan rebuilds from corrected development evidence and the frozen
+split; the current exact inventory has 151 entries. The full suite ran 231
+tests: 229 passed, two optional fixtures skipped in frozen Python 3.12.14 /
+NumPy 2.5.3. A follow-up readiness audit passed with the rebuilt plan and
+151-item inventory rebuilt; the independent R3 freeze review is pending. No
+implementation freeze, R3 PASS, held-out
+screen or final input exists. See [R3 readiness handoff](handoffs/R3_READINESS_20261010.md).
+
+**10 October novelty update:** The OCE paper published on 9 October already
+evaluates ground-truth local-motion usability and recovery delay. Independent
+review passed feasibility only for the narrower untouched corridor-strata
+transfer and two-backend replication question. This is not a publication-
+novelty result; the outcome-dependent audit remains due. See the [OCE review](../reviews/OCE_NOVELTY_FEASIBILITY_20261010.md)
+and [literature addendum](../literature/RECOVERY_OVERLAP_ADDENDUM_20261010.md).
+
 **Active complete-paper continuation:** Fresh primary recovery is complete for
 64 FAST-LIO primary slots and four declared repeats; all 69 native attempts
 remain recorded, including one interruption and its technical retry. The

@@ -1,5 +1,25 @@
 # README figure provenance
 
+## Current figure index — 12 October 2026
+
+The [current research README](../README.md) embeds the corrected two-backend
+development comparison and fresh primary-repeat exports. The sections below
+preserve provenance for earlier figures.
+
+| Figure | Source / provenance | Evidence boundary |
+| --- | --- | --- |
+| [Development signal comparison](development_signal_comparison_20261010/development_signal_comparison.png) | [Manifest](development_signal_comparison_20261010/figure_manifest.json), [corrected analysis](../evidence/DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md), [plotter](../experiments/src/plot_development_signal_comparison.py) | 32 corridor events per backend; backend-specific recovery labels, conditional false-healthy denominators and 95% Wilson intervals. Thresholds fitted on development data. |
+| [Fresh repeat motion errors](primary_recovery_20261009/t14_repeat_motion_errors.png) and [warning disagreements](primary_recovery_20261009/t14_repeat_warning_disagreement.png) | [Manifest](primary_recovery_20261009/t14_repeat_figure_manifest.json), [fresh audit](../evidence/primary_recovery_repeatability_20261009.json), [plotter](../experiments/src/plot_repeatability.py) | Four repeats from two development layouts, not new independent events. |
+
+Both sets include PNG/PDF/SVG. The 12 October audit verified all nine export
+hashes. Preserve these accepted exports. Reproduction into fresh directories
+and the prioritized plan for missing figures are in the
+[visual-documentation audit](../execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md).
+The comparison's long footer needs better wrapping in a future reviewed
+version. Older repeat exports below remain historical evidence.
+
+## Historical Hilti illustrations
+
 These two small figures are derived from the official [Hilti-Oxford 2022 Exp18 Corridor Lower Gallery 2 recording](https://hilti-challenge.com/dataset-2022), credited to its authors under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/). They are illustrations of **development data**, not evaluated recovery results. The full 8.66 GB source bag and reference text are not committed; their checksums and retained local paths are in [the actual-file inspection](../data/HILTI_EXP18_INSPECTION.md).
 
 - `exp18_lidar_before_after.png` shows the actual LiDAR scans nearest +25 and +40 seconds after the first LiDAR header. Both top-down panels cover the same 30 m by 30 m square centred on the sensor. The displayed points require `-3 < z < 3 m` and `|x|,|y| < 15 m`; darkness is based on binned return count. The labelled 90th-percentile range uses all finite ranges in each selected scan, not just the displayed height slice. The two snapshots show different visible geometry but cannot establish odometry recovery or a precise event boundary.

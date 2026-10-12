@@ -2,8 +2,20 @@
 
 Updated: 10 October 2026. **Start here when resuming the LiDAR recovery-reliability study.** This is a snapshot, not a completed result. The authoritative task states are in [STATUS.md](STATUS.md); the original task requirements remain in [the execution plan](../AGENT_EXECUTION_PLAN.md).
 
-**Active continuation:** The complete-paper goal remains active. Fresh primary
-FAST-LIO recovery is complete for 64 slots plus four declared repeats (69
+**Active continuation:** The complete-paper goal remains active. The corrected
+FAST-LIO primary and Point-LIO same-pair final replication runners and analyses
+are assembled. The current no-data plan still targets 48 pairs with the locked
+Point-LIO threshold. The previous independent R3 audit returned REVISE; its
+findings have been addressed in the candidate, and a fresh audit is required
+before any final screen or input generation. See the
+[updated R3 readiness handoff](handoffs/R3_READINESS_20261010.md).
+The 9 October OCE paper materially narrows the candidate claim. Independent
+review passed feasibility for the narrower untouched corridor-strata
+transfer/replication question, not publication novelty. See the
+[OCE review](../reviews/OCE_NOVELTY_FEASIBILITY_20261010.md) and
+[addendum](../literature/RECOVERY_OVERLAP_ADDENDUM_20261010.md); the
+result-dependent novelty audit still awaits final outcomes.
+Fresh primary FAST-LIO recovery is complete for 64 slots plus four declared repeats (69
 attempts including one retained interruption and technical retry). Point-LIO
 completed all 64 development slots; its independent review passed. Both
 backend-specific development thresholds have been re-analyzed under the full
@@ -11,8 +23,9 @@ raw-score candidate rule. FAST-LIO remains at `166.16366016039856` (13/32
 detections; 1/31 initial false-healthy events). Point-LIO is
 `123.80876977779258` (21/27 detections; 3/32 initial false-healthy events).
 The 48-pair primary target is unchanged. The separate Point-LIO freeze passed
-independent review; overall R3 remains REVISE. The latest
-suite passed 210 tests, with one optional skip. See the
+independent review; overall R3 remains REVISE until the current two-backend
+package passes its fresh review. The current suite is logged at 224 tests with
+two optional skips. See the
 [10 October continuation checkpoint](handoffs/DEVELOPMENT_CONTINUATION_20261010.md)
 for artifacts, hashes and the next eligible work. No held-out geometry has
 been generated or opened. The methods draft remains incomplete and contains no

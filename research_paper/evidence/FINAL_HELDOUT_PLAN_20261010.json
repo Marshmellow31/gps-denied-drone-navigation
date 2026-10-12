@@ -1,0 +1,168 @@
+{
+  "schema": "final-evaluation-plan-v1",
+  "status": "PENDING_R3_SCENE_SCREEN",
+  "role": "heldout",
+  "heldout_inputs_generated": false,
+  "heldout_geometry_screened": false,
+  "final_batch_executed": false,
+  "n_test_geometry_pairs": 48,
+  "stratum_count": 4,
+  "geometry_pairs_per_stratum": 12,
+  "development_analysis_sha256": "1678e1c8b62b3ceeabf4e9f4e63593832cf8c94f7793e7b933647e8569c082f7",
+  "splits_sha256": "d9d5496a55a2bb55cbf4a294be87df41ebb3b57ff24bdfd0e6fc0fcc8d682172",
+  "strata": [
+    {
+      "stratum": "TEST_SHORT_NARROW",
+      "seed_min": 100,
+      "seed_max": 119,
+      "target_eligible_geometry_pairs": 12,
+      "candidate_seeds_to_scene_screen_in_ascending_order": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "length_m": [
+        8.0,
+        9.0
+      ],
+      "corridor_half_width_m": [
+        1.3,
+        1.5
+      ]
+    },
+    {
+      "stratum": "TEST_SHORT_WIDE",
+      "seed_min": 120,
+      "seed_max": 139,
+      "target_eligible_geometry_pairs": 12,
+      "candidate_seeds_to_scene_screen_in_ascending_order": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139
+      ],
+      "length_m": [
+        8.0,
+        9.0
+      ],
+      "corridor_half_width_m": [
+        2.5,
+        3.0
+      ]
+    },
+    {
+      "stratum": "TEST_LONG_NARROW",
+      "seed_min": 140,
+      "seed_max": 159,
+      "target_eligible_geometry_pairs": 12,
+      "candidate_seeds_to_scene_screen_in_ascending_order": [
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159
+      ],
+      "length_m": [
+        15.0,
+        18.0
+      ],
+      "corridor_half_width_m": [
+        1.3,
+        1.5
+      ]
+    },
+    {
+      "stratum": "TEST_LONG_WIDE",
+      "seed_min": 160,
+      "seed_max": 179,
+      "target_eligible_geometry_pairs": 12,
+      "candidate_seeds_to_scene_screen_in_ascending_order": [
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179
+      ],
+      "length_m": [
+        15.0,
+        18.0
+      ],
+      "corridor_half_width_m": [
+        2.5,
+        3.0
+      ]
+    }
+  ],
+  "selection_rule": "After R3 PASS only: scene-screen candidates in ascending reserved-seed order; keep the lowest eligible IDs until each stratum reaches its target; if any stratum cannot reach target, stop and return to R2.",
+  "pointlio_development_analysis_sha256": "e3a03d83f5854c5705177bc7610cb6ff18d9f0d331f50783c23dcd036b6ce254",
+  "pointlio_replication_freeze_sha256": "87f31c5febff860fe774eb4533a1be584f68b663f0125ea40dc18e85cc587621",
+  "pointlio_replication_freeze_review_sha256": "423ccdbd60f50aaeeaa080e6f19632f1b541afd234032ca8ec12f8dad8c5b5b0",
+  "pointlio_locked_final_threshold": 123.80876977779258,
+  "pointlio_final_runner_sha256": "d0c064d42fec3359161d9cc85a1abf7f4370da65e2f15951375e908f69f49e45",
+  "pointlio_final_analysis_sha256": "23d9ff62e67b0911f4fd81b99dd380bf6bd8abc53d4ebe251323bdbc9cc0ff5d",
+  "oce_novelty_review_sha256": "97abbf54119e64bf0967a9b72c180af8cb9b7b57e9037688c5cbacaf0bd102df",
+  "r3_evaluation_workflow_sha256": "06400462807dd7561794cd4db4e7b82a48d3852c4674b2686153c039173fe127"
+}

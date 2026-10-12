@@ -1,5 +1,87 @@
 # Final held-out evaluation handoff
 
+## Current 10 October continuation — use this section
+
+The commands later in this file are historical and superseded. The current
+workflow includes both FAST-LIO primary evaluation and Point-LIO replication
+on the **same selected 48 geometry pairs**. Point-LIO regenerates each sensor
+bag only after the R3 gate, checks its bytes against the primary pair ledger,
+and preserves the verified bag for independent analysis.
+
+**Current gate:** the R3 review and implementation freeze are not yet accepted.
+Do not run any `screen`, `run`, `analyze`, or Point-LIO final command below
+until both documents say `Gate: PASS` and contain the current exact inventory.
+The no-data plan is
+[`FINAL_HELDOUT_PLAN_20261010.json`](../evidence/FINAL_HELDOUT_PLAN_20261010.json).
+Its current contract is 48 pairs (12 per stratum), FAST-LIO threshold
+`166.16366016039856`, Point-LIO threshold `123.80876977779258`, with no
+held-out geometry generated or screened.
+
+Use `/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env`
+for both Python/ROS runs. The FAST-LIO workspace and binary remain
+session-local; verify their hashes before execution or rebuild with
+`experiments/restore_fastlio_workspace.sh` and require the frozen hash.
+Point-LIO uses the pinned `point_lio_ws_r2_20260929` workspace and the
+`point_lio_glog_20260929` overlay. Keep bulk artifacts under Acer; the
+Point-LIO runner retains up to about 7.3 GiB of paired sensor bags so analysis
+can recheck their identities. The current Acer volume has sufficient space.
+
+After independent R3 PASS, screen the reserved geometry-only prefix:
+
+```bash
+/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python \
+  research_paper/experiments/src/r3_evaluation_workflow.py screen \
+  --plan research_paper/evidence/FINAL_HELDOUT_PLAN_20261010.json \
+  --r3-review research_paper/reviews/R3_IMPLEMENTATION.md \
+  --implementation-freeze research_paper/protocol/IMPLEMENTATION_FREEZE.md \
+  --output /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/scene_screen.json
+```
+
+Run the FAST-LIO 48-pair primary batch with the screened plan and frozen
+workspace (the wrapper also checks the exact backend and source hashes):
+
+```bash
+/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python \
+  research_paper/experiments/src/r3_evaluation_workflow.py run \
+  --screen /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/scene_screen.json \
+  --plan research_paper/evidence/FINAL_HELDOUT_PLAN_20261010.json \
+  --analysis research_paper/evidence/development_analysis_20261010/fastlio_development_manifest.json \
+  --r3-review research_paper/reviews/R3_IMPLEMENTATION.md \
+  --implementation-freeze research_paper/protocol/IMPLEMENTATION_FREEZE.md \
+  --ros-env /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env \
+  --workspace /tmp/fastlio-t13.XBDWGy/ws \
+  --fastlio-binary /tmp/fastlio-t13.XBDWGy/ws/devel/.private/fast_lio/lib/fast_lio/fastlio_mapping \
+  --scratch-root /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/scratch \
+  --results-root /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/primary \
+  --minimum-free-mb 1024
+```
+
+Then run Point-LIO over the same selected pair roster and recorded primary bag
+hashes:
+
+```bash
+/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python \
+  research_paper/experiments/src/run_pointlio_final_replication.py \
+  --screen /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/scene_screen.json \
+  --plan research_paper/evidence/FINAL_HELDOUT_PLAN_20261010.json \
+  --primary-results-root /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/primary \
+  --r3-review research_paper/reviews/R3_IMPLEMENTATION.md \
+  --implementation-freeze research_paper/protocol/IMPLEMENTATION_FREEZE.md \
+  --ros-env /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env \
+  --workspace /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_ws_r2_20260929 \
+  --glog-prefix /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_glog_20260929 \
+  --binary /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_ws_r2_20260929/devel/lib/point_lio/pointlio_mapping \
+  --scratch-root /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/pointlio_scratch \
+  --output-root /run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/pointlio
+```
+
+After both batches finish, analyze them separately with their frozen caller:
+`experiments/src/final_dataset_analysis.py` for FAST-LIO and
+`experiments/src/pointlio_final_analysis.py` for Point-LIO. Each caller checks
+the R3 gate before reading final batch content and labels an incomplete
+planned cohort descriptive only. Preserve all failed attempts; never replace
+a pair or refit either threshold on final outcomes.
+
 Updated: 27 September 2026. **Final evaluation is prepared but not executed.**
 Do not run the screen or replay commands until both R3 artifacts explicitly
 report PASS.

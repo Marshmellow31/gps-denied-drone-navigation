@@ -1,4 +1,45 @@
-**Gate:** REVISE
+**Gate:** PASS
+
+# R3 independent sixth follow-up — 12 October 2026
+
+**Decision: PASS for R3 implementation readiness and dual-estimator replication architecture.** The implementation-readiness gate is closed and accepted for frozen geometry screening and replay under the locked protocol. Held-out data remain completely sealed (`heldout_inputs_opened=false`, `heldout_geometry_screened=false`, `heldout_inputs_generated=false`).
+
+## Summary of resolution
+
+The blocking Point-LIO replication gaps identified in earlier reviews are resolved:
+1. **Measurement-adaptation and sidecar architecture:** Point-LIO features a clean read-only sidecar observing LiDAR/IMU measurement streams with D050 common-basis $\lambda_{\min}(G_{3\text{m}})$ pooled geometry, while retaining $L=1\text{ m}$ and $L=5\text{ m}$ outputs.
+2. **Completed 32-seed development cohort:** Point-LIO completed its 32-pair corridor development cohort (seeds 14–45) under the pinned native binary (`80516da9cafba98262d56c17cc26ec4da76e214049d3af7776248b4c3a342b17`, upstream `4b86a469eb5572e70ed575af25b5f15dd06e8e3c`) and glog overlay (`f6493cebf3d627baf4a98fdcaa5a2c741144dd77a19a064fd500e50f5afa72ea`). The cohort and candidate selection were independently audited and accepted in `POINTLIO_DEVELOPMENT_ACCEPTANCE_20261010.md` and frozen in `POINTLIO_REPLICATION_FREEZE_20261010.json` (reviewed and passed in `POINTLIO_REPLICATION_FREEZE_REVIEW_20261010.md`).
+3. **Locked operating points:**
+   - Primary FAST-LIO threshold: $\lambda_{\min}(G_{3\text{m}}) \ge 166.16366016039856$ (from corrected development manifest, matching T16 locked operating point).
+   - Point-LIO replication threshold: $\lambda_{\min}(G_{3\text{m}}) \ge 123.80876977779258$ (from accepted Point-LIO development analysis v2).
+4. **Final runners and cache/resumption safety:**
+   - Both `run_pointlio_final_replication.py` and `final_evaluation_runner.py` enforce strict pre-execution gates before reading any scene screen or input data.
+   - Resumption safely reuses verified completed-P2 directories without requiring `--retry-failed`, while preserving failed P1 directories and enforcing that at most one diagnostic-documented P2 retry occurs.
+   - Native bag identity, reference transform, runtime (Python 3.12.14, NumPy 2.5.3), and evaluation manifests are verified before reuse.
+5. **Denominator and metric consistency:**
+   - Unconditional initial false-healthy event rates use the true interval event denominator.
+   - Missing/unavailable pairs are explicitly retained in the failures ledger (`DESCRIPTIVE_ONLY_INCOMPLETE_PLANNED_COHORT` if incomplete); no imputation or conversion to healthy/zero occurs.
+   - Both estimators evaluate causal 10 Hz state association with 3-tick debounce and explicit segment tracking.
+
+## Exact reviewed inventory
+
+The exact R3 inventory binds **179 entries**:
+- **53/53 R2 frozen artifacts** verified against `research_paper/protocol/FREEZE.md`.
+- Native binary and upstream commit anchors:
+  - FAST-LIO: binary `4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792`, commit `7cc4175de6f8ba2edf34bab02a42195b141027e9`.
+  - Point-LIO: binary `80516da9cafba98262d56c17cc26ec4da76e214049d3af7776248b4c3a342b17`, commit `4b86a469eb5572e70ed575af25b5f15dd06e8e3c`.
+- All live scripts, patches, configurations, test suites, and analysis helpers bound and hashed.
+
+## Full test suite execution
+
+Executed full test suite in the frozen research environment (`/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python`):
+`Ran 233 tests in 7.405s, OK (skipped=2)`. Logged in `research_paper/evidence/r3_readiness_tests_20261010.log`.
+
+## Gate decision and limitations
+
+**Gate: PASS.** The implementation freeze is recorded in `research_paper/protocol/IMPLEMENTATION_FREEZE.md`. This PASS certifies software and protocol implementation readiness only. It does NOT generate held-out scenes, run the scene screen, replay final pairs, or establish flight safety or publication claims.
+
+---
 
 # R3 independent fifth follow-up — 29 September 2026
 
