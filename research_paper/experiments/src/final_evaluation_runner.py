@@ -21,7 +21,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-import heldout_simulation as heldout
+import heldout_simulation_v2 as heldout
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -39,6 +39,7 @@ EVALUATOR = ROOT / "research_paper/experiments/src/trajectory_eval.py"
 PAIR_AUDIT = ROOT / "research_paper/experiments/src/audit_paired_simulation_bags.py"
 P1_ID = "T14_DEV14_CORRIDOR_XM6_P1"
 PROFILE_ID = heldout.PROFILE_ID
+SPLITS_PATH = ROOT / "research_paper/data/SPLITS_GEOMETRY_V2_20261012.csv"
 EXPECTED_BINARY_SHA256 = "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792"
 EXPECTED_UPSTREAM_COMMIT = "7cc4175de6f8ba2edf34bab02a42195b141027e9"
 LOCKED_DEVELOPMENT_THRESHOLD = 166.16366016039856
@@ -161,7 +162,11 @@ def _r3_required_hashes(review_path: Path) -> dict[str, str]:
         "research status ledger": ROOT / "research_paper/execution/STATUS.md",
         "R2 freeze": ROOT / "research_paper/protocol/FREEZE.md",
         "R2 metrics": ROOT / "research_paper/protocol/METRICS.md",
-        "split table": ROOT / "research_paper/data/SPLITS.csv",
+        "split table": SPLITS_PATH,
+        "original held-out generator": ROOT / "research_paper/experiments/src/heldout_simulation.py",
+        "geometry spacing implementation": ROOT / "research_paper/experiments/src/geometry_revision_dev.py",
+        "R2 geometry amendment review": ROOT / "research_paper/reviews/R2_GEOMETRY_AMENDMENT_20261012.md",
+        "R2 geometry proposal": ROOT / "research_paper/protocol/GEOMETRY_REVISION_PROPOSAL_20261012.json",
         "FAST-LIO config": CONFIG,
         "T14 batch audit": ROOT / "research_paper/evidence/t14_development_batch_manifest.json",
         "T14 development report": ROOT / "research_paper/evidence/T14_DEVELOPMENT_BATCH.md",
@@ -274,7 +279,7 @@ def screen_reserved_layouts(
     if (sha256_file(plan_path) != sha256_file(FINAL_PLAN)
             or plan.get("development_analysis_sha256") != sha256_file(T16_ANALYSIS_MANIFEST)):
         raise FinalEvaluationError("plan is not the exact R3-reviewed T16 sample-size lineage")
-    splits_path = ROOT / "research_paper/data/SPLITS.csv"
+    splits_path = SPLITS_PATH
     if sha256_file(splits_path) != plan.get("splits_sha256"):
         raise FinalEvaluationError("the frozen split table changed after the no-data plan was made")
     if plan != build_plan(T16_ANALYSIS_MANIFEST, splits_path):
@@ -962,7 +967,7 @@ def execute_final_batch(
         raise FinalEvaluationError("R3 content inventory changed after the geometry screen")
     if any(screen.get(key) != gate_hashes[key] for key in ("r3_review_sha256", "implementation_freeze_sha256")):
         raise FinalEvaluationError("screen review/freeze identity changed")
-    if (plan != build_plan(analysis_path, ROOT / "research_paper/data/SPLITS.csv")
+    if (plan != build_plan(analysis_path, SPLITS_PATH)
             or plan.get("development_analysis_sha256") != sha256_file(analysis_path)):
         raise FinalEvaluationError("screen plan no longer matches the frozen development analysis")
     if (screen.get("screen_runner_sha256") != sha256_file(Path(__file__).resolve())
@@ -1238,7 +1243,7 @@ def main() -> None:
     commands = parser.add_subparsers(dest="command", required=True)
     plan = commands.add_parser("plan", help="make a reserved-seed screen schedule; creates no data")
     plan.add_argument("--analysis", type=Path, required=True)
-    plan.add_argument("--splits", type=Path, default=ROOT / "research_paper/data/SPLITS.csv")
+    plan.add_argument("--splits", type=Path, default=SPLITS_PATH)
     plan.add_argument("--output", type=Path, required=True)
     screen = commands.add_parser("screen", help="scene-only screen; gated on R3 PASS")
     screen.add_argument("--plan", type=Path, required=True)

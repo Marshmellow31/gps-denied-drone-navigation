@@ -1,8 +1,7 @@
-"""Bind the preserved R3 runner to the corrected analysis and Point freeze.
+"""Bind the revised geometry workflow to corrected development operating points.
 
-The historical runner stays byte-stable for the accepted Point-LIO cohort.
-This small R3 entry point supplies the current development manifest and adds
-the separately accepted Point-LIO freeze to every plan and exact R3 inventory.
+Original R2 files and generator remain preserved. Version-two final execution
+requires a new exact R3 inventory and freeze, including the geometry amendment.
 """
 from __future__ import annotations
 
@@ -21,7 +20,7 @@ POINT_FREEZE = ROOT / 'research_paper/protocol/POINTLIO_REPLICATION_FREEZE_20261
 POINT_FREEZE_REVIEW = ROOT / 'research_paper/reviews/POINTLIO_REPLICATION_FREEZE_REVIEW_20261010.md'
 POINT_DEVELOPMENT_REVIEW = ROOT / 'research_paper/reviews/POINTLIO_DEVELOPMENT_ACCEPTANCE_20261010.md'
 FAST_DEVELOPMENT_REVIEW = ROOT / 'research_paper/reviews/FASTLIO_DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md'
-FINAL_PLAN = ROOT / 'research_paper/evidence/FINAL_HELDOUT_PLAN_20261010.json'
+FINAL_PLAN = ROOT / 'research_paper/evidence/FINAL_HELDOUT_PLAN_GEOMETRY_V2_20261012.json'
 
 _original_build_plan = execution.build_plan
 _original_required_hashes = execution._r3_required_hashes
@@ -74,6 +73,20 @@ def _required_hashes(review_path: Path):
     finally:
         execution.T16_ANALYSIS_MANIFEST, execution.FINAL_PLAN = previous_t16, previous_plan
     additional = {
+        'geometry v2 generator': ROOT / 'research_paper/experiments/src/heldout_simulation_v2.py',
+        'geometry v2 split': execution.SPLITS_PATH,
+        'R2 geometry amendment': ROOT / 'research_paper/reviews/R2_GEOMETRY_AMENDMENT_20261012.md',
+        'geometry revision proposal': ROOT / 'research_paper/protocol/GEOMETRY_REVISION_PROPOSAL_20261012.json',
+        'geometry development validator': ROOT / 'research_paper/experiments/src/validate_geometry_development_input.py',
+        'geometry development recorder': ROOT / 'research_paper/experiments/src/record_geometry_development_attempt.py',
+        'geometry Point-LIO native wrapper': ROOT / 'research_paper/experiments/run_point_lio_geometry_development.sh',
+        'geometry native validation runner': ROOT / 'research_paper/experiments/src/run_geometry_native_validation.py',
+        'geometry v2 workflow tests': ROOT / 'research_paper/experiments/tests/test_geometry_v2_workflow.py',
+        'geometry revision tests': ROOT / 'research_paper/experiments/tests/test_geometry_revision_dev.py',
+        'geometry native validation summary': ROOT / 'research_paper/evidence/geometry_v2_native_validation_20261012.json',
+        'geometry native validation report': ROOT / 'research_paper/evidence/GEOMETRY_V2_NATIVE_VALIDATION_20261012.md',
+        'geometry v2 readiness test log': ROOT / 'research_paper/evidence/geometry_v2_readiness_tests_20261012.log',
+        'geometry v2 inventory builder': ROOT / 'research_paper/experiments/src/prepare_geometry_r3_inventory.py',
         'corrected FAST-LIO development manifest': FAST_ANALYSIS,
         'corrected FAST-LIO candidate table': FAST_CANDIDATES,
         'corrected Point-LIO development manifest': POINT_ANALYSIS,
@@ -159,6 +172,10 @@ def build_plan(analysis_path: Path, splits_path: Path):
         raise execution.FinalEvaluationError('R3 plan must use the corrected FAST-LIO analysis manifest')
     _, point, point_freeze_sha, point_freeze_review_sha = _validate_point_freeze()
     plan = _original_build_plan(FAST_ANALYSIS, splits_path)
+    plan.update(geometry_profile=execution.heldout.GEOMETRY_PROFILE,
+                original_geometry_ids_excluded=[100, 179],
+                geometry_design_adapted_to_failed_screen=True,
+                r2_geometry_amendment_sha256=execution.sha256_file(ROOT / "research_paper/reviews/R2_GEOMETRY_AMENDMENT_20261012.md"))
     plan.update(
         pointlio_development_analysis_sha256=execution.sha256_file(POINT_ANALYSIS),
         pointlio_replication_freeze_sha256=point_freeze_sha,

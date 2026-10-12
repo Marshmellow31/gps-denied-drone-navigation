@@ -31,17 +31,17 @@ class FinalEvaluationRunnerTests(unittest.TestCase):
             }))
             splits.write_text(
                 "split_id,seed_start,seed_end,role\n"
-                "TEST_SHORT_NARROW,100,119,held_out\n"
-                "TEST_SHORT_WIDE,120,139,held_out\n"
-                "TEST_LONG_NARROW,140,159,held_out\n"
-                "TEST_LONG_WIDE,160,179,held_out\n"
+                "TEST_SHORT_NARROW,10000,10079,held_out\n"
+                "TEST_SHORT_WIDE,10100,10179,held_out\n"
+                "TEST_LONG_NARROW,10200,10279,held_out\n"
+                "TEST_LONG_WIDE,10300,10379,held_out\n"
             )
             plan = final_run.build_plan(analysis, splits)
             self.assertEqual(plan["geometry_pairs_per_stratum"], 12)
             self.assertFalse(plan["heldout_inputs_generated"])
             self.assertFalse(plan["heldout_geometry_screened"])
             self.assertEqual(plan["strata"][0]["candidate_seeds_to_scene_screen_in_ascending_order"],
-                             list(range(100, 120)))
+                             list(range(10000, 10080)))
 
     def test_r3_gate_rejects_missing_or_nonpass_documents(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -147,7 +147,7 @@ class FinalEvaluationRunnerTests(unittest.TestCase):
         analysis = root / "analysis.json"
         analysis.write_text(final_run.T16_ANALYSIS_MANIFEST.read_text())
         plan = root / "plan.json"
-        plan.write_text(json.dumps(final_run.build_plan(analysis, final_run.ROOT / "research_paper/data/SPLITS.csv")))
+        plan.write_text(json.dumps(final_run.build_plan(analysis, final_run.SPLITS_PATH)))
         gate = {"r3_review_sha256": "fixture-review", "implementation_freeze_sha256": "fixture-freeze",
                 "reviewed_artifact_hashes": {"fixture": "fixed"}}
         selected = {name: list(range(bounds["seed_min"], bounds["seed_min"]+12))

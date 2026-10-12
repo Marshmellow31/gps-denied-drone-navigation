@@ -426,7 +426,7 @@ def analyze(results_root, screen_path, plan_path, review_path, freeze_path, outp
     batch = json.loads((results_root / 'final_batch_summary.json').read_text())
     screen = json.loads(screen_path.read_text())
     plan = json.loads(plan_path.read_text())
-    if plan != workflow.build_plan(workflow.FAST_ANALYSIS,execution.ROOT/'research_paper/data/SPLITS.csv'):
+    if plan != workflow.build_plan(workflow.FAST_ANALYSIS,execution.SPLITS_PATH):
         raise ValueError('final plan differs from the frozen development-derived design')
     if (screen['status'] != 'SCENE_SCREEN_PASS' or screen['role'] != 'heldout'
             or screen['plan_sha256'] != execution.sha256_file(plan_path)

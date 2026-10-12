@@ -127,7 +127,7 @@ def analyze(point_root: Path, primary_root: Path, screen_path: Path, plan_path: 
             or primary_batch.get('reviewed_artifact_hashes') != gate['reviewed_artifact_hashes']
             or primary_batch.get('scene_screen_sha256') != sha256(screen_path)
             or primary_batch.get('target_geometry_pairs') != plan['n_test_geometry_pairs']
-            or plan != workflow.build_plan(workflow.FAST_ANALYSIS, ROOT / 'research_paper/data/SPLITS.csv')
+            or plan != workflow.build_plan(workflow.FAST_ANALYSIS, workflow.execution.SPLITS_PATH)
             or screen.get('r3_review_sha256') != gate['r3_review_sha256']
             or screen.get('implementation_freeze_sha256') != gate['implementation_freeze_sha256']
             or screen.get('reviewed_artifact_hashes') != gate['reviewed_artifact_hashes']

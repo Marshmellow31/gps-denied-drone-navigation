@@ -12,7 +12,7 @@ import r3_evaluation_workflow as workflow
 class R3EvaluationWorkflowTests(unittest.TestCase):
     def test_no_data_plan_binds_corrected_analysis_and_both_backend_freezes(self):
         plan = workflow.build_plan(
-            workflow.FAST_ANALYSIS, workflow.ROOT / 'research_paper/data/SPLITS.csv')
+            workflow.FAST_ANALYSIS, workflow.execution.SPLITS_PATH)
         self.assertEqual(plan['status'], 'PENDING_R3_SCENE_SCREEN')
         self.assertEqual(plan['n_test_geometry_pairs'], 48)
         self.assertEqual(plan['geometry_pairs_per_stratum'], 12)

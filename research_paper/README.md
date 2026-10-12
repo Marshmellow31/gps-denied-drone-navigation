@@ -4,11 +4,11 @@
 
 **Verified checkpoint: 12 October 2026 — implementation ready; final research results pending.**
 
-**Later screening checkpoint:** the first final geometry screen stopped with only 34 of the required 48 eligible pairs. No final estimator replay ran. A [development-tested geometry repair](execution/GEOMETRY_REPAIR_20261012.md) is prepared; it requires a new R2 amendment and R3 freeze before use. The old R3 PASS applies to the original version only.
+**Revised checkpoint:** the [R2 geometry amendment](reviews/R2_GEOMETRY_AMENDMENT_20261012.md) and [independent revised R3 review](reviews/R3_GEOMETRY_V2_IMPLEMENTATION_20261012.md) passed. The [new implementation freeze](protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md) verifies 197 entries. The fresh geometry screen passed with **48 pairs, 12 per group**, after 64 candidate checks. Final native execution is next; no final recovery conclusions exist yet. [Current execution ledger](execution/GEOMETRY_V2_EXECUTION_20261012.md).
 
 After a robot leaves a corridor with weak geometric clues, can its existing LiDAR health signals tell when its **new motion estimates** are accurate again? This study evaluates existing FAST-LIO and Point-LIO diagnostics against reference-defined recovery. It builds an evaluation workflow, rather than a new odometry estimator.
 
-The latest [R3 review](reviews/R3_IMPLEMENTATION.md) records PASS. The [implementation freeze](protocol/IMPLEMENTATION_FREEZE.md) passes the live 179-entry inventory check. Both backends have completed development runs. **The 48-pair held-out evaluation has not run, novelty is unproven, and the paper is unfinished.** No flight or deployment safety claim is supported.
+Both backends completed the historical development cohort and the separately reviewed revised-control native checks. **Final cohort results, novelty and the manuscript remain unfinished.** Original IDs 100–179 were excluded after the failed screen; fresh instances do not erase design adaptation to that screen. No flight or deployment safety claim is supported.
 
 This is the current research README. The repository-root README and several execution summaries retain older checkpoints and are bound into the accepted freeze. This document supplements them without modifying those hashes. See the [documentation audit](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md) for conflicts and missing visuals.
 
@@ -140,7 +140,7 @@ The bars show the percentage of 596 jointly available decision ticks where origi
 
 ![Original and candidate control geometry with development eligibility counts](figures/geometry_revision_development_20261012/geometry_revision_development.png)
 
-The upper panels show the original four partial baffles and a proposed eight-baffle control in a 16.5 m long corridor. Orange marks baffles, black the walls, and dashed blue the open central route. The candidate bounds feature spacing at 2 m. The lower bars compare eligibility across 32 development fixtures per dimension group: long/narrow improves from 0 to 22; short/wide remains 18 because its failures involve shared corridor/post-exit geometry. The dashed orange line marks the planned final quota of 12. These are geometry checks, not estimator recovery results. A larger fresh pool is proposed; acceptance and final execution remain pending. [Repair report](execution/GEOMETRY_REPAIR_20261012.md), [audit](evidence/geometry_revision_development_20261012.json), [manifest](figures/geometry_revision_development_20261012/manifest.json).
+The upper panels show the original four partial baffles and a proposed eight-baffle control in a 16.5 m long corridor. Orange marks baffles, black the walls, and dashed blue the open central route. The candidate bounds feature spacing at 2 m. The lower bars compare eligibility across 32 development fixtures per dimension group: long/narrow improves from 0 to 22; short/wide remains 18 because its failures involve shared corridor/post-exit geometry. The dashed orange line marks the planned final quota of 12. These are geometry checks, not estimator recovery results. The revision subsequently passed independent R2/R3 review and native development checks; its fresh final screen passed. Final estimator conclusions remain pending. [Repair report](execution/GEOMETRY_REPAIR_20261012.md), [audit](evidence/geometry_revision_development_20261012.json), [manifest](figures/geometry_revision_development_20261012/manifest.json).
 
 Every research PNG currently retained under `figures/` is displayed above. PDF/SVG files are alternate exports of the same plots; their provenance is indexed in the [figure guide](figures/README.md). Archived landing-prototype figures under `../old_data/` belong to a separate study.
 
@@ -157,11 +157,11 @@ Every research PNG currently retained under `figures/` is displayed above. PDF/S
 
 **Fresh audit run:** 233 tests discovered; **231 passed, 2 skipped**, zero failures, in the frozen Python 3.12.14 environment. The skipped checks were the SciPy scene-structure fixture and the native C++ sidecar fixture requiring `POINTLIO_SOURCE_ROOT`. The latter has historical compiled verification; it was not executed in this audit. Details: [audit](execution/RESEARCH_DOCUMENTATION_AUDIT_20261012.md).
 
-**Later geometry-repair check:** 238 tests, **236 passed, 2 skipped**, including five new geometry tests. [Test log](evidence/geometry_revision_tests_20261012.log). Original frozen inventory still matches; no changed-control native replay or revised final gate is claimed.
+**Later geometry-repair check:** 238 tests, **236 passed, 2 skipped**, including five new geometry tests. [Test log](evidence/geometry_revision_tests_20261012.log). These were initial candidate checks. Later integration and native checks passed **244 tests: 243 passed, one optional SciPy skip**, including the compiled reset fixture; see [revised native evidence](evidence/GEOMETRY_V2_NATIVE_VALIDATION_20261012.md).
 
 ## Read and verify locally
 
-Start with the linked [R3 decision](reviews/R3_IMPLEMENTATION.md), [freeze](protocol/IMPLEMENTATION_FREEZE.md) and [corrected development report](evidence/DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md). Small evidence and figures are retained in Git; native builds, sensor bags and bulk streams require the external research workspace. A clone alone cannot reproduce native runs.
+Start with the linked [revised R3 decision](reviews/R3_GEOMETRY_V2_IMPLEMENTATION_20261012.md), [freeze](protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md) and [corrected development report](evidence/DEVELOPMENT_ANALYSIS_ACCEPTANCE_20261010.md). Small evidence and figures are retained in Git; native builds, sensor bags and bulk streams require the external research workspace. A clone alone cannot reproduce native runs.
 
 On the current Linux host, from the repository root:
 
@@ -178,8 +178,8 @@ from pathlib import Path
 import r3_evaluation_workflow as workflow
 root = Path.cwd()
 gate = workflow.require_r3_pass(
-    root / 'research_paper/reviews/R3_IMPLEMENTATION.md',
-    root / 'research_paper/protocol/IMPLEMENTATION_FREEZE.md')
+    root / 'research_paper/reviews/R3_GEOMETRY_V2_IMPLEMENTATION_20261012.md',
+    root / 'research_paper/protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md')
 print('PASS:', len(gate['reviewed_artifact_hashes']), 'inventory entries')
 PY
 ```
@@ -211,7 +211,7 @@ The remaining candidate contribution is **external transfer across straight-corr
 
 Remaining completion steps:
 
-1. Complete the [geometry amendment and fresh acceptance sequence](execution/GEOMETRY_REPAIR_20261012.md), then screen a newly frozen cohort for **48 geometry pairs, 12 per stratum**, preserving exclusion/failure accounting. The original screen failed and must not be bypassed.
+1. Geometry amendment, revised R3 freeze and fresh 48-pair screen are accepted. Execute the frozen two-backend native cohort, preserving every attempt and failure; follow the [current ledger](execution/GEOMETRY_V2_EXECUTION_20261012.md).
 2. Run FAST-LIO and Point-LIO on the same accepted sensor inputs without retuning.
 3. Analyze frozen endpoints, uncertainty, availability, delay, relapse and non-recovery, preserving all planned denominators.
 4. Assess the resulting finding against the closest literature; report transfer success or failure honestly.

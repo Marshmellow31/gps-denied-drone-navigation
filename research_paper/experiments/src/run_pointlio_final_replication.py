@@ -410,7 +410,7 @@ def run(screen_path: Path, plan_path: Path, primary_root: Path, review_path: Pat
     primary_batch = json.loads((primary_root / 'final_batch_summary.json').read_text())
     if (screen.get('status') != 'SCENE_SCREEN_PASS' or screen.get('role') != 'heldout'
             or screen.get('plan_sha256') != primary.sha256_file(plan_path)
-            or plan != workflow.build_plan(workflow.FAST_ANALYSIS, ROOT / 'research_paper/data/SPLITS.csv')
+            or plan != workflow.build_plan(workflow.FAST_ANALYSIS, primary.SPLITS_PATH)
             or primary_batch.get('role') != 'heldout'
             or primary_batch.get('target_geometry_pairs') != plan['n_test_geometry_pairs']
             or primary_batch.get('scene_screen_sha256') != primary.sha256_file(screen_path)

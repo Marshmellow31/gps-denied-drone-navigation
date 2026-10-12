@@ -98,7 +98,7 @@ class PointLioFinalWorkflowTests(unittest.TestCase):
 
     def test_plan_binds_the_locked_point_threshold_and_final_interfaces(self):
         plan = workflow.build_plan(workflow.FAST_ANALYSIS,
-                                   workflow.ROOT / 'research_paper/data/SPLITS.csv')
+                                   workflow.execution.SPLITS_PATH)
         point = workflow._validate_point_freeze()[1]
         self.assertEqual(plan['pointlio_locked_final_threshold'],
                          point['pointlio_threshold_selection']['threshold'])
