@@ -124,6 +124,27 @@ class T16DevelopmentAnalysisTests(unittest.TestCase):
         self.assertFalse(states[2])
         self.assertTrue(states[5])
 
+    def test_unavailable_tick_resets_fixed_indicator_debouncer(self):
+        decisions = [
+            t16.DecisionTick(0, 0, True, None, True, 100, 0, ""),
+            t16.DecisionTick(1, 1, True, None, True, 200, 0, ""),
+            t16.DecisionTick(2, 2, False, None, None, 300, 0,
+                             "DIAGNOSTIC_INVALID"),
+            t16.DecisionTick(3, 3, True, None, True, 400, 0, ""),
+            t16.DecisionTick(4, 4, True, None, True, 500, 0, ""),
+            t16.DecisionTick(5, 5, True, None, True, 600, 0, ""),
+        ]
+
+        states, transitions, _ = t16.debounce(
+            decisions, "DCREG_SCHUR_MASK"
+        )
+
+        self.assertEqual(np.flatnonzero(transitions).tolist(), [5])
+        self.assertFalse(states[2])
+        self.assertFalse(states[3])
+        self.assertFalse(states[4])
+        self.assertTrue(states[5])
+
     def test_reset_starts_a_new_three_record_run_in_scalar_debouncer(self):
         decisions = [
             t16.DecisionTick(index, index * t16.TICK_NS, True, 10.0, None,
