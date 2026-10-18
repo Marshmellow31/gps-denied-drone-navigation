@@ -123,16 +123,40 @@ class DcregSchurTests(unittest.TestCase):
         self.assertEqual(result_large.unavailable_reason, "INDICATOR_NUMERIC_FAILURE")
         self.assertIn("MATERIALLY_NEGATIVE", result_large.detail)
 
-    def test_nonfinite_hessian_and_fewer_than_six_rows_are_unavailable(self):
-        nonfinite = np.eye(6)
-        nonfinite[0, 0] = np.nan
-        result_nonfinite = dcreg_schur.compute_dcreg(nonfinite, 12)
-        self.assertFalse(result_nonfinite.valid)
-        self.assertEqual(result_nonfinite.detail, "NONFINITE_HESSIAN")
+    def test_incorrect_hessian_shape_is_input_invalid(self):
+        result = dcreg_schur.compute_dcreg(np.eye(5), 20)
 
-        result_few = dcreg_schur.compute_dcreg(np.eye(6), 5)
+        self.assertFalse(result.valid)
+        self.assertEqual(result.unavailable_reason, "INDICATOR_INPUT_INVALID")
+        self.assertIn("Hessian must be 6x6", result.detail)
+
+    def test_invalid_accepted_counts_are_input_invalid(self):
+        for count in (-1, 5.5, "20", None):
+            with self.subTest(accepted_count=count):
+                result = dcreg_schur.compute_dcreg(np.eye(6), count)
+
+                self.assertFalse(result.valid)
+                self.assertEqual(result.unavailable_reason, "INDICATOR_INPUT_INVALID")
+
+    def test_nonfinite_hessian_values_and_correspondence_count_boundary(self):
+        for value in (np.nan, np.inf, -np.inf):
+            with self.subTest(hessian_value=value):
+                nonfinite = np.eye(6)
+                nonfinite[0, 0] = value
+                result_nonfinite = dcreg_schur.compute_dcreg(nonfinite, 12)
+
+                self.assertFalse(result_nonfinite.valid)
+                self.assertEqual(
+                    result_nonfinite.unavailable_reason, "INDICATOR_NUMERIC_FAILURE")
+                self.assertEqual(result_nonfinite.detail, "NONFINITE_HESSIAN")
+
+        minimum = dcreg_schur.CORRESPONDENCE_MINIMUM
+        result_few = dcreg_schur.compute_dcreg(np.eye(6), minimum - 1)
         self.assertFalse(result_few.valid)
         self.assertEqual(result_few.unavailable_reason, "INSUFFICIENT_CORRESPONDENCES")
+
+        result_at_minimum = dcreg_schur.compute_dcreg(np.eye(6), minimum)
+        self.assertTrue(result_at_minimum.valid)
 
     def test_rotating_bases_within_blocks_preserves_subspace_spectra(self):
         rng = np.random.default_rng(31)
