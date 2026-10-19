@@ -1,0 +1,25 @@
+{
+  "document_date": "2026-10-19",
+  "scientific_checkpoint": "2026-10-12",
+  "source_revision": "5971024",
+  "pages": 8,
+  "scope": "Professor briefing derived from existing evidence; no new scientific experiment or threshold fitting.",
+  "output": "output/pdf/lidar_research_professor_briefing_2026-10-19.pdf",
+  "pdf_sha256": "083980118178a34955e81901aaaf3e80b2fad586c217b219d3b674817cc5fd50",
+  "sources_sha256": {
+    "old_data/README.md": "1b5e288984c685d96470a3118ae56bfc9f651e1f552d47add8b7c355f9d22244",
+    "research_paper/RESEARCH_GOAL.md": "4feca0c33246405bce20e0f4ed2be0cfe78b1fb5c2df1629a08564d4c2c6ce33",
+    "research_paper/briefings/build_professor_briefing.py": "408d56aef483e5f1b34b4c15e9e1007dca38a67193c71074c67f757c953d44cb",
+    "research_paper/evidence/CLAIM_EVIDENCE_MAP_20261012.md": "1b2d3df8ead8c6727008ca2a7682d596e84d56838a355b7e0d17ebb987b57d06",
+    "research_paper/evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md": "4c7fa52af402fbc676a0b6092c8f2813273b192c3e27fc6c9265008c9732c758",
+    "research_paper/evidence/final_failure_analysis_20261012/event_diagnosis.csv": "2793e5c38969a16961880c4dd818b630e2b959f65a7289c15c13610263efee9f",
+    "research_paper/evidence/final_geometry_v2_results_20261012/RESULTS_REPORT.md": "b7498a2c10e62c2daa99c588d1715c204ff8678a3676cae08293329707d16fe8",
+    "research_paper/evidence/final_geometry_v2_results_20261012/method_summary.csv": "405f6ebadef9b63602a32dcab52f680dba799c57427fb6a1b2c20216495a67b5",
+    "research_paper/evidence/final_geometry_v2_results_20261012/stratum_summary.csv": "80e63158dd66a9adad94a2b723f231e552bbced64ac45cc93c3f1a584292b3b2",
+    "research_paper/literature/CONTRIBUTION_ASSESSMENT_20261012.md": "25f06971099d21e61e5544f6c22fe8dcef5b3bd80e95baabc98cb1821674410a",
+    "research_paper/paper/main.tex": "cc7665d648b811e5ebde347d61aca31d9a4fe2ea3c7c388f1a695b73148272e1",
+    "research_paper/protocol/METRICS.md": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+    "research_paper/reviews/FINAL_GEOMETRY_V2_RESULT_AUDIT_20261012.md": "5327909842ebd0daeb9cf737f86693d87acad131b1a11ac3b148eab13edb1817"
+  },
+  "chart_notes": "Rates from method_summary.csv; Wilson z=1.96; geometry recovery from scalar rows of stratum_summary.csv; miss taxonomy counted from event_diagnosis.csv."
+}
