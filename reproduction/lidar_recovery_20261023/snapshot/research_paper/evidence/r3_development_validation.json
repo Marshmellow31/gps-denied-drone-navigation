@@ -1,0 +1,109 @@
+{
+  "completion_validation": {
+    "completion_status": "FULL_INPUT_AND_POSE_LOGGER_HORIZON",
+    "dcreg_rows": 600,
+    "evaluation_rows": 1194,
+    "expected_lidar_scans": 600,
+    "first_pose_timestamp_ns": 1000399722220,
+    "health_groups": 600,
+    "invalid_pose_records": 0,
+    "last_pose_timestamp_ns": 1059999722221,
+    "pose_records": 597,
+    "reference_gaps": 0,
+    "reset_records": 0,
+    "valid_pose_records": 597
+  },
+  "execution_identity": {
+    "backend": {
+      "binary_sha256": "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792",
+      "conda_history_sha256": "90c14f8caa0cbc8a1a769f012c5bbcd9c1fbe7ba96d4626f22bbc077917b757f",
+      "configuration_sha256": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+      "launched_binary_path": "/tmp/fastlio-t13.XBDWGy/ws/devel/.private/fast_lio/lib/fast_lio/fastlio_mapping",
+      "pcl17_patch_sha256": "6e60c082d6b39f5fb9f6adda43204aac170cf31f7ef9ec05764e89071fee5275",
+      "ros_env": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env",
+      "source_hashes": {
+        "config": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+        "dcreg": "516e1da40c9cb8bc58e5a0e4c9c7964392a0877a77ba20e7139eae997783595e",
+        "health_audit": "fff0e55b88e129e94f3808b88955d5f6213c8bfac98b25acc12f09e5f3a29ba8",
+        "pair_audit": "14944d470c0d90bc0c5e0837bdf187c06c6f5ab6bef02fbebb0aeedca518c593",
+        "pose_logger": "1a4cddb319dda44ce1838e34bcbac55d49958da1a0a06b443a7802dc49677ed2",
+        "replay_script": "a3465d33b85b7f0b0f59e444297c1b71447af1ee7aa3dd2773b33a0172ca3639",
+        "route_adapter": "93ab5bacf988b83564c6405a2cf3dd9433b247d3122fb32c42817094c72353bc",
+        "simulator": "897028bf99eb2b97e44088328991c745189f0df12a295e316440c2b49c747370",
+        "trajectory_evaluator": "d505376135daf5395be9d338d471b57c0e6b1ebf86307672fcd238ffce5d3fba"
+      },
+      "t08_patch_sha256": "ea9cb9a061eb42593a4944252bf92e5edc507086652ada602e19c7772ea320a2",
+      "t13_patch_sha256": "4e85cce23aae900e3cbee37f9871d40454fb3c1203a794a8db419475033a1ace",
+      "upstream_commit": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+      "workspace": "/tmp/fastlio-t13.XBDWGy/ws",
+      "worktree_diff_sha256": "1397219a8765c2bc8c49adaf7e94dcc1e6006788acac06467e28e660876e51a0"
+    },
+    "role": "development_r3_smoke",
+    "runner_sha256": "d1899726942d4fc78f4b2fdb45f82fe4dcc946f498a924cc0a5069106947fa6a",
+    "runtime": {
+      "numpy": "2.5.3",
+      "python": "3.12.14",
+      "python_executable": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python"
+    },
+    "validation_script_sha256": "9fa7d542fbec03acf49e11db7835c955f107fbbdb998bd5d146448b2a4d17dc7"
+  },
+  "heldout_inputs_opened": false,
+  "postprocess_summaries": [
+    {
+      "row_counts": {
+        "BACKEND_FIRST_SCAN": 3,
+        "MAP_INITIALIZATION": 3,
+        "UNDISTORTED_CLOUD_EMPTY": 3,
+        "VALID": 1791
+      },
+      "sha256": "e72043860f57108d6dcc066627d8ffbeccc91d2907869834ea322da2343d00c7",
+      "timestamp_groups": 600
+    },
+    {
+      "g3_parity": {
+        "atol": 1e-08,
+        "max_abs_eigenvalue_error": 3.637978807091713e-11,
+        "rtol": 1e-08,
+        "timestamps": 600,
+        "unavailable_groups": 3,
+        "valid_groups": 597
+      },
+      "rows": 600,
+      "unavailable": 3,
+      "valid": 597
+    },
+    {
+      "body_transform_verified": true,
+      "local_valid": 1154,
+      "out_of_order_source_rows": 0,
+      "reference_gaps": 0,
+      "rows": 1194
+    }
+  ],
+  "retained_output_hashes": {
+    "postprocess_1_0.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "postprocess_1_0.stdout.log": "a154b2013abe1a3d4a8a463be00008ef2af4d344cd15b09a14458f4517ec31a9",
+    "postprocess_1_1.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "postprocess_1_1.stdout.log": "09540224956c3ac36db05a41f310e4daf763fee91037e6cffaa804df858dceb3",
+    "postprocess_1_2.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "postprocess_1_2.stdout.log": "2128c993d80509b13362fa80bcf5fda1a705adaf2f9f71d78a88e887d298c786",
+    "resources.time.txt": "875c674c4b74b6214e04245bb1e04d96760e50a4afa67c8870903744ccff5318",
+    "runner.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runner.stdout.log": "f4f4797db115817039ff294a4d3d1c06cbb03d4ec1864332a8d3214db09fa957",
+    "stream/dcreg.csv": "9aa00cdca0ed7728fb19f210b78f6af461d7977ee9908e45928d051b44758420",
+    "stream/evaluation.csv": "a89ba8b332e32ec1e1a64711a395f7d073cc78cc20a5fd447c07c1fa5a97531c",
+    "stream/fastlio.log": "89b48eaf9848fed9b80432d6815cffada39080476da227610e768510f1d97a19",
+    "stream/health.csv": "e72043860f57108d6dcc066627d8ffbeccc91d2907869834ea322da2343d00c7",
+    "stream/health.csv.hessian.csv": "ba017155118cf769ba5dc057593be50a9b28ca30a6dabf83549149422a50b08d",
+    "stream/pose_logger.log": "94c29c8bfea1981a443b7efd8a5a9a8c3881265f547a05e4865578e37387f294",
+    "stream/poses.csv": "7667563843a95442c280f1c32059f371db2f7d2fceddcce11db77f9f39c21e54",
+    "stream/rosbag.log": "2f9f6cc9bf0d06e9d291314899ed880d581fb412168d90f610b26d028e7730b5",
+    "stream/roscore.log": "654a4d8b125524f3e8cb2fa056d53791629fac71d4571294526a0364aa5fc052"
+  },
+  "role": "development_only",
+  "run_manifest_path": "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/generated/runs/R3_LIFECYCLE_SMOKE/R3_DEV14_LIFECYCLE_RESTORE_V2/run_manifest.json",
+  "run_manifest_sha256": "4e4d37835ad33f4408f640d963084878201d25dca9d95d26beb6e7e198905436",
+  "schema": "r3-development-validation-v1",
+  "scientific_use": "Lifecycle verification only; excluded from calibration and primary event counts.",
+  "status": "COMPLETED"
+}

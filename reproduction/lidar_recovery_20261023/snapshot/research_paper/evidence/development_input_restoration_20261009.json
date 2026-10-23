@@ -1,0 +1,1741 @@
+{
+  "schema": "development-input-restoration-v1",
+  "recorded_at_utc": "2026-10-09T01:49:31.816547+00:00",
+  "development_only": true,
+  "heldout_inputs_opened": false,
+  "historical_provenance_sha256": "3cf0c51aa04367cdffdd208ffe3914233c5478e7a12cd6a0854ac3359b6f0d17",
+  "status": "PASS",
+  "inputs": [
+    {
+      "seed": 14,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "87b6daa2a949ff433caa4c2fc26dac05a0b9c302f17a3f2919627181855c45a2",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "64a43f1ee6e6afbefb71e1d5aee5750a7166559ec4f59bc6221569099d9d2f88",
+          "actual_sha256": "64a43f1ee6e6afbefb71e1d5aee5750a7166559ec4f59bc6221569099d9d2f88",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "f84ebe5f3094f2c707397c3ecc71416822eedd30c165af110588bad5954072a5",
+          "actual_sha256": "f84ebe5f3094f2c707397c3ecc71416822eedd30c165af110588bad5954072a5",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "9e4bdb7d25db8aa011a18412e360f6d0cc08e87788ebe2c6a5eaf4ecd86b56c2",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 14,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "1a8c6c0da541248ef5a683b336745f0e392b7573e1f9d77f99d36bca7423da02",
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "89f4ac21b24a2b9dfc86b74cd3d082e48365ac1ed63207b08969e7aca25d4627",
+          "actual_sha256": "89f4ac21b24a2b9dfc86b74cd3d082e48365ac1ed63207b08969e7aca25d4627",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "f84ebe5f3094f2c707397c3ecc71416822eedd30c165af110588bad5954072a5",
+          "actual_sha256": "f84ebe5f3094f2c707397c3ecc71416822eedd30c165af110588bad5954072a5",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "650c4ae8a2d93e36cafc87c2f38c133e83be5dd94b4ddb5427d945a73173121c",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 15,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV15_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "729ebc30ea0ed56272a318a223bdfc097681c8380ae163067022014bab2a1770",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "8fdbbccc978f88a8b87d36526fb953149e81b3a787559f87fbe79335b65a2717",
+          "actual_sha256": "8fdbbccc978f88a8b87d36526fb953149e81b3a787559f87fbe79335b65a2717",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "371150de170b0563c00298d78fcefebb1b7ad397d49549f71e4c0cdc72537dee",
+          "actual_sha256": "371150de170b0563c00298d78fcefebb1b7ad397d49549f71e4c0cdc72537dee",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "51a1c9fc71cce001a6ce789716562d499f5aaf8aa24cf23b80b7b95b94edd277",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 15,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV15_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "0c2b380edf01c86f0ce608e80e4174b6773d5b0c99d19e47a2c8b9cb276fa910",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "56a82912aa5e338a0152278d566ebeec8b21959c137740874eb0153234ba88fe",
+          "actual_sha256": "56a82912aa5e338a0152278d566ebeec8b21959c137740874eb0153234ba88fe",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "371150de170b0563c00298d78fcefebb1b7ad397d49549f71e4c0cdc72537dee",
+          "actual_sha256": "371150de170b0563c00298d78fcefebb1b7ad397d49549f71e4c0cdc72537dee",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "f9624fc41ab4e37be9d41312d3744aec602f425ec85258336a40c66a8e7174ae",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 16,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV16_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "56a658942b5a339f0e6d76a723f227ac7059a6ea514390fdbe52e55c6ecec645",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "d04420789bc435da5e01955380132845a82695b79eebfff2bf545da22ec11466",
+          "actual_sha256": "d04420789bc435da5e01955380132845a82695b79eebfff2bf545da22ec11466",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "2ac2dc63cd79da592df8d08747ff2ce18828c6e165fb56129786efa08a752573",
+          "actual_sha256": "2ac2dc63cd79da592df8d08747ff2ce18828c6e165fb56129786efa08a752573",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "37445701a5b6accf075bf706b164ddfda75b8529ab0359a900f8105b50ffd09b",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 16,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV16_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "3707a9c80ef1f56553c1f5abe0441a29512f2452912414d6c14f3f5595e3d5b3",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "7b3bfd2b9b1467906a1b161705574b17051843c923dca7cbf59866317e841e7f",
+          "actual_sha256": "7b3bfd2b9b1467906a1b161705574b17051843c923dca7cbf59866317e841e7f",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "2ac2dc63cd79da592df8d08747ff2ce18828c6e165fb56129786efa08a752573",
+          "actual_sha256": "2ac2dc63cd79da592df8d08747ff2ce18828c6e165fb56129786efa08a752573",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "ce1c1d8a2f0ee49c8996bcd97024aeb9134d625e6d0d4409f8b3b818005d608e",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 17,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV17_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "35c356cbf29f57f1dd1f63ce352c3dd586d4d26c31461718c741480bb62bfa87",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "6891b003f0b5fd18f60c238cfae994e58365b78426193c94446cb5dc3bea65d9",
+          "actual_sha256": "6891b003f0b5fd18f60c238cfae994e58365b78426193c94446cb5dc3bea65d9",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "21e0faffca54a3479df8ef8da6dee75061f179a2c0d49072872c8a2d1cef08a3",
+          "actual_sha256": "21e0faffca54a3479df8ef8da6dee75061f179a2c0d49072872c8a2d1cef08a3",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "5800204aba9b97d2c94d54afd0420cb785f17d99e884c97987cd1c14ee39ff02",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 17,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV17_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "323581fe194d464082fc78e617f64f1779a72cd9e9766fd38fe53846318fc14d",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "b5eec4815dc2b07e50c3e159faafeecdf9ea008386b4889696eea152656e58f4",
+          "actual_sha256": "b5eec4815dc2b07e50c3e159faafeecdf9ea008386b4889696eea152656e58f4",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "21e0faffca54a3479df8ef8da6dee75061f179a2c0d49072872c8a2d1cef08a3",
+          "actual_sha256": "21e0faffca54a3479df8ef8da6dee75061f179a2c0d49072872c8a2d1cef08a3",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "ce008a07c14ec5f30704ffdae30e5dad5269b0c84411594e3cfc2da61af1f96c",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 18,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV18_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "702f9ff807ba175aaa202d44bd8bbcf0210b3271b1d9de2db08aa33d49085c3f",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "1ef1d789aef86a25e9dd1692485afdb0ceb5c6380b8d99fbcd4f899c1882a683",
+          "actual_sha256": "1ef1d789aef86a25e9dd1692485afdb0ceb5c6380b8d99fbcd4f899c1882a683",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "1666126c7291d2146c7e8315a0f83b1be9592f92e657b6ee12e0dd2469742d5b",
+          "actual_sha256": "1666126c7291d2146c7e8315a0f83b1be9592f92e657b6ee12e0dd2469742d5b",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "16873dc09fd9507e62371057d09d98683a364fae49d07746ade5f7dbddb0fb6b",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 18,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV18_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "72ea19310e390e1eb99538a4a8f18f99872e141774fed030297907e77f0ecba8",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "42341ada0d27ede18d6c1d770dcb2a4e148f375617977202fadad23f58f2a9e9",
+          "actual_sha256": "42341ada0d27ede18d6c1d770dcb2a4e148f375617977202fadad23f58f2a9e9",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "1666126c7291d2146c7e8315a0f83b1be9592f92e657b6ee12e0dd2469742d5b",
+          "actual_sha256": "1666126c7291d2146c7e8315a0f83b1be9592f92e657b6ee12e0dd2469742d5b",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "c62dd4a942f3de6d909342ebb3c29255c7b63e47ca59d6b6d10f38fa654e7789",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 19,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV19_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "3db7485b65f36dc1959ca2d480101ba884e8a056df51ec3f0e9f4760b840cfc2",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "f1c87182f9cd9e93cbfde285c9477c566d20c5b4f5c1a66c97098c8601a0e42a",
+          "actual_sha256": "f1c87182f9cd9e93cbfde285c9477c566d20c5b4f5c1a66c97098c8601a0e42a",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "26936afd32366d7b14f086c57d130dba07f4bd73e99c1f3074c0746c708300c2",
+          "actual_sha256": "26936afd32366d7b14f086c57d130dba07f4bd73e99c1f3074c0746c708300c2",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "f6fc036109e951fa206448f2041eaa294ddb2cfa4d3eabb6602a31e522a08673",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 19,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV19_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "368512b5dad39653a645e28d613e9cf66325b6c1929ae2f1b9d5e1b496645661",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "e7b8504ea38b67bb1712372cd27d1adea0a19482ca23dfffd23189b25ead6bb6",
+          "actual_sha256": "e7b8504ea38b67bb1712372cd27d1adea0a19482ca23dfffd23189b25ead6bb6",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "26936afd32366d7b14f086c57d130dba07f4bd73e99c1f3074c0746c708300c2",
+          "actual_sha256": "26936afd32366d7b14f086c57d130dba07f4bd73e99c1f3074c0746c708300c2",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "05abbc121657f8ddc04165dd876166c2f32fd66ca2ac959b19c28cf62db4a480",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 20,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV20_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "a328f14087d3e0c1a8e8d033748dff78d9282abce6e51a74f08f3657fbb7f69f",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "55680af6c38e05c266fa401a04e6e1c654037f746dfd3d5fb466287e113d718d",
+          "actual_sha256": "55680af6c38e05c266fa401a04e6e1c654037f746dfd3d5fb466287e113d718d",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "793f2185686b8e25be5e755b8dcf9eef5b33cbe80c5d6a069c065fa612c5cf00",
+          "actual_sha256": "793f2185686b8e25be5e755b8dcf9eef5b33cbe80c5d6a069c065fa612c5cf00",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "10fe3fa8ea28cab19f76e65f927807936ad0bf3c072bcf7eee13474542863a53",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 20,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV20_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "8c9f2b165a7fc83d225a66947f8dcca28a9621c3fd685ac6e2e952f9ea0fb530",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "006b665c74a0926677ba04d10785efd449cd6cd1ad5db4d79e4408e065ce0e8f",
+          "actual_sha256": "006b665c74a0926677ba04d10785efd449cd6cd1ad5db4d79e4408e065ce0e8f",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "793f2185686b8e25be5e755b8dcf9eef5b33cbe80c5d6a069c065fa612c5cf00",
+          "actual_sha256": "793f2185686b8e25be5e755b8dcf9eef5b33cbe80c5d6a069c065fa612c5cf00",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "184f7dc8d4d2d01449c10e17b109e3225e8e283f991717151d9e93b54797213a",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 21,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV21_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "43cf84f2381398814c84b0d9616676b5be7e3cf00fe2801ac24f4066072436cd",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "6495596ebb9549eb5b95fca5f8a2c4098efc6d2eff8b2662c0202dc459985476",
+          "actual_sha256": "6495596ebb9549eb5b95fca5f8a2c4098efc6d2eff8b2662c0202dc459985476",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "51b22aa349acbe50242ed51d67e134e235ef110ba1f5c80028c8913930f719d8",
+          "actual_sha256": "51b22aa349acbe50242ed51d67e134e235ef110ba1f5c80028c8913930f719d8",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "d5675d40514d9dc3d5c1661c0c54ae30eef67c763422c4ec526cb95cf7a9bbc7",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 21,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV21_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "ca5724a3984af5387baa67c5b7f877c5fb912f38de647b52362db6a674ac351b",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "81809490705df9d05d401193e7819fe0304d1d7cc406c7245662acb3fa8a8a98",
+          "actual_sha256": "81809490705df9d05d401193e7819fe0304d1d7cc406c7245662acb3fa8a8a98",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "51b22aa349acbe50242ed51d67e134e235ef110ba1f5c80028c8913930f719d8",
+          "actual_sha256": "51b22aa349acbe50242ed51d67e134e235ef110ba1f5c80028c8913930f719d8",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "b508db14da87bd309204999f2dd4ceadf8283b2a1512f8cf4719b42a7908e633",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 22,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV22_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "0c2eaf2d364094df517e8a6db583b0f577cfc2cd9acecac433d3bd058725cfae",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "9e4fabde07b1eeb961732730f4abeaf3abb3e4bf599f7d9dc509a05896db4e17",
+          "actual_sha256": "9e4fabde07b1eeb961732730f4abeaf3abb3e4bf599f7d9dc509a05896db4e17",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "a770eb4b0c511d62d570f0cf73eeeb4b27042261209b937f52fe70902cad57aa",
+          "actual_sha256": "a770eb4b0c511d62d570f0cf73eeeb4b27042261209b937f52fe70902cad57aa",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "0a11e21023e311f77bd2c5298b91cdbeebdd72b5c1691f230529c21aa7799fd3",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 22,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV22_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "39085bdb8bc93d428898d516e9dfa728f2fec3a808e226f05e40fed4c495b9bb",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "1a4bb3fa3834be110311b07ce61a4156172accc36b3249608c66d2282d0846fd",
+          "actual_sha256": "1a4bb3fa3834be110311b07ce61a4156172accc36b3249608c66d2282d0846fd",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "a770eb4b0c511d62d570f0cf73eeeb4b27042261209b937f52fe70902cad57aa",
+          "actual_sha256": "a770eb4b0c511d62d570f0cf73eeeb4b27042261209b937f52fe70902cad57aa",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "153c22a47000f22cb6e3e21c184e4d1d03bbafdbe9c566b8cfb9101218d9d14e",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 23,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV23_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "7e28727e3563b204d97105ea64b31d14267b245fa020542c6bd1f6342ceff9bd",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "46c18b86fa2ad5afd8e3c58874f4a1cf9304d060de9066d0020e0a2fdc6f33c4",
+          "actual_sha256": "46c18b86fa2ad5afd8e3c58874f4a1cf9304d060de9066d0020e0a2fdc6f33c4",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "9e3985a34876060965a135970b548316a557bf0c1e0bb5837f683a84f7709ad2",
+          "actual_sha256": "9e3985a34876060965a135970b548316a557bf0c1e0bb5837f683a84f7709ad2",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "249c9e00d96c921052f960fbadb2a4c594b5707967f43a4ace9ea7f41c6692b8",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 23,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV23_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "93fbf268e443bb1b2ec89ba2e2494ec5e205e9743f18f75019069fd66cf000f5",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "ddf4237f14150039f7eec44b85ff8dabb1ff2e813b05461eb853411295924774",
+          "actual_sha256": "ddf4237f14150039f7eec44b85ff8dabb1ff2e813b05461eb853411295924774",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "9e3985a34876060965a135970b548316a557bf0c1e0bb5837f683a84f7709ad2",
+          "actual_sha256": "9e3985a34876060965a135970b548316a557bf0c1e0bb5837f683a84f7709ad2",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "8c945def6798e86b5a214bb74257e7cb92c06d60262928c6d3e72ad3556ecd99",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 24,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV24_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "d79270fc1ec1276301289bd587192137fb2596be86eaee817f994454a3b7566c",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "be40d0b81c1c38c33b18ba5989300d0fb9c8dc4c4f777dbdfd9780c37aa574be",
+          "actual_sha256": "be40d0b81c1c38c33b18ba5989300d0fb9c8dc4c4f777dbdfd9780c37aa574be",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "f40ddec80efe6b1f38f4c9b2791a39556cf5b1a57e4b09cbd1e63e421a310114",
+          "actual_sha256": "f40ddec80efe6b1f38f4c9b2791a39556cf5b1a57e4b09cbd1e63e421a310114",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "b7e16edaff3d8ca6327988b4bef1b8147110ae5cffe0e5670fc0cd571ca67817",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 24,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV24_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "7628ab7a1d3378f48c24f8b90833f4160768fe73084f742168a01d81fe285582",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "a579d4e5e0ed4f428affff82aa654414aef31c76274de302123500c9b1f4d790",
+          "actual_sha256": "a579d4e5e0ed4f428affff82aa654414aef31c76274de302123500c9b1f4d790",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "f40ddec80efe6b1f38f4c9b2791a39556cf5b1a57e4b09cbd1e63e421a310114",
+          "actual_sha256": "f40ddec80efe6b1f38f4c9b2791a39556cf5b1a57e4b09cbd1e63e421a310114",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "bb029b7c2640509b28d56f8dd06580051c1604de9cf1fb4e775cfe8d05a1a001",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 25,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV25_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "0ef3a927ba70373921d09e911ba5ebda78fe43738cbf8b955a85811f10608b6f",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "0f34cac81cb7e692eeadd692b9eb9b10a6c0e1a2d15f8328a748e981d5c75f5b",
+          "actual_sha256": "0f34cac81cb7e692eeadd692b9eb9b10a6c0e1a2d15f8328a748e981d5c75f5b",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "79fc810379e934a221281e71ec23e92d63fa22a28e3db8e7418b3bd630c4fc4f",
+          "actual_sha256": "79fc810379e934a221281e71ec23e92d63fa22a28e3db8e7418b3bd630c4fc4f",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "137bba32a377b4ce6cfa3ef971304db91a361c17041ac1a4b80b96b5715dc1a2",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 25,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV25_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "8d2aec3f6da3eb2c23b8332e57f881e5c451cd1fda6f14c05066c3b077a19193",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "657ae5b250f5d64610dd162065262c3a7d473a4c52e757e55504fe236e886e25",
+          "actual_sha256": "657ae5b250f5d64610dd162065262c3a7d473a4c52e757e55504fe236e886e25",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "79fc810379e934a221281e71ec23e92d63fa22a28e3db8e7418b3bd630c4fc4f",
+          "actual_sha256": "79fc810379e934a221281e71ec23e92d63fa22a28e3db8e7418b3bd630c4fc4f",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "1af0a59f36d552a45b91c2bd8d68a5924feeef22f3bd3fe97123cdd6251ee5df",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 26,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV26_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "55a2a82390a06a997cf8044cfef2e7f58b45d85ac412883caa6c08f6ef607228",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "8d8ace35ea9ef7b754ed1ffb386b58d5598c4dfb015cd452e4c65096bdd39015",
+          "actual_sha256": "8d8ace35ea9ef7b754ed1ffb386b58d5598c4dfb015cd452e4c65096bdd39015",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "6051ccf3ae6e788ba79aa7b54746a66f496693a590658bef5d2d52b46c46a374",
+          "actual_sha256": "6051ccf3ae6e788ba79aa7b54746a66f496693a590658bef5d2d52b46c46a374",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "060049d9d5ba052d40c1f940267280263c88ddb108df4dbfa496262bfd28f66f",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 26,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV26_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "7c6794a4ef9cf5281cef142f39c2b5f4c29d490cb0e5ae7e76459a9ba8774856",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "f926127412686c305127e5e0ca0e1f840506fe7b935422e5d49d47cdbe236695",
+          "actual_sha256": "f926127412686c305127e5e0ca0e1f840506fe7b935422e5d49d47cdbe236695",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "6051ccf3ae6e788ba79aa7b54746a66f496693a590658bef5d2d52b46c46a374",
+          "actual_sha256": "6051ccf3ae6e788ba79aa7b54746a66f496693a590658bef5d2d52b46c46a374",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "c15b938e7f461ef4975ea14a2de418fac2a581b8b5c7f952051db9849682e4c2",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 27,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV27_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "df5d2a483b3dfe16d0498f7aea24392db10bef9edd2ee9a69025659011208bd1",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "d06de76c50ac438516f76a7adf93c33a05b58beab0ad17d33db1d08038c6acb4",
+          "actual_sha256": "d06de76c50ac438516f76a7adf93c33a05b58beab0ad17d33db1d08038c6acb4",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "ae78608d6bacc75ef23f0b2286216a0b6873f77c2ab11030fc458052b192e9ab",
+          "actual_sha256": "ae78608d6bacc75ef23f0b2286216a0b6873f77c2ab11030fc458052b192e9ab",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "9a5d0bbfad175207ee0c7da4693baff9c14b82960a07900d8b04569cba1abf15",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 27,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV27_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "6d7c55514d30618407600d9482673d7f6313d5afb9e08dc3c57d5cfc7fba6b6c",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "fdd90612ec189690a386f84642fdc693f4f3d3f771aaff463b63060387102c4a",
+          "actual_sha256": "fdd90612ec189690a386f84642fdc693f4f3d3f771aaff463b63060387102c4a",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "ae78608d6bacc75ef23f0b2286216a0b6873f77c2ab11030fc458052b192e9ab",
+          "actual_sha256": "ae78608d6bacc75ef23f0b2286216a0b6873f77c2ab11030fc458052b192e9ab",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "acbf2276098204c0af89d0f96f01cb1fb9de783282c65a84c32e09f2ff562b16",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 28,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV28_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "c9b53ec33a8cfaaeb66423afd71d3624e12f249ac540ee68e0bf7a865cd09169",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "d48a6bc18f46f25e78679b9fe282b92023e738be6b0d54fa81c4d5f9cfa03018",
+          "actual_sha256": "d48a6bc18f46f25e78679b9fe282b92023e738be6b0d54fa81c4d5f9cfa03018",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "9d4ea18189345f472b20e34cf302f0b7c692f1fa700b0fe54abe02f797ce6693",
+          "actual_sha256": "9d4ea18189345f472b20e34cf302f0b7c692f1fa700b0fe54abe02f797ce6693",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "758f557cc74b5fcdd2b482472bddc54ed3791173cfbe334b0d812f7de17e768a",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 28,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV28_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "73d60ea07b1aa3f12c2b2bc14821a53e53792ad75271711d1e2df11cc3f44359",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "d0c8cd2858f796a902adb576d7d47cd63bb825d83bc359390737c5c7f98d8d8d",
+          "actual_sha256": "d0c8cd2858f796a902adb576d7d47cd63bb825d83bc359390737c5c7f98d8d8d",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "9d4ea18189345f472b20e34cf302f0b7c692f1fa700b0fe54abe02f797ce6693",
+          "actual_sha256": "9d4ea18189345f472b20e34cf302f0b7c692f1fa700b0fe54abe02f797ce6693",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "55a6aee7dc58fd57e800f751e4d5ce7714d122089a57fa01a71531f8601877f7",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 29,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV29_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "52467a2f6e3f8b78b30fcaacfa303638605bd68b281c556f02b304356b5ab12e",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "d72c05f1cdfc6311a73bbfa218fe61af0d9f9e307966c62deb5288720b14c75e",
+          "actual_sha256": "d72c05f1cdfc6311a73bbfa218fe61af0d9f9e307966c62deb5288720b14c75e",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "788a875b347c2b48c82b99e0e8110c7d93436b8d8422846596bb4ebdd330546c",
+          "actual_sha256": "788a875b347c2b48c82b99e0e8110c7d93436b8d8422846596bb4ebdd330546c",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "f44c60fbc77f73582d333df2c61bd322374be1da32fe9f3ffff0ee4b9bef987f",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 29,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV29_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "bf99780e67c98e2d167eda077ed478416ac399cc5797ca537cfee6b60c8a4b52",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "6a4cd21b809af531213cc390858c851dac8019f1dfdec797aa875d32b70602ec",
+          "actual_sha256": "6a4cd21b809af531213cc390858c851dac8019f1dfdec797aa875d32b70602ec",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "788a875b347c2b48c82b99e0e8110c7d93436b8d8422846596bb4ebdd330546c",
+          "actual_sha256": "788a875b347c2b48c82b99e0e8110c7d93436b8d8422846596bb4ebdd330546c",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "bb1aa8e59660e149ebd6ebc54d8ce23a444f0bf68e8be0097423787911ff8d75",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 30,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV30_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "fd58a2f3c2e78f8548531b09b47e9a4e014712f6bb2d42bf5cead165c4aafbec",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "607558231c3a6ecc985e7f78b4428ea7868676b15caadda2f198d246d3d6ea88",
+          "actual_sha256": "607558231c3a6ecc985e7f78b4428ea7868676b15caadda2f198d246d3d6ea88",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "a42b40f418da846144ee4b70f25e208fe49cb4be12e0d48017505c53fae98537",
+          "actual_sha256": "a42b40f418da846144ee4b70f25e208fe49cb4be12e0d48017505c53fae98537",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "d4d48aadf5cb019ed238113f820472d3252100c0c1ea6170f3367f4b3b563fc6",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 30,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV30_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "6bc92655869a2519913614056e50ed4b4ab32b5916280f54820fe8d8569c7fef",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "31356acc751e7468f3518fd78a93e311d55dfad168cbc6a2b2889c174a393c19",
+          "actual_sha256": "31356acc751e7468f3518fd78a93e311d55dfad168cbc6a2b2889c174a393c19",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "a42b40f418da846144ee4b70f25e208fe49cb4be12e0d48017505c53fae98537",
+          "actual_sha256": "a42b40f418da846144ee4b70f25e208fe49cb4be12e0d48017505c53fae98537",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "b84ea6e56cbed412128733b213c177f52b2cc3f4c498dd32c7e9a79f84833290",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 31,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV31_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "4221c1919e4bd9f9083c194b40b222cd0673ae050349e724de5f206fb0c94e4e",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "ed1eeff5122ea07a1f989ad614e5f1cc1484161b8e758543e341365dfcfed742",
+          "actual_sha256": "ed1eeff5122ea07a1f989ad614e5f1cc1484161b8e758543e341365dfcfed742",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "572f136099b0e54c15cfc5c9898118034ae9ac128f834d0e58b29d387931fbec",
+          "actual_sha256": "572f136099b0e54c15cfc5c9898118034ae9ac128f834d0e58b29d387931fbec",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "14cca81e8cf42cb21939366be48739021c0ea10d8ca084933b51f4e488d58ce0",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 31,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV31_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "876f417f88c179866298dd8a20fde6c10b79e3d7098cbe6690b77d3a316b932e",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "a01f09c11a2eac786cce4afac1a4ea167f97d31d7a9287f0ae3d14ae964e2d5f",
+          "actual_sha256": "a01f09c11a2eac786cce4afac1a4ea167f97d31d7a9287f0ae3d14ae964e2d5f",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "572f136099b0e54c15cfc5c9898118034ae9ac128f834d0e58b29d387931fbec",
+          "actual_sha256": "572f136099b0e54c15cfc5c9898118034ae9ac128f834d0e58b29d387931fbec",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "deec5081d42c9379e9255b63d2afae4ca450bc5bb30a5300dcd3c59facc2265c",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 32,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV32_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "acbb1974eaef49a258cfbd8515ef2e86c5e3588b8a95a471a759742e360e41d4",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "6b067018e28731b61affd57c722534e9730857eb96fab0100a3cac20496f6f41",
+          "actual_sha256": "6b067018e28731b61affd57c722534e9730857eb96fab0100a3cac20496f6f41",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "0d1e584ac0cf340acc5d8016888616d8c365c8d4429599441beb22f10687cba7",
+          "actual_sha256": "0d1e584ac0cf340acc5d8016888616d8c365c8d4429599441beb22f10687cba7",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "c45ce667d9dce31522a53866c01e928a6e91ac2925aa4c783ab5415f0e510b3a",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 32,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV32_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "610e7a8548fef01d4a1425a30ff83b21d1cac2112eb22071a50190cb043d0734",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "5c50bb9b6b3adba289f04e6db2aeb59e11d36d08bbff6f4696ac4a37c03436dd",
+          "actual_sha256": "5c50bb9b6b3adba289f04e6db2aeb59e11d36d08bbff6f4696ac4a37c03436dd",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "0d1e584ac0cf340acc5d8016888616d8c365c8d4429599441beb22f10687cba7",
+          "actual_sha256": "0d1e584ac0cf340acc5d8016888616d8c365c8d4429599441beb22f10687cba7",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "e1e14ca6f8d667d936026c1cc03a284445ce75ad739cd59c08548c274a72716e",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 33,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV33_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "468c8b86c023492ef92e8cd25024ce1bddab23873151d766207822e509f79583",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "42e02f01c3cd22bd54db8e553953963e4d2008cef9385899d100bc818a31943c",
+          "actual_sha256": "42e02f01c3cd22bd54db8e553953963e4d2008cef9385899d100bc818a31943c",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "cf14b527c724e561c77fcc84bc7a35bc7d37606eb2286cbccaeca2f7914ea54a",
+          "actual_sha256": "cf14b527c724e561c77fcc84bc7a35bc7d37606eb2286cbccaeca2f7914ea54a",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "d7dcfa791f76caf7db04c0bfdfd52406ef1b54395d7144cb1dd86bebeaa0374c",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 33,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV33_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "23a442f511b52fc59a2ceacc4bb88764a10afa3a1b17343b0136dcba37093f63",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "a44e5e48eab156dc460cd813a6b54542566e8ed077ead2194a6f6a8777e542c2",
+          "actual_sha256": "a44e5e48eab156dc460cd813a6b54542566e8ed077ead2194a6f6a8777e542c2",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "cf14b527c724e561c77fcc84bc7a35bc7d37606eb2286cbccaeca2f7914ea54a",
+          "actual_sha256": "cf14b527c724e561c77fcc84bc7a35bc7d37606eb2286cbccaeca2f7914ea54a",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "051ba55b2f34c23ac7fb86b8d87dea5d0089598adef05e2e45a264bb06e6faca",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 34,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV34_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "822f68656cf995916863a54a64d814f136806b93023194500912649e357d6bb6",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "55ece9a8ac45a495f7d5ffada6ae6b5654826167d6e17dcb524ae66562a5823d",
+          "actual_sha256": "55ece9a8ac45a495f7d5ffada6ae6b5654826167d6e17dcb524ae66562a5823d",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "4c40115e573199e9689f158870c8a24a891402df0be329b8541b7786427769c3",
+          "actual_sha256": "4c40115e573199e9689f158870c8a24a891402df0be329b8541b7786427769c3",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "d7cb34c1d45e847c0ffa0fce4dcde0278d54525ed30c395c9fb0297d0d47e269",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 34,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV34_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "72bae936faad4375c3998df0f5565f98e1589a2151703e7b6112369becd92bfe",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "da8f1399ff7eb09a3e37747c931f0de5616eab92228082e122c0efe6cecf8501",
+          "actual_sha256": "da8f1399ff7eb09a3e37747c931f0de5616eab92228082e122c0efe6cecf8501",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "4c40115e573199e9689f158870c8a24a891402df0be329b8541b7786427769c3",
+          "actual_sha256": "4c40115e573199e9689f158870c8a24a891402df0be329b8541b7786427769c3",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "b784c82aed0aa01376bfc4584e25274b60527bb5a0d38b819cba72d0a9974d18",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 35,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV35_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "04f064765b8791e2fe9d77e1ddb09c3c41b62f70b14e3be40ef2b5355ea69952",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "f2053ee3d6f0822a4749709512a0bf2f2b6ab3f14657d9f82fbcd028164d548d",
+          "actual_sha256": "f2053ee3d6f0822a4749709512a0bf2f2b6ab3f14657d9f82fbcd028164d548d",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "1465bf36ab375f4f26f5de1234ed2f6f9978f6b1ee86a96e9b8e54a62e3f77b1",
+          "actual_sha256": "1465bf36ab375f4f26f5de1234ed2f6f9978f6b1ee86a96e9b8e54a62e3f77b1",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "7d94a79063aaeae6eccffe6fa2755be907e2cf5763646a8322f663c4dc11f8fd",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 35,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV35_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "179dd5f718b332666c4c7af5273e3e50d98b422891bddba3c8df10c531af31ce",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "e4ae6457169b12eb11cceeca9d3135ebb9e0a3e3528d9888da83ae5055820014",
+          "actual_sha256": "e4ae6457169b12eb11cceeca9d3135ebb9e0a3e3528d9888da83ae5055820014",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "1465bf36ab375f4f26f5de1234ed2f6f9978f6b1ee86a96e9b8e54a62e3f77b1",
+          "actual_sha256": "1465bf36ab375f4f26f5de1234ed2f6f9978f6b1ee86a96e9b8e54a62e3f77b1",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "bb26d04c1ee2c94cd7570abc069bb61295a7bd880c60599377061764c6c42034",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 36,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV36_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "d95c4f3792c47ad181d031a6b597c6ce65f9d6f3b09b9d7b31af8a28154b8c54",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "f264b686a8e92ceba849df4a0d1e1e4af8f61cdf0d44d082765fe424403c68f1",
+          "actual_sha256": "f264b686a8e92ceba849df4a0d1e1e4af8f61cdf0d44d082765fe424403c68f1",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "8302486ee9b45afaffddf84d0cbd73e3febd151c658e9ed29e0848ee7454d776",
+          "actual_sha256": "8302486ee9b45afaffddf84d0cbd73e3febd151c658e9ed29e0848ee7454d776",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "8537422a36e8708e2e2ae2529391a72ef1be3d78bcd5365a1dafebf27fd6c02a",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 36,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV36_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "d0550971b0aec6948ab8804d91453ddef76dad6492d782bdfe5fd3506f3e7560",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "63c445c0b700ae045ca1e343c5c3f4bca7f109e182aac16c68875b4575dc034e",
+          "actual_sha256": "63c445c0b700ae045ca1e343c5c3f4bca7f109e182aac16c68875b4575dc034e",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "8302486ee9b45afaffddf84d0cbd73e3febd151c658e9ed29e0848ee7454d776",
+          "actual_sha256": "8302486ee9b45afaffddf84d0cbd73e3febd151c658e9ed29e0848ee7454d776",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "5d198e6006a2cc71c647b3c6e4c3b6b847095a4bbb6f4fb399293dc68ddf4076",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 37,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV37_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "4d894b0a2e78271ed49f39d495e13dd06294d8dd03994a3b6c74b656c17f8314",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "74ad111183720f47fc9b9210a1c06242f3d0848a68e2ba90427ef8e849d08ed4",
+          "actual_sha256": "74ad111183720f47fc9b9210a1c06242f3d0848a68e2ba90427ef8e849d08ed4",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "b15dcabbd1d5f0cd4dfcb56cb2e7f70e659de322d4150cf49f3469f9b0988c32",
+          "actual_sha256": "b15dcabbd1d5f0cd4dfcb56cb2e7f70e659de322d4150cf49f3469f9b0988c32",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "4be076e22a933eddbf9bfcc63e20b10e4f97d60cd0ddd443abf65493cd855b74",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 37,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV37_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "e5fd8d9ccba8f193006141f30b811214c805d8d9d5e20a2a7c17d8fa23201d6b",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "32b0435eb022252e76320f1830d4293bd32c1bdb26cb2c720e203c8f6cf94cc6",
+          "actual_sha256": "32b0435eb022252e76320f1830d4293bd32c1bdb26cb2c720e203c8f6cf94cc6",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "b15dcabbd1d5f0cd4dfcb56cb2e7f70e659de322d4150cf49f3469f9b0988c32",
+          "actual_sha256": "b15dcabbd1d5f0cd4dfcb56cb2e7f70e659de322d4150cf49f3469f9b0988c32",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "dd43c4ddbc3fdb2328918421d8798d6e48f2157d8b70fa7351b3fd177ce0773f",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 38,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV38_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "d113f59996f044940b497349f95d7936329b6f23c64371a6b839e17457cc061f",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "07d498c0ce797366ff0bee89967104cdd0377f104ab1e0b0688ba648b81f3c52",
+          "actual_sha256": "07d498c0ce797366ff0bee89967104cdd0377f104ab1e0b0688ba648b81f3c52",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "af31bd20cca160afff9b0b4bcfa89a52db75ff689021a5298e556457d7ac2453",
+          "actual_sha256": "af31bd20cca160afff9b0b4bcfa89a52db75ff689021a5298e556457d7ac2453",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "f0c60dc48317fb21c659ff881dee373f8f0c0011572c6ae37e592409799a6420",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 38,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV38_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "c2359fe39c296890f42aa3a49d88bfd7a72e7ca5e701e130674a8355173851d2",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "621a0163149601583ace128be92fb779d0a1d3b4e3657bf0b18e27988211dfb9",
+          "actual_sha256": "621a0163149601583ace128be92fb779d0a1d3b4e3657bf0b18e27988211dfb9",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "af31bd20cca160afff9b0b4bcfa89a52db75ff689021a5298e556457d7ac2453",
+          "actual_sha256": "af31bd20cca160afff9b0b4bcfa89a52db75ff689021a5298e556457d7ac2453",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "caac3ac60a8b6a64bd0c19b4834c24a2f52f9a4d3c7d713f0b953d5af67094c4",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 39,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV39_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "080bcc757e07c9318b67eb3b86cdb2a532c97d10e2a2f4f3b64e6f73881cfbea",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "d173d79e4e561786163fb2c0b389cb064435965fd8e915ff53964d63d6674e88",
+          "actual_sha256": "d173d79e4e561786163fb2c0b389cb064435965fd8e915ff53964d63d6674e88",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "93dc0ea0f1219b53f991f322df22c35ad197dbc0cdb166af8537c750c6f2d201",
+          "actual_sha256": "93dc0ea0f1219b53f991f322df22c35ad197dbc0cdb166af8537c750c6f2d201",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "f2da58be0c52df5d9d82430422fa0440a4e25ae4ecd5ba43be830b86c69272d4",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 39,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV39_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "0cef29e92a665b06265df0c4b69f7c215d015cd47209de77c57efd8bb88e7376",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "74e738825bc424e8543aeb775f88afa643d54828b896316c394495432044e49c",
+          "actual_sha256": "74e738825bc424e8543aeb775f88afa643d54828b896316c394495432044e49c",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "93dc0ea0f1219b53f991f322df22c35ad197dbc0cdb166af8537c750c6f2d201",
+          "actual_sha256": "93dc0ea0f1219b53f991f322df22c35ad197dbc0cdb166af8537c750c6f2d201",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "6d251aa1577d37d0db8471d8bd2dea2cbfe61d28afc4f2412c59df047e0b986c",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 40,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV40_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "ea4bf8e8e359066abc57d017a46bebad96f0eba2b5622bea66c1abbf7721b14d",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "dbd57cc565f3c2bc9f41fec98aaf99941a0f10c92ff304d7e1e2b877c9ed0ce3",
+          "actual_sha256": "dbd57cc565f3c2bc9f41fec98aaf99941a0f10c92ff304d7e1e2b877c9ed0ce3",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "e4338090ccfffa708dc2bdd4dae520836f34f8d4156af82a5db2e411ab3c7fd5",
+          "actual_sha256": "e4338090ccfffa708dc2bdd4dae520836f34f8d4156af82a5db2e411ab3c7fd5",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "d89ef50b830038965578018000a21dd105956b31041cfe15877c09c394ffbb36",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 40,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV40_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "19c023012e149c1f97a84f06c39c8f3d677dd52740948996f7b035f7cfbfc7bd",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "6f3dd015c395fa409edf8a2e3cd7f88d24c0c0f8326ff230afc5eb9cde511b4a",
+          "actual_sha256": "6f3dd015c395fa409edf8a2e3cd7f88d24c0c0f8326ff230afc5eb9cde511b4a",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "e4338090ccfffa708dc2bdd4dae520836f34f8d4156af82a5db2e411ab3c7fd5",
+          "actual_sha256": "e4338090ccfffa708dc2bdd4dae520836f34f8d4156af82a5db2e411ab3c7fd5",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "265af72fcc7f7799300b4f112a2e461f29b6760c806ab9bd4f9df8cc0c296907",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 41,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV41_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "effd62cf0631dd1dc5ca1a8c00968b4b7b3e9a5ffe3ad96638d1210a96f3f458",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "e0b44f2df60a6567d1796d150eddb4f08fcac7f8bd636dff5e2854042d49495b",
+          "actual_sha256": "e0b44f2df60a6567d1796d150eddb4f08fcac7f8bd636dff5e2854042d49495b",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "67adaa528259adccbcb577830501dfacbe0afe46e7b7b07147aeb3f743788352",
+          "actual_sha256": "67adaa528259adccbcb577830501dfacbe0afe46e7b7b07147aeb3f743788352",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "056858f559458123e1b2be7208d608b9ad3e377c2260058b4e921da63f07062c",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 41,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV41_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "126e7a4d46c444e284be9f855c172e408daae5d6d142e2c1d3e037a35f4ce922",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "6bb7a592b045e791aa9b2b73b9416bfc13393becf09a936c07b4bc3c33ae9896",
+          "actual_sha256": "6bb7a592b045e791aa9b2b73b9416bfc13393becf09a936c07b4bc3c33ae9896",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "67adaa528259adccbcb577830501dfacbe0afe46e7b7b07147aeb3f743788352",
+          "actual_sha256": "67adaa528259adccbcb577830501dfacbe0afe46e7b7b07147aeb3f743788352",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "eaf5e1d907e09fdcaf671faba2b49b8cc764b472f14243923914ef18982ea19c",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 42,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV42_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "2454fae291c9eaaaef168cd5fa1e3ed00c160cf4d2cecd577e586ace9e4fce0c",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "e4c98fe95b3d302e964174da32205a43227436c799ac17c7d36efa8f0889ac37",
+          "actual_sha256": "e4c98fe95b3d302e964174da32205a43227436c799ac17c7d36efa8f0889ac37",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "d9da11c148342ecf21f93e76591858705f126ddd26c09ed4bbcc3ce5075ce8e0",
+          "actual_sha256": "d9da11c148342ecf21f93e76591858705f126ddd26c09ed4bbcc3ce5075ce8e0",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "87341b07a0d608a867f54c0fd0186bb868e6fa1f1aac745403766b2d81920067",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 42,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV42_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "c1208ed308710cf0825295a3ab23a675d07d2d93f2077940abebc9f62bcae8be",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "14e5d4d15f5968e89d6adf0ada603c9403a3db676014f92a7a09c880f473deda",
+          "actual_sha256": "14e5d4d15f5968e89d6adf0ada603c9403a3db676014f92a7a09c880f473deda",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "d9da11c148342ecf21f93e76591858705f126ddd26c09ed4bbcc3ce5075ce8e0",
+          "actual_sha256": "d9da11c148342ecf21f93e76591858705f126ddd26c09ed4bbcc3ce5075ce8e0",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "540fe017185227388674ac8d7ce925a3598f1de3eebe5add1c24c4fe69f6f65b",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 43,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV43_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "e6b0ea78596bd960a5a1827e5c3b8559beee2bde061c16a9bb80f7416af40a4a",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "0afc8e5bcaa7ad7dd190f822097bfe6a6295a63b78283f666dd7d90b37410fe4",
+          "actual_sha256": "0afc8e5bcaa7ad7dd190f822097bfe6a6295a63b78283f666dd7d90b37410fe4",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "aac3a6d1ce4cc29a11fd884caa27f04b84281855c706e457fbaee14ed097a696",
+          "actual_sha256": "aac3a6d1ce4cc29a11fd884caa27f04b84281855c706e457fbaee14ed097a696",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "e413cedaebe30f4fc9e5fa49c9ee17d70b0dd6df0bb17ac22e544323c45864ed",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 43,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV43_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "99d734d5cabc84b899f616ce4189f70e8586b7ebade3d0cea73a336d85715b45",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "6f1639cafd282790e164aa624d406547ae37e155d53d15c577aabe0b262d683a",
+          "actual_sha256": "6f1639cafd282790e164aa624d406547ae37e155d53d15c577aabe0b262d683a",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "aac3a6d1ce4cc29a11fd884caa27f04b84281855c706e457fbaee14ed097a696",
+          "actual_sha256": "aac3a6d1ce4cc29a11fd884caa27f04b84281855c706e457fbaee14ed097a696",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "a640a39b9d78239d32e2240e17f4046a41ae8d3653414eb2da06464103a1c879",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 44,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV44_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "7ccb3cc9f0bbec20666670b9e8611900240ebd9750932aeb88790d2abad16342",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "9cdf972f3323b5493776057afab8c25a9b405cb27a110420169baeb8ddea102a",
+          "actual_sha256": "9cdf972f3323b5493776057afab8c25a9b405cb27a110420169baeb8ddea102a",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "e580b199e1c0daad7e06cbcdb97adf32639cedda41cf036b5e0038012d05e952",
+          "actual_sha256": "e580b199e1c0daad7e06cbcdb97adf32639cedda41cf036b5e0038012d05e952",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "50214e583dcc1bf6ecccfd93121117e9594ccdfe78758cf03b793548a399d660",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 44,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV44_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "5212ca26817e437f10fbfc9db3f73bb463d640b39313771c8a9ebbcffc449c12",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "1c309bd0a54313a1550e9dbe866e84abf2e594a2b0cfb38425c8a080b8c9be1e",
+          "actual_sha256": "1c309bd0a54313a1550e9dbe866e84abf2e594a2b0cfb38425c8a080b8c9be1e",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "e580b199e1c0daad7e06cbcdb97adf32639cedda41cf036b5e0038012d05e952",
+          "actual_sha256": "e580b199e1c0daad7e06cbcdb97adf32639cedda41cf036b5e0038012d05e952",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "a2ad71e639c89c70aef9801ca5cc87aa59e7364a24d88d8bce727265b139241f",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 45,
+      "scene": "CONTROL",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV45_CONTROL_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "c2d056c085eff75caa874910cd2cd4aa8f28e577ced0405de7a97652b9f85a17",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "cfa0ec72d0ebdcbd9dd0b5823447afde49ec9b42e5674b78c60932316e4e840e",
+          "actual_sha256": "cfa0ec72d0ebdcbd9dd0b5823447afde49ec9b42e5674b78c60932316e4e840e",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "8b915b2ca4b9b9c66ca2c81499139f0fa4b9f0b9fd7bdec6df53345365422ff7",
+          "actual_sha256": "8b915b2ca4b9b9c66ca2c81499139f0fa4b9f0b9fd7bdec6df53345365422ff7",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "33812789514519e96ebc8b96903b757d42be4dc7ee93d5d3575f4a58e0218c1e",
+      "historical_runtime_manifest_restored": false
+    },
+    {
+      "seed": 45,
+      "scene": "CORRIDOR",
+      "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV45_CORRIDOR_INPUT_XM6_V1",
+      "status": "MATCH",
+      "original_input_manifest_sha256": "b81965c69b6a6b4a23acbb304e76eec2dec0be05eb97c563de0e512c8f0847a0",
+      "generation_return_code": 0,
+      "artifacts": {
+        "sensors.bag": {
+          "expected_sha256": "af793bf764fe6e3fdd5638a7ae7f2fd74f58428d5c21272216b423933bd316e6",
+          "actual_sha256": "af793bf764fe6e3fdd5638a7ae7f2fd74f58428d5c21272216b423933bd316e6",
+          "match": true
+        },
+        "reference.txt": {
+          "expected_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "actual_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+          "match": true
+        },
+        "reference_metadata.json": {
+          "expected_sha256": "8b915b2ca4b9b9c66ca2c81499139f0fa4b9f0b9fd7bdec6df53345365422ff7",
+          "actual_sha256": "8b915b2ca4b9b9c66ca2c81499139f0fa4b9f0b9fd7bdec6df53345365422ff7",
+          "match": true
+        }
+      },
+      "new_generator_manifest_sha256": "6515e682f7e77526b8907f09afeddf3dd1927320f24c7a6ca23124103d6885e5",
+      "historical_runtime_manifest_restored": false
+    }
+  ],
+  "scope": "Scientific input bytes only; historical run manifests/results are not recreated.",
+  "status_counts": {
+    "MATCH": 64
+  }
+}

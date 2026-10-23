@@ -1,0 +1,16 @@
+{
+  "evidence_scope": "complete revised final cohort; backend-specific reference outcomes",
+  "sources": {
+    "research_paper/evidence/final_geometry_v2_results_20261012/fastlio_analysis.json": "0760db8485d1bb4e18aa227503c46591316dad21a88ce697543bd1e0152f182b",
+    "research_paper/evidence/final_geometry_v2_results_20261012/pointlio_analysis.json": "7e33f976236cc9b6d3545a8a65c29dbe88bfccbb3d467946a0f48bda58e5d475"
+  },
+  "plotter_sha256": "5230b6e7fd23130781fe08fbfc44ff5ca42fc34bdb758037ab67e6bd5b44387f",
+  "outputs": {
+    "final_event_ledger.png": "4a405bc827162b964d3613e20776486c4e41b12e53aa6c8319df094b508e6a8a",
+    "final_operating_points.png": "e811e3ec0d9a06fa00e7d7c52e5298da0c59eb9ffbdfd7427a02d1a979432bce",
+    "final_paired_geometry_effect.png": "b7d826993ed49262a4e77b239816a642cf534ca0a3c4627afbc9c40861ec3fb1",
+    "final_stratum_events.png": "daac064476aa9ed005c259df75324850d65937f7265d194309392e3dc1134a23"
+  },
+  "intervals": "event Wilson 95%; paired-effect geometry bootstrap 95%, 10000 resamples within fixed strata",
+  "delay_scope": "detected events only; does not assign delays to missed or non-recovered events"
+}

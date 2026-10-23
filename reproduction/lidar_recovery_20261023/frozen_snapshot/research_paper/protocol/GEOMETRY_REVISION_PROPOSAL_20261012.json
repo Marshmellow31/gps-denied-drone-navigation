@@ -1,0 +1,52 @@
+{
+  "schema": "geometry-revision-proposal-v2",
+  "status": "NOT_ACCEPTED_REQUIRES_R2_AND_R3",
+  "date": "2026-10-12",
+  "final_target_pairs": 48,
+  "target_per_stratum": 12,
+  "candidate_pool_per_stratum": 80,
+  "candidate_geometry_profile": "R2_GEOMETRY_SPACING_CANDIDATE_V2",
+  "control_rule": "max(4, ceil(length_m / 2.0) - 1) partial baffles; x=length_m*i/(count+1), y=0.65*half_width_m..half_width_m",
+  "eligibility_rules_unchanged": {
+    "corridor_max": 0.1,
+    "control_min": 0.15,
+    "post_exit_min": 0.2
+  },
+  "proposed_fresh_seed_ranges": {
+    "TEST_SHORT_NARROW": [
+      10000,
+      10079
+    ],
+    "TEST_SHORT_WIDE": [
+      10100,
+      10179
+    ],
+    "TEST_LONG_NARROW": [
+      10200,
+      10279
+    ],
+    "TEST_LONG_WIDE": [
+      10300,
+      10379
+    ]
+  },
+  "future_selection_rule": "First 12 eligible in ascending seed order in each fixed pool; stop if any pool exhausted; preserve every rejection.",
+  "fresh_seeds_sampled": false,
+  "old_seed_ranges": [
+    100,
+    179
+  ],
+  "old_geometry_exposure": "68 original candidate geometries inspected before this design revision; all old reserved IDs excluded from revised final selection.",
+  "adaptation_disclosure": "Revision informed by failed geometry screen, not estimator scores or pose errors. Fresh IDs do not erase adaptation to observed dimension groups.",
+  "backend_thresholds_unchanged": {
+    "FAST_LIO": 166.16366016039856,
+    "POINT_LIO": 123.80876977779258
+  },
+  "required_before_final": [
+    "Independent R2 amendment review of geometry, fresh pools, exposure and threshold portability",
+    "Integrate reviewed geometry/seed changes into sensor generation and both runner identity contracts",
+    "Development native replay on changed controls, paired input audit, identity, startup and sidecar availability checks for both backends",
+    "Rebuild plan and complete reviewed inventory, full tests, independent R3 review and new freeze",
+    "Screen fresh pool once under accepted revised protocol; stop on any quota deficit"
+  ]
+}

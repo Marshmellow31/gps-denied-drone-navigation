@@ -1,0 +1,20 @@
+{
+  "verified": true,
+  "evaluation_scope": "development_only",
+  "clock_id": "simulation_epoch",
+  "source": {
+    "artifact_name": "reference.txt",
+    "sha256": "f7f648226a1c544c9286326b643ca4b83c8d477e4af618ebfcf605e6a7d093da"
+  },
+  "comparison_body": {
+    "T_est_body_to_ref_body": [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],
+    "provenance": "FAST-LIO IMU state body and simulator collocated IMU/LiDAR body have identity extrinsics; no fitted transform"
+  },
+  "reference_pose": {
+    "direction": "world_from_sim_body",
+    "quaternion_order": "xyzw"
+  },
+  "reference_method": "analytic prescribed trajectory sampled at 200 Hz",
+  "estimator_input_independence": true,
+  "limitations": ["independent of estimator computation, but synthetic not independent physical measurement", "bootstrap duration 32 seconds only"]
+}

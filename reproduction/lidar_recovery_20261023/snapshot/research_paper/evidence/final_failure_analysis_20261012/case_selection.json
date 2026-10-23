@@ -1,0 +1,155 @@
+{
+  "rule": "Lowest selected seed per backend/method/category; illustrative post-result selection, never used to estimate prevalence",
+  "cases": [
+    {
+      "backend": "fastlio",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "category": "false_healthy",
+      "seed": 10000
+    },
+    {
+      "backend": "fastlio",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "category": "missed_recovery",
+      "seed": 10001
+    },
+    {
+      "backend": "fastlio",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "category": "successful_detection",
+      "seed": 10003
+    },
+    {
+      "backend": "fastlio",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "category": "non_recovery",
+      "seed": 10105
+    },
+    {
+      "backend": "fastlio",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "category": "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL",
+      "seed": 10001
+    },
+    {
+      "backend": "fastlio",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "category": "RAW_HEALTHY_TICKS_WITHOUT_THREE_RECORD_CONFIRMATION",
+      "seed": 10010
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "category": "false_healthy",
+      "seed": 10002
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "category": "missed_recovery",
+      "seed": 10003
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "category": "successful_detection",
+      "seed": 10000
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "category": "non_recovery",
+      "seed": 10105
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "category": "ACTIVE_STATE_WITHOUT_NEW_POST_ONSET_TRANSITION",
+      "seed": 10203
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "category": "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL",
+      "seed": 10003
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "category": "RAW_HEALTHY_TICKS_WITHOUT_THREE_RECORD_CONFIRMATION",
+      "seed": 10117
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "category": "false_healthy",
+      "seed": 10202
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "category": "missed_recovery",
+      "seed": 10009
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "category": "successful_detection",
+      "seed": 10000
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "category": "non_recovery",
+      "seed": 10105
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "category": "ACTIVE_STATE_WITHOUT_NEW_POST_ONSET_TRANSITION",
+      "seed": 10207
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "category": "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL",
+      "seed": 10009
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "category": "false_healthy",
+      "seed": 10002
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "category": "missed_recovery",
+      "seed": 10000
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "category": "successful_detection",
+      "seed": 10001
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "category": "non_recovery",
+      "seed": 10105
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "category": "ACTIVE_STATE_WITHOUT_NEW_POST_ONSET_TRANSITION",
+      "seed": 10002
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "category": "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL",
+      "seed": 10000
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "novelty-preparation-steps-1-3-v1",
+  "assessment_date": "2026-10-12",
+  "scope": "Author contribution/literature/claim classification; novelty not independently established",
+  "numerical_analysis_changed": false,
+  "new_experiments_run": false,
+  "source_artifact_sha256": {
+    "research_paper/protocol/METRICS.md": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+    "research_paper/protocol/INDICATORS.md": "f9c72f12fae2c294b4e8372684df1dae3fa571c7d3905eb23b05d8b747409a4d",
+    "research_paper/protocol/POINTLIO_REPLICATION_FREEZE_20261010.md": "7342f774608bf6bf85270dcd7c8f5e7e731e402c7160823cf2bd0c8c160b6980",
+    "research_paper/protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md": "58434f9a9a41a1e310966ee7f327c3f0e9bc22240c39a2ee5c65bc5f48c487be",
+    "research_paper/reviews/R2_GEOMETRY_AMENDMENT_20261012.md": "a160dcc60698cd26afee534d1c7fa3f4a69530e6daedb631d0bbb39ff45be0ac",
+    "research_paper/reviews/R3_GEOMETRY_V2_IMPLEMENTATION_20261012.md": "1d4ffd6f67e7444e9951fe1d78b656c6defe6e92f94392a69d9b3e71112db42e",
+    "research_paper/reviews/FINAL_GEOMETRY_V2_RESULT_AUDIT_20261012.md": "5327909842ebd0daeb9cf737f86693d87acad131b1a11ac3b148eab13edb1817",
+    "research_paper/evidence/final_geometry_v2_results_20261012/RESULTS_REPORT.md": "b7498a2c10e62c2daa99c588d1715c204ff8678a3676cae08293329707d16fe8",
+    "research_paper/evidence/final_geometry_v2_results_20261012/method_summary.csv": "405f6ebadef9b63602a32dcab52f680dba799c57427fb6a1b2c20216495a67b5",
+    "research_paper/evidence/final_geometry_v2_results_20261012/stratum_summary.csv": "80e63158dd66a9adad94a2b723f231e552bbced64ac45cc93c3f1a584292b3b2",
+    "research_paper/evidence/final_geometry_v2_results_20261012/fastlio_analysis.json": "0760db8485d1bb4e18aa227503c46591316dad21a88ce697543bd1e0152f182b",
+    "research_paper/evidence/final_geometry_v2_results_20261012/pointlio_analysis.json": "7e33f976236cc9b6d3545a8a65c29dbe88bfccbb3d467946a0f48bda58e5d475"
+  },
+  "assessment_document_sha256": {
+    "research_paper/literature/CONTRIBUTION_ASSESSMENT_20261012.md": "25f06971099d21e61e5544f6c22fe8dcef5b3bd80e95baabc98cb1821674410a",
+    "research_paper/literature/CLOSEST_WORK_MATRIX_20261012.md": "014bfd4603d59a809f8e1e70994497201c4a8fb666c85413f950e4539d3beb2b",
+    "research_paper/evidence/CLAIM_EVIDENCE_MAP_20261012.md": "1b2d3df8ead8c6727008ca2a7682d596e84d56838a355b7e0d17ebb987b57d06"
+  },
+  "primary_source_urls": [
+    "https://link.springer.com/article/10.1007/s43684-026-00144-1",
+    "https://arxiv.org/html/2509.06285v3",
+    "https://arxiv.org/html/2408.11809v3",
+    "https://arxiv.org/html/2211.16335v4",
+    "https://arxiv.org/html/2412.02901v2",
+    "https://www.mdpi.com/2504-446X/8/8/411",
+    "https://arxiv.org/html/2604.02706v1",
+    "https://arxiv.org/html/2304.12577v1",
+    "https://arxiv.org/html/2409.04961v2"
+  ],
+  "retrieval_note": "Primary HTML / publisher indexed article text inspected; URLs identify versions, not immutable web-byte hashes. Targeted comparison, not exhaustive systematic review."
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "restoration-environment-v1",
+  "date": "2026-10-09",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+  "system_python": "3.14.4",
+  "isolated_runtime": {
+    "python": "3.12.14 (main, Sep  2 2026, 23:27:36) [GCC 15.3.0]",
+    "numpy": "2.5.3"
+  },
+  "disk_space": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/nvme0n1p5   51G   46G  3.1G  94% /\n/dev/nvme0n1p3  901G  731G  171G  82% /run/media/harshil/Acer\n",
+  "research_revision": "5583b9edbb57a6deefd1f1b00f2927aea4e924b9",
+  "tracked_source_restored": true,
+  "development_only": true,
+  "heldout_inputs_opened": false
+}

@@ -1,0 +1,4 @@
+Latest complete experiment test run, 29 September 2026
+Command: python3 -m unittest discover -s research_paper/experiments/tests -q
+Interpreter: Python 3.14.4
+Result: 125 tests run; 124 passed; 1 optional SciPy-dependent test skipped; 0 failed.

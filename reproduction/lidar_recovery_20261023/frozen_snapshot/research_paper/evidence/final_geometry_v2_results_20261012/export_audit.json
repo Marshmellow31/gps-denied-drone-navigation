@@ -1,0 +1,53 @@
+{
+  "status": "PASS_COMPACT_EXPORT",
+  "complete_native_counts": {
+    "fastlio": {
+      "COMPLETED": 96
+    },
+    "pointlio": {
+      "COMPLETED": 96
+    }
+  },
+  "same_sensor_input_pairs": 48,
+  "analysis_statuses": {
+    "fastlio_analysis.json": "CONFIRMATORY_COMPLETE",
+    "pointlio_analysis.json": "CONFIRMATORY_COMPLETE"
+  },
+  "source_copies": {
+    "fastlio_analysis.json": {
+      "source_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/analysis_fastlio",
+      "sha256": "0760db8485d1bb4e18aa227503c46591316dad21a88ce697543bd1e0152f182b"
+    },
+    "pointlio_analysis.json": {
+      "source_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/analysis_pointlio",
+      "sha256": "7e33f976236cc9b6d3545a8a65c29dbe88bfccbb3d467946a0f48bda58e5d475"
+    },
+    "fastlio_batch.json": {
+      "source_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/fastlio/final_batch_summary.json",
+      "sha256": "b6f862ad9bdf745d04b14452e6a9c8a9bc1b25230f06e830b1f4ce423652e7a4"
+    },
+    "pointlio_batch.json": {
+      "source_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/pointlio/pointlio_final_batch_summary.json",
+      "sha256": "7e2890279fd057b02cfc74f63e1a49a2eb5132370b6779ac0fc843da604f3426"
+    },
+    "pipeline_state.json": {
+      "source_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/pipeline_state.json",
+      "sha256": "76f308c2b232c299bce2428da6f2f43b62724796f4999a28fd559c718130fbcc"
+    },
+    "analysis_resume_state.json": {
+      "source_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/analysis_resume_state.json",
+      "sha256": "2b1b91f998cbcf4f75761af793d13b6ccc71888290151a95f56b42c91ebc35b1"
+    },
+    "pointlio_preflight_failed_batch.json": {
+      "source_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_geometry_v2_20261012/pointlio_preflight_failure_20261012/pointlio_final_batch_summary.json",
+      "sha256": "98b75854de6b9522730b76500dd7302f1efe5a0a90bf9222c4a037b7e9efb5bf"
+    }
+  },
+  "native_attempt_receipts_sha256": "3bcab0472bb8de760a9817da5dfa40c3671f088f2661793a3a7c0a65f177b87e",
+  "exporter_sha256": "7ae61302feba735aa8499553cd2ba33b7e1c2dc40208aa0ad21be88e5f219959",
+  "retained_workflow_failures": [
+    "Point-LIO preflight: missing scratch root, zero native attempts",
+    "Original FAST-LIO analysis: shared secondary threshold metadata absent from primary identity; corrected only by independently accepted compatibility adapter"
+  ],
+  "scope": "Compact export and complete-cohort reconciliation. Frozen analysis callers and independently reviewed compatibility adapter perform full native output/source validation; raw streams remain at recorded external paths."
+}

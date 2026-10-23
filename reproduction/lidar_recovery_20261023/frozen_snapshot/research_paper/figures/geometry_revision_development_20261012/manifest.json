@@ -1,0 +1,11 @@
+{
+  "role": "development",
+  "final_result": false,
+  "audit_path": "research_paper/evidence/geometry_revision_development_20261012.json",
+  "audit_sha256": "8a9ea9a3d09c5038eb402256cae0c22a18251904d15b27dfe1f1cd15534509b2",
+  "plot_source_sha256": "3f98e9616b52e1f7f0fdc8c33c3c265058558572c533f96db0d5574478ced4cc",
+  "outputs": {
+    "geometry_revision_development.png": "9cf694cc376d9c18581c41d27d7a986b212769b5777cb0f8a6276940ae52a69a",
+    "geometry_revision_development.svg": "b47d2e761c32854f3ff43d57b1faa2dd121b729fca6afcb2f8cfb9ef06d3fc84"
+  }
+}

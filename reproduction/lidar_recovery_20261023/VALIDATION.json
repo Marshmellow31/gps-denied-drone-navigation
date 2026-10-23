@@ -1,0 +1,50 @@
+{
+  "package_files_verified": 1813,
+  "byte_identical_reports": {
+    "method_summary.csv": true,
+    "stratum_summary.csv": true,
+    "corridor_event_ledger.csv": true,
+    "RESULTS_REPORT.md": true
+  },
+  "primary_figures": 4,
+  "failure_figures": 16,
+  "native_estimators_executed": false,
+  "stream_reanalysis": {
+    "reconciled_events.json": true,
+    "event_diagnosis.csv": true,
+    "decision_ticks.csv.gz": true,
+    "diagnostic_frames.csv.gz": true,
+    "case_selection.json": true,
+    "primary_windows.csv": {
+      "match": true,
+      "comparison": "Error values: rtol=1e-12, atol=1e-12; all other fields exact",
+      "roundoff_differences": 1054,
+      "max_absolute_difference": 7.08461067588928e-15
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Sep  2 2026, 23:27:36) [GCC 15.3.0]",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  },
+  "status": "PASS",
+  "date": "2026-10-23",
+  "execution_location": "Independent relocated copy under /tmp; original repository and external paths were not used as scientific inputs",
+  "offline_dependency_install": "PASS: new venv, --no-index, included wheels",
+  "original_files_rehashed_unchanged": 1329,
+  "implementation_gate": "PASS, 197 unchanged reviewed entries after separately recovering the exact frozen test file",
+  "corridor_labels_reconciled": 96,
+  "diagnostic_event_rows_reconciled": 192,
+  "native_slots_reanalyzed": 192,
+  "external_inventory_files": 5079,
+  "external_inventory_bytes": 22217392050,
+  "large_copy_utility_checks": [
+    "Small fixture copied and SHA-256 verified",
+    "Refused existing output",
+    "Source fixture unchanged",
+    "Refused 20.69 GiB copy on insufficient-space destination before creating output"
+  ],
+  "figure_visual_check": "Primary operating-point figure visually inspected",
+  "full_native_estimator_replay": "NOT_RUN; large raw inputs/native runtime are outside portable package",
+  "all_existing_files_preserved": true
+}

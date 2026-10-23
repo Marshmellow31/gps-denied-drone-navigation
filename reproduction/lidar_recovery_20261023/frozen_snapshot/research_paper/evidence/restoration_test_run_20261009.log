@@ -1,0 +1,19 @@
+======================================================================
+ERROR: test_backend_t14_source_check_keeps_new_supervisor_separate (test_final_evaluation_runner.FinalEvaluationRunnerTests.test_backend_t14_source_check_keeps_new_supervisor_separate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/tests/test_final_evaluation_runner.py", line 103, in test_backend_t14_source_check_keeps_new_supervisor_separate
+    reference = json.loads(final_run.T14_REFERENCE_RUN.read_text())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/generated/runs/T14_FORMAL_BATCH/T14_DEV14_CORRIDOR_XM6_P1/run_manifest.json'
+
+----------------------------------------------------------------------
+Ran 165 tests in 8.359s
+
+FAILED (errors=1, skipped=1)

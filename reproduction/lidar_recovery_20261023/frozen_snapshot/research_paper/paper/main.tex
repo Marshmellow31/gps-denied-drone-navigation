@@ -1,0 +1,32 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=28mm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Assessing Recovery Reliability in LiDAR-Inertial Odometry},pdfauthor={Harshil Patel, Daksha Lingampeta, Nisarg Vyas}}
+
+\title{Assessing Recovery Reliability in\protect\\ LiDAR-Inertial Odometry}
+\author{Harshil Patel \and Daksha Lingampeta \and Nisarg Vyas}
+\date{Research proposal draft --- September 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+LiDAR-inertial odometry supports navigation when global navigation satellite system measurements are unavailable, but weak geometric constraints can degrade localization. When informative geometry returns, improved scan matching need not imply that every aspect of state estimation has recovered. This proposed study will examine how reliably existing LiDAR health indicators identify the return of accurate local motion estimation after geometric degeneracy. The planned evaluation will separate geometric localizability, short-window relative pose error, and accumulated pose error in the original reference frame. Established indicators will be compared using existing odometry backends, controlled geometric transitions, and eligible public LiDAR-inertial recordings with independently assessed reference trajectories. The study will measure false reassurance, recovery-detection delay, decision availability, and non-recovery while preserving missing outputs and reset events. Development and evaluation trajectories will be separated, and operating thresholds and observation windows will be fixed before final testing. Replication across backends and unseen scenes will assess the generality of any findings. The intended contribution is a reproducible assessment of recovery-indicator reliability, rather than a new sensor-fusion system or a claim of physical flight safety. The exact distinction from prior work remains to be verified. This abstract describes planned research; no experimental findings or performance improvements are claimed.
+\end{abstract}
+
+% Venue-neutral template. Add verified affiliations when available.
+% Write these sections incrementally; leave them commented until drafted.
+% \section{Introduction}
+% \section{Related Work}
+% \section{Problem Formulation}
+% \section{Proposed Method}
+% \section{Experimental Protocol}
+% \section{Results}
+% \section{Ablations and Failure Analysis}
+% \section{Discussion and Limitations}
+% \section{Conclusion}
+% \section*{Reproducibility Statement}
+% Add a bibliography once cited sources appear in the manuscript body.
+\end{document}

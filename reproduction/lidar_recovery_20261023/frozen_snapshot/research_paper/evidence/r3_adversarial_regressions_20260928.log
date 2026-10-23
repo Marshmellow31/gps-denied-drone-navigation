@@ -1,0 +1,8 @@
+Adversarial R3 regression run, 29 September 2026
+Command: python3 research_paper/reviews/r3_rereview_counterexamples.py
+Result: PASS — completed playback with missing pose intervals remained scientific unavailable data;
+       a changed R2 scene-audit dependency invalidated the content bundle;
+       cached outputs without reproducible inputs/reference were rejected;
+       all 48 completed fixture pairs remained cached after scratch cleanup and changed attempt/Git metadata;
+       scratch was cleaned and no estimator relaunched; early backend exit was detected; and an orphaned group blocked resume.
+No held-out geometry, sensor input or estimator output was read or generated.

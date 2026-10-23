@@ -1,0 +1,7 @@
+{
+  "file": "research_paper/experiments/tests/test_t16_development_analysis.py",
+  "current_snapshot_sha256": "0a211494984e10ca5dc691e3b1b1285b5e9afc5e0b743dce65d6251077289a47",
+  "frozen_sha256": "b084cd32cc9a4d1592ea26e94584ffcce305090350ec0030cfce9f475cde42ca",
+  "retrieved_from_git_revision": "d4e74921b9771bb71f730229e14119c09a87bcb7",
+  "reason": "Post-freeze test-only commit changed the reviewed file; retain current snapshot and restore exact frozen bytes separately. No gate bypass."
+}

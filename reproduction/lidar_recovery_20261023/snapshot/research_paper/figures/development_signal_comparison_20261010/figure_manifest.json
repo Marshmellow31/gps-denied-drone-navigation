@@ -1,0 +1,117 @@
+{
+  "schema": "development-signal-figure-v1",
+  "role": "development_only",
+  "heldout_inputs_opened": false,
+  "independent_unit": "corridor geometry event",
+  "event_count_per_backend": 32,
+  "uncertainty": "two-sided 95% Wilson intervals at event level",
+  "figure_data": [
+    {
+      "backend": "FAST-LIO",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "operating_point": "G3 threshold 166.16",
+      "false_healthy_events": 1,
+      "false_healthy_denominator": 31,
+      "false_healthy_rate": 0.03225806451612903,
+      "false_healthy_wilson_95": [
+        0.00571707408694444,
+        0.16194457176169622
+      ],
+      "recovered_events_detected": 13,
+      "truth_recovered_denominator": 32,
+      "recovery_sensitivity": 0.40625,
+      "recovery_sensitivity_wilson_95": [
+        0.255194024803138,
+        0.5774027342701177
+      ],
+      "color": "#1565c0",
+      "marker": "o"
+    },
+    {
+      "backend": "FAST-LIO",
+      "method": "DCREG_SCHUR_MASK",
+      "operating_point": "fixed DCReg",
+      "false_healthy_events": 0,
+      "false_healthy_denominator": 31,
+      "false_healthy_rate": 0.0,
+      "false_healthy_wilson_95": [
+        0.0,
+        0.11025900073475385
+      ],
+      "recovered_events_detected": 30,
+      "truth_recovered_denominator": 32,
+      "recovery_sensitivity": 0.9375,
+      "recovery_sensitivity_wilson_95": [
+        0.7985253275199642,
+        0.9826897968048427
+      ],
+      "color": "#1565c0",
+      "marker": "s"
+    },
+    {
+      "backend": "Point-LIO",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "operating_point": "G3 threshold 123.81",
+      "false_healthy_events": 3,
+      "false_healthy_denominator": 32,
+      "false_healthy_rate": 0.09375,
+      "false_healthy_wilson_95": [
+        0.032400962626319516,
+        0.24218499335778831
+      ],
+      "recovered_events_detected": 21,
+      "truth_recovered_denominator": 27,
+      "recovery_sensitivity": 0.7777777777777778,
+      "recovery_sensitivity_wilson_95": [
+        0.5924270453692919,
+        0.8939290451059105
+      ],
+      "color": "#c62828",
+      "marker": "o"
+    },
+    {
+      "backend": "Point-LIO",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "operating_point": "fixed DCReg",
+      "false_healthy_events": 11,
+      "false_healthy_denominator": 32,
+      "false_healthy_rate": 0.34375,
+      "false_healthy_wilson_95": [
+        0.20410233354328552,
+        0.5168922649121406
+      ],
+      "recovered_events_detected": 20,
+      "truth_recovered_denominator": 27,
+      "recovery_sensitivity": 0.7407407407407407,
+      "recovery_sensitivity_wilson_95": [
+        0.553210695973843,
+        0.8682979157713322
+      ],
+      "color": "#c62828",
+      "marker": "s"
+    }
+  ],
+  "inputs": {
+    "fast": {
+      "path": "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/evidence/development_analysis_20261010/fastlio_development_manifest.json",
+      "sha256": "1678e1c8b62b3ceeabf4e9f4e63593832cf8c94f7793e7b933647e8569c082f7"
+    },
+    "point": {
+      "path": "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/evidence/development_analysis_20261010/pointlio_development_manifest.json",
+      "sha256": "e3a03d83f5854c5705177bc7610cb6ff18d9f0d331f50783c23dcd036b6ce254"
+    }
+  },
+  "script": {
+    "path": "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/plot_development_signal_comparison.py",
+    "sha256": "7bb9ade15f8e8497cc741169bdd1ad347efe84cb2e8d465a6e256a1b2d7cda9b"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "matplotlib": "3.11.2"
+  },
+  "outputs": {
+    "development_signal_comparison.png": "6901bf6fe715f7fa6269d454931b8b9e28e0a1f11e141c557459386182ebc4f6",
+    "development_signal_comparison.pdf": "d6ff50e7fad0a43f97151e2fe82955c5064c110e6d8684af2f797b031f05714d",
+    "development_signal_comparison.svg": "51c3470fcb97e4e16dae78eb9ef8f80985076d0cb444d5167a47264959b201b3"
+  }
+}

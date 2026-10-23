@@ -1,0 +1,256 @@
+{
+  "schema": "source-identical-restoration-replay-v1",
+  "role": "development_lifecycle_only",
+  "seed": 14,
+  "status": "COMPLETED_DEVELOPMENT_LIFECYCLE",
+  "heldout_inputs_opened": false,
+  "threshold_fit_performed": false,
+  "scientific_use": "Same-input repeatability only; not a new event or calibration sample",
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "180s",
+    "bash",
+    "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/run_final_evaluation_replay.sh",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/fastlio-t13.XBDWGy/ws",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A3/stream"
+  ],
+  "ros_master_uri": "http://127.0.0.1:11311",
+  "input_bag_sha256": "89f4ac21b24a2b9dfc86b74cd3d082e48365ac1ed63207b08969e7aca25d4627",
+  "binary_sha256": "6fc44efd8fb17f4d5311d07675cb909bf691947bb606bd29ec2e1a172ec23433",
+  "historical_binary_sha256": "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792",
+  "native_source_commit": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+  "native_source_diff_sha256": "1397219a8765c2bc8c49adaf7e94dcc1e6006788acac06467e28e660876e51a0",
+  "prior_failed_attempt": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A1/run_manifest.json",
+  "diagnosed_prior_failure": "Legacy reviewed wrapper starts roscore on11311; requested alternate master port was incompatible. Retry uses loopback default11311 after confirming no live ROS processes.",
+  "repeat_of": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A2/run_manifest.json",
+  "return_code": 0,
+  "elapsed_s": 72.11366567599998,
+  "outputs": {
+    "wrapper.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrapper.stdout.log": "d09d81ae47e92df71f30c9aebeb1dfee0801d7dca9b24d2cc389f90b041ece8d",
+    "stream/dcreg.csv": "ac05752a332aa0c4dcafcd4f5f609bf678b1087c702996cd587a755839409c46",
+    "stream/evaluation.csv": "4d5917d7f4a67da20af67e7153f78aaeb0a7b8943475a7e53e5de045e2959950",
+    "stream/fastlio.log": "ced8ff12287062b5d13cdfe21572d081d50cb8442ce47deb3dd91c5cd6801d86",
+    "stream/health.csv": "39e96ecb10e63e3482393a1749c242e6d530c9649e61801dc6c85bc224c6c594",
+    "stream/health.csv.hessian.csv": "844849d83f8e9e499ab89d1b3a22ec5c2844b13c07da81f8974e21ae17b99ac4",
+    "stream/poses.csv": "6b17c2c5a873d835b7d46a628335a8625665f199747da9436a08afda460efda3",
+    "stream/pose_logger.log": "0fec274995bdcea10a225964ed747256ce58bacfe0af24a4f9e1e71593da7068",
+    "stream/rosbag.log": "2fee364f8ea17b209af4deeb4c819094fc288bfe8f83570e7c5201122ad5b141",
+    "stream/roscore.log": "41c08cfdde09147daf2ef5223fa5a5a015252365035180227debbb3e7210217a"
+  },
+  "postprocess": [
+    {
+      "command": [
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/audit_health_export.py",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A3/stream/health.csv"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"timestamp_groups\": 600,\n  \"row_counts\": {\n    \"BACKEND_FIRST_SCAN\": 3,\n    \"UNDISTORTED_CLOUD_EMPTY\": 3,\n    \"MAP_INITIALIZATION\": 3,\n    \"VALID\": 1791\n  },\n  \"sha256\": \"39e96ecb10e63e3482393a1749c242e6d530c9649e61801dc6c85bc224c6c594\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/dcreg_schur.py",
+        "--hessian-csv",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A3/stream/health.csv.hessian.csv",
+        "--health-csv",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A3/stream/health.csv",
+        "--output-csv",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A3/stream/dcreg.csv"
+      ],
+      "return_code": 0,
+      "stdout": "{\"g3_parity\": {\"atol\": 1e-08, \"max_abs_eigenvalue_error\": 2.9103830456733704e-11, \"rtol\": 1e-08, \"timestamps\": 600, \"unavailable_groups\": 3, \"valid_groups\": 597}, \"rows\": 600, \"unavailable\": 3, \"valid\": 597}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/trajectory_eval.py",
+        "--poses",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A3/stream/poses.csv",
+        "--reference",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1/reference.txt",
+        "--output",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A3/stream/evaluation.csv",
+        "--run-id",
+        "FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A3",
+        "--event-id",
+        "T14_GEOMETRY_EXIT_DEV14",
+        "--body-transform-json",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1/reference_metadata.json",
+        "--development-only",
+        "--entry-start-ns",
+        "1010500000000"
+      ],
+      "return_code": 0,
+      "stdout": "{\"rows\": 1194, \"local_valid\": 1154, \"reference_gaps\": 0, \"out_of_order_source_rows\": 0, \"body_transform_verified\": true}\n",
+      "stderr": ""
+    }
+  ],
+  "repeat_comparisons": {
+    "A2_same_binary": {
+      "poses.csv": {
+        "current_rows": 597,
+        "comparison_rows": 597,
+        "byte_identical": true,
+        "numeric_max_absolute_delta": {},
+        "different_nonnumeric_fields": {}
+      },
+      "health.csv": {
+        "current_rows": 1800,
+        "comparison_rows": 1800,
+        "byte_identical": true,
+        "numeric_max_absolute_delta": {},
+        "different_nonnumeric_fields": {}
+      },
+      "health.csv.hessian.csv": {
+        "current_rows": 600,
+        "comparison_rows": 600,
+        "byte_identical": true,
+        "numeric_max_absolute_delta": {},
+        "different_nonnumeric_fields": {}
+      },
+      "dcreg.csv": {
+        "current_rows": 600,
+        "comparison_rows": 600,
+        "byte_identical": true,
+        "numeric_max_absolute_delta": {},
+        "different_nonnumeric_fields": {}
+      },
+      "evaluation.csv": {
+        "current_rows": 1194,
+        "comparison_rows": 1194,
+        "byte_identical": false,
+        "numeric_max_absolute_delta": {},
+        "different_nonnumeric_fields": {
+          "run_id": 1194
+        }
+      }
+    },
+    "preserved_R3": {
+      "poses.csv": {
+        "current_rows": 597,
+        "comparison_rows": 597,
+        "byte_identical": false,
+        "numeric_max_absolute_delta": {
+          "x_m": 1.6027003881285964,
+          "y_m": 0.03501566717208299,
+          "z_m": 0.36775921731556604,
+          "qx": 0.03433400588537862,
+          "qy": 0.01882654106918352,
+          "qz": 0.0010179475318290174,
+          "qw": 0.0009706694647941827
+        },
+        "different_nonnumeric_fields": {}
+      },
+      "health.csv": {
+        "current_rows": 1800,
+        "comparison_rows": 1800,
+        "byte_identical": false,
+        "numeric_max_absolute_delta": {
+          "eigenvalue_0": 94.3020252760144,
+          "eigenvalue_1": 213.230842415603,
+          "eigenvalue_2": 202.99751317539267,
+          "eigenvalue_3": 2387.997810096284,
+          "eigenvalue_4": 15394.67154476425,
+          "eigenvalue_5": 67471.21134070352,
+          "accepted_count": 48.0
+        },
+        "different_nonnumeric_fields": {}
+      },
+      "health.csv.hessian.csv": {
+        "current_rows": 600,
+        "comparison_rows": 600,
+        "byte_identical": false,
+        "numeric_max_absolute_delta": {
+          "h00": 40.25766063504969,
+          "h01": 4.492556052581851,
+          "h02": 18.585443468446652,
+          "h03": 41.603948981426015,
+          "h05": 59.362749132858696,
+          "h10": 4.492556052581851,
+          "h12": 13.512252860228212,
+          "h13": 74.05988505212696,
+          "h14": 113.14680784020192,
+          "h15": 387.2344382102694,
+          "h20": 18.585443468446652,
+          "h21": 13.512252860228212,
+          "h22": 89.07025206797996,
+          "h23": 171.2878919181124,
+          "h24": 612.3524791219693,
+          "h25": 117.14605231777824,
+          "h30": 41.603948981426015,
+          "h31": 74.05988505212696,
+          "h32": 171.2878919181124,
+          "h33": 1502.3532590988193,
+          "h34": 4550.879049553965,
+          "h40": 259.1539225419502,
+          "h41": 113.14680784020192,
+          "h42": 612.3524791219688,
+          "h44": 33700.653609314104,
+          "h45": 2651.7241897111494,
+          "h50": 59.36274913285867,
+          "h51": 387.23443821026973,
+          "h52": 117.14605231777831,
+          "h53": 883.8095900438511,
+          "h54": 2651.7241897111494,
+          "h55": 6651.710426690221,
+          "h04": 259.15392254195024,
+          "h11": 33.40315489849286,
+          "h35": 883.8095900438518,
+          "h43": 4550.8790495539615,
+          "accepted_count": 48.0
+        },
+        "different_nonnumeric_fields": {}
+      },
+      "dcreg.csv": {
+        "current_rows": 600,
+        "comparison_rows": 600,
+        "byte_identical": false,
+        "numeric_max_absolute_delta": {
+          "lambda_R_0": 1084.1362854805236,
+          "lambda_R_1": 6149.641150350073,
+          "lambda_R_2": 24271.82813401656,
+          "lambda_t_0": 38.81768403307737,
+          "lambda_t_1": 88.51460107347894,
+          "lambda_t_2": 36.62003769982124,
+          "kappa_R_0": 12.10905853687397,
+          "kappa_R_1": 6.817610102441403,
+          "kappa_t_0": 52.12828420132024,
+          "kappa_t_1": 1.7575379902807768,
+          "DCREG_HEALTH_SCORE": 0.07334271419031158,
+          "accepted_count": 48.0
+        },
+        "different_nonnumeric_fields": {
+          "kappa_R_1_flagged": 3,
+          "kappa_R_0_flagged": 142,
+          "state": 100,
+          "kappa_t_0_flagged": 113
+        }
+      },
+      "evaluation.csv": {
+        "current_rows": 1194,
+        "comparison_rows": 1194,
+        "byte_identical": false,
+        "numeric_max_absolute_delta": {
+          "local_translation_error_m": 0.7412616651565074,
+          "local_translation_error_rate_mps": 0.3998677880732992,
+          "accumulated_translation_error_m": 1.6134548483328892,
+          "accumulated_rotation_error_rad": 0.035716824302887196,
+          "local_rotation_error_rad": 0.04553494952174909,
+          "local_rotation_error_rate_radps": 0.024326183950371942
+        },
+        "different_nonnumeric_fields": {
+          "event_id": 1194,
+          "run_id": 1194
+        }
+      }
+    }
+  }
+}

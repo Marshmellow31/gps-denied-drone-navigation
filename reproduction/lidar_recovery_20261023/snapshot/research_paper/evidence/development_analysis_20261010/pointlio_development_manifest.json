@@ -1,0 +1,2564 @@
+{
+  "schema": "pointlio-development-analysis-v1",
+  "status": "DONE_DEVELOPMENT_ONLY",
+  "heldout_inputs_opened": false,
+  "role": "development_only",
+  "geometry_pair_count": 32,
+  "native_run_count": 64,
+  "threshold_fit_source": "32 formal corridor development slots only; controls and feasibility excluded",
+  "pointlio_threshold_selection": {
+    "status": "SELECTED_DEVELOPMENT_THRESHOLD",
+    "reason": "MAXIMUM_SENSITIVITY_WITH_FALSE_HEALTHY_RATE_AT_MOST_10_PERCENT; TIES_USE_HIGHER_THRESHOLD",
+    "threshold": 123.80876977779258,
+    "false_healthy_events": 3,
+    "false_healthy_denominator": 32,
+    "conditional_false_healthy_rate": 0.09375,
+    "recovered_events_detected": 21,
+    "truth_recovered_denominator": 27,
+    "recovery_sensitivity": 0.7777777777777778,
+    "feasible": true,
+    "candidate_count_including_no_alarms": 19105,
+    "unique_finite_g3_scores": 19104
+  },
+  "method_metrics": {
+    "POINTLIO_MIN_EIG_G3": {
+      "method": "POINTLIO_MIN_EIG_G3",
+      "threshold": 123.80876977779258,
+      "truth_label_eligible_corridor_events": 32,
+      "truth_recovered_events": 27,
+      "non_recovery_events": 5,
+      "truth_recovery_fraction": 0.84375,
+      "truth_recovery_wilson_95": [
+        0.6824550744643347,
+        0.9313568089337279
+      ],
+      "false_healthy_event_rate_conditional": 0.09375,
+      "false_healthy_event_rate_unconditional": 0.09375,
+      "false_healthy_events": 3,
+      "false_healthy_conditional_denominator": 32,
+      "false_healthy_event_wilson_95_conditional": [
+        0.032400962626319516,
+        0.24218499335778831
+      ],
+      "false_healthy_time_fraction_conditional": 0.0036363636363636364,
+      "false_healthy_time_fraction_unconditional": 0.0036363636363636364,
+      "recovery_sensitivity": 0.7777777777777778,
+      "detected_recovery_events": 21,
+      "detection_delay_median_s_detected_only": 3.2002777790000003,
+      "relapse_events": 1,
+      "relapse_fraction_of_truth_recovered": 0.037037037037037035,
+      "post_relapse_false_healthy_event_rate_conditional": 0.0,
+      "post_relapse_false_healthy_event_rate_unconditional": 0.0,
+      "post_relapse_false_healthy_time_fraction_conditional": 0.0,
+      "post_relapse_false_healthy_time_fraction_unconditional": 0.0,
+      "decision_availability_primary_horizon": 1.0,
+      "available_decision_ticks": 6400,
+      "planned_decision_ticks": 6400,
+      "healthy_scene_controls": [
+        {
+          "seed": 14,
+          "run_id": "POINTLIO_DEV14_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.05201342281879195,
+          "debounced_confirmed_healthy_fraction_of_available": 0.03355704697986577
+        },
+        {
+          "seed": 15,
+          "run_id": "POINTLIO_DEV15_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.33221476510067116,
+          "debounced_confirmed_healthy_fraction_of_available": 0.26174496644295303
+        },
+        {
+          "seed": 16,
+          "run_id": "POINTLIO_DEV16_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.06711409395973154,
+          "debounced_confirmed_healthy_fraction_of_available": 0.040268456375838924
+        },
+        {
+          "seed": 17,
+          "run_id": "POINTLIO_DEV17_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.7684563758389261,
+          "debounced_confirmed_healthy_fraction_of_available": 0.7231543624161074
+        },
+        {
+          "seed": 18,
+          "run_id": "POINTLIO_DEV18_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.008389261744966443,
+          "debounced_confirmed_healthy_fraction_of_available": 0.0
+        },
+        {
+          "seed": 19,
+          "run_id": "POINTLIO_DEV19_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.0587248322147651,
+          "debounced_confirmed_healthy_fraction_of_available": 0.02348993288590604
+        },
+        {
+          "seed": 20,
+          "run_id": "POINTLIO_DEV20_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.31543624161073824,
+          "debounced_confirmed_healthy_fraction_of_available": 0.30201342281879195
+        },
+        {
+          "seed": 21,
+          "run_id": "POINTLIO_DEV21_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.09731543624161074,
+          "debounced_confirmed_healthy_fraction_of_available": 0.07214765100671142
+        },
+        {
+          "seed": 22,
+          "run_id": "POINTLIO_DEV22_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.6191275167785235,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5939597315436241
+        },
+        {
+          "seed": 23,
+          "run_id": "POINTLIO_DEV23_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.38926174496644295,
+          "debounced_confirmed_healthy_fraction_of_available": 0.337248322147651
+        },
+        {
+          "seed": 24,
+          "run_id": "POINTLIO_DEV24_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.02181208053691275,
+          "debounced_confirmed_healthy_fraction_of_available": 0.015100671140939598
+        },
+        {
+          "seed": 25,
+          "run_id": "POINTLIO_DEV25_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.03691275167785235,
+          "debounced_confirmed_healthy_fraction_of_available": 0.01174496644295302
+        },
+        {
+          "seed": 26,
+          "run_id": "POINTLIO_DEV26_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.04530201342281879,
+          "debounced_confirmed_healthy_fraction_of_available": 0.018456375838926176
+        },
+        {
+          "seed": 27,
+          "run_id": "POINTLIO_DEV27_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.0,
+          "debounced_confirmed_healthy_fraction_of_available": 0.0
+        },
+        {
+          "seed": 28,
+          "run_id": "POINTLIO_DEV28_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.43456375838926176,
+          "debounced_confirmed_healthy_fraction_of_available": 0.3775167785234899
+        },
+        {
+          "seed": 29,
+          "run_id": "POINTLIO_DEV29_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.12416107382550336,
+          "debounced_confirmed_healthy_fraction_of_available": 0.10570469798657718
+        },
+        {
+          "seed": 30,
+          "run_id": "POINTLIO_DEV30_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.018456375838926176,
+          "debounced_confirmed_healthy_fraction_of_available": 0.0050335570469798654
+        },
+        {
+          "seed": 31,
+          "run_id": "POINTLIO_DEV31_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.0587248322147651,
+          "debounced_confirmed_healthy_fraction_of_available": 0.03691275167785235
+        },
+        {
+          "seed": 32,
+          "run_id": "POINTLIO_DEV32_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.02181208053691275,
+          "debounced_confirmed_healthy_fraction_of_available": 0.010067114093959731
+        },
+        {
+          "seed": 33,
+          "run_id": "POINTLIO_DEV33_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.22986577181208054,
+          "debounced_confirmed_healthy_fraction_of_available": 0.17114093959731544
+        },
+        {
+          "seed": 34,
+          "run_id": "POINTLIO_DEV34_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5503355704697986,
+          "debounced_confirmed_healthy_fraction_of_available": 0.47818791946308725
+        },
+        {
+          "seed": 35,
+          "run_id": "POINTLIO_DEV35_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.6057046979865772,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5469798657718121
+        },
+        {
+          "seed": 36,
+          "run_id": "POINTLIO_DEV36_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.3271812080536913,
+          "debounced_confirmed_healthy_fraction_of_available": 0.2953020134228188
+        },
+        {
+          "seed": 37,
+          "run_id": "POINTLIO_DEV37_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.6308724832214765,
+          "debounced_confirmed_healthy_fraction_of_available": 0.587248322147651
+        },
+        {
+          "seed": 38,
+          "run_id": "POINTLIO_DEV38_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.8288590604026845,
+          "debounced_confirmed_healthy_fraction_of_available": 0.8187919463087249
+        },
+        {
+          "seed": 39,
+          "run_id": "POINTLIO_DEV39_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.2348993288590604,
+          "debounced_confirmed_healthy_fraction_of_available": 0.16946308724832215
+        },
+        {
+          "seed": 40,
+          "run_id": "POINTLIO_DEV40_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.6493288590604027,
+          "debounced_confirmed_healthy_fraction_of_available": 0.587248322147651
+        },
+        {
+          "seed": 41,
+          "run_id": "POINTLIO_DEV41_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.14093959731543623,
+          "debounced_confirmed_healthy_fraction_of_available": 0.06879194630872483
+        },
+        {
+          "seed": 42,
+          "run_id": "POINTLIO_DEV42_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.17785234899328858,
+          "debounced_confirmed_healthy_fraction_of_available": 0.09899328859060402
+        },
+        {
+          "seed": 43,
+          "run_id": "POINTLIO_DEV43_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.174496644295302,
+          "debounced_confirmed_healthy_fraction_of_available": 0.13926174496644295
+        },
+        {
+          "seed": 44,
+          "run_id": "POINTLIO_DEV44_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.04194630872483222,
+          "debounced_confirmed_healthy_fraction_of_available": 0.018456375838926176
+        },
+        {
+          "seed": 45,
+          "run_id": "POINTLIO_DEV45_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.1610738255033557,
+          "debounced_confirmed_healthy_fraction_of_available": 0.09731543624161074
+        }
+      ],
+      "interpretation": "development-only; Point-LIO threshold metrics are evaluated on the data used to select that threshold"
+    },
+    "POINTLIO_DCREG_SCHUR_MASK": {
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "threshold": null,
+      "truth_label_eligible_corridor_events": 32,
+      "truth_recovered_events": 27,
+      "non_recovery_events": 5,
+      "truth_recovery_fraction": 0.84375,
+      "truth_recovery_wilson_95": [
+        0.6824550744643347,
+        0.9313568089337279
+      ],
+      "false_healthy_event_rate_conditional": 0.34375,
+      "false_healthy_event_rate_unconditional": 0.34375,
+      "false_healthy_events": 11,
+      "false_healthy_conditional_denominator": 32,
+      "false_healthy_event_wilson_95_conditional": [
+        0.20410233354328552,
+        0.5168922649121406
+      ],
+      "false_healthy_time_fraction_conditional": 0.22727272727272727,
+      "false_healthy_time_fraction_unconditional": 0.22727272727272727,
+      "recovery_sensitivity": 0.7407407407407407,
+      "detected_recovery_events": 20,
+      "detection_delay_median_s_detected_only": 1.750277779000001,
+      "relapse_events": 1,
+      "relapse_fraction_of_truth_recovered": 0.037037037037037035,
+      "post_relapse_false_healthy_event_rate_conditional": 1.0,
+      "post_relapse_false_healthy_event_rate_unconditional": 1.0,
+      "post_relapse_false_healthy_time_fraction_conditional": 0.0880503144654088,
+      "post_relapse_false_healthy_time_fraction_unconditional": 0.0880503144654088,
+      "decision_availability_primary_horizon": 1.0,
+      "available_decision_ticks": 6400,
+      "planned_decision_ticks": 6400,
+      "healthy_scene_controls": [
+        {
+          "seed": 14,
+          "run_id": "POINTLIO_DEV14_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.3573825503355705,
+          "debounced_confirmed_healthy_fraction_of_available": 0.29697986577181207
+        },
+        {
+          "seed": 15,
+          "run_id": "POINTLIO_DEV15_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5604026845637584,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5469798657718121
+        },
+        {
+          "seed": 16,
+          "run_id": "POINTLIO_DEV16_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.24328859060402686,
+          "debounced_confirmed_healthy_fraction_of_available": 0.22818791946308725
+        },
+        {
+          "seed": 17,
+          "run_id": "POINTLIO_DEV17_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.49328859060402686,
+          "debounced_confirmed_healthy_fraction_of_available": 0.4597315436241611
+        },
+        {
+          "seed": 18,
+          "run_id": "POINTLIO_DEV18_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.38926174496644295,
+          "debounced_confirmed_healthy_fraction_of_available": 0.34563758389261745
+        },
+        {
+          "seed": 19,
+          "run_id": "POINTLIO_DEV19_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.06711409395973154,
+          "debounced_confirmed_healthy_fraction_of_available": 0.03859060402684564
+        },
+        {
+          "seed": 20,
+          "run_id": "POINTLIO_DEV20_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5083892617449665,
+          "debounced_confirmed_healthy_fraction_of_available": 0.47818791946308725
+        },
+        {
+          "seed": 21,
+          "run_id": "POINTLIO_DEV21_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5285234899328859,
+          "debounced_confirmed_healthy_fraction_of_available": 0.4966442953020134
+        },
+        {
+          "seed": 22,
+          "run_id": "POINTLIO_DEV22_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.34731543624161076,
+          "debounced_confirmed_healthy_fraction_of_available": 0.3087248322147651
+        },
+        {
+          "seed": 23,
+          "run_id": "POINTLIO_DEV23_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5939597315436241,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5889261744966443
+        },
+        {
+          "seed": 24,
+          "run_id": "POINTLIO_DEV24_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.49328859060402686,
+          "debounced_confirmed_healthy_fraction_of_available": 0.46476510067114096
+        },
+        {
+          "seed": 25,
+          "run_id": "POINTLIO_DEV25_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5855704697986577,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5805369127516778
+        },
+        {
+          "seed": 26,
+          "run_id": "POINTLIO_DEV26_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.412751677852349,
+          "debounced_confirmed_healthy_fraction_of_available": 0.3825503355704698
+        },
+        {
+          "seed": 27,
+          "run_id": "POINTLIO_DEV27_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.08389261744966443,
+          "debounced_confirmed_healthy_fraction_of_available": 0.06711409395973154
+        },
+        {
+          "seed": 28,
+          "run_id": "POINTLIO_DEV28_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.12248322147651007,
+          "debounced_confirmed_healthy_fraction_of_available": 0.06543624161073826
+        },
+        {
+          "seed": 29,
+          "run_id": "POINTLIO_DEV29_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5453020134228188,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5083892617449665
+        },
+        {
+          "seed": 30,
+          "run_id": "POINTLIO_DEV30_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.2651006711409396,
+          "debounced_confirmed_healthy_fraction_of_available": 0.21476510067114093
+        },
+        {
+          "seed": 31,
+          "run_id": "POINTLIO_DEV31_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5302013422818792,
+          "debounced_confirmed_healthy_fraction_of_available": 0.511744966442953
+        },
+        {
+          "seed": 32,
+          "run_id": "POINTLIO_DEV32_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.08892617449664429,
+          "debounced_confirmed_healthy_fraction_of_available": 0.03691275167785235
+        },
+        {
+          "seed": 33,
+          "run_id": "POINTLIO_DEV33_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5889261744966443,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5805369127516778
+        },
+        {
+          "seed": 34,
+          "run_id": "POINTLIO_DEV34_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.30033557046979864,
+          "debounced_confirmed_healthy_fraction_of_available": 0.21644295302013422
+        },
+        {
+          "seed": 35,
+          "run_id": "POINTLIO_DEV35_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.4077181208053691,
+          "debounced_confirmed_healthy_fraction_of_available": 0.35906040268456374
+        },
+        {
+          "seed": 36,
+          "run_id": "POINTLIO_DEV36_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.6140939597315436,
+          "debounced_confirmed_healthy_fraction_of_available": 0.6040268456375839
+        },
+        {
+          "seed": 37,
+          "run_id": "POINTLIO_DEV37_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5083892617449665,
+          "debounced_confirmed_healthy_fraction_of_available": 0.4798657718120805
+        },
+        {
+          "seed": 38,
+          "run_id": "POINTLIO_DEV38_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5167785234899329,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5050335570469798
+        },
+        {
+          "seed": 39,
+          "run_id": "POINTLIO_DEV39_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5704697986577181,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5570469798657718
+        },
+        {
+          "seed": 40,
+          "run_id": "POINTLIO_DEV40_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5469798657718121,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5201342281879194
+        },
+        {
+          "seed": 41,
+          "run_id": "POINTLIO_DEV41_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5889261744966443,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5855704697986577
+        },
+        {
+          "seed": 42,
+          "run_id": "POINTLIO_DEV42_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5922818791946308,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5805369127516778
+        },
+        {
+          "seed": 43,
+          "run_id": "POINTLIO_DEV43_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5671140939597316,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5570469798657718
+        },
+        {
+          "seed": 44,
+          "run_id": "POINTLIO_DEV44_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5134228187919463,
+          "debounced_confirmed_healthy_fraction_of_available": 0.46476510067114096
+        },
+        {
+          "seed": 45,
+          "run_id": "POINTLIO_DEV45_CONTROL_XM6_P1",
+          "available_ticks": 596,
+          "planned_ticks": 600,
+          "available_fraction": 0.9933333333333333,
+          "raw_healthy_fraction_of_available": 0.5721476510067114,
+          "debounced_confirmed_healthy_fraction_of_available": 0.5469798657718121
+        }
+      ],
+      "interpretation": "development-only; Point-LIO threshold metrics are evaluated on the data used to select that threshold"
+    }
+  },
+  "truth_label_counts": {
+    "RECOVERED": 27,
+    "NO_RECOVERY_WITHIN_HORIZON": 5
+  },
+  "indicator_availability_counts": {
+    "STARTUP_INITIALIZATION": 128,
+    "MAP_INITIALIZATION": 64,
+    "VALID": 38208
+  },
+  "run_provenance": [
+    {
+      "run_id": "POINTLIO_DEV14_CORRIDOR_XM6_P1",
+      "seed": 14,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "7be8d3b180baa2b4e99baf8b0fd30ef6efe805a8f360c3d2b79b4e7f5aaf8d41",
+      "input_manifest_sha256": "650c4ae8a2d93e36cafc87c2f38c133e83be5dd94b4ddb5427d945a73173121c",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 14,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "7be8d3b180baa2b4e99baf8b0fd30ef6efe805a8f360c3d2b79b4e7f5aaf8d41"
+      },
+      "key_output_sha256": {
+        "poses.csv": "851e8b3709e26e2c1bc607d8d6507e1c303746129e8d2bd19c761f8efce727ee",
+        "poses_segmented.csv": "851e8b3709e26e2c1bc607d8d6507e1c303746129e8d2bd19c761f8efce727ee",
+        "pointlio_indicators.csv": "814d484981cec55e58661cdb034324ca082c1943f986436227928b00aa7f7074"
+      },
+      "evaluation_sha256": "54a477b0351f93c93a7106cd121c53c2188d3699bf32438914fead10e0821a72",
+      "evaluation_manifest_sha256": "2654f8f002a915131df25e9be517331b458b25a4a919685388aa9f57e3f7c185"
+    },
+    {
+      "run_id": "POINTLIO_DEV14_CONTROL_XM6_P1",
+      "seed": 14,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "3e503a9f9fba2e702273af83ae255e39f51dba1ca34f1905b3705a3b4bdb08d8",
+      "input_manifest_sha256": "9e4bdb7d25db8aa011a18412e360f6d0cc08e87788ebe2c6a5eaf4ecd86b56c2",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 14,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "3e503a9f9fba2e702273af83ae255e39f51dba1ca34f1905b3705a3b4bdb08d8"
+      },
+      "key_output_sha256": {
+        "poses.csv": "6017d8807e0d6dc17aeddb0aa448848867ec8c805321430dd49cf37a76a26ccc",
+        "poses_segmented.csv": "6017d8807e0d6dc17aeddb0aa448848867ec8c805321430dd49cf37a76a26ccc",
+        "pointlio_indicators.csv": "b8e453853181af41bc71606d68bb25d9ef34b7f9259bfe15e12f37104aef1d6b"
+      },
+      "evaluation_sha256": "1be79148e24ac07ca48d44bab804a0c8525ebbd5f3de08c66c4900ae6d8e0151",
+      "evaluation_manifest_sha256": "c11358bf293d461c9233de07f7609f08b9b8854296845d5efd3d078f65882800"
+    },
+    {
+      "run_id": "POINTLIO_DEV15_CORRIDOR_XM6_P1",
+      "seed": 15,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "539c35cbee8f95e1f44016b57666478d7390285c54e210d57dccf1ba18f0ca64",
+      "input_manifest_sha256": "f9624fc41ab4e37be9d41312d3744aec602f425ec85258336a40c66a8e7174ae",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 15,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "539c35cbee8f95e1f44016b57666478d7390285c54e210d57dccf1ba18f0ca64"
+      },
+      "key_output_sha256": {
+        "poses.csv": "7cec849bcc217018256ca74a87e601d4a710b92512299d8ca185d9a349292be9",
+        "poses_segmented.csv": "7cec849bcc217018256ca74a87e601d4a710b92512299d8ca185d9a349292be9",
+        "pointlio_indicators.csv": "7bf54c9c82a4bae09fabb330a9700b6224fc9fb8bef57e826f422f83e2f9c2b5"
+      },
+      "evaluation_sha256": "c5df0150449cc042510e1cc147f06a084bac9470402e69f4cf67c2eca80da48a",
+      "evaluation_manifest_sha256": "95bffd5701c4b134e56193f8c6c9fd02457fd52c5135897a86d036826d5500c4"
+    },
+    {
+      "run_id": "POINTLIO_DEV15_CONTROL_XM6_P1",
+      "seed": 15,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "967e9a1612b3d71879750594e96d9dbb92291c00f341ab796dd68cf6b321dd62",
+      "input_manifest_sha256": "51a1c9fc71cce001a6ce789716562d499f5aaf8aa24cf23b80b7b95b94edd277",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 15,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "967e9a1612b3d71879750594e96d9dbb92291c00f341ab796dd68cf6b321dd62"
+      },
+      "key_output_sha256": {
+        "poses.csv": "8ba06ad59e84280ab2db4a899dd5d6a14270fb2b96739e18e06d2978ada178aa",
+        "poses_segmented.csv": "8ba06ad59e84280ab2db4a899dd5d6a14270fb2b96739e18e06d2978ada178aa",
+        "pointlio_indicators.csv": "455ebc34f9ad340af47e6af5e0c242c82c09b3ac0c70e2b42e8e7066ed9daecb"
+      },
+      "evaluation_sha256": "e8a0f455cd7b37163fd18021774ead0d6a541af431a577f7209006dc0d39ad00",
+      "evaluation_manifest_sha256": "d75f11bdb6e43583b290ca335f12b5802779200938d32e9aae6476a07db01e53"
+    },
+    {
+      "run_id": "POINTLIO_DEV16_CORRIDOR_XM6_P1",
+      "seed": 16,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "ba8d63b1a070d90023a7762c688f8719e4b9e00221da192a2ed15d71f2a00edf",
+      "input_manifest_sha256": "ce1c1d8a2f0ee49c8996bcd97024aeb9134d625e6d0d4409f8b3b818005d608e",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 16,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "ba8d63b1a070d90023a7762c688f8719e4b9e00221da192a2ed15d71f2a00edf"
+      },
+      "key_output_sha256": {
+        "poses.csv": "6af392c4b1006a434f3bbc264cc1ced062a4210b26bf604a7b7f0fa8afe22431",
+        "poses_segmented.csv": "6af392c4b1006a434f3bbc264cc1ced062a4210b26bf604a7b7f0fa8afe22431",
+        "pointlio_indicators.csv": "9bc3fbc8fa8e8db324c77dec7d1813b82bba7ca793b84c93f43aad711b946b0e"
+      },
+      "evaluation_sha256": "05ed6a8797cbecb8080952785afb9fe6080836d2767c9ba981a500281f70b04e",
+      "evaluation_manifest_sha256": "80207cfceef756e668ab766bd86ae156f7d13f4340cfead032c91f7b806b93c2"
+    },
+    {
+      "run_id": "POINTLIO_DEV16_CONTROL_XM6_P1",
+      "seed": 16,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "17dbaad322b0d68373e08f86cb680009533345ac4579b92f2df5415f70ca3187",
+      "input_manifest_sha256": "37445701a5b6accf075bf706b164ddfda75b8529ab0359a900f8105b50ffd09b",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 16,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "17dbaad322b0d68373e08f86cb680009533345ac4579b92f2df5415f70ca3187"
+      },
+      "key_output_sha256": {
+        "poses.csv": "de1e601bebe67fa5cbc7d38fe1eb8e4b966e2bbb5c65cbb64543b67bbd6e439c",
+        "poses_segmented.csv": "de1e601bebe67fa5cbc7d38fe1eb8e4b966e2bbb5c65cbb64543b67bbd6e439c",
+        "pointlio_indicators.csv": "c52f01a3f0b57d2949b37fbaa2f85a148fe6a2215718dd20cfb545ed0e430d01"
+      },
+      "evaluation_sha256": "2e5ce71ea0429d071b8b6302bf80ca661eaff7fd6681a5715e3e18618955926d",
+      "evaluation_manifest_sha256": "b7a878f4f7b88ed5f98c8641bf7130800d9a5c10d2aea652d67352218ecad80d"
+    },
+    {
+      "run_id": "POINTLIO_DEV17_CORRIDOR_XM6_P1",
+      "seed": 17,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "590339a3acab773cc00807f45d6e887c4aed8218743596aad1afdb4e564211cf",
+      "input_manifest_sha256": "ce008a07c14ec5f30704ffdae30e5dad5269b0c84411594e3cfc2da61af1f96c",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 17,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "590339a3acab773cc00807f45d6e887c4aed8218743596aad1afdb4e564211cf"
+      },
+      "key_output_sha256": {
+        "poses.csv": "4ab864b7c758336d8914645d2b8b8d110c920a9d6358c7d10d38ab899f15997c",
+        "poses_segmented.csv": "4ab864b7c758336d8914645d2b8b8d110c920a9d6358c7d10d38ab899f15997c",
+        "pointlio_indicators.csv": "6ec744bc39eecde399811c3add275bef91de86970a5b10ad2df54de45b7bb7ca"
+      },
+      "evaluation_sha256": "a14243f9b87ba492f42c055906829a91970d0396304c67581ecafd18003e3541",
+      "evaluation_manifest_sha256": "df8f0cc08fa44708f821b5e3d093e74aaadeee67a67f38dcfffb3a4bb0021b9b"
+    },
+    {
+      "run_id": "POINTLIO_DEV17_CONTROL_XM6_P1",
+      "seed": 17,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "0946c01d29700fdb52fdde54ad9e2e8b6b159b57bb654621f7f98cf6c033baef",
+      "input_manifest_sha256": "5800204aba9b97d2c94d54afd0420cb785f17d99e884c97987cd1c14ee39ff02",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 17,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "0946c01d29700fdb52fdde54ad9e2e8b6b159b57bb654621f7f98cf6c033baef"
+      },
+      "key_output_sha256": {
+        "poses.csv": "749e766b5d4ab9268c776c5b47b1e47061dc9ba89ce39b3ba385ff17c68cd816",
+        "poses_segmented.csv": "749e766b5d4ab9268c776c5b47b1e47061dc9ba89ce39b3ba385ff17c68cd816",
+        "pointlio_indicators.csv": "2ae22ea5a11d642d26be938add44b17c12c7e738fa1ee13dbfb5b2615ff617c8"
+      },
+      "evaluation_sha256": "964dd71ba8ea43d6794a3599150f595c402abcf12e9d58c8fe342631b0fa8e51",
+      "evaluation_manifest_sha256": "b876e2861e16540632f500b032a42f09c99299ec6baa9b8b744f595b8a2b9d93"
+    },
+    {
+      "run_id": "POINTLIO_DEV18_CORRIDOR_XM6_P1",
+      "seed": 18,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "8e133daffdf2d73f5d4612a1cb9b11bb12a92838835ee182b2194ed56187b964",
+      "input_manifest_sha256": "c62dd4a942f3de6d909342ebb3c29255c7b63e47ca59d6b6d10f38fa654e7789",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 18,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "8e133daffdf2d73f5d4612a1cb9b11bb12a92838835ee182b2194ed56187b964"
+      },
+      "key_output_sha256": {
+        "poses.csv": "e7bbd222fe50e26d9c0db01a5798998548044c06078ede155704067fe4162fea",
+        "poses_segmented.csv": "e7bbd222fe50e26d9c0db01a5798998548044c06078ede155704067fe4162fea",
+        "pointlio_indicators.csv": "daf78b17ed2816b9393d5408ff90f61ca5f256bead08fdf2661d12e645ca54a9"
+      },
+      "evaluation_sha256": "3650bab3446562c5dc61fe1bd2001405c50c650a67b4d9328cc248e848cae51a",
+      "evaluation_manifest_sha256": "955f42a9f3e70c18483e2890eb99ac2d8a07cae23c79138c6eee6cff62c9fffe"
+    },
+    {
+      "run_id": "POINTLIO_DEV18_CONTROL_XM6_P1",
+      "seed": 18,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "f8f79cb9d75ade645446c2c48d9cf8d66db741ddb8b726d940e47df1855a7d42",
+      "input_manifest_sha256": "16873dc09fd9507e62371057d09d98683a364fae49d07746ade5f7dbddb0fb6b",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 18,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "f8f79cb9d75ade645446c2c48d9cf8d66db741ddb8b726d940e47df1855a7d42"
+      },
+      "key_output_sha256": {
+        "poses.csv": "bd1cf3a8b8e82a688501a56754648049d4a013acd174a5f150552baa04996934",
+        "poses_segmented.csv": "bd1cf3a8b8e82a688501a56754648049d4a013acd174a5f150552baa04996934",
+        "pointlio_indicators.csv": "8fb998f1c58fb1fe30cf49fd7bddaf1a1df1c22643600f5025eb0a418ea633b4"
+      },
+      "evaluation_sha256": "79bcd7e95f77a000a99447dd1bf09ee52ff118df5f5983397f3a215e2de90fa1",
+      "evaluation_manifest_sha256": "5d85288e0b0e5756350b190241a0326a7f5a0690ce57caf18fcbb6e859298dee"
+    },
+    {
+      "run_id": "POINTLIO_DEV19_CORRIDOR_XM6_P1",
+      "seed": 19,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "ac35bfeca919bed9af387fea9e8ed0b567a629e5ad8ba93d141e30e1de70fa4a",
+      "input_manifest_sha256": "05abbc121657f8ddc04165dd876166c2f32fd66ca2ac959b19c28cf62db4a480",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 19,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "ac35bfeca919bed9af387fea9e8ed0b567a629e5ad8ba93d141e30e1de70fa4a"
+      },
+      "key_output_sha256": {
+        "poses.csv": "28b3e2f7cd70d4e5bd29e4a42f68eda36377b72e0320d9407b540df3a5dd26e5",
+        "poses_segmented.csv": "28b3e2f7cd70d4e5bd29e4a42f68eda36377b72e0320d9407b540df3a5dd26e5",
+        "pointlio_indicators.csv": "9054195daebe908de60a734fcc6835b271ca0c7f9c32e9e981270288dd6ace57"
+      },
+      "evaluation_sha256": "ded2a80ad87d85f2cdbb2e4640290fda779c30785ae146c91129cee271d567f2",
+      "evaluation_manifest_sha256": "efaf9c83b217dec78c40704792db89757275f5e37c66efd74eaf51571113c75c"
+    },
+    {
+      "run_id": "POINTLIO_DEV19_CONTROL_XM6_P1",
+      "seed": 19,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "c55aca47ccb7a76f30bdf14ff3166caf5698f7f32b8ddd8958d38396e1751dc5",
+      "input_manifest_sha256": "f6fc036109e951fa206448f2041eaa294ddb2cfa4d3eabb6602a31e522a08673",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 19,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "c55aca47ccb7a76f30bdf14ff3166caf5698f7f32b8ddd8958d38396e1751dc5"
+      },
+      "key_output_sha256": {
+        "poses.csv": "9d303895a8aaba33cda2ac1c9e2b38b021774a6fa6239f036a726e11934edcca",
+        "poses_segmented.csv": "9d303895a8aaba33cda2ac1c9e2b38b021774a6fa6239f036a726e11934edcca",
+        "pointlio_indicators.csv": "84888dd5409737d89a43a8572845bce9138c6e3e8c8c66d76557d024ef795678"
+      },
+      "evaluation_sha256": "1195ff15c92f5abd2cf89611b0857bcc0fa3006c645882a8bb58df20034e3aa7",
+      "evaluation_manifest_sha256": "0375b416aa197b19e4363b31a078cba2b9eb57a75c6238f17addc3c3f6a0d042"
+    },
+    {
+      "run_id": "POINTLIO_DEV20_CORRIDOR_XM6_P1",
+      "seed": 20,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "0ab1e32c730a6a2b635302ff70ed6fc42ea926cf580d9dec71f7373f5ae1e1b4",
+      "input_manifest_sha256": "184f7dc8d4d2d01449c10e17b109e3225e8e283f991717151d9e93b54797213a",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 20,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "0ab1e32c730a6a2b635302ff70ed6fc42ea926cf580d9dec71f7373f5ae1e1b4"
+      },
+      "key_output_sha256": {
+        "poses.csv": "325d5006f7a9baaf13aee51f5b5fb609c926b16f26c16dba07c4f3d89c793724",
+        "poses_segmented.csv": "325d5006f7a9baaf13aee51f5b5fb609c926b16f26c16dba07c4f3d89c793724",
+        "pointlio_indicators.csv": "e2466e926dca6229c86b38376eb0e039544d495d8a57a61ea84637ec12f6be57"
+      },
+      "evaluation_sha256": "f373f758dc5a0f5377d192f39cf3297f2573cd09204ce6023c7fd3f1e156a6d6",
+      "evaluation_manifest_sha256": "a27ab09d0917c6c13ce17fd93f669378587aec4888a1b2b0d03cc084636ab896"
+    },
+    {
+      "run_id": "POINTLIO_DEV20_CONTROL_XM6_P1",
+      "seed": 20,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "613bca53299c4912ade38417e36398b983ee82bf6bf18e0c688b1bb5e4ea64c3",
+      "input_manifest_sha256": "10fe3fa8ea28cab19f76e65f927807936ad0bf3c072bcf7eee13474542863a53",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 20,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "613bca53299c4912ade38417e36398b983ee82bf6bf18e0c688b1bb5e4ea64c3"
+      },
+      "key_output_sha256": {
+        "poses.csv": "28b3ee8727ce28b45f24fb854403bd2ae7a76ff20521abf2733095ce908b4bc5",
+        "poses_segmented.csv": "28b3ee8727ce28b45f24fb854403bd2ae7a76ff20521abf2733095ce908b4bc5",
+        "pointlio_indicators.csv": "355815b50a3bb762d96481c8d6fc1d9b5a94291e422f737cc614db3818485e0f"
+      },
+      "evaluation_sha256": "0a3b40eb2b4f9b8ff4dab981f3e1dc94bc85d28beefd21164dce0fb8981ffeed",
+      "evaluation_manifest_sha256": "a47aaa0e65ca5316184d21be65e7c366be7285265feeda0ccba162ead0a580b8"
+    },
+    {
+      "run_id": "POINTLIO_DEV21_CORRIDOR_XM6_P1",
+      "seed": 21,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "7f322a562f1d274b6059fad3218385adafb483dd21f766dec8aa043ecd86d247",
+      "input_manifest_sha256": "b508db14da87bd309204999f2dd4ceadf8283b2a1512f8cf4719b42a7908e633",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 21,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "7f322a562f1d274b6059fad3218385adafb483dd21f766dec8aa043ecd86d247"
+      },
+      "key_output_sha256": {
+        "poses.csv": "1a979afc7ee170dcf1dac9391d7ee52cde0aa5eaa678d8ac2e83cb869062eab8",
+        "poses_segmented.csv": "1a979afc7ee170dcf1dac9391d7ee52cde0aa5eaa678d8ac2e83cb869062eab8",
+        "pointlio_indicators.csv": "f81dc085276a7dbbebc7f96ea065cb357733862e73ed80138876f8d722f3b2e9"
+      },
+      "evaluation_sha256": "491aa88bc9fda71fe8ee3f47388ca50f43bfe84cca9a718bd3b7ce3fa010c274",
+      "evaluation_manifest_sha256": "7e32fb9750ebde8647578a116c5c71a83544ef42b77460edfd3b1415958f3546"
+    },
+    {
+      "run_id": "POINTLIO_DEV21_CONTROL_XM6_P1",
+      "seed": 21,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "2b381e64ad1367b2bc4d7a57a630490711b496a702c1d8361d00f46530ed3e8d",
+      "input_manifest_sha256": "d5675d40514d9dc3d5c1661c0c54ae30eef67c763422c4ec526cb95cf7a9bbc7",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 21,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "2b381e64ad1367b2bc4d7a57a630490711b496a702c1d8361d00f46530ed3e8d"
+      },
+      "key_output_sha256": {
+        "poses.csv": "0d369f8f9466f6bcbda1eac1fb252ef3e97479baff5437ee2bb70637f27cf320",
+        "poses_segmented.csv": "0d369f8f9466f6bcbda1eac1fb252ef3e97479baff5437ee2bb70637f27cf320",
+        "pointlio_indicators.csv": "fa968810f3418cad29505e018a095272514c3af238567e7064fbca5c0f165362"
+      },
+      "evaluation_sha256": "dfc9f7490135d1665f44e2f32f09f2e9e01eddc469c217f9500b1a5f7ed9fe3a",
+      "evaluation_manifest_sha256": "0b7edc4e7854176fd0dbd67903a81d5232d55177a1e5e1e6e5d00b970465c899"
+    },
+    {
+      "run_id": "POINTLIO_DEV22_CORRIDOR_XM6_P1",
+      "seed": 22,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "b7698da3c0240e4090ff6013e5d3b122d0f25ed8aa58eabe2ba0005cfba0bf34",
+      "input_manifest_sha256": "153c22a47000f22cb6e3e21c184e4d1d03bbafdbe9c566b8cfb9101218d9d14e",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 22,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "b7698da3c0240e4090ff6013e5d3b122d0f25ed8aa58eabe2ba0005cfba0bf34"
+      },
+      "key_output_sha256": {
+        "poses.csv": "332402592bec907d60c1bb369137c5667034e71b25bb9f34e0439df54f1346d4",
+        "poses_segmented.csv": "332402592bec907d60c1bb369137c5667034e71b25bb9f34e0439df54f1346d4",
+        "pointlio_indicators.csv": "55d177e7000c7731eccad114acf4c034d30316a4a6720236fc5257e38ed6d728"
+      },
+      "evaluation_sha256": "f7ffc3571668abb7abcd517737755a5576f15a0ac24b3d678c5080920897117d",
+      "evaluation_manifest_sha256": "99989c2f0aa113a5f4334431bef8718102539d9322a92a40e1a6a026e24a20a5"
+    },
+    {
+      "run_id": "POINTLIO_DEV22_CONTROL_XM6_P1",
+      "seed": 22,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "b5b247a73c2e1f98c504663bca59e49bb852597422050de0b7eff4d3c59f42a2",
+      "input_manifest_sha256": "0a11e21023e311f77bd2c5298b91cdbeebdd72b5c1691f230529c21aa7799fd3",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 22,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "b5b247a73c2e1f98c504663bca59e49bb852597422050de0b7eff4d3c59f42a2"
+      },
+      "key_output_sha256": {
+        "poses.csv": "5439098455327559e33d59fa000faa797034eba0b5fcf8d00a36f2ee73149e72",
+        "poses_segmented.csv": "5439098455327559e33d59fa000faa797034eba0b5fcf8d00a36f2ee73149e72",
+        "pointlio_indicators.csv": "fbb75eba7d376ee639e20d42e7213804a0cf71467b63d6f33c1d077eb9ffe6fb"
+      },
+      "evaluation_sha256": "97f21ac7dbf10186417005da5f52f2dfe3628a5348a813301ae1737fc13dc6c4",
+      "evaluation_manifest_sha256": "da7d32d19ae5ffd1b2663f6be2242e8215958c39881a7fc22db85d1d3cbdc8d7"
+    },
+    {
+      "run_id": "POINTLIO_DEV23_CORRIDOR_XM6_P1",
+      "seed": 23,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "3bfcbcddca1552b639969fa89b1a5a9fd806a71df276b3ed54ef70af8acd967b",
+      "input_manifest_sha256": "8c945def6798e86b5a214bb74257e7cb92c06d60262928c6d3e72ad3556ecd99",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 23,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "3bfcbcddca1552b639969fa89b1a5a9fd806a71df276b3ed54ef70af8acd967b"
+      },
+      "key_output_sha256": {
+        "poses.csv": "c99b0ee87b1d8b70d67245b66f1eca8edb91f1bce1da1bbc4eb469f7c9c17659",
+        "poses_segmented.csv": "c99b0ee87b1d8b70d67245b66f1eca8edb91f1bce1da1bbc4eb469f7c9c17659",
+        "pointlio_indicators.csv": "6813b16c712cdd1b9ecbdefe3f599c4320da5f56415f9fcf7f917b050357f7fd"
+      },
+      "evaluation_sha256": "eebd726f374a1d14a29b20ca8720e85fc39c125d13d6feb5c9236edbc3a8edc1",
+      "evaluation_manifest_sha256": "f2c484ba587ab3be94552ce845bc3ceaf9041a729ab999f9ef0ae3cee5d783a7"
+    },
+    {
+      "run_id": "POINTLIO_DEV23_CONTROL_XM6_P1",
+      "seed": 23,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "28b76c254c5bee43cef3e62ef685a0b87d763fce18186d95cb9a24a142f98c50",
+      "input_manifest_sha256": "249c9e00d96c921052f960fbadb2a4c594b5707967f43a4ace9ea7f41c6692b8",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 23,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "28b76c254c5bee43cef3e62ef685a0b87d763fce18186d95cb9a24a142f98c50"
+      },
+      "key_output_sha256": {
+        "poses.csv": "f5795e729e71b34dc4d52779ef9fc2c6bb859d69732ab2bb66381a3922946673",
+        "poses_segmented.csv": "f5795e729e71b34dc4d52779ef9fc2c6bb859d69732ab2bb66381a3922946673",
+        "pointlio_indicators.csv": "0825c75f6d2a63a7c428f0567ba0103766f44772c05861c713a9b3680700522c"
+      },
+      "evaluation_sha256": "0f52d10809705698be605cdf4dba6ae2d66c9ce831194be248ed3f5fdb996ef8",
+      "evaluation_manifest_sha256": "6c38551de0106499f640c9e59e85d74c09f8ecdeba8a19b85777d20946fb03dc"
+    },
+    {
+      "run_id": "POINTLIO_DEV24_CORRIDOR_XM6_P1",
+      "seed": 24,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "4a30acf0f0ae7084da9b19be44e6cb9499928d9d2add40b6c4a1dbbdb19cda80",
+      "input_manifest_sha256": "bb029b7c2640509b28d56f8dd06580051c1604de9cf1fb4e775cfe8d05a1a001",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 24,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "4a30acf0f0ae7084da9b19be44e6cb9499928d9d2add40b6c4a1dbbdb19cda80"
+      },
+      "key_output_sha256": {
+        "poses.csv": "5a807cf6b4c4f092b3e5c9c4cf6dc6118e56fda333d21b4200ea95c8521d97b1",
+        "poses_segmented.csv": "5a807cf6b4c4f092b3e5c9c4cf6dc6118e56fda333d21b4200ea95c8521d97b1",
+        "pointlio_indicators.csv": "3a6aa948eec62159071e56f07ac2a07dd1a8bd6447e9d9b76190cfdaa588a421"
+      },
+      "evaluation_sha256": "6e58bfe82e4dcf1f3d201441be3b43780db795295b4940e4f6c7d242583f2920",
+      "evaluation_manifest_sha256": "02da9236d17f2cf1233f05a08d2ea47c51d62d94e454161cdb0ea9d78a3ef402"
+    },
+    {
+      "run_id": "POINTLIO_DEV24_CONTROL_XM6_P1",
+      "seed": 24,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "1aecfc257c202cbd30a5e47c836bccd2537e4564d39e1b7c5ccf8d1e25958fc8",
+      "input_manifest_sha256": "b7e16edaff3d8ca6327988b4bef1b8147110ae5cffe0e5670fc0cd571ca67817",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 24,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "1aecfc257c202cbd30a5e47c836bccd2537e4564d39e1b7c5ccf8d1e25958fc8"
+      },
+      "key_output_sha256": {
+        "poses.csv": "28c25002c253da0e7ec4e70e1de70c41e5b4b146d2047c0d369d55d342196946",
+        "poses_segmented.csv": "28c25002c253da0e7ec4e70e1de70c41e5b4b146d2047c0d369d55d342196946",
+        "pointlio_indicators.csv": "a32e647b65a71cfeda2ad123efbb984faa4ab3060c65b1c8e76bfa2b8cfd587b"
+      },
+      "evaluation_sha256": "aa2a308773317369f68f59c5219bf9b141c090dba551ecf6507423b784c0518e",
+      "evaluation_manifest_sha256": "a1ddf877672ae72ae9f4bca5977e55eda593dba8b10fe31174b710b9ed169f0b"
+    },
+    {
+      "run_id": "POINTLIO_DEV25_CORRIDOR_XM6_P1",
+      "seed": 25,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "1701289a4abe9028f7cbeff7fb6e7b5c193e8f5540a06917a9e9597e33b3bfda",
+      "input_manifest_sha256": "1af0a59f36d552a45b91c2bd8d68a5924feeef22f3bd3fe97123cdd6251ee5df",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 25,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "1701289a4abe9028f7cbeff7fb6e7b5c193e8f5540a06917a9e9597e33b3bfda"
+      },
+      "key_output_sha256": {
+        "poses.csv": "0d495709ac6e043e7d8f96053769df1b78f0ce009b9381db78d0e038b374b34e",
+        "poses_segmented.csv": "0d495709ac6e043e7d8f96053769df1b78f0ce009b9381db78d0e038b374b34e",
+        "pointlio_indicators.csv": "371eb37711d571a810c6f2f52c8942f334e2298e7103d85128ebb488abebff62"
+      },
+      "evaluation_sha256": "4a4e1fcfae5838e6cf42385a044f7ba88c33dc4d149401df1a8a4c8cd8d1db96",
+      "evaluation_manifest_sha256": "d6fb94e86f7957badbeb1df9b74c40a1c2a106b301e6b0427bbf6321df2e7910"
+    },
+    {
+      "run_id": "POINTLIO_DEV25_CONTROL_XM6_P1",
+      "seed": 25,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "16ebf6e96f1ae2c0abb6489783c08293e4203a6bcf32c4792ca9da493242bd44",
+      "input_manifest_sha256": "137bba32a377b4ce6cfa3ef971304db91a361c17041ac1a4b80b96b5715dc1a2",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 25,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "16ebf6e96f1ae2c0abb6489783c08293e4203a6bcf32c4792ca9da493242bd44"
+      },
+      "key_output_sha256": {
+        "poses.csv": "24e2b7a80e2cc22819a942e18127a923fbfc4b07fc9c6588544615053cbd9ba7",
+        "poses_segmented.csv": "24e2b7a80e2cc22819a942e18127a923fbfc4b07fc9c6588544615053cbd9ba7",
+        "pointlio_indicators.csv": "f9fd7e5f3ebac83de5a9e834fa49754f284bdb9d54362ac6db73884a6c841e9e"
+      },
+      "evaluation_sha256": "582cfca6964bb9966c23b27bfcfae167d885595d5aed5117510a3381074b553c",
+      "evaluation_manifest_sha256": "4a20ebc759d8db4d183e7fafe3c2c295c06cb5db02d193b9ada4b2fbc39e0fc6"
+    },
+    {
+      "run_id": "POINTLIO_DEV26_CORRIDOR_XM6_P1",
+      "seed": 26,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "01cac751978c0432cd661d4603180006c430221bdcc8ac4ec8cff50c21f83a23",
+      "input_manifest_sha256": "c15b938e7f461ef4975ea14a2de418fac2a581b8b5c7f952051db9849682e4c2",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 26,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "01cac751978c0432cd661d4603180006c430221bdcc8ac4ec8cff50c21f83a23"
+      },
+      "key_output_sha256": {
+        "poses.csv": "d50dcbeb2d6d45eb69898a5ecdfdaf5501f71ff50ee4da2c677cc2620fb16b8c",
+        "poses_segmented.csv": "d50dcbeb2d6d45eb69898a5ecdfdaf5501f71ff50ee4da2c677cc2620fb16b8c",
+        "pointlio_indicators.csv": "17a91a49ca9ffcfe4eb1a76b50ac772600a6f6a580292a094a3637009e662dd6"
+      },
+      "evaluation_sha256": "4c5e918f6db448d8b0498af92b3edd2cafae8bded7800136572583ed42eddae0",
+      "evaluation_manifest_sha256": "418b879cd9f0e08edc55abc1d3d85a92ab8145b58e5881181ec7cb375b4f2e77"
+    },
+    {
+      "run_id": "POINTLIO_DEV26_CONTROL_XM6_P1",
+      "seed": 26,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "893015f19b297836472e4ad1e7447078b0e867b47763db36db8da23b7f8510b1",
+      "input_manifest_sha256": "060049d9d5ba052d40c1f940267280263c88ddb108df4dbfa496262bfd28f66f",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 26,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "893015f19b297836472e4ad1e7447078b0e867b47763db36db8da23b7f8510b1"
+      },
+      "key_output_sha256": {
+        "poses.csv": "96f9427cc776bedd3765dc6bd0dcd96738ac08869485f8b6760c5505fc349909",
+        "poses_segmented.csv": "96f9427cc776bedd3765dc6bd0dcd96738ac08869485f8b6760c5505fc349909",
+        "pointlio_indicators.csv": "9ae7bf5f31c20f979869009a27785cd1c80547c0f1aeaecedd71789181facc04"
+      },
+      "evaluation_sha256": "7594fa7576c0ecca2bc3d45c2671a2cd6e93310ac863e72c10154fedbc145db3",
+      "evaluation_manifest_sha256": "1d4f09c0fe148dcacf192eec87ff9d1183e5e9b4e2bfba7c86d3ea80812441d2"
+    },
+    {
+      "run_id": "POINTLIO_DEV27_CORRIDOR_XM6_P1",
+      "seed": 27,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "6d1e2ed78f80bc26042548bab2f2b9564bb3b041c32fc42ea112bb90aaa7ec68",
+      "input_manifest_sha256": "acbf2276098204c0af89d0f96f01cb1fb9de783282c65a84c32e09f2ff562b16",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 27,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "6d1e2ed78f80bc26042548bab2f2b9564bb3b041c32fc42ea112bb90aaa7ec68"
+      },
+      "key_output_sha256": {
+        "poses.csv": "3d4593e00427c672fa3abb40f7a5ef46330a1e3342784eeaee9a3bb929e8bbcf",
+        "poses_segmented.csv": "3d4593e00427c672fa3abb40f7a5ef46330a1e3342784eeaee9a3bb929e8bbcf",
+        "pointlio_indicators.csv": "6158e10d7254ef2c3d56fbb1096eaf063842eb093205358d485f5feaf5c7334c"
+      },
+      "evaluation_sha256": "55b15f92acc1d393a5a5b93a258f1716653a5e2300fbcd37a5056f977f2369be",
+      "evaluation_manifest_sha256": "8dba9252b9aa331d1d8ea90c794eb876e042bbc03a07308856f07f226ea497b6"
+    },
+    {
+      "run_id": "POINTLIO_DEV27_CONTROL_XM6_P1",
+      "seed": 27,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "cefe760ccead61c193aff55d0f703847867b1b0675365bae1b0c38190a23d761",
+      "input_manifest_sha256": "9a5d0bbfad175207ee0c7da4693baff9c14b82960a07900d8b04569cba1abf15",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 27,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "cefe760ccead61c193aff55d0f703847867b1b0675365bae1b0c38190a23d761"
+      },
+      "key_output_sha256": {
+        "poses.csv": "e83b379ab1152861fd141f9d25fb674a8cc4a92f3c003ba46f5b4ffb62265994",
+        "poses_segmented.csv": "e83b379ab1152861fd141f9d25fb674a8cc4a92f3c003ba46f5b4ffb62265994",
+        "pointlio_indicators.csv": "5faff38afc25a454e69e47806fc8ad82ab2d8805318ea83169a439cf3293a303"
+      },
+      "evaluation_sha256": "b6b2a37c7a07116b4b430a38929fc7076020ae3a36706aa7b04f59e65f69a248",
+      "evaluation_manifest_sha256": "bc065f0935f5bbe035368ddf13bb4a1c09f7eb67a294e7b876e1b5f9991c668e"
+    },
+    {
+      "run_id": "POINTLIO_DEV28_CORRIDOR_XM6_P1",
+      "seed": 28,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "68f502e4bb118be671e42121e7d37efd4f8abce2b45869439126a031cd16916a",
+      "input_manifest_sha256": "55a6aee7dc58fd57e800f751e4d5ce7714d122089a57fa01a71531f8601877f7",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 28,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "68f502e4bb118be671e42121e7d37efd4f8abce2b45869439126a031cd16916a"
+      },
+      "key_output_sha256": {
+        "poses.csv": "312a8d11bb7b97e5669a5cc3fb8d6ca63cfdf21190dff2545f88886e33a4b3e6",
+        "poses_segmented.csv": "312a8d11bb7b97e5669a5cc3fb8d6ca63cfdf21190dff2545f88886e33a4b3e6",
+        "pointlio_indicators.csv": "60e75173210f90ec1145c9182b039097aeb77d3dd40821106e493fe2f975d18f"
+      },
+      "evaluation_sha256": "36439a62a42a87fdbcc74de0a33497d017cc8bab41b467270ba8f87e1be51c62",
+      "evaluation_manifest_sha256": "35fa300a526a8f0d739da7639197f17e297eafe17c11dd9772bc7009af0ec962"
+    },
+    {
+      "run_id": "POINTLIO_DEV28_CONTROL_XM6_P1",
+      "seed": 28,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "c92482183f77ca48df73cdf3b4cb72fc9b2921b5fafb562da0982031848d9944",
+      "input_manifest_sha256": "758f557cc74b5fcdd2b482472bddc54ed3791173cfbe334b0d812f7de17e768a",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 28,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "c92482183f77ca48df73cdf3b4cb72fc9b2921b5fafb562da0982031848d9944"
+      },
+      "key_output_sha256": {
+        "poses.csv": "eaacf98d2a25c62a354a8d4d4ff56850bcff6b656f3bcd9dbb41e249896d1ec5",
+        "poses_segmented.csv": "eaacf98d2a25c62a354a8d4d4ff56850bcff6b656f3bcd9dbb41e249896d1ec5",
+        "pointlio_indicators.csv": "d8b8ddb13f18e82f789e6ca463948c1ef84a4b2a48a4d18a67d78b959e982a8a"
+      },
+      "evaluation_sha256": "c98d3d51a9b1fc3fe7b23e13a0a19996f989944ab50a5290b08c6120410062f7",
+      "evaluation_manifest_sha256": "ce53d7fd8c1c04c7e7583ea8b0054449c0881a9916abc2fb4ee21a3a19bd46bf"
+    },
+    {
+      "run_id": "POINTLIO_DEV29_CORRIDOR_XM6_P1",
+      "seed": 29,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "1ab48ee4a9269160e3af4eb19d84d3e05b95089ebea147b7e7af0e9f0eb6df9b",
+      "input_manifest_sha256": "bb1aa8e59660e149ebd6ebc54d8ce23a444f0bf68e8be0097423787911ff8d75",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 29,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "1ab48ee4a9269160e3af4eb19d84d3e05b95089ebea147b7e7af0e9f0eb6df9b"
+      },
+      "key_output_sha256": {
+        "poses.csv": "45b3d8e249bbd6af57bf9af7a0fa1b97f8eb521fc9f54dcb058e03e5cc89f84c",
+        "poses_segmented.csv": "45b3d8e249bbd6af57bf9af7a0fa1b97f8eb521fc9f54dcb058e03e5cc89f84c",
+        "pointlio_indicators.csv": "2487f017288eacf953b7ba3bf606abd37b495b883f5c36060ab9714568d06857"
+      },
+      "evaluation_sha256": "0e6e67a7c8f7fb4a5adb991c56cd81b2c8f652ac01a8aaf09acb747d62a876ea",
+      "evaluation_manifest_sha256": "64594e2eff36074f30a2854d7a50dac900200477df534d721a8200edc0d5ee17"
+    },
+    {
+      "run_id": "POINTLIO_DEV29_CONTROL_XM6_P1",
+      "seed": 29,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "60e5d8e0ea4afdb848359982a5ed062bb85a795fcc49a4f24adfff95b73d9946",
+      "input_manifest_sha256": "f44c60fbc77f73582d333df2c61bd322374be1da32fe9f3ffff0ee4b9bef987f",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 29,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "60e5d8e0ea4afdb848359982a5ed062bb85a795fcc49a4f24adfff95b73d9946"
+      },
+      "key_output_sha256": {
+        "poses.csv": "9d9dfb08122e9ddbffc7dc0d847c84a7817808a757d56a5665212bd78461312c",
+        "poses_segmented.csv": "9d9dfb08122e9ddbffc7dc0d847c84a7817808a757d56a5665212bd78461312c",
+        "pointlio_indicators.csv": "00c5f8b7c7130ebe34280d1cdfb4b23ace877ed6bd0e197931564217c945f2bc"
+      },
+      "evaluation_sha256": "e80693c93b654c70ac28b15b18dbc82d45eeea2d1e4e4c41c1f6d9435250d898",
+      "evaluation_manifest_sha256": "5ddb0a981ff3cbf8d4a9559d6b4219aafdf39ab8288d59ff7f52ab46be102dc2"
+    },
+    {
+      "run_id": "POINTLIO_DEV30_CORRIDOR_XM6_P1",
+      "seed": 30,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "cc2c5b3f8107c6257c17bd982645e28f64b9795de6e528beb8b93d74832d2f90",
+      "input_manifest_sha256": "b84ea6e56cbed412128733b213c177f52b2cc3f4c498dd32c7e9a79f84833290",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 30,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "cc2c5b3f8107c6257c17bd982645e28f64b9795de6e528beb8b93d74832d2f90"
+      },
+      "key_output_sha256": {
+        "poses.csv": "257989d55fc9c82af3030ad0f793bc1555a9a5cc169ef693309ddd377c639927",
+        "poses_segmented.csv": "257989d55fc9c82af3030ad0f793bc1555a9a5cc169ef693309ddd377c639927",
+        "pointlio_indicators.csv": "31249c3d5ccc9b470d7381cc624a0ba3b18fe6202281ee5ea8b631380397e042"
+      },
+      "evaluation_sha256": "d9943c757348017fc10b69ba7ea3ed81c3c923c1cf8859d4ad259cc649482e34",
+      "evaluation_manifest_sha256": "ba2cae9fa95f672baffde79db7e4aab23a2f7df0ca6de5945c32e6831358d4c3"
+    },
+    {
+      "run_id": "POINTLIO_DEV30_CONTROL_XM6_P1",
+      "seed": 30,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "cf9157d38feee6417fe452c41f9df317c64eecabace6b283967d2f44bccd55d6",
+      "input_manifest_sha256": "d4d48aadf5cb019ed238113f820472d3252100c0c1ea6170f3367f4b3b563fc6",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 30,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "cf9157d38feee6417fe452c41f9df317c64eecabace6b283967d2f44bccd55d6"
+      },
+      "key_output_sha256": {
+        "poses.csv": "2daaebddf90ac60fbacdc64bea8aa7cac8deb5f56773ee4621271b7e18de2268",
+        "poses_segmented.csv": "2daaebddf90ac60fbacdc64bea8aa7cac8deb5f56773ee4621271b7e18de2268",
+        "pointlio_indicators.csv": "1c9d641a846622a7721141be5a5f72544c70a1ee5cc7bbbd8a507d952c4168c4"
+      },
+      "evaluation_sha256": "48f54964aff9c08f0a93d5f14a48a0febe0993a4328603052a9df679a0f4be5a",
+      "evaluation_manifest_sha256": "9b620ab29f7aa8717b91b48f76f0384700b7e20c9343934394599dcd01681cf2"
+    },
+    {
+      "run_id": "POINTLIO_DEV31_CORRIDOR_XM6_P1",
+      "seed": 31,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "99bd45302a8d839c0db7e77673f643a9b24105862378766e0d4700bbc670e303",
+      "input_manifest_sha256": "deec5081d42c9379e9255b63d2afae4ca450bc5bb30a5300dcd3c59facc2265c",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 31,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "99bd45302a8d839c0db7e77673f643a9b24105862378766e0d4700bbc670e303"
+      },
+      "key_output_sha256": {
+        "poses.csv": "34c5c2cdd82eaa3a4afc62987f2e1143b361d4a46e20293d7f8fb784c7a9f14d",
+        "poses_segmented.csv": "34c5c2cdd82eaa3a4afc62987f2e1143b361d4a46e20293d7f8fb784c7a9f14d",
+        "pointlio_indicators.csv": "aed5ba6ff426b5108687601f4174ec7746d928e7de4208b9065fef662079ace0"
+      },
+      "evaluation_sha256": "4442d361c9c97a2b38c7a8ea380cc43e272413a77a7efa6969f5675100814048",
+      "evaluation_manifest_sha256": "1ebd02bd2bc011486521285ace41131b7c361890e0b6b0a00b6eb361b5d0ea55"
+    },
+    {
+      "run_id": "POINTLIO_DEV31_CONTROL_XM6_P1",
+      "seed": 31,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "af7062809bf5c639864007fe04bbd52a0dd88489e630ba2a1e94af12dca0d130",
+      "input_manifest_sha256": "14cca81e8cf42cb21939366be48739021c0ea10d8ca084933b51f4e488d58ce0",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 31,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "af7062809bf5c639864007fe04bbd52a0dd88489e630ba2a1e94af12dca0d130"
+      },
+      "key_output_sha256": {
+        "poses.csv": "8fc6280ca956b5198bfb72a0873b89f760835d1b29da8bd6a660f691aa718f64",
+        "poses_segmented.csv": "8fc6280ca956b5198bfb72a0873b89f760835d1b29da8bd6a660f691aa718f64",
+        "pointlio_indicators.csv": "15413cf1c7c8c04767e52107a2f4347dbc4d27eeaa0936cff3b882f6c4f237a6"
+      },
+      "evaluation_sha256": "2a62179afc504f621b024c4d7d6ec7d56bde708eeee1313282bff8a0da8e8b4e",
+      "evaluation_manifest_sha256": "9d71ba6dc9fae9eb6784be5e9ffa37018dcf4701ae645846fc73fb051bbb2d4d"
+    },
+    {
+      "run_id": "POINTLIO_DEV32_CORRIDOR_XM6_P1",
+      "seed": 32,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "f8c684a7559e71d5220137157fa62d3147b10e47c034e5de46d075754b9b0b61",
+      "input_manifest_sha256": "e1e14ca6f8d667d936026c1cc03a284445ce75ad739cd59c08548c274a72716e",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 32,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "f8c684a7559e71d5220137157fa62d3147b10e47c034e5de46d075754b9b0b61"
+      },
+      "key_output_sha256": {
+        "poses.csv": "48625775bbe781c8e35a7ca505ef5c20a709c1442fdac497481dc8b2498bc3fe",
+        "poses_segmented.csv": "48625775bbe781c8e35a7ca505ef5c20a709c1442fdac497481dc8b2498bc3fe",
+        "pointlio_indicators.csv": "1dfb9384ec925cfc4c96f911a31623186138a17245cf2673ad809497291c0ef5"
+      },
+      "evaluation_sha256": "38a37720fedd40d9b6820311e8cbab0b015189263e524ccfea4e1ec1fd9bc8a5",
+      "evaluation_manifest_sha256": "17857db51ed4c9bf230924239776facee010ff0d1300f14755dbd01118d068d9"
+    },
+    {
+      "run_id": "POINTLIO_DEV32_CONTROL_XM6_P1",
+      "seed": 32,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "aff51f7d16307a682961db04f654d58507c19022942ae48bb964d281cdbb2b0d",
+      "input_manifest_sha256": "c45ce667d9dce31522a53866c01e928a6e91ac2925aa4c783ab5415f0e510b3a",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 32,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "aff51f7d16307a682961db04f654d58507c19022942ae48bb964d281cdbb2b0d"
+      },
+      "key_output_sha256": {
+        "poses.csv": "7c0fc1c9750bb184f6cbcdd09b8b8557174e4aca6370c8223b8537271ea0303d",
+        "poses_segmented.csv": "7c0fc1c9750bb184f6cbcdd09b8b8557174e4aca6370c8223b8537271ea0303d",
+        "pointlio_indicators.csv": "d4863d0d0db2a7e46329937aa96ade98be993b1fd7931810188951fd7e610aab"
+      },
+      "evaluation_sha256": "b8563ef2f98db08110dc62b5bab6808c95b15ca3eb51284becb7f62055a1fbac",
+      "evaluation_manifest_sha256": "ed863fd90f980292ab812ca8c6c3759b21ac3e5b9e72b8d60d0e229776354a99"
+    },
+    {
+      "run_id": "POINTLIO_DEV33_CORRIDOR_XM6_P1",
+      "seed": 33,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "6616d1e7d372362728e64a90dbd530f4a8631fff03ac21c40b5eb698ddc3ec53",
+      "input_manifest_sha256": "051ba55b2f34c23ac7fb86b8d87dea5d0089598adef05e2e45a264bb06e6faca",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 33,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "6616d1e7d372362728e64a90dbd530f4a8631fff03ac21c40b5eb698ddc3ec53"
+      },
+      "key_output_sha256": {
+        "poses.csv": "c8e03935fd9549a95e348dfd64f4087a702ecd133c8b78a3a0ef597959f8eee6",
+        "poses_segmented.csv": "c8e03935fd9549a95e348dfd64f4087a702ecd133c8b78a3a0ef597959f8eee6",
+        "pointlio_indicators.csv": "5a8566f79b79ed385c105e362dd46ac3347a8271a2f2f5fa4b748fac5bcd95f2"
+      },
+      "evaluation_sha256": "2ac239b705deab664f10d3ef882a0e7c1f84945d7092c4fa6b36a89bc943ca16",
+      "evaluation_manifest_sha256": "6d92c089da329f38c5f8a7befe4f8352ae36af2c808fc9eee3998900bebb118b"
+    },
+    {
+      "run_id": "POINTLIO_DEV33_CONTROL_XM6_P1",
+      "seed": 33,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "0c7af282464388b068063a433f9b4cc3bf092c4fa205990acd0b0bdbbe73bb27",
+      "input_manifest_sha256": "d7dcfa791f76caf7db04c0bfdfd52406ef1b54395d7144cb1dd86bebeaa0374c",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 33,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "0c7af282464388b068063a433f9b4cc3bf092c4fa205990acd0b0bdbbe73bb27"
+      },
+      "key_output_sha256": {
+        "poses.csv": "d843f8730f6ccb487ad18e37df493ea8d92b1bf8d63e71eec7da1f70f88fd3d9",
+        "poses_segmented.csv": "d843f8730f6ccb487ad18e37df493ea8d92b1bf8d63e71eec7da1f70f88fd3d9",
+        "pointlio_indicators.csv": "2bd2ef6a8e99452b6d522ff86c89f32a01d1e1d5ae933408945e9254d0fb3137"
+      },
+      "evaluation_sha256": "efe509e85d9a1805315785f1602679e497b6f86d68d131572dd69cec44b92399",
+      "evaluation_manifest_sha256": "c52a8a17ff6d5ac88cd73f6a3f8a96e79bd83f6e1ae69a542fa740acc285a9bf"
+    },
+    {
+      "run_id": "POINTLIO_DEV34_CORRIDOR_XM6_P1",
+      "seed": 34,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "27c2bd9f9d5670fe353541b1531859057c0bb38e47860ff8c3d3e8b2824b10df",
+      "input_manifest_sha256": "b784c82aed0aa01376bfc4584e25274b60527bb5a0d38b819cba72d0a9974d18",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 34,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "27c2bd9f9d5670fe353541b1531859057c0bb38e47860ff8c3d3e8b2824b10df"
+      },
+      "key_output_sha256": {
+        "poses.csv": "d7c9b03dd741ec362e8f6124ff7c06c1e1d4350c15738a6e8f38e20eec054bf7",
+        "poses_segmented.csv": "d7c9b03dd741ec362e8f6124ff7c06c1e1d4350c15738a6e8f38e20eec054bf7",
+        "pointlio_indicators.csv": "0b9de372f1e4da104e17eea05823c784fde9c4eeff05762238ceef2c6d0245b5"
+      },
+      "evaluation_sha256": "8370b0dae62720cdee7ca37cbabcb00cfdf827baa09ee0b51f62a5aef558cb03",
+      "evaluation_manifest_sha256": "5a2e94ccc7ef1b82b043833bf004adafc37c5a7031b7f1caf4094507d053de55"
+    },
+    {
+      "run_id": "POINTLIO_DEV34_CONTROL_XM6_P1",
+      "seed": 34,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "a613e9f34dea8bd18eabe2cd0009097c8a61282fb65a5999e71f9e357f776573",
+      "input_manifest_sha256": "d7cb34c1d45e847c0ffa0fce4dcde0278d54525ed30c395c9fb0297d0d47e269",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 34,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "a613e9f34dea8bd18eabe2cd0009097c8a61282fb65a5999e71f9e357f776573"
+      },
+      "key_output_sha256": {
+        "poses.csv": "19d06e61f38e0c8dd70683af494ded4ccb133f1e49efa16d3bd6a070f585eaf2",
+        "poses_segmented.csv": "19d06e61f38e0c8dd70683af494ded4ccb133f1e49efa16d3bd6a070f585eaf2",
+        "pointlio_indicators.csv": "7b2ef5343edae49f15d407469d637a3498f5f75ad99842a8e68c02e15f7718f5"
+      },
+      "evaluation_sha256": "26e52bb16a4c7294721d40e02622452c123c8e12094a3144da78adf93d1162e1",
+      "evaluation_manifest_sha256": "3904c7b63324989d415f5733be57928c03d5fe50b8b26ad4f2ad78ed2fbe688a"
+    },
+    {
+      "run_id": "POINTLIO_DEV35_CORRIDOR_XM6_P1",
+      "seed": 35,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "08b0510a685a03cf01c74e558ff5319c5f0c47dacf042067b8a40b416dffb572",
+      "input_manifest_sha256": "bb26d04c1ee2c94cd7570abc069bb61295a7bd880c60599377061764c6c42034",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 35,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "08b0510a685a03cf01c74e558ff5319c5f0c47dacf042067b8a40b416dffb572"
+      },
+      "key_output_sha256": {
+        "poses.csv": "e0cabf566bab6538642c4b67215775b9b68057c306c5ce03ca5f27a45af26a8f",
+        "poses_segmented.csv": "e0cabf566bab6538642c4b67215775b9b68057c306c5ce03ca5f27a45af26a8f",
+        "pointlio_indicators.csv": "64597a6b950567f9bed4c5b014d57c28dfc93288ffc28818b0170d91b697418f"
+      },
+      "evaluation_sha256": "8917ebe737efb444d0d97bedb6c4816d4f72beae08c04961829d916df0e35905",
+      "evaluation_manifest_sha256": "8cc55accafb0e527f25fc599e8b8382ae78a0cf9ea5737110784cff81100cefb"
+    },
+    {
+      "run_id": "POINTLIO_DEV35_CONTROL_XM6_P1",
+      "seed": 35,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "4b360e2933aafdd1244945b5efd036198b794595b766817a894642b5b90e0975",
+      "input_manifest_sha256": "7d94a79063aaeae6eccffe6fa2755be907e2cf5763646a8322f663c4dc11f8fd",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 35,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "4b360e2933aafdd1244945b5efd036198b794595b766817a894642b5b90e0975"
+      },
+      "key_output_sha256": {
+        "poses.csv": "a9757e738ecb0672c8f3a2966fbbc96743b7b73ac9fad3ff2137ce3607efdeb6",
+        "poses_segmented.csv": "a9757e738ecb0672c8f3a2966fbbc96743b7b73ac9fad3ff2137ce3607efdeb6",
+        "pointlio_indicators.csv": "998fafe1c75bf0966d414c360b0cd44da422555f2475909a76a215a11f7cb8f0"
+      },
+      "evaluation_sha256": "11e904d41b10dfabb628189e11c4a1541bcb353cba86cc5301a7b70be1795cb1",
+      "evaluation_manifest_sha256": "73f5ce11eabfe395d8a4f2b63cbc7cef302b4a8932c63cee62fa9ee465b8e9a7"
+    },
+    {
+      "run_id": "POINTLIO_DEV36_CORRIDOR_XM6_P1",
+      "seed": 36,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "3bee95adcc7aeb4cc172dfbc7545acf1bf87ed748cbf7f157c8228fd70c41e13",
+      "input_manifest_sha256": "5d198e6006a2cc71c647b3c6e4c3b6b847095a4bbb6f4fb399293dc68ddf4076",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 36,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "3bee95adcc7aeb4cc172dfbc7545acf1bf87ed748cbf7f157c8228fd70c41e13"
+      },
+      "key_output_sha256": {
+        "poses.csv": "2e55464e48804e5306400acc0cdc1486aabeee7b5aa36f2e2603e5a1174f3d10",
+        "poses_segmented.csv": "2e55464e48804e5306400acc0cdc1486aabeee7b5aa36f2e2603e5a1174f3d10",
+        "pointlio_indicators.csv": "29dff36912eb86d7be193183b9f03f7460b19ef32cf8de4470f027bb454c86bb"
+      },
+      "evaluation_sha256": "7f47a7b3b60450ae83655ecdec6ab83a8484ec60cedf88a838db2621f918c518",
+      "evaluation_manifest_sha256": "e97a985c8cb4687474c0cd72b04f01c52ad4bd611c64e57473dd830bef4f3914"
+    },
+    {
+      "run_id": "POINTLIO_DEV36_CONTROL_XM6_P1",
+      "seed": 36,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "afd1e44384bac3dfedbcb055affd3c4d52712b233d03031a37bf5ff07be98297",
+      "input_manifest_sha256": "8537422a36e8708e2e2ae2529391a72ef1be3d78bcd5365a1dafebf27fd6c02a",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 36,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "afd1e44384bac3dfedbcb055affd3c4d52712b233d03031a37bf5ff07be98297"
+      },
+      "key_output_sha256": {
+        "poses.csv": "09fcc1002905db31409dd1c2c8a3bac41666c2c20dd756eb64da8adfabcb6e77",
+        "poses_segmented.csv": "09fcc1002905db31409dd1c2c8a3bac41666c2c20dd756eb64da8adfabcb6e77",
+        "pointlio_indicators.csv": "53546fb44bbd619427ea92d0b2eccb47d766a4849e2ff2a4eb4d0438f9102ab5"
+      },
+      "evaluation_sha256": "21b8e6364757bb67553570a16f2bdc91b5dbac19916260bc6a5f2fbb859e9f03",
+      "evaluation_manifest_sha256": "8d36d67dcaf8a8d99050a873599ed120181d21a9b725728c75b995f390a829ec"
+    },
+    {
+      "run_id": "POINTLIO_DEV37_CORRIDOR_XM6_P1",
+      "seed": 37,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "ed6dd44322612741e60d6eaa217241b1cab6ae350dc508f90701e1dad6d3c656",
+      "input_manifest_sha256": "dd43c4ddbc3fdb2328918421d8798d6e48f2157d8b70fa7351b3fd177ce0773f",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 37,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "ed6dd44322612741e60d6eaa217241b1cab6ae350dc508f90701e1dad6d3c656"
+      },
+      "key_output_sha256": {
+        "poses.csv": "b17d9b492f21cbeced66bc5bd1af64d76987fc6cc73f415daea252929e0631b2",
+        "poses_segmented.csv": "b17d9b492f21cbeced66bc5bd1af64d76987fc6cc73f415daea252929e0631b2",
+        "pointlio_indicators.csv": "2ebfd11cbd005998d90d2e45152f65f230e852ec9eab0a5f88d9920034806d13"
+      },
+      "evaluation_sha256": "4b10785b86d1e773992e75f9cd2db9eeb586dcbda63459421c07bfb32eec5008",
+      "evaluation_manifest_sha256": "d90e8d1a0015622ec930a6fe2b5114692503bb7535db35480dfbab05bf31d126"
+    },
+    {
+      "run_id": "POINTLIO_DEV37_CONTROL_XM6_P1",
+      "seed": 37,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "e704a5939f97d97d230315c47481c921831e4f71f2841fd921b0894dc15c2bc2",
+      "input_manifest_sha256": "4be076e22a933eddbf9bfcc63e20b10e4f97d60cd0ddd443abf65493cd855b74",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 37,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "e704a5939f97d97d230315c47481c921831e4f71f2841fd921b0894dc15c2bc2"
+      },
+      "key_output_sha256": {
+        "poses.csv": "2782ae0e7d2d4942f310b2f0d77fcdc13901639ff921f4fc3aeee1a20c82107c",
+        "poses_segmented.csv": "2782ae0e7d2d4942f310b2f0d77fcdc13901639ff921f4fc3aeee1a20c82107c",
+        "pointlio_indicators.csv": "0c096136adb99450e35523984782b5ab32abb76c7f11bf2ef586e46517187268"
+      },
+      "evaluation_sha256": "8b19a8853d0569dfbfec8424ae30b1ba93f720910257d91ee5cbfbb3358992ee",
+      "evaluation_manifest_sha256": "71f38e9f01d1ad0b49a37f5787e5b9d2bb84ac6814b3059ff042fab86c70bfb8"
+    },
+    {
+      "run_id": "POINTLIO_DEV38_CORRIDOR_XM6_P1",
+      "seed": 38,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "e2103650a49ee584c10d76c150ef7ca3a18e451cc0d009b12f9185552284b584",
+      "input_manifest_sha256": "caac3ac60a8b6a64bd0c19b4834c24a2f52f9a4d3c7d713f0b953d5af67094c4",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 38,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "e2103650a49ee584c10d76c150ef7ca3a18e451cc0d009b12f9185552284b584"
+      },
+      "key_output_sha256": {
+        "poses.csv": "def9582247afabe632fbea7664f2e4fe0f824771a9dac3b65c4d56c96e83fb5c",
+        "poses_segmented.csv": "def9582247afabe632fbea7664f2e4fe0f824771a9dac3b65c4d56c96e83fb5c",
+        "pointlio_indicators.csv": "779bc4547ee707ee99ddac5e67991ac526ff60d5f6ff1573524aa4829305ee02"
+      },
+      "evaluation_sha256": "c2de1a4b65d55034af9806d867990ce111de2f473893c67e9b570793d0e7dd9b",
+      "evaluation_manifest_sha256": "27f60e0857d5256422ba877c129f2afe94857a6dbe5b9645042aac1c72ac4460"
+    },
+    {
+      "run_id": "POINTLIO_DEV38_CONTROL_XM6_P1",
+      "seed": 38,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "91210bc471d5e053756ab310da33abb9cb16683a21bb378a619f9ef4946b5f93",
+      "input_manifest_sha256": "f0c60dc48317fb21c659ff881dee373f8f0c0011572c6ae37e592409799a6420",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 38,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "91210bc471d5e053756ab310da33abb9cb16683a21bb378a619f9ef4946b5f93"
+      },
+      "key_output_sha256": {
+        "poses.csv": "bf5d8e31b09ef50a26851587dc0d2153eb66982d5fd8225fe2bbebe9e0efc0c8",
+        "poses_segmented.csv": "bf5d8e31b09ef50a26851587dc0d2153eb66982d5fd8225fe2bbebe9e0efc0c8",
+        "pointlio_indicators.csv": "1349208ec0ead0162bdbb93091ca89f5dced6e8e8a64a1df67b5fbbd86adc916"
+      },
+      "evaluation_sha256": "2e545a2d3e2d4d8be9776e5be4bc87a1a165c1f6b2408a9539177bbf1888aa40",
+      "evaluation_manifest_sha256": "cf53a0040f98797d05776756debb52244d224eb1b831cf40c4aaef5b024ac30a"
+    },
+    {
+      "run_id": "POINTLIO_DEV39_CORRIDOR_XM6_P1",
+      "seed": 39,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "de493c87d9395dbc7c3802079c0934798e0b02c2c0cf065f3c6f26c74be238fa",
+      "input_manifest_sha256": "6d251aa1577d37d0db8471d8bd2dea2cbfe61d28afc4f2412c59df047e0b986c",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 39,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "de493c87d9395dbc7c3802079c0934798e0b02c2c0cf065f3c6f26c74be238fa"
+      },
+      "key_output_sha256": {
+        "poses.csv": "20e37163cc68402f14f4204d0e977663ee27b340eb9a645939d1feee5e00e391",
+        "poses_segmented.csv": "20e37163cc68402f14f4204d0e977663ee27b340eb9a645939d1feee5e00e391",
+        "pointlio_indicators.csv": "d769a4830029fdfc192cdbaa1a92a5bdc22d90c1f16cb59d0195472d9f499e40"
+      },
+      "evaluation_sha256": "3e965bcf7e12191e03ea74a20ac5bf9bc518ff0ccad7c1c0930f1b483ab32e8d",
+      "evaluation_manifest_sha256": "8e05a9c6fb31714ac39d7f0a5d5180e590c834057958b4eb3de6fe8a13aabfbb"
+    },
+    {
+      "run_id": "POINTLIO_DEV39_CONTROL_XM6_P1",
+      "seed": 39,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "148a1243ad1bcdb05ee4ac6308cc32959f186df44caacb33493a76afcdea7627",
+      "input_manifest_sha256": "f2da58be0c52df5d9d82430422fa0440a4e25ae4ecd5ba43be830b86c69272d4",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 39,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "148a1243ad1bcdb05ee4ac6308cc32959f186df44caacb33493a76afcdea7627"
+      },
+      "key_output_sha256": {
+        "poses.csv": "e023931d8b4215f83014498412e82f0a651e46bb5fe67ca976e5527056c8ff20",
+        "poses_segmented.csv": "e023931d8b4215f83014498412e82f0a651e46bb5fe67ca976e5527056c8ff20",
+        "pointlio_indicators.csv": "650ded0eb03d302e19dce366761637eb54b3b4ea71f54ef603fb71d44f350769"
+      },
+      "evaluation_sha256": "152e80bc410f3027b96f49a140630719d875bc0cc4525bc2d6324dc5438d2951",
+      "evaluation_manifest_sha256": "cd14ea2eec63321e14560ac5eb6d26489d8b15622be0c03604911baebb9368d5"
+    },
+    {
+      "run_id": "POINTLIO_DEV40_CORRIDOR_XM6_P1",
+      "seed": 40,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "353fcdbee6b3cd07ef998de3cb8ee6aa86b221207fbb176fab890506ebc259e7",
+      "input_manifest_sha256": "265af72fcc7f7799300b4f112a2e461f29b6760c806ab9bd4f9df8cc0c296907",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 40,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "353fcdbee6b3cd07ef998de3cb8ee6aa86b221207fbb176fab890506ebc259e7"
+      },
+      "key_output_sha256": {
+        "poses.csv": "a4721e844dfadfa974486f135e614cfe8fdaee6bf6dd6bd0758c130864a7c8cb",
+        "poses_segmented.csv": "a4721e844dfadfa974486f135e614cfe8fdaee6bf6dd6bd0758c130864a7c8cb",
+        "pointlio_indicators.csv": "d5f6cae8d19083e3dfc1cf3b66c4f1cb9889138290229195a46dde3fe0a56d3f"
+      },
+      "evaluation_sha256": "c8f0578b8dc1d6506cb779f2615783d92e874540b22fde3d91d67bba564340e8",
+      "evaluation_manifest_sha256": "7258f5aee18345b6ddc941e4174d86cfd747785e37818a36e538c81f40164124"
+    },
+    {
+      "run_id": "POINTLIO_DEV40_CONTROL_XM6_P1",
+      "seed": 40,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "b40e188ef35803214f451a4f7bc6acef225acf2c83d964597acf03ff8f0bfbdf",
+      "input_manifest_sha256": "d89ef50b830038965578018000a21dd105956b31041cfe15877c09c394ffbb36",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 40,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "b40e188ef35803214f451a4f7bc6acef225acf2c83d964597acf03ff8f0bfbdf"
+      },
+      "key_output_sha256": {
+        "poses.csv": "33a07ced91a1f0881603106fb8d792c3b0530ba45a62f0c71712027133ba7fe0",
+        "poses_segmented.csv": "33a07ced91a1f0881603106fb8d792c3b0530ba45a62f0c71712027133ba7fe0",
+        "pointlio_indicators.csv": "da8975b7c21ced26baa70f8192d0dbb1c9a1c7aef55d249b5b131d6f2fc8cf8a"
+      },
+      "evaluation_sha256": "23d5100754d327fbc8a154ca895b05ac6cea9feba3a3eae4d7cb155cdb85d495",
+      "evaluation_manifest_sha256": "862040f38a06b4a4b92015a67e7da2a149b705b1dc50f690de892bb61e41d21b"
+    },
+    {
+      "run_id": "POINTLIO_DEV41_CORRIDOR_XM6_P1",
+      "seed": 41,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "f5adf7e2289fe4a390fcda0492613e37b900870c4c166996594ae09db1ed6016",
+      "input_manifest_sha256": "eaf5e1d907e09fdcaf671faba2b49b8cc764b472f14243923914ef18982ea19c",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 41,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "f5adf7e2289fe4a390fcda0492613e37b900870c4c166996594ae09db1ed6016"
+      },
+      "key_output_sha256": {
+        "poses.csv": "03762d5a7433e0cd669cab1ebafdecb33c4d3602f12aec367f68ea9a4f83063f",
+        "poses_segmented.csv": "03762d5a7433e0cd669cab1ebafdecb33c4d3602f12aec367f68ea9a4f83063f",
+        "pointlio_indicators.csv": "d08a52e96b2905ac97677f1bbf8f1dc9956dcaa7b79921426ade4e712788c35e"
+      },
+      "evaluation_sha256": "998dfc74f507586343cf0b4095671465cbd5c85498b5f5879e5aa9255e111331",
+      "evaluation_manifest_sha256": "922a99ddfbbb8fd36f84a0c660fefc201eb1e916bb92888caf250c842cb79da4"
+    },
+    {
+      "run_id": "POINTLIO_DEV41_CONTROL_XM6_P1",
+      "seed": 41,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "1f097178d552a3a7b28e7c9e1620ff778586d450e7975e8d2c42f57929f59fe2",
+      "input_manifest_sha256": "056858f559458123e1b2be7208d608b9ad3e377c2260058b4e921da63f07062c",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 41,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "1f097178d552a3a7b28e7c9e1620ff778586d450e7975e8d2c42f57929f59fe2"
+      },
+      "key_output_sha256": {
+        "poses.csv": "57f41fa01ff15f3d376910455b648cdbb878ba7ca6318fa01c463338e70cc5ac",
+        "poses_segmented.csv": "57f41fa01ff15f3d376910455b648cdbb878ba7ca6318fa01c463338e70cc5ac",
+        "pointlio_indicators.csv": "5471c6553335fd9adfb2f90efdd02c96ac633790834d3ff953e1210d4ce90914"
+      },
+      "evaluation_sha256": "9a3f739faf599da9e86e637be18b1c748b6f36db177a87e7f04ed622f79ad48c",
+      "evaluation_manifest_sha256": "ed9c4dfeb6b9bc6b577f9d208a4daa11ca396174766434c76e332332b3b75f0f"
+    },
+    {
+      "run_id": "POINTLIO_DEV42_CORRIDOR_XM6_P1",
+      "seed": 42,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "b14197d0dc367491a92cfdc4dcf06daf5a374edba341f3468b4d4ab967c2908c",
+      "input_manifest_sha256": "540fe017185227388674ac8d7ce925a3598f1de3eebe5add1c24c4fe69f6f65b",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 42,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "b14197d0dc367491a92cfdc4dcf06daf5a374edba341f3468b4d4ab967c2908c"
+      },
+      "key_output_sha256": {
+        "poses.csv": "3bdf998da442ea85bce22c288a3d066f7b5f0439ed816d1aa386a1a06772ae8c",
+        "poses_segmented.csv": "3bdf998da442ea85bce22c288a3d066f7b5f0439ed816d1aa386a1a06772ae8c",
+        "pointlio_indicators.csv": "0cf4b8d412ccdf31b98d036fbeec6c3cdfb2101d93af63c39c8c19dc9a7a92d4"
+      },
+      "evaluation_sha256": "3be44b53694f570957209a276d2e9409cecd361030431e047ce8b218438e29d1",
+      "evaluation_manifest_sha256": "e9b4f2cb828063c9801a3b76e800a71bdd9dbe7916d3302b325f343c4fc202da"
+    },
+    {
+      "run_id": "POINTLIO_DEV42_CONTROL_XM6_P1",
+      "seed": 42,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "89cf522fce1b52a78aa0eff9ef196c6155eb5d63db89134e566d7c3f9be56172",
+      "input_manifest_sha256": "87341b07a0d608a867f54c0fd0186bb868e6fa1f1aac745403766b2d81920067",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 42,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "89cf522fce1b52a78aa0eff9ef196c6155eb5d63db89134e566d7c3f9be56172"
+      },
+      "key_output_sha256": {
+        "poses.csv": "c8c3efe0f996a7750d4eccf84aa8d9b2820c8e6d44e49d508afafa60548c2434",
+        "poses_segmented.csv": "c8c3efe0f996a7750d4eccf84aa8d9b2820c8e6d44e49d508afafa60548c2434",
+        "pointlio_indicators.csv": "cd5739832a86714702f053570e791f2ea4a907f60df47d90dfd8564fe1f630df"
+      },
+      "evaluation_sha256": "5491358b89035697e46164d02524733098eb264cb3651eebf9ddab143aabbed7",
+      "evaluation_manifest_sha256": "84c90741cce6d4390b56d5777d781ff9adfaa9e1487eb4c97cb9904ff0465761"
+    },
+    {
+      "run_id": "POINTLIO_DEV43_CORRIDOR_XM6_P1",
+      "seed": 43,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "a8a1c4a24f7f904cf091710bf605c06d7b45326195c5f1ba66fb037ba21618b3",
+      "input_manifest_sha256": "a640a39b9d78239d32e2240e17f4046a41ae8d3653414eb2da06464103a1c879",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 43,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "a8a1c4a24f7f904cf091710bf605c06d7b45326195c5f1ba66fb037ba21618b3"
+      },
+      "key_output_sha256": {
+        "poses.csv": "10bf7780cf1df40ffe1a5d2faf42c7ea48b30223fa4ffba9f05d4a73a0ef3ebf",
+        "poses_segmented.csv": "10bf7780cf1df40ffe1a5d2faf42c7ea48b30223fa4ffba9f05d4a73a0ef3ebf",
+        "pointlio_indicators.csv": "e8356e1548be1764aa8c5be195be264e43e7e6b4f27ace8831aca20601271c39"
+      },
+      "evaluation_sha256": "93fc8c82d77b7dbc5d61e1740fb464e57d19e4061377dca07e89c948c7fad86b",
+      "evaluation_manifest_sha256": "51cda72cb9b9b1d96f7d22a5b950c24a6b7c4a04c4680ee30a0c45f276c2441c"
+    },
+    {
+      "run_id": "POINTLIO_DEV43_CONTROL_XM6_P1",
+      "seed": 43,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "8a471ab59f893e70b1f60c65096c7dc2226368bf3f360905f334e391e8c3f990",
+      "input_manifest_sha256": "e413cedaebe30f4fc9e5fa49c9ee17d70b0dd6df0bb17ac22e544323c45864ed",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 43,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "8a471ab59f893e70b1f60c65096c7dc2226368bf3f360905f334e391e8c3f990"
+      },
+      "key_output_sha256": {
+        "poses.csv": "8a6a8d88004d7bb9e2f3882163eac6b39f15990f5d343b4f33392709c5cbd893",
+        "poses_segmented.csv": "8a6a8d88004d7bb9e2f3882163eac6b39f15990f5d343b4f33392709c5cbd893",
+        "pointlio_indicators.csv": "3f1942c1d90b7f22124ae3660b7ecd081d8cda6459418f2d6ebafd5db264fcd5"
+      },
+      "evaluation_sha256": "7174806a4dbc0e43aeea417e702f472d62bff6b430efef97b7bd029c63f8be3e",
+      "evaluation_manifest_sha256": "10aabdd6f733f47f80c1f918da0af6ad2600100b024c2bfd0378229738d8ed38"
+    },
+    {
+      "run_id": "POINTLIO_DEV44_CORRIDOR_XM6_P1",
+      "seed": 44,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "910a10ae3eb282f89867838b38134a63c967c8d51365152022ef9083c9dcc86f",
+      "input_manifest_sha256": "a2ad71e639c89c70aef9801ca5cc87aa59e7364a24d88d8bce727265b139241f",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 44,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "910a10ae3eb282f89867838b38134a63c967c8d51365152022ef9083c9dcc86f"
+      },
+      "key_output_sha256": {
+        "poses.csv": "8b8cb5cc629c0796110a8ca50646b83b58c497d755d34cf55ccf9e3f96cc3ac9",
+        "poses_segmented.csv": "8b8cb5cc629c0796110a8ca50646b83b58c497d755d34cf55ccf9e3f96cc3ac9",
+        "pointlio_indicators.csv": "eb3d579ed70f7e3795728ccc8a463311c0c41caea69d12875d5b0a86b5635714"
+      },
+      "evaluation_sha256": "d7cadc67d9a84213e4316fb39d9110ab1263225bae8b59c49fb9e762caa27c60",
+      "evaluation_manifest_sha256": "7d97361b7a1bc4963884c6fe0cd2bd5e270dc019871240933e1fc9e2730b12e8"
+    },
+    {
+      "run_id": "POINTLIO_DEV44_CONTROL_XM6_P1",
+      "seed": 44,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "899432f7157bb117b63b642f1458f29dcc631757c10ee6385eb4e9df35b9ebb5",
+      "input_manifest_sha256": "50214e583dcc1bf6ecccfd93121117e9594ccdfe78758cf03b793548a399d660",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 44,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "899432f7157bb117b63b642f1458f29dcc631757c10ee6385eb4e9df35b9ebb5"
+      },
+      "key_output_sha256": {
+        "poses.csv": "8a7329e1f8cb59f5f9b848181de880c8a9d6fb3e738576047bfdb3c7cd231133",
+        "poses_segmented.csv": "8a7329e1f8cb59f5f9b848181de880c8a9d6fb3e738576047bfdb3c7cd231133",
+        "pointlio_indicators.csv": "78f4ac694aaf94ea2474d2d6a331fa6e2ee156269dd545b1fe21c294b9133b57"
+      },
+      "evaluation_sha256": "dd74652200a0699405a0842d8629b8ae7612bc417f7ad8c7403fc3f212ede2d6",
+      "evaluation_manifest_sha256": "6d165fc5639fba20f959316c505c66465eb13f27126c3b7d3dc6fbde0695ad9a"
+    },
+    {
+      "run_id": "POINTLIO_DEV45_CORRIDOR_XM6_P1",
+      "seed": 45,
+      "scene": "CORRIDOR",
+      "native_manifest_sha256": "176eed40db5a869ff90efb51438715d40b093edb24afdb5aea9426e8995507a8",
+      "input_manifest_sha256": "6515e682f7e77526b8907f09afeddf3dd1927320f24c7a6ca23124103d6885e5",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 45,
+        "scene": "CORRIDOR",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "176eed40db5a869ff90efb51438715d40b093edb24afdb5aea9426e8995507a8"
+      },
+      "key_output_sha256": {
+        "poses.csv": "2ab462dffdf4d89661cd0b6705501fe6bd224ee28617814c8210e87c95301558",
+        "poses_segmented.csv": "2ab462dffdf4d89661cd0b6705501fe6bd224ee28617814c8210e87c95301558",
+        "pointlio_indicators.csv": "d9ecb0b9320f580715599b11ce4a66b5caa85b9fb5390ab37475f866473a2af3"
+      },
+      "evaluation_sha256": "3c07faf3b60765956bfadccf6ccd5e55298a67fa633912fe28ef01d0c2448762",
+      "evaluation_manifest_sha256": "3ad5c54927a29960ca5d64537dfeb00a6889b37329422ebf728e65af3628ccee"
+    },
+    {
+      "run_id": "POINTLIO_DEV45_CONTROL_XM6_P1",
+      "seed": 45,
+      "scene": "CONTROL",
+      "native_manifest_sha256": "8fb964500892cb257b06aae4fc3b0d9be458a813ac6755b823c5fed746c0e591",
+      "input_manifest_sha256": "33812789514519e96ebc8b96903b757d42be4dc7ee93d5d3575f4a58e0218c1e",
+      "pose_source": "Point-LIO own segmented pose stream",
+      "verification": {
+        "status": "PASS",
+        "development_only": true,
+        "heldout_inputs_opened": false,
+        "seed": 45,
+        "scene": "CONTROL",
+        "input_frames": 600,
+        "indicator_frames": 600,
+        "pose_rows": 597,
+        "valid_indicator_frames": 597,
+        "unavailable_indicator_frames": 3,
+        "reset_events": 0,
+        "native_manifest_sha256": "8fb964500892cb257b06aae4fc3b0d9be458a813ac6755b823c5fed746c0e591"
+      },
+      "key_output_sha256": {
+        "poses.csv": "b0694cfdfbe5eb5d2617d06f7e39c0cf35d1f7957dbc2f52a967c3884dd4c04f",
+        "poses_segmented.csv": "b0694cfdfbe5eb5d2617d06f7e39c0cf35d1f7957dbc2f52a967c3884dd4c04f",
+        "pointlio_indicators.csv": "6ef6f405461cfab6679b1a37671771c30f8173de6e47226cc5060fc9b5a1c5dc"
+      },
+      "evaluation_sha256": "217de920f0eb380d0eab849a02475e7d9947aabc1f67ffd2d2919a3c36dd74de",
+      "evaluation_manifest_sha256": "12fd10765de1ed2e1bf4439f0ad16f7bd95eac03a90cb65c45e97ba05041349d"
+    }
+  ],
+  "primary_final_sample_size_changed": false,
+  "source_hashes": {
+    "pointlio_development_analysis.py": "ff8968a8bf7658ebfe6b35dd9a7ebf268f2c28c817c6d1d261f2890acec21c7b",
+    "t16_development_analysis.py": "f34fa9479e95bfa78823e3be8f70d63445631d09f3d46fe59a75331ae2975077"
+  },
+  "analysis_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "python_executable": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python3.12",
+    "python_binary_sha256": "9a6ebf581e1a851f074419c117b371a070009cea1cc1a43cde425f706eeb2b01",
+    "conda_history_sha256": "90c14f8caa0cbc8a1a769f012c5bbcd9c1fbe7ba96d4626f22bbc077917b757f"
+  },
+  "metrics_sha256": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+  "accepted_amendment_sha256": "5c67330fe596e74a811b7e00202cef8d460a214bf4d6ff50e8ea10b86e9e4ed0",
+  "outputs": {
+    "pointlio_dcreg_event_metrics.csv": "0682d16a9240a3b3bb983843491149431301e1f22489e2b28e85ff1fa4084bb6",
+    "pointlio_lever_scale_outputs.csv": "dfb27fac2abe864d97d369f9c1457be7a2d0f2fe496ab78c77233c7c2b2949b1",
+    "pointlio_scalar_event_metrics.csv": "77589843e1759403ea7fd0680af10daefa3bb231c9e0b075d0186b2270fc4900",
+    "pointlio_threshold_candidates.csv": "78338dddfa6fc777f06f0a7e87a704269dc09ceb12cd303b89456832688cac58",
+    "pointlio_truth_labels.csv": "9f28b758234cd4771b6ae4fcad6439ee44cb4b0c81b6472eadebc17e0431fb3e"
+  },
+  "interpretation": "Development-only threshold selection and description; not final performance."
+}

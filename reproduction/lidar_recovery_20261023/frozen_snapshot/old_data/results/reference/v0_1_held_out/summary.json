@@ -1,0 +1,20 @@
+{
+  "runs": 100,
+  "seed_start": 2000,
+  "seeds_per_scenario": 20,
+  "safe_scene_runs": 80,
+  "no_safe_scene_runs": 20,
+  "aggregate_precision": 1.0,
+  "aggregate_false_safe_rate": 0.0,
+  "mean_safe_scene_recall": 0.06676874062768394,
+  "target_availability_on_safe_scenes": 0.5625,
+  "target_validity_when_produced": 1.0,
+  "no_safe_scene_rejection_rate": 1.0,
+  "mean_target_error_m": 0.0,
+  "mean_runtime_ms": 2.038515999993251,
+  "p95_runtime_ms": 2.8589349998355824,
+  "max_peak_detector_memory_kib": 340.2578125,
+  "mean_coverage": 1.0,
+  "mean_direct_measurement_coverage": 0.9195011337868481,
+  "hardware_gate_note": "Desktop timing is indicative only; repeat on Raspberry Pi Zero 2 W before claiming deployment readiness."
+}

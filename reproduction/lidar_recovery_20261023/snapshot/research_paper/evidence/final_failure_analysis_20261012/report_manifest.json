@@ -1,0 +1,8 @@
+{
+  "scope": "Exploratory presentation; no tuning or new significance test",
+  "analysis_manifest_sha256": "043eb0600731eaf6a4679a501abf7799610ba3b08a90aacd59862e32f5bca094",
+  "figure_manifest_sha256": "e5fa2a46c3f2405f226e86e6c9ad74edf7250d0a510293ec7c4a2cade9d0278f",
+  "test_log_sha256": "dcf60d468eaed0195a1d6c06c6e2c7ed7e3264a2a2f9af88aca091294324f90b",
+  "report_generator_sha256": "1e54e8102bbbbf5fb819d6ba0ec636fabed5f6e8cfc8bd25af188323c4077995",
+  "report_sha256": "4c7fa52af402fbc676a0b6092c8f2813273b192c3e27fc6c9265008c9732c758"
+}

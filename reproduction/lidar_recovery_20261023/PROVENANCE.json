@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/Marshmellow31/gps-denied-drone-navigation",
+  "git_head": "7fd7a24f8122559c2ad1840c5ed675d6b21435e3",
+  "created": "2026-10-23",
+  "snapshot_tracked_files": 457,
+  "additional_untracked_manuscript_files": [
+    "research_paper/execution/PUBLICATION_STRENGTHENING_PLAN_20261012.md",
+    "research_paper/paper/DRAFT_STATUS_20261023.md",
+    "research_paper/paper/PAPER_STRUCTURE_AND_WRITING_GUIDE_20261023.md",
+    "research_paper/paper/audit_draft_evidence_20261023.py",
+    "research_paper/paper/draft_evidence_audit_20261023.json",
+    "research_paper/paper/recovery_transfer_draft_20261023.tex",
+    "output/pdf/recovery_transfer_draft_20261023.pdf"
+  ],
+  "copied_native_source_files": 865,
+  "consumed_source_hashes_checked": 868,
+  "git_status_before_packaging": "?? output/pdf/recovery_transfer_draft_20261023.pdf\n?? reproduction/\n?? research_paper/execution/PUBLICATION_STRENGTHENING_PLAN_20261012.md\n?? research_paper/paper/DRAFT_STATUS_20261023.md\n?? research_paper/paper/PAPER_STRUCTURE_AND_WRITING_GUIDE_20261023.md\n?? research_paper/paper/audit_draft_evidence_20261023.py\n?? research_paper/paper/draft_evidence_audit_20261023.json\n?? research_paper/paper/recovery_transfer_draft_20261023.tex\n",
+  "scientific_changes": false,
+  "native_replays": false
+}

@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "evaluation_scope": "development_only",
+  "clock_id": "simulation_epoch",
+  "source": {
+    "artifact_name": "reference.txt",
+    "sha256": "6ec0b13007d04d5a9251b03beef535984020df02fcf8f149cc5eacf6641f2e5c"
+  },
+  "comparison_body": {
+    "T_est_body_to_ref_body": [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]],
+    "provenance": "FAST-LIO body and simulator collocated IMU/LiDAR share configured identity extrinsics; no fitted transform"
+  },
+  "reference_pose": {
+    "direction": "world_from_sim_body",
+    "quaternion_order": "xyzw"
+  },
+  "reference_method": "analytic prescribed 3D trajectory sampled at 200 Hz",
+  "estimator_input_independence": true,
+  "limitations": [
+    "independent of estimator computation, but synthetic rather than physical ground truth",
+    "60-second development trajectory only",
+    "prescribed trajectory is identical across layouts; ideal clocks and sensor extrinsics"
+  ]
+}

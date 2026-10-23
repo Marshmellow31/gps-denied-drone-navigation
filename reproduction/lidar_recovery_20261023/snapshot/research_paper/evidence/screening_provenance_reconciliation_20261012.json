@@ -1,0 +1,27 @@
+{
+  "schema": "screening-provenance-reconciliation-v1",
+  "source_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/final_heldout_v1/scene_screen.json",
+  "snapshot_path": "research_paper/evidence/failed_geometry_screen_snapshot_20261012.json",
+  "snapshot_sha256": "6613844123abf75303e65872e9ea143042a4fb212d00f06618a4779013cc96f7",
+  "previously_reported_sha256": "3b4ec4b38d77a5a81ca04df489bc83be608fa8fa038d1ee72856f6ba3a84b0f0",
+  "discrepancy_status": "UNRESOLVED_ORIGINAL_BYTES_NOT_AVAILABLE",
+  "reported_hash_preserved": true,
+  "live_inventory_matches_screen": true,
+  "screen_status": "STOP_RETURN_TO_R2_INSUFFICIENT_ELIGIBLE_LAYOUTS",
+  "screened_layouts": 68,
+  "selected_counts": {
+    "TEST_LONG_NARROW": 0,
+    "TEST_LONG_WIDE": 12,
+    "TEST_SHORT_NARROW": 12,
+    "TEST_SHORT_WIDE": 10
+  },
+  "sensor_bags_generated": false,
+  "lio_runs_executed": false,
+  "linked_identity_checks": {
+    "plan_sha256": true,
+    "r3_review_sha256": true,
+    "implementation_freeze_sha256": true,
+    "heldout_generator_sha256": true,
+    "screen_runner_sha256": true
+  }
+}

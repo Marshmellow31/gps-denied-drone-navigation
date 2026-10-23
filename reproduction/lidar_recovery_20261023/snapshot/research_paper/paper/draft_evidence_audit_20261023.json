@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "scope": "core numerical transcription and citation-key consistency only",
+  "native_runs_rerun": false,
+  "new_scientific_analysis": false,
+  "publication_novelty_accepted": false,
+  "verified_method_rows": [
+    {
+      "backend": "fastlio",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "primary_row": "FAST-LIO & Scalar & 1/46 & 14/46 & 32 & 0.850",
+      "interval_row": "FAST-LIO & Scalar & 2.2 [0.4, 11.3] & 30.4 [19.1, 44.8]",
+      "miss_row": "FAST scalar & 30 & 2 & 0 & 32"
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "primary_row": "FAST-LIO & Fixed Schur & 4/46 & 38/46 & 8 & 6.800",
+      "interval_row": "FAST-LIO & Fixed Schur & 8.7 [3.4, 20.3] & 82.6 [69.3, 90.9]",
+      "miss_row": "FAST fixed Schur & 5 & 2 & 1 & 8"
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "primary_row": "Point-LIO & Scalar & 4/47 & 27/32 & 5 & 3.400",
+      "interval_row": "Point-LIO & Scalar & 8.5 [3.4, 19.9] & 84.4 [68.2, 93.1]",
+      "miss_row": "Point scalar & 3 & 0 & 2 & 5"
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "primary_row": "Point-LIO & Fixed Schur & 16/47 & 25/32 & 7 & 3.000",
+      "interval_row": "Point-LIO & Fixed Schur & 34.0 [22.2, 48.3] & 78.1 [61.2, 89.0]",
+      "miss_row": "Point fixed Schur & 2 & 0 & 5 & 7"
+    }
+  ],
+  "citations": [
+    "adalio",
+    "alive",
+    "dcreg",
+    "fastlio",
+    "geode",
+    "ica",
+    "oce",
+    "pointlio",
+    "superloc",
+    "xicp"
+  ],
+  "source_sha256": {
+    "research_paper/paper/recovery_transfer_draft_20261023.tex": "d54fa63bf2740a09561c93fdd651b6b74ed01de4638c7f9720588d6e7af2a47b",
+    "research_paper/paper/audit_draft_evidence_20261023.py": "77277bf6a014e31f1698c337c5c645d70d7ca3bc0d8ddbbab0321279f468dd5c",
+    "research_paper/evidence/final_geometry_v2_results_20261012/fastlio_analysis.json": "0760db8485d1bb4e18aa227503c46591316dad21a88ce697543bd1e0152f182b",
+    "research_paper/evidence/final_geometry_v2_results_20261012/pointlio_analysis.json": "7e33f976236cc9b6d3545a8a65c29dbe88bfccbb3d467946a0f48bda58e5d475",
+    "research_paper/evidence/final_failure_analysis_20261012/event_diagnosis.csv": "2793e5c38969a16961880c4dd818b630e2b959f65a7289c15c13610263efee9f",
+    "research_paper/protocol/METRICS.md": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+    "research_paper/protocol/INDICATORS.md": "f9c72f12fae2c294b4e8372684df1dae3fa571c7d3905eb23b05d8b747409a4d",
+    "research_paper/protocol/POINTLIO_REPLICATION_AMENDMENT_20260929.md": "5c67330fe596e74a811b7e00202cef8d460a214bf4d6ff50e8ea10b86e9e4ed0",
+    "research_paper/protocol/IMPLEMENTATION_FREEZE_GEOMETRY_V2_20261012.md": "58434f9a9a41a1e310966ee7f327c3f0e9bc22240c39a2ee5c65bc5f48c487be",
+    "research_paper/reviews/R2_GEOMETRY_AMENDMENT_20261012.md": "a160dcc60698cd26afee534d1c7fa3f4a69530e6daedb631d0bbb39ff45be0ac",
+    "research_paper/reviews/FINAL_GEOMETRY_V2_RESULT_AUDIT_20261012.md": "5327909842ebd0daeb9cf737f86693d87acad131b1a11ac3b148eab13edb1817",
+    "research_paper/evidence/final_geometry_v2_results_20261012/RESULTS_REPORT.md": "b7498a2c10e62c2daa99c588d1715c204ff8678a3676cae08293329707d16fe8",
+    "research_paper/evidence/final_failure_analysis_20261012/FAILURE_ANALYSIS_REPORT.md": "4c7fa52af402fbc676a0b6092c8f2813273b192c3e27fc6c9265008c9732c758",
+    "research_paper/evidence/CLAIM_EVIDENCE_MAP_20261012.md": "1b2d3df8ead8c6727008ca2a7682d596e84d56838a355b7e0d17ebb987b57d06",
+    "research_paper/literature/CLOSEST_WORK_MATRIX_20261012.md": "014bfd4603d59a809f8e1e70994497201c4a8fb666c85413f950e4539d3beb2b"
+  }
+}

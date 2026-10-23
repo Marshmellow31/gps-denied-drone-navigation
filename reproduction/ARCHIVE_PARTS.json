@@ -1,0 +1,22 @@
+{
+  "original_file": "lidar_recovery_20261023.tar.gz",
+  "original_bytes": 104942586,
+  "original_sha256": "f8ad2bf06b6bfd52596e8d6206cc4b94eebc0fcf507dee88f84a4be59d52cc55",
+  "parts_in_order": [
+    {
+      "file": "lidar_recovery_20261023.tar.gz.part01",
+      "bytes": 50331648,
+      "sha256": "cdfc40a0ad61390077a5221ac26d4f22f3cccee292cc8080173c3424de8990d2"
+    },
+    {
+      "file": "lidar_recovery_20261023.tar.gz.part02",
+      "bytes": 50331648,
+      "sha256": "04571cd8e4ca8bfdd6eca87b6769b05c0e3839ec225a0474a282629df383ec50"
+    },
+    {
+      "file": "lidar_recovery_20261023.tar.gz.part03",
+      "bytes": 4279290,
+      "sha256": "c9a4d8d1d2d83b1cb2b171d525adafaa78207afebf1848526b81349ee52546ff"
+    }
+  ]
+}

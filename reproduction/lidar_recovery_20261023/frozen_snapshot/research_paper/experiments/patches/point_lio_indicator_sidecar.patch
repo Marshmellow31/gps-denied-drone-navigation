@@ -1,0 +1,933 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 13ca311..39c1353 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -3,17 +3,17 @@ project(point_lio)
+ 
+ SET(CMAKE_BUILD_TYPE "Debug")
+ 
+-ADD_COMPILE_OPTIONS(-std=c++14 )
+-ADD_COMPILE_OPTIONS(-std=c++14 )
+-set( CMAKE_CXX_FLAGS "-std=c++14 -O3" ) 
++ADD_COMPILE_OPTIONS(-std=c++17 )
++set( CMAKE_CXX_FLAGS "-std=c++17 -O3" )
+ 
+ add_definitions(-DROOT_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/\")
++add_definitions(-DGLOG_USE_GLOG_EXPORT)
+ 
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fexceptions" )
+-set(CMAKE_CXX_STANDARD 14)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -std=c++0x -std=c++14 -fexceptions")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread -fexceptions")
+ 
+ message("Current CPU archtecture: ${CMAKE_SYSTEM_PROCESSOR}")
+ if(CMAKE_SYSTEM_PROCESSOR MATCHES "(x86)|(X86)|(amd64)|(AMD64)" )
+@@ -87,9 +87,8 @@ catkin_package(
+ 
+ add_executable(pointlio_mapping src/laserMapping.cpp 
+                 src/li_initialization.cpp src/parameters.cpp src/preprocess.cpp src/Estimator.cpp 
+-                src/IMU_Processing.cpp)
++                src/IMU_Processing.cpp src/IndicatorSidecar.cpp)
+ target_link_libraries(pointlio_mapping ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${PYTHON_LIBRARIES})
+ target_include_directories(pointlio_mapping PRIVATE ${PYTHON_INCLUDE_DIRS})
+ 
+ 
+-
+diff --git a/include/common_lib.h b/include/common_lib.h
+index e0f218f..16b7a78 100755
+--- a/include/common_lib.h
++++ b/include/common_lib.h
+@@ -11,6 +11,7 @@
+ #include <eigen_conversions/eigen_msg.h>
+ #include <../include/IKFoM/IKFoM_toolkit/esekfom/esekfom.hpp>
+ #include <queue>
++#include <cstdint>
+ 
+ using namespace std;
+ using namespace Eigen;
+@@ -116,10 +117,12 @@ struct MeasureGroup     // Lidar data and imu dates for the curent process
+     {
+         lidar_beg_time = 0.0;
+         lidar_last_time = 0.0;
++        source_frame_id = 0;
+         this->lidar.reset(new PointCloudXYZI());
+     };
+     double lidar_beg_time;
+     double lidar_last_time;
++    std::uint32_t source_frame_id;
+     PointCloudXYZI::Ptr lidar;
+     deque<sensor_msgs::Imu::ConstPtr> imu;
+ };
+@@ -236,4 +239,4 @@ bool esti_plane(Matrix<T, 4, 1> &pca_result, const PointVector &point, const T &
+ // template<typename T>
+ // const bool time_list(PointType &x, PointType &y) {return (x.curvature < y.curvature);};
+ 
+-#endif
+\ No newline at end of file
++#endif
+diff --git a/src/Estimator.cpp b/src/Estimator.cpp
+index 7a31947..2f6d810 100755
+--- a/src/Estimator.cpp
++++ b/src/Estimator.cpp
+@@ -217,6 +217,7 @@ void h_model_input(state_input &s, Eigen::Matrix3d cov_p, Eigen::Matrix3d cov_R,
+ 
+ void h_model_output(state_output &s, Eigen::Matrix3d cov_p, Eigen::Matrix3d cov_R, esekfom::dyn_share_modified<double> &ekfom_data)
+ {
++	const Eigen::Matrix3d indicator_rotation_preupdate = s.rot.matrix();
+ 	bool match_in_map = false;
+ 	VF(4) pabcd;
+ 	pabcd.setZero();
+@@ -280,6 +281,12 @@ void h_model_output(state_output &s, Eigen::Matrix3d cov_p, Eigen::Matrix3d cov_
+ 	}
+ 	if (effect_num_k == 0) 
+ 	{
++		if (pointlio_indicator_sidecar.is_enabled())
++		{
++			Eigen::MatrixXd no_rows(0, 6);
++			pointlio_indicator_sidecar.capture_group(
++				indicator_rotation_preupdate, no_rows);
++		}
+ 		ekfom_data.valid = false;
+ 		return;
+ 	}
+@@ -318,6 +325,9 @@ void h_model_output(state_output &s, Eigen::Matrix3d cov_p, Eigen::Matrix3d cov_
+ 			m++;
+ 		}
+ 	}
++	if (pointlio_indicator_sidecar.is_enabled())
++		pointlio_indicator_sidecar.capture_group(
++			indicator_rotation_preupdate, ekfom_data.h_x);
+ 	effct_feat_num += effect_num_k;
+ }
+ 
+@@ -399,4 +409,4 @@ void pointBodyToWorld(PointType const * const pi, PointType * const po)
+     po->y = p_global(1);
+     po->z = p_global(2);
+     po->intensity = pi->intensity;
+-}
+\ No newline at end of file
++}
+diff --git a/src/Estimator.h b/src/Estimator.h
+index 8383fb6..55a476b 100755
+--- a/src/Estimator.h
++++ b/src/Estimator.h
+@@ -3,6 +3,7 @@
+ 
+ #include "common_lib.h"
+ #include "parameters.h"
++#include "IndicatorSidecar.h"
+ #include <pcl_conversions/pcl_conversions.h>
+ #include <pcl/point_cloud.h>
+ #include <pcl/point_types.h>
+@@ -58,4 +59,4 @@ void h_model_IMU_output(state_output &s, esekfom::dyn_share_modified<double> &ek
+ 
+ void pointBodyToWorld(PointType const * const pi, PointType * const po);
+ 
+-#endif
+\ No newline at end of file
++#endif
+diff --git a/src/IndicatorSidecar.cpp b/src/IndicatorSidecar.cpp
+new file mode 100644
+index 0000000..7fdc5de
+--- /dev/null
++++ b/src/IndicatorSidecar.cpp
+@@ -0,0 +1,419 @@
++#include "IndicatorSidecar.h"
++
++#include <cmath>
++#include <iomanip>
++
++PointLioIndicatorSidecar pointlio_indicator_sidecar;
++
++PointLioIndicatorSidecar::PointLioIndicatorSidecar()
++    : enabled_(false), initialized_(false), next_frame_id_(1), segment_id_(0),
++      reset_event_order_(0), active_frame_id_(0), frame_active_(false),
++      group_active_(false), io_failed_(false)
++{
++}
++
++bool PointLioIndicatorSidecar::initialize(const std::string &output_dir,
++                                          std::string &error)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    if (initialized_)
++    {
++        error = "indicator sidecar was initialized more than once";
++        return false;
++    }
++    initialized_ = true;
++    io_failed_ = false;
++    if (output_dir.empty())
++    {
++        enabled_ = false;
++        return true;
++    }
++
++    const std::string prefix = output_dir + "/";
++    frames_stream_.open(prefix + "frame_ledger.csv", std::ios::out | std::ios::trunc);
++    groups_stream_.open(prefix + "measurement_groups.csv", std::ios::out | std::ios::trunc);
++    jacobians_stream_.open(prefix + "jacobian_rows.csv", std::ios::out | std::ios::trunc);
++    resets_stream_.open(prefix + "reset_events.csv", std::ios::out | std::ios::trunc);
++    if (!frames_stream_ || !groups_stream_ || !jacobians_stream_ || !resets_stream_)
++    {
++        error = "could not open all Point-LIO sidecar outputs under " + output_dir;
++        frames_stream_.close();
++        groups_stream_.close();
++        jacobians_stream_.close();
++        resets_stream_.close();
++        return false;
++    }
++
++    frames_stream_ << "frame_id,input_header_stamp_ns,timestamp_ns,timestamp_source,"
++                      "segment_id,source_stage,frame_state,run_state,"
++                      "unavailable_reason,expected_group_count,"
++                      "processed_group_count,empty_group_count,accepted_count\n";
++    groups_stream_ << "frame_id,group_index,group_timestamp_ns,callback_count,"
++                      "accepted_count,rotation_snapshot_present";
++    jacobians_stream_ << "frame_id,group_index,group_timestamp_ns,row_index";
++    for (int row = 0; row < 3; ++row)
++        for (int col = 0; col < 3; ++col)
++        {
++            groups_stream_ << ",R" << row << col;
++            jacobians_stream_ << ",R" << row << col;
++        }
++    for (int col = 0; col < 6; ++col)
++        jacobians_stream_ << ",J_body" << col;
++    for (int col = 0; col < 6; ++col)
++        jacobians_stream_ << ",J_common" << col;
++    groups_stream_ << '\n';
++    jacobians_stream_ << '\n';
++    resets_stream_ << "event_order,affected_frame_id,sensor_timestamp_ns,"
++                      "reset_reason,old_segment_id,new_segment_id\n";
++    frames_stream_ << std::setprecision(17);
++    groups_stream_ << std::setprecision(17);
++    jacobians_stream_ << std::setprecision(17);
++    resets_stream_ << std::setprecision(17);
++    enabled_ = true;
++    if (!frames_stream_ || !groups_stream_ || !jacobians_stream_ || !resets_stream_)
++    {
++        io_failed_ = true;
++        error = "could not write Point-LIO sidecar headers under " + output_dir;
++        return false;
++    }
++    return true;
++}
++
++bool PointLioIndicatorSidecar::is_enabled() const
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    return enabled_;
++}
++
++bool PointLioIndicatorSidecar::persistence_ok() const
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    return !io_failed_;
++}
++
++std::uint32_t PointLioIndicatorSidecar::register_input_frame(
++    std::uint64_t header_stamp_ns)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    const std::uint32_t frame_id = next_frame_id_++;
++    FrameState frame;
++    frame.frame_id = frame_id;
++    frame.header_stamp_ns = header_stamp_ns;
++    frame.timestamp_ns = header_stamp_ns + 100000000ULL;
++    frame.segment_id = segment_id_;
++    frame.source_stage = "RAW_INPUT";
++    frames_[frame_id] = frame;
++    return frame_id;
++}
++
++void PointLioIndicatorSidecar::mark_unavailable(
++    std::uint32_t frame_id, std::uint64_t timestamp_ns,
++    const std::string &timestamp_source, const std::string &source_stage,
++    const std::string &reason, const std::string &run_state)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    std::map<std::uint32_t, FrameState>::iterator it = frames_.find(frame_id);
++    if (it == frames_.end()) return;
++    FrameState &frame = it->second;
++    if (frame.finalized) return;
++    frame.timestamp_ns = timestamp_ns;
++    frame.timestamp_source = timestamp_source;
++    frame.source_stage = source_stage;
++    frame.state = (run_state == "COMPLETE") ? "UNAVAILABLE" : "RUN_INCOMPLETE";
++    frame.unavailable_reason = reason;
++    frame.run_state = run_state;
++    frame.expected_group_count = 0;
++    frame.processed_group_count = 0;
++    frame.empty_group_count = 0;
++    frame.accepted_count = 0;
++    frame.finalized = true;
++}
++
++void PointLioIndicatorSidecar::begin_frame(std::uint32_t frame_id,
++                                           std::uint64_t lidar_end_ns)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    std::map<std::uint32_t, FrameState>::iterator it = frames_.find(frame_id);
++    if (it == frames_.end() || it->second.finalized) return;
++    active_frame_id_ = frame_id;
++    frame_active_ = true;
++    group_active_ = false;
++    FrameState &frame = it->second;
++    frame.timestamp_ns = lidar_end_ns;
++    frame.timestamp_source = "ACTUAL";
++    frame.source_stage = "PROCESSING";
++    frame.segment_id = segment_id_;
++}
++
++void PointLioIndicatorSidecar::set_frame_stage(
++    const std::string &source_stage, const std::string &unavailable_reason)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    if (!frame_active_) return;
++    FrameState &frame = frames_[active_frame_id_];
++    frame.source_stage = source_stage;
++    frame.unavailable_reason = unavailable_reason;
++}
++
++void PointLioIndicatorSidecar::set_expected_groups(
++    std::size_t expected_group_count)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    if (!frame_active_) return;
++    FrameState &frame = frames_[active_frame_id_];
++    frame.expected_group_count = expected_group_count;
++}
++
++void PointLioIndicatorSidecar::begin_group(
++    std::size_t group_index, std::uint64_t group_timestamp_ns)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    if (!frame_active_ || group_active_) return;
++    active_group_ = GroupState();
++    active_group_.group_index = group_index;
++    active_group_.timestamp_ns = group_timestamp_ns;
++    group_active_ = true;
++}
++
++void PointLioIndicatorSidecar::capture_group(
++    const Eigen::Matrix3d &rotation_world_body_preupdate,
++    const Eigen::MatrixXd &measurement_jacobian)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    if (!group_active_) return;
++    GroupState &group = active_group_;
++    group.callback_count += 1;
++    if (measurement_jacobian.cols() < 6)
++    {
++        return;
++    }
++
++    group.rotation = rotation_world_body_preupdate;
++    group.has_rotation = true;
++    for (Eigen::Index i = 0; i < measurement_jacobian.rows(); ++i)
++    {
++        Eigen::Matrix<double, 1, 6> body_row;
++        for (int col = 0; col < 6; ++col)
++            body_row(col) = measurement_jacobian(i, col);
++        Eigen::Matrix<double, 1, 6> common_row = body_row;
++        common_row.segment<3>(3) = body_row.segment<3>(3)
++            * rotation_world_body_preupdate.transpose();
++        group.body_rows.push_back(body_row);
++        group.common_rows.push_back(common_row);
++        group.accepted_count += 1;
++    }
++}
++
++bool PointLioIndicatorSidecar::finish_group()
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    if (!frame_active_ || !group_active_) return false;
++    FrameState &frame = frames_[active_frame_id_];
++    write_group(active_group_);
++    const bool completed = active_group_.callback_count == 1
++        && active_group_.has_rotation;
++    if (completed)
++    {
++        frame.processed_group_count += 1;
++        if (active_group_.accepted_count == 0)
++            frame.empty_group_count += 1;
++        frame.accepted_count += active_group_.accepted_count;
++    }
++    else
++    {
++        frame.run_state = "RUN_INCOMPLETE";
++        frame.unavailable_reason = "MEASUREMENT_CALLBACK_COUNT_MISMATCH";
++    }
++    active_group_ = GroupState();
++    group_active_ = false;
++    return completed;
++}
++
++void PointLioIndicatorSidecar::finish_frame()
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    if (!frame_active_) return;
++    FrameState &frame = frames_[active_frame_id_];
++    if (frame.finalized)
++    {
++        frame_active_ = false;
++        group_active_ = false;
++        return;
++    }
++
++    if (frame.expected_group_count != frame.processed_group_count)
++    {
++        frame.state = "RUN_INCOMPLETE";
++        frame.run_state = "RUN_INCOMPLETE";
++        frame.unavailable_reason = "INCOMPLETE_GROUP_PROCESSING";
++    }
++    else if (frame.run_state != "COMPLETE")
++    {
++        frame.state = "RUN_INCOMPLETE";
++    }
++    else if (!frame.unavailable_reason.empty())
++    {
++        frame.state = "UNAVAILABLE";
++    }
++    else if (frame.source_stage != "MEASUREMENT")
++    {
++        frame.state = "UNAVAILABLE";
++        frame.unavailable_reason = "FRAME_STAGE_UNAVAILABLE";
++    }
++    else if (frame.accepted_count < 6)
++    {
++        frame.state = "UNAVAILABLE";
++        frame.unavailable_reason = "INSUFFICIENT_CORRESPONDENCES";
++    }
++    else
++    {
++        frame.state = "READY";
++    }
++    frame.finalized = true;
++    write_frame(frame);
++    frame_active_ = false;
++    group_active_ = false;
++}
++
++void PointLioIndicatorSidecar::record_reset(
++    std::uint32_t affected_frame_id, std::uint64_t sensor_timestamp_ns,
++    const std::string &reason)
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    const std::uint32_t old_segment = segment_id_;
++    const std::uint32_t new_segment = old_segment + 1;
++    ++reset_event_order_;
++    if (enabled_)
++    {
++        resets_stream_ << reset_event_order_ << ',' << affected_frame_id << ','
++                       << sensor_timestamp_ns << ',' << reason << ','
++                       << old_segment << ',' << new_segment << '\n';
++        resets_stream_.flush();
++        if (!resets_stream_) io_failed_ = true;
++    }
++    segment_after_reset_[affected_frame_id] = new_segment;
++    std::map<std::uint32_t, FrameState>::iterator it = frames_.find(affected_frame_id);
++    if (it != frames_.end() && !it->second.finalized)
++    {
++        FrameState &frame = it->second;
++        frame.segment_id = old_segment;
++        frame.timestamp_source = "ACTUAL";
++        if (frame.timestamp_ns == 0)
++            frame.timestamp_ns = sensor_timestamp_ns;
++        frame.source_stage = "RESET";
++        frame.state = "UNAVAILABLE";
++        frame.unavailable_reason = "RESET_IN_FRAME";
++        frame.finalized = true;
++        write_frame(frame);
++    }
++    segment_id_ = new_segment;
++    if (frame_active_ && active_frame_id_ == affected_frame_id)
++    {
++        frame_active_ = false;
++        group_active_ = false;
++    }
++}
++
++std::uint32_t PointLioIndicatorSidecar::current_segment_id() const
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    return segment_id_;
++}
++
++bool PointLioIndicatorSidecar::flush_pending()
++{
++    std::lock_guard<std::mutex> lock(mutex_);
++    for (std::map<std::uint32_t, FrameState>::iterator it = frames_.begin();
++         it != frames_.end(); ++it)
++    {
++        FrameState &frame = it->second;
++        if (!frame.finalized)
++        {
++            frame.state = "RUN_INCOMPLETE";
++            frame.run_state = "RUN_INCOMPLETE";
++            frame.unavailable_reason = "MISSING_FRAME_PROCESSING";
++            frame.source_stage = "SHUTDOWN_PENDING";
++            frame.finalized = true;
++        }
++        if (!frame.written)
++        {
++            frame.segment_id = 0;
++            for (std::map<std::uint32_t, std::uint32_t>::const_iterator reset =
++                     segment_after_reset_.begin();
++                 reset != segment_after_reset_.end(); ++reset)
++            {
++                if (reset->first < frame.frame_id)
++                    frame.segment_id = reset->second;
++            }
++            write_frame(frame);
++        }
++    }
++    if (enabled_)
++    {
++        frames_stream_.flush();
++        groups_stream_.flush();
++        jacobians_stream_.flush();
++        resets_stream_.flush();
++        if (!frames_stream_ || !groups_stream_ || !jacobians_stream_ || !resets_stream_)
++            io_failed_ = true;
++    }
++    frame_active_ = false;
++    group_active_ = false;
++    return !io_failed_;
++}
++
++void PointLioIndicatorSidecar::write_frame(FrameState &frame)
++{
++    if (!enabled_)
++    {
++        frame.written = true;
++        return;
++    }
++    frames_stream_ << frame.frame_id << ',' << frame.header_stamp_ns << ','
++                   << frame.timestamp_ns << ',' << frame.timestamp_source << ','
++                   << frame.segment_id << ',' << frame.source_stage << ','
++                   << frame.state << ',' << frame.run_state << ','
++                   << frame.unavailable_reason << ','
++                   << frame.expected_group_count << ','
++                   << frame.processed_group_count << ','
++                   << frame.empty_group_count << ',' << frame.accepted_count
++                   << '\n';
++    if (frames_stream_)
++        frame.written = true;
++    else
++        io_failed_ = true;
++}
++
++void PointLioIndicatorSidecar::write_group(const GroupState &group)
++{
++    if (!enabled_) return;
++    groups_stream_ << active_frame_id_ << ',' << group.group_index << ','
++                   << group.timestamp_ns << ',' << group.callback_count << ','
++                   << group.accepted_count << ','
++                   << (group.has_rotation ? "true" : "false");
++    for (int row = 0; row < 3; ++row)
++        for (int col = 0; col < 3; ++col)
++            groups_stream_ << ',' << group.rotation(row, col);
++    groups_stream_ << '\n';
++
++    for (std::size_t i = 0; i < group.common_rows.size(); ++i)
++    {
++        jacobians_stream_ << active_frame_id_ << ',' << group.group_index << ','
++                          << group.timestamp_ns << ',' << i;
++        for (int row = 0; row < 3; ++row)
++            for (int col = 0; col < 3; ++col)
++                jacobians_stream_ << ',' << group.rotation(row, col);
++        for (int col = 0; col < 6; ++col)
++            jacobians_stream_ << ',' << group.body_rows[i](col);
++        for (int col = 0; col < 6; ++col)
++            jacobians_stream_ << ',' << group.common_rows[i](col);
++        jacobians_stream_ << '\n';
++    }
++    if (!groups_stream_ || !jacobians_stream_) io_failed_ = true;
++}
++
++std::uint64_t PointLioIndicatorSidecar::seconds_to_ns(double seconds)
++{
++    if (!std::isfinite(seconds) || seconds < 0.0) return 0;
++    return static_cast<std::uint64_t>(std::llround(seconds * 1e9));
++}
+diff --git a/src/IndicatorSidecar.h b/src/IndicatorSidecar.h
+new file mode 100644
+index 0000000..7bdbf0f
+--- /dev/null
++++ b/src/IndicatorSidecar.h
+@@ -0,0 +1,100 @@
++#ifndef POINTLIO_INDICATOR_SIDECAR_H
++#define POINTLIO_INDICATOR_SIDECAR_H
++
++#include <Eigen/Dense>
++
++#include <cstdint>
++#include <fstream>
++#include <map>
++#include <mutex>
++#include <string>
++#include <vector>
++
++class PointLioIndicatorSidecar
++{
++public:
++    PointLioIndicatorSidecar();
++
++    // Empty output_dir disables file output but still assigns stable frame IDs.
++    bool initialize(const std::string &output_dir, std::string &error);
++    bool is_enabled() const;
++    std::uint32_t register_input_frame(std::uint64_t header_stamp_ns);
++    void mark_unavailable(std::uint32_t frame_id, std::uint64_t timestamp_ns,
++                          const std::string &timestamp_source,
++                          const std::string &source_stage,
++                          const std::string &reason,
++                          const std::string &run_state = "COMPLETE");
++    void begin_frame(std::uint32_t frame_id, std::uint64_t lidar_end_ns);
++    void set_frame_stage(const std::string &source_stage,
++                         const std::string &unavailable_reason = "");
++    void set_expected_groups(std::size_t expected_group_count);
++    void begin_group(std::size_t group_index, std::uint64_t group_timestamp_ns);
++    void capture_group(const Eigen::Matrix3d &rotation_world_body_preupdate,
++                       const Eigen::MatrixXd &measurement_jacobian);
++    bool finish_group();
++    void finish_frame();
++    void record_reset(std::uint32_t affected_frame_id,
++                      std::uint64_t sensor_timestamp_ns,
++                      const std::string &reason);
++    std::uint32_t current_segment_id() const;
++    bool flush_pending();
++    bool persistence_ok() const;
++
++private:
++    struct FrameState
++    {
++        std::uint32_t frame_id = 0;
++        std::uint64_t header_stamp_ns = 0;
++        std::uint64_t timestamp_ns = 0;
++        std::uint32_t segment_id = 0;
++        std::string timestamp_source = "NOMINAL";
++        std::string source_stage = "CALLBACK";
++        std::string state = "PENDING";
++        std::string unavailable_reason;
++        std::string run_state = "COMPLETE";
++        std::size_t expected_group_count = 0;
++        std::size_t processed_group_count = 0;
++        std::size_t empty_group_count = 0;
++        std::size_t accepted_count = 0;
++        bool finalized = false;
++        bool written = false;
++    };
++
++    struct GroupState
++    {
++        std::size_t group_index = 0;
++        std::uint64_t timestamp_ns = 0;
++        std::size_t callback_count = 0;
++        std::size_t accepted_count = 0;
++        bool has_rotation = false;
++        Eigen::Matrix3d rotation = Eigen::Matrix3d::Identity();
++        std::vector<Eigen::Matrix<double, 1, 6> > body_rows;
++        std::vector<Eigen::Matrix<double, 1, 6> > common_rows;
++    };
++
++    void write_frame(FrameState &frame);
++    void write_group(const GroupState &group);
++    static std::uint64_t seconds_to_ns(double seconds);
++
++    mutable std::mutex mutex_;
++    bool enabled_;
++    bool initialized_;
++    std::uint32_t next_frame_id_;
++    std::uint32_t segment_id_;
++    std::uint64_t reset_event_order_;
++    std::uint32_t active_frame_id_;
++    bool frame_active_;
++    bool group_active_;
++    bool io_failed_;
++    std::map<std::uint32_t, FrameState> frames_;
++    std::map<std::uint32_t, std::uint32_t> segment_after_reset_;
++    GroupState active_group_;
++    std::ofstream frames_stream_;
++    std::ofstream groups_stream_;
++    std::ofstream jacobians_stream_;
++    std::ofstream resets_stream_;
++};
++
++extern PointLioIndicatorSidecar pointlio_indicator_sidecar;
++
++#endif  // POINTLIO_INDICATOR_SIDECAR_H
+diff --git a/src/laserMapping.cpp b/src/laserMapping.cpp
+index 2c360de..ca3813c 100755
+--- a/src/laserMapping.cpp
++++ b/src/laserMapping.cpp
+@@ -9,7 +9,9 @@
+ #include <pcl/io/pcd_io.h>
+ #include <tf/transform_datatypes.h>
+ #include <tf/transform_broadcaster.h>
++#include <csignal>
+ #include "li_initialization.h"
++#include "IndicatorSidecar.h"
+ #include <malloc.h>
+ // #include <cv_bridge/cv_bridge.h>
+ // #include "matplotlibcpp.h"
+@@ -30,7 +32,9 @@ bool init_map = false, flg_first_scan = true;
+ // Time Log Variables
+ double match_time = 0, solve_time = 0, propag_time = 0, update_time = 0;
+ 
+-bool  flg_reset = false, flg_exit = false;
++bool flg_reset = false;
++volatile std::sig_atomic_t flg_exit = 0;
++std::uint32_t active_source_frame_id = 0;
+ 
+ //surf feature in map
+ PointCloudXYZI::Ptr feats_undistort(new PointCloudXYZI());
+@@ -48,9 +52,8 @@ geometry_msgs::PoseStamped msg_body_pose;
+ 
+ void SigHandle(int sig)
+ {
+-    flg_exit = true;
+-    ROS_WARN("catch sig %d", sig);
+-    sig_buffer.notify_all();
++    (void)sig;
++    flg_exit = 1;
+ }
+ 
+ inline void dump_lio_state_to_log(FILE *fp)  
+@@ -270,6 +273,7 @@ void set_posestamp(T & out)
+ 
+ void publish_odometry(const ros::Publisher & pubOdomAftMapped)
+ {
++    odomAftMapped.header.seq = active_source_frame_id;
+     odomAftMapped.header.frame_id = "camera_init";
+     odomAftMapped.child_frame_id = "body";
+     if (publish_odometry_without_downsample)
+@@ -320,6 +324,23 @@ int main(int argc, char** argv)
+     ros::AsyncSpinner spinner(0);
+     spinner.start();
+     readParameters(nh);
++    std::string indicator_sidecar_dir;
++    nh.param<std::string>("indicator_sidecar_dir", indicator_sidecar_dir, "");
++    std::string indicator_sidecar_error;
++    if (!pointlio_indicator_sidecar.initialize(indicator_sidecar_dir,
++                                               indicator_sidecar_error))
++    {
++        ROS_FATAL("Point-LIO indicator sidecar setup failed: %s",
++                  indicator_sidecar_error.c_str());
++        return 1;
++    }
++    if (pointlio_indicator_sidecar.is_enabled()
++        && (cut_frame_init || con_frame || use_imu_as_input || extrinsic_est_en))
++    {
++        ROS_FATAL("Point-LIO indicator sidecar supports only the frozen one-cloud, "
++                  "point-time, fixed-extrinsic output-state profile");
++        return 1;
++    }
+     cout<<"lidar_type: "<<lidar_type<<endl;
+     ivox_ = std::make_shared<IVoxType>(ivox_options_);
+     
+@@ -384,15 +405,22 @@ int main(int argc, char** argv)
+             // ("/cloud_effected", 1000);
+     ros::Publisher pubLaserCloudMap = nh.advertise<sensor_msgs::PointCloud2>
+             ("/Laser_map", 1000);
+-    ros::Publisher pubOdomAftMapped = nh.advertise<nav_msgs::Odometry> 
+-            ("/aft_mapped_to_init", 1000);
++    // roscpp replaces Header.seq with its own publication counter when
++    // AdvertiseOptions::has_header is true. Preserve our raw input identity.
++    ros::AdvertiseOptions odom_options;
++    odom_options.init<nav_msgs::Odometry>("/aft_mapped_to_init", 1000);
++    odom_options.has_header = false;
++    ros::Publisher pubOdomAftMapped = nh.advertise(odom_options);
+     ros::Publisher pubPath          = nh.advertise<nav_msgs::Path> 
+             ("/path", 1000);
+     // ros::Publisher plane_pub = nh.advertise<visualization_msgs::Marker>
+             // ("/planner_normal", 1000);
+ //------------------------------------------------------------------------------------------------------
+     signal(SIGINT, SigHandle);
+-    ros::Rate loop_rate(500);
++    signal(SIGTERM, SigHandle);
++    // Use wall time so SIGINT/SIGTERM can leave the loop even after rosbag
++    // stops publishing /clock. Estimator timestamps still come only from data.
++    ros::WallRate loop_rate(500);
+     bool status = ros::ok();
+     while (status)
+     {
+@@ -400,9 +428,17 @@ int main(int argc, char** argv)
+         ros::spinOnce();
+         if(sync_packages(Measures)) 
+         {
++            active_source_frame_id = Measures.source_frame_id;
++            pointlio_indicator_sidecar.begin_frame(
++                active_source_frame_id,
++                ros::Time().fromSec(lidar_end_time).toNSec());
+             if (flg_reset)
+             {
+                 ROS_WARN("reset when rosbag play back");
++                pointlio_indicator_sidecar.record_reset(
++                    active_source_frame_id,
++                    ros::Time().fromSec(lidar_end_time).toNSec(),
++                    "ESTIMATOR_RESET");
+                 p_imu->Reset();
+                 feats_undistort.reset(new PointCloudXYZI());
+                 if (use_imu_as_input)
+@@ -518,6 +554,10 @@ int main(int argc, char** argv)
+                     kf_output.x_.acc = - rot_init.transpose() * kf_output.x_.gravity;
+                 }
+                 else{
++                pointlio_indicator_sidecar.set_frame_stage(
++                    "STARTUP", "STARTUP_INITIALIZATION");
++                pointlio_indicator_sidecar.set_expected_groups(0);
++                pointlio_indicator_sidecar.finish_frame();
+                 continue;}
+             }
+             /*** initialize the map ***/
+@@ -544,6 +584,10 @@ int main(int argc, char** argv)
+                     init_feats_world.reset(new PointCloudXYZI());
+                     init_map = true;
+                 }
++                pointlio_indicator_sidecar.set_frame_stage(
++                    "MAP_INITIALIZATION", "MAP_INITIALIZATION");
++                pointlio_indicator_sidecar.set_expected_groups(0);
++                pointlio_indicator_sidecar.finish_frame();
+                 continue;
+             }
+ 
+@@ -589,6 +633,17 @@ int main(int argc, char** argv)
+             {     
+                 bool imu_upda_cov = false;
+                 effct_feat_num = 0;
++                if (feats_down_size < 1)
++                {
++                    pointlio_indicator_sidecar.set_frame_stage(
++                        "EMPTY_FILTERED", "EMPTY_OR_FILTERED_INPUT");
++                    pointlio_indicator_sidecar.set_expected_groups(0);
++                }
++                else
++                {
++                    pointlio_indicator_sidecar.set_frame_stage("MEASUREMENT");
++                    pointlio_indicator_sidecar.set_expected_groups(time_seq.size());
++                }
+                 /**** point by point update ****/
+                 if (time_seq.size() > 0)
+                 {
+@@ -700,11 +755,16 @@ int main(int argc, char** argv)
+                         idx += time_seq[k];
+                         continue;
+                     }
++                    pointlio_indicator_sidecar.begin_group(
++                        static_cast<std::size_t>(k),
++                        ros::Time().fromSec(time_current).toNSec());
+                     if (!kf_output.update_iterated_dyn_share_modified()) 
+                     {
++                        pointlio_indicator_sidecar.finish_group();
+                         idx = idx+time_seq[k];
+                         continue;
+                     }
++                    pointlio_indicator_sidecar.finish_group();
+                     solve_start = omp_get_wtime();
+                         
+                     if (publish_odometry_without_downsample)
+@@ -1016,6 +1076,7 @@ int main(int argc, char** argv)
+             }
+ 
+             t5 = omp_get_wtime();
++            pointlio_indicator_sidecar.finish_frame();
+             /******* Publish points *******/
+             if (path_en)                         publish_path(pubPath);
+             if (scan_pub_en || pcd_save_en)      publish_frame_world(pubLaserCloudFullRes);
+@@ -1057,6 +1118,10 @@ int main(int argc, char** argv)
+         status = ros::ok();
+         loop_rate.sleep();
+     }
++    const bool indicator_persistence_ok =
++        pointlio_indicator_sidecar.flush_pending();
++    if (!indicator_persistence_ok)
++        ROS_ERROR("Point-LIO indicator sidecar write/flush failed; run is incomplete");
+     //--------------------------save map-----------------------------------
+     /* 1. make sure you have enough memories
+     /* 2. noted that pcd save will influence the real-time performences **/
+@@ -1069,5 +1134,5 @@ int main(int argc, char** argv)
+     }
+     fout_out.close();
+     fout_imu_pbp.close();
+-    return 0;
++    return indicator_persistence_ok ? 0 : 1;
+ }
+diff --git a/src/li_initialization.cpp b/src/li_initialization.cpp
+index 74a417e..2fb7d04 100755
+--- a/src/li_initialization.cpp
++++ b/src/li_initialization.cpp
+@@ -1,4 +1,5 @@
+ #include "li_initialization.h"
++#include "IndicatorSidecar.h"
+ bool data_accum_finished = false, data_accum_start = false, online_calib_finish = false, refine_print = false;
+ int frame_num_init = 0;
+ double time_lag_IMU_wtr_lidar = 0.0, move_start_time = 0.0, online_calib_starts_time = 0.0; //, mean_acc_norm = 9.81;
+@@ -24,12 +25,18 @@ std::deque<sensor_msgs::Imu::Ptr> imu_deque;
+ 
+ void standard_pcl_cbk(const sensor_msgs::PointCloud2::ConstPtr &msg) 
+ {
++    const std::uint64_t header_stamp_ns = msg->header.stamp.toNSec();
++    const std::uint32_t source_frame_id =
++        pointlio_indicator_sidecar.register_input_frame(header_stamp_ns);
+     // mtx_buffer.lock();
+     scan_count ++;
+     double preprocess_start_time = omp_get_wtime();
+     if (msg->header.stamp.toSec() < last_timestamp_lidar)
+     {
+         ROS_ERROR("lidar loop back, clear buffer");
++        pointlio_indicator_sidecar.mark_unavailable(
++            source_frame_id, header_stamp_ns + 100000000ULL, "NOMINAL",
++            "CALLBACK", "INPUT_TIMESTAMP_REGRESSION", "RUN_INCOMPLETE");
+         // lidar_buffer.shrink_to_fit();
+ 
+         // mtx_buffer.unlock();
+@@ -91,9 +98,17 @@ void standard_pcl_cbk(const sensor_msgs::PointCloud2::ConstPtr &msg)
+     { 
+         if (ptr->points.size() > 0)
+         {
++            ptr->header.seq = source_frame_id;
++            ptr->header.stamp = header_stamp_ns / 1000ULL;
+             lidar_buffer.emplace_back(ptr);
+             time_buffer.emplace_back(msg->header.stamp.toSec());
+         }
++        else
++        {
++            pointlio_indicator_sidecar.mark_unavailable(
++                source_frame_id, header_stamp_ns + 100000000ULL, "NOMINAL",
++                "CALLBACK", "EMPTY_OR_FILTERED_INPUT");
++        }
+     }
+     }
+     s_plot11[scan_count] = omp_get_wtime() - preprocess_start_time;
+@@ -219,6 +234,7 @@ bool sync_packages(MeasureGroup &meas)
+             if (!lidar_pushed)
+             {
+                 meas.lidar = lidar_buffer.front();
++                meas.source_frame_id = meas.lidar->header.seq;
+                 meas.lidar_beg_time = time_buffer.front();
+                 lose_lid = false;
+                 if(meas.lidar->points.size() < 1) 
+@@ -267,6 +283,7 @@ bool sync_packages(MeasureGroup &meas)
+     {
+         lose_lid = false;
+         meas.lidar = lidar_buffer.front();
++        meas.source_frame_id = meas.lidar->header.seq;
+         meas.lidar_beg_time = time_buffer.front();
+         if(meas.lidar->points.size() < 1) 
+         {
+diff --git a/src/preprocess.h b/src/preprocess.h
+index 1c031fd..4257fac 100755
+--- a/src/preprocess.h
++++ b/src/preprocess.h
+@@ -2,6 +2,7 @@
+ #include <pcl_conversions/pcl_conversions.h>
+ #include <sensor_msgs/PointCloud2.h>
+ #include <livox_ros_driver/CustomMsg.h>
++#include <deque>
+ 
+ using namespace std;
+ 

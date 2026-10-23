@@ -1,0 +1,6 @@
+{
+  "source_sha256": "f088c5cbe539da1624b638148662362ecab6a74a1de861094664df097a99b886",
+  "plotter_sha256": "1da8e008f4a222e391af42cb5348d792738088325be5a65afa514531015e920f",
+  "png_sha256": "7890a64743970c8936dbc7503256824cbae24b36ee2c92c2479e614239ea02ce",
+  "evidence_scope": "geometry-only final selection; no estimator outcome"
+}

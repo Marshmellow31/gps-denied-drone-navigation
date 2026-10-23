@@ -1,0 +1,17 @@
+{
+  "figures": {
+    "t14_repeat_motion_errors.pdf": "6889b3988cf47b43db253461f5ee9c8d00d014bb73d3494c19ad03e97e848762",
+    "t14_repeat_motion_errors.png": "11d279a77c2d7d20f2f326ae3c9d9608c567727dc1a39117da0dc6acc298940e",
+    "t14_repeat_motion_errors.svg": "c2277fdf105217cc84d0117f59d3dcc236ca3b55e64dd62a74edacc051aa3a45",
+    "t14_repeat_warning_disagreement.pdf": "2802c97cc3512d8431db2ca1343fbb9df45b0e2ca624eefce2d1de7b997f8aa1",
+    "t14_repeat_warning_disagreement.png": "823d382ca2d3586e8522b5da1eaf5f4021b105279157fb05eda97692a6bda4cc",
+    "t14_repeat_warning_disagreement.svg": "769df8e4d19746972f6f99271295be9867338c05f334a0d1c433641e49ff746f"
+  },
+  "matplotlib": "3.11.2",
+  "note": "Rendering only; scientific values come from the frozen-environment audit JSON.",
+  "numpy": "2.5.3",
+  "plot_script_sha256": "66edb0ef590d0d439ef33c904e20d729ddf527c2bf56fd4c0f58f8ac9acbdcc3",
+  "python": "3.12.14",
+  "role": "development_only",
+  "source_audit_sha256": "aafcaf10ff487be2085573a6d6eea386e5825c160b2f92c311ee5b8d3b47808c"
+}

@@ -1,0 +1,155 @@
+{
+  "schema": "pointlio-final-replication-freeze-v1",
+  "freeze_status": "PROPOSED_FOR_INDEPENDENT_REVIEW",
+  "created_utc": "2026-10-10T07:10:29.251534+00:00",
+  "purpose": "Lock Point-LIO analysis and operating point for replication on the same final geometry pairs after overall R3 PASS.",
+  "heldout_inputs_opened": false,
+  "heldout_generation_or_replay_authorized": false,
+  "preconditions": {
+    "before_final_geometry_generation_or_screening": {
+      "overall_primary_r3_review_must_pass": true,
+      "overall_implementation_freeze_must_be_accepted": true,
+      "pointlio_development_freeze_must_be_independently_accepted": true,
+      "pointlio_threshold_must_not_be_refit_after_final_geometry_or_results": true
+    },
+    "before_any_final_native_replay": {
+      "frozen_geometry_only_screen_must_pass": true,
+      "exact_selected_48_geometry_pairs_and_input_hashes_must_be_bound": true,
+      "run_pointlio_on_the_same_48_pairs_used_for_primary_fastlio": true,
+      "preserve_all_attempts_without_replacing_failed_or_unfavorable_pairs": true,
+      "do_not_reestimate_primary_sample_size_from_pointlio": true
+    },
+    "this_freeze_alone_does_not_authorize_heldout_access": true
+  },
+  "protocol": {
+    "r2_freeze_sha256": "9b4aff72af866e4d93dafed53f600815097bfebbfcf325f064bf70713736de39",
+    "pointlio_amendment_sha256": "5c67330fe596e74a811b7e00202cef8d460a214bf4d6ff50e8ea10b86e9e4ed0",
+    "metrics_sha256": "1d808cd1af24bb4390b70706f6a415878fe52fcad074a371223797bc56acf58b",
+    "split_sha256": "d9d5496a55a2bb55cbf4a294be87df41ebb3b57ff24bdfd0e6fc0fcc8d682172",
+    "point_score": "Point-LIO frame-pooled measurement-geometry lambda_min(G_3m), from the accepted D050 common-basis H_frame and N_frame; retain G_1m and G_5m as sensitivity outputs.",
+    "threshold_population": "All unique finite valid raw G_3m diagnostic scores from the 32 Point-LIO corridor development events, plus one explicit NO_ALARMS candidate. Controls, feasibility runs and repeats do not fit the cutoff.",
+    "candidate_outcome": "Evaluate candidate thresholds using frozen 10 Hz causal association/state outcomes. Healthy means score >= threshold; maximize post-onset recovery sensitivity subject to conditional event false-healthy rate <= 0.10; ties choose the higher numeric threshold; NO_ALARMS is final zero-sensitivity candidate.",
+    "decision_rule": "Evaluate at each 0.1 s tick using the latest diagnostic record at or before the tick, age <= 0.2 s, and the same estimator segment. In INACTIVE, require three distinct source records on three consecutive ticks to confirm healthy. An unhealthy, unavailable, repeated-source or cross-segment tick cannot count as a new INACTIVE sample and clears a pending INACTIVE candidate. Once CONFIRMED_HEALTHY, remain confirmed while ticks stay healthy and in the same segment; any unhealthy, unavailable or cross-segment tick returns to INACTIVE. Apply the frozen first-recovery/relapse event timing and denominators.",
+    "truth_rule": "Use Point-LIO own segmented poses and the frozen analytic reference/recovery labels; a missing qualifying post-onset alarm is a miss. Keep truth eligibility, relapses and event denominators explicit.",
+    "fixed_comparator": "POINTLIO_DCREG_SCHUR_MASK with frozen strict kappa > 10; no fitted cutoff."
+  },
+  "locked_development_selection": {
+    "status": "SELECTED_DEVELOPMENT_THRESHOLD",
+    "reason": "MAXIMUM_SENSITIVITY_WITH_FALSE_HEALTHY_RATE_AT_MOST_10_PERCENT; TIES_USE_HIGHER_THRESHOLD",
+    "threshold": 123.80876977779258,
+    "false_healthy_events": 3,
+    "false_healthy_denominator": 32,
+    "conditional_false_healthy_rate": 0.09375,
+    "recovered_events_detected": 21,
+    "truth_recovered_denominator": 27,
+    "recovery_sensitivity": 0.7777777777777778,
+    "feasible": true,
+    "candidate_count_including_no_alarms": 19105,
+    "unique_finite_g3_scores": 19104
+  },
+  "development_outcomes": {
+    "corridor_geometry_events": 32,
+    "controls": 32,
+    "truth_eligible_corridors": 32,
+    "truth_recovered": 27,
+    "no_recovery_within_horizon": 5,
+    "relapse_events": 1,
+    "scalar_false_healthy_events": 3,
+    "scalar_false_healthy_denominator": 32,
+    "scalar_recovery_detections": 21,
+    "scalar_truth_recovered_denominator": 27,
+    "interpretation": "Development-only fitting outcomes; not final performance or a cross-backend superiority result."
+  },
+  "cohort": {
+    "seed_range": [
+      14,
+      45
+    ],
+    "formal_slots": 64,
+    "status_counts": {
+      "CACHED": 2,
+      "COMPLETED": 62
+    },
+    "all_verification_statuses_pass": true,
+    "all_evaluation_manifests_bound": true,
+    "failed_or_incomplete_formal_attempts": 0,
+    "initialization_unavailable_frames": 192,
+    "valid_indicator_and_pose_frames": 38208,
+    "resets": 0,
+    "schedule_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/POINTLIO_DEVELOPMENT_20261009/development_schedule.json",
+    "schedule_sha256": "cae6c6039463b2aa76588596860842c586d57668c0b2e035a7866e23003c414d",
+    "heldout_inputs_opened": false
+  },
+  "native_implementation": {
+    "native_binary_sha256": "80516da9cafba98262d56c17cc26ec4da76e214049d3af7776248b4c3a342b17",
+    "configuration_sha256": "d23bd8799c3834ac0acc1d23476a0a0c0cd72b09f7b7c542b5bfbe9813a4c98b",
+    "native_source": {
+      "commit": "4b86a469eb5572e70ed575af25b5f15dd06e8e3c",
+      "dirty_patch_sha256": "1270c63b553f660ade9cd787c0e377d1486ac4f49018650f400f2cf52eb3445c",
+      "files": {
+        "CMakeLists.txt": "abb357af835778404a3249148c9c6c0e36a06bd276593b3b4e2aeea2526b9e74",
+        "include/common_lib.h": "2c8a0b309e900372da23726450dcd600de94a9e5b22ccafeb0f2d094236f3491",
+        "src/Estimator.cpp": "cce9021ff196cd7334eb3fa27b473bb7047e40dce088cbfd37c916b8e9a580a2",
+        "src/Estimator.h": "5d3ce5eff6275d1d5b31520f33def7ea31d0523a4f1b8a4860222b6134fff21b",
+        "src/IndicatorSidecar.cpp": "db5caeae86be2722b4723bb644183e167c8c867908e97678872b42ca9d600b6d",
+        "src/IndicatorSidecar.h": "ae114f1901958117097fb1014ccf8472ce433c83cada0216ba2f13f5dfcb200c",
+        "src/laserMapping.cpp": "c15dc4d8a4d8b7e708621e28ba90b99b87cf27e7c84057addf0e05aede55b05f",
+        "src/li_initialization.cpp": "a28a1fb262a9343731e318d1d91eebd9ddd536ec55104caa15f6143bd58fef18",
+        "src/preprocess.h": "a03ef7c2d62c74f7ac2d22723e3be2a04e62c234c3c6bba4c5decbc0d71489a1"
+      }
+    },
+    "runtime": {
+      "numpy": "2.5.3",
+      "python": "3.12.14",
+      "python_binary_sha256": "9a6ebf581e1a851f074419c117b371a070009cea1cc1a43cde425f706eeb2b01",
+      "python_executable": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python3.12"
+    },
+    "build_overlay": {
+      "glog_metadata": {
+        "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_glog_20260929/conda-meta/glog-0.7.1-hb7133d2_1.json",
+        "sha256": "f6493cebf3d627baf4a98fdcaa5a2c741144dd77a19a064fd500e50f5afa72ea"
+      },
+      "glog_prefix": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_glog_20260929",
+      "runtime_library_hashes": {
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_glog_20260929/lib/libgflags.so.2.3.0": "b4ff477de88e9f3213dc5f3b1bc3ed8c02b9d23a7b43bcaef785004d71eb4ec1",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_glog_20260929/lib/libgflags_nothreads.so.2.3.0": "59cd3414ce016a376903d6d0d92db7325129e9dbf0f311482d555d2ab071bac3",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_glog_20260929/lib/libglog.so.0.7.1": "4af63e30a164377c17b4c5afb12247e00742cdc9192998aceadafebe39cbb659"
+      }
+    },
+    "accepted_native_identity_file_sha256": "13c9aa68e4c55cd3336839548fc48b9be140863908ab1debdc4e5c5236321583",
+    "producer_snapshot_inventory_sha256": "b9257d38b7ee63839219cb0a8d981601bde5fc5b10623e4682c0a173944f6ee6",
+    "note": "Native runs remain bound to their recorded historical producer snapshot. The later offline candidate-rule repair does not alter native outputs or producer identities."
+  },
+  "analysis": {
+    "analysis_manifest_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/POINTLIO_DEVELOPMENT_20261009/analysis_20261010_v2/pointlio_development_manifest.json",
+    "analysis_manifest_sha256": "e3a03d83f5854c5705177bc7610cb6ff18d9f0d331f50783c23dcd036b6ce254",
+    "candidate_csv_path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/POINTLIO_DEVELOPMENT_20261009/analysis_20261010_v2/pointlio_threshold_candidates.csv",
+    "candidate_csv_sha256": "78338dddfa6fc777f06f0a7e87a704269dc09ceb12cd303b89456832688cac58",
+    "analysis_source_sha256": {
+      "pointlio_development_analysis.py": "ff8968a8bf7658ebfe6b35dd9a7ebf268f2c28c817c6d1d261f2890acec21c7b",
+      "t16_development_analysis.py": "f34fa9479e95bfa78823e3be8f70d63445631d09f3d46fe59a75331ae2975077"
+    },
+    "analysis_output_sha256": {
+      "pointlio_dcreg_event_metrics.csv": "0682d16a9240a3b3bb983843491149431301e1f22489e2b28e85ff1fa4084bb6",
+      "pointlio_lever_scale_outputs.csv": "dfb27fac2abe864d97d369f9c1457be7a2d0f2fe496ab78c77233c7c2b2949b1",
+      "pointlio_scalar_event_metrics.csv": "77589843e1759403ea7fd0680af10daefa3bb231c9e0b075d0186b2270fc4900",
+      "pointlio_threshold_candidates.csv": "78338dddfa6fc777f06f0a7e87a704269dc09ceb12cd303b89456832688cac58",
+      "pointlio_truth_labels.csv": "9f28b758234cd4771b6ae4fcad6439ee44cb4b0c81b6472eadebc17e0431fb3e"
+    },
+    "independent_review_path": "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/reviews/POINTLIO_DEVELOPMENT_ACCEPTANCE_20261010.md",
+    "independent_review_sha256": "216cb96493612e96bc57ad18424d0fee51df083bbe9803d9fe43690a1d6c278c",
+    "status": "PASS for Point-LIO development cohort and corrected analysis v2; overall R3 remains open."
+  },
+  "verification": {
+    "complete_suite_log_path": "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/evidence/development_workflow_full_tests_20261010.log",
+    "complete_suite_log_sha256": "841980a19a12a91ad9ba4c33f73bbd53248af2510526a26fbfc6471a816b31f3",
+    "complete_suite": "210 tests, 209 passed, one optional scene audit skipped",
+    "development_figure_manifest_sha256": "037deb8c9b13a1de29b333948f241bab0ca8a7c509d4889c341a499f6fda237b"
+  },
+  "failure_policy": "Preserve every failed/incomplete attempt and missing output; do not replace seeds, retry because of an unfavorable metric, or convert unavailable data to zero/healthy.",
+  "limitations": [
+    "The cohort is a simulation development study with synthetic analytic truth and one prescribed route family.",
+    "The selected cutoff is fitted and summarized on the same 32 development corridor events.",
+    "No held-out performance, generalization, physical drone safety or publication novelty is established."
+  ]
+}

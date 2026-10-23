@@ -1,0 +1,777 @@
+{
+  "schema": "restored-development-pair-audit-v1",
+  "development_only": true,
+  "heldout_inputs_opened": false,
+  "status": "PASS",
+  "pair_count": 32,
+  "results": [
+    {
+      "seed": 14,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "4824a356db7dd5a8edc12e678fae44f490041f7ca1c033de2a8f418962691f9b"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "4824a356db7dd5a8edc12e678fae44f490041f7ca1c033de2a8f418962691f9b"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 15,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV15_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "61fdfbf27ee2d8c32e32f8c169a1422baada1095fdd8fcb14bc6b013dd24cf2e"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV15_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "61fdfbf27ee2d8c32e32f8c169a1422baada1095fdd8fcb14bc6b013dd24cf2e"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 16,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV16_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "255412a34d4af376be66ad3fbc9783b05230d280818e3e7592cebae55f319301"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV16_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "255412a34d4af376be66ad3fbc9783b05230d280818e3e7592cebae55f319301"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 17,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV17_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b66ab513985de00052c4419edce9a4d3ae7018239115715306b8d17f8672de5d"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV17_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b66ab513985de00052c4419edce9a4d3ae7018239115715306b8d17f8672de5d"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 18,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV18_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "0b318b49d36e06b5cd1a8a45630054bd44cac2710526f49b4df28bff0351e138"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV18_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "0b318b49d36e06b5cd1a8a45630054bd44cac2710526f49b4df28bff0351e138"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 19,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV19_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "7c8818a8f368c0114e36c9238e0d8fa087b0f3998ee4cda998bd6a377be3b27d"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV19_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "7c8818a8f368c0114e36c9238e0d8fa087b0f3998ee4cda998bd6a377be3b27d"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 20,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV20_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "1d3a8a33da38f490f2e5d52a688d4a058f8dcdc5359e99c57b1253fc47e44e7f"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV20_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "1d3a8a33da38f490f2e5d52a688d4a058f8dcdc5359e99c57b1253fc47e44e7f"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 21,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV21_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "e3c79687c1e7dde96fac4f9bc1ddcec1577a2334df5eabd584f9dde6dae626e4"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV21_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "e3c79687c1e7dde96fac4f9bc1ddcec1577a2334df5eabd584f9dde6dae626e4"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 22,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV22_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "3321e794c23d1654fd5f325ca5575ec9d6cd8963c4c12e94f72bd4ab363411de"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV22_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "3321e794c23d1654fd5f325ca5575ec9d6cd8963c4c12e94f72bd4ab363411de"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 23,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV23_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "d59c2b575d109d4a02bbbd2a5dd7029dfc79a58cffcb50dab75b050672f06d4a"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV23_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "d59c2b575d109d4a02bbbd2a5dd7029dfc79a58cffcb50dab75b050672f06d4a"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 24,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV24_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "c8466a0f943fb6b19a4ea8d0083e90e44ba6bf09447393939bcd04a0d0d77993"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV24_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "c8466a0f943fb6b19a4ea8d0083e90e44ba6bf09447393939bcd04a0d0d77993"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 25,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV25_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "d16ae732a76ca01d3f710cfa428ea1d9d20a467e4d38b95cab6cead5141eb5d6"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV25_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "d16ae732a76ca01d3f710cfa428ea1d9d20a467e4d38b95cab6cead5141eb5d6"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 26,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV26_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "0646663fe5e7ff0d3c7487fa94dd8f819d4c6bb174ba5e7ad03d7a89110632f0"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV26_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "0646663fe5e7ff0d3c7487fa94dd8f819d4c6bb174ba5e7ad03d7a89110632f0"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 27,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV27_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a0644c8ee611960e177c3ed13f539533af9c063c06e91e82e8593f93ee6556e1"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV27_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a0644c8ee611960e177c3ed13f539533af9c063c06e91e82e8593f93ee6556e1"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 28,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV28_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "91e599dfdaffe6e2cf1c644f880adbcc88159cdab844a162f3f524d748cd9ef1"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV28_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "91e599dfdaffe6e2cf1c644f880adbcc88159cdab844a162f3f524d748cd9ef1"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 29,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV29_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "e1cae2d0f8fd8e335636a1fee261116766cfa68b42a41564738d52afd306739f"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV29_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "e1cae2d0f8fd8e335636a1fee261116766cfa68b42a41564738d52afd306739f"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 30,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV30_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "7c8b205601d25ddd078a23d1ff03e8c99c2a85aa843fbf9eb6534ed4a83ad573"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV30_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "7c8b205601d25ddd078a23d1ff03e8c99c2a85aa843fbf9eb6534ed4a83ad573"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 31,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV31_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "1745737e5981b427cdb01ff821cd5f8d66ebcd0e41b6e01a1378c2e89e681ba9"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV31_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "1745737e5981b427cdb01ff821cd5f8d66ebcd0e41b6e01a1378c2e89e681ba9"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 32,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV32_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a2acffa9fe3a3be23e41ad15c030068b01432e974c0900467e16900217f62d63"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV32_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "a2acffa9fe3a3be23e41ad15c030068b01432e974c0900467e16900217f62d63"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 33,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV33_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "1605e023160981af38f2377de53cfb2385114225b0c8ac5754db5d1a962fa15c"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV33_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "1605e023160981af38f2377de53cfb2385114225b0c8ac5754db5d1a962fa15c"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 34,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV34_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "36e85c8af7b0cb1d3f5bcfa500975eff2b131851ce47e4bb05c7ff17c1c7a789"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV34_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "36e85c8af7b0cb1d3f5bcfa500975eff2b131851ce47e4bb05c7ff17c1c7a789"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 35,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV35_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "5caa0c1967af4a413f20b370775a7093498d1353544719343fca1a57f3eae698"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV35_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "5caa0c1967af4a413f20b370775a7093498d1353544719343fca1a57f3eae698"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 36,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV36_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b8fa6607a4e61cac14ba66bba66565cba0ae3bc9d19146d95fa1e1da4f1c2fa1"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV36_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b8fa6607a4e61cac14ba66bba66565cba0ae3bc9d19146d95fa1e1da4f1c2fa1"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 37,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV37_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b991d7660887f5c0b16de8719df87508bb03dd4b5bbb3b0887a4e956e0a5d01e"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV37_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b991d7660887f5c0b16de8719df87508bb03dd4b5bbb3b0887a4e956e0a5d01e"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 38,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV38_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b1b81b1b2f75cd3479eb669938342774c0ba71c0a056e672b7d1dc4da1b2e403"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV38_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b1b81b1b2f75cd3479eb669938342774c0ba71c0a056e672b7d1dc4da1b2e403"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 39,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV39_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "7a25039d044758a1f88d4cf6a938f34b339471677ffac4145ff0dee71315e579"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV39_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "7a25039d044758a1f88d4cf6a938f34b339471677ffac4145ff0dee71315e579"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 40,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV40_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "38d269d7f5d8a2cdcfebd0ee39ad54d23c68d18e33e8be6fa701b333643d9d06"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV40_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "38d269d7f5d8a2cdcfebd0ee39ad54d23c68d18e33e8be6fa701b333643d9d06"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 41,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV41_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "f785fff83a5651994c8ef8044edf14b7cae39df5a675720ed9d9baa8f2be05a8"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV41_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "f785fff83a5651994c8ef8044edf14b7cae39df5a675720ed9d9baa8f2be05a8"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 42,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV42_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "00e1932f411de45465c1527b201c5a4b27e228e2e7dc32dff0582338fc2b0602"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV42_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "00e1932f411de45465c1527b201c5a4b27e228e2e7dc32dff0582338fc2b0602"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 43,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV43_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "afd6dee377bf518d5f0083b0489698f13a212fca239a17da2bf980c0c62d5380"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV43_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "afd6dee377bf518d5f0083b0489698f13a212fca239a17da2bf980c0c62d5380"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 44,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV44_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "c2350eb2714a071857d774d8032d1f2f2fc1f2a3de55a09174f685da2efa18e5"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV44_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "c2350eb2714a071857d774d8032d1f2f2fc1f2a3de55a09174f685da2efa18e5"
+        },
+        "paired_imu_identical": true
+      }
+    },
+    {
+      "seed": 45,
+      "audit": {
+        "corridor": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV45_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b27daf7aa9745c7ee10e70fbb228e53e92ad7922041b65361a63b8b2ab63efb9"
+        },
+        "control": {
+          "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV45_CONTROL_INPUT_XM6_V1/sensors.bag",
+          "topic_counts": {
+            "/sim/imu": 12021,
+            "/sim/points": 600
+          },
+          "serialized_imu_count": 12021,
+          "serialized_imu_sha256": "b27daf7aa9745c7ee10e70fbb228e53e92ad7922041b65361a63b8b2ab63efb9"
+        },
+        "paired_imu_identical": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,919 @@
+[
+  {
+    "image": "fastlio_10000_timeline.png",
+    "backend": "fastlio",
+    "seed": 10000,
+    "selection_categories": [
+      "false_healthy (scalar)",
+      "successful_detection (Schur)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "fastlio",
+        "method": "FASTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10000_CORRIDOR_P1",
+        "seed": 10000,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.26450550358031,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": true,
+        "detection_delay_s": 15.40027778,
+        "confirmed_alarm_count_full_run": 4,
+        "confirmed_alarm_timestamps_s": [
+          3.7,
+          18.3,
+          21.9,
+          37.4
+        ]
+      },
+      {
+        "backend": "fastlio",
+        "method": "DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10000_CORRIDOR_P1",
+        "seed": 10000,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.26450550358031,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 13.40027778,
+        "confirmed_alarm_count_full_run": 7,
+        "confirmed_alarm_timestamps_s": [
+          35.4,
+          36.4,
+          38.1,
+          38.8,
+          45.3,
+          45.9,
+          47.0
+        ]
+      }
+    ]
+  },
+  {
+    "image": "fastlio_10001_timeline.png",
+    "backend": "fastlio",
+    "seed": 10001,
+    "selection_categories": [
+      "missed_recovery (scalar)",
+      "no raw healthy tick (scalar)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "fastlio",
+        "method": "FASTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10001_CORRIDOR_P1",
+        "seed": 10001,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 40.79841372320656,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 1,
+        "confirmed_alarm_timestamps_s": [
+          4.3
+        ]
+      },
+      {
+        "backend": "fastlio",
+        "method": "DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10001_CORRIDOR_P1",
+        "seed": 10001,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 40.79841372320656,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 13.600277780000003,
+        "confirmed_alarm_count_full_run": 7,
+        "confirmed_alarm_timestamps_s": [
+          35.6,
+          36.8,
+          37.7,
+          39.0,
+          39.8,
+          54.5,
+          55.6
+        ]
+      }
+    ]
+  },
+  {
+    "image": "fastlio_10002_timeline.png",
+    "backend": "fastlio",
+    "seed": 10002,
+    "selection_categories": [
+      "false_healthy (Schur)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "fastlio",
+        "method": "FASTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10002_CORRIDOR_P1",
+        "seed": 10002,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 23.99972222,
+        "recovery_confirmation_s": 26.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.533512526924824,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 1,
+        "confirmed_alarm_timestamps_s": [
+          6.0
+        ]
+      },
+      {
+        "backend": "fastlio",
+        "method": "DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10002_CORRIDOR_P1",
+        "seed": 10002,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 23.99972222,
+        "recovery_confirmation_s": 26.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.533512526924824,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": true,
+        "detection_delay_s": 12.90027778,
+        "confirmed_alarm_count_full_run": 4,
+        "confirmed_alarm_timestamps_s": [
+          5.9,
+          23.9,
+          36.9,
+          49.2
+        ]
+      }
+    ]
+  },
+  {
+    "image": "fastlio_10003_timeline.png",
+    "backend": "fastlio",
+    "seed": 10003,
+    "selection_categories": [
+      "successful_detection (scalar)",
+      "missed_recovery (Schur)",
+      "no raw healthy tick (Schur)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "fastlio",
+        "method": "FASTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10003_CORRIDOR_P1",
+        "seed": 10003,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 20.99972222,
+        "recovery_confirmation_s": 23.99972222,
+        "relapse_s": null,
+        "recovery_end_s": 40.86044016542921,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 5.500277780000001,
+        "confirmed_alarm_count_full_run": 2,
+        "confirmed_alarm_timestamps_s": [
+          4.1,
+          26.5
+        ]
+      },
+      {
+        "backend": "fastlio",
+        "method": "DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10003_CORRIDOR_P1",
+        "seed": 10003,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 20.99972222,
+        "recovery_confirmation_s": 23.99972222,
+        "relapse_s": null,
+        "recovery_end_s": 40.86044016542921,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 6,
+        "confirmed_alarm_timestamps_s": [
+          49.7,
+          50.6,
+          56.4,
+          58.2,
+          58.7,
+          59.4
+        ]
+      }
+    ]
+  },
+  {
+    "image": "fastlio_10010_timeline.png",
+    "backend": "fastlio",
+    "seed": 10010,
+    "selection_categories": [
+      "no confirmation (scalar)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "fastlio",
+        "method": "FASTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10010_CORRIDOR_P1",
+        "seed": 10010,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.07737575476915,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 1,
+        "confirmed_alarm_timestamps_s": [
+          5.0
+        ]
+      },
+      {
+        "backend": "fastlio",
+        "method": "DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10010_CORRIDOR_P1",
+        "seed": 10010,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.07737575476915,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 10.200277780000004,
+        "confirmed_alarm_count_full_run": 7,
+        "confirmed_alarm_timestamps_s": [
+          32.2,
+          32.6,
+          34.1,
+          34.5,
+          50.0,
+          51.0,
+          57.2
+        ]
+      }
+    ]
+  },
+  {
+    "image": "fastlio_10105_timeline.png",
+    "backend": "fastlio",
+    "seed": 10105,
+    "selection_categories": [
+      "non_recovery (scalar)",
+      "non_recovery (Schur)"
+    ],
+    "truth_status": "NO_RECOVERY_WITHIN_HORIZON",
+    "events": [
+      {
+        "backend": "fastlio",
+        "method": "FASTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_WIDE",
+        "run_id": "FINAL_TEST_SHORT_WIDE_10105_CORRIDOR_P1",
+        "seed": 10105,
+        "truth_status": "NO_RECOVERY_WITHIN_HORIZON",
+        "truth_eligible": true,
+        "recovery_onset_s": null,
+        "recovery_confirmation_s": null,
+        "relapse_s": null,
+        "recovery_end_s": 41.102777209864776,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 0,
+        "confirmed_alarm_timestamps_s": []
+      },
+      {
+        "backend": "fastlio",
+        "method": "DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_WIDE",
+        "run_id": "FINAL_TEST_SHORT_WIDE_10105_CORRIDOR_P1",
+        "seed": 10105,
+        "truth_status": "NO_RECOVERY_WITHIN_HORIZON",
+        "truth_eligible": true,
+        "recovery_onset_s": null,
+        "recovery_confirmation_s": null,
+        "relapse_s": null,
+        "recovery_end_s": 41.102777209864776,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 3,
+        "confirmed_alarm_timestamps_s": [
+          35.3,
+          37.6,
+          59.4
+        ]
+      }
+    ]
+  },
+  {
+    "image": "fastlio_10117_timeline.png",
+    "backend": "fastlio",
+    "seed": 10117,
+    "selection_categories": [
+      "no confirmation (Schur)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "fastlio",
+        "method": "FASTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_WIDE",
+        "run_id": "FINAL_TEST_SHORT_WIDE_10117_CORRIDOR_P1",
+        "seed": 10117,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 22.99972222,
+        "recovery_confirmation_s": 25.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 40.69772504833357,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 0,
+        "confirmed_alarm_timestamps_s": []
+      },
+      {
+        "backend": "fastlio",
+        "method": "DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_WIDE",
+        "run_id": "FINAL_TEST_SHORT_WIDE_10117_CORRIDOR_P1",
+        "seed": 10117,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 22.99972222,
+        "recovery_confirmation_s": 25.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 40.69772504833357,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 2,
+        "confirmed_alarm_timestamps_s": [
+          52.5,
+          58.6
+        ]
+      }
+    ]
+  },
+  {
+    "image": "fastlio_10203_timeline.png",
+    "backend": "fastlio",
+    "seed": 10203,
+    "selection_categories": [
+      "active state without new alarm (Schur)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "fastlio",
+        "method": "FASTLIO_MIN_EIG_G3",
+        "stratum": "TEST_LONG_NARROW",
+        "run_id": "FINAL_TEST_LONG_NARROW_10203_CORRIDOR_P1",
+        "seed": 10203,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 31.999722221,
+        "recovery_confirmation_s": 34.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 51.207926319704654,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 0,
+        "confirmed_alarm_timestamps_s": []
+      },
+      {
+        "backend": "fastlio",
+        "method": "DCREG_SCHUR_MASK",
+        "stratum": "TEST_LONG_NARROW",
+        "run_id": "FINAL_TEST_LONG_NARROW_10203_CORRIDOR_P1",
+        "seed": 10203,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 31.999722221,
+        "recovery_confirmation_s": 34.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 51.207926319704654,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 2,
+        "confirmed_alarm_timestamps_s": [
+          4.1,
+          31.9
+        ]
+      }
+    ]
+  },
+  {
+    "image": "pointlio_10000_timeline.png",
+    "backend": "pointlio",
+    "seed": 10000,
+    "selection_categories": [
+      "successful_detection (scalar)",
+      "missed_recovery (Schur)",
+      "no raw healthy tick (Schur)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10000_CORRIDOR_POINTLIO_P1",
+        "seed": 10000,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.26450550358031,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 5.000277780000001,
+        "confirmed_alarm_count_full_run": 9,
+        "confirmed_alarm_timestamps_s": [
+          7.2,
+          27.0,
+          29.9,
+          31.0,
+          37.0,
+          40.3,
+          40.9,
+          41.3,
+          42.0
+        ]
+      },
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10000_CORRIDOR_POINTLIO_P1",
+        "seed": 10000,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.26450550358031,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 0,
+        "confirmed_alarm_timestamps_s": []
+      }
+    ]
+  },
+  {
+    "image": "pointlio_10001_timeline.png",
+    "backend": "pointlio",
+    "seed": 10001,
+    "selection_categories": [
+      "successful_detection (Schur)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10001_CORRIDOR_POINTLIO_P1",
+        "seed": 10001,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 40.79841372320656,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 4.90027778,
+        "confirmed_alarm_count_full_run": 8,
+        "confirmed_alarm_timestamps_s": [
+          6.7,
+          9.5,
+          26.9,
+          29.7,
+          44.0,
+          44.8,
+          45.7,
+          59.5
+        ]
+      },
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10001_CORRIDOR_POINTLIO_P1",
+        "seed": 10001,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 21.99972222,
+        "recovery_confirmation_s": 24.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 40.79841372320656,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 3.4002777799999997,
+        "confirmed_alarm_count_full_run": 7,
+        "confirmed_alarm_timestamps_s": [
+          6.6,
+          25.4,
+          27.0,
+          31.8,
+          47.5,
+          50.6,
+          51.7
+        ]
+      }
+    ]
+  },
+  {
+    "image": "pointlio_10002_timeline.png",
+    "backend": "pointlio",
+    "seed": 10002,
+    "selection_categories": [
+      "false_healthy (Schur)",
+      "active state without new alarm (Schur)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10002_CORRIDOR_POINTLIO_P1",
+        "seed": 10002,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 22.99972222,
+        "recovery_confirmation_s": 25.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.533512526924824,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 4.300277780000002,
+        "confirmed_alarm_count_full_run": 12,
+        "confirmed_alarm_timestamps_s": [
+          27.3,
+          28.0,
+          28.7,
+          29.7,
+          31.7,
+          32.1,
+          36.5,
+          37.0,
+          38.2,
+          39.7,
+          40.3,
+          59.5
+        ]
+      },
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10002_CORRIDOR_POINTLIO_P1",
+        "seed": 10002,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 22.99972222,
+        "recovery_confirmation_s": 25.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 41.533512526924824,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 2,
+        "confirmed_alarm_timestamps_s": [
+          22.3,
+          22.9
+        ]
+      }
+    ]
+  },
+  {
+    "image": "pointlio_10009_timeline.png",
+    "backend": "pointlio",
+    "seed": 10009,
+    "selection_categories": [
+      "missed_recovery (scalar)",
+      "no raw healthy tick (scalar)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10009_CORRIDOR_POINTLIO_P1",
+        "seed": 10009,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 23.99972222,
+        "recovery_confirmation_s": 26.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 40.76507392313464,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 0,
+        "confirmed_alarm_timestamps_s": []
+      },
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_NARROW",
+        "run_id": "FINAL_TEST_SHORT_NARROW_10009_CORRIDOR_POINTLIO_P1",
+        "seed": 10009,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 23.99972222,
+        "recovery_confirmation_s": 26.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 40.76507392313464,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": true,
+        "detection_delay_s": 0.10027778000000254,
+        "confirmed_alarm_count_full_run": 12,
+        "confirmed_alarm_timestamps_s": [
+          21.5,
+          23.7,
+          24.1,
+          46.2,
+          47.1,
+          47.6,
+          48.3,
+          51.3,
+          52.0,
+          53.7,
+          54.3,
+          56.6
+        ]
+      }
+    ]
+  },
+  {
+    "image": "pointlio_10105_timeline.png",
+    "backend": "pointlio",
+    "seed": 10105,
+    "selection_categories": [
+      "non_recovery (scalar)",
+      "non_recovery (Schur)"
+    ],
+    "truth_status": "NO_RECOVERY_WITHIN_HORIZON",
+    "events": [
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_MIN_EIG_G3",
+        "stratum": "TEST_SHORT_WIDE",
+        "run_id": "FINAL_TEST_SHORT_WIDE_10105_CORRIDOR_POINTLIO_P1",
+        "seed": 10105,
+        "truth_status": "NO_RECOVERY_WITHIN_HORIZON",
+        "truth_eligible": true,
+        "recovery_onset_s": null,
+        "recovery_confirmation_s": null,
+        "relapse_s": null,
+        "recovery_end_s": 41.102777209864776,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 0,
+        "confirmed_alarm_timestamps_s": []
+      },
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_DCREG_SCHUR_MASK",
+        "stratum": "TEST_SHORT_WIDE",
+        "run_id": "FINAL_TEST_SHORT_WIDE_10105_CORRIDOR_POINTLIO_P1",
+        "seed": 10105,
+        "truth_status": "NO_RECOVERY_WITHIN_HORIZON",
+        "truth_eligible": true,
+        "recovery_onset_s": null,
+        "recovery_confirmation_s": null,
+        "relapse_s": null,
+        "recovery_end_s": 41.102777209864776,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 0,
+        "confirmed_alarm_timestamps_s": []
+      }
+    ]
+  },
+  {
+    "image": "pointlio_10202_timeline.png",
+    "backend": "pointlio",
+    "seed": 10202,
+    "selection_categories": [
+      "false_healthy (scalar)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_MIN_EIG_G3",
+        "stratum": "TEST_LONG_NARROW",
+        "run_id": "FINAL_TEST_LONG_NARROW_10202_CORRIDOR_POINTLIO_P1",
+        "seed": 10202,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 32.999722221,
+        "recovery_confirmation_s": 35.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 52.03457831102446,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": true,
+        "detection_delay_s": 14.400277779,
+        "confirmed_alarm_count_full_run": 8,
+        "confirmed_alarm_timestamps_s": [
+          7.2,
+          32.6,
+          47.4,
+          50.8,
+          53.7,
+          56.3,
+          57.2,
+          57.9
+        ]
+      },
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_DCREG_SCHUR_MASK",
+        "stratum": "TEST_LONG_NARROW",
+        "run_id": "FINAL_TEST_LONG_NARROW_10202_CORRIDOR_POINTLIO_P1",
+        "seed": 10202,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 32.999722221,
+        "recovery_confirmation_s": 35.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 52.03457831102446,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 3,
+        "confirmed_alarm_timestamps_s": [
+          7.8,
+          8.2,
+          32.9
+        ]
+      }
+    ]
+  },
+  {
+    "image": "pointlio_10207_timeline.png",
+    "backend": "pointlio",
+    "seed": 10207,
+    "selection_categories": [
+      "active state without new alarm (scalar)"
+    ],
+    "truth_status": "RECOVERED",
+    "events": [
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_MIN_EIG_G3",
+        "stratum": "TEST_LONG_NARROW",
+        "run_id": "FINAL_TEST_LONG_NARROW_10207_CORRIDOR_POINTLIO_P1",
+        "seed": 10207,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 31.999722221,
+        "recovery_confirmation_s": 34.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 51.13710842422119,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": true,
+        "detected_post_onset": false,
+        "detection_delay_s": null,
+        "confirmed_alarm_count_full_run": 4,
+        "confirmed_alarm_timestamps_s": [
+          7.2,
+          30.0,
+          30.4,
+          30.9
+        ]
+      },
+      {
+        "backend": "pointlio",
+        "method": "POINTLIO_DCREG_SCHUR_MASK",
+        "stratum": "TEST_LONG_NARROW",
+        "run_id": "FINAL_TEST_LONG_NARROW_10207_CORRIDOR_POINTLIO_P1",
+        "seed": 10207,
+        "truth_status": "RECOVERED",
+        "truth_eligible": true,
+        "recovery_onset_s": 31.999722221,
+        "recovery_confirmation_s": 34.999722221,
+        "relapse_s": null,
+        "recovery_end_s": 51.13710842422119,
+        "decision_available_ticks_in_primary_horizon": 200,
+        "planned_decision_ticks_in_primary_horizon": 200,
+        "false_healthy_in_initial_unrecovered_interval": false,
+        "detected_post_onset": true,
+        "detection_delay_s": 7.900277779,
+        "confirmed_alarm_count_full_run": 7,
+        "confirmed_alarm_timestamps_s": [
+          39.9,
+          40.3,
+          43.6,
+          46.3,
+          55.6,
+          56.7,
+          59.6
+        ]
+      }
+    ]
+  }
+]

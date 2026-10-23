@@ -1,0 +1,117 @@
+{
+  "schema": "t15-point-lio-smoke-v1",
+  "task_id": "T15",
+  "status": "DONE",
+  "role": "development_only",
+  "heldout_inputs_opened": false,
+  "input": {
+    "run_id": "T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1",
+    "sensor_bag": "experiments/generated/t14_retained_inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+    "sensor_bag_sha256": "89f4ac21b24a2b9dfc86b74cd3d082e48365ac1ed63207b08969e7aca25d4627",
+    "input_manifest_sha256": "1a8c6c0da541248ef5a683b336745f0e392b7573e1f9d77f99d36bca7423da02",
+    "reference_sha256": "4f313d82398e75de996866a6cb864fa26a75ed5e095b1fdb72f03ee2e5db561a",
+    "development_seed": 14,
+    "scene": "formal randomized straight corridor",
+    "route_profile": "T14_FORMAL_X_MINUS_6_V1",
+    "bag_duration_s": 60.0,
+    "lidar_scans": 600,
+    "imu_messages": 12021
+  },
+  "backend": {
+    "name": "Point-LIO",
+    "repository": "https://github.com/hku-mars/Point-LIO",
+    "commit": "4b86a469eb5572e70ed575af25b5f15dd06e8e3c",
+    "build_binary_sha256": "8e8f4f23459dd31ee87499316f1dfee0333985f2b91e3b0eb3c7924695ef442d",
+    "build_only_patch_hashes": {
+      "experiments/patches/point_lio_build_compat.patch": "2006e7af098c3fe9b342dd2a52d10d3b69891f4d985332fd64ab48767feb6ddb",
+      "experiments/patches/point_lio_deque_header.patch": "39594d3c07861467151ec7218471513016e286d87a8abfae248a1d37fcf6f4bf"
+    },
+    "modified_upstream_files": [
+      "CMakeLists.txt",
+      "src/preprocess.h"
+    ],
+    "algorithm_source_modified": false,
+    "build_patch_reverse_checks_passed": true
+  },
+  "configuration": {
+    "path": "configs/point_lio_simulation_development.yaml",
+    "sha256": "d23bd8799c3834ac0acc1d23476a0a0c0cd72b09f7b7c542b5bfbe9813a4c98b",
+    "lidar_profile": "Point-LIO VELO16 PointCloud2; 16 rings; seconds in per-point time field",
+    "lidar_topic": "/sim/points",
+    "imu_topic": "/sim/imu",
+    "pose_topic": "/aft_mapped_to_init",
+    "point_lio_parameter_namespace": "/laserMapping",
+    "extrinsics": "identity, as specified by the simulated collocated sensor/IMU contract"
+  },
+  "environment": {
+    "ros_distribution": "Noetic",
+    "roscpp": "1.17.4",
+    "catkin_tools": "0.9.5",
+    "python": "3.12.14",
+    "gcc": "15.2.0",
+    "cmake": "4.2.3",
+    "pcl": "1.15.1",
+    "glog": "0.7.1",
+    "workspace_and_glog_overlay": "session-local under /run/user/1000; rebuild from the pinned revision and patches if it is no longer present"
+  },
+  "successful_run": {
+    "run_id": "T15_POINTLIO_DEV14_CORRIDOR_XM6_V3",
+    "runner_sha256": "f7abde52efb6e2c2d18ece428cd181d62f4a3930027686d1e40d5f11de4fa0e2",
+    "pose_records": 597,
+    "valid_pose_records": 597,
+    "invalid_pose_records": 0,
+    "pose_reset_boundaries": 0,
+    "frame_pair": ["camera_init", "body"],
+    "pose_span_s": 59.600000001,
+    "median_update_rate_hz": 10.0,
+    "timestamps_strictly_increasing": true,
+    "quaternion_max_norm_error": 3.3639757646142243e-14,
+    "startup_log_reset_count": 1,
+    "startup_reset_interpretation": "Point-LIO's single initial IMU initialization reset; no pose-stream reset boundary was emitted",
+    "trajectory_evaluation": {
+      "rows": 1194,
+      "local_motion_valid_rows": 1154,
+      "reference_valid_rows": 1194,
+      "pose_valid_rows": 1194,
+      "reference_gaps": 0,
+      "out_of_order_pose_rows": 0,
+      "recovery_labels": "not computed in T15"
+    },
+    "output_hashes": {
+      "poses.csv": "a6373a10895e2449d99d663d59f444247865ea39a8d9768192cca2cdc1760abd",
+      "evaluation.csv": "c60259718b654c03be5a5052731116427a631c076afafe9f997b8d0604605e98",
+      "point_lio.log": "6aefa849f030242063a6f54a2914c34efa4d8b40555421cf9725bbc34ca4d0a6",
+      "pose_logger.log": "99a0122f02f2aaaa9e84fdd66ca84be3218de74cc4f4ff9e50200df8d8e96cc8",
+      "rosbag.log": "f1c2920328c7e0db03edd523b4bdcaf2a69d8284048aaec85232513f622badfd",
+      "roscore.log": "d0e09dcc49320d66e7c5541c3460a8ed0bb5d030a7de75f46cba0e390c51ba8a"
+    }
+  },
+  "attempt_history": [
+    {
+      "run_id": "T15_POINTLIO_DEV14_CORRIDOR_XM6_V1",
+      "status": "FAILED_SETUP",
+      "reason": "The first launcher loaded YAML globally, while Point-LIO reads private parameters. GDB located the crash at parameters.cpp:121 when the gravity vector was empty.",
+      "diagnostic_log": "experiments/generated/runs/T15_POINTLIO_DEV14_CORRIDOR_XM6_V1/gdb_startup_failure.log",
+      "diagnostic_log_sha256": "299ee4399f83828f54d207ae7189eb771ddafd1a80062f13b1072d32182d24e6"
+    },
+    {
+      "run_id": "T15_POINTLIO_DEV14_CORRIDOR_XM6_V2",
+      "status": "COMPLETED_REPLAY_VERIFICATION",
+      "pose_sha256": "a6373a10895e2449d99d663d59f444247865ea39a8d9768192cca2cdc1760abd",
+      "note": "Same pose bytes as V3; V3 is the auditable run after fail-fast guards were added. V2 evaluation is not used as final evidence because its metadata was still FAST-LIO-labelled."
+    },
+    {
+      "run_id": "T15_POINTLIO_DEV14_CORRIDOR_XM6_V3",
+      "status": "COMPLETED_AND_AUDITED",
+      "note": "Final fail-fast runner; same input, backend binary and pose output hash as V2."
+    }
+  ],
+  "compatibility": {
+    "common_pose_contract": "PASS for this smoke",
+    "reset_and_timing_audit": "PASS for this smoke",
+    "fast_lio_g3_comparability": "NOT_ESTABLISHED",
+    "dcreg_comparability": "NOT_ESTABLISHED",
+    "reason": "T10/T13 indicators are built from FAST-LIO accepted correspondences. This Point-LIO smoke did not export an equivalent, validated health/Hessian stream; trajectory output alone is not a comparable indicator.",
+    "scientific_conclusion": "NONE; one development smoke is not replication evidence or a recovery result"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "schema": "source-identical-restoration-replay-v1",
+  "role": "development_lifecycle_only",
+  "seed": 14,
+  "status": "COMPLETED_DEVELOPMENT_LIFECYCLE",
+  "heldout_inputs_opened": false,
+  "threshold_fit_performed": false,
+  "scientific_use": "Recovered historical binary lifecycle only; not a new event/calibration sample",
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "180s",
+    "bash",
+    "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/run_final_evaluation_replay.sh",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env",
+    "/tmp/fastlio-t13.XBDWGy/ws",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1/sensors.bag",
+    "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_HISTORICAL_BINARY_REPLAY_A4/stream"
+  ],
+  "ros_master_uri": "http://127.0.0.1:11311",
+  "input_bag_sha256": "89f4ac21b24a2b9dfc86b74cd3d082e48365ac1ed63207b08969e7aca25d4627",
+  "binary_sha256": "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792",
+  "historical_binary_sha256": "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792",
+  "native_source_commit": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+  "native_source_diff_sha256": "1397219a8765c2bc8c49adaf7e94dcc1e6006788acac06467e28e660876e51a0",
+  "prior_failed_attempt": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_SOURCE_IDENTICAL_REPLAY_A1/run_manifest.json",
+  "return_code": 0,
+  "elapsed_s": 72.27472035899996,
+  "outputs": {
+    "wrapper.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrapper.stdout.log": "d52f6a05e03a3c61d137a5cf343ac7693abf96e1148cfcd5ca4058c2230ed355",
+    "stream/dcreg.csv": "9aa00cdca0ed7728fb19f210b78f6af461d7977ee9908e45928d051b44758420",
+    "stream/evaluation.csv": "721e07f302cb89e91e6c3cec2981078520c27476340b5ae1b3a0551ed8cff7e1",
+    "stream/fastlio.log": "e48d1f4039752f0989f41b6db389f471a92351807bbc484c3c77a68adc2fb548",
+    "stream/health.csv": "e72043860f57108d6dcc066627d8ffbeccc91d2907869834ea322da2343d00c7",
+    "stream/health.csv.hessian.csv": "ba017155118cf769ba5dc057593be50a9b28ca30a6dabf83549149422a50b08d",
+    "stream/poses.csv": "7667563843a95442c280f1c32059f371db2f7d2fceddcce11db77f9f39c21e54",
+    "stream/pose_logger.log": "9e858e5026a50aab29afa62c1c360cba8810d25d2ff350cff76b4212ac28f3dd",
+    "stream/rosbag.log": "7f6cd7ad644c064c04d3fa4d42de9bc16fe1fdee398bf8ef787477a3172d7605",
+    "stream/roscore.log": "dfaa5ab9fc443a70796d5e32bd95c1ee6e571cb76480635695df822135594a2b"
+  },
+  "postprocess": [
+    {
+      "command": [
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/audit_health_export.py",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_HISTORICAL_BINARY_REPLAY_A4/stream/health.csv"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"timestamp_groups\": 600,\n  \"row_counts\": {\n    \"BACKEND_FIRST_SCAN\": 3,\n    \"UNDISTORTED_CLOUD_EMPTY\": 3,\n    \"MAP_INITIALIZATION\": 3,\n    \"VALID\": 1791\n  },\n  \"sha256\": \"e72043860f57108d6dcc066627d8ffbeccc91d2907869834ea322da2343d00c7\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/dcreg_schur.py",
+        "--hessian-csv",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_HISTORICAL_BINARY_REPLAY_A4/stream/health.csv.hessian.csv",
+        "--health-csv",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_HISTORICAL_BINARY_REPLAY_A4/stream/health.csv",
+        "--output-csv",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_HISTORICAL_BINARY_REPLAY_A4/stream/dcreg.csv"
+      ],
+      "return_code": 0,
+      "stdout": "{\"g3_parity\": {\"atol\": 1e-08, \"max_abs_eigenvalue_error\": 3.637978807091713e-11, \"rtol\": 1e-08, \"timestamps\": 600, \"unavailable_groups\": 3, \"valid_groups\": 597}, \"rows\": 600, \"unavailable\": 3, \"valid\": 597}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/ros_env/bin/python",
+        "/home/harshil/Desktop/GPS Denied Drone navigation/research_paper/experiments/src/trajectory_eval.py",
+        "--poses",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_HISTORICAL_BINARY_REPLAY_A4/stream/poses.csv",
+        "--reference",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1/reference.txt",
+        "--output",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/runs/FASTLIO_SEED14_HISTORICAL_BINARY_REPLAY_A4/stream/evaluation.csv",
+        "--run-id",
+        "FASTLIO_SEED14_HISTORICAL_BINARY_REPLAY_A4",
+        "--event-id",
+        "T14_GEOMETRY_EXIT_DEV14",
+        "--body-transform-json",
+        "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/restoration_20261009/inputs/T14_FORMAL_DEV14_CORRIDOR_INPUT_XM6_V1/reference_metadata.json",
+        "--development-only",
+        "--entry-start-ns",
+        "1010500000000"
+      ],
+      "return_code": 0,
+      "stdout": "{\"rows\": 1194, \"local_valid\": 1154, \"reference_gaps\": 0, \"out_of_order_source_rows\": 0, \"body_transform_verified\": true}\n",
+      "stderr": ""
+    }
+  ],
+  "comparison_to_historical": {
+    "poses.csv": {
+      "byte_identical": true,
+      "identical_except_run_event_id": true,
+      "rows": 597
+    },
+    "health.csv": {
+      "byte_identical": true,
+      "identical_except_run_event_id": true,
+      "rows": 1800
+    },
+    "health.csv.hessian.csv": {
+      "byte_identical": true,
+      "identical_except_run_event_id": true,
+      "rows": 600
+    },
+    "dcreg.csv": {
+      "byte_identical": true,
+      "identical_except_run_event_id": true,
+      "rows": 600
+    },
+    "evaluation.csv": {
+      "byte_identical": false,
+      "identical_except_run_event_id": true,
+      "rows": 1194
+    }
+  }
+}

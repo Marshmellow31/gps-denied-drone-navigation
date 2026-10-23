@@ -1,0 +1,154 @@
+diff --git a/src/laserMapping.cpp b/src/laserMapping.cpp
+index fc41408..9bdb16c 100644
+--- a/src/laserMapping.cpp
++++ b/src/laserMapping.cpp
+@@ -43,6 +43,8 @@
+ #include <so3_math.h>
+ #include <ros/ros.h>
+ #include <Eigen/Core>
++#include <Eigen/Eigenvalues>
++#include <iomanip>
+ #include "IMU_Processing.hpp"
+ #include <nav_msgs/Odometry.h>
+ #include <nav_msgs/Path.h>
+@@ -71,6 +73,10 @@ double T1[MAXN], s_plot[MAXN], s_plot2[MAXN], s_plot3[MAXN], s_plot4[MAXN], s_pl
+ double match_time = 0, solve_time = 0, solve_const_H_time = 0;
+ int    kdtree_size_st = 0, kdtree_size_end = 0, add_point_size = 0, kdtree_delete_counter = 0;
+ bool   runtime_pos_log = false, pcd_save_en = false, time_sync_en = false, extrinsic_est_en = true, path_en = true;
++bool   health_export_en = false, health_valid = false;
++int    health_accepted_count = 0;
++Eigen::Matrix<double, 6, 6> health_gram = Eigen::Matrix<double, 6, 6>::Zero();
++std::ofstream health_stream;
+ /**************************/
+ 
+ float res_last[100000] = {0.0};
+@@ -708,6 +714,8 @@ void h_share_model(state_ikfom &s, esekfom::dyn_share_datastruct<double> &ekfom_
+     if (effct_feat_num < 1)
+     {
+         ekfom_data.valid = false;
++        health_valid = false;
++        health_accepted_count = 0;
+         ROS_WARN("No Effective Points! \n");
+         return;
+     }
+@@ -750,9 +758,46 @@ void h_share_model(state_ikfom &s, esekfom::dyn_share_datastruct<double> &ekfom_
+         /*** Measuremnt: distance to the closest surface/corner ***/
+         ekfom_data.h(i) = -norm_p.intensity;
+     }
++    if (health_export_en)
++    {
++        const Eigen::MatrixXd h6 = ekfom_data.h_x.leftCols(6);
++        health_gram = h6.transpose() * h6;
++        health_accepted_count = effct_feat_num;
++        health_valid = health_gram.allFinite();
++    }
+     solve_time += omp_get_wtime() - solve_start_;
+ }
+ 
++void write_health_diagnostic(const char *unavailable_reason)
++{
++    if (!health_export_en) return;
++    const uint64_t stamp_ns = ros::Time().fromSec(lidar_end_time).toNSec();
++    for (double scale_m : {1.0, 3.0, 5.0})
++    {
++        health_stream << stamp_ns << ',' << scale_m << ',' << health_accepted_count;
++        if (!health_valid || health_accepted_count < 6)
++        {
++            health_stream << ",,,,,,,false,"
++                          << (health_valid ? "INSUFFICIENT_CORRESPONDENCES" : unavailable_reason)
++                          << ",last_scan_to_map_linearization\n";
++            continue;
++        }
++        Eigen::Matrix<double, 6, 6> scale = Eigen::Matrix<double, 6, 6>::Identity();
++        scale.bottomRightCorner<3, 3>() /= scale_m;
++        const Eigen::Matrix<double, 6, 6> info = scale * health_gram * scale /
++            (static_cast<double>(health_accepted_count) * LASER_POINT_COV);
++        Eigen::SelfAdjointEigenSolver<Eigen::Matrix<double, 6, 6>> solver(info);
++        if (solver.info() != Eigen::Success || !solver.eigenvalues().allFinite())
++        {
++            health_stream << ",,,,,,,false,NONFINITE_INFORMATION,last_scan_to_map_linearization\n";
++            continue;
++        }
++        for (int i = 0; i < 6; ++i) health_stream << ',' << std::max(0.0, solver.eigenvalues()(i));
++        health_stream << ",true,,last_scan_to_map_linearization\n";
++    }
++    health_stream.flush();
++}
++
+ int main(int argc, char** argv)
+ {
+     ros::init(argc, argv, "laserMapping");
+@@ -786,6 +831,20 @@ int main(int argc, char** argv)
+     nh.param<int>("point_filter_num", p_pre->point_filter_num, 2);
+     nh.param<bool>("feature_extract_enable", p_pre->feature_enabled, false);
+     nh.param<bool>("runtime_pos_log_enable", runtime_pos_log, 0);
++    string health_csv_path;
++    nh.param<string>("health/diagnostic_csv", health_csv_path, "");
++    if (!health_csv_path.empty())
++    {
++        health_stream.open(health_csv_path, ios::out);
++        if (!health_stream.is_open())
++        {
++            ROS_ERROR_STREAM("Cannot open health diagnostic CSV: " << health_csv_path);
++            return 2;
++        }
++        health_stream << "timestamp_ns,lever_scale_m,accepted_count,eigenvalue_0,eigenvalue_1,eigenvalue_2,eigenvalue_3,eigenvalue_4,eigenvalue_5,valid,unavailable_reason,source_stage\n";
++        health_stream << std::setprecision(17);
++        health_export_en = true;
++    }
+     nh.param<bool>("mapping/extrinsic_est_en", extrinsic_est_en, true);
+     nh.param<bool>("pcd_save/pcd_save_en", pcd_save_en, false);
+     nh.param<int>("pcd_save/interval", pcd_save_interval, -1);
+@@ -873,6 +932,9 @@ int main(int argc, char** argv)
+                 first_lidar_time = Measures.lidar_beg_time;
+                 p_imu->first_lidar_time = first_lidar_time;
+                 flg_first_scan = false;
++                health_valid = false;
++                health_accepted_count = 0;
++                write_health_diagnostic("BACKEND_FIRST_SCAN");
+                 continue;
+             }
+ 
+@@ -891,6 +953,9 @@ int main(int argc, char** argv)
+ 
+             if (feats_undistort->empty() || (feats_undistort == NULL))
+             {
++                health_valid = false;
++                health_accepted_count = 0;
++                write_health_diagnostic("UNDISTORTED_CLOUD_EMPTY");
+                 ROS_WARN("No point, skip this scan!\n");
+                 continue;
+             }
+@@ -918,6 +983,9 @@ int main(int argc, char** argv)
+                     }
+                     ikdtree.Build(feats_down_world->points);
+                 }
++                health_valid = false;
++                health_accepted_count = 0;
++                write_health_diagnostic("MAP_INITIALIZATION");
+                 continue;
+             }
+             int featsFromMapNum = ikdtree.validnum();
+@@ -928,6 +996,9 @@ int main(int argc, char** argv)
+             /*** ICP and iterated Kalman filter update ***/
+             if (feats_down_size < 5)
+             {
++                health_valid = false;
++                health_accepted_count = 0;
++                write_health_diagnostic("TOO_FEW_DOWNSAMPLED_POINTS");
+                 ROS_WARN("No point, skip this scan!\n");
+                 continue;
+             }
+@@ -955,9 +1026,12 @@ int main(int argc, char** argv)
+             t2 = omp_get_wtime();
+             
+             /*** iterated state estimation ***/
++            health_valid = false;
++            health_accepted_count = 0;
+             double t_update_start = omp_get_wtime();
+             double solve_H_time = 0;
+             kf.update_iterated_dyn_share_modified(LASER_POINT_COV, solve_H_time);
++            write_health_diagnostic("NO_VALID_SCAN_TO_MAP_LINEARIZATION");
+             state_point = kf.get_x();
+             euler_cur = SO3ToEuler(state_point.rot);
+             pos_lid = state_point.pos + state_point.rot * state_point.offset_T_L_I;

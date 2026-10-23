@@ -1,0 +1,70 @@
+{
+  "scenario": "flat_obstacles",
+  "seed": 2000,
+  "sensor": {
+    "name": "vl53l5cx_conservative",
+    "zones_x": 8,
+    "zones_y": 8,
+    "horizontal_fov_deg": 45.0,
+    "vertical_fov_deg": 45.0,
+    "max_range_m": 4.0,
+    "frame_rate_hz": 15.0,
+    "range_noise_std_m": 0.02,
+    "range_quantization_m": 0.005,
+    "dropout_probability": 0.08,
+    "outlier_probability": 0.01,
+    "pose_xy_std_m": 0.015,
+    "pose_random_walk_m_sqrt_s": 0.008,
+    "altitude_std_m": 0.01,
+    "attitude_std_deg": 0.4,
+    "yaw_random_walk_deg_sqrt_s": 0.15
+  },
+  "vehicle": {
+    "footprint_radius_m": 0.22,
+    "clearance_margin_m": 0.12,
+    "max_slope_deg": 8.0,
+    "max_roughness_m": 0.035,
+    "max_step_m": 0.08
+  },
+  "detector": {
+    "map_resolution_m": 0.15,
+    "min_confidence": 0.18,
+    "min_region_area_m2": 0.01,
+    "max_interpolation_passes": 3,
+    "threshold_safety_factor": 0.6,
+    "localization_margin_m": 0.1
+  },
+  "metrics": {
+    "true_positive_cells": 5,
+    "false_positive_cells": 0,
+    "false_negative_cells": 107,
+    "true_negative_cells": 329,
+    "precision": 1.0,
+    "recall": 0.044642857142857144,
+    "f1": 0.08547008547008547,
+    "false_safe_rate": 0.0,
+    "target_produced": true,
+    "target_is_truly_safe": true,
+    "target_error_m": 0.0,
+    "runtime_ms": 2.3038999997879728,
+    "peak_detector_memory_kib": 119.3486328125,
+    "coverage": 1.0,
+    "direct_measurement_coverage": 0.9523809523809523,
+    "raw_samples": 8820,
+    "frames": 150,
+    "acquisition_duration_s": 10.0,
+    "candidate_count": 1,
+    "truth_safe_cells": 112,
+    "predicted_safe_cells": 5
+  },
+  "selected": {
+    "row": 13,
+    "col": 7,
+    "x_m": -0.4750000000000001,
+    "y_m": 0.4249999999999998,
+    "area_m2": 0.11249999999999999,
+    "clearance_m": 0.15,
+    "confidence": 0.7517021894454956,
+    "score": 0.26131156631079755
+  }
+}

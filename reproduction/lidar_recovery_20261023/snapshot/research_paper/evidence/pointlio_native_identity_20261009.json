@@ -1,0 +1,36 @@
+{
+  "schema": "pointlio-accepted-native-identity-v1",
+  "native_binary_sha256": "80516da9cafba98262d56c17cc26ec4da76e214049d3af7776248b4c3a342b17",
+  "native_source": {
+    "commit": "4b86a469eb5572e70ed575af25b5f15dd06e8e3c",
+    "dirty_patch_sha256": "1270c63b553f660ade9cd787c0e377d1486ac4f49018650f400f2cf52eb3445c",
+    "files": {
+      "CMakeLists.txt": "abb357af835778404a3249148c9c6c0e36a06bd276593b3b4e2aeea2526b9e74",
+      "include/common_lib.h": "2c8a0b309e900372da23726450dcd600de94a9e5b22ccafeb0f2d094236f3491",
+      "src/Estimator.cpp": "cce9021ff196cd7334eb3fa27b473bb7047e40dce088cbfd37c916b8e9a580a2",
+      "src/Estimator.h": "5d3ce5eff6275d1d5b31520f33def7ea31d0523a4f1b8a4860222b6134fff21b",
+      "src/laserMapping.cpp": "c15dc4d8a4d8b7e708621e28ba90b99b87cf27e7c84057addf0e05aede55b05f",
+      "src/li_initialization.cpp": "a28a1fb262a9343731e318d1d91eebd9ddd536ec55104caa15f6143bd58fef18",
+      "src/preprocess.h": "a03ef7c2d62c74f7ac2d22723e3be2a04e62c234c3c6bba4c5decbc0d71489a1",
+      "src/IndicatorSidecar.cpp": "db5caeae86be2722b4723bb644183e167c8c867908e97678872b42ca9d600b6d",
+      "src/IndicatorSidecar.h": "ae114f1901958117097fb1014ccf8472ce433c83cada0216ba2f13f5dfcb200c"
+    }
+  },
+  "configuration_sha256": "d23bd8799c3834ac0acc1d23476a0a0c0cd72b09f7b7c542b5bfbe9813a4c98b",
+  "one_seed_review_path": "research_paper/reviews/POINTLIO_ONE_SEED_ACCEPTANCE_20261009.md",
+  "one_seed_review_sha256": "c1de9901832e19463629a8854bf156c25852c7a698bad7e595de96c98362924c",
+  "accepted_on_manifest_sha256": "a327c5dff5ef43f6241cf4b32a2aadb92e6ddce6b19b7a3006f47117ee2f5880",
+  "scope": "Accepted native/source/measurement identity only; not replication outcomes.",
+  "accepted_python_producer_hashes": {
+    "research_paper/experiments/src/pointlio_information.py": "c141d5dfc86df130310beaba3224726e60a7b8224d6958d846d0ae98575d5f19",
+    "research_paper/experiments/src/pointlio_indicator_export.py": "06d2c71c9aa55d33f4009e89b6605c481a7af7b3969bd6a919ae9df766d2f8b0",
+    "research_paper/experiments/src/pointlio_pose_logger.py": "041aebef03bd8a972282e42f7ba1521e8943385c352e0edd3c11ec2eb87bdd3d",
+    "research_paper/experiments/src/audit_pointlio_input_frames.py": "9eca065edcb71846747247493c2f430cefcbdd0252f08f21c030649f6072ceca",
+    "research_paper/experiments/src/drain_sim_clock.py": "2e6e1be8a0550107516c1291fdb90d5a91c2508405115e0548d216753b75fe6c",
+    "research_paper/experiments/src/dcreg_schur.py": "516e1da40c9cb8bc58e5a0e4c9c7964392a0877a77ba20e7139eae997783595e"
+  },
+  "accepted_glog_metadata": {
+    "path": "/run/media/harshil/Acer/GPS-Denied-Drone-Research/Hilti-Oxford-Exp18/point_lio_glog_20260929/conda-meta/glog-0.7.1-hb7133d2_1.json",
+    "sha256": "f6493cebf3d627baf4a98fdcaa5a2c741144dd77a19a064fd500e50f5afa72ea"
+  }
+}
