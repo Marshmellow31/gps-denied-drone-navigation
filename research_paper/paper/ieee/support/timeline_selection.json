@@ -1,0 +1,20 @@
+[
+  {
+    "backend": "fastlio",
+    "seed": 10001,
+    "method": "FASTLIO_MIN_EIG_G3",
+    "original_selection_category": "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL",
+    "exit_time_s": 20.798413723206558,
+    "onset_s": 21.99972222,
+    "confirmation_s": 24.999722221
+  },
+  {
+    "backend": "pointlio",
+    "seed": 10002,
+    "method": "POINTLIO_DCREG_SCHUR_MASK",
+    "original_selection_category": "ACTIVE_STATE_WITHOUT_NEW_POST_ONSET_TRANSITION",
+    "exit_time_s": 21.533512526924827,
+    "onset_s": 22.99972222,
+    "confirmation_s": 25.999722221
+  }
+]

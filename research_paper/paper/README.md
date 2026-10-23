@@ -1,3 +1,13 @@
+# Current manuscript — 23 October 2026
+
+The current paper is the [IEEE conference draft](ieee/recovery_transfer_ieee.tex), with [supporting material](ieee/recovery_transfer_supplement.tex). See the [IEEE build and evidence guide](ieee/README.md) for compilation, figures, ledgers and submission requirements. PDFs are saved under `output/pdf/ieee_20261023/`.
+
+This revision uses the completed simulated study: 48 geometry pairs and 192 native runs. It preserves the earlier first draft, proposal, frozen research artifacts and reproduction package. The document now describes the measured empirical contribution; publication sufficiency still requires scientific review.
+
+The following text is retained as the historical proposal-era record. Its statement that final results do not exist is superseded by the current draft and evidence.
+
+---
+
 # Manuscript
 
 Current scope: LiDAR recovery-indicator reliability. The earlier visual-degradation abstract has been superseded following the user's LiDAR preference. Novelty is provisional; see the scope decision before developing the manuscript.

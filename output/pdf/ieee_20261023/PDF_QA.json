@@ -1,0 +1,18 @@
+{
+  "documents": {
+    "recovery_transfer_ieee": {
+      "page_count": 9,
+      "fonts_embedded": true,
+      "sha256": "7dea24095fd1c0ff34b4b5b703ce90949156493892acefc26024c63430989a6c"
+    },
+    "recovery_transfer_supplement": {
+      "page_count": 11,
+      "fonts_embedded": true,
+      "sha256": "f601c0819201fb6d5ffad041eec012fc6b9d28a34671c6867b52d80292032bf1"
+    }
+  },
+  "visual_review": "All 20 final rendered pages inspected; no clipping/overlap or blank pages",
+  "compiler": "Tectonic 0.17.0",
+  "figure_font": "Liberation Serif embedded CID TrueType",
+  "body_font": "IEEEtran Times Roman default, embedded Nimbus Roman"
+}

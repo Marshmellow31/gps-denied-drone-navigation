@@ -1,0 +1,2368 @@
+{
+  "methods": [
+    {
+      "backend": "fastlio",
+      "method": "FASTLIO_MIN_EIG_G3",
+      "primary": {
+        "method": "FASTLIO_MIN_EIG_G3",
+        "threshold": 166.16366016039856,
+        "truth_label_eligible_corridor_events": 48,
+        "truth_recovered_events": 46,
+        "non_recovery_events": 2,
+        "truth_recovery_fraction": 0.9583333333333334,
+        "truth_recovery_wilson_95": [
+          0.8602408885222853,
+          0.9884983479210344
+        ],
+        "false_healthy_event_rate_conditional": 0.021739130434782608,
+        "false_healthy_event_rate_unconditional": 0.020833333333333332,
+        "false_healthy_events": 1,
+        "false_healthy_conditional_denominator": 46,
+        "false_healthy_event_wilson_95_conditional": [
+          0.0038477551112426345,
+          0.11335554494333024
+        ],
+        "false_healthy_time_fraction_conditional": 0.0010309278350515464,
+        "false_healthy_time_fraction_unconditional": 0.0010309278350515464,
+        "recovery_sensitivity": 0.30434782608695654,
+        "detected_recovery_events": 14,
+        "detection_delay_median_s_detected_only": 0.8502777794999989,
+        "relapse_events": 1,
+        "relapse_fraction_of_truth_recovered": 0.021739130434782608,
+        "post_relapse_false_healthy_event_rate_conditional": 0.0,
+        "post_relapse_false_healthy_event_rate_unconditional": 0.0,
+        "post_relapse_false_healthy_time_fraction_conditional": 0.0,
+        "post_relapse_false_healthy_time_fraction_unconditional": 0.0,
+        "decision_availability_primary_horizon": 1.0,
+        "available_decision_ticks": 9600,
+        "planned_decision_ticks": 9600,
+        "healthy_scene_controls": [
+          {
+            "seed": 10000,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10000_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3976510067114094,
+            "debounced_confirmed_healthy_fraction_of_available": 0.34731543624161076
+          },
+          {
+            "seed": 10001,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10001_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.12751677852348994,
+            "debounced_confirmed_healthy_fraction_of_available": 0.11409395973154363
+          },
+          {
+            "seed": 10002,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10002_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.08221476510067115,
+            "debounced_confirmed_healthy_fraction_of_available": 0.07885906040268456
+          },
+          {
+            "seed": 10003,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10003_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.33053691275167785,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3104026845637584
+          },
+          {
+            "seed": 10004,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10004_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3724832214765101,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3422818791946309
+          },
+          {
+            "seed": 10005,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10005_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.020134228187919462,
+            "debounced_confirmed_healthy_fraction_of_available": 0.015100671140939598
+          },
+          {
+            "seed": 10006,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10006_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.35570469798657717,
+            "debounced_confirmed_healthy_fraction_of_available": 0.32046979865771813
+          },
+          {
+            "seed": 10007,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10007_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3053691275167785,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2953020134228188
+          },
+          {
+            "seed": 10008,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10008_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3238255033557047,
+            "debounced_confirmed_healthy_fraction_of_available": 0.31208053691275167
+          },
+          {
+            "seed": 10009,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10009_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.03523489932885906,
+            "debounced_confirmed_healthy_fraction_of_available": 0.02348993288590604
+          },
+          {
+            "seed": 10010,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10010_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.17114093959731544,
+            "debounced_confirmed_healthy_fraction_of_available": 0.1493288590604027
+          },
+          {
+            "seed": 10011,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10011_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0016778523489932886,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10100,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10100_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.02348993288590604,
+            "debounced_confirmed_healthy_fraction_of_available": 0.008389261744966443
+          },
+          {
+            "seed": 10101,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10101_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5151006711409396,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4949664429530201
+          },
+          {
+            "seed": 10104,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10104_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10105,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10105_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10106,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10106_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.47315436241610737,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4563758389261745
+          },
+          {
+            "seed": 10107,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10107_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5218120805369127,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5083892617449665
+          },
+          {
+            "seed": 10110,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10110_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.19463087248322147,
+            "debounced_confirmed_healthy_fraction_of_available": 0.17785234899328858
+          },
+          {
+            "seed": 10111,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10111_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0587248322147651,
+            "debounced_confirmed_healthy_fraction_of_available": 0.040268456375838924
+          },
+          {
+            "seed": 10112,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10112_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10116,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10116_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.2550335570469799,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2231543624161074
+          },
+          {
+            "seed": 10117,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10117_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10118,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10118_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.10570469798657718,
+            "debounced_confirmed_healthy_fraction_of_available": 0.08389261744966443
+          },
+          {
+            "seed": 10200,
+            "run_id": "FINAL_TEST_LONG_NARROW_10200_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.1174496644295302,
+            "debounced_confirmed_healthy_fraction_of_available": 0.09228187919463088
+          },
+          {
+            "seed": 10202,
+            "run_id": "FINAL_TEST_LONG_NARROW_10202_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.07046979865771812,
+            "debounced_confirmed_healthy_fraction_of_available": 0.05201342281879195
+          },
+          {
+            "seed": 10203,
+            "run_id": "FINAL_TEST_LONG_NARROW_10203_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10204,
+            "run_id": "FINAL_TEST_LONG_NARROW_10204_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10205,
+            "run_id": "FINAL_TEST_LONG_NARROW_10205_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.06040268456375839,
+            "debounced_confirmed_healthy_fraction_of_available": 0.053691275167785234
+          },
+          {
+            "seed": 10206,
+            "run_id": "FINAL_TEST_LONG_NARROW_10206_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.47315436241610737,
+            "debounced_confirmed_healthy_fraction_of_available": 0.41778523489932884
+          },
+          {
+            "seed": 10207,
+            "run_id": "FINAL_TEST_LONG_NARROW_10207_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.43288590604026844,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4161073825503356
+          },
+          {
+            "seed": 10208,
+            "run_id": "FINAL_TEST_LONG_NARROW_10208_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.08389261744966443,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0738255033557047
+          },
+          {
+            "seed": 10209,
+            "run_id": "FINAL_TEST_LONG_NARROW_10209_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3875838926174497,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3523489932885906
+          },
+          {
+            "seed": 10210,
+            "run_id": "FINAL_TEST_LONG_NARROW_10210_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.12583892617449666,
+            "debounced_confirmed_healthy_fraction_of_available": 0.09563758389261745
+          },
+          {
+            "seed": 10212,
+            "run_id": "FINAL_TEST_LONG_NARROW_10212_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.39093959731543626,
+            "debounced_confirmed_healthy_fraction_of_available": 0.36073825503355705
+          },
+          {
+            "seed": 10213,
+            "run_id": "FINAL_TEST_LONG_NARROW_10213_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.08892617449664429,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0738255033557047
+          },
+          {
+            "seed": 10300,
+            "run_id": "FINAL_TEST_LONG_WIDE_10300_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.44798657718120805,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4077181208053691
+          },
+          {
+            "seed": 10303,
+            "run_id": "FINAL_TEST_LONG_WIDE_10303_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.050335570469798654,
+            "debounced_confirmed_healthy_fraction_of_available": 0.030201342281879196
+          },
+          {
+            "seed": 10304,
+            "run_id": "FINAL_TEST_LONG_WIDE_10304_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.21308724832214765,
+            "debounced_confirmed_healthy_fraction_of_available": 0.18959731543624161
+          },
+          {
+            "seed": 10305,
+            "run_id": "FINAL_TEST_LONG_WIDE_10305_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5067114093959731,
+            "debounced_confirmed_healthy_fraction_of_available": 0.46476510067114096
+          },
+          {
+            "seed": 10306,
+            "run_id": "FINAL_TEST_LONG_WIDE_10306_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.07885906040268456,
+            "debounced_confirmed_healthy_fraction_of_available": 0.06879194630872483
+          },
+          {
+            "seed": 10307,
+            "run_id": "FINAL_TEST_LONG_WIDE_10307_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.013422818791946308,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0016778523489932886
+          },
+          {
+            "seed": 10310,
+            "run_id": "FINAL_TEST_LONG_WIDE_10310_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10311,
+            "run_id": "FINAL_TEST_LONG_WIDE_10311_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.003355704697986577,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10312,
+            "run_id": "FINAL_TEST_LONG_WIDE_10312_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10315,
+            "run_id": "FINAL_TEST_LONG_WIDE_10315_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10316,
+            "run_id": "FINAL_TEST_LONG_WIDE_10316_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.06879194630872483,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0587248322147651
+          },
+          {
+            "seed": 10318,
+            "run_id": "FINAL_TEST_LONG_WIDE_10318_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.0,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          }
+        ],
+        "interpretation": "Locked complete held-out evaluation; no test-data threshold selection.",
+        "event_proportion_intervals": {
+          "truth_recovery": {
+            "successes": 46,
+            "trials": 48,
+            "fraction": 0.9583333333333334,
+            "wilson_95": [
+              0.8602408885222853,
+              0.9884983479210344
+            ]
+          },
+          "initial_false_healthy_conditional": {
+            "successes": 1,
+            "trials": 46,
+            "fraction": 0.021739130434782608,
+            "wilson_95": [
+              0.0038477551112426345,
+              0.11335554494333024
+            ]
+          },
+          "initial_false_healthy_unconditional": {
+            "successes": 1,
+            "trials": 48,
+            "fraction": 0.020833333333333332,
+            "wilson_95": [
+              0.003687015979399688,
+              0.10899469137531158
+            ]
+          },
+          "recovery_detection_given_truth_recovered": {
+            "successes": 14,
+            "trials": 46,
+            "fraction": 0.30434782608695654,
+            "wilson_95": [
+              0.19079670807448904,
+              0.4480591874023817
+            ]
+          },
+          "relapse_given_truth_recovered": {
+            "successes": 1,
+            "trials": 46,
+            "fraction": 0.021739130434782608,
+            "wilson_95": [
+              0.0038477551112426345,
+              0.11335554494333024
+            ]
+          },
+          "post_relapse_false_healthy_conditional": {
+            "successes": 0,
+            "trials": 1,
+            "fraction": 0.0,
+            "wilson_95": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "post_relapse_false_healthy_unconditional": {
+            "successes": 0,
+            "trials": 1,
+            "fraction": 0.0,
+            "wilson_95": [
+              0.0,
+              0.7934567085261071
+            ]
+          }
+        },
+        "false_healthy_event_unconditional_denominator": 48
+      },
+      "curve": {
+        "roc_auc": 0.9210618498909843,
+        "average_precision": 0.9845448852648289,
+        "bootstrap_replicates": 10000,
+        "undefined_replicates": 0,
+        "events_with_scores": 48,
+        "planned_events": 48,
+        "bootstrap_seed": 20260926,
+        "confirmatory_replicate_count": true,
+        "status": "AVAILABLE",
+        "roc_auc_interval_95": [
+          0.8646133254508326,
+          0.954758885436294
+        ],
+        "average_precision_interval_95": [
+          0.9761006483235932,
+          0.9910850509731427
+        ]
+      },
+      "miss_partition": [
+        30,
+        2,
+        0
+      ]
+    },
+    {
+      "backend": "fastlio",
+      "method": "DCREG_SCHUR_MASK",
+      "primary": {
+        "method": "DCREG_SCHUR_MASK",
+        "threshold": null,
+        "truth_label_eligible_corridor_events": 48,
+        "truth_recovered_events": 46,
+        "non_recovery_events": 2,
+        "truth_recovery_fraction": 0.9583333333333334,
+        "truth_recovery_wilson_95": [
+          0.8602408885222853,
+          0.9884983479210344
+        ],
+        "false_healthy_event_rate_conditional": 0.08695652173913043,
+        "false_healthy_event_rate_unconditional": 0.08333333333333333,
+        "false_healthy_events": 4,
+        "false_healthy_conditional_denominator": 46,
+        "false_healthy_event_wilson_95_conditional": [
+          0.03433531187670748,
+          0.20324935635224178
+        ],
+        "false_healthy_time_fraction_conditional": 0.029896907216494847,
+        "false_healthy_time_fraction_unconditional": 0.029896907216494847,
+        "recovery_sensitivity": 0.8260869565217391,
+        "detected_recovery_events": 38,
+        "detection_delay_median_s_detected_only": 6.800277779500002,
+        "relapse_events": 1,
+        "relapse_fraction_of_truth_recovered": 0.021739130434782608,
+        "post_relapse_false_healthy_event_rate_conditional": 0.0,
+        "post_relapse_false_healthy_event_rate_unconditional": 0.0,
+        "post_relapse_false_healthy_time_fraction_conditional": 0.0,
+        "post_relapse_false_healthy_time_fraction_unconditional": 0.0,
+        "decision_availability_primary_horizon": 1.0,
+        "available_decision_ticks": 9600,
+        "planned_decision_ticks": 9600,
+        "healthy_scene_controls": [
+          {
+            "seed": 10000,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10000_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.32550335570469796,
+            "debounced_confirmed_healthy_fraction_of_available": 0.26677852348993286
+          },
+          {
+            "seed": 10001,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10001_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.47651006711409394,
+            "debounced_confirmed_healthy_fraction_of_available": 0.46308724832214765
+          },
+          {
+            "seed": 10002,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10002_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3859060402684564,
+            "debounced_confirmed_healthy_fraction_of_available": 0.348993288590604
+          },
+          {
+            "seed": 10003,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10003_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4161073825503356,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3875838926174497
+          },
+          {
+            "seed": 10004,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10004_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5184563758389261,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5033557046979866
+          },
+          {
+            "seed": 10005,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10005_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.24664429530201343,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2231543624161074
+          },
+          {
+            "seed": 10006,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10006_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.2483221476510067,
+            "debounced_confirmed_healthy_fraction_of_available": 0.18456375838926176
+          },
+          {
+            "seed": 10007,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10007_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4815436241610738,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4714765100671141
+          },
+          {
+            "seed": 10008,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10008_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5234899328859061,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5151006711409396
+          },
+          {
+            "seed": 10009,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10009_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.21308724832214765,
+            "debounced_confirmed_healthy_fraction_of_available": 0.16778523489932887
+          },
+          {
+            "seed": 10010,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10010_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3724832214765101,
+            "debounced_confirmed_healthy_fraction_of_available": 0.30033557046979864
+          },
+          {
+            "seed": 10011,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10011_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4110738255033557,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3808724832214765
+          },
+          {
+            "seed": 10100,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10100_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.04697986577181208,
+            "debounced_confirmed_healthy_fraction_of_available": 0.02181208053691275
+          },
+          {
+            "seed": 10101,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10101_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4395973154362416,
+            "debounced_confirmed_healthy_fraction_of_available": 0.41778523489932884
+          },
+          {
+            "seed": 10104,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10104_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.17114093959731544,
+            "debounced_confirmed_healthy_fraction_of_available": 0.1325503355704698
+          },
+          {
+            "seed": 10105,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10105_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.006711409395973154,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0016778523489932886
+          },
+          {
+            "seed": 10106,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10106_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.1493288590604027,
+            "debounced_confirmed_healthy_fraction_of_available": 0.11241610738255034
+          },
+          {
+            "seed": 10107,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10107_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4161073825503356,
+            "debounced_confirmed_healthy_fraction_of_available": 0.39932885906040266
+          },
+          {
+            "seed": 10110,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10110_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4848993288590604,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4546979865771812
+          },
+          {
+            "seed": 10111,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10111_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5134228187919463,
+            "debounced_confirmed_healthy_fraction_of_available": 0.43456375838926176
+          },
+          {
+            "seed": 10112,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10112_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.01174496644295302,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0016778523489932886
+          },
+          {
+            "seed": 10116,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10116_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3926174496644295,
+            "debounced_confirmed_healthy_fraction_of_available": 0.34395973154362414
+          },
+          {
+            "seed": 10117,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10117_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.006711409395973154,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0
+          },
+          {
+            "seed": 10118,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10118_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.40268456375838924,
+            "debounced_confirmed_healthy_fraction_of_available": 0.35067114093959734
+          },
+          {
+            "seed": 10200,
+            "run_id": "FINAL_TEST_LONG_NARROW_10200_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5771812080536913,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5671140939597316
+          },
+          {
+            "seed": 10202,
+            "run_id": "FINAL_TEST_LONG_NARROW_10202_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4563758389261745,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4446308724832215
+          },
+          {
+            "seed": 10203,
+            "run_id": "FINAL_TEST_LONG_NARROW_10203_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5167785234899329,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4848993288590604
+          },
+          {
+            "seed": 10204,
+            "run_id": "FINAL_TEST_LONG_NARROW_10204_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5285234899328859,
+            "debounced_confirmed_healthy_fraction_of_available": 0.511744966442953
+          },
+          {
+            "seed": 10205,
+            "run_id": "FINAL_TEST_LONG_NARROW_10205_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.13758389261744966,
+            "debounced_confirmed_healthy_fraction_of_available": 0.09563758389261745
+          },
+          {
+            "seed": 10206,
+            "run_id": "FINAL_TEST_LONG_NARROW_10206_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5067114093959731,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4966442953020134
+          },
+          {
+            "seed": 10207,
+            "run_id": "FINAL_TEST_LONG_NARROW_10207_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5033557046979866,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4546979865771812
+          },
+          {
+            "seed": 10208,
+            "run_id": "FINAL_TEST_LONG_NARROW_10208_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4278523489932886,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3825503355704698
+          },
+          {
+            "seed": 10209,
+            "run_id": "FINAL_TEST_LONG_NARROW_10209_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.31711409395973156,
+            "debounced_confirmed_healthy_fraction_of_available": 0.24664429530201343
+          },
+          {
+            "seed": 10210,
+            "run_id": "FINAL_TEST_LONG_NARROW_10210_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.1912751677852349,
+            "debounced_confirmed_healthy_fraction_of_available": 0.1610738255033557
+          },
+          {
+            "seed": 10212,
+            "run_id": "FINAL_TEST_LONG_NARROW_10212_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4714765100671141,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4395973154362416
+          },
+          {
+            "seed": 10213,
+            "run_id": "FINAL_TEST_LONG_NARROW_10213_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5738255033557047,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5453020134228188
+          },
+          {
+            "seed": 10300,
+            "run_id": "FINAL_TEST_LONG_WIDE_10300_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.43456375838926176,
+            "debounced_confirmed_healthy_fraction_of_available": 0.40604026845637586
+          },
+          {
+            "seed": 10303,
+            "run_id": "FINAL_TEST_LONG_WIDE_10303_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.45805369127516776,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4429530201342282
+          },
+          {
+            "seed": 10304,
+            "run_id": "FINAL_TEST_LONG_WIDE_10304_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.4966442953020134,
+            "debounced_confirmed_healthy_fraction_of_available": 0.48322147651006714
+          },
+          {
+            "seed": 10305,
+            "run_id": "FINAL_TEST_LONG_WIDE_10305_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3238255033557047,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2902684563758389
+          },
+          {
+            "seed": 10306,
+            "run_id": "FINAL_TEST_LONG_WIDE_10306_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.2181208053691275,
+            "debounced_confirmed_healthy_fraction_of_available": 0.19630872483221476
+          },
+          {
+            "seed": 10307,
+            "run_id": "FINAL_TEST_LONG_WIDE_10307_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.3775167785234899,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3540268456375839
+          },
+          {
+            "seed": 10310,
+            "run_id": "FINAL_TEST_LONG_WIDE_10310_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.32550335570469796,
+            "debounced_confirmed_healthy_fraction_of_available": 0.26677852348993286
+          },
+          {
+            "seed": 10311,
+            "run_id": "FINAL_TEST_LONG_WIDE_10311_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.47651006711409394,
+            "debounced_confirmed_healthy_fraction_of_available": 0.47315436241610737
+          },
+          {
+            "seed": 10312,
+            "run_id": "FINAL_TEST_LONG_WIDE_10312_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.21140939597315436,
+            "debounced_confirmed_healthy_fraction_of_available": 0.1929530201342282
+          },
+          {
+            "seed": 10315,
+            "run_id": "FINAL_TEST_LONG_WIDE_10315_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.09563758389261745,
+            "debounced_confirmed_healthy_fraction_of_available": 0.030201342281879196
+          },
+          {
+            "seed": 10316,
+            "run_id": "FINAL_TEST_LONG_WIDE_10316_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.34060402684563756,
+            "debounced_confirmed_healthy_fraction_of_available": 0.33053691275167785
+          },
+          {
+            "seed": 10318,
+            "run_id": "FINAL_TEST_LONG_WIDE_10318_CONTROL_P1",
+            "available_ticks": 596,
+            "planned_ticks": 600,
+            "available_fraction": 0.9933333333333333,
+            "raw_healthy_fraction_of_available": 0.5,
+            "debounced_confirmed_healthy_fraction_of_available": 0.46140939597315433
+          }
+        ],
+        "interpretation": "Locked complete held-out evaluation; no test-data threshold selection.",
+        "event_proportion_intervals": {
+          "truth_recovery": {
+            "successes": 46,
+            "trials": 48,
+            "fraction": 0.9583333333333334,
+            "wilson_95": [
+              0.8602408885222853,
+              0.9884983479210344
+            ]
+          },
+          "initial_false_healthy_conditional": {
+            "successes": 4,
+            "trials": 46,
+            "fraction": 0.08695652173913043,
+            "wilson_95": [
+              0.03433531187670748,
+              0.20324935635224178
+            ]
+          },
+          "initial_false_healthy_unconditional": {
+            "successes": 4,
+            "trials": 48,
+            "fraction": 0.08333333333333333,
+            "wilson_95": [
+              0.03288322434995555,
+              0.19553565161066291
+            ]
+          },
+          "recovery_detection_given_truth_recovered": {
+            "successes": 38,
+            "trials": 46,
+            "fraction": 0.8260869565217391,
+            "wilson_95": [
+              0.6927636765607748,
+              0.9091431643111074
+            ]
+          },
+          "relapse_given_truth_recovered": {
+            "successes": 1,
+            "trials": 46,
+            "fraction": 0.021739130434782608,
+            "wilson_95": [
+              0.0038477551112426345,
+              0.11335554494333024
+            ]
+          },
+          "post_relapse_false_healthy_conditional": {
+            "successes": 0,
+            "trials": 1,
+            "fraction": 0.0,
+            "wilson_95": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "post_relapse_false_healthy_unconditional": {
+            "successes": 0,
+            "trials": 1,
+            "fraction": 0.0,
+            "wilson_95": [
+              0.0,
+              0.7934567085261071
+            ]
+          }
+        },
+        "false_healthy_event_unconditional_denominator": 48
+      },
+      "curve": {
+        "roc_auc": 0.903261165405545,
+        "average_precision": 0.9841013227134796,
+        "bootstrap_replicates": 10000,
+        "undefined_replicates": 0,
+        "events_with_scores": 48,
+        "planned_events": 48,
+        "bootstrap_seed": 20260926,
+        "confirmatory_replicate_count": true,
+        "status": "AVAILABLE",
+        "roc_auc_interval_95": [
+          0.8394129324168261,
+          0.9623971364644631
+        ],
+        "average_precision_interval_95": [
+          0.9661586279349506,
+          0.9956956639801101
+        ]
+      },
+      "miss_partition": [
+        5,
+        2,
+        1
+      ]
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_MIN_EIG_G3",
+      "primary": {
+        "available_decision_ticks": 9600,
+        "decision_availability_primary_horizon": 1.0,
+        "detected_recovery_events": 27,
+        "detection_delay_median_s_detected_only": 3.4002777799999997,
+        "event_proportion_intervals": {
+          "initial_false_healthy_conditional": {
+            "fraction": 0.0851063829787234,
+            "successes": 4,
+            "trials": 47,
+            "wilson_95": [
+              0.033593579469713086,
+              0.19931805195022648
+            ]
+          },
+          "initial_false_healthy_unconditional": {
+            "fraction": 0.08333333333333333,
+            "successes": 4,
+            "trials": 48,
+            "wilson_95": [
+              0.03288322434995555,
+              0.19553565161066291
+            ]
+          },
+          "post_relapse_false_healthy_conditional": {
+            "fraction": 0.0,
+            "successes": 0,
+            "trials": 1,
+            "wilson_95": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "post_relapse_false_healthy_unconditional": {
+            "fraction": 0.0,
+            "successes": 0,
+            "trials": 1,
+            "wilson_95": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "recovery_detection_given_truth_recovered": {
+            "fraction": 0.84375,
+            "successes": 27,
+            "trials": 32,
+            "wilson_95": [
+              0.6824550744643347,
+              0.9313568089337279
+            ]
+          },
+          "relapse_given_truth_recovered": {
+            "fraction": 0.03125,
+            "successes": 1,
+            "trials": 32,
+            "wilson_95": [
+              0.005537717362550945,
+              0.15744607800372734
+            ]
+          },
+          "truth_recovery": {
+            "fraction": 0.6666666666666666,
+            "successes": 32,
+            "trials": 48,
+            "wilson_95": [
+              0.5253984633247204,
+              0.783233986291032
+            ]
+          }
+        },
+        "false_healthy_conditional_denominator": 47,
+        "false_healthy_event_rate_conditional": 0.0851063829787234,
+        "false_healthy_event_rate_unconditional": 0.08333333333333333,
+        "false_healthy_event_unconditional_denominator": 48,
+        "false_healthy_event_wilson_95_conditional": [
+          0.033593579469713086,
+          0.19931805195022648
+        ],
+        "false_healthy_events": 4,
+        "false_healthy_time_fraction_conditional": 0.004415011037527594,
+        "false_healthy_time_fraction_unconditional": 0.004415011037527594,
+        "healthy_scene_controls": [
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.40436241610738255,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.44966442953020136,
+            "run_id": "FINAL_TEST_LONG_NARROW_10200_CONTROL_POINTLIO_P1",
+            "seed": 10200
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.47818791946308725,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.49161073825503354,
+            "run_id": "FINAL_TEST_LONG_NARROW_10202_CONTROL_POINTLIO_P1",
+            "seed": 10202
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4513422818791946,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4865771812080537,
+            "run_id": "FINAL_TEST_LONG_NARROW_10203_CONTROL_POINTLIO_P1",
+            "seed": 10203
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3875838926174497,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.41778523489932884,
+            "run_id": "FINAL_TEST_LONG_NARROW_10204_CONTROL_POINTLIO_P1",
+            "seed": 10204
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3238255033557047,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.35570469798657717,
+            "run_id": "FINAL_TEST_LONG_NARROW_10205_CONTROL_POINTLIO_P1",
+            "seed": 10205
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2684563758389262,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.3087248322147651,
+            "run_id": "FINAL_TEST_LONG_NARROW_10206_CONTROL_POINTLIO_P1",
+            "seed": 10206
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3640939597315436,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4278523489932886,
+            "run_id": "FINAL_TEST_LONG_NARROW_10207_CONTROL_POINTLIO_P1",
+            "seed": 10207
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2550335570469799,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.34563758389261745,
+            "run_id": "FINAL_TEST_LONG_NARROW_10208_CONTROL_POINTLIO_P1",
+            "seed": 10208
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.45302013422818793,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.47651006711409394,
+            "run_id": "FINAL_TEST_LONG_NARROW_10209_CONTROL_POINTLIO_P1",
+            "seed": 10209
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.30033557046979864,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.32550335570469796,
+            "run_id": "FINAL_TEST_LONG_NARROW_10210_CONTROL_POINTLIO_P1",
+            "seed": 10210
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4412751677852349,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4865771812080537,
+            "run_id": "FINAL_TEST_LONG_NARROW_10212_CONTROL_POINTLIO_P1",
+            "seed": 10212
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.44966442953020136,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4697986577181208,
+            "run_id": "FINAL_TEST_LONG_NARROW_10213_CONTROL_POINTLIO_P1",
+            "seed": 10213
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.48322147651006714,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5050335570469798,
+            "run_id": "FINAL_TEST_LONG_WIDE_10300_CONTROL_POINTLIO_P1",
+            "seed": 10300
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.008389261744966443,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.031879194630872486,
+            "run_id": "FINAL_TEST_LONG_WIDE_10303_CONTROL_POINTLIO_P1",
+            "seed": 10303
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2063758389261745,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.27181208053691275,
+            "run_id": "FINAL_TEST_LONG_WIDE_10304_CONTROL_POINTLIO_P1",
+            "seed": 10304
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4848993288590604,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5302013422818792,
+            "run_id": "FINAL_TEST_LONG_WIDE_10305_CONTROL_POINTLIO_P1",
+            "seed": 10305
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_LONG_WIDE_10306_CONTROL_POINTLIO_P1",
+            "seed": 10306
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_LONG_WIDE_10307_CONTROL_POINTLIO_P1",
+            "seed": 10307
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2533557046979866,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.2835570469798658,
+            "run_id": "FINAL_TEST_LONG_WIDE_10310_CONTROL_POINTLIO_P1",
+            "seed": 10310
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.12248322147651007,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.13926174496644295,
+            "run_id": "FINAL_TEST_LONG_WIDE_10311_CONTROL_POINTLIO_P1",
+            "seed": 10311
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.40939597315436244,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4412751677852349,
+            "run_id": "FINAL_TEST_LONG_WIDE_10312_CONTROL_POINTLIO_P1",
+            "seed": 10312
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_LONG_WIDE_10315_CONTROL_POINTLIO_P1",
+            "seed": 10315
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_LONG_WIDE_10316_CONTROL_POINTLIO_P1",
+            "seed": 10316
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.006711409395973154,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.025167785234899327,
+            "run_id": "FINAL_TEST_LONG_WIDE_10318_CONTROL_POINTLIO_P1",
+            "seed": 10318
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3271812080536913,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.37416107382550334,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10000_CONTROL_POINTLIO_P1",
+            "seed": 10000
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4664429530201342,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5268456375838926,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10001_CONTROL_POINTLIO_P1",
+            "seed": 10001
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.13926174496644295,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.16778523489932887,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10002_CONTROL_POINTLIO_P1",
+            "seed": 10002
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.30201342281879195,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.3640939597315436,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10003_CONTROL_POINTLIO_P1",
+            "seed": 10003
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3036912751677852,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.337248322147651,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10004_CONTROL_POINTLIO_P1",
+            "seed": 10004
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.03691275167785235,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.09899328859060402,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10005_CONTROL_POINTLIO_P1",
+            "seed": 10005
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.031879194630872486,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.04194630872483222,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10006_CONTROL_POINTLIO_P1",
+            "seed": 10006
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.34060402684563756,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.3959731543624161,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10007_CONTROL_POINTLIO_P1",
+            "seed": 10007
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.10738255033557047,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.15100671140939598,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10008_CONTROL_POINTLIO_P1",
+            "seed": 10008
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.28691275167785235,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.3389261744966443,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10009_CONTROL_POINTLIO_P1",
+            "seed": 10009
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.13590604026845637,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.1644295302013423,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10010_CONTROL_POINTLIO_P1",
+            "seed": 10010
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3187919463087248,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.36073825503355705,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10011_CONTROL_POINTLIO_P1",
+            "seed": 10011
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.6895973154362416,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.7231543624161074,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10100_CONTROL_POINTLIO_P1",
+            "seed": 10100
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.43456375838926176,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4865771812080537,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10101_CONTROL_POINTLIO_P1",
+            "seed": 10101
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.7751677852348994,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.8137583892617449,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10104_CONTROL_POINTLIO_P1",
+            "seed": 10104
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10105_CONTROL_POINTLIO_P1",
+            "seed": 10105
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4798657718120805,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5369127516778524,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10106_CONTROL_POINTLIO_P1",
+            "seed": 10106
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.6023489932885906,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6593959731543624,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10107_CONTROL_POINTLIO_P1",
+            "seed": 10107
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4161073825503356,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4563758389261745,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10110_CONTROL_POINTLIO_P1",
+            "seed": 10110
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10111_CONTROL_POINTLIO_P1",
+            "seed": 10111
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.6526845637583892,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6828859060402684,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10112_CONTROL_POINTLIO_P1",
+            "seed": 10112
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10116_CONTROL_POINTLIO_P1",
+            "seed": 10116
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.62751677852349,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.7046979865771812,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10117_CONTROL_POINTLIO_P1",
+            "seed": 10117
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.010067114093959731,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.03859060402684564,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10118_CONTROL_POINTLIO_P1",
+            "seed": 10118
+          }
+        ],
+        "interpretation": "Locked Point-LIO final replication; no final-data threshold selection.",
+        "method": "POINTLIO_MIN_EIG_G3",
+        "non_recovery_events": 16,
+        "planned_decision_ticks": 9600,
+        "post_relapse_false_healthy_event_rate_conditional": 0.0,
+        "post_relapse_false_healthy_event_rate_unconditional": 0.0,
+        "post_relapse_false_healthy_time_fraction_conditional": 0.0,
+        "post_relapse_false_healthy_time_fraction_unconditional": 0.0,
+        "recovery_sensitivity": 0.84375,
+        "relapse_events": 1,
+        "relapse_fraction_of_truth_recovered": 0.03125,
+        "threshold": 123.80876977779258,
+        "truth_label_eligible_corridor_events": 48,
+        "truth_recovered_events": 32,
+        "truth_recovery_fraction": 0.6666666666666666,
+        "truth_recovery_wilson_95": [
+          0.5253984633247204,
+          0.783233986291032
+        ]
+      },
+      "curve": {
+        "average_precision": 0.98977281565543,
+        "average_precision_interval_95": [
+          0.9828724808149606,
+          0.9952583752905189
+        ],
+        "bootstrap_replicates": 10000,
+        "bootstrap_seed": 20260926,
+        "confirmatory_replicate_count": true,
+        "events_with_scores": 48,
+        "planned_events": 48,
+        "roc_auc": 0.9885937066029324,
+        "roc_auc_interval_95": [
+          0.9819247673933418,
+          0.993710688263443
+        ],
+        "status": "AVAILABLE",
+        "undefined_replicates": 0
+      },
+      "miss_partition": [
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "backend": "pointlio",
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "primary": {
+        "available_decision_ticks": 9600,
+        "decision_availability_primary_horizon": 1.0,
+        "detected_recovery_events": 25,
+        "detection_delay_median_s_detected_only": 3.000277779000001,
+        "event_proportion_intervals": {
+          "initial_false_healthy_conditional": {
+            "fraction": 0.3404255319148936,
+            "successes": 16,
+            "trials": 47,
+            "wilson_95": [
+              0.22167260713762188,
+              0.4832934049469702
+            ]
+          },
+          "initial_false_healthy_unconditional": {
+            "fraction": 0.3333333333333333,
+            "successes": 16,
+            "trials": 48,
+            "wilson_95": [
+              0.2167660137089678,
+              0.47460153667527943
+            ]
+          },
+          "post_relapse_false_healthy_conditional": {
+            "fraction": 1.0,
+            "successes": 1,
+            "trials": 1,
+            "wilson_95": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "post_relapse_false_healthy_unconditional": {
+            "fraction": 1.0,
+            "successes": 1,
+            "trials": 1,
+            "wilson_95": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "recovery_detection_given_truth_recovered": {
+            "fraction": 0.78125,
+            "successes": 25,
+            "trials": 32,
+            "wilson_95": [
+              0.6124466920955516,
+              0.8897630306846815
+            ]
+          },
+          "relapse_given_truth_recovered": {
+            "fraction": 0.03125,
+            "successes": 1,
+            "trials": 32,
+            "wilson_95": [
+              0.005537717362550945,
+              0.15744607800372734
+            ]
+          },
+          "truth_recovery": {
+            "fraction": 0.6666666666666666,
+            "successes": 32,
+            "trials": 48,
+            "wilson_95": [
+              0.5253984633247204,
+              0.783233986291032
+            ]
+          }
+        },
+        "false_healthy_conditional_denominator": 47,
+        "false_healthy_event_rate_conditional": 0.3404255319148936,
+        "false_healthy_event_rate_unconditional": 0.3333333333333333,
+        "false_healthy_event_unconditional_denominator": 48,
+        "false_healthy_event_wilson_95_conditional": [
+          0.22167260713762188,
+          0.4832934049469702
+        ],
+        "false_healthy_events": 16,
+        "false_healthy_time_fraction_conditional": 0.04442604856512141,
+        "false_healthy_time_fraction_unconditional": 0.04442604856512141,
+        "healthy_scene_controls": [
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5151006711409396,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5218120805369127,
+            "run_id": "FINAL_TEST_LONG_NARROW_10200_CONTROL_POINTLIO_P1",
+            "seed": 10200
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5553691275167785,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5620805369127517,
+            "run_id": "FINAL_TEST_LONG_NARROW_10202_CONTROL_POINTLIO_P1",
+            "seed": 10202
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4966442953020134,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5167785234899329,
+            "run_id": "FINAL_TEST_LONG_NARROW_10203_CONTROL_POINTLIO_P1",
+            "seed": 10203
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4513422818791946,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4563758389261745,
+            "run_id": "FINAL_TEST_LONG_NARROW_10204_CONTROL_POINTLIO_P1",
+            "seed": 10204
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3674496644295302,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.41778523489932884,
+            "run_id": "FINAL_TEST_LONG_NARROW_10205_CONTROL_POINTLIO_P1",
+            "seed": 10205
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4563758389261745,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4714765100671141,
+            "run_id": "FINAL_TEST_LONG_NARROW_10206_CONTROL_POINTLIO_P1",
+            "seed": 10206
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.26677852348993286,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.31711409395973156,
+            "run_id": "FINAL_TEST_LONG_NARROW_10207_CONTROL_POINTLIO_P1",
+            "seed": 10207
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4714765100671141,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5033557046979866,
+            "run_id": "FINAL_TEST_LONG_NARROW_10208_CONTROL_POINTLIO_P1",
+            "seed": 10208
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3775167785234899,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.43791946308724833,
+            "run_id": "FINAL_TEST_LONG_NARROW_10209_CONTROL_POINTLIO_P1",
+            "seed": 10209
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3859060402684564,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.436241610738255,
+            "run_id": "FINAL_TEST_LONG_NARROW_10210_CONTROL_POINTLIO_P1",
+            "seed": 10210
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3238255033557047,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.38926174496644295,
+            "run_id": "FINAL_TEST_LONG_NARROW_10212_CONTROL_POINTLIO_P1",
+            "seed": 10212
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.48825503355704697,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5067114093959731,
+            "run_id": "FINAL_TEST_LONG_NARROW_10213_CONTROL_POINTLIO_P1",
+            "seed": 10213
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.30201342281879195,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.32046979865771813,
+            "run_id": "FINAL_TEST_LONG_WIDE_10300_CONTROL_POINTLIO_P1",
+            "seed": 10300
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4714765100671141,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4899328859060403,
+            "run_id": "FINAL_TEST_LONG_WIDE_10303_CONTROL_POINTLIO_P1",
+            "seed": 10303
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.37416107382550334,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.3859060402684564,
+            "run_id": "FINAL_TEST_LONG_WIDE_10304_CONTROL_POINTLIO_P1",
+            "seed": 10304
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4697986577181208,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5,
+            "run_id": "FINAL_TEST_LONG_WIDE_10305_CONTROL_POINTLIO_P1",
+            "seed": 10305
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_LONG_WIDE_10306_CONTROL_POINTLIO_P1",
+            "seed": 10306
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.09060402684563758,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.11409395973154363,
+            "run_id": "FINAL_TEST_LONG_WIDE_10307_CONTROL_POINTLIO_P1",
+            "seed": 10307
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.47651006711409394,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4798657718120805,
+            "run_id": "FINAL_TEST_LONG_WIDE_10310_CONTROL_POINTLIO_P1",
+            "seed": 10310
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.47651006711409394,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4798657718120805,
+            "run_id": "FINAL_TEST_LONG_WIDE_10311_CONTROL_POINTLIO_P1",
+            "seed": 10311
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5100671140939598,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5201342281879194,
+            "run_id": "FINAL_TEST_LONG_WIDE_10312_CONTROL_POINTLIO_P1",
+            "seed": 10312
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0050335570469798654,
+            "run_id": "FINAL_TEST_LONG_WIDE_10315_CONTROL_POINTLIO_P1",
+            "seed": 10315
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.0,
+            "run_id": "FINAL_TEST_LONG_WIDE_10316_CONTROL_POINTLIO_P1",
+            "seed": 10316
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.38926174496644295,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.40604026845637586,
+            "run_id": "FINAL_TEST_LONG_WIDE_10318_CONTROL_POINTLIO_P1",
+            "seed": 10318
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.04194630872483222,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.050335570469798654,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10000_CONTROL_POINTLIO_P1",
+            "seed": 10000
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5805369127516778,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6090604026845637,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10001_CONTROL_POINTLIO_P1",
+            "seed": 10001
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.62248322147651,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6610738255033557,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10002_CONTROL_POINTLIO_P1",
+            "seed": 10002
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.15268456375838926,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.22986577181208054,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10003_CONTROL_POINTLIO_P1",
+            "seed": 10003
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3926174496644295,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.44798657718120805,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10004_CONTROL_POINTLIO_P1",
+            "seed": 10004
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4983221476510067,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5285234899328859,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10005_CONTROL_POINTLIO_P1",
+            "seed": 10005
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.2600671140939597,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.3087248322147651,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10006_CONTROL_POINTLIO_P1",
+            "seed": 10006
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5838926174496645,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6157718120805369,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10007_CONTROL_POINTLIO_P1",
+            "seed": 10007
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4395973154362416,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.44798657718120805,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10008_CONTROL_POINTLIO_P1",
+            "seed": 10008
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.6325503355704698,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6459731543624161,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10009_CONTROL_POINTLIO_P1",
+            "seed": 10009
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.47818791946308725,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.5016778523489933,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10010_CONTROL_POINTLIO_P1",
+            "seed": 10010
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.6493288590604027,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6526845637583892,
+            "run_id": "FINAL_TEST_SHORT_NARROW_10011_CONTROL_POINTLIO_P1",
+            "seed": 10011
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.6375838926174496,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.662751677852349,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10100_CONTROL_POINTLIO_P1",
+            "seed": 10100
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3959731543624161,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4211409395973154,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10101_CONTROL_POINTLIO_P1",
+            "seed": 10101
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.6426174496644296,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6577181208053692,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10104_CONTROL_POINTLIO_P1",
+            "seed": 10104
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.003355704697986577,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.006711409395973154,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10105_CONTROL_POINTLIO_P1",
+            "seed": 10105
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.018456375838926176,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.026845637583892617,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10106_CONTROL_POINTLIO_P1",
+            "seed": 10106
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.3422818791946309,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.40268456375838924,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10107_CONTROL_POINTLIO_P1",
+            "seed": 10107
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.5704697986577181,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6124161073825504,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10110_CONTROL_POINTLIO_P1",
+            "seed": 10110
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.0050335570469798654,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.02181208053691275,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10111_CONTROL_POINTLIO_P1",
+            "seed": 10111
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.6208053691275168,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.6241610738255033,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10112_CONTROL_POINTLIO_P1",
+            "seed": 10112
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.016778523489932886,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.05201342281879195,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10116_CONTROL_POINTLIO_P1",
+            "seed": 10116
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.4563758389261745,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4899328859060403,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10117_CONTROL_POINTLIO_P1",
+            "seed": 10117
+          },
+          {
+            "available_fraction": 0.9933333333333333,
+            "available_ticks": 596,
+            "debounced_confirmed_healthy_fraction_of_available": 0.42449664429530204,
+            "planned_ticks": 600,
+            "raw_healthy_fraction_of_available": 0.4597315436241611,
+            "run_id": "FINAL_TEST_SHORT_WIDE_10118_CONTROL_POINTLIO_P1",
+            "seed": 10118
+          }
+        ],
+        "interpretation": "Locked Point-LIO final replication; no final-data threshold selection.",
+        "method": "POINTLIO_DCREG_SCHUR_MASK",
+        "non_recovery_events": 16,
+        "planned_decision_ticks": 9600,
+        "post_relapse_false_healthy_event_rate_conditional": 1.0,
+        "post_relapse_false_healthy_event_rate_unconditional": 1.0,
+        "post_relapse_false_healthy_time_fraction_conditional": 0.3103448275862069,
+        "post_relapse_false_healthy_time_fraction_unconditional": 0.3103448275862069,
+        "recovery_sensitivity": 0.78125,
+        "relapse_events": 1,
+        "relapse_fraction_of_truth_recovered": 0.03125,
+        "threshold": null,
+        "truth_label_eligible_corridor_events": 48,
+        "truth_recovered_events": 32,
+        "truth_recovery_fraction": 0.6666666666666666,
+        "truth_recovery_wilson_95": [
+          0.5253984633247204,
+          0.783233986291032
+        ]
+      },
+      "curve": {
+        "average_precision": 0.9428606743993161,
+        "average_precision_interval_95": [
+          0.8996127438591732,
+          0.9712735259676103
+        ],
+        "bootstrap_replicates": 10000,
+        "bootstrap_seed": 20260926,
+        "confirmatory_replicate_count": true,
+        "events_with_scores": 48,
+        "planned_events": 48,
+        "roc_auc": 0.9003663410811409,
+        "roc_auc_interval_95": [
+          0.844724180807898,
+          0.9450837625056014
+        ],
+        "status": "AVAILABLE",
+        "undefined_replicates": 0
+      },
+      "miss_partition": [
+        2,
+        0,
+        5
+      ]
+    }
+  ],
+  "tolerance_rows": [
+    [
+      "FAST-LIO",
+      "Half",
+      "44/48",
+      "91.7",
+      "[80.4, 96.7]"
+    ],
+    [
+      "FAST-LIO",
+      "Primary",
+      "46/48",
+      "95.8",
+      "[86.0, 98.8]"
+    ],
+    [
+      "FAST-LIO",
+      "Double",
+      "47/48",
+      "97.9",
+      "[89.1, 99.6]"
+    ],
+    [
+      "Point-LIO",
+      "Half",
+      "31/48",
+      "64.6",
+      "[50.4, 76.6]"
+    ],
+    [
+      "Point-LIO",
+      "Primary",
+      "32/48",
+      "66.7",
+      "[52.5, 78.3]"
+    ],
+    [
+      "Point-LIO",
+      "Double",
+      "33/48",
+      "68.8",
+      "[54.7, 80.1]"
+    ]
+  ],
+  "three_second_rows": [
+    [
+      "FAST-LIO",
+      "Corridor",
+      48,
+      "8160/8160",
+      "92.32"
+    ],
+    [
+      "FAST-LIO",
+      "Control",
+      48,
+      "8160/8160",
+      "94.61"
+    ],
+    [
+      "Point-LIO",
+      "Corridor",
+      48,
+      "8160/8160",
+      "64.15"
+    ],
+    [
+      "Point-LIO",
+      "Control",
+      48,
+      "8160/8160",
+      "81.67"
+    ]
+  ],
+  "paired_interior_difference": {
+    "fastlio": {
+      "status": "AVAILABLE",
+      "estimate": 0.19385903338688923,
+      "stratum_means": {
+        "TEST_SHORT_NARROW": 0.20311732795772885,
+        "TEST_SHORT_WIDE": 0.15167788050239384,
+        "TEST_LONG_NARROW": 0.17915540813780986,
+        "TEST_LONG_WIDE": 0.24148551694962442
+      },
+      "interval_95": [
+        0.08628118472227862,
+        0.31146045340403017
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20260926,
+      "uncertainty_unit": "paired geometry seed, resampled within fixed strata",
+      "confirmatory_replicate_count": true
+    },
+    "pointlio": {
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20260926,
+      "confirmatory_replicate_count": true,
+      "estimate": 0.14858280656108358,
+      "interval_95": [
+        0.06825288734815771,
+        0.229653329989531
+      ],
+      "status": "AVAILABLE",
+      "stratum_means": {
+        "TEST_LONG_NARROW": 0.194144518745804,
+        "TEST_LONG_WIDE": 0.11338812613019573,
+        "TEST_SHORT_NARROW": -0.08687790419944186,
+        "TEST_SHORT_WIDE": 0.3736764855677764
+      },
+      "uncertainty_unit": "paired geometry seed, resampled within fixed strata"
+    }
+  }
+}

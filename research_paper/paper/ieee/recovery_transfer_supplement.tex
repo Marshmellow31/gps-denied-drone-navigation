@@ -1,0 +1,265 @@
+\documentclass[conference,onecolumn]{IEEEtran}
+% Readable supporting material: IEEEtran Times Roman, one column for full ledgers.
+\usepackage[T1]{fontenc}
+\usepackage{graphicx,microtype,amsmath,amssymb,booktabs,longtable,array,listings}
+\usepackage[hidelinks]{hyperref}
+\makeatletter\setlength{\@fptop}{0pt}\setlength{\@fpsep}{12pt}\makeatother
+\raggedbottom
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,keepspaces=true,frame=single}
+\title{Supporting Material for\\Fixed Geometric Health Decisions After LiDAR Degeneracy}
+\author{\IEEEauthorblockN{Harshil Patel, Daksha Lingampeta, and Nisarg Vyas}}
+\begin{document}\maketitle
+\begin{abstract}
+This supplement records the formal endpoint distinctions, exact configuration,
+geometry-screen history, existing sensitivity analyses, development repeatability
+and complete policy-event ledger supporting the controlled transfer study.
+It typesets retained evidence; it introduces no new native runs or threshold fitting.
+The independent final sampling unit is a geometry pair. There are 48 pairs,
+192 native scene/backend runs, and 192 corridor policy-event rows; the latter
+two counts must not be interpreted as 192 independent geometries.
+\end{abstract}
+
+\section{Evidence scope and reading map}
+The main manuscript contains the primary operational definitions, fixed-policy
+results and interpretation. The supporting CSV files retain full precision;
+printed tables round values only for readability. The primary exports are
+\path{research_paper/evidence/final_geometry_v2_results_20261012/}.
+The exploratory miss diagnosis is separately recorded in
+\path{final_failure_analysis_20261012/}. Its categories and example selection
+were produced after the primary results and are not preregistered hypotheses.
+All examples in the main paper use the existing lowest-seed selection rule.
+Source hashes and the exact timeline choices are retained in the adjacent
+\path{support/asset_manifest.json} and \path{support/timeline_selection.json}.
+No test-set threshold, revised label, selected example or new bootstrap was
+used to replace a primary result during this manuscript revision.
+
+\section{Formal endpoint arguments}
+These elementary arguments state what the measurements do and do not establish.
+They are explanatory proofs, not claims of new mathematical theorems.
+
+\subsection{Relative motion is invariant to a constant world-frame change}
+Let $T(t)\in SE(3)$ map the body frame to a world frame and let a constant
+$A\in SE(3)$ redefine that world frame. Then
+\begin{equation}
+(AT(t_a))^{-1}(AT(t_b))=T(t_a)^{-1}A^{-1}AT(t_b)
+=T(t_a)^{-1}T(t_b).
+\end{equation}
+Thus each relative transform, and the discrepancy between estimated and reference
+relative transforms in the same body-frame convention, is unchanged by a constant
+left world transform. This does not prove invariance to time-varying frame errors,
+incorrect extrinsics, scale changes or estimator resets. Reset-crossing windows
+are explicitly unavailable. Good relative motion also does not imply small
+accumulated global position error.
+
+\subsection{A fixed geometric Hessian does not bound arbitrary bias}
+Assume a linear measurement model $y=Jx^\star+b$ with $J\in\mathbb R^{m\times n}$
+full column rank. The unique least-squares solution is
+\begin{equation}
+\widehat{x}=(J^\top J)^{-1}J^\top y
+=x^\star+(J^\top J)^{-1}J^\top b.
+\end{equation}
+For any vector $v\in\mathbb R^n$, choose $b=Jv$. Then
+$\widehat{x}-x^\star=v$, while $J^\top J$ is unchanged. Therefore a score
+computed only from this Hessian cannot give an unconditional finite error bound
+when $b$ is unrestricted. If instead $\lVert b\rVert\leq B$, then
+$\lVert\widehat{x}-x^\star\rVert\leq B/\sigma_{\min}(J)$; the missing
+assumption matters. This is a linear-model counterexample, not evidence that
+this particular bias caused any native-run failure, nor a proof that geometry
+has no predictive value.
+
+\subsection{An active state need not produce a new recovery announcement}
+For consecutive available decision ticks let $z_j\in\{0,1\}$ denote confirmed
+health and $a_j=z_j(1-z_{j-1})$ a transition announcement. If $z_j=1$ before
+reference-defined onset and remains one throughout the recovered interval,
+then $a_j=0$ throughout that interval. The state overlaps recovered motion,
+but no new post-onset announcement exists. This proves that a missed declaration
+alone cannot establish continuously unhealthy output. Missing or reset evidence
+clears confirmation; this argument applies to an uninterrupted available segment.
+The online decision sees only past diagnostic records. Reference onset is
+retrospective and is never an input to the state machine.
+
+\section{Exact timing, decisions and uncertainty}
+Primary motion windows have nominal non-overlapping one-second boundaries.
+The nearest pose within $\pm0.05$ s is selected once per boundary, with earlier
+pose on a tie; actual duration must be 0.9--1.1 s. A window passes when relative
+translation error is at most 0.20 m and rotation error at most $5^\circ$.
+Recovery is the first three consecutive passing post-exit windows by exit plus
+20 s. Onset is the first actual window start, confirmation the third end.
+A later required failed/unavailable window ends the episode at its start;
+otherwise it ends at the deadline. One relapse is observed per backend.
+Completed non-recoveries remain distinct from failed execution.
+
+Decisions use a 10 Hz grid, latest same-segment record no older than 0.2 s,
+and three distinct healthy source records on consecutive ticks. A newer invalid
+record cannot be skipped. The minimum accepted-row count is six.
+The scalar score uses a 3 m lever arm and fixed $N\,0.001$ normalization;
+these are measurement-geometry conventions rather than a calibrated posterior.
+The fixed Schur adaptation uses condition ratio 10 and pseudoinverse relative
+rank tolerance $10^{-12}$. It does not implement DCReg's full estimator or
+mitigation. Scalar thresholds are 166.16366016039856 (FAST-LIO) and
+123.80876977779258 (Point-LIO), selected only on development corridor seeds
+14--45. The development selection ceiling is 10\% conditional initial
+false-healthy events; sensitivity is maximized and ties favor the higher threshold.
+
+Event proportions use Wilson 95\% intervals. The paired interior-motion effect
+uses each scene's median error on the predeclared central corridor region,
+corridor minus matched control, then equal geometry-group weighting. Its
+percentile interval uses 10,000 geometry-pair bootstrap replicates within the
+four fixed groups, PCG seed 20260926 and linear quantiles. Policies on the
+same geometry and timestamps within a run are not independent samples.
+Detected-only median delays condition on successful declarations and must be
+read with the missed-event counts.
+
+\section{Simulator and native identities}
+The simulator uses 60 s runs, a right-handed z-up frame, opaque rectangular
+surfaces, 0.8 m/s nominal cruise and prescribed smooth three-dimensional motion.
+LiDAR has 16 beams over $\pm15^\circ$, 360 azimuth samples and 10 Hz scans.
+Range noise standard deviation is 0.01 m. IMU rate is 200 Hz with white noise
+0.002 rad/s and 0.02 m/s$^2$; initial bias standard deviations are 0.003 rad/s
+and 0.03 m/s$^2$. Random walks are 0.0001 rad/s/$\sqrt{\mathrm s}$ and
+0.001 m/s$^2$/$\sqrt{\mathrm s}$ respectively. Floor and ceiling are at
+$z=-1$ and 2 m. The pre-entry room spans $x=-12$ to 0 and the post-exit
+room $x=L$ to 50 m, with sampled half-width 4.5--7.5 m.
+The control adds partial positive-side baffles at $x=Li/(n+1)$,
+$n=\max(4,\lceil L/(2\,\mathrm m)\rceil-1)$, spanning $y=0.65w$ to $w$ and
+$z=-1$ to 1.5 m while preserving the open route. The serialized paired IMU
+stream and prescribed trajectory match. Surface returns change with the baffles.
+
+Each backend has 96 completed final runs. The identities below agree across
+all 96 manifests for that backend, checked against the retained receipt hashes.
+The JSON records upstream commits, binary hashes, configuration hashes and
+worktree-patch hashes. A commit identifier alone is insufficient for these
+instrumented builds. Historical configuration filenames include ``development''
+or ``bootstrap''; receipt hashes establish their actual use in the final runs.
+\lstinputlisting{support/native_build_identities.json}
+\subsection{FAST-LIO configuration, verbatim}
+\lstinputlisting{support/fastlio_simulation_bootstrap.yaml}
+\subsection{Point-LIO configuration, verbatim}
+\lstinputlisting{support/point_lio_simulation_development.yaml}
+
+\section{Geometry screening and retained workflow history}
+The original screen failed: 68 candidates yielded short/narrow 12, short/wide 10,
+long/narrow 0 and long/wide 12 eligible layouts, insufficient for the planned
+balanced final design. Its exact historical byte digest could not be reconciled
+because the original bytes are unavailable. The retained reconciliation explicitly
+records \texttt{UNRESOLVED\_ORIGINAL\_BYTES\_NOT\_AVAILABLE}; this limitation
+is not silently converted into a successful provenance claim.
+
+The revised, separately frozen geometry-only screen checked 64 candidates and
+selected 12 per group, 48 total, without inspecting final estimator accuracy or
+scores. Short lengths span 8--9 m, long 15--18 m; narrow half-widths 1.3--1.5 m,
+wide 2.5--3.0 m. Development lengths were 9--13 m and half-widths 1.6--2.4 m.
+Eligibility requires axial-normal fraction $f_c\leq0.10$ in the corridor,
+$f_u\geq0.15$ in the matched control, and $f_{+5}\geq0.20$ at five seconds
+past exit. These fractions screen geometry, not observed recovery.
+The test population is conditional on this screen; it is not every possible corridor.
+Table rows below include unsuccessful and unused candidates.
+\input{tables/screen_ledger.tex}
+
+All 192 selected native runs completed; none was replaced by a selective retry.
+A Point-LIO preflight failed for missing scratch storage before any replay.
+An earlier primary-analyzer invocation rejected extra shared-threshold metadata
+before loading poses; the retained compatibility adapter admits that metadata
+without altering the scientific analysis. Those workflow failures remain recorded
+in the evidence package and do not represent completed native non-recoveries.
+Earlier GEODE failures and Hilti-Oxford development-only runs do not enter these
+final simulated estimates.
+
+\section{Additional analyses from the accepted exports}
+\subsection{Threshold-free discrimination}
+The following scores describe ranking, not the performance of a replacement
+threshold. Tick weights give each geometry equal contribution; bootstrap units
+remain geometry clusters. Scalar scores increase with health; the directional
+score is the reciprocal maximum condition ratio. The truth target is membership
+in the reference recovered interval. All four estimates use 10,000 retained
+bootstrap replicates, with no undefined replicates. High AUC does not imply
+high declaration sensitivity at the frozen operating point.
+\begin{table}[ht]\centering\caption{Existing discrimination estimates. AP denotes average precision.}
+\input{tables/curves.tex}\end{table}
+
+\subsection{Reference-label tolerance sensitivity}
+Half tolerance is 0.10 m and $2.5^\circ$; primary is 0.20 m and $5^\circ$;
+double is 0.40 m and $10^\circ$. Each still requires three consecutive one-second
+windows. These alternative reference labels do not replace the primary outcome
+or select a preferred threshold. They do not report retuned policy performance.
+\begin{table}[ht]\centering\caption{Recovered events under existing tolerance sensitivity labels.}
+\input{tables/tolerance.tex}\end{table}
+\begin{table}[ht]\centering\caption{Tolerance sensitivity separated by geometry group.}
+\input{tables/tolerance_strata.tex}\end{table}
+\clearpage
+\subsection{Separate three-second motion-rate sensitivity}
+This analysis uses three-second relative motion windows starting every 0.1 s,
+not the primary three consecutive one-second criterion. It applies the existing
+translation/rotation rate cutoffs of 0.20 m/s and $5^\circ$/s. Each scene has
+170 planned post-exit windows per geometry, all valid here. The overlapping
+windows are not independent observations. Tables show an equal-event mean pass
+fraction, rather than treating 8,160 windows as independent recovered events.
+\begin{table}[ht]\centering\caption{Existing three-second rate sensitivity, pooled across geometries.}
+\input{tables/window3.tex}\end{table}
+\begin{table}[ht]\centering\caption{Existing three-second rate sensitivity by group.}
+\input{tables/window3_strata.tex}\end{table}
+
+\subsection{Development repeatability and its limits}
+The retained development audit compares four repeat runs (seeds 14 and 45,
+corridor/control) against their primary FAST-LIO runs. They add zero independent
+geometries and do not replace primary runs. Some native outputs differ;
+repeatability is not a claim of universally byte-identical native execution.
+Table~\ref{tab:repeat} reports absolute changes in aligned one-second translation
+error and counts of changed confirmed-health ticks across the run. The seed-14
+corridor comparison has matching measurement hashes and identical error outputs;
+other comparisons do not all have that property. Corridor event decisions agree
+in this audit despite differing timelines in seed 45. This limited development
+audit cannot certify final-population deterministic native replay.
+\begin{table}[ht]\centering\caption{Development repeat comparisons; changed tick counts are descriptive.}\label{tab:repeat}
+\input{tables/repeatability.tex}\end{table}
+
+\clearpage
+\section{Complete final policy-event ledger}
+Figure~\ref{fig:all} shows every geometry and both policies. The tables then list
+all 192 policy-event rows: 96 per backend, two policies sharing each of 48 corridor
+runs. There are also 96 control runs, used for the matched comparison.
+In the tables S denotes scalar and D the adapted directional rule; R means
+reference recovered and NR completed non-recovery. FH denotes initial
+false-healthy. A missing delay is not a zero delay. The mutually exclusive
+miss classes are ``raw'' (no raw healthy tick in the recovered interval),
+``confirm'' (raw health without the required confirmation), and ``active''
+(already-active confirmed health without a new post-onset transition).
+A dash means no missed recovery to classify, including non-recovery events.
+These classes explain decision behavior; they do not establish physical causation.
+\begin{figure}[ht]\centering\includegraphics[width=\textwidth]{assets/all_event_ledger.pdf}
+\caption{Complete event map from retained exports. Columns are the 48 selected seeds,
+ordered within SN, SW, LN and LW groups. Dark blue marks a recovered event or a
+present FH/missed-declaration event in its named row. Light cells mean absence;
+grey cells are not applicable because reference recovery did not occur.
+Policy-event rows are paired within geometry, not independent replicates.}\label{fig:all}
+\end{figure}
+\input{tables/events_fastlio.tex}
+\input{tables/events_pointlio.tex}
+
+\section{Machine-readable supporting files and reproduction}
+The adjacent \texttt{support/} folder includes the full-precision diagnostic-event
+ledger, exploratory diagnosis, all 64 screen candidates, all 192 native-run
+receipts, native build identities, copied configurations, selected timeline
+metadata and asset/source hashes. The full native ledger records backend,
+seed, group, scene, run identity, completion status, exit code, elapsed time,
+manifest digest and retained manifest path. Absolute original paths are provenance;
+the portable reproduction package supplies a relocation map.
+
+The versioned reproduction package is listed below with its verified repository commit.
+\begin{lstlisting}
+reproduction/lidar_recovery_20261023/
+d696dab58d93bcd640e3651965246bf9158d2d0e
+\end{lstlisting}
+Its offline reanalysis regenerated 96 recovery labels, 192 event rows and
+20 figures; discrete labels and decisions agreed exactly and maximum numerical
+difference was $7.1\times10^{-15}$. The original 197-entry implementation freeze
+remains separately verified. That check certifies the packaged offline reanalysis,
+not a complete native estimator replay on another machine. Current source and
+original frozen source are distinguished in the package.
+
+The main manuscript and this supplement are drafts awaiting human author review,
+verified affiliations and declarations, venue selection and its exact submission
+requirements. Scientific review must assess comparator fidelity and whether this
+bounded empirical contribution is sufficient for the chosen venue. These
+materials support that review without promising publication acceptance.
+\end{document}

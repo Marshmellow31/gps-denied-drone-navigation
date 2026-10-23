@@ -1,0 +1,14 @@
+{
+  "fastlio": {
+    "upstream_commit": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+    "binary_sha256": "4da32e8bed7756de1e4d41883f58c91f4fc954fd6f2b6f4d9b052e3568697792",
+    "configuration_sha256": "b1f937855f08c1ff2cba66606d43cd65877869404e18807c4185f385404d0a67",
+    "worktree_diff_sha256": "1397219a8765c2bc8c49adaf7e94dcc1e6006788acac06467e28e660876e51a0"
+  },
+  "pointlio": {
+    "upstream_commit": "4b86a469eb5572e70ed575af25b5f15dd06e8e3c",
+    "binary_sha256": "80516da9cafba98262d56c17cc26ec4da76e214049d3af7776248b4c3a342b17",
+    "configuration_sha256": "d23bd8799c3834ac0acc1d23476a0a0c0cd72b09f7b7c542b5bfbe9813a4c98b",
+    "worktree_diff_sha256": "1270c63b553f660ade9cd787c0e377d1486ac4f49018650f400f2cf52eb3445c"
+  }
+}

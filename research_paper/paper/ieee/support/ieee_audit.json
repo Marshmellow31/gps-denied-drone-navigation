@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "scope": "Transcription, retained source identities, figure/table inputs and compiler diagnostics; not novelty or acceptance review",
+  "geometry_pairs": 48,
+  "native_runs": 192,
+  "diagnostic_event_rows": 192,
+  "screen_candidates": 64,
+  "verified_methods": [
+    {
+      "method": "FASTLIO_MIN_EIG_G3",
+      "primary_row": "FAST-LIO & Scalar & 1/46 & 14/46 & 32 & 0.850",
+      "miss_classes": {
+        "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL": 30,
+        "RAW_HEALTHY_TICKS_WITHOUT_THREE_RECORD_CONFIRMATION": 2
+      }
+    },
+    {
+      "method": "DCREG_SCHUR_MASK",
+      "primary_row": "FAST-LIO & Fixed Schur & 4/46 & 38/46 & 8 & 6.800",
+      "miss_classes": {
+        "ACTIVE_STATE_WITHOUT_NEW_POST_ONSET_TRANSITION": 1,
+        "RAW_HEALTHY_TICKS_WITHOUT_THREE_RECORD_CONFIRMATION": 2,
+        "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL": 5
+      }
+    },
+    {
+      "method": "POINTLIO_MIN_EIG_G3",
+      "primary_row": "Point-LIO & Scalar & 4/47 & 27/32 & 5 & 3.400",
+      "miss_classes": {
+        "ACTIVE_STATE_WITHOUT_NEW_POST_ONSET_TRANSITION": 2,
+        "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL": 3
+      }
+    },
+    {
+      "method": "POINTLIO_DCREG_SCHUR_MASK",
+      "primary_row": "Point-LIO & Fixed Schur & 16/47 & 25/32 & 7 & 3.000",
+      "miss_classes": {
+        "ACTIVE_STATE_WITHOUT_NEW_POST_ONSET_TRANSITION": 5,
+        "NO_RAW_HEALTHY_TICK_IN_RECOVERY_INTERVAL": 2
+      }
+    }
+  ],
+  "hashed_sources": 213,
+  "hashed_assets": 33,
+  "referenced_inputs": [
+    "assets/endpoint_timing.pdf",
+    "assets/geometry_schematic.pdf",
+    "tables/primary.tex",
+    "tables/intervals.tex",
+    "assets/operating_points.pdf",
+    "assets/geometry_effects.pdf",
+    "tables/misses.tex",
+    "assets/native_examples.pdf",
+    "support/native_build_identities.json",
+    "support/fastlio_simulation_bootstrap.yaml",
+    "support/point_lio_simulation_development.yaml",
+    "tables/screen_ledger.tex",
+    "tables/curves.tex",
+    "tables/tolerance.tex",
+    "tables/tolerance_strata.tex",
+    "tables/window3.tex",
+    "tables/window3_strata.tex",
+    "tables/repeatability.tex",
+    "assets/all_event_ledger.pdf",
+    "tables/events_fastlio.tex",
+    "tables/events_pointlio.tex"
+  ],
+  "font": "IEEEtran default Times Roman; embedded Nimbus Roman implementation",
+  "document_sha256": {
+    "recovery_transfer_ieee": "f8cc0119b0e406e609217274ee13cb9fc69f2bfa103092031babaa24ee015636",
+    "recovery_transfer_supplement": "c7dbf8df45e852faf97bbcca8acb18062149baf02a102122f2c9745a1b800d9b"
+  },
+  "pdf_sha256": {
+    "recovery_transfer_ieee": "7dea24095fd1c0ff34b4b5b703ce90949156493892acefc26024c63430989a6c",
+    "recovery_transfer_supplement": "f601c0819201fb6d5ffad041eec012fc6b9d28a34671c6867b52d80292032bf1"
+  }
+}
